@@ -1,0 +1,22 @@
+syntax: glob
+desktop.ini
+obj/
+*.suo
+*.sln.cache
+*.orig
+*.user
+build
+buildazure
+buildtasks
+artifacts
+robots.txt
+
+syntax: regexp
+(?i)src/.*bin/.*
+App_Data/(?!Localization).+
+node_modules
+typings/
+src/packages/*
+packages/
+.vs/*
+wwwroot/(?!.placeholder).+
