@@ -13,6 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		nuget.config = nuget.config
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{11E06A11-1733-408D-BB2F-BFA07075F812}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.TrainingDemo", "src\Modules\Lombiq.TrainingDemo\Lombiq.TrainingDemo.csproj", "{3E5295F8-A196-466B-A857-177AB6EF6E04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,12 +39,26 @@ Global
 		{5E92990A-F846-45E6-9A8C-8A66CFF2E6D4}.Release|x64.Build.0 = Release|Any CPU
 		{5E92990A-F846-45E6-9A8C-8A66CFF2E6D4}.Release|x86.ActiveCfg = Release|Any CPU
 		{5E92990A-F846-45E6-9A8C-8A66CFF2E6D4}.Release|x86.Build.0 = Release|Any CPU
+		{3E5295F8-A196-466B-A857-177AB6EF6E04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E5295F8-A196-466B-A857-177AB6EF6E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E5295F8-A196-466B-A857-177AB6EF6E04}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3E5295F8-A196-466B-A857-177AB6EF6E04}.Debug|x64.Build.0 = Debug|Any CPU
+		{3E5295F8-A196-466B-A857-177AB6EF6E04}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3E5295F8-A196-466B-A857-177AB6EF6E04}.Debug|x86.Build.0 = Debug|Any CPU
+		{3E5295F8-A196-466B-A857-177AB6EF6E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E5295F8-A196-466B-A857-177AB6EF6E04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E5295F8-A196-466B-A857-177AB6EF6E04}.Release|x64.ActiveCfg = Release|Any CPU
+		{3E5295F8-A196-466B-A857-177AB6EF6E04}.Release|x64.Build.0 = Release|Any CPU
+		{3E5295F8-A196-466B-A857-177AB6EF6E04}.Release|x86.ActiveCfg = Release|Any CPU
+		{3E5295F8-A196-466B-A857-177AB6EF6E04}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5E92990A-F846-45E6-9A8C-8A66CFF2E6D4} = {648D3BB6-201F-401B-9EF9-D7BBBC6D3ECA}
+		{11E06A11-1733-408D-BB2F-BFA07075F812} = {648D3BB6-201F-401B-9EF9-D7BBBC6D3ECA}
+		{3E5295F8-A196-466B-A857-177AB6EF6E04} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
