@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using OrchardCore.Logging;
 using OrchardCore.Modules;
 
-namespace OSOCE.Web
+namespace Lombiq.OSOCE.Web
 {
     public class Program
     {

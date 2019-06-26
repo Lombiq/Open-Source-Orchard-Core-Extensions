@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
 
-namespace OSOCE.Web
+namespace Lombiq.OSOCE.Web
 {
     public class Startup
     {
