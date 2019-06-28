@@ -10,8 +10,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OrchardCore.Logging.NLog" Version="1.0.0-beta3-70777" />
-    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.0.0-beta3-70777" />
+    <ProjectReference Include="..\Modules\Lombiq.TrainingDemo\Lombiq.TrainingDemo.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.VueJs\Lombiq.VueJs.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OrchardCore.Logging.NLog" Version="1.0.0-beta3-71674" />
+    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.0.0-beta3-71674" />
   </ItemGroup>
   
   <ItemGroup>
