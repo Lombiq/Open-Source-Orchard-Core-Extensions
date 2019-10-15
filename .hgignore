@@ -13,7 +13,7 @@ robots.txt
 
 syntax: regexp
 (?i)src/.*bin/.*
-App_Data/(?!Localization).+
+src/Lombiq.OSOCE.Web/(?!Localization).+
 node_modules
 typings/
 src/packages/*
