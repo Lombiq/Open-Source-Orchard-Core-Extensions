@@ -11,9 +11,10 @@ buildtasks
 artifacts
 robots.txt
 
+src/Lombiq.OSOCE.Web/Localization
+src/Lombiq.OSOCE.Web/App_Data
 syntax: regexp
 (?i)src/.*bin/.*
-src/Lombiq.OSOCE.Web/(?!Localization).+
 node_modules
 typings/
 src/packages/*
