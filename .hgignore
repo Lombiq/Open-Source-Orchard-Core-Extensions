@@ -11,7 +11,8 @@ buildtasks
 artifacts
 robots.txt
 
-src/Lombiq.OSOCE.Web/Localization
+src/Lombiq.OSOCE.Web/Localization/**/*.po
+src/Modules/**/Localization/**/*.po
 src/Lombiq.OSOCE.Web/App_Data
 syntax: regexp
 (?i)src/.*bin/.*
