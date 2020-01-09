@@ -11,12 +11,13 @@ buildtasks
 artifacts
 robots.txt
 
-src/Lombiq.OSOCE.Web/Localization/**/*.po
+src/*.Web/Localization
 src/Modules/**/Localization/**/*.po
-src/Lombiq.OSOCE.Web/App_Data
+src/Themes/**/Localization/**/*.po
+App_Data*/
 syntax: regexp
 (?i)src/.*bin/.*
-node_modules
+node_modules/
 typings/
 src/packages/*
 packages/
