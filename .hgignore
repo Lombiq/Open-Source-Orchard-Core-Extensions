@@ -11,10 +11,13 @@ buildtasks
 artifacts
 robots.txt
 
+src/*.Web/Localization
+src/Modules/**/Localization/**/*.po
+src/Themes/**/Localization/**/*.po
+App_Data*/
 syntax: regexp
 (?i)src/.*bin/.*
-App_Data/(?!Localization).+
-node_modules
+node_modules/
 typings/
 src/packages/*
 packages/
