@@ -1,0 +1,8 @@
+[submodule "src/Modules/Lombiq.TrainingDemo"]
+	path = src/Modules/Lombiq.TrainingDemo
+	url = https://github.com/Lombiq/Orchard-Training-Demo-Module.git
+	branch = orchard-core
+[submodule "src/Modules/Lombiq.VueJs"]
+	path = src/Modules/Lombiq.VueJs
+	url = https://github.com/Lombiq/Orchard-Vue.js.git
+	branch = dev
