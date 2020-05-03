@@ -11,7 +11,7 @@ This is an [Orchard Core CMS](https://www.orchardcore.net/) Visual Studio soluti
 This also serves as an example of an ASP.NET Core web app using Orchard from NuGet.
 
 
-## Contribution and support
+## Contributing and support
 
 Bug reports, feature requests, comments, questions, code contributions, and love letters are warmly welcome, please do so via GitHub issues and pull requests. Please adhere to our [open-source guidelines](https://lombiq.com/open-source-guidelines) while doing so.
 
