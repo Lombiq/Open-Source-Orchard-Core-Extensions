@@ -6,7 +6,7 @@
 	path = src/Modules/Lombiq.VueJs
 	url = https://github.com/Lombiq/Orchard-Vue.js.git
 	branch = dev
-[submodule "src/Utilities/Lombiq.GulpExtensions"]
+[submodule "src/Utilities/Lombiq.Gulp.Extensions"]
 	path = src/Utilities/Lombiq.Gulp.Extensions
 	url = https://github.com/Lombiq/Gulp-Extensions.git
 	branch = dev
