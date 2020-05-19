@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Npm.Targets", "src\Utilities\Lombiq.Npm.Targets\Lombiq.Npm.Targets.csproj", "{7EEC51ED-5483-4A27-93B5-FCD920493604}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.GulpExtensions", "src\Utilities\Lombiq.GulpExtensions\Lombiq.GulpExtensions.csproj", "{1E9E25BA-F756-40EA-82EE-507D9D53C30A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.GulpExtensions", "src\Utilities\Lombiq.Gulp.Extensions\Lombiq.GulpExtensions.csproj", "{1E9E25BA-F756-40EA-82EE-507D9D53C30A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
