@@ -14,3 +14,11 @@
 	path = src/Utilities/Lombiq.Npm.Targets
 	url = https://github.com/Lombiq/NPM-Targets.git
 	branch = dev
+[submodule "src/Modules/Lombiq.HelpfulExtensions"]
+	path = src/Modules/Lombiq.HelpfulExtensions
+	url = https://github.com/Lombiq/Helpful-Extensions.git
+	branch = orchard-core-preview
+[submodule "src/Libraries/Lombiq.HelpfulLibraries"]
+	path = src/Libraries/Lombiq.HelpfulLibraries
+	url = https://github.com/Lombiq/Helpful-Libraries.git
+	branch = orchard-core-preview
