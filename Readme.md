@@ -10,6 +10,8 @@ This is an [Orchard Core CMS](https://www.orchardcore.net/) Visual Studio soluti
 
 This also serves as an example of an ASP.NET Core web app using Orchard from NuGet.
 
+ Note that this solution has a more recent version targeting the nightly build of Orchard in the [orchard-core-preview branch](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/tree/orchard-core-preview).
+
 
 ## Contributing and support
 
