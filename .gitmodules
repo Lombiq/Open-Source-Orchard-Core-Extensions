@@ -22,3 +22,7 @@
 	path = src/Libraries/Lombiq.HelpfulLibraries
 	url = https://github.com/Lombiq/Helpful-Libraries.git
 	branch = orchard-core-preview
+[submodule "src/Utilities/Lombiq.SetupExtensions"]
+	path = src/Utilities/Lombiq.SetupExtensions
+	url = https://github.com/Lombiq/Setup-Extensions.git
+	branch = dev
