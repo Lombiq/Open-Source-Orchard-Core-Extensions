@@ -10,6 +10,8 @@ This is an [Orchard Core CMS](https://www.orchardcore.net/) Visual Studio soluti
 
 This also serves as an example of an ASP.NET Core web app using Orchard from NuGet.
 
+**You'll need to install NPM and Gulp for the solution to build** since the Vue.js module depends on it. Check out [the module's Readme](https://github.com/Lombiq/Orchard-Vue.js#prerequisites) for details.
+
  Note that this solution has a more recent version targeting the nightly build of Orchard in the [orchard-core-preview branch](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/tree/orchard-core-preview).
 
 
