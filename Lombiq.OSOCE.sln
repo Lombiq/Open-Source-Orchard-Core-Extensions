@@ -5,9 +5,12 @@ VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{648D3BB6-201F-401B-9EF9-D7BBBC6D3ECA}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.Web", "src\Lombiq.OSOCE.Web\Lombiq.OSOCE.Web.csproj", "{1AC7EC46-8FC5-49F8-B995-DA35263AB53F}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8B131E3B-202B-486D-A3A4-CB84AC4C3370}"
 	ProjectSection(SolutionItems) = preProject
 		Licence.md = Licence.md
+		NuGet.config = NuGet.config
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject
@@ -17,13 +20,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.TrainingDemo", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.VueJs", "src\Modules\Lombiq.VueJs\Lombiq.VueJs.csproj", "{6AEF3A6E-01EF-4729-8EF1-647A27347B1E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.Web", "src\Lombiq.OSOCE.Web\Lombiq.OSOCE.Web.csproj", "{1AC7EC46-8FC5-49F8-B995-DA35263AB53F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{11F2CB14-D92A-484F-9C1E-2836B1B04DB8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Npm.Targets", "src\Utilities\Lombiq.Npm.Targets\Lombiq.Npm.Targets.csproj", "{7EEC51ED-5483-4A27-93B5-FCD920493604}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Gulp.Extensions", "src\Utilities\Lombiq.Gulp.Extensions\Lombiq.Gulp.Extensions.csproj", "{1E9E25BA-F756-40EA-82EE-507D9D53C30A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{53D45048-C7C6-4D04-A9DA-8B8271510F99}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.csproj", "{01A2A5A4-E453-4658-92F1-D57C00B16DA0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulExtensions", "src\Modules\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions.csproj", "{7DEB3535-5A2A-468A-A626-11B668C53AE0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.SetupExtensions", "src\Utilities\Lombiq.SetupExtensions\Lombiq.SetupExtensions.csproj", "{A31B73D3-C075-4510-A504-A1DC0832D006}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +104,42 @@ Global
 		{1E9E25BA-F756-40EA-82EE-507D9D53C30A}.Release|x64.Build.0 = Release|Any CPU
 		{1E9E25BA-F756-40EA-82EE-507D9D53C30A}.Release|x86.ActiveCfg = Release|Any CPU
 		{1E9E25BA-F756-40EA-82EE-507D9D53C30A}.Release|x86.Build.0 = Release|Any CPU
+		{01A2A5A4-E453-4658-92F1-D57C00B16DA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01A2A5A4-E453-4658-92F1-D57C00B16DA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01A2A5A4-E453-4658-92F1-D57C00B16DA0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{01A2A5A4-E453-4658-92F1-D57C00B16DA0}.Debug|x64.Build.0 = Debug|Any CPU
+		{01A2A5A4-E453-4658-92F1-D57C00B16DA0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{01A2A5A4-E453-4658-92F1-D57C00B16DA0}.Debug|x86.Build.0 = Debug|Any CPU
+		{01A2A5A4-E453-4658-92F1-D57C00B16DA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01A2A5A4-E453-4658-92F1-D57C00B16DA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01A2A5A4-E453-4658-92F1-D57C00B16DA0}.Release|x64.ActiveCfg = Release|Any CPU
+		{01A2A5A4-E453-4658-92F1-D57C00B16DA0}.Release|x64.Build.0 = Release|Any CPU
+		{01A2A5A4-E453-4658-92F1-D57C00B16DA0}.Release|x86.ActiveCfg = Release|Any CPU
+		{01A2A5A4-E453-4658-92F1-D57C00B16DA0}.Release|x86.Build.0 = Release|Any CPU
+		{7DEB3535-5A2A-468A-A626-11B668C53AE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DEB3535-5A2A-468A-A626-11B668C53AE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DEB3535-5A2A-468A-A626-11B668C53AE0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7DEB3535-5A2A-468A-A626-11B668C53AE0}.Debug|x64.Build.0 = Debug|Any CPU
+		{7DEB3535-5A2A-468A-A626-11B668C53AE0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7DEB3535-5A2A-468A-A626-11B668C53AE0}.Debug|x86.Build.0 = Debug|Any CPU
+		{7DEB3535-5A2A-468A-A626-11B668C53AE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DEB3535-5A2A-468A-A626-11B668C53AE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DEB3535-5A2A-468A-A626-11B668C53AE0}.Release|x64.ActiveCfg = Release|Any CPU
+		{7DEB3535-5A2A-468A-A626-11B668C53AE0}.Release|x64.Build.0 = Release|Any CPU
+		{7DEB3535-5A2A-468A-A626-11B668C53AE0}.Release|x86.ActiveCfg = Release|Any CPU
+		{7DEB3535-5A2A-468A-A626-11B668C53AE0}.Release|x86.Build.0 = Release|Any CPU
+		{A31B73D3-C075-4510-A504-A1DC0832D006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A31B73D3-C075-4510-A504-A1DC0832D006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A31B73D3-C075-4510-A504-A1DC0832D006}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A31B73D3-C075-4510-A504-A1DC0832D006}.Debug|x64.Build.0 = Debug|Any CPU
+		{A31B73D3-C075-4510-A504-A1DC0832D006}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A31B73D3-C075-4510-A504-A1DC0832D006}.Debug|x86.Build.0 = Debug|Any CPU
+		{A31B73D3-C075-4510-A504-A1DC0832D006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A31B73D3-C075-4510-A504-A1DC0832D006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A31B73D3-C075-4510-A504-A1DC0832D006}.Release|x64.ActiveCfg = Release|Any CPU
+		{A31B73D3-C075-4510-A504-A1DC0832D006}.Release|x64.Build.0 = Release|Any CPU
+		{A31B73D3-C075-4510-A504-A1DC0832D006}.Release|x86.ActiveCfg = Release|Any CPU
+		{A31B73D3-C075-4510-A504-A1DC0832D006}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,6 +152,10 @@ Global
 		{11F2CB14-D92A-484F-9C1E-2836B1B04DB8} = {648D3BB6-201F-401B-9EF9-D7BBBC6D3ECA}
 		{7EEC51ED-5483-4A27-93B5-FCD920493604} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
 		{1E9E25BA-F756-40EA-82EE-507D9D53C30A} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
+		{53D45048-C7C6-4D04-A9DA-8B8271510F99} = {648D3BB6-201F-401B-9EF9-D7BBBC6D3ECA}
+		{01A2A5A4-E453-4658-92F1-D57C00B16DA0} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
+		{7DEB3535-5A2A-468A-A626-11B668C53AE0} = {11E06A11-1733-408D-BB2F-BFA07075F812}
+		{A31B73D3-C075-4510-A504-A1DC0832D006} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
