@@ -26,3 +26,7 @@
 	path = src/Utilities/Lombiq.SetupExtensions
 	url = https://github.com/Lombiq/Setup-Extensions.git
 	branch = dev
+[submodule "tools/Lombiq.Analyzers"]
+	path = tools/Lombiq.Analyzers
+	url = https://github.com/Lombiq/.NET-Analyzers.git
+	branch = dev
