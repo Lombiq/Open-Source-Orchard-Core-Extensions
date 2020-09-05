@@ -9,6 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.Web", "src\Lom
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8B131E3B-202B-486D-A3A4-CB84AC4C3370}"
 	ProjectSection(SolutionItems) = preProject
+		tools\Lombiq.Analyzers\General.ruleset = tools\Lombiq.Analyzers\General.ruleset
 		Licence.md = Licence.md
 		NuGet.config = NuGet.config
 		Readme.md = Readme.md
@@ -36,7 +37,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.SetupExtensions", "s
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FF48793C-2AC5-4FAA-9BA1-44448E3A7F98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.TrainingDemo.Tests", "src\Modules\Lombiq.TrainingDemo\Tests\Lombiq.TrainingDemo.Tests\Lombiq.TrainingDemo.Tests.csproj", "{26FCE328-9B37-4A51-9C87-87D6628907E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.TrainingDemo.Tests", "src\Modules\Lombiq.TrainingDemo\Tests\Lombiq.TrainingDemo.Tests\Lombiq.TrainingDemo.Tests.csproj", "{26FCE328-9B37-4A51-9C87-87D6628907E0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{6ED7E28F-0556-471C-8AD1-5BB0941411DD}"
 EndProject
