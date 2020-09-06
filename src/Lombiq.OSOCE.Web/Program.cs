@@ -14,5 +14,4 @@ namespace Lombiq.OSOCE.Web
                 .UseStartup<Startup>()
                 .Build();
     }
-
 }
