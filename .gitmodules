@@ -30,3 +30,7 @@
 	path = tools/Lombiq.Analyzers
 	url = https://github.com/Lombiq/.NET-Analyzers.git
 	branch = dev
+[submodule "src/Modules/Lombiq.Hosting.Azure.ApplicationInsights"]
+	path = src/Modules/Lombiq.Hosting.Azure.ApplicationInsights
+	url = https://github.com/Lombiq/Orchard-Azure-Application-Insights.git
+	branch = dev
