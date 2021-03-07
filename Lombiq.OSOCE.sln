@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Gulp.Extensions", "s
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{53D45048-C7C6-4D04-A9DA-8B8271510F99}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.csproj", "{01A2A5A4-E453-4658-92F1-D57C00B16DA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.csproj", "{01A2A5A4-E453-4658-92F1-D57C00B16DA0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulExtensions", "src\Modules\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions.csproj", "{7DEB3535-5A2A-468A-A626-11B668C53AE0}"
 EndProject
