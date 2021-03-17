@@ -1,0 +1,8 @@
+{
+    "extends": "./src/Utilities/Lombiq.Gulp.Extensions/ESLint/lombiq-base.js",
+
+    "rules": {
+        // Add overriding rules here like this:
+        // "example-rule" : "error"
+    }
+}
