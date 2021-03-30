@@ -187,4 +187,5 @@ node_modules/
 !**/wwwroot/.placeholder
 
 src/*.Web/Localization
+/src/package.json
 /.editorconfig
