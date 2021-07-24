@@ -12,10 +12,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Modules\Lombiq.ChartJs\Lombiq.ChartJs.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Azure.ApplicationInsights\Lombiq.Hosting.Azure.ApplicationInsights.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.JsonEditor\Lombiq.JsonEditor.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.TrainingDemo\Lombiq.TrainingDemo.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.UIKit\Lombiq.UIKit.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.VueJs\Lombiq.VueJs.csproj" />
+    <ProjectReference Include="..\Utilities\Lombiq.SetupExtensions\Lombiq.SetupExtensions.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -34,3 +34,15 @@
 	path = src/Modules/Lombiq.Hosting.Azure.ApplicationInsights
 	url = https://github.com/Lombiq/Orchard-Azure-Application-Insights.git
 	branch = dev
+[submodule "src/Modules/Lombiq.ChartJs"]
+	path = src/Modules/Lombiq.ChartJs
+	url = https://github.com/Lombiq/Orchard-Chart.js.git
+	branch = dev
+[submodule "src/Modules/Lombiq.UIKit"]
+	path = src/Modules/Lombiq.UIKit
+	url = https://github.com/Lombiq/Orchard-UIKit.git
+	branch = dev
+[submodule "src/Modules/Lombiq.JsonEditor"]
+	path = src/Modules/Lombiq.JsonEditor
+	url = https://github.com/Lombiq/Orchard-JSON-Editor.git
+	branch = dev
