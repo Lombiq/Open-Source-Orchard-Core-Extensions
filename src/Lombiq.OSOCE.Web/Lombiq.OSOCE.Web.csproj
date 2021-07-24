@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Modules\Lombiq.AuditTrailExtensions\Lombiq.AuditTrailExtensions.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.ChartJs\Lombiq.ChartJs.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Azure.ApplicationInsights\Lombiq.Hosting.Azure.ApplicationInsights.csproj" />
