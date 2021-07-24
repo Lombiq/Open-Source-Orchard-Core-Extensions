@@ -51,6 +51,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.JsonEditor", "src\Mo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.AuditTrailExtensions", "src\Modules\Lombiq.AuditTrailExtensions\Lombiq.AuditTrailExtensions.csproj", "{A2CBA4B0-6B30-4183-B167-69A99F34FC72}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries.LinqToDb", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.LinqToDb\Lombiq.HelpfulLibraries.LinqToDb.csproj", "{8BC42764-7D0C-4F18-8663-DB7C9F1734D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries.RestEase", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.RestEase\Lombiq.HelpfulLibraries.RestEase.csproj", "{1800BAC6-F9A5-4C0E-9BB9-5B42A56B8852}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -229,6 +233,30 @@ Global
 		{A2CBA4B0-6B30-4183-B167-69A99F34FC72}.Release|x64.Build.0 = Release|Any CPU
 		{A2CBA4B0-6B30-4183-B167-69A99F34FC72}.Release|x86.ActiveCfg = Release|Any CPU
 		{A2CBA4B0-6B30-4183-B167-69A99F34FC72}.Release|x86.Build.0 = Release|Any CPU
+		{8BC42764-7D0C-4F18-8663-DB7C9F1734D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BC42764-7D0C-4F18-8663-DB7C9F1734D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BC42764-7D0C-4F18-8663-DB7C9F1734D5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8BC42764-7D0C-4F18-8663-DB7C9F1734D5}.Debug|x64.Build.0 = Debug|Any CPU
+		{8BC42764-7D0C-4F18-8663-DB7C9F1734D5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8BC42764-7D0C-4F18-8663-DB7C9F1734D5}.Debug|x86.Build.0 = Debug|Any CPU
+		{8BC42764-7D0C-4F18-8663-DB7C9F1734D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BC42764-7D0C-4F18-8663-DB7C9F1734D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BC42764-7D0C-4F18-8663-DB7C9F1734D5}.Release|x64.ActiveCfg = Release|Any CPU
+		{8BC42764-7D0C-4F18-8663-DB7C9F1734D5}.Release|x64.Build.0 = Release|Any CPU
+		{8BC42764-7D0C-4F18-8663-DB7C9F1734D5}.Release|x86.ActiveCfg = Release|Any CPU
+		{8BC42764-7D0C-4F18-8663-DB7C9F1734D5}.Release|x86.Build.0 = Release|Any CPU
+		{1800BAC6-F9A5-4C0E-9BB9-5B42A56B8852}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1800BAC6-F9A5-4C0E-9BB9-5B42A56B8852}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1800BAC6-F9A5-4C0E-9BB9-5B42A56B8852}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1800BAC6-F9A5-4C0E-9BB9-5B42A56B8852}.Debug|x64.Build.0 = Debug|Any CPU
+		{1800BAC6-F9A5-4C0E-9BB9-5B42A56B8852}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1800BAC6-F9A5-4C0E-9BB9-5B42A56B8852}.Debug|x86.Build.0 = Debug|Any CPU
+		{1800BAC6-F9A5-4C0E-9BB9-5B42A56B8852}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1800BAC6-F9A5-4C0E-9BB9-5B42A56B8852}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1800BAC6-F9A5-4C0E-9BB9-5B42A56B8852}.Release|x64.ActiveCfg = Release|Any CPU
+		{1800BAC6-F9A5-4C0E-9BB9-5B42A56B8852}.Release|x64.Build.0 = Release|Any CPU
+		{1800BAC6-F9A5-4C0E-9BB9-5B42A56B8852}.Release|x86.ActiveCfg = Release|Any CPU
+		{1800BAC6-F9A5-4C0E-9BB9-5B42A56B8852}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -252,6 +280,8 @@ Global
 		{B4C796F6-A40D-4313-9B37-DD909C90BE63} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{603D7ECE-0868-40C0-AACF-5220ED105471} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{A2CBA4B0-6B30-4183-B167-69A99F34FC72} = {11E06A11-1733-408D-BB2F-BFA07075F812}
+		{8BC42764-7D0C-4F18-8663-DB7C9F1734D5} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
+		{1800BAC6-F9A5-4C0E-9BB9-5B42A56B8852} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}

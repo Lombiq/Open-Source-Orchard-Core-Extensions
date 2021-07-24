@@ -12,7 +12,7 @@ This also serves as an example of an ASP.NET Core web app using Orchard from NuG
 
 **You'll need to install NPM and Gulp for the solution to build** since the Vue.js module depends on it. Check out [the module's Readme](https://github.com/Lombiq/Orchard-Vue.js#prerequisites) for details.
 
- Note that this solution has a more recent version targeting the nightly build of Orchard in the [orchard-core-preview branch](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/tree/orchard-core-preview).
+ Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source Orchard Extensions](https://github.com/Lombiq/Open-Source-Orchard-Extensions).
 
 [![TeamCity build status](https://ci.lombiq.com/app/rest/builds/buildType:id:OrchardExtensions_OSOCE_Developer_PullAndBuild/statusIcon.svg)](https://ci.lombiq.com/buildConfiguration/OrchardExtensions_OSOCE_Developer_PullAndBuild?mode=builds)
 
