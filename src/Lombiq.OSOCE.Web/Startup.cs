@@ -6,7 +6,10 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Lombiq.OSOCE.Web
 {
-    [SuppressMessage("Major Code Smell", "S1118:Utility classes should not have public constructors", Justification = "Needs to be non-static for UseStartup().")]
+    [SuppressMessage(
+        "Major Code Smell",
+        "S1118:Utility classes should not have public constructors",
+        Justification = "Needs to be non-static for UseStartup().")]
     public sealed class Startup
     {
         public static void ConfigureServices(IServiceCollection services) => services.AddOrchardCms();
