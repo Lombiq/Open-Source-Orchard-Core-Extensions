@@ -6,7 +6,6 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Lombiq.OSOCE.Web
 {
-    // This is a long line. This is a long line. This is a long line. This is a long line. This is a long line. This is a long line. This is a long line.
     [SuppressMessage(
         "Major Code Smell",
         "S1118:Utility classes should not have public constructors",
