@@ -22,7 +22,7 @@ This also serves as an example of an ASP.NET Core web app using Orchard from NuG
 You can activate various sample content in the site:
 
 - [Lombiq Training Demo for Orchard Core](https://github.com/Lombiq/Orchard-Training-Demo-Module/): Select the _Training Demo_ setup recipe when you first run the site.
-- [Lombiq JSON Editor](https://github.com/Lombiq/Orchard-JSON-Editor): Go to Recipes in the admin dashboard and select "Lombiq Open Source Orchard Core Extensions - Json Editor Sample". After that you can go to Content Definition to see the sample item in action.
+- [Lombiq JSON Editor](https://github.com/Lombiq/Orchard-JSON-Editor): Go to Recipes in the admin dashboard and select "Lombiq Open Source Orchard Core Extensions - JSON Editor Sample". After that, you can go to Content Definition to see the sample item in action.
 
 ## Contributing and support
 
