@@ -26,7 +26,7 @@
       "ContentTypes": [
         {
           "Name": "JsonExamplePage",
-          "DisplayName": "Json Example Page",
+          "DisplayName": "JSON Example Page",
           "Settings": {
             "ContentTypeSettings": {
               "Creatable": true,
