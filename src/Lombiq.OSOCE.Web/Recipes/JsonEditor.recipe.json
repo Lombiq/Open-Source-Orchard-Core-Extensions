@@ -112,7 +112,7 @@
           },
           "CommonPart": {},
           "LiquidPart": {
-            "Liquid": "{% capture output %}\r\n  <script>\r\n    var list = document.createElement('ul');\r\n    list.innerHTML = window.JsonField\r\n      .jsonExamplePageJsonExampleField\r\n      .printThese\r\n      .map(function(item) { return '<li>' + item + '</li>'; })\r\n      .join('');\r\n    document.querySelector('.json-example-page').appendChild(list);\r\n  </script>\r\n{% endcapture %}\r\n    \r\n<div>You can use this space to copy the JSON into the client-side app that would consume it.</div>\r\n<div>If it's your script, you can instead look up the value in <code>window.JsonField</code> directly.</div>\r\n<br />\r\n<div>\r\nThese are coming from the JSON field:\r\n{{ output | raw }}\r\n</div>"
+            "Liquid": "{% capture output %}\r\n  <script>\r\n    var list = document.querySelector('.json-example-page-list');\r\n    list.innerHTML = window.JsonField\r\n      .jsonExamplePageJsonExampleField\r\n      .printThese\r\n      .map(function(item) { return '<li>' + item + '</li>'; })\r\n      .join('');\r\n  </script>\r\n{% endcapture %}\r\n    \r\n<div>You can use this space to copy the JSON into the client-side app that would consume it.</div>\r\n<div>If it's your script, you can instead look up the value in <code>window.JsonField</code> directly.</div>\r\n<br />\r\n<div>\r\nThese are coming from the JSON field:\r\n  <ul class=\"json-example-page-list\"></ul>  \r\n</div>\r\n\r\n{{ output | raw }}"
           }
         }
       ]
