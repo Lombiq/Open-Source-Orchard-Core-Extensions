@@ -1,0 +1,37 @@
+{
+  "name": "Lombiq.OSOCE.Tests.recipe",
+  "displayName": "TEST: Lombiq's Open-Source Orchard Core Extensions",
+  "description": "Lombiq's Open-Source Orchard Core Extensions setup recipe for automated UI test execution.",
+  "author": "Lombiq Technologies",
+  "website": "https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions",
+  "version": "1.0",
+  "issetuprecipe": true,
+  "categories": [
+    "test"
+  ],
+  "tags": [
+    "test"
+  ],
+  "steps": [
+    {
+      "name": "feature",
+      "disable": [],
+      "enable": [
+        "Lombiq.Hosting.Azure.ApplicationInsights"
+      ]
+    },
+    {
+      "name": "recipes",
+      "Values": [
+        {
+          "executionid": "Lombiq.OSOCE.Tests",
+          "name": "Blog"
+        }
+      ]
+    },
+    {
+      "name": "settings",
+      "UseCdn": false
+    }
+  ]
+}

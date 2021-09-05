@@ -2,10 +2,10 @@
   "name": "Lombiq.OSOCE.JsonEditor",
   "displayName": "Lombiq Open Source Orchard Core Extensions - JSON Editor Sample",
   "description": "Demo the Lombiq JSON Editor module.",
-  "author": "Lombiq",
-  "website": "https://lombiq.com",
+  "author": "Lombiq Technologies",
+  "website": "https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions",
   "version": "1.0",
-  "issetuprecipe": false,
+  "issetuprecipe": true,
   "categories": [
     "training"
   ],
