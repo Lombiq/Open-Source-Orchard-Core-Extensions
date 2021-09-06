@@ -17,7 +17,8 @@
       "name": "feature",
       "disable": [],
       "enable": [
-        "Lombiq.Hosting.Azure.ApplicationInsights"
+        "Lombiq.Hosting.Azure.ApplicationInsights",
+        "OrchardCore.Localization"
       ]
     },
     {
@@ -31,7 +32,19 @@
     },
     {
       "name": "settings",
-      "UseCdn": false
+      // CDN should be turned off for tests, just as no other external resource should be used.
+      "UseCdn": false,
+      "SmtpSettings": {
+        "DefaultSender": "sender@example.com"
+      },
+      // To make sure that e.g. numbers and dates are formatted the same way on all machines we have to specify the
+      // culture too.
+      "LocalizationSettings": {
+        "DefaultCulture": "en-US",
+        "SupportedCultures": [
+          "en-US"
+        ]
+      }
     }
   ]
 }
