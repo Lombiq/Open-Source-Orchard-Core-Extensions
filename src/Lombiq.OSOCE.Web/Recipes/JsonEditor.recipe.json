@@ -5,7 +5,7 @@
   "author": "Lombiq Technologies",
   "website": "https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions",
   "version": "1.0",
-  "issetuprecipe": true,
+  "issetuprecipe": false,
   "categories": [
     "training"
   ],
