@@ -12,6 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI.AppExtensions\Lombiq.Tests.UI.AppExtensions.csproj" />
+    <ProjectReference Include="..\..\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI.Shortcuts\Lombiq.Tests.UI.Shortcuts.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.AuditTrailExtensions\Lombiq.AuditTrailExtensions.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.ChartJs\Lombiq.ChartJs.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions.csproj" />

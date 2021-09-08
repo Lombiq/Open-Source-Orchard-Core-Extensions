@@ -1,0 +1,50 @@
+{
+  "name": "Lombiq.OSOCE.Tests.recipe",
+  "displayName": "TEST: Lombiq's Open-Source Orchard Core Extensions",
+  "description": "Lombiq's Open-Source Orchard Core Extensions setup recipe for automated UI test execution.",
+  "author": "Lombiq Technologies",
+  "website": "https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions",
+  "version": "1.0",
+  "issetuprecipe": true,
+  "categories": [
+    "test"
+  ],
+  "tags": [
+    "test"
+  ],
+  "steps": [
+    {
+      "name": "feature",
+      "disable": [],
+      "enable": [
+        "Lombiq.Hosting.Azure.ApplicationInsights",
+        "OrchardCore.Localization"
+      ]
+    },
+    {
+      "name": "recipes",
+      "Values": [
+        {
+          "executionid": "Lombiq.OSOCE.Tests",
+          "name": "Blog"
+        }
+      ]
+    },
+    {
+      "name": "settings",
+      // CDN should be turned off for tests, just as no other external resource should be used.
+      "UseCdn": false,
+      "SmtpSettings": {
+        "DefaultSender": "sender@example.com"
+      },
+      // To make sure that e.g. numbers and dates are formatted the same way on all machines we have to specify the
+      // culture too.
+      "LocalizationSettings": {
+        "DefaultCulture": "en-US",
+        "SupportedCultures": [
+          "en-US"
+        ]
+      }
+    }
+  ]
+}

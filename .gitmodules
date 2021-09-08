@@ -50,3 +50,11 @@
 	path = src/Modules/Lombiq.AuditTrailExtensions
 	url = https://github.com/Lombiq/Audit-Trail-Extensions.git
 	branch = dev
+[submodule "test/Lombiq.UITestingToolbox"]
+	path = test/Lombiq.UITestingToolbox
+	url = https://github.com/Lombiq/UI-Testing-Toolbox.git
+	branch = dev
+[submodule "test/Lombiq.Tests"]
+	path = test/Lombiq.Tests
+	url = https://github.com/Lombiq/Testing-Toolbox.git
+	branch = dev
