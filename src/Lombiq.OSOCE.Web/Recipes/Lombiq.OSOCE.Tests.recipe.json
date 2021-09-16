@@ -1,5 +1,5 @@
 {
-  "name": "Lombiq.OSOCE.Tests.recipe",
+  "name": "Lombiq.OSOCE.Tests",
   "displayName": "TEST: Lombiq's Open-Source Orchard Core Extensions",
   "description": "Lombiq's Open-Source Orchard Core Extensions setup recipe for automated UI test execution.",
   "author": "Lombiq Technologies",
