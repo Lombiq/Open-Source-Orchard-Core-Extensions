@@ -189,3 +189,4 @@ node_modules/
 src/*.Web/Localization
 /src/package.json
 /.editorconfig
+/.idea
