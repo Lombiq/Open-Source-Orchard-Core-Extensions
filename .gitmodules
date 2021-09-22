@@ -58,3 +58,7 @@
 	path = test/Lombiq.Tests
 	url = https://github.com/Lombiq/Testing-Toolbox.git
 	branch = dev
+[submodule "src/Modules/Lombiq.Hosting.Tenants"]
+	path = src/Modules/Lombiq.Hosting.Tenants
+	url = https://github.com/Lombiq/Hosting-Tenants.git
+	branch = dev
