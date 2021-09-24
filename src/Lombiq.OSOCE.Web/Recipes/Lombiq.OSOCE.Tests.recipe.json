@@ -31,6 +31,21 @@
       ]
     },
     {
+      "name": "media",
+      "Files": [
+        {
+          // Picture taken from:
+          // https://en.wikipedia.org/wiki/Orchard#/media/File:Streuobstwiesen,_Blick_auf_Traufgang_und_Lochenh%C3%B6rnle.jpg.
+          // This is just showcasing that you can include Media files in these recipes too. Note that if you include
+          // files for recipes in the Web project then you also have to set their "Copy to Output Directory" to
+          // something else than "Do not copy" (this is not necessary if you put recipes and Media files in modules or
+          // themes). You can see this happening in the csproj file.
+          "SourcePath": "Media/meadow-orchard.jpg",
+          "TargetPath": "meadow-orchard.jpg"
+        }
+      ]
+    },
+    {
       "name": "settings",
       // CDN should be turned off for tests, just as no other external resource should be used.
       "UseCdn": false,

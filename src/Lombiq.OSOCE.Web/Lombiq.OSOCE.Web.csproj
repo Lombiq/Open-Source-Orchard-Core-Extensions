@@ -8,6 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Recipes\Media\meadow-orchard.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Recipes\Media\meadow-orchard.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
