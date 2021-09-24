@@ -25,7 +25,7 @@
       "name": "recipes",
       "Values": [
         {
-          "executionid": "Lombiq.OSOCE.Tests",
+          "executionid": "Lombiq.OSOCE.Web",
           "name": "Blog"
         }
       ]
