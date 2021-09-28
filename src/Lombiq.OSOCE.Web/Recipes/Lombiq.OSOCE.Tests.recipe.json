@@ -33,6 +33,7 @@
         "Lombiq.UIKit",
         "Lombiq.VueJs",
         "OrchardCore.Localization",
+        "OrchardCore.Users.Registration",
         "TheTheme"
         // Not enabling Lombiq.TrainingDemo.Middlewares because that would write to the error log on every request.
       ]
@@ -75,6 +76,11 @@
         "SupportedCultures": [
           "en-US"
         ]
+      },
+      "RegistrationSettings": {
+        "UsersCanRegister": 1,
+        "UsersMustValidateEmail": false,
+        "UsersAreModerated": false
       }
     },
     {
