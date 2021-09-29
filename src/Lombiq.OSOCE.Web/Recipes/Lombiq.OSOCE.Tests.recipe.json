@@ -17,8 +17,27 @@
       "name": "feature",
       "disable": [],
       "enable": [
+        "Lombiq.AuditTrailExtensions",
+        "Lombiq.ChartJs",
+        "Lombiq.HelpfulExtensions.CodeGeneration",
+        "Lombiq.HelpfulExtensions.ContentTypes",
+        "Lombiq.HelpfulExtensions.Flows",
+        "Lombiq.HelpfulExtensions.ShapeTracing",
+        "Lombiq.HelpfulExtensions.Widgets",
         "Lombiq.Hosting.Azure.ApplicationInsights",
-        "OrchardCore.Localization"
+        "Lombiq.Hosting.Tenants.Admin.Login",
+        "Lombiq.Hosting.Tenants.Admin.Login.SubTenant",
+        "Lombiq.Hosting.Tenants.Management",
+        "Lombiq.JsonEditor",
+        "Lombiq.Privacy.ConsentBanner",
+        "Lombiq.Privacy.FormConsent",
+        "Lombiq.Privacy.RegistrationConsent",
+        "Lombiq.TrainingDemo",
+        "Lombiq.UIKit",
+        "Lombiq.VueJs",
+        "OrchardCore.Localization",
+        "TheTheme"
+        // Not enabling Lombiq.TrainingDemo.Middlewares because that would write to the error log on every request.
       ]
     },
     {
@@ -60,6 +79,13 @@
           "en-US"
         ]
       }
+    },
+    {
+      "name": "themes",
+      "admin": "TheAdmin",
+      // Overriding TheBlogTheme because that uses the PageTitle shape for <title> and thus Shape Tracing Helpful
+      // Extensions would mess it up.
+      "site": "TheTheme"
     }
   ]
 }
