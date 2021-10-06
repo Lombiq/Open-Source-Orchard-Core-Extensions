@@ -62,3 +62,7 @@
 	path = src/Modules/Lombiq.Hosting.Tenants
 	url = https://github.com/Lombiq/Hosting-Tenants.git
 	branch = dev
+[submodule "src/Modules/Lombiq.Privacy"]
+	path = src/Modules/Lombiq.Privacy
+	url = https://github.com/Lombiq/Orchard-Privacy.git
+	branch = dev
