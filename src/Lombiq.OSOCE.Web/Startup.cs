@@ -18,7 +18,7 @@ namespace Lombiq.OSOCE.Web
             // ConfigureUITesting() won't do anything when the app is not run for UI testing.
             services.AddOrchardCms(builder => builder.ConfigureUITesting(_configuration, true));
 
-        public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
