@@ -1,5 +1,5 @@
 {
-    "extends": "./src/Utilities/Lombiq.Gulp.Extensions/stylelint/lombiq-base.stylelintrc.json",
+    "extends": "./src/Utilities/Lombiq.Gulp.Extensions/Stylelint/lombiq-base.stylelintrc.json",
 
     "rules": {
     }
