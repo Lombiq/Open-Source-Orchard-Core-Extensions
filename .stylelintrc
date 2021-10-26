@@ -1,0 +1,6 @@
+{
+    "extends": "./src/Utilities/Lombiq.Gulp.Extensions/stylelint/lombiq-base.stylelintrc.json",
+
+    "rules": {
+    }
+}

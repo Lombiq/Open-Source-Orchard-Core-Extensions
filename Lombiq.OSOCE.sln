@@ -10,7 +10,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8B131E3B-202B-486D-A3A4-CB84AC4C3370}"
 	ProjectSection(SolutionItems) = preProject
 		tools\Lombiq.Analyzers\.editorconfig = tools\Lombiq.Analyzers\.editorconfig
+		.eslintrc = .eslintrc
 		.gitignore = .gitignore
+		.stylelintrc = .stylelintrc
 		tools\Lombiq.Analyzers\General.ruleset = tools\Lombiq.Analyzers\General.ruleset
 		Licence.md = Licence.md
 		NuGet.config = NuGet.config
