@@ -2,9 +2,7 @@
     "extends": "./src/Utilities/Lombiq.Gulp.Extensions/ESLint/lombiq-base.js",
 
     "rules": {
-        "brace-style": [
-            "warn",
-            "1tbs"
-        ]
+        // Add overriding rules here like this:
+        // "example-rule" : "error"
     }
 }
