@@ -36,6 +36,7 @@
         "Lombiq.UIKit",
         "Lombiq.VueJs",
         "OrchardCore.Localization",
+        "OrchardCore.Roles",
         "TheTheme"
         // Not enabling Lombiq.TrainingDemo.Middlewares because that would write to the error log on every request.
       ]
