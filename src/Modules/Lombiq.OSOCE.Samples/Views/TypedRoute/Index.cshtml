@@ -1,0 +1,20 @@
+<h2>@T["Typed Route Sample"]</h2>
+
+<p>@T["These two are generated differently but result in the same."]</p>
+
+<ul>
+    <li>
+        <a asp-area="Lombiq.OSOCE.Samples"
+           asp-controller="TypedRoute"
+           asp-action="TypedRouteSample"
+           asp-route-text="hello"
+           asp-route-number="10">
+            @T["ASP.NET Core tag helper URL"]
+        </a>
+    </li>
+    <li>
+        <a href="@(Orchard.Action<TypedRouteController>(controller => controller.TypedRouteSample("hello", 10)))">
+            @T["Statically typed URL"]
+        </a>
+    </li>
+</ul>
