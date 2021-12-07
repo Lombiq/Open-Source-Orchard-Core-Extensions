@@ -29,7 +29,8 @@
         "Lombiq.Privacy"
       ],
       "enable": [
-        "OrchardCore.Users.Registration"
+        "OrchardCore.Users.Registration",
+        "Lombiq.OSOCE.Samples"
       ]
     },
     {
