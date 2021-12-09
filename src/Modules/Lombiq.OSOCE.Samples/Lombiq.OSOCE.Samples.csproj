@@ -26,8 +26,4 @@
     <ProjectReference Include="..\..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Include="Readme.md" />
-  </ItemGroup>
-
 </Project>
