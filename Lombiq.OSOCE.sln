@@ -13,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.eslintrc = .eslintrc
 		.gitignore = .gitignore
 		.stylelintrc = .stylelintrc
+		tools\Lombiq.Analyzers\General.ruleset = tools\Lombiq.Analyzers\General.ruleset
 		Licence.md = Licence.md
 		NuGet.config = NuGet.config
 		tools\Lombiq.Analyzers\OrchardCore.ruleset = tools\Lombiq.Analyzers\OrchardCore.ruleset
@@ -78,11 +79,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Privacy", "src\Modul
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{41CE6E12-92B4-4CF5-9D9C-C214C41CA8FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.HelpfulLibraries.Tests", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries\Tests\Lombiq.HelpfulLibraries.Tests\Lombiq.HelpfulLibraries.Tests.csproj", "{3AA1563E-4D6A-4FE4-BAB7-97E95F622AD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries.Tests", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries\Tests\Lombiq.HelpfulLibraries.Tests\Lombiq.HelpfulLibraries.Tests.csproj", "{3AA1563E-4D6A-4FE4-BAB7-97E95F622AD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.OSOCE.Samples", "src\Modules\Lombiq.OSOCE.Samples\Lombiq.OSOCE.Samples.csproj", "{64AC7FC6-3E9E-4756-8504-D0D8DAC3B300}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.Samples", "src\Modules\Lombiq.OSOCE.Samples\Lombiq.OSOCE.Samples.csproj", "{64AC7FC6-3E9E-4756-8504-D0D8DAC3B300}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.HelpfulLibraries.Samples", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Samples\Lombiq.HelpfulLibraries.Samples.csproj", "{31D4DDCE-472A-4ECF-B6A2-0F1B34B14DFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries.Samples", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Samples\Lombiq.HelpfulLibraries.Samples.csproj", "{31D4DDCE-472A-4ECF-B6A2-0F1B34B14DFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
