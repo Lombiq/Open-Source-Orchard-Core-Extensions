@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29905.134
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{648D3BB6-201F-401B-9EF9-D7BBBC6D3ECA}"
 EndProject
@@ -79,11 +79,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Privacy", "src\Modul
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{41CE6E12-92B4-4CF5-9D9C-C214C41CA8FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.HelpfulLibraries.Tests", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries\Tests\Lombiq.HelpfulLibraries.Tests\Lombiq.HelpfulLibraries.Tests.csproj", "{3AA1563E-4D6A-4FE4-BAB7-97E95F622AD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries.Tests", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries\Tests\Lombiq.HelpfulLibraries.Tests\Lombiq.HelpfulLibraries.Tests.csproj", "{3AA1563E-4D6A-4FE4-BAB7-97E95F622AD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.OSOCE.Samples", "src\Modules\Lombiq.OSOCE.Samples\Lombiq.OSOCE.Samples.csproj", "{64AC7FC6-3E9E-4756-8504-D0D8DAC3B300}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.Samples", "src\Modules\Lombiq.OSOCE.Samples\Lombiq.OSOCE.Samples.csproj", "{64AC7FC6-3E9E-4756-8504-D0D8DAC3B300}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.HelpfulLibraries.Samples", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Samples\Lombiq.HelpfulLibraries.Samples.csproj", "{31D4DDCE-472A-4ECF-B6A2-0F1B34B14DFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries.Samples", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Samples\Lombiq.HelpfulLibraries.Samples.csproj", "{31D4DDCE-472A-4ECF-B6A2-0F1B34B14DFA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries.Targets", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Targets\Lombiq.HelpfulLibraries.Targets.csproj", "{1B3CEAAC-E557-4AAA-9939-CB96A0049ED1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -419,6 +421,18 @@ Global
 		{31D4DDCE-472A-4ECF-B6A2-0F1B34B14DFA}.Release|x64.Build.0 = Release|Any CPU
 		{31D4DDCE-472A-4ECF-B6A2-0F1B34B14DFA}.Release|x86.ActiveCfg = Release|Any CPU
 		{31D4DDCE-472A-4ECF-B6A2-0F1B34B14DFA}.Release|x86.Build.0 = Release|Any CPU
+		{1B3CEAAC-E557-4AAA-9939-CB96A0049ED1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B3CEAAC-E557-4AAA-9939-CB96A0049ED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B3CEAAC-E557-4AAA-9939-CB96A0049ED1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1B3CEAAC-E557-4AAA-9939-CB96A0049ED1}.Debug|x64.Build.0 = Debug|Any CPU
+		{1B3CEAAC-E557-4AAA-9939-CB96A0049ED1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1B3CEAAC-E557-4AAA-9939-CB96A0049ED1}.Debug|x86.Build.0 = Debug|Any CPU
+		{1B3CEAAC-E557-4AAA-9939-CB96A0049ED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B3CEAAC-E557-4AAA-9939-CB96A0049ED1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B3CEAAC-E557-4AAA-9939-CB96A0049ED1}.Release|x64.ActiveCfg = Release|Any CPU
+		{1B3CEAAC-E557-4AAA-9939-CB96A0049ED1}.Release|x64.Build.0 = Release|Any CPU
+		{1B3CEAAC-E557-4AAA-9939-CB96A0049ED1}.Release|x86.ActiveCfg = Release|Any CPU
+		{1B3CEAAC-E557-4AAA-9939-CB96A0049ED1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -456,6 +470,7 @@ Global
 		{3AA1563E-4D6A-4FE4-BAB7-97E95F622AD0} = {41CE6E12-92B4-4CF5-9D9C-C214C41CA8FE}
 		{64AC7FC6-3E9E-4756-8504-D0D8DAC3B300} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{31D4DDCE-472A-4ECF-B6A2-0F1B34B14DFA} = {11E06A11-1733-408D-BB2F-BFA07075F812}
+		{1B3CEAAC-E557-4AAA-9939-CB96A0049ED1} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
