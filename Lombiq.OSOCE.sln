@@ -85,9 +85,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.OSOCE.Samples", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.HelpfulLibraries.Samples", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Samples\Lombiq.HelpfulLibraries.Samples.csproj", "{31D4DDCE-472A-4ECF-B6A2-0F1B34B14DFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.DataTables", "src\Modules\Lombiq.DataTables\Lombiq.DataTables\Lombiq.DataTables.csproj", "{E5F0E0AD-421C-4F7F-B27C-5BCCCE3C9B08}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.DataTables.Samples", "src\Modules\Lombiq.DataTables\Lombiq.DataTables.Samples\Lombiq.DataTables.Samples.csproj", "{DC141DC5-FF73-4EE1-A6FA-BB5C7DB87494}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.DataTables", "src\Modules\Lombiq.DataTables\Lombiq.DataTables.csproj", "{E5F0E0AD-421C-4F7F-B27C-5BCCCE3C9B08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -435,18 +433,6 @@ Global
 		{E5F0E0AD-421C-4F7F-B27C-5BCCCE3C9B08}.Release|x64.Build.0 = Release|Any CPU
 		{E5F0E0AD-421C-4F7F-B27C-5BCCCE3C9B08}.Release|x86.ActiveCfg = Release|Any CPU
 		{E5F0E0AD-421C-4F7F-B27C-5BCCCE3C9B08}.Release|x86.Build.0 = Release|Any CPU
-		{DC141DC5-FF73-4EE1-A6FA-BB5C7DB87494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC141DC5-FF73-4EE1-A6FA-BB5C7DB87494}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC141DC5-FF73-4EE1-A6FA-BB5C7DB87494}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{DC141DC5-FF73-4EE1-A6FA-BB5C7DB87494}.Debug|x64.Build.0 = Debug|Any CPU
-		{DC141DC5-FF73-4EE1-A6FA-BB5C7DB87494}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{DC141DC5-FF73-4EE1-A6FA-BB5C7DB87494}.Debug|x86.Build.0 = Debug|Any CPU
-		{DC141DC5-FF73-4EE1-A6FA-BB5C7DB87494}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC141DC5-FF73-4EE1-A6FA-BB5C7DB87494}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DC141DC5-FF73-4EE1-A6FA-BB5C7DB87494}.Release|x64.ActiveCfg = Release|Any CPU
-		{DC141DC5-FF73-4EE1-A6FA-BB5C7DB87494}.Release|x64.Build.0 = Release|Any CPU
-		{DC141DC5-FF73-4EE1-A6FA-BB5C7DB87494}.Release|x86.ActiveCfg = Release|Any CPU
-		{DC141DC5-FF73-4EE1-A6FA-BB5C7DB87494}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -485,7 +471,6 @@ Global
 		{64AC7FC6-3E9E-4756-8504-D0D8DAC3B300} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{31D4DDCE-472A-4ECF-B6A2-0F1B34B14DFA} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{E5F0E0AD-421C-4F7F-B27C-5BCCCE3C9B08} = {11E06A11-1733-408D-BB2F-BFA07075F812}
-		{DC141DC5-FF73-4EE1-A6FA-BB5C7DB87494} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
