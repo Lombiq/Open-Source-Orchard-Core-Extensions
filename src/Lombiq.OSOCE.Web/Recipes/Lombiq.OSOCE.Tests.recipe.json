@@ -20,6 +20,7 @@
         "Lombiq.AuditTrailExtensions",
         "Lombiq.ChartJs",
         "Lombiq.DataTables",
+        "Lombiq.DataTables.Samples",
         "Lombiq.HelpfulExtensions.CodeGeneration",
         "Lombiq.HelpfulExtensions.ContentTypes",
         "Lombiq.HelpfulExtensions.Flows",
@@ -50,6 +51,10 @@
         {
           "executionid": "Lombiq.OSOCE.Web",
           "name": "Blog"
+        },
+        {
+          "executionid": "Lombiq.OSOCE.Web",
+          "name": "Lombiq.DataTables.Samples.Content"
         }
       ]
     },
