@@ -37,13 +37,16 @@ You can activate various sample content in the site:
 
 ## Contributing and support
 
+Bug reports, feature requests, comments, questions, code contributions, and love letters are warmly welcome, please do so via GitHub issues and pull requests. Please adhere to our [open-source guidelines](https://lombiq.com/open-source-guidelines) while doing so.
+
+This project is developed by [Lombiq Technologies](https://lombiq.com/). Commercial-grade support is available through Lombiq.
+
+### Adding a new extension
 When adding a new extension, do the following:
 
 - Enable its features in _Lombiq.OSOCE.Tests.recipe_ so at least they have some rudimentary UI test coverage.
 - Ideally, add recipes to it, demonstrating its usage. In that case, refer to it in the above section.
 
-If you see build errors under your pull request then check out its details: The errors link to our TeamCity instance. Select "Log in as guest" when presented with a login screen.
-
-Bug reports, feature requests, comments, questions, code contributions, and love letters are warmly welcome, please do so via GitHub issues and pull requests. Please adhere to our [open-source guidelines](https://lombiq.com/open-source-guidelines) while doing so.
-
-This project is developed by [Lombiq Technologies](https://lombiq.com/). Commercial-grade support is available through Lombiq.
+### Opening pull requests
+- Open a pull request in this repository for every submodule pull request. That way, static code analysis and complex tests can run.
+- If you see build errors under your pull request then check out its details: The errors link to our TeamCity instance. Select "Log in as guest" when presented with a login screen.
