@@ -47,3 +47,6 @@ When adding a new extension, do the following:
 ### Opening pull requests
 - Open a pull request in this repository for every submodule pull request. That way, static code analysis and complex tests can run.
 - If you see build errors under your pull request then check out its details: The errors link to our TeamCity instance. Select "Log in as guest" when presented with a login screen.
+
+### Dependencies between Lombiq projects
+When making a Lombiq project depend on another one from this solution, apart from adding a project reference, also add a conditional package reference. This way, when published to NuGet, dependencies will still work. See the project file of `Lombiq.HelpfulExtensions` for an example
