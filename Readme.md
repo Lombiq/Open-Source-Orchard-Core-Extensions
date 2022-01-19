@@ -30,6 +30,9 @@ You can activate various sample content in the site:
   - Content Definition > Content Types > JSON Example Page > JsonExampleField: You can edit the this field's JSON Editor's configuration object here. Check out the Templates property!
 - [Lombiq UI Testing Toolbox](https://github.com/Lombiq/UI-Testing-Toolbox): Web UI testing toolbox mostly for Orchard Core applications. Check out [its samples](https://github.com/Lombiq/UI-Testing-Toolbox/blob/dev/Lombiq.Tests.UI.Samples/Readme.md) in this solution.
 - [Lombiq Training Demo for Orchard Core](https://github.com/Lombiq/Orchard-Training-Demo-Module/): Select the _Training Demo_ setup recipe when you first run the site.
+- [Lombiq Data Tables for Orchard Core](https://github.com/Lombiq/Orchard-Data-Tables):
+  - Go to Features in the admin dashboard and select "Lombiq Data Tables - Samples".
+  - Go to Recipes in the admin dashboard and select "Lombiq Data Tables - Sample Content - Employee".
 
 
 ## Contributing and support
