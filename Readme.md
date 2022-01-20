@@ -43,6 +43,7 @@ When adding a new extension, do the following:
 
 - Enable its features in _Lombiq.OSOCE.Tests.recipe_ so at least they have some rudimentary UI test coverage.
 - Ideally, add recipes to it, demonstrating its usage. In that case, refer to it in the above section.
+- Once published on NuGet, reference it from the app in the `Lombiq.OSOCE.NuGet` solution as well, and enable its features in _Lombiq.OSOCE.NuGet.Tests.recipe_.
 
 ### Opening pull requests
 - Open a pull request in this repository for every submodule pull request. That way, static code analysis and complex tests can run.

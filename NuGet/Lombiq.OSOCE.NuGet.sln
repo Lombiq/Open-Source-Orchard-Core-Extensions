@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B9D4219F-B537-4665-8679-6E10C29ED62E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.NuGet.Web", "src\Lombiq.OSOCE.NuGet.Web\Lombiq.OSOCE.NuGet.Web.csproj", "{19070D2C-F81F-48EA-B44D-EEDF77026EE0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{F9DBFB48-5868-4C99-83AE-41E36E2284C5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.NuGet.TestModule", "src\Modules\Lombiq.OSOCE.NuGet.TestModule\Lombiq.OSOCE.NuGet.TestModule.csproj", "{735B0FFD-82A9-49EE-B898-E3DF60BBACE0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Themes", "Themes", "{6ECC68E0-8C39-49E9-A4F9-B21153568653}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.NuGet.TestTheme", "src\Themes\Lombiq.OSOCE.NuGet.TestTheme\Lombiq.OSOCE.NuGet.TestTheme.csproj", "{7A7AB418-7A88-4F7E-ADEF-5F5B293D53FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{97DCF32A-0BBB-441D-9709-860757DFC2E0}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19070D2C-F81F-48EA-B44D-EEDF77026EE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19070D2C-F81F-48EA-B44D-EEDF77026EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19070D2C-F81F-48EA-B44D-EEDF77026EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19070D2C-F81F-48EA-B44D-EEDF77026EE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{735B0FFD-82A9-49EE-B898-E3DF60BBACE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{735B0FFD-82A9-49EE-B898-E3DF60BBACE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{735B0FFD-82A9-49EE-B898-E3DF60BBACE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{735B0FFD-82A9-49EE-B898-E3DF60BBACE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A7AB418-7A88-4F7E-ADEF-5F5B293D53FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A7AB418-7A88-4F7E-ADEF-5F5B293D53FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A7AB418-7A88-4F7E-ADEF-5F5B293D53FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A7AB418-7A88-4F7E-ADEF-5F5B293D53FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{19070D2C-F81F-48EA-B44D-EEDF77026EE0} = {B9D4219F-B537-4665-8679-6E10C29ED62E}
+		{F9DBFB48-5868-4C99-83AE-41E36E2284C5} = {B9D4219F-B537-4665-8679-6E10C29ED62E}
+		{735B0FFD-82A9-49EE-B898-E3DF60BBACE0} = {F9DBFB48-5868-4C99-83AE-41E36E2284C5}
+		{6ECC68E0-8C39-49E9-A4F9-B21153568653} = {B9D4219F-B537-4665-8679-6E10C29ED62E}
+		{7A7AB418-7A88-4F7E-ADEF-5F5B293D53FE} = {6ECC68E0-8C39-49E9-A4F9-B21153568653}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B6C224F-E9B3-47DA-8E82-205D1620F2F8}
+	EndGlobalSection
+EndGlobal

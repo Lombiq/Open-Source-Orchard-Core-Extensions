@@ -1,0 +1,45 @@
+// This is almost a copy of Lombiq.OSOCE.BasicOrchardFeaturesTests.recipe in the parent solution.
+{
+  "name": "Lombiq.OSOCE.NuGet.BasicOrchardFeaturesTests",
+  "displayName": "TEST: Basic Orchard Features",
+  "description": "Setup recipe for automated UI test execution, checking the basic Orchard features. See the BasicOrchardFeaturesTests test.",
+  "author": "Lombiq Technologies",
+  "website": "https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions",
+  "version": "1.0",
+  "issetuprecipe": true,
+  "categories": [
+    "test"
+  ],
+  "tags": [
+    "test"
+  ],
+  "steps": [
+    {
+      "name": "recipes",
+      "Values": [
+        {
+          "executionid": "Lombiq.OSOCE.Web",
+          "name": "Lombiq.OSOCE.Tests"
+        }
+      ]
+    },
+    //{
+    //  "name": "feature",
+    //  "disable": [
+    //    // No point in having the privacy consent popup for these tests.
+    //    "Lombiq.Privacy"
+    //  ],
+    //  "enable": [
+    //    "OrchardCore.Users.Registration"
+    //  ]
+    //},
+    {
+      "name": "settings",
+      "RegistrationSettings": {
+        "UsersCanRegister": 1,
+        "UsersMustValidateEmail": false,
+        "UsersAreModerated": false
+      }
+    }
+  ]
+}

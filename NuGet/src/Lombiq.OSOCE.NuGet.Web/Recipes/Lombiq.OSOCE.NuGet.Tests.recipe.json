@@ -1,0 +1,74 @@
+// This is almost a copy of Lombiq.OSOCE.Tests.recipe in the parent solution.
+{
+  "name": "Lombiq.OSOCE.NuGet.Tests",
+  "displayName": "TEST: Lombiq's Open-Source Orchard Core Extensions",
+  "description": "Lombiq's Open-Source Orchard Core Extensions setup recipe for automated UI test execution.",
+  "author": "Lombiq Technologies",
+  "website": "https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions",
+  "version": "1.0",
+  "issetuprecipe": true,
+  "categories": [
+    "test"
+  ],
+  "tags": [
+    "test"
+  ],
+  "steps": [
+    {
+      "name": "feature",
+      "disable": [],
+      "enable": [
+        //"Lombiq.AuditTrailExtensions",
+        //"Lombiq.ChartJs",
+        "Lombiq.HelpfulExtensions.CodeGeneration",
+        "Lombiq.HelpfulExtensions.ContentTypes",
+        "Lombiq.HelpfulExtensions.Flows",
+        "Lombiq.HelpfulExtensions.ShapeTracing",
+        "Lombiq.HelpfulExtensions.Widgets",
+        "Lombiq.Hosting.Azure.ApplicationInsights",
+        //"Lombiq.Hosting.Tenants.Admin.Login",
+        //"Lombiq.Hosting.Tenants.Admin.Login.SubTenant",
+        //"Lombiq.Hosting.Tenants.Management",
+        //"Lombiq.JsonEditor",
+        //"Lombiq.OSOCE.Samples",
+        //"Lombiq.Privacy.ConsentBanner",
+        //"Lombiq.Privacy.FormConsent",
+        //"Lombiq.Privacy.RegistrationConsent",
+        //"Lombiq.UIKit",
+        //"Lombiq.VueJs",
+        "OrchardCore.Localization",
+        "OrchardCore.Roles",
+        "TheTheme",
+        // Just temporarily:
+        "OrchardCore.Users"
+      ]
+    },
+    {
+      "name": "recipes",
+      "Values": [
+        {
+          "executionid": "Lombiq.OSOCE.Web",
+          "name": "Blog"
+        }
+      ]
+    },
+    {
+      "name": "settings",
+      "UseCdn": false,
+      "SmtpSettings": {
+        "DefaultSender": "sender@example.com"
+      },
+      "LocalizationSettings": {
+        "DefaultCulture": "en-US",
+        "SupportedCultures": [
+          "en-US"
+        ]
+      }
+    },
+    {
+      "name": "themes",
+      "admin": "TheAdmin",
+      "site": "TheTheme"
+    }
+  ]
+}
