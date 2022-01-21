@@ -47,7 +47,7 @@
       "name": "recipes",
       "Values": [
         {
-          "executionid": "Lombiq.OSOCE.Web",
+          "executionid": "Lombiq.OSOCE.NuGet.Web",
           "name": "Blog"
         }
       ]

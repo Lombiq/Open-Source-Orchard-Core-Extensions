@@ -18,8 +18,8 @@
       "name": "recipes",
       "Values": [
         {
-          "executionid": "Lombiq.OSOCE.Web",
-          "name": "Lombiq.OSOCE.Tests"
+          "executionid": "Lombiq.OSOCE.NuGet.Web",
+          "name": "Lombiq.OSOCE.NuGet.Tests"
         }
       ]
     },

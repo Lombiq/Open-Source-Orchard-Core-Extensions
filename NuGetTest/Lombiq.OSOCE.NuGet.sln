@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{8E53E788-C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.NuGet.TestTests", "test\Lombiq.OSOCE.NuGet.TestTests\Lombiq.OSOCE.NuGet.TestTests.csproj", "{692A7BF5-5DB9-46C9-8C90-8D2EFC895BAF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.NuGet.Tests.UI", "test\Lombiq.OSOCE.NuGet.Tests.UI\Lombiq.OSOCE.NuGet.Tests.UI.csproj", "{23C4D30C-3E8D-4BC5-A02E-D2A2B3EDFC08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,10 @@ Global
 		{692A7BF5-5DB9-46C9-8C90-8D2EFC895BAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{692A7BF5-5DB9-46C9-8C90-8D2EFC895BAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{692A7BF5-5DB9-46C9-8C90-8D2EFC895BAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23C4D30C-3E8D-4BC5-A02E-D2A2B3EDFC08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23C4D30C-3E8D-4BC5-A02E-D2A2B3EDFC08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23C4D30C-3E8D-4BC5-A02E-D2A2B3EDFC08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23C4D30C-3E8D-4BC5-A02E-D2A2B3EDFC08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{6ECC68E0-8C39-49E9-A4F9-B21153568653} = {B9D4219F-B537-4665-8679-6E10C29ED62E}
 		{7A7AB418-7A88-4F7E-ADEF-5F5B293D53FE} = {6ECC68E0-8C39-49E9-A4F9-B21153568653}
 		{692A7BF5-5DB9-46C9-8C90-8D2EFC895BAF} = {8E53E788-C4AA-43D6-B906-6675BD10EC15}
+		{23C4D30C-3E8D-4BC5-A02E-D2A2B3EDFC08} = {8E53E788-C4AA-43D6-B906-6675BD10EC15}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7B6C224F-E9B3-47DA-8E82-205D1620F2F8}
