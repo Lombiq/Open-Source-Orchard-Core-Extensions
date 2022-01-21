@@ -28,7 +28,7 @@ namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests
                     context.ClickReliablyOnSubmit();
                     context.Get(By.CssSelector(".message-error"))
                         .Text
-                        .ShouldBe("Only zip or json files are supported.");
+                        .ShouldContain("Only zip or json files are supported.");
                 },
                 browser);
     }
