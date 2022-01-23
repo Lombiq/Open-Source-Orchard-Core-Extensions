@@ -24,6 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI.AppExtensions\Lombiq.Tests.UI.AppExtensions.csproj" />
     <ProjectReference Include="..\..\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI.Shortcuts\Lombiq.Tests.UI.Shortcuts.csproj" />
+    <ProjectReference Include="..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Samples\Lombiq.HelpfulLibraries.Samples.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.AuditTrailExtensions\Lombiq.AuditTrailExtensions.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.ChartJs\Lombiq.ChartJs.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions.csproj" />
@@ -31,6 +32,7 @@
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.Admin.Login\Lombiq.Hosting.Tenants.Admin.Login.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.Management\Lombiq.Hosting.Tenants.Management.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.JsonEditor\Lombiq.JsonEditor.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.OSOCE.Samples\Lombiq.OSOCE.Samples.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Privacy\Lombiq.Privacy.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.TrainingDemo\Lombiq.TrainingDemo.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.UIKit\Lombiq.UIKit.csproj" />
@@ -39,9 +41,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OrchardCore.Admin.Abstractions" Version="1.0.0" />
-    <PackageReference Include="OrchardCore.Logging.NLog" Version="1.0.0" />
-    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.0.0" />
+    <PackageReference Include="OrchardCore.Admin.Abstractions" Version="1.2.2" />
+    <PackageReference Include="OrchardCore.Logging.NLog" Version="1.2.2" />
+    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.2.2" />
   </ItemGroup>
 
 </Project>
