@@ -30,7 +30,7 @@
         //"Lombiq.Hosting.Tenants.Admin.Login.SubTenant",
         //"Lombiq.Hosting.Tenants.Management",
         //"Lombiq.JsonEditor",
-        //"Lombiq.OSOCE.Samples",
+        "Lombiq.OSOCE.NuGet.TestModule",
         //"Lombiq.Privacy.ConsentBanner",
         //"Lombiq.Privacy.FormConsent",
         //"Lombiq.Privacy.RegistrationConsent",
@@ -39,6 +39,7 @@
         "OrchardCore.Localization",
         "OrchardCore.Roles",
         "TheTheme",
+        "Lombiq.OSOCE.NuGet.TestTheme",
         // Just temporarily:
         "OrchardCore.Users"
       ]
@@ -68,7 +69,7 @@
     {
       "name": "themes",
       "admin": "TheAdmin",
-      "site": "TheTheme"
+      "site": "Lombiq.OSOCE.NuGet.TestTheme"
     }
   ]
 }
