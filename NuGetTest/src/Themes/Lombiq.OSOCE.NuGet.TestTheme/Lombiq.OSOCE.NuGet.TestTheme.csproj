@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -12,10 +12,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="package.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="package.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Lombiq.Npm.Targets" Version="0.0.2" />
     <PackageReference Include="OrchardCore.Theme.Targets" Version="1.2.2" />
     <PackageReference Include="OrchardCore.ContentManagement" Version="1.2.2" />
     <PackageReference Include="OrchardCore.DisplayManagement" Version="1.2.2" />
