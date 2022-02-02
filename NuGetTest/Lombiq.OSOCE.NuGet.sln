@@ -17,6 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.NuGet.TestThem
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{97DCF32A-0BBB-441D-9709-860757DFC2E0}"
 	ProjectSection(SolutionItems) = preProject
+		commands.json = commands.json
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject
