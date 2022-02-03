@@ -1,4 +1,4 @@
-namespace Lombiq.OSOCE.NuGet.TestTests
+namespace Lombiq.OSOCE.NuGet.Tests
 {
     internal class MockedClass
     {

@@ -2,7 +2,7 @@ using Lombiq.Tests.Helpers;
 using Shouldly;
 using Xunit;
 
-namespace Lombiq.OSOCE.NuGet.TestTests
+namespace Lombiq.OSOCE.NuGet.Tests
 {
     public class MockHelperTests
     {

@@ -25,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{8E53E788-C4AA-43D6-B906-6675BD10EC15}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.NuGet.TestTests", "test\Lombiq.OSOCE.NuGet.TestTests\Lombiq.OSOCE.NuGet.TestTests.csproj", "{692A7BF5-5DB9-46C9-8C90-8D2EFC895BAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.NuGet.Tests", "test\Lombiq.OSOCE.NuGet.Tests\Lombiq.OSOCE.NuGet.Tests.csproj", "{692A7BF5-5DB9-46C9-8C90-8D2EFC895BAF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.NuGet.Tests.UI", "test\Lombiq.OSOCE.NuGet.Tests.UI\Lombiq.OSOCE.NuGet.Tests.UI.csproj", "{23C4D30C-3E8D-4BC5-A02E-D2A2B3EDFC08}"
 EndProject
