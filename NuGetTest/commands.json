@@ -3,12 +3,12 @@
     "Reset Site": {
       "fileName": "powershell.exe",
       "workingDirectory": ".",
-      "arguments": "-Command \"Remove-Item 'src\\Lombiq.OSOCE.NuGet.Web\\App_Data' -Recurse -ErrorAction Ignore;Write-Output 'Successfully reset website.'\""
+      "arguments": "-ExecutionPolicy Bypass -NonInteractive -File .\\Reset-Local.ps1"
     },
     "Update Lombiq NuGet packages": {
       "fileName": "powershell.exe",
       "workingDirectory": ".",
-      "arguments": "-Command \"Update-VisualStudioSolutionNuGetPackages -Path (Get-Location).Path -ProjectNameFilter 'Lombiq.*' -PackageNameFilter 'Lombiq.*';Write-Output 'Finished updating packages.'\""
+      "arguments": "-ExecutionPolicy Bypass -NonInteractive -File .\\Update-LombiqNuGetPackages.ps1"
     }
   }
 }
