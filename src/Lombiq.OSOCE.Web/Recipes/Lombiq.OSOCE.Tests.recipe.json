@@ -37,6 +37,7 @@
         "Lombiq.TrainingDemo",
         "Lombiq.UIKit",
         "Lombiq.VueJs",
+        "Lombiq.VueJs.Samples",
         "OrchardCore.Localization",
         "OrchardCore.Roles",
         "TheTheme"
