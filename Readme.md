@@ -43,6 +43,7 @@ When adding a new extension, do the following:
 
 - Enable its features in _Lombiq.OSOCE.Tests.recipe_ so at least they have some rudimentary UI test coverage.
 - Ideally, add recipes to it, demonstrating its usage. In that case, refer to it in the above section.
+- Add lower-level unit/integration tests as necessary. If the feature is user-facing, also add UI test extension method(s) that assert on some important aspects, and execute them from a new UI test (see [here](https://github.com/Lombiq/Orchard-Content-Editors/pull/21/files#diff-6e907ced1faed42ff3ce9dea19082add28fe4c7a6ee91f78b1dda75aeed5e898) for an example). If you've added a demo recipe to it then utilize that in the test too (see `ExecuteRecipeDirectlyAsync()`).
 
 ### Opening pull requests
 - Open a pull request in this repository for every submodule pull request. That way, static code analysis and complex tests can run.
