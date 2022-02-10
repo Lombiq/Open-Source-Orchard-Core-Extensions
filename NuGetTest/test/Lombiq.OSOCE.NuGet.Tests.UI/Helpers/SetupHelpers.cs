@@ -3,6 +3,7 @@ using Lombiq.Tests.UI.Pages;
 using Lombiq.Tests.UI.Services;
 using OpenQA.Selenium;
 using System;
+using System.Threading.Tasks;
 
 namespace Lombiq.OSOCE.NuGet.Tests.UI.Helpers
 {
@@ -10,25 +11,22 @@ namespace Lombiq.OSOCE.NuGet.Tests.UI.Helpers
     {
         public const string RecipeId = "Lombiq.OSOCE.NuGet.Tests";
 
-        public static Uri RunSetup(UITestContext context)
+        public static async Task<Uri> RunSetupAsync(UITestContext context)
         {
-            var uri = context
-                .GoToSetupPage()
-                .SetupOrchardCore(
-                    context,
-                    new OrchardCoreSetupParameters(context)
-                    {
-                        SiteName = "Lombiq's Open-Source Orchard Core Extensions - UI Testing",
-                        RecipeId = RecipeId,
-                        TablePrefix = "OSOCE",
-                        SiteTimeZoneValue = "Europe/Budapest",
-                    })
-                .PageUri
-                .Value;
+            var setupPage = await context.GoToSetupPageAsync();
+            setupPage = await setupPage.SetupOrchardCoreAsync(
+                context,
+                new OrchardCoreSetupParameters(context)
+                {
+                    SiteName = "Lombiq's Open-Source Orchard Core Extensions - UI Testing",
+                    RecipeId = RecipeId,
+                    TablePrefix = "OSOCE",
+                    SiteTimeZoneValue = "Europe/Budapest",
+                });
 
             context.Exists(By.Id("navbar"));
 
-            return uri;
+            return setupPage.PageUri.Value;
         }
     }
 }

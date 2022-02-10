@@ -19,7 +19,7 @@ namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests
         public Task BasicOrchardFeaturesShouldWork(Browser browser) =>
             ExecuteTestAsync(
                 context => context
-                    .TestBasicOrchardFeaturesExceptRegistration(
+                    .TestBasicOrchardFeaturesExceptRegistrationAsync(
                         new OrchardCoreSetupParameters(context)
                         {
                             RecipeId = "Lombiq.OSOCE.NuGet.BasicOrchardFeaturesTests",

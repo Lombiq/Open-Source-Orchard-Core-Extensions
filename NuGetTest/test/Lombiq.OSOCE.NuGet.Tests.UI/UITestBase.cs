@@ -19,20 +19,23 @@ namespace Lombiq.OSOCE.NuGet.Tests.UI
         }
 
         protected override Task ExecuteTestAfterSetupAsync(
-            Action<UITestContext> test,
+            Func<UITestContext, Task> testAsync,
             Browser browser,
-            Action<OrchardCoreUITestExecutorConfiguration> changeConfiguration = null) =>
-            ExecuteTestAsync(test, browser, SetupHelpers.RunSetup, changeConfiguration);
+            Func<OrchardCoreUITestExecutorConfiguration, Task> changeConfigurationAsync) =>
+            ExecuteTestAsync(testAsync, browser, SetupHelpers.RunSetupAsync, changeConfigurationAsync);
 
         protected override Task ExecuteTestAsync(
-            Action<UITestContext> test,
+            Func<UITestContext, Task> testAsync,
             Browser browser,
-            Func<UITestContext, Uri> setupOperation = null,
-            Action<OrchardCoreUITestExecutorConfiguration> changeConfiguration = null) =>
+            Func<UITestContext, Task<Uri>> setupOperation,
+            Func<OrchardCoreUITestExecutorConfiguration, Task> changeConfigurationAsync) =>
             base.ExecuteTestAsync(
-                test,
+                testAsync,
                 browser,
                 setupOperation,
-                configuration => changeConfiguration?.Invoke(configuration));
+                async configuration =>
+                {
+                    if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
+                });
     }
 }

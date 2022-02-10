@@ -20,13 +20,13 @@ namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests
         [Theory, Chrome]
         public Task SampleFilesShouldBeAccessible(Browser browser) =>
             ExecuteTestAfterSetupAsync(
-                context =>
+                async context =>
                 {
                     // The file upload won't work until the privacy consent banner is accepted.
-                    context.DisableFeatureDirectly("Lombiq.Privacy");
+                    await context.DisableFeatureDirectlyAsync("Lombiq.Privacy");
 
                     // Testing if sample files work.
-                    context.SignInDirectlyAndGoToRelativeUrl("/Admin/DeploymentPlan/Import/Index");
+                    await context.SignInDirectlyAndGoToRelativeUrlAsync("/Admin/DeploymentPlan/Import/Index");
                     context.UploadFile(By.Name("importedPackage"), FileUploadHelper.SamplePdfPath);
                     context.ClickReliablyOnSubmit();
                     context.Get(By.CssSelector(".message-error"))
