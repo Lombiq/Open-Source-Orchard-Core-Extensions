@@ -23,16 +23,16 @@
         }
       ]
     },
-    //{
-    //  "name": "feature",
-    //  "disable": [
-    //    // No point in having the privacy consent popup for these tests.
-    //    "Lombiq.Privacy"
-    //  ],
-    //  "enable": [
-    //    "OrchardCore.Users.Registration"
-    //  ]
-    //},
+    {
+      "name": "feature",
+      "disable": [
+        // No point in having the privacy consent popup for these tests.
+        "Lombiq.Privacy"
+      ],
+      "enable": [
+        "OrchardCore.Users.Registration"
+      ]
+    },
     {
       "name": "settings",
       "RegistrationSettings": {
