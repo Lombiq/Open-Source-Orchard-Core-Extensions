@@ -34,14 +34,11 @@
         "Lombiq.Privacy.ConsentBanner",
         "Lombiq.Privacy.FormConsent",
         "Lombiq.Privacy.RegistrationConsent",
-        //"Lombiq.UIKit",
-        //"Lombiq.VueJs",
+        "Lombiq.UIKit",
         "OrchardCore.Localization",
         "OrchardCore.Roles",
         "TheTheme",
-        "Lombiq.OSOCE.NuGet.TestTheme",
-        // Just temporarily:
-        "OrchardCore.Users"
+        "Lombiq.OSOCE.NuGet.TestTheme"
       ]
     },
     {
