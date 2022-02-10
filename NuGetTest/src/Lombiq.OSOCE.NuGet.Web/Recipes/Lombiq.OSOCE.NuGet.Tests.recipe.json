@@ -19,7 +19,7 @@
       "disable": [],
       "enable": [
         "Lombiq.AuditTrailExtensions",
-        //"Lombiq.ChartJs",
+        "Lombiq.ChartJs",
         "Lombiq.HelpfulExtensions.CodeGeneration",
         "Lombiq.HelpfulExtensions.ContentTypes",
         "Lombiq.HelpfulExtensions.Flows",

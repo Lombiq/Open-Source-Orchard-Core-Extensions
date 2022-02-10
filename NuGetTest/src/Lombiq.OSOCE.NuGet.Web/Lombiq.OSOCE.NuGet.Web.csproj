@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="Lombiq.AuditTrailExtensions" Version="0.0.1" />
+    <PackageReference Include="Lombiq.ChartJs" Version="0.0.1" />
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="0.0.5" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="0.0.3" />
     <PackageReference Include="Lombiq.JsonEditor" Version="0.0.3" />
