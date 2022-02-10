@@ -12,7 +12,9 @@ namespace Lombiq.OSOCE.NuGet.Web
         public Startup(IConfiguration configuration) => _configuration = configuration;
 
         public void ConfigureServices(IServiceCollection services) =>
-            services.AddOrchardCms(builder => builder.ConfigureUITesting(_configuration, enableShortcutsDuringUITesting: true));
+            services.AddOrchardCms(builder => builder
+                .ConfigureUITesting(_configuration, enableShortcutsDuringUITesting: true)
+                .AuthorizeApiRequestsIfEnabled(_configuration));
 
         public void Configure(IApplicationBuilder app, IHostEnvironment env)
         {
