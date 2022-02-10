@@ -29,7 +29,7 @@
         //"Lombiq.Hosting.Tenants.Admin.Login",
         //"Lombiq.Hosting.Tenants.Admin.Login.SubTenant",
         //"Lombiq.Hosting.Tenants.Management",
-        //"Lombiq.JsonEditor",
+        "Lombiq.JsonEditor",
         "Lombiq.OSOCE.NuGet.TestModule",
         //"Lombiq.Privacy.ConsentBanner",
         //"Lombiq.Privacy.FormConsent",
