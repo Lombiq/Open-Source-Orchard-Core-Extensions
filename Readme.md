@@ -38,12 +38,13 @@ Bug reports, feature requests, comments, questions, code contributions, and love
 
 This project is developed by [Lombiq Technologies](https://lombiq.com/). Commercial-grade support is available through Lombiq.
 
-### Adding a new extension
-When adding a new extension, do the following:
+### Adding a new extension or significant new features
+When adding a new extension, or significant new features to existing extensions, do the following:
 
-- Enable its features in _Lombiq.OSOCE.Tests.recipe_ so at least they have some rudimentary UI test coverage.
-- Ideally, add recipes to it, demonstrating its usage. In that case, refer to it in the above section.
-- Add lower-level unit/integration tests as necessary. If the feature is user-facing, also add UI test extension method(s) that assert on some important aspects, and execute them from a new UI test (see [here](https://github.com/Lombiq/Orchard-Content-Editors/pull/21/files#diff-6e907ced1faed42ff3ce9dea19082add28fe4c7a6ee91f78b1dda75aeed5e898) for an example). If you've added a demo recipe to it then utilize that in the test too (see `ExecuteRecipeDirectlyAsync()`).
+- For user-facing features add a recipe to it, demonstrating its usage with sample data. In that case, refer to it in the above section.
+- If no data is needed or if the feature is more library-like, add a sample project (or in addition to the recipe). Put this project into the root of the submodule, so to have the main project's and sample project's folders side by side.
+- Add lower-level unit/integration tests as necessary with the [Lombiq Testing Toolbox for Orchard Core](https://github.com/Lombiq/Testing-Toolbox/).
+- If the feature is user-facing, also add UI test extension method(s) with the [Lombiq UI Testing Toolbox for Orchard Core](https://github.com/Lombiq/UI-Testing-Toolbox/) that assert on some important aspects, and execute them from a new UI test (see [here](https://github.com/Lombiq/Orchard-Content-Editors/pull/21/files#diff-6e907ced1faed42ff3ce9dea19082add28fe4c7a6ee91f78b1dda75aeed5e898) for an example). If you've added a demo recipe or sample project to it then utilize that in the test too (see `ExecuteRecipeDirectlyAsync()`). For this, you'll also need to enable the feauture in _Lombiq.OSOCE.Tests.recipe_.
 
 ### Opening pull requests
 - Open a pull request in this repository for every submodule pull request. That way, static code analysis and complex tests can run.
