@@ -18,7 +18,7 @@
       "name": "feature",
       "disable": [],
       "enable": [
-        //"Lombiq.AuditTrailExtensions",
+        "Lombiq.AuditTrailExtensions",
         //"Lombiq.ChartJs",
         "Lombiq.HelpfulExtensions.CodeGeneration",
         "Lombiq.HelpfulExtensions.ContentTypes",
