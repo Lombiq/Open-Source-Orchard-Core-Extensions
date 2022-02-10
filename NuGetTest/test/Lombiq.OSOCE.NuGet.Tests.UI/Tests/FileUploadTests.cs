@@ -22,6 +22,9 @@ namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests
             ExecuteTestAfterSetupAsync(
                 context =>
                 {
+                    // The file upload won't work until the privacy consent banner is accepted.
+                    context.DisableFeatureDirectly("Lombiq.Privacy");
+
                     // Testing if sample files work.
                     context.SignInDirectlyAndGoToRelativeUrl("/Admin/DeploymentPlan/Import/Index");
                     context.UploadFile(By.Name("importedPackage"), FileUploadHelper.SamplePdfPath);
