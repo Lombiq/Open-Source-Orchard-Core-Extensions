@@ -1,6 +1,5 @@
 using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Pages;
 using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
@@ -18,12 +17,7 @@ namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests
         [Theory, Chrome]
         public Task BasicOrchardFeaturesShouldWork(Browser browser) =>
             ExecuteTestAsync(
-                context => context
-                    .TestBasicOrchardFeaturesExceptRegistrationAsync(
-                        new OrchardCoreSetupParameters(context)
-                        {
-                            RecipeId = "Lombiq.OSOCE.NuGet.BasicOrchardFeaturesTests",
-                        }),
+                context => context.TestBasicOrchardFeaturesExceptRegistrationAsync("Lombiq.OSOCE.NuGet.BasicOrchardFeaturesTests"),
                 browser);
     }
 }
