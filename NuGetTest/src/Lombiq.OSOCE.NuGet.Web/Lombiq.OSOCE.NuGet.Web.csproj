@@ -11,18 +11,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.AuditTrailExtensions" Version="0.0.1" />
-    <PackageReference Include="Lombiq.ChartJs" Version="0.0.1" />
-    <PackageReference Include="Lombiq.HelpfulExtensions" Version="0.0.5" />
-    <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="0.0.3" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="0.0.1" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="0.0.1" />
-    <PackageReference Include="Lombiq.JsonEditor" Version="0.0.3" />
-    <PackageReference Include="Lombiq.Privacy" Version="0.0.1" />
-    <PackageReference Include="Lombiq.SetupExtensions" Version="0.1.0" />
-    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="0.0.19" />
-    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="0.0.19" />
-    <PackageReference Include="Lombiq.UIKit" Version="0.0.1" />
+    <PackageReference Include="Lombiq.AuditTrailExtensions" Version="1.0.0" />
+    <PackageReference Include="Lombiq.ChartJs" Version="1.0.0" />
+    <PackageReference Include="Lombiq.HelpfulExtensions" Version="2.0.0" />
+    <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="2.0.0" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="1.0.0" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="1.0.0" />
+    <PackageReference Include="Lombiq.JsonEditor" Version="1.0.0" />
+    <PackageReference Include="Lombiq.Privacy" Version="2.0.0" />
+    <PackageReference Include="Lombiq.SetupExtensions" Version="1.0.0" />
+    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="1.6.0" />
+    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="1.6.0" />
+    <PackageReference Include="Lombiq.UIKit" Version="1.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="1.2.2" Condition="'$(RazorRuntimeCompilation)' == 'true'" />
   </ItemGroup>
 
