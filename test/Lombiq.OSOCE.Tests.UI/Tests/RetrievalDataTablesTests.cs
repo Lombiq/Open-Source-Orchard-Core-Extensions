@@ -1,4 +1,6 @@
+using Lombiq.DataTables.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Attributes;
+using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
@@ -14,10 +16,16 @@ namespace Lombiq.OSOCE.Tests.UI.Tests
         }
 
         [Theory, Chrome]
-        public Task Test(Browser browser) =>
+        public Task RecipeDataShouldBeDisplayedCorrectly(Browser browser) =>
             ExecuteTestAfterSetupAsync(
                 async context =>
                 {
+                    await context.SignInDirectlyAsync();
+                    await context.ExecuteDataTablesSampleRecipeDirectlyAsync();
+
+                    await context.TestDataTableTagHelperAsync();
+                    await context.TestDataTableProviderWithShapeAsync();
+                    await context.TestDataTableIndexBasedProviderAsync();
                 },
                 browser);
     }

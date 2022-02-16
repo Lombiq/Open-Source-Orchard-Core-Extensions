@@ -51,10 +51,6 @@
         {
           "executionid": "Lombiq.OSOCE.Web",
           "name": "Blog"
-        },
-        {
-          "executionid": "Lombiq.OSOCE.Web",
-          "name": "Lombiq.DataTables.Samples.Content"
         }
       ]
     },

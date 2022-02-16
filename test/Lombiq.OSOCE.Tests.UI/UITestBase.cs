@@ -1,7 +1,9 @@
 using Lombiq.Tests.UI;
+using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Helpers;
 using Lombiq.Tests.UI.Samples.Helpers;
 using Lombiq.Tests.UI.Services;
+using Shouldly;
 using System;
 using System.Drawing;
 using System.Threading.Tasks;
@@ -42,6 +44,13 @@ namespace Lombiq.OSOCE.Tests.UI
                     configuration.UseSqlServer = true;
 
                     changeConfiguration?.Invoke(configuration);
+
+                    configuration.AssertAppLogsAsync = async webApplicationInstance =>
+                        (await webApplicationInstance.GetLogOutputAsync())
+                        .ReplaceOrdinalIgnoreCase(
+                            "|Lombiq.TrainingDemo.Services.DemoBackgroundTask|ERROR|Expected non-error",
+                            "|Lombiq.TrainingDemo.Services.DemoBackgroundTask|EXPECTED_ERROR|Expected non-error")
+                        .ShouldNotContain("|ERROR|");
                 });
     }
 }
