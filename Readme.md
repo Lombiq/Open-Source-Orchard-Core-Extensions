@@ -48,7 +48,13 @@ When adding a new extension, or significant new features to existing extensions,
 - If no data is needed or if the feature is more library-like, add a sample project (or in addition to the recipe). Put this project into the root of the submodule, so to have the main project's and sample project's folders side by side.
 - Add lower-level unit/integration tests as necessary with the [Lombiq Testing Toolbox for Orchard Core](https://github.com/Lombiq/Testing-Toolbox/).
 - If the feature is user-facing, also add UI test extension method(s) with the [Lombiq UI Testing Toolbox for Orchard Core](https://github.com/Lombiq/UI-Testing-Toolbox/) that assert on some important aspects, and execute them from a new UI test (see [here](https://github.com/Lombiq/Orchard-Content-Editors/pull/21/files#diff-6e907ced1faed42ff3ce9dea19082add28fe4c7a6ee91f78b1dda75aeed5e898) for an example). If you've added a demo recipe or sample project to it then utilize that in the test too (see `ExecuteRecipeDirectlyAsync()`). For this, you'll also need to enable the feauture in _Lombiq.OSOCE.Tests.recipe_.
+- If the project is published on NuGet:
+    - For Gulp Extension-using projects you'll need to commit the *wwwroot* folder for now, see [this issue](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/issues/48).
+    - Once published on NuGet, reference it from the app in the `Lombiq.OSOCE.NuGet` solution as well, and enable its features in _Lombiq.OSOCE.NuGet.Tests.recipe_.
 
 ### Opening pull requests
 - Open a pull request in this repository for every submodule pull request. That way, static code analysis and complex tests can run.
 - If you see build errors under your pull request then check out its details: The errors link to our TeamCity instance. Select "Log in as guest" when presented with a login screen.
+
+### Dependencies between Lombiq projects
+When making a Lombiq project depend on another one from this solution, apart from adding a project reference, also add a conditional package reference. This way, when published to NuGet, dependencies will still work. See the project file of `Lombiq.HelpfulExtensions` for an example. You can just have project references between projects in the same repo though if both projects are published on NuGet (like between projects of the [UI Testing Toolbox](https://github.com/Lombiq/UI-Testing-Toolbox)).
