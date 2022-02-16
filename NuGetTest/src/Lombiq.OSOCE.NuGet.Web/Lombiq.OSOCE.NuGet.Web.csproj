@@ -20,8 +20,8 @@
     <PackageReference Include="Lombiq.JsonEditor" Version="1.0.0" />
     <PackageReference Include="Lombiq.Privacy" Version="2.0.0" />
     <PackageReference Include="Lombiq.SetupExtensions" Version="1.0.0" />
-    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="1.6.0" />
-    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="1.6.0" />
+    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="1.6.1" />
+    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="1.6.1" />
     <PackageReference Include="Lombiq.UIKit" Version="1.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="1.2.2" Condition="'$(RazorRuntimeCompilation)' == 'true'" />
   </ItemGroup>
