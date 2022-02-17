@@ -66,3 +66,6 @@
 	path = src/Modules/Lombiq.Privacy
 	url = https://github.com/Lombiq/Orchard-Privacy.git
 	branch = dev
+[submodule "src/Utilities/Lombiq.NodeJs.Extensions"]
+	path = src/Utilities/Lombiq.NodeJs.Extensions
+	url = https://github.com/Lombiq/NodeJs-Extensions
