@@ -16,8 +16,6 @@ namespace Lombiq.OSOCE.Tests.UI
         protected override string AppAssemblyPath => WebAppConfigHelper
             .GetAbsoluteApplicationAssemblyPath("Lombiq.OSOCE.Web", "netcoreapp3.1");
 
-        protected override Size MobileBrowserSize { get; } = new(414, 736);
-
         protected UITestBase(ITestOutputHelper testOutputHelper)
             : base(testOutputHelper)
         {
