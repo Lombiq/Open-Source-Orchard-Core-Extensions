@@ -5,7 +5,6 @@ using Lombiq.Tests.UI.Samples.Helpers;
 using Lombiq.Tests.UI.Services;
 using Shouldly;
 using System;
-using System.Drawing;
 using System.Threading.Tasks;
 using Xunit.Abstractions;
 
