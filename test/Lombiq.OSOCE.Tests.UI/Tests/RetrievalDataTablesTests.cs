@@ -17,7 +17,7 @@ namespace Lombiq.OSOCE.Tests.UI.Tests
         [Theory, Chrome]
         public Task RecipeDataShouldBeDisplayedCorrectly(Browser browser) =>
             ExecuteTestAfterSetupAsync(
-                context => context.TestDataTableRecipeData(),
+                context => context.TestDataTableRecipeDataAsync(),
                 browser);
     }
 }
