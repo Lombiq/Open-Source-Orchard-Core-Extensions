@@ -3,6 +3,8 @@
     <PropertyGroup>
       <TargetFramework>netcoreapp3.1</TargetFramework>
       <IsPackable>false</IsPackable>
+      <!-- Eliminates problem with dotnet publish caused by duplicate .htmlvalidate.json file. See
+           https://github.com/Lombiq/UI-Testing-Toolbox/pull/132#discussion_r808530450 -->
       <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
     </PropertyGroup>
 
