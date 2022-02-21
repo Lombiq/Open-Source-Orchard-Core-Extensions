@@ -25,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{11E0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.TrainingDemo", "src\Modules\Lombiq.TrainingDemo\Lombiq.TrainingDemo.csproj", "{3E5295F8-A196-466B-A857-177AB6EF6E04}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.VueJs", "src\Modules\Lombiq.VueJs\Lombiq.VueJs\Lombiq.VueJs.csproj", "{6AEF3A6E-01EF-4729-8EF1-647A27347B1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.VueJs", "src\Modules\Lombiq.VueJs\Lombiq.VueJs.csproj", "{6AEF3A6E-01EF-4729-8EF1-647A27347B1E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{11F2CB14-D92A-484F-9C1E-2836B1B04DB8}"
 EndProject
