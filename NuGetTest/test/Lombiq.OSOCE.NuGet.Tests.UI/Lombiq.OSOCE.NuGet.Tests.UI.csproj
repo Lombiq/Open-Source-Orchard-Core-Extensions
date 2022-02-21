@@ -6,7 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.Tests.UI" Version="1.6.2" />
+    <PackageReference Include="Lombiq.DataTables.Tests.UI" Version="2.1.1" />
+    <PackageReference Include="Lombiq.Tests.UI" Version="1.6.3" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.10.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
   </ItemGroup>
