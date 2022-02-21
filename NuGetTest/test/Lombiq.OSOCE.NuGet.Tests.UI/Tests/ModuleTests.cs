@@ -16,7 +16,7 @@ namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests
 
         [Theory, Chrome]
         public Task DataTableShouldWork(Browser browser) =>
-            ExecuteTestAsync(
+            ExecuteTestAfterSetupAsync(
                 context => context.TestDataTableRecipeDataAsync(),
                 browser);
     }
