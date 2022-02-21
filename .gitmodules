@@ -66,3 +66,7 @@
 	path = src/Modules/Lombiq.Privacy
 	url = https://github.com/Lombiq/Orchard-Privacy.git
 	branch = dev
+[submodule "src/Modules/Lombiq.DataTables"]
+	path = src/Modules/Lombiq.DataTables
+	url = https://github.com/Lombiq/Orchard-Data-Tables.git
+	branch = dev
