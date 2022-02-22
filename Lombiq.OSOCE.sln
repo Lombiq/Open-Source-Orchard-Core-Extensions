@@ -101,7 +101,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.OSOCE.Tests.UI", "te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.DataTables.Tests.UI", "src\Modules\Lombiq.DataTables\Lombiq.DataTables\Tests\Lombiq.DataTables.Tests.UI\Lombiq.DataTables.Tests.UI.csproj", "{44546C43-8A6D-4C8F-901E-0C87DA596965}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.BaseTheme", "E:\aux_c\repositories\orchard-core\Open-Source-Orchard-Core-Extensions\src\Themes\Lombiq.BaseTheme\Lombiq.BaseTheme.csproj", "{F482D324-1F7C-4D2A-8124-F456ABE58644}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.BaseTheme", "src\Themes\Lombiq.BaseTheme\Lombiq.BaseTheme\Lombiq.BaseTheme.csproj", "{F482D324-1F7C-4D2A-8124-F456ABE58644}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Themes", "Themes", "{574156BC-2074-47C9-8EA8-70DED6658DD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -577,6 +579,8 @@ Global
 		{1DEE21A1-F89B-47CF-8971-6C28C0C0F1CF} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
 		{AF7F0D99-B8CF-48D7-9471-A5F91CB53B09} = {FF48793C-2AC5-4FAA-9BA1-44448E3A7F98}
 		{44546C43-8A6D-4C8F-901E-0C87DA596965} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
+		{574156BC-2074-47C9-8EA8-70DED6658DD5} = {648D3BB6-201F-401B-9EF9-D7BBBC6D3ECA}
+		{F482D324-1F7C-4D2A-8124-F456ABE58644} = {574156BC-2074-47C9-8EA8-70DED6658DD5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
