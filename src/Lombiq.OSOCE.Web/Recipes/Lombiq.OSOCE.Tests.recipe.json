@@ -19,7 +19,6 @@
       "enable": [
         "Lombiq.AuditTrailExtensions",
         "Lombiq.ChartJs",
-        "Lombiq.DataTables",
         "Lombiq.DataTables.Samples",
         "Lombiq.HelpfulExtensions.CodeGeneration",
         "Lombiq.HelpfulExtensions.ContentTypes",

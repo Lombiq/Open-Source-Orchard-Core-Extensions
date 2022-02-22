@@ -42,6 +42,8 @@ namespace Lombiq.OSOCE.Tests.UI
 
                     changeConfiguration?.Invoke(configuration);
 
+                    configuration.OrchardCoreConfiguration.EnableApplicationInsightsOfflineOperation();
+
                     configuration.AssertAppLogsAsync = async webApplicationInstance =>
                         (await webApplicationInstance.GetLogOutputAsync())
                         .ReplaceOrdinalIgnoreCase(
