@@ -38,6 +38,7 @@
     <ProjectReference Include="..\Modules\Lombiq.TrainingDemo\Lombiq.TrainingDemo.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.UIKit\Lombiq.UIKit.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.VueJs\Lombiq.VueJs.csproj" />
+    <ProjectReference Include="..\Themes\Lombiq.BaseTheme\Lombiq.BaseTheme.Samples\Lombiq.BaseTheme.Samples.csproj" />
     <ProjectReference Include="..\Utilities\Lombiq.SetupExtensions\Lombiq.SetupExtensions.csproj" />
   </ItemGroup>
 

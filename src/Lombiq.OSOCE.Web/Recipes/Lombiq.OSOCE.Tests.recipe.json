@@ -18,6 +18,7 @@
       "disable": [],
       "enable": [
         "Lombiq.AuditTrailExtensions",
+        "Lombiq.BaseTheme.Samples",
         "Lombiq.ChartJs",
         "Lombiq.DataTables.Samples",
         "Lombiq.HelpfulExtensions.CodeGeneration",
@@ -87,9 +88,9 @@
     {
       "name": "themes",
       "admin": "TheAdmin",
-      // Overriding TheBlogTheme because that uses the PageTitle shape for <title> and thus Shape Tracing Helpful
-      // Extensions would mess it up.
-      "site": "TheTheme"
+      // Using a custom theme that relies on "Lombiq.BaseTheme". Previously we used "TheTheme" because the dafault
+      // "TheBlogTheme" uses the PageTitle shape for <title> and Shape Tracing Helpful Extensions would mess it up.
+      "site": "Lombiq.BaseTheme.Samples"
     }
   ]
 }
