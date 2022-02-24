@@ -23,11 +23,11 @@ namespace Lombiq.BaseTheme.Samples.Navigation
                 .Add(T["Helpful Libraries"], builder => builder
                     .Add(T["LINQ to DB"], itemBuilder => itemBuilder
                         .Add(T["Simple Query"], subMenu => subMenu
-                            .Action<LinqToDbSamplesController>(context, controller => controller.SimpleQuery()))
+                            .ActionTask<LinqToDbSamplesController>(context, controller => controller.SimpleQuery()))
                         .Add(T["Join Query"], subMenu => subMenu
-                            .Action<LinqToDbSamplesController>(context, controller => controller.JoinQuery()))
+                            .ActionTask<LinqToDbSamplesController>(context, controller => controller.JoinQuery()))
                         .Add(T["CRUD"], subMenu => subMenu
-                            .Action<LinqToDbSamplesController>(context, controller => controller.Crud())))
+                            .ActionTask<LinqToDbSamplesController>(context, controller => controller.Crud())))
                     .Add(T["Typed Route"], itemBuilder => itemBuilder
                         .Action<TypedRouteController>(context, controller => controller.Index())));
         }
