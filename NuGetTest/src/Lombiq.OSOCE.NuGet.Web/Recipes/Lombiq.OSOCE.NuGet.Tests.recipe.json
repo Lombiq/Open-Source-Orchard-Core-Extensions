@@ -1,5 +1,6 @@
+// This is almost a copy of Lombiq.OSOCE.Tests.recipe in the parent solution.
 {
-  "name": "Lombiq.OSOCE.Tests",
+  "name": "Lombiq.OSOCE.NuGet.Tests",
   "displayName": "TEST: Lombiq's Open-Source Orchard Core Extensions",
   "description": "Lombiq's Open-Source Orchard Core Extensions setup recipe for automated UI test execution.",
   "author": "Lombiq Technologies",
@@ -25,58 +26,37 @@
         "Lombiq.HelpfulExtensions.Flows",
         "Lombiq.HelpfulExtensions.ShapeTracing",
         "Lombiq.HelpfulExtensions.Widgets",
-        "Lombiq.HelpfulLibraries.Samples",
         "Lombiq.Hosting.Azure.ApplicationInsights",
         "Lombiq.Hosting.Tenants.Admin.Login",
         "Lombiq.Hosting.Tenants.Admin.Login.SubTenant",
         "Lombiq.Hosting.Tenants.Management",
         "Lombiq.JsonEditor",
-        "Lombiq.OSOCE.Samples",
+        "Lombiq.OSOCE.NuGet.TestModule",
         "Lombiq.Privacy.ConsentBanner",
         "Lombiq.Privacy.FormConsent",
         "Lombiq.Privacy.RegistrationConsent",
-        "Lombiq.TrainingDemo",
         "Lombiq.UIKit",
-        "Lombiq.VueJs",
         "OrchardCore.Localization",
         "OrchardCore.Roles",
-        "TheTheme"
-        // Not enabling Lombiq.TrainingDemo.Middlewares because that would write to the error log on every request.
+        "TheTheme",
+        "Lombiq.OSOCE.NuGet.TestTheme"
       ]
     },
     {
       "name": "recipes",
       "Values": [
         {
-          "executionid": "Lombiq.OSOCE.Web",
+          "executionid": "Lombiq.OSOCE.NuGet.Web",
           "name": "Blog"
         }
       ]
     },
     {
-      "name": "media",
-      "Files": [
-        {
-          // Picture taken from:
-          // https://en.wikipedia.org/wiki/Orchard#/media/File:Streuobstwiesen,_Blick_auf_Traufgang_und_Lochenh%C3%B6rnle.jpg.
-          // This is just showcasing that you can include Media files in these recipes too. Note that if you include
-          // files for recipes in the Web project then you also have to set their "Copy to Output Directory" to
-          // something else than "Do not copy" (this is not necessary if you put recipes and Media files in modules or
-          // themes). You can see this happening in the csproj file.
-          "SourcePath": "Media/meadow-orchard.jpg",
-          "TargetPath": "meadow-orchard.jpg"
-        }
-      ]
-    },
-    {
       "name": "settings",
-      // CDN should be turned off for tests, just as no other external resource should be used.
       "UseCdn": false,
       "SmtpSettings": {
         "DefaultSender": "sender@example.com"
       },
-      // To make sure that e.g. numbers and dates are formatted the same way on all machines we have to specify the
-      // culture too.
       "LocalizationSettings": {
         "DefaultCulture": "en-US",
         "SupportedCultures": [
@@ -87,9 +67,7 @@
     {
       "name": "themes",
       "admin": "TheAdmin",
-      // Overriding TheBlogTheme because that uses the PageTitle shape for <title> and thus Shape Tracing Helpful
-      // Extensions would mess it up.
-      "site": "TheTheme"
+      "site": "Lombiq.OSOCE.NuGet.TestTheme"
     }
   ]
 }
