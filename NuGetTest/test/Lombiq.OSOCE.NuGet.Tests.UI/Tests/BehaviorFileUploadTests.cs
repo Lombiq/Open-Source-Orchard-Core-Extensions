@@ -10,9 +10,9 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests
 {
-    public class FileUploadTests : UITestBase
+    public class BehaviorFileUploadTests : UITestBase
     {
-        public FileUploadTests(ITestOutputHelper testOutputHelper)
+        public BehaviorFileUploadTests(ITestOutputHelper testOutputHelper)
             : base(testOutputHelper)
         {
         }
