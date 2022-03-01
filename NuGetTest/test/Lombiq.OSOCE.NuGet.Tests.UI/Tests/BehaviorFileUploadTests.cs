@@ -10,9 +10,9 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests
 {
-    public class FileUploadTests : UITestBase
+    public class BehaviorFileUploadTests : UITestBase
     {
-        public FileUploadTests(ITestOutputHelper testOutputHelper)
+        public BehaviorFileUploadTests(ITestOutputHelper testOutputHelper)
             : base(testOutputHelper)
         {
         }
@@ -28,7 +28,7 @@ namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests
                     // Testing if sample files work.
                     await context.SignInDirectlyAndGoToRelativeUrlAsync("/Admin/DeploymentPlan/Import/Index");
                     context.UploadFile(By.Name("importedPackage"), FileUploadHelper.SamplePdfPath);
-                    context.ClickReliablyOnSubmit();
+                    await context.ClickReliablyOnSubmitAsync();
                     context.Get(By.CssSelector(".message-error"))
                         .Text
                         .ShouldContain("Only zip or json files are supported.");
