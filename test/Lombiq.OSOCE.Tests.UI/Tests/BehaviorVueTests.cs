@@ -25,7 +25,7 @@ namespace Lombiq.OSOCE.Tests.UI.Tests
                     // button while testing the enhanced list. This requirement is specific to this solution, which is
                     // why it's not included in the extension method.
                     await context.SignInDirectlyAndGoToDashboardAsync();
-                    context.ClickReliablyOn(By.Id("privacy-consent-accept-button"));
+                    await context.ClickReliablyOnAsync(By.Id("privacy-consent-accept-button"));
                     context.Refresh();
 
                     await context.TestVueSampleBehaviorAsync();
