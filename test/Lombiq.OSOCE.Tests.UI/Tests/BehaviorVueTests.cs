@@ -21,12 +21,10 @@ namespace Lombiq.OSOCE.Tests.UI.Tests
             ExecuteTestAfterSetupAsync(
                 async context =>
                 {
-                    // We want to click off the modal from Lombiq.Privacy immediately because it overlaps the Next
-                    // button while testing the enhanced list. This requirement is specific to this solution, which is
-                    // why it's not included in the extension method.
-                    await context.SignInDirectlyAndGoToDashboardAsync();
-                    await context.ClickReliablyOnAsync(By.Id("privacy-consent-accept-button"));
-                    context.Refresh();
+                    // Disabling some bothersome features that make relevant testing harder.
+                    await context.SignInDirectlyAsync();
+                    await context.DisableFeatureDirectlyAsync("Lombiq.Privacy.ConsentBanner");
+                    await context.DisableFeatureDirectlyAsync("Lombiq.Hosting.Azure.ApplicationInsights");
 
                     await context.TestVueSampleBehaviorAsync();
                 },
