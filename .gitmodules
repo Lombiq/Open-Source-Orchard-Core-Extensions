@@ -66,6 +66,10 @@
 	path = src/Modules/Lombiq.Privacy
 	url = https://github.com/Lombiq/Orchard-Privacy.git
 	branch = dev
+[submodule "src/Utilities/Lombiq.NodeJs.Extensions"]
+	path = src/Utilities/Lombiq.NodeJs.Extensions
+	url = https://github.com/Lombiq/NodeJs-Extensions
+	branch = issue/OSOE-69
 [submodule "src/Modules/Lombiq.DataTables"]
 	path = src/Modules/Lombiq.DataTables
 	url = https://github.com/Lombiq/Orchard-Data-Tables.git
