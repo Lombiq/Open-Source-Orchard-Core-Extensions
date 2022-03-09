@@ -15,7 +15,7 @@
     <PackageReference Include="Lombiq.ChartJs" Version="1.0.1" />
     <PackageReference Include="Lombiq.DataTables" Version="2.1.4" />
     <PackageReference Include="Lombiq.DataTables.Samples" Version="2.1.4" />
-    <PackageReference Include="Lombiq.HelpfulExtensions" Version="2.1.0" />
+    <PackageReference Include="Lombiq.HelpfulExtensions" Version="2.1.1" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="2.0.1" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="1.0.1" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="1.0.1" />
