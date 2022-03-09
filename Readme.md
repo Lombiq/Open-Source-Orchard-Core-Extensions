@@ -20,20 +20,19 @@ This also serves as an example of an ASP.NET Core web app using Orchard from NuG
  Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source Orchard Extensions](https://github.com/Lombiq/Open-Source-Orchard-Extensions).
 
 
-## Included Projects in Lombiq's Open-Source Orchard Core Extensions
+## Included Projects
 
-* Librarires
+- Librarires
   - [Lombiq.HelpfulLibraries](https://github.com/Lombiq/Helpful-Libraries/tree/dev):
 Various libraries that can be handy when developing for Orchard Core CMS, to be used from your own Orchard modules.
-  - [Lombiq.HelpfulLibraries.LinqToDb](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.LinqToDb):
-With the help of this project you can write LINQ expressions and run them with a [YesSql](https://github.com/sebastienros/yessql) `ISession` extension method to query from the DB instead of writing plain SQL queries. Uses the [LINQ to DB project](https://linq2db.github.io/).
+  - [Lombiq.HelpfulLibraries.LinqToDb](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.LinqToDb): With the help of this project you can write LINQ expressions and run them with a [YesSql](https://github.com/sebastienros/yessql) `ISession` extension method to query from the DB instead of writing plain SQL queries. Uses the [LINQ to DB project](https://linq2db.github.io/).
 You can watch a demo video of the project [here](https://www.youtube.com/watch?v=ldJOdCSsWJo).
   - [Lombiq.HelpfulLibraries.RestEase](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.RestEase):
-`AddRestEaseHttpClient` Adds a typed HTTP client to the service collection using RestEase.
+Adds a typed HTTP client to the service collection using RestEase.
   - [Lombiq.HelpfulLibraries.Targets](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.Targets):
 Targets project which references all Helpful Libraries. Only necessary for NuGet publishing, just as *Lombiq.HelpfulLibraries.sln*.
 
-* Modules
+- Modules
   - [Lombiq.AuditTrailExtensions](https://github.com/Lombiq/Audit-Trail-Extensions/tree/dev):
 A module with additional features for the [Audit Trail module](https://docs.orchardcore.net/en/latest/docs/reference/modules/AuditTrail/) in Orchard Core. 
   - [Lombiq.ChartJs](https://github.com/Lombiq/Orchard-Chart.js/tree/dev):
@@ -69,7 +68,7 @@ This module contains reusable shapes like text editors, custom-style checkboxes,
   - [Lombiq.VueJs](https://github.com/Lombiq/Orchard-Vue.js/tree/dev):
 [Orchard Core](http://orchardproject.net/) module that contains [Vue.js](https://vuejs.org/) and commonly used Vue.js components to be used in other Vue.js apps as dependencies. Provides extensibility to create Vue.js component templates as Orchard Core shapes making them able to override in themes or modules.
 
-* Utilities
+- Utilities
   - [Lombiq.Gulp.Extensions](https://github.com/Lombiq/Gulp-Extensions/tree/dev):
 Various JavaScript functions and Gulp tasks that can be handy when developing Gulp pipelines.
   - [Lombiq.Npm.Targets](https://github.com/Lombiq/NPM-Targets/tree/dev):
@@ -77,7 +76,7 @@ Provides automatic NPM package installation and a custom NPM command execution b
   - [Lombiq.SetupExtensions](https://github.com/Lombiq/Setup-Extensions/tree/dev):
 Extensions for setting up an Orchard Core application.
 
-* Testing
+- Testing
   - [Lombiq.Tests](https://github.com/Lombiq/Testing-Toolbox/tree/dev):
 General and unit testing extensions and helpers, mostly for ASP.NET Core and Orchard Core. Also see our [UI Testing Toolbox](https://github.com/Lombiq/UI-Testing-Toolbox).
   - [Lombiq.Tests.UI](https://github.com/Lombiq/UI-Testing-Toolbox/tree/dev/Lombiq.Tests.UI):
@@ -91,7 +90,7 @@ Example UI testing project. The whole project is heavily documented to teach you
 Provides some useful shortcuts for common operations that UI tests might want to do or check, e.g. turning features on or off, or logging in users. This way, UI tests needn't use multi-step UI processes to do these operations (and thus implicitly be coupled with and tests those features).
 Note that the module depends on [Helpful Libraries](https://github.com/Lombiq/Helpful-Libraries).
 
-* Tools
+- Tools
   - [Lombiq.Analyzers](https://github.com/Lombiq/.NET-Analyzers/tree/dev):
 .NET code analyzers and code convention settings for [Lombiq](https://lombiq.com) projects, predominantly for [Orchard Core](https://www.orchardcore.net/) apps but also any .NET apps. We use these to enforce common standards across all our .NET projects, including e.g. all of our [open-source Orchard Core extensions](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions).
 
