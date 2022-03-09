@@ -23,76 +23,42 @@ This also serves as an example of an ASP.NET Core web app using Orchard from NuG
 ## Included Projects
 
 - Librarires
-  - [Lombiq.HelpfulLibraries](https://github.com/Lombiq/Helpful-Libraries/tree/dev):
-Various libraries that can be handy when developing for Orchard Core CMS, to be used from your own Orchard modules.
-  - [Lombiq.HelpfulLibraries.LinqToDb](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.LinqToDb): With the help of this project you can write LINQ expressions and run them with a [YesSql](https://github.com/sebastienros/yessql) `ISession` extension method to query from the DB instead of writing plain SQL queries. Uses the [LINQ to DB project](https://linq2db.github.io/).
-You can watch a demo video of the project [here](https://www.youtube.com/watch?v=ldJOdCSsWJo).
-  - [Lombiq.HelpfulLibraries.RestEase](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.RestEase):
-Adds a typed HTTP client to the service collection using RestEase.
-  - [Lombiq.HelpfulLibraries.Targets](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.Targets):
-Targets project which references all Helpful Libraries. Only necessary for NuGet publishing, just as *Lombiq.HelpfulLibraries.sln*.
+  - [Lombiq.HelpfulLibraries](https://github.com/Lombiq/Helpful-Libraries/tree/dev): Various libraries that can be handy when developing for Orchard Core CMS, to be used from your own Orchard modules.
+  - [Lombiq.HelpfulLibraries.LinqToDb](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.LinqToDb): With the help of this project you can write LINQ expressions and run them with a [YesSql](https://github.com/sebastienros/yessql) `ISession` extension method to query from the DB instead of writing plain SQL queries. Uses the [LINQ to DB project](https://linq2db.github.io/). You can watch a demo video of the project [here](https://www.youtube.com/watch?v=ldJOdCSsWJo).
+  - [Lombiq.HelpfulLibraries.RestEase](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.RestEase): Adds a typed HTTP client to the service collection using RestEase.
+  - [Lombiq.HelpfulLibraries.Targets](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.Targets): Targets project which references all Helpful Libraries. Only necessary for NuGet publishing, just as *Lombiq.HelpfulLibraries.sln*.
 
 - Modules
-  - [Lombiq.AuditTrailExtensions](https://github.com/Lombiq/Audit-Trail-Extensions/tree/dev):
-A module with additional features for the [Audit Trail module](https://docs.orchardcore.net/en/latest/docs/reference/modules/AuditTrail/) in Orchard Core. 
-  - [Lombiq.ChartJs](https://github.com/Lombiq/Orchard-Chart.js/tree/dev):
-An Orchard Core wrapper around the [Chart.js](https://www.chartjs.org/) library for displaying datasets as various charts. 
-  - [Lombiq.DataTables](https://github.com/Lombiq/Orchard-Data-Tables/tree/dev):
-An Orchard Core wrapper around the [DataTables](https://datatables.net/) library for displaying tabular data from custom data sources. 
-  - [Lombiq.DataTables.Samples](https://github.com/Lombiq/Orchard-Data-Tables/tree/dev/Lombiq.DataTables.Samples):
-Example Orchard Core module that makes use of Lombiq Data Tables for Orchard Core.
-  - [Lombiq.HelpfulExtensions](https://github.com/Lombiq/Helpful-Extensions/tree/dev):
-Orchard Core module containing some handy extensions (e.g. useful content types and widgets). It's also available on all sites of [DotNest, the Orchard SaaS](https://dotnest.com/).
-  - [Lombiq.HelpfulLibraries.Samples](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.Samples):
-Example Orchard Core module that makes use of Lombiq Helpful Libraries.
-  - [Lombiq.Hosting.Azure.ApplicationInsights](https://github.com/Lombiq/Orchard-Azure-Application-Insights/tree/dev):
-This [Orchard Core](https://www.orchardcore.net/) module enables easy integration of [Azure Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview) telemetry into Orchard. Just install the module, configure the instrumentation key from a configuration source (like the *appsettings.json* file) as normally for AI, and collected data will start appearing in the Azure Portal. As seen on [the Orchard community meeting](https://www.youtube.com/watch?v=NKKR4R3UPog). Note that this module has an Orchard 1 version in the [dev-orchard-1 branch](https://github.com/Lombiq/Orchard-Azure-Application-Insights/tree/dev-orchard-1).
-Note that the module depends on [Helpful Libraries](https://github.com/Lombiq/Helpful-Libraries/).
-  - [Lombiq.Hosting.Tenants.Admin.Login](https://github.com/Lombiq/Hosting-Tenants/tree/dev/Lombiq.Hosting.Tenants.Admin.Login):
-With the help of this module, you can log in from the Default tenant's admin dashboard to any other tenants as an administrator user. This is useful if you manage a lot of customer tenants and don't want to create individual logins of yours for each of them.
-  - [Lombiq.Hosting.Tenants.Management](https://github.com/Lombiq/Hosting-Tenants/tree/dev/Lombiq.Hosting.Tenants.Management):
-With the help of this module, you can set restrictions on tenant creation.
-  - [Lombiq.JsonEditor](https://github.com/Lombiq/Orchard-JSON-Editor/tree/dev):
-Orchard Core module for displaying a JSON Editor like on [jsoneditoronline.org](https://jsoneditoronline.org/).
-Watch a demo video of it from the Orchard Community Meeting [here](https://www.youtube.com/watch?app=desktop&v=nFhRjhXTKAY).
-  - [Lombiq.OSOCE.Samples](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/tree/dev/src/Modules/Lombiq.OSOCE.Samples):
-This is a placeholder module that will contain sample code for UI tests and demonstration content for our open-source Orchard Core extensions.
-  - [Lombiq.Privacy](https://github.com/Lombiq/Orchard-Privacy/tree/dev):
-Orchard module containing features related to data protection/privacy and the EU law on it, the [General Data Protection Regulation](http://eur-lex.europa.eu/legal-content/EN/TXT/?qid=1462439808430&uri=CELEX:32016R0679) (GDPR). Check out a demo video of this module [here](https://www.youtube.com/watch?v=GnyYL9Zdo8Q).
-   **Important!** Using this module will not make your site GDPR-compliant alone. Do not forget to create a privacy policy page that you need to link to from the various consent-asking features.
-  - [Lombiq.TrainingDemo](https://github.com/Lombiq/Orchard-Training-Demo-Module/tree/dev):
-Demo [Orchard Core CMS](https://www.orchardcore.net/) module for training purposes guiding you to become an Orchard developer. Note that this module also has an Orchard 1.x version in the [dev-orchard-1 branch of the repository](https://github.com/Lombiq/Orchard-Training-Demo-Module/tree/dev-orchard-1).
-If you prefer tutorial videos more then check out the [Dojo Course 3, the complete Orchard Core tutorial series](https://orcharddojo.net/orchard-training/dojo-course-3-the-full-orchard-core-tutorial).
-  - [Lombiq.UIKit](https://github.com/Lombiq/Orchard-UIKit/tree/dev):
-This module contains reusable shapes like text editors, custom-style checkboxes, dropdown editors, and in the future potentially more complex editors. [Here](https://www.youtube.com/watch?v=PONfn2K8AHg) you can also see a demo of it.
-  - [Lombiq.VueJs](https://github.com/Lombiq/Orchard-Vue.js/tree/dev):
-[Orchard Core](http://orchardproject.net/) module that contains [Vue.js](https://vuejs.org/) and commonly used Vue.js components to be used in other Vue.js apps as dependencies. Provides extensibility to create Vue.js component templates as Orchard Core shapes making them able to override in themes or modules.
+  - [Lombiq.AuditTrailExtensions](https://github.com/Lombiq/Audit-Trail-Extensions/tree/dev): A module with additional features for the [Audit Trail module](https://docs.orchardcore.net/en/latest/docs/reference/modules/AuditTrail/) in Orchard Core. 
+  - [Lombiq.ChartJs](https://github.com/Lombiq/Orchard-Chart.js/tree/dev): An Orchard Core wrapper around the [Chart.js](https://www.chartjs.org/) library for displaying datasets as various charts. 
+  - [Lombiq.DataTables](https://github.com/Lombiq/Orchard-Data-Tables/tree/dev): An Orchard Core wrapper around the [DataTables](https://datatables.net/) library for displaying tabular data from custom data sources. 
+  - [Lombiq.DataTables.Samples](https://github.com/Lombiq/Orchard-Data-Tables/tree/dev/Lombiq.DataTables.Samples): Example Orchard Core module that makes use of Lombiq Data Tables for Orchard Core.
+  - [Lombiq.HelpfulExtensions](https://github.com/Lombiq/Helpful-Extensions/tree/dev): Orchard Core module containing some handy extensions (e.g. useful content types and widgets). It's also available on all sites of [DotNest, the Orchard SaaS](https://dotnest.com/).
+  - [Lombiq.HelpfulLibraries.Samples](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.Samples): Example Orchard Core module that makes use of Lombiq Helpful Libraries.
+  - [Lombiq.Hosting.Azure.ApplicationInsights](https://github.com/Lombiq/Orchard-Azure-Application-Insights/tree/dev): This [Orchard Core](https://www.orchardcore.net/) module enables easy integration of [Azure Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview) telemetry into Orchard. Just install the module, configure the instrumentation key from a configuration source (like the *appsettings.json* file) as normally for AI, and collected data will start appearing in the Azure Portal. As seen on [the Orchard community meeting](https://www.youtube.com/watch?v=NKKR4R3UPog). Note that this module has an Orchard 1 version in the [dev-orchard-1 branch](https://github.com/Lombiq/Orchard-Azure-Application-Insights/tree/dev-orchard-1). Note that the module depends on [Helpful Libraries](https://github.com/Lombiq/Helpful-Libraries/).
+  - [Lombiq.Hosting.Tenants.Admin.Login](https://github.com/Lombiq/Hosting-Tenants/tree/dev/Lombiq.Hosting.Tenants.Admin.Login): With the help of this module, you can log in from the Default tenant's admin dashboard to any other tenants as an administrator user. This is useful if you manage a lot of customer tenants and don't want to create individual logins of yours for each of them.
+  - [Lombiq.Hosting.Tenants.Management](https://github.com/Lombiq/Hosting-Tenants/tree/dev/Lombiq.Hosting.Tenants.Management): With the help of this module, you can set restrictions on tenant creation.
+  - [Lombiq.JsonEditor](https://github.com/Lombiq/Orchard-JSON-Editor/tree/dev): Orchard Core module for displaying a JSON Editor like on [jsoneditoronline.org](https://jsoneditoronline.org/). Watch a demo video of it from the Orchard Community Meeting [here](https://www.youtube.com/watch?app=desktop&v=nFhRjhXTKAY).
+  - [Lombiq.OSOCE.Samples](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/tree/dev/src/Modules/Lombiq.OSOCE.Samples): This is a placeholder module that will contain sample code for UI tests and demonstration content for our open-source Orchard Core extensions.
+  - [Lombiq.Privacy](https://github.com/Lombiq/Orchard-Privacy/tree/dev): Orchard module containing features related to data protection/privacy and the EU law on it, the [General Data Protection Regulation](http://eur-lex.europa.eu/legal-content/EN/TXT/?qid=1462439808430&uri=CELEX:32016R0679) (GDPR). Check out a demo video of this module [here](https://www.youtube.com/watch?v=GnyYL9Zdo8Q). **Important!** Using this module will not make your site GDPR-compliant alone. Do not forget to create a privacy policy page that you need to link to from the various consent-asking features.
+  - [Lombiq.TrainingDemo](https://github.com/Lombiq/Orchard-Training-Demo-Module/tree/dev): Demo [Orchard Core CMS](https://www.orchardcore.net/) module for training purposes guiding you to become an Orchard developer. Note that this module also has an Orchard 1.x version in the [dev-orchard-1 branch of the repository](https://github.com/Lombiq/Orchard-Training-Demo-Module/tree/dev-orchard-1). If you prefer tutorial videos more then check out the [Dojo Course 3, the complete Orchard Core tutorial series](https://orcharddojo.net/orchard-training/dojo-course-3-the-full-orchard-core-tutorial).
+  - [Lombiq.UIKit](https://github.com/Lombiq/Orchard-UIKit/tree/dev): This module contains reusable shapes like text editors, custom-style checkboxes, dropdown editors, and in the future potentially more complex editors. [Here](https://www.youtube.com/watch?v=PONfn2K8AHg) you can also see a demo of it.
+  - [Lombiq.VueJs](https://github.com/Lombiq/Orchard-Vue.js/tree/dev): [Orchard Core](http://orchardproject.net/) module that contains [Vue.js](https://vuejs.org/) and commonly used Vue.js components to be used in other Vue.js apps as dependencies. Provides extensibility to create Vue.js component templates as Orchard Core shapes making them able to override in themes or modules.
 
 - Utilities
-  - [Lombiq.Gulp.Extensions](https://github.com/Lombiq/Gulp-Extensions/tree/dev):
-Various JavaScript functions and Gulp tasks that can be handy when developing Gulp pipelines.
-  - [Lombiq.Npm.Targets](https://github.com/Lombiq/NPM-Targets/tree/dev):
-Provides automatic NPM package installation and a custom NPM command execution before building a .NET project. This way it is possible for example to manage assets (e.g. .scss files or images) in a folder that will be automatically compiled into the _wwwroot_ folder on build, which then can be excluded from the version control system.
-  - [Lombiq.SetupExtensions](https://github.com/Lombiq/Setup-Extensions/tree/dev):
-Extensions for setting up an Orchard Core application.
+  - [Lombiq.Gulp.Extensions](https://github.com/Lombiq/Gulp-Extensions/tree/dev): Various JavaScript functions and Gulp tasks that can be handy when developing Gulp pipelines.
+  - [Lombiq.Npm.Targets](https://github.com/Lombiq/NPM-Targets/tree/dev): Provides automatic NPM package installation and a custom NPM command execution before building a .NET project. This way it is possible for example to manage assets (e.g. .scss files or images) in a folder that will be automatically compiled into the _wwwroot_ folder on build, which then can be excluded from the version control system.
+  - [Lombiq.SetupExtensions](https://github.com/Lombiq/Setup-Extensions/tree/dev): Extensions for setting up an Orchard Core application.
 
 - Testing
-  - [Lombiq.Tests](https://github.com/Lombiq/Testing-Toolbox/tree/dev):
-General and unit testing extensions and helpers, mostly for ASP.NET Core and Orchard Core. Also see our [UI Testing Toolbox](https://github.com/Lombiq/UI-Testing-Toolbox).
-  - [Lombiq.Tests.UI](https://github.com/Lombiq/UI-Testing-Toolbox/tree/dev/Lombiq.Tests.UI):
-Web UI testing toolbox mostly for Orchard Core applications. Everything you need to do UI testing with Selenium for an Orchard app is here.
-  - [Lombiq.Tests.UI.AppExtensions](https://github.com/Lombiq/UI-Testing-Toolbox/tree/dev/Lombiq.Tests.UI.AppExtensions):
-UI testing-related configuration extensions for the web app under test.
-Note that the module depends on [Helpful Libraries](https://github.com/Lombiq/Helpful-Libraries).
-  - [Lombiq.Tests.UI.Samples](https://github.com/Lombiq/UI-Testing-Toolbox/tree/dev/Lombiq.Tests.UI.Samples):
-Example UI testing project. The whole project is heavily documented to teach you how to write UI tests with the UI Testing Toolbox. It guides you through this process just like the [Lombiq Training Demo for Orchard Core](https://github.com/Lombiq/Orchard-Training-Demo-Module) teaches Orchard Core and Orchard 1 development.
-  - [Lombiq.Tests.UI.Shortcuts](https://github.com/Lombiq/UI-Testing-Toolbox/tree/dev/Lombiq.Tests.UI.Shortcuts):
-Provides some useful shortcuts for common operations that UI tests might want to do or check, e.g. turning features on or off, or logging in users. This way, UI tests needn't use multi-step UI processes to do these operations (and thus implicitly be coupled with and tests those features).
-Note that the module depends on [Helpful Libraries](https://github.com/Lombiq/Helpful-Libraries).
+  - [Lombiq.Tests](https://github.com/Lombiq/Testing-Toolbox/tree/dev): General and unit testing extensions and helpers, mostly for ASP.NET Core and Orchard Core. Also see our [UI Testing Toolbox](https://github.com/Lombiq/UI-Testing-Toolbox).
+  - [Lombiq.Tests.UI](https://github.com/Lombiq/UI-Testing-Toolbox/tree/dev/Lombiq.Tests.UI): Web UI testing toolbox mostly for Orchard Core applications. Everything you need to do UI testing with Selenium for an Orchard app is here.
+  - [Lombiq.Tests.UI.AppExtensions](https://github.com/Lombiq/UI-Testing-Toolbox/tree/dev/Lombiq.Tests.UI.AppExtensions): UI testing-related configuration extensions for the web app under test. Note that the module depends on [Helpful Libraries](https://github.com/Lombiq/Helpful-Libraries).
+  - [Lombiq.Tests.UI.Samples](https://github.com/Lombiq/UI-Testing-Toolbox/tree/dev/Lombiq.Tests.UI.Samples): Example UI testing project. The whole project is heavily documented to teach you how to write UI tests with the UI Testing Toolbox. It guides you through this process just like the [Lombiq Training Demo for Orchard Core](https://github.com/Lombiq/Orchard-Training-Demo-Module) teaches Orchard Core and Orchard 1 development.
+  - [Lombiq.Tests.UI.Shortcuts](https://github.com/Lombiq/UI-Testing-Toolbox/tree/dev/Lombiq.Tests.UI.Shortcuts): Provides some useful shortcuts for common operations that UI tests might want to do or check, e.g. turning features on or off, or logging in users. This way, UI tests needn't use multi-step UI processes to do these operations (and thus implicitly be coupled with and tests those features). Note that the module depends on [Helpful Libraries](https://github.com/Lombiq/Helpful-Libraries).
 
 - Tools
-  - [Lombiq.Analyzers](https://github.com/Lombiq/.NET-Analyzers/tree/dev):
-.NET code analyzers and code convention settings for [Lombiq](https://lombiq.com) projects, predominantly for [Orchard Core](https://www.orchardcore.net/) apps but also any .NET apps. We use these to enforce common standards across all our .NET projects, including e.g. all of our [open-source Orchard Core extensions](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions).
+  - [Lombiq.Analyzers](https://github.com/Lombiq/.NET-Analyzers/tree/dev): .NET code analyzers and code convention settings for [Lombiq](https://lombiq.com) projects, predominantly for [Orchard Core](https://www.orchardcore.net/) apps but also any .NET apps. We use these to enforce common standards across all our .NET projects, including e.g. all of our [open-source Orchard Core extensions](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions).
 
 
 ## Samples and Recipes
