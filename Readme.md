@@ -91,7 +91,7 @@ When adding a new extension, or significant new features to existing extensions,
 - If the project is published on NuGet:
     - For Gulp Extension-using projects you'll need to commit the *wwwroot* folder for now, see [this issue](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/issues/48).
     - Once published on NuGet, reference it from the app in the `Lombiq.OSOCE.NuGet` solution as well, and enable its features in the _Lombiq.OSOCE.NuGet.Tests.recipe_. If it has UI testing methods, also run them from `Lombiq.OSOCE.NuGet.Tests.UI`.
-- If a module is added, removed or significantly updated in this project, then add, remove or update it's description at the "Included Projects" section of this readme.
+- If an extension is added, removed or significantly updated in this project, then add, remove or update its description under the "Included Projects" section of this Readme.
 
 ### Opening pull requests
 - Open a pull request in this repository for every submodule pull request. That way, static code analysis and complex tests can run.
