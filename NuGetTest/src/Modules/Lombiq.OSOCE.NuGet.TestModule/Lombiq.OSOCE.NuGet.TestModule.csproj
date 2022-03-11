@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.Analyzers" Version="1.5.1" />
+    <PackageReference Include="Lombiq.Analyzers" Version="1.6.0" />
     <PackageReference Include="Lombiq.HelpfulLibraries" Version="2.0.1" />
     <PackageReference Include="OrchardCore.Module.Targets" Version="1.2.2" />
     <PackageReference Include="OrchardCore.ContentManagement" Version="1.2.2" />
