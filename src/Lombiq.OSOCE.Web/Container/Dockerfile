@@ -30,5 +30,5 @@ RUN git clone https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions.git
 WORKDIR /home/user/Open-Source-Orchard-Core-Extensions/
 RUN git checkout $CHECKOUT
 RUN git submodule update --init --recursive
-RUN dotnet restore
+RUN dotnet clean
 RUN source ~/.bashrc; dotnet build
