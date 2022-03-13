@@ -7,23 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <FrameworkReference Include="Microsoft.AspNetCore.App" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="OrchardCore.Module.Targets" Version="1.2.2" />
-    <PackageReference Include="OrchardCore.ContentManagement" Version="1.2.2" />
-    <PackageReference Include="OrchardCore.ContentTypes.Abstractions" Version="1.2.2" />
-    <PackageReference Include="OrchardCore.DisplayManagement" Version="1.2.2" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="node_modules\**" />
     <None Remove="Tests\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.csproj" />
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Lombiq.Analyzers" Version="1.6.0" />
+    <PackageReference Include="Lombiq.HelpfulLibraries" Version="2.0.1" />
+    <PackageReference Include="OrchardCore.Module.Targets" Version="1.2.2" />
+    <PackageReference Include="OrchardCore.ContentManagement" Version="1.2.2" />
+    <PackageReference Include="OrchardCore.ContentTypes.Abstractions" Version="1.2.2" />
+    <PackageReference Include="OrchardCore.DisplayManagement" Version="1.2.2" />
   </ItemGroup>
 
 </Project>
