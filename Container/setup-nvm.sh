@@ -1,5 +1,13 @@
-alias cls=clear
-export XDG_CONFIG_HOME=/home/user/.config
+#!/bin/bash
+
+cd /home/user
+source .bashrc
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+source .bashrc
+nvm install 16
+
+npm install -g gulp pnpm
 
 function proxy-nvm-command() {
     for command in "$@"; do
@@ -16,3 +24,5 @@ DONE
 
     done
 }
+
+proxy-nvm-command node npm
