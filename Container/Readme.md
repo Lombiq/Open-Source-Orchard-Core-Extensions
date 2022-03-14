@@ -5,7 +5,7 @@ First install [VcXsrv](https://sourceforge.net/projects/vcxsrv/). Once launched,
 ```shell
 cd path\to\Open-Source-Orchard-Core-Extensions
 docker build --build-arg DISPLAY_IP=192.168.80.1 -t lombiq/osoce .
-docker run --name osoce -it --rm -p 5000:5000 -p 5001:5001 osoce
+docker run --name osoce -it --rm -p 5000:5000 -p 5001:5001 lombiq/osoce
 ```
 
 Verify that the X Display redirection works:
@@ -16,7 +16,8 @@ Chromium should launch in a new window.
 
 Run the web project:
 ```shell
-dotnet run --project src/Lombiq.OSOCE.Web/Lombiq.OSOCE.Web.csproj
+cd src/Lombiq.OSOCE.Web/bin/Debug/netcoreapp3.1
+./Lombiq.OSOCE.Web
 ```
 
 Or execute the tests:

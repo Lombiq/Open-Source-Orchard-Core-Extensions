@@ -2,12 +2,19 @@ FROM archlinux
 ARG DISPLAY_IP
 ENV DISPLAY_IP $DISPLAY_IP
 
+ENV ASPNETCORE_ENVIRONMENT=Development
+ENV DOTNET_USE_POLLING_FILE_WATCHER=true
+ENV ASPNETCORE_URLS=http://+:5000;http://+:5001
+EXPOSE 5000
+EXPOSE 5001
+
 # Set up package manager and install required packages.
 RUN pacman-key --init
 RUN pacman -Sy
 RUN pacman -Su --noconfirm
-RUN pacman -S --noconfirm bash dotnet-sdk dotnet-sdk-3.1 sudo chromium git curl
+RUN pacman -S --noconfirm bash dotnet-sdk aspnet-runtime aspnet-runtime-3.1 sudo chromium git curl
 SHELL ["/bin/bash", "-c"]
+# Note: You can remove the aspnet-runtime-3.1 once we've migrated to net6 (see issue/OSOE-60).
 
 # Set up user environment.
 RUN useradd user
