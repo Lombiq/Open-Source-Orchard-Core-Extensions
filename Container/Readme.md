@@ -8,10 +8,7 @@ docker build --build-arg DISPLAY_IP=192.168.80.1 -t lombiq/osoce .
 docker run --name osoce -it --rm -p 5000:5000 -p 5001:5001 lombiq/osoce
 ```
 
-Verify that the X Display redirection works:
-```shell
-chromium --no-sandbox
-```
+Verify that the X Display redirection works by typing `chromium`.
 Chromium should launch in a new window.
 
 Run the web project:
