@@ -11,7 +11,7 @@ namespace Lombiq.OSOCE.NuGet.Tests.UI
     public class UITestBase : OrchardCoreUITestBase
     {
         protected override string AppAssemblyPath => WebAppConfigHelper
-            .GetAbsoluteApplicationAssemblyPath("Lombiq.OSOCE.NuGet.Web", "netcoreapp3.1");
+            .GetAbsoluteApplicationAssemblyPath("Lombiq.OSOCE.NuGet.Web", "net6.0");
 
         protected UITestBase(ITestOutputHelper testOutputHelper)
             : base(testOutputHelper)

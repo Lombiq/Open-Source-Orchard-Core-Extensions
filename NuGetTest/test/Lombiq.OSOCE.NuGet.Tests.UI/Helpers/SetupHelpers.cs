@@ -16,7 +16,7 @@ namespace Lombiq.OSOCE.NuGet.Tests.UI.Helpers
             var homepageUri = await context.GoToSetupPageAndSetupOrchardCoreAsync(
                 new OrchardCoreSetupParameters(context)
                 {
-                    SiteName = "Lombiq's Open-Source Orchard Core Extensions - UI Testing",
+                    SiteName = "Lombiq's OSOCE - UI Testing",
                     RecipeId = RecipeId,
                     TablePrefix = "OSOCE",
                     SiteTimeZoneValue = "Europe/Budapest",
