@@ -1,6 +1,10 @@
 # Linux Container for Lombiq's Open-Source Orchard Core Extensions
 
-First install [VcXsrv](https://sourceforge.net/projects/vcxsrv/). Once launched, open a `cmd` and type "ipconfig /all". Locate the "Hyper-V Virtual Ethernet Adapter" and set the IP as the value of the `DISPLAY_IP`, like below:
+This is the readme for the [Docker container](../Dockerfile) that runs in userspace. It's based on [Arch Linux](https://archlinux.org/) so if you have that distibution you can consult it as a template for bare metal setup too.
+
+# Setup
+
+On a Windows host, first install [VcXsrv](https://sourceforge.net/projects/vcxsrv/). Once launched, open a `cmd` and type "ipconfig /all". Locate the "Hyper-V Virtual Ethernet Adapter" and set the IP as the value of the `DISPLAY_IP`. On a Linux host you don't need to install anything, use `ifconfig` to find you local IP.
 
 ```shell
 cd path\to\Open-Source-Orchard-Core-Extensions
