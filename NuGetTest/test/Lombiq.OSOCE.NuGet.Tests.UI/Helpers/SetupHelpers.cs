@@ -5,26 +5,25 @@ using OpenQA.Selenium;
 using System;
 using System.Threading.Tasks;
 
-namespace Lombiq.OSOCE.NuGet.Tests.UI.Helpers
+namespace Lombiq.OSOCE.NuGet.Tests.UI.Helpers;
+
+public static class SetupHelpers
 {
-    public static class SetupHelpers
+    public const string RecipeId = "Lombiq.OSOCE.NuGet.Tests";
+
+    public static async Task<Uri> RunSetupAsync(UITestContext context)
     {
-        public const string RecipeId = "Lombiq.OSOCE.NuGet.Tests";
+        var homepageUri = await context.GoToSetupPageAndSetupOrchardCoreAsync(
+            new OrchardCoreSetupParameters(context)
+            {
+                SiteName = "Lombiq's OSOCE - UI Testing",
+                RecipeId = RecipeId,
+                TablePrefix = "OSOCE",
+                SiteTimeZoneValue = "Europe/Budapest",
+            });
 
-        public static async Task<Uri> RunSetupAsync(UITestContext context)
-        {
-            var homepageUri = await context.GoToSetupPageAndSetupOrchardCoreAsync(
-                new OrchardCoreSetupParameters(context)
-                {
-                    SiteName = "Lombiq's OSOCE - UI Testing",
-                    RecipeId = RecipeId,
-                    TablePrefix = "OSOCE",
-                    SiteTimeZoneValue = "Europe/Budapest",
-                });
+        context.Exists(By.Id("navbar"));
 
-            context.Exists(By.Id("navbar"));
-
-            return homepageUri;
-        }
+        return homepageUri;
     }
 }
