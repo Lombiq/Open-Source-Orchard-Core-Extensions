@@ -106,7 +106,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Container", "Container", "{
 		Dockerfile = Dockerfile
 		.dockerignore = .dockerignore
 		Container\Readme.md = Container\Readme.md
-		Container\bashrc.sh = Container\bashrc.sh
+		Container\bash.rc = Container\bash.rc
 		Container\setup-nvm.sh = Container\setup-nvm.sh
 		Container\dev-cert.sh = Container\dev-cert.sh
 	EndProjectSection

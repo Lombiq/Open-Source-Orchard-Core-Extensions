@@ -10,11 +10,10 @@ EXPOSE 5001
 
 # Set up package manager and install required packages.
 RUN pacman-key --init
-RUN pacman -Sy
+RUN pacman -Syy
 RUN pacman -Su --noconfirm
-RUN pacman -S --noconfirm bash dotnet-sdk aspnet-runtime aspnet-runtime-3.1 sudo chromium git curl dbus
+RUN pacman -S --noconfirm bash dotnet-sdk aspnet-runtime sudo chromium git curl systemd
 SHELL ["/bin/bash", "-c"]
-# Note: You can remove the aspnet-runtime-3.1 once we've migrated to net6 (see issue/OSOE-60).
 
 # Set up user environment.
 RUN useradd user
@@ -27,10 +26,9 @@ COPY Container/*.sh /home/user/.local/bin
 COPY Container/bash.rc /home/user/.bashrc
 RUN ["/bin/sh", "-c", "echo 'export DISPLAY=$DISPLAY_IP:0.0' >> .bashrc"]
 RUN chown --recursive user:user .
-RUN chmod +x *.sh
+RUN chmod +x /home/user/.local/bin/*
 USER user
 ENV PATH /home/user/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-RUN dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
 
 # Set up NVM, install Gulp and PNPM.
 RUN setup-nvm.sh
