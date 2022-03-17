@@ -17,7 +17,7 @@ Chromium should launch in a new window.
 
 Run the web project:
 ```shell
-cd src/Lombiq.OSOCE.Web/bin/Debug/netcoreapp3.1
+cd src/Lombiq.OSOCE.Web/bin/Debug/net6.0
 ./Lombiq.OSOCE.Web
 ```
 
