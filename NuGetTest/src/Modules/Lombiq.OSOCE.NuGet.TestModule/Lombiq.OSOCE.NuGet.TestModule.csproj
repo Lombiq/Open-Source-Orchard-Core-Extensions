@@ -4,9 +4,6 @@
     <TargetFramework>net6.0</TargetFramework>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <DefaultItemExcludes>$(DefaultItemExcludes);.git*;node_modules\**;Tests\**</DefaultItemExcludes>
-    <!-- This shouldn't be necessary since Lombiq.Analyzers properly sets this but somehow only during CI build it is
-    not taking effect (works fine otherwise).-->
-    <LangVersion>10.0</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
