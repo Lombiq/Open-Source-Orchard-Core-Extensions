@@ -1,6 +1,5 @@
-namespace Lombiq.OSOCE.NuGet.Tests
+namespace Lombiq.OSOCE.NuGet.Tests;
+
+internal class MockedClass
 {
-    internal class MockedClass
-    {
-    }
 }
