@@ -12,7 +12,7 @@ EXPOSE 5001
 RUN pacman-key --init
 RUN pacman -Syy
 RUN pacman -Su --noconfirm
-RUN pacman -S --noconfirm bash dotnet-sdk aspnet-runtime sudo chromium git curl systemd
+RUN pacman -S --noconfirm bash dotnet-sdk aspnet-runtime sudo xterm git curl dos2unix
 SHELL ["/bin/bash", "-c"]
 
 # Set up user environment.
@@ -26,7 +26,9 @@ COPY Container/*.sh /home/user/.local/bin
 COPY Container/bash.rc /home/user/.bashrc
 RUN ["/bin/sh", "-c", "echo 'export DISPLAY=$DISPLAY_IP:0.0' >> .bashrc"]
 RUN chown --recursive user:user .
+RUN dos2unix /home/user/.local/bin/*
 RUN chmod +x /home/user/.local/bin/*
+RUN pacman -R dos2unix --noconfirm
 USER user
 ENV PATH /home/user/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
