@@ -6,27 +6,26 @@ using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Lombiq.OSOCE.Tests.UI.Tests
+namespace Lombiq.OSOCE.Tests.UI.Tests;
+
+public class BehaviorVueTests : UITestBase
 {
-    public class BehaviorVueTests : UITestBase
+    public BehaviorVueTests(ITestOutputHelper testOutputHelper)
+        : base(testOutputHelper)
     {
-        public BehaviorVueTests(ITestOutputHelper testOutputHelper)
-            : base(testOutputHelper)
-        {
-        }
-
-        [Theory, Chrome]
-        public Task RecipeDataShouldBeDisplayedCorrectly(Browser browser) =>
-            ExecuteTestAfterSetupAsync(
-                async context =>
-                {
-                    // Disabling some bothersome features that make relevant testing harder.
-                    await context.SignInDirectlyAsync();
-                    await context.DisableFeatureDirectlyAsync("Lombiq.Privacy.ConsentBanner");
-                    await context.DisableFeatureDirectlyAsync("Lombiq.Hosting.Azure.ApplicationInsights");
-
-                    await context.TestVueSampleBehaviorAsync();
-                },
-                browser);
     }
+
+    [Theory, Chrome]
+    public Task RecipeDataShouldBeDisplayedCorrectly(Browser browser) =>
+        ExecuteTestAfterSetupAsync(
+            async context =>
+            {
+                // Disabling some bothersome features that make relevant testing harder.
+                await context.SignInDirectlyAsync();
+                await context.DisableFeatureDirectlyAsync("Lombiq.Privacy.ConsentBanner");
+                await context.DisableFeatureDirectlyAsync("Lombiq.Hosting.Azure.ApplicationInsights");
+
+                await context.TestVueSampleBehaviorAsync();
+            },
+            browser);
 }
