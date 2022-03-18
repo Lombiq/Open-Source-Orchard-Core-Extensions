@@ -10,8 +10,8 @@ var configuration = builder.Configuration;
 
 builder.Services
     .AddOrchardCms(builder => builder
-    .ConfigureUITesting(configuration, enableShortcutsDuringUITesting: true)
-    .AuthorizeApiRequestsIfEnabled(configuration));
+        .ConfigureUITesting(configuration, enableShortcutsDuringUITesting: true)
+        .AuthorizeApiRequestsIfEnabled(configuration));
 
 var app = builder.Build();
 
