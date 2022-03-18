@@ -21,7 +21,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 
 ENV DOTNET_USE_POLLING_FILE_WATCHER=true
-ENV ASPNETCORE_URLS=http://+:5000;http://+:5001
+ENV ASPNETCORE_URLS=http://+:5000;https://+:5001
 EXPOSE 5000
 EXPOSE 5001
 
