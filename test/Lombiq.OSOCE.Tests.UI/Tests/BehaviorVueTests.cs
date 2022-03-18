@@ -33,9 +33,14 @@ public class BehaviorVueTests : UITestBase
             {
                 var privacyConsentAcceptButton = By.Id("privacy-consent-accept-button");
 
+                // Enable consent banner and interact with it.
                 await context.EnableFeatureDirectlyAsync("Lombiq.Privacy.ConsentBanner");
                 await context.GoToHomePageAsync();
                 await context.ClickReliablyOnAsync(privacyConsentAcceptButton);
+                context.Missing(privacyConsentAcceptButton);
+
+                // Verify persistence.
+                context.Refresh();
                 context.Missing(privacyConsentAcceptButton);
             },
             browser);
