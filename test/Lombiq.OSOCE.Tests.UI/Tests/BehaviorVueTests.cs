@@ -21,10 +21,9 @@ public class BehaviorVueTests : UITestBase
             async context =>
             {
                 // Disabling some bothersome features that make relevant testing harder.
-                await context.SignInDirectlyAsync();
-                await context.DisableFeatureDirectlyAsync("Lombiq.Privacy.ConsentBanner");
                 await context.DisableFeatureDirectlyAsync("Lombiq.Hosting.Azure.ApplicationInsights");
 
+                await context.SignInDirectlyAsync();
                 await context.TestVueSampleBehaviorAsync();
             },
             browser);

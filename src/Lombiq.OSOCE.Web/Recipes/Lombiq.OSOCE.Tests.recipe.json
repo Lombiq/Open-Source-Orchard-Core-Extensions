@@ -32,7 +32,7 @@
         "Lombiq.Hosting.Tenants.Management",
         "Lombiq.JsonEditor",
         "Lombiq.OSOCE.Samples",
-        "Lombiq.Privacy.ConsentBanner",
+        // "Lombiq.Privacy.ConsentBanner", // We only enable this on a specific test, because it overlaps with too many things.
         "Lombiq.Privacy.FormConsent",
         "Lombiq.Privacy.RegistrationConsent",
         "Lombiq.TrainingDemo",
