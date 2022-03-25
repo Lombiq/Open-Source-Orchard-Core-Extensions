@@ -87,23 +87,25 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries.Sam
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries.Targets", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Targets\Lombiq.HelpfulLibraries.Targets.csproj", "{1B3CEAAC-E557-4AAA-9939-CB96A0049ED1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.VueJs.Samples", "src\Modules\Lombiq.VueJs\Lombiq.VueJs.Samples\Lombiq.VueJs.Samples.csproj", "{B5279766-5DAE-4257-87E7-E3821759A2F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.VueJs.Samples", "src\Modules\Lombiq.VueJs\Lombiq.VueJs.Samples\Lombiq.VueJs.Samples.csproj", "{B5279766-5DAE-4257-87E7-E3821759A2F8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{BF1EDFA5-0129-416C-B9ED-8CE68A3FD526}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Analyzers", "tools\Lombiq.Analyzers\Lombiq.Analyzers.csproj", "{C7A251AA-1BD5-47D8-A61B-50D8C493223A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.DataTables", "src\Modules\Lombiq.DataTables\Lombiq.DataTables\Lombiq.DataTables.csproj", "{E5F0E0AD-421C-4F7F-B27C-5BCCCE3C9B08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.DataTables", "src\Modules\Lombiq.DataTables\Lombiq.DataTables\Lombiq.DataTables.csproj", "{E5F0E0AD-421C-4F7F-B27C-5BCCCE3C9B08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.DataTables.Samples", "src\Modules\Lombiq.DataTables\Lombiq.DataTables.Samples\Lombiq.DataTables.Samples.csproj", "{56963ED6-1042-4051-9513-43778059A01D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.DataTables.Samples", "src\Modules\Lombiq.DataTables\Lombiq.DataTables.Samples\Lombiq.DataTables.Samples.csproj", "{56963ED6-1042-4051-9513-43778059A01D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.DataTables.Tests", "src\Modules\Lombiq.DataTables\Lombiq.DataTables\Tests\Lombiq.DataTables.Tests\Lombiq.DataTables.Tests.csproj", "{1DEE21A1-F89B-47CF-8971-6C28C0C0F1CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.DataTables.Tests", "src\Modules\Lombiq.DataTables\Lombiq.DataTables\Tests\Lombiq.DataTables.Tests\Lombiq.DataTables.Tests.csproj", "{1DEE21A1-F89B-47CF-8971-6C28C0C0F1CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.OSOCE.Tests.UI", "test\Lombiq.OSOCE.Tests.UI\Lombiq.OSOCE.Tests.UI.csproj", "{AF7F0D99-B8CF-48D7-9471-A5F91CB53B09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.Tests.UI", "test\Lombiq.OSOCE.Tests.UI\Lombiq.OSOCE.Tests.UI.csproj", "{AF7F0D99-B8CF-48D7-9471-A5F91CB53B09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.DataTables.Tests.UI", "src\Modules\Lombiq.DataTables\Lombiq.DataTables\Tests\Lombiq.DataTables.Tests.UI\Lombiq.DataTables.Tests.UI.csproj", "{44546C43-8A6D-4C8F-901E-0C87DA596965}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.DataTables.Tests.UI", "src\Modules\Lombiq.DataTables\Lombiq.DataTables\Tests\Lombiq.DataTables.Tests.UI\Lombiq.DataTables.Tests.UI.csproj", "{44546C43-8A6D-4C8F-901E-0C87DA596965}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.VueJs.Tests.UI", "src\Modules\Lombiq.VueJs\Lombiq.VueJs.Tests.UI\Lombiq.VueJs.Tests.UI.csproj", "{3F55C053-430A-438A-BB1C-8D39E363B8AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.VueJs.Tests.UI", "src\Modules\Lombiq.VueJs\Lombiq.VueJs.Tests.UI\Lombiq.VueJs.Tests.UI.csproj", "{3F55C053-430A-438A-BB1C-8D39E363B8AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.HelpfulLibraries.AspNetCore", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.AspNetCore\Lombiq.HelpfulLibraries.AspNetCore.csproj", "{F8EF807E-85E5-4FA8-98C3-536ABBEF4276}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -547,6 +549,18 @@ Global
 		{3F55C053-430A-438A-BB1C-8D39E363B8AF}.Release|x64.Build.0 = Release|Any CPU
 		{3F55C053-430A-438A-BB1C-8D39E363B8AF}.Release|x86.ActiveCfg = Release|Any CPU
 		{3F55C053-430A-438A-BB1C-8D39E363B8AF}.Release|x86.Build.0 = Release|Any CPU
+		{F8EF807E-85E5-4FA8-98C3-536ABBEF4276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8EF807E-85E5-4FA8-98C3-536ABBEF4276}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8EF807E-85E5-4FA8-98C3-536ABBEF4276}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F8EF807E-85E5-4FA8-98C3-536ABBEF4276}.Debug|x64.Build.0 = Debug|Any CPU
+		{F8EF807E-85E5-4FA8-98C3-536ABBEF4276}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F8EF807E-85E5-4FA8-98C3-536ABBEF4276}.Debug|x86.Build.0 = Debug|Any CPU
+		{F8EF807E-85E5-4FA8-98C3-536ABBEF4276}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8EF807E-85E5-4FA8-98C3-536ABBEF4276}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8EF807E-85E5-4FA8-98C3-536ABBEF4276}.Release|x64.ActiveCfg = Release|Any CPU
+		{F8EF807E-85E5-4FA8-98C3-536ABBEF4276}.Release|x64.Build.0 = Release|Any CPU
+		{F8EF807E-85E5-4FA8-98C3-536ABBEF4276}.Release|x86.ActiveCfg = Release|Any CPU
+		{F8EF807E-85E5-4FA8-98C3-536ABBEF4276}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -593,6 +607,7 @@ Global
 		{AF7F0D99-B8CF-48D7-9471-A5F91CB53B09} = {FF48793C-2AC5-4FAA-9BA1-44448E3A7F98}
 		{44546C43-8A6D-4C8F-901E-0C87DA596965} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
 		{3F55C053-430A-438A-BB1C-8D39E363B8AF} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
+		{F8EF807E-85E5-4FA8-98C3-536ABBEF4276} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
