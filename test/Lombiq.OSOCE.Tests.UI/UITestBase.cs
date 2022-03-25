@@ -1,4 +1,5 @@
 using Lombiq.Tests.UI;
+using Lombiq.Tests.UI.Constants;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Helpers;
 using Lombiq.Tests.UI.Samples.Helpers;
@@ -37,10 +38,10 @@ public class UITestBase : OrchardCoreUITestBase
             setupOperation,
             async configuration =>
             {
-                configuration.AccessibilityCheckingConfiguration.RunAccessibilityCheckingAssertionOnAllPageChanges = true;
-                configuration.UseSqlServer = true;
+                configuration.BrowserConfiguration.DefaultBrowserSize = CommonDisplayResolutions.HdPlus;
 
-                if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
+                configuration.BrowserConfiguration.Headless =
+                    TestConfigurationManager.GetBoolConfiguration("BrowserConfiguration:Headless", defaultValue: false);
 
                 configuration.OrchardCoreConfiguration.EnableApplicationInsightsOfflineOperation();
 
@@ -50,5 +51,7 @@ public class UITestBase : OrchardCoreUITestBase
                         "|Lombiq.TrainingDemo.Services.DemoBackgroundTask|ERROR|Expected non-error",
                         "|Lombiq.TrainingDemo.Services.DemoBackgroundTask|EXPECTED_ERROR|Expected non-error")
                     .ShouldNotContain("|ERROR|");
+
+                if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
             });
 }
