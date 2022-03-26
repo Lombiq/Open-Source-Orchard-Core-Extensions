@@ -105,9 +105,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.VueJs.Tests.UI", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries.AspNetCore", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.AspNetCore\Lombiq.HelpfulLibraries.AspNetCore.csproj", "{F8EF807E-85E5-4FA8-98C3-536ABBEF4276}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.HelpfulLibraries.Common", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Common\Lombiq.HelpfulLibraries.Common.csproj", "{ACF4C334-D48B-46D2-B5A1-681115067748}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries.Common", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Common\Lombiq.HelpfulLibraries.Common.csproj", "{ACF4C334-D48B-46D2-B5A1-681115067748}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.HelpfulLibraries.OrchardCore", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.OrchardCore\Lombiq.HelpfulLibraries.OrchardCore.csproj", "{CA011075-6748-4EB4-9C72-C8FD7319FEFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries.OrchardCore", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.OrchardCore\Lombiq.HelpfulLibraries.OrchardCore.csproj", "{CA011075-6748-4EB4-9C72-C8FD7319FEFD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries.OrchardCore.Testing", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.OrchardCore.Testing\Lombiq.HelpfulLibraries.OrchardCore.Testing.csproj", "{95D73C6A-B81E-44A3-9376-9CFEFDE3B314}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -575,6 +577,18 @@ Global
 		{CA011075-6748-4EB4-9C72-C8FD7319FEFD}.Release|x64.Build.0 = Release|Any CPU
 		{CA011075-6748-4EB4-9C72-C8FD7319FEFD}.Release|x86.ActiveCfg = Release|Any CPU
 		{CA011075-6748-4EB4-9C72-C8FD7319FEFD}.Release|x86.Build.0 = Release|Any CPU
+		{95D73C6A-B81E-44A3-9376-9CFEFDE3B314}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95D73C6A-B81E-44A3-9376-9CFEFDE3B314}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95D73C6A-B81E-44A3-9376-9CFEFDE3B314}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{95D73C6A-B81E-44A3-9376-9CFEFDE3B314}.Debug|x64.Build.0 = Debug|Any CPU
+		{95D73C6A-B81E-44A3-9376-9CFEFDE3B314}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{95D73C6A-B81E-44A3-9376-9CFEFDE3B314}.Debug|x86.Build.0 = Debug|Any CPU
+		{95D73C6A-B81E-44A3-9376-9CFEFDE3B314}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95D73C6A-B81E-44A3-9376-9CFEFDE3B314}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95D73C6A-B81E-44A3-9376-9CFEFDE3B314}.Release|x64.ActiveCfg = Release|Any CPU
+		{95D73C6A-B81E-44A3-9376-9CFEFDE3B314}.Release|x64.Build.0 = Release|Any CPU
+		{95D73C6A-B81E-44A3-9376-9CFEFDE3B314}.Release|x86.ActiveCfg = Release|Any CPU
+		{95D73C6A-B81E-44A3-9376-9CFEFDE3B314}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -623,6 +637,7 @@ Global
 		{F8EF807E-85E5-4FA8-98C3-536ABBEF4276} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
 		{ACF4C334-D48B-46D2-B5A1-681115067748} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
 		{CA011075-6748-4EB4-9C72-C8FD7319FEFD} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
+		{95D73C6A-B81E-44A3-9376-9CFEFDE3B314} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
