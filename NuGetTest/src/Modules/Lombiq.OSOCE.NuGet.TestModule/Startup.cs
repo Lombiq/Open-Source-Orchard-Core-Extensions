@@ -1,13 +1,15 @@
-using Lombiq.HelpfulLibraries.Libraries.DependencyInjection;
-using Lombiq.HelpfulLibraries.Libraries.Users;
+using Lombiq.HelpfulLibraries.Common.DependencyInjection;
+using Lombiq.HelpfulLibraries.OrchardCore.Users;
 using Microsoft.Extensions.DependencyInjection;
 using OrchardCore.Modules;
 
-namespace Lombiq.OSOCE.NuGet.TestModule
+namespace Lombiq.OSOCE.NuGet.TestModule;
+
+public class Startup : StartupBase
 {
-    public class Startup : StartupBase
+    public override void ConfigureServices(IServiceCollection services)
     {
-        public override void ConfigureServices(IServiceCollection services) =>
-            services.AddCachingUserServer().AddLazyInjectionSupport();
+        services.AddCachingUserServer();
+        services.AddLazyInjectionSupport();
     }
 }

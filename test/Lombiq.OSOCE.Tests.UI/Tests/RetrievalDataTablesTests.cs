@@ -5,19 +5,18 @@ using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Lombiq.OSOCE.Tests.UI.Tests
-{
-    public class BehaviorDataTablesTests : UITestBase
-    {
-        public BehaviorDataTablesTests(ITestOutputHelper testOutputHelper)
-            : base(testOutputHelper)
-        {
-        }
+namespace Lombiq.OSOCE.Tests.UI.Tests;
 
-        [Theory, Chrome]
-        public Task RecipeDataShouldBeDisplayedCorrectly(Browser browser) =>
-            ExecuteTestAfterSetupAsync(
-                context => context.TestDataTableRecipeDataAsync(),
-                browser);
+public class BehaviorDataTablesTests : UITestBase
+{
+    public BehaviorDataTablesTests(ITestOutputHelper testOutputHelper)
+        : base(testOutputHelper)
+    {
     }
+
+    [Theory, Chrome]
+    public Task RecipeDataShouldBeDisplayedCorrectly(Browser browser) =>
+        ExecuteTestAfterSetupAsync(
+            context => context.TestDataTableRecipeDataAsync(),
+            browser);
 }
