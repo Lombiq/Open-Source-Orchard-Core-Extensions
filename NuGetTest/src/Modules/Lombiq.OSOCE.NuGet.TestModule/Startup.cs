@@ -1,5 +1,5 @@
-using Lombiq.HelpfulLibraries.Libraries.DependencyInjection;
-using Lombiq.HelpfulLibraries.Libraries.Users;
+using Lombiq.HelpfulLibraries.Common.DependencyInjection;
+using Lombiq.HelpfulLibraries.OrchardCore.Users;
 using Microsoft.Extensions.DependencyInjection;
 using OrchardCore.Modules;
 

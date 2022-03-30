@@ -1,4 +1,4 @@
-using Lombiq.HelpfulLibraries.Libraries.Users;
+using Lombiq.HelpfulLibraries.OrchardCore.Users;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -19,7 +19,7 @@ public class SourceLinkTestController : Controller
         // Source Link support" is checked. For more info see:
         // https://devblogs.microsoft.com/dotnet/improving-debug-time-productivity-with-source-link/#enabling-source-link.
         // Let symbol loading finish, which might take several minutes (though you can speed it up by just loading
-        // symbols for "Lombiq.HelpfulLibraries.dll" under Debugging -> Symbols -> Load only specified modules).
+        // symbols for "Lombiq.HelpfulLibraries.OrchardCore.dll" under Debugging -> Symbols -> Load only specified modules).
         var adminUser = await _cachingUserManager.GetUserByNameAsync("admin");
         return adminUser?.UserName ?? "No user found.";
     }
