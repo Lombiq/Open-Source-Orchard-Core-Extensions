@@ -22,9 +22,6 @@ public class BehaviorFileUploadTests : UITestBase
         ExecuteTestAfterSetupAsync(
             async context =>
             {
-                // The file upload won't work until the privacy consent banner is accepted.
-                await context.DisableFeatureDirectlyAsync("Lombiq.Privacy");
-
                 // Testing if sample files work.
                 await context.SignInDirectlyAndGoToRelativeUrlAsync("/Admin/DeploymentPlan/Import/Index");
                 context.UploadFile(By.Name("importedPackage"), FileUploadHelper.SamplePdfPath);
