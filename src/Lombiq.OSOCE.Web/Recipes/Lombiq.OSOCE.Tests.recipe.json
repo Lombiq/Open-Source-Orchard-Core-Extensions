@@ -93,6 +93,15 @@
       // Using a custom theme that relies on "Lombiq.BaseTheme". Previously we used "TheTheme" because the dafault
       // "TheBlogTheme" uses the PageTitle shape for <title> and Shape Tracing Helpful Extensions would mess it up.
       "site": "Lombiq.BaseTheme.Samples"
+    },
+    {
+      "name": "recipes",
+      "Values": [
+        {
+          "executionid": "Lombiq.OSOCE.Web",
+          "name": "Lombiq.BaseTheme.LayersAndZones"
+        }
+      ]
     }
   ]
 }
