@@ -1,17 +1,20 @@
-using Lombiq.OSOCE.NuGet.Tests.UI.Helpers;
 using Lombiq.Tests.UI;
+using Lombiq.Tests.UI.Constants;
+using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Helpers;
+using Lombiq.Tests.UI.Samples.Helpers;
 using Lombiq.Tests.UI.Services;
+using Shouldly;
 using System;
 using System.Threading.Tasks;
 using Xunit.Abstractions;
 
-namespace Lombiq.OSOCE.NuGet.Tests.UI;
+namespace Lombiq.OSOCE.Tests.UI;
 
 public class UITestBase : OrchardCoreUITestBase
 {
     protected override string AppAssemblyPath => WebAppConfigHelper
-        .GetAbsoluteApplicationAssemblyPath("Lombiq.OSOCE.NuGet.Web", "net6.0");
+        .GetAbsoluteApplicationAssemblyPath("Lombiq.OSOCE.Web", "net6.0");
 
     protected UITestBase(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)
@@ -35,6 +38,20 @@ public class UITestBase : OrchardCoreUITestBase
             setupOperation,
             async configuration =>
             {
+                configuration.BrowserConfiguration.DefaultBrowserSize = CommonDisplayResolutions.HdPlus;
+
+                configuration.BrowserConfiguration.Headless =
+                    TestConfigurationManager.GetBoolConfiguration("BrowserConfiguration:Headless", defaultValue: false);
+
+                configuration.OrchardCoreConfiguration.EnableApplicationInsightsOfflineOperation();
+
+                configuration.AssertAppLogsAsync = async webApplicationInstance =>
+                    (await webApplicationInstance.GetLogOutputAsync())
+                    .ReplaceOrdinalIgnoreCase(
+                        "|Lombiq.TrainingDemo.Services.DemoBackgroundTask|ERROR|Expected non-error",
+                        "|Lombiq.TrainingDemo.Services.DemoBackgroundTask|EXPECTED_ERROR|Expected non-error")
+                    .ShouldNotContain("|ERROR|");
+
                 if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
             });
 }
