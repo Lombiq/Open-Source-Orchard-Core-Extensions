@@ -1,4 +1,5 @@
 using Lombiq.Tests.UI;
+using Lombiq.Tests.UI.Constants;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Helpers;
 using Lombiq.Tests.UI.Samples.Helpers;
@@ -27,20 +28,20 @@ public class UITestBase : OrchardCoreUITestBase
         ExecuteTestAsync(testAsync, browser, SetupHelpers.RunSetupAsync, changeConfigurationAsync);
 
     protected override Task ExecuteTestAsync(
-        Action<UITestContext> test,
+        Func<UITestContext, Task> testAsync,
         Browser browser,
-        Func<UITestContext, Task<Uri>> setupOperation = null,
-        Action<OrchardCoreUITestExecutorConfiguration> changeConfiguration = null) =>
+        Func<UITestContext, Task<Uri>> setupOperation,
+        Func<OrchardCoreUITestExecutorConfiguration, Task> changeConfigurationAsync) =>
         base.ExecuteTestAsync(
-            test,
+            testAsync,
             browser,
             setupOperation,
-            configuration =>
+            async configuration =>
             {
-                configuration.AccessibilityCheckingConfiguration.RunAccessibilityCheckingAssertionOnAllPageChanges = true;
-                configuration.UseSqlServer = true;
+                configuration.BrowserConfiguration.DefaultBrowserSize = CommonDisplayResolutions.HdPlus;
 
-                changeConfiguration?.Invoke(configuration);
+                configuration.BrowserConfiguration.Headless =
+                    TestConfigurationManager.GetBoolConfiguration("BrowserConfiguration:Headless", defaultValue: false);
 
                 configuration.OrchardCoreConfiguration.EnableApplicationInsightsOfflineOperation();
 
@@ -50,5 +51,7 @@ public class UITestBase : OrchardCoreUITestBase
                         "|Lombiq.TrainingDemo.Services.DemoBackgroundTask|ERROR|Expected non-error",
                         "|Lombiq.TrainingDemo.Services.DemoBackgroundTask|EXPECTED_ERROR|Expected non-error")
                     .ShouldNotContain("|ERROR|");
+
+                if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
             });
 }
