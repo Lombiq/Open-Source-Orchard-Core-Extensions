@@ -45,6 +45,10 @@ This also serves as an example of an ASP.NET Core web app using Orchard from NuG
   - [Lombiq.UIKit](https://github.com/Lombiq/Orchard-UIKit/tree/dev): This module contains reusable shapes like text editors, custom-style checkboxes, dropdown editors, and in the future potentially more complex editors. [Here](https://www.youtube.com/watch?v=PONfn2K8AHg) you can also see a demo of it.
   - [Lombiq.VueJs](https://github.com/Lombiq/Orchard-Vue.js/tree/dev): [Orchard Core](http://orchardproject.net/) module that contains [Vue.js](https://vuejs.org/) and commonly used Vue.js components to be used in other Vue.js apps as dependencies. Provides extensibility to create Vue.js component templates as Orchard Core shapes making them able to override in themes or modules.
 
+- Themes
+  - [Lombiq.BaseTheme](https://github.com/Lombiq/Orchard-Base-Theme/tree/dev): This theme contains infrastructure for custom Bootstrap 5 themes with standardized zones and built-in front end menu display.
+  - [Lombiq.BaseTheme.Samples](https://github.com/Lombiq/Orchard-Base-Theme/tree/dev/Lombiq.BaseTheme.Samples): A sample theme that demonstrates the features of the [Lombiq.BaseTheme](https://github.com/Lombiq/Orchard-Base-Theme/tree/dev).
+
 - Utilities
   - [Lombiq.Gulp.Extensions](https://github.com/Lombiq/Gulp-Extensions/tree/dev): Various JavaScript functions and Gulp tasks that can be handy when developing Gulp pipelines.
   - [Lombiq.Npm.Targets](https://github.com/Lombiq/NPM-Targets/tree/dev): Provides automatic NPM package installation and a custom NPM command execution before building a .NET project. This way it is possible for example to manage assets (e.g. .scss files or images) in a folder that will be automatically compiled into the _wwwroot_ folder on build, which then can be excluded from the version control system.
