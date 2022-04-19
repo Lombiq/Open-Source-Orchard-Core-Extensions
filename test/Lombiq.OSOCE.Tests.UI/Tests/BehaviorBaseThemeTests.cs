@@ -8,9 +8,9 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests;
 
-public class BehaviorThemeTests : UITestBase
+public class BehaviorBaseThemeTests : UITestBase
 {
-    public BehaviorThemeTests(ITestOutputHelper testOutputHelper)
+    public BehaviorBaseThemeTests(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)
     {
     }
