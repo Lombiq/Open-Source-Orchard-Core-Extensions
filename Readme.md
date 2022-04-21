@@ -22,7 +22,7 @@ This also serves as an example of an ASP.NET Core web app using Orchard from NuG
 
 ## Included Projects
 
-- Librarires
+- Libraries
   - [Lombiq.HelpfulLibraries](https://github.com/Lombiq/Helpful-Libraries/tree/dev): Various libraries that can be handy when developing for Orchard Core, to be used from your own Orchard modules.
   - [Lombiq.HelpfulLibraries.LinqToDb](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.LinqToDb): With the help of this project you can write LINQ expressions and run them with a [YesSql](https://github.com/sebastienros/yessql) `ISession` extension method to query from the DB instead of writing plain SQL queries. Uses the [LINQ to DB project](https://linq2db.github.io/). You can watch a demo video of the project [here](https://www.youtube.com/watch?v=ldJOdCSsWJo).
   - [Lombiq.HelpfulLibraries.RestEase](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.RestEase): Adds a typed HTTP client to the service collection using RestEase.
@@ -99,4 +99,8 @@ When adding a new extension, or significant new features to existing extensions,
 - Open a pull request for all but trivial changes (like typos) so we can nicely track them, including when generating release notes for the next release.
 
 ### Dependencies between Lombiq projects
-When making a Lombiq project depend on another one from this solution, apart from adding a project reference and dependency in the extension manifest for Orchard Core extensions, also add a conditional package reference. This way, when published to NuGet, dependencies will still work. See the project file of `Lombiq.HelpfulExtensions` for an example. You can just have project references between projects in the same repo though if both projects are published on NuGet (like between projects of the [UI Testing Toolbox](https://github.com/Lombiq/UI-Testing-Toolbox)) since those will be turned into package dependencies automatically.
+When making a Lombiq project depend on another one from this solution, apart from adding a project reference and dependency in the extension manifest for Orchard Core extensions, also add a conditional package reference. This way, when published to NuGet, dependencies will still work. See the project file of `Lombiq.HelpfulExtensions` for an example.
+
+You can just have project references between projects in the same repo though if both projects are published on NuGet (like between projects of the [UI Testing Toolbox](https://github.com/Lombiq/UI-Testing-Toolbox)) since those will be turned into package dependencies automatically.
+
+You can use the `NuGetBuild` switch in the root *Directory.Build.props* file to make all projects use NuGet references so you can update Lombiq packages for the whole solution.
