@@ -104,4 +104,8 @@ When adding a new extension, or significant new features to existing extensions,
 - Open a pull request for all but trivial changes (like typos) so we can nicely track them, including when generating release notes for the next release.
 
 ### Dependencies between Lombiq projects
-When making a Lombiq project depend on another one from this solution, apart from adding a project reference and dependency in the extension manifest for Orchard Core extensions, also add a conditional package reference. This way, when published to NuGet, dependencies will still work. See the project file of `Lombiq.HelpfulExtensions` for an example. You can just have project references between projects in the same repo though if both projects are published on NuGet (like between projects of the [UI Testing Toolbox](https://github.com/Lombiq/UI-Testing-Toolbox)) since those will be turned into package dependencies automatically.
+When making a Lombiq project depend on another one from this solution, apart from adding a project reference and dependency in the extension manifest for Orchard Core extensions, also add a conditional package reference. This way, when published to NuGet, dependencies will still work. See the project file of `Lombiq.HelpfulExtensions` for an example.
+
+You can just have project references between projects in the same repo though if both projects are published on NuGet (like between projects of the [UI Testing Toolbox](https://github.com/Lombiq/UI-Testing-Toolbox)) since those will be turned into package dependencies automatically.
+
+You can use the `NuGetBuild` switch in the root *Directory.Build.props* file to make all projects use NuGet references so you can update Lombiq packages for the whole solution.
