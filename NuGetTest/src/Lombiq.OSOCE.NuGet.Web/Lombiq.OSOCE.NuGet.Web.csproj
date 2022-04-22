@@ -20,7 +20,7 @@
     <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="2.0.1" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="2.0.1" />
     <PackageReference Include="Lombiq.JsonEditor" Version="2.0.1" />
-    <PackageReference Include="Lombiq.Privacy" Version="3.0.2-beta.5" />
+    <PackageReference Include="Lombiq.Privacy" Version="3.0.2-beta.6" />
     <PackageReference Include="Lombiq.SetupExtensions" Version="2.0.0" />
     <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="2.0.2" />
     <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="2.0.2" />
