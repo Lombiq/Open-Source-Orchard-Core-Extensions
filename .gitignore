@@ -168,7 +168,8 @@ log.xml
 profiling/
 *.orig
 .vs/
-#.vscode/
+.vscode/
+.idea/
 .build/
 .testPublish/
 
@@ -189,4 +190,3 @@ node_modules/
 src/*.Web/Localization
 /src/package.json
 /.editorconfig
-/.idea
