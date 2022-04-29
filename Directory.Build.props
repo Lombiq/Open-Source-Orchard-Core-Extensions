@@ -1,5 +1,5 @@
 <Project>
-  <Import Project="tools/Lombiq.Analyzers/Build.props"/>
+  <Import Project="tools/Lombiq.Analyzers/Build.props" Condition="'$(NuGetBuild)' == 'true'" />
   
   <!-- Copying the Lombiq logo as an icon to all NuGet-published projects. -->
   <Target Name="Copy NuGet icon" AfterTargets="AfterResolveReferences" Condition="'$(PackageLicenseFile)' != ''">
