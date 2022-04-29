@@ -1,10 +1,4 @@
 <Project>
-  <PropertyGroup>
-    <HelpfulLibrariesVersion>4.2.0-alpha.0</HelpfulLibrariesVersion>
-    <HelpfulExtensionsVersion>3.2.0-alpha.0</HelpfulExtensionsVersion>
-    <UiTestingToolboxVersion>2.1.0</UiTestingToolboxVersion>
-  </PropertyGroup>
-
   <!-- Copying the Lombiq logo as an icon to all NuGet-published projects. -->
   <Target Name="Copy NuGet icon" AfterTargets="AfterResolveReferences" Condition="'$(PackageLicenseFile)' != ''">
     <Copy SourceFiles="$(MSBuildThisFileDirectory)LombiqSymbolLogoColorWhiteFlaskSquareForNuGetPackages.png" DestinationFiles="$(ProjectDir)NuGetIcon.png" SkipUnchangedFiles="true"/>
