@@ -25,7 +25,8 @@
     <ProjectReference Include="..\..\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI.Shortcuts\Lombiq.Tests.UI.Shortcuts.csproj" />
     <ProjectReference Include="..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Samples\Lombiq.HelpfulLibraries.Samples.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.AuditTrailExtensions\Lombiq.AuditTrailExtensions.csproj" />
-    <ProjectReference Include="..\Modules\Lombiq.ChartJs\Lombiq.ChartJs.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.ChartJs\Lombiq.ChartJs.Samples\Lombiq.ChartJs.Samples.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.ChartJs\Lombiq.ChartJs\Lombiq.ChartJs.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.DataTables\Lombiq.DataTables.Samples\Lombiq.DataTables.Samples.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Azure.ApplicationInsights\Lombiq.Hosting.Azure.ApplicationInsights.csproj" />
