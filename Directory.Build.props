@@ -9,5 +9,6 @@
   <!-- <PropertyGroup>
     <NuGetBuild>true</NuGetBuild>
   </PropertyGroup> -->
-  <Import Project="tools/Lombiq.Analyzers/Build.props" Condition="'$(NuGetBuild)' == 'true'"/>
+
+  <Import Project="tools/Lombiq.Analyzers/Build.props" Condition="'$(NuGetBuild)' != 'true'" />
 </Project>
