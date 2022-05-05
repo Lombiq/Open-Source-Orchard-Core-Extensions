@@ -10,10 +10,10 @@
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
-  <!-- We use version ranges to resolve our own packages. Unlike floating versions, these resolve pre-release as well.
-       https://docs.microsoft.com/en-us/nuget/concepts/package-versioning#version-ranges -->
   <ItemGroup>
     <PackageReference Include="Lombiq.AuditTrailExtensions" Version="2.*" />
+    <!-- Floating versions don't resolve prereleases, see
+    https://docs.microsoft.com/en-us/nuget/concepts/package-versioning#:~:text=floating%20versions%20do%20not%20resolve%20prerelease%20versions%20unless%20opted%20into -->
     <PackageReference Include="Lombiq.BaseTheme.Samples" Version="1.0.0-alpha.8" />
     <PackageReference Include="Lombiq.ChartJs" Version="2.*" />
     <PackageReference Include="Lombiq.DataTables" Version="3.*" />
