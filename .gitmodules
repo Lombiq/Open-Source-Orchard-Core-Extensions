@@ -70,3 +70,7 @@
 	path = src/Modules/Lombiq.DataTables
 	url = https://github.com/Lombiq/Orchard-Data-Tables.git
 	branch = dev
+[submodule "src/Themes/Lombiq.BaseTheme"]
+	path = src/Themes/Lombiq.BaseTheme
+	url = https://github.com/Lombiq/Orchard-Base-Theme.git
+	branch = dev
