@@ -1,14 +1,14 @@
 <Project>
-  <Import Project="tools/Lombiq.Analyzers/Build.props"/>
-  
   <!-- Copying the Lombiq logo as an icon to all NuGet-published projects. -->
   <Target Name="Copy NuGet icon" AfterTargets="AfterResolveReferences" Condition="'$(PackageLicenseFile)' != ''">
-    <Copy SourceFiles="$(MSBuildThisFileDirectory)LombiqSymbolLogoColorWhiteFlaskSquareForNuGetPackages.png" DestinationFiles="$(ProjectDir)NuGetIcon.png" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)LombiqSymbolLogoColorWhiteFlaskSquareForNuGetPackages.png" DestinationFiles="$(ProjectDir)NuGetIcon.png" SkipUnchangedFiles="true"/>
   </Target>
 
   <!-- Uncomment this to switch to how NuGet-publishing GitHub Actions builds work, including referencing Lombiq NuGet
   package dependencies instead of submodules. -->
-  <!--<PropertyGroup>
+  <!-- <PropertyGroup>
     <NuGetBuild>true</NuGetBuild>
-  </PropertyGroup>-->
+  </PropertyGroup> -->
+
+  <Import Project="tools/Lombiq.Analyzers/Build.props" Condition="'$(NuGetTestbed)' != 'true'" />
 </Project>

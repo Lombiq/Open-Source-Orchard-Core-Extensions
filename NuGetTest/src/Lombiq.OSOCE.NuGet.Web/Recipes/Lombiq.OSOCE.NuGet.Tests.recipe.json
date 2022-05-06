@@ -37,10 +37,8 @@
         // "Lombiq.Privacy.FormConsent",
         // "Lombiq.Privacy.RegistrationConsent",
         "Lombiq.UIKit",
-        "OrchardCore.Localization",
-        "OrchardCore.Roles",
-        "TheTheme",
-        "Lombiq.OSOCE.NuGet.TestTheme"
+        "Lombiq.OSOCE.NuGet.TestTheme",
+        "Lombiq.BaseTheme.Samples"
       ]
     },
     {
