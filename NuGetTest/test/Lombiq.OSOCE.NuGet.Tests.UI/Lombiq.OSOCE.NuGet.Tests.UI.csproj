@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <PackageReference Include="Lombiq.DataTables.Tests.UI" Version="3.0.2" />
-    <PackageReference Include="Lombiq.Tests.UI" Version="2.1.0" />
+    <PackageReference Include="Lombiq.Tests.UI" Version="2.1.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
   </ItemGroup>
