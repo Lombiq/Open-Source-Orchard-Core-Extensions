@@ -1,0 +1,39 @@
+{
+  "name": "Lombiq.OSOCE.NuGet.BaseTheme",
+  "displayName": "Switch to Lombiq.BaseTheme.Sample",
+  "description": "Switch to Lombiq.BaseTheme.Sample.",
+  "author": "Lombiq Technologies",
+  "website": "https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions",
+  "version": "1.0",
+  "issetuprecipe": false,
+  "categories": [
+    "test"
+  ],
+  "tags": [
+    "test"
+  ],
+  "steps": [
+    {
+      "name": "feature",
+      "disable": [
+        "Lombiq.HelpfulExtensions.ShapeTracing"
+      ],
+      "enable": [
+      ]
+    },
+    {
+      "name": "recipes",
+      "Values": [
+        {
+          "executionid": "Lombiq.OSOCE.NuGet.Web",
+          "name": "Lombiq.BaseTheme.LayersAndZones"
+        }
+      ]
+    },
+    {
+      "name": "themes",
+      "admin": "TheAdmin",
+      "site": "Lombiq.BaseTheme.Samples"
+    }
+  ]
+}

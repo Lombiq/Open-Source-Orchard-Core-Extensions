@@ -2,7 +2,6 @@
 using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
-using OpenQA.Selenium;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -22,14 +21,8 @@ public class BehaviorBaseThemeTests : UITestBase
             async context =>
             {
                 await context.SignInDirectlyAsync();
+                await context.ExecuteRecipeDirectlyAsync("Lombiq.OSOCE.NuGet.BaseTheme");
 
-                // Run layers & zones recipe, and enable Lombiq.BaseTheme.Samples theme.
-                await context.ExecuteRecipeDirectlyAsync("Lombiq.BaseTheme.LayersAndZones");
-                await context.GoToRelativeUrlAsync("/Admin/Themes");
-                await context.ClickReliablyOnAsync(
-                    By.CssSelector("form[action='/Admin/Themes/SetCurrentTheme/Lombiq.BaseTheme.Samples'] button"));
-
-                // Execute tests on the home page using the sample theme.
                 await context.GoToHomePageAsync();
                 await context.TestBaseThemeFeaturesAsync();
             },
