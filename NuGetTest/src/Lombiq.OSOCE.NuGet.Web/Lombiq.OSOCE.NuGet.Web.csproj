@@ -10,14 +10,17 @@
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
+  <!-- If you need to use a prerelease version, not that floating versions don't resolve them. See more at
+  https://docs.microsoft.com/en-us/nuget/concepts/package-versioning#:~:text=floating%20versions%20do%20not%20resolve%20prerelease%20versions%20unless%20opted%20into -->
   <ItemGroup>
     <PackageReference Include="Lombiq.AuditTrailExtensions" Version="2.*" />
-    <!-- Floating versions don't resolve prereleases, see
-    https://docs.microsoft.com/en-us/nuget/concepts/package-versioning#:~:text=floating%20versions%20do%20not%20resolve%20prerelease%20versions%20unless%20opted%20into -->
+    <PackageReference Include="Lombiq.BaseTheme" Version="1.*" />
+    <PackageReference Include="Lombiq.BaseTheme.Samples" Version="1.*" />
     <PackageReference Include="Lombiq.BaseTheme.Samples" Version="1.0.0" />
     <PackageReference Include="Lombiq.ChartJs" Version="2.*" />
     <PackageReference Include="Lombiq.DataTables" Version="3.*" />
     <PackageReference Include="Lombiq.DataTables.Samples" Version="3.*" />
+    <PackageReference Include="Lombiq.HelpfulExtensions" Version="3.*" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="3.*" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="2.*" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="2.*" />
