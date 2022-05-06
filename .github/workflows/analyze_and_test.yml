@@ -1,5 +1,5 @@
 name: Pull Request - Code Analysis and Unit Tests
-on: 
+on:
   pull_request:
     branches: [ dev ]
 env:
@@ -25,6 +25,7 @@ jobs:
     - name: Static Code Analysis
       run: |
         npm install pnpm -g &&
+        dotnet clean &&
         dotnet build Lombiq.OSOCE.sln --no-incremental -warnaserror /p:TreatWarningsAsErrors=true /p:RunAnalyzersDuringBuild=true -nologo -consoleLoggerParameters:NoSummary -verbosity:quiet
     - name: Build
       run: |
@@ -32,5 +33,3 @@ jobs:
     - name: Unit Tests
       run: |
         dotnet test -c Release --no-restore --no-build ./test/Lombiq.OSOCE.Tests.UI/Lombiq.OSOCE.Tests.UI.csproj
-
-  
