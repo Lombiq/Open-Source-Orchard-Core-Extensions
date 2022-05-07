@@ -31,9 +31,10 @@ jobs:
         dotnet build --configuration Release
     - name: Unit Tests
       run: |
-          dotnet sln list | \
-          grep '.Tests.' | \
-          grep -v 'Lombiq.Tests.UI.csproj' | \
-          grep -v 'Lombiq.Tests.csproj' | \
-          sed -e 's/\\/\//g' -e '$atrue' -e 's/\(.*\)/dotnet test -c Release --no-restore --no-build '"'\\1'"' \&\&/' | \
-          bash | grep -v '^Connection refused \[::ffff:127.0.0.1\]'
+          (dotnet sln list |
+          grep '.Tests.' |
+          grep -v 'Lombiq.Tests.UI.csproj' |
+          grep -v 'Lombiq.Tests.csproj' |
+          sed -e 's/\\/\//g' -e '$atrue' -e 's/\(.*\)/dotnet test -c Release --no-restore --no-build '"'\\1'"' \&\&/' |
+          bash && (echo SUCCESS > .ui_test_result) || (echo FAIL > .ui_test_result)) | grep -v '^Connection refused \[::ffff:127.0.0.1\]';
+          grep SUCCESS .ui_test_result
