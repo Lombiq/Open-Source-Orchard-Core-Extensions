@@ -38,7 +38,8 @@
         // "Lombiq.Privacy.RegistrationConsent",
         "Lombiq.UIKit",
         "Lombiq.OSOCE.NuGet.TestTheme",
-        "Lombiq.BaseTheme.Samples"
+        "Lombiq.BaseTheme.Samples",
+        "Lombiq.HelpfulExtensions.Widgets"
       ]
     },
     {
