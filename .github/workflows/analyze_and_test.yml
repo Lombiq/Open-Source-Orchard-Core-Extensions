@@ -31,4 +31,9 @@ jobs:
         dotnet build --configuration Release
     - name: Unit Tests
       run: |
-        dotnet sln list | grep '.Tests.' | sed -e 's/\\/\//g' -e '$atrue' -e 's/\(.*\)/dotnet test -c Release --no-restore --no-build '"'\\1'"' \&\&/' | bash
+          dotnet sln list | \
+          grep '.Tests.' | \
+          grep -v 'Lombiq.Tests.UI.csproj' | \
+          grep -v 'Lombiq.Tests.csproj' | \
+          sed -e 's/\\/\//g' -e '$atrue' -e 's/\(.*\)/dotnet test -c Release --no-restore --no-build '"'\\1'"' \&\&/' | \
+          bash
