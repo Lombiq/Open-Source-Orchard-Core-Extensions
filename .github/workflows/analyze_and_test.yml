@@ -39,7 +39,7 @@ jobs:
     - name: Set up Azurite via Docker
       run: |
         docker pull mcr.microsoft.com/azure-storage/azurite &&
-        docker run -p 10000:10000 mcr.microsoft.com/azure-storage/azurite azurite-blob --blobHost 0.0.0.0 --blobPort 10000
+        docker run --name azurite -d -p 10000:10000 mcr.microsoft.com/azure-storage/azurite azurite-blob --blobHost 0.0.0.0 --blobPort 10000
     - name: Unit Tests
       run: |
         (dotnet sln list |
