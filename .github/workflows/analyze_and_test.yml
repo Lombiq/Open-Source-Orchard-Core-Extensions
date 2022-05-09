@@ -36,6 +36,10 @@ jobs:
         docker exec -u 0 sql2019 chown 'mssql:root' /data
         echo '{"Lombiq_Tests_UI":{"SqlServerDatabaseConfiguration":{"ConnectionStringTemplate":"Server=.;Database=LombiqUITestingToolbox_{{id}};User Id=sa;Password=yourStrong(!)Password;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5"},"DockerConfiguration":{"ContainerSnapshotPath":"/data","HostSnapshotPath":"~/.local/docker/mssql/data/"}}}' > ~/TestConfiguration.json
         echo LOMBIQ_SHARED_TEST_CONFIGURATION="$HOME/TestConfiguration.json" >> $GITHUB_ENV
+    - name: Set up Azurite via Docker
+      run: |
+        docker pull mcr.microsoft.com/azure-storage/azurite &&
+        docker run -p 10000:10000 mcr.microsoft.com/azure-storage/azurite azurite-blob --blobHost 0.0.0.0 --blobPort 10000
     - name: Unit Tests
       run: |
         (dotnet sln list |
