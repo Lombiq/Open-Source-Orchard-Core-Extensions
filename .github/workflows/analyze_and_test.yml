@@ -29,12 +29,24 @@ jobs:
     - name: Build
       run: |
         dotnet build --configuration Release
+    - name: Set up SQL Server via Docker
+      run |
+        mkdir -p ~/.local/docker/mssql/data
+        docker pull mcr.microsoft.com/mssql/server
+        docker volume create --driver local -o o=bind -o type=none -o device="$HOME/.local/docker/mssql/data" mssql-data
+        docker run --name sql2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -v mssql-data:/data -p 1433:1433 -d 'mcr.microsoft.com/mssql/server:2019-latest'
+        chown $USER:docker ~/.local/docker/ -R
+        chmod g+w ~/.local/docker/ -R
+        docker exec -u 0 sql2019 chown 'mssql:root' /data
+        echo '{"Lombiq_Tests_UI":{"SqlServerDatabaseConfiguration":{"ConnectionStringTemplate":"Server=.;Database=LombiqUITestingToolbox_{{id}};User Id=sa;Password=yourStrong(!)Password;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5"},"DockerConfiguration":{"ContainerSnapshotPath":"/data","HostSnapshotPath":"~/.local/docker/mssql/data/"}}}' > ~/TestConfiguration.json
+        export LOMBIQ_SHARED_TEST_CONFIGURATION="$HOME/TestConfiguration.json"
+        echo 'export LOMBIQ_SHARED_TEST_CONFIGURATION="$HOME/TestConfiguration.json"' >> ~/.bashrc
     - name: Unit Tests
       run: |
-          (dotnet sln list |
-          grep '.Tests.' |
-          grep -v 'Lombiq.Tests.UI.csproj' |
-          grep -v 'Lombiq.Tests.csproj' |
-          sed -e 's/\\/\//g' -e '$atrue' -e 's/\(.*\)/dotnet test -c Release --no-restore --no-build '"'\\1'"' \&\&/' |
-          bash && (echo SUCCESS > .ui_test_result) || (echo FAIL > .ui_test_result)) | grep -v '^Connection refused \[::ffff:127.0.0.1\]';
-          grep SUCCESS .ui_test_result
+        (dotnet sln list |
+        grep '.Tests.' |
+        grep -v 'Lombiq.Tests.UI.csproj' |
+        grep -v 'Lombiq.Tests.csproj' |
+        sed -e 's/\\/\//g' -e '$atrue' -e 's/\(.*\)/dotnet test -c Release --no-restore --no-build '"'\\1'"' \&\&/' |
+        bash && (echo SUCCESS > .ui_test_result) || (echo FAIL > .ui_test_result)) | grep -v '^Connection refused \[::ffff:127.0.0.1\]';
+        grep SUCCESS .ui_test_result
