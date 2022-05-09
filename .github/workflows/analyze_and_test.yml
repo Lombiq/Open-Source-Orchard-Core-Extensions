@@ -30,7 +30,7 @@ jobs:
       run: |
         dotnet build --configuration Release
     - name: Set up SQL Server via Docker
-      run |
+      run: |
         mkdir -p ~/.local/docker/mssql/data
         docker pull mcr.microsoft.com/mssql/server
         docker volume create --driver local -o o=bind -o type=none -o device="$HOME/.local/docker/mssql/data" mssql-data
