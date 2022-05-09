@@ -27,12 +27,12 @@ jobs:
         dotnet build --configuration Release
     - name: Set up SQL Server via Docker
       run: |
-        mkdir -p ~/.local/docker/mssql/data
+        mkdir -p $PWD/docker/mssql/data
+        chown $USER:docker $PWD/docker/ -R
+        chmod g+w $PWD/docker/ -R
         docker pull mcr.microsoft.com/mssql/server
-        docker volume create --driver local -o o=bind -o type=none -o device="$HOME/.local/docker/mssql/data" mssql-data
+        docker volume create --driver local -o o=bind -o type=none -o device="$PWD/docker/mssql/data" mssql-data
         docker run --name sql2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -v mssql-data:/data -p 1433:1433 -d 'mcr.microsoft.com/mssql/server:2019-latest'
-        chown $USER:docker ~/.local/docker/ -R
-        chmod g+w ~/.local/docker/ -R
         docker exec -u 0 sql2019 chown 'mssql:root' /data
         echo '{"Lombiq_Tests_UI":{"SqlServerDatabaseConfiguration":{"ConnectionStringTemplate":"Server=.;Database=LombiqUITestingToolbox_{{id}};User Id=sa;Password=yourStrong(!)Password;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5"},"DockerConfiguration":{"ContainerSnapshotPath":"/data","HostSnapshotPath":"~/.local/docker/mssql/data/"}}}' > ~/TestConfiguration.json
         echo LOMBIQ_SHARED_TEST_CONFIGURATION="$HOME/TestConfiguration.json" >> $GITHUB_ENV
