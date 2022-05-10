@@ -21,6 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Readme.md = Readme.md
 		Reset-Local.ps1 = Reset-Local.ps1
 		.github\workflows\analyze_and_test.yml = .github\workflows\analyze_and_test.yml
+		.github\TestConfig.json = .github\TestConfig.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{11E06A11-1733-408D-BB2F-BFA07075F812}"

@@ -34,8 +34,7 @@ jobs:
         docker volume create --driver local -o o=bind -o type=none -o device=~/.local/docker/mssql/data mssql-data
         docker run --name sql2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -v mssql-data:/data -p 1433:1433 -d 'mcr.microsoft.com/mssql/server:2019-latest'
         docker exec -u 0 sql2019 bash -c 'chown mssql:root /data -R'
-        echo '{"Lombiq_Tests_UI":{"SqlServerDatabaseConfiguration":{"ConnectionStringTemplate":"Server=.;Database=LombiqUITestingToolbox_{{id}};User Id=sa;Password=yourStrong(!)Password;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5"},"DockerConfiguration":{"ContainerSnapshotPath":"/data","HostSnapshotPath":"~/.local/docker/mssql/data/"}}}' > ~/TestConfiguration.json
-        echo LOMBIQ_SHARED_TEST_CONFIGURATION="$HOME/TestConfiguration.json" >> $GITHUB_ENV
+        echo LOMBIQ_SHARED_TEST_CONFIGURATION="$PWD/.github/TestConfig.json" >> $GITHUB_ENV
     - name: Set up Azurite via Docker
       run: |
         docker pull mcr.microsoft.com/azure-storage/azurite &&
