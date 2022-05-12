@@ -21,7 +21,6 @@ jobs:
     - name: Static Code Analysis
       run: |
         npm install pnpm -g &&
-        dotnet build Lombiq.OSOCE.sln --no-incremental -warnaserror /p:TreatWarningsAsErrors=true /p:RunAnalyzersDuringBuild=true -nologo -consoleLoggerParameters:NoSummary -verbosity:quiet ||
         dotnet build Lombiq.OSOCE.sln --no-incremental -warnaserror /p:TreatWarningsAsErrors=true /p:RunAnalyzersDuringBuild=true -nologo -consoleLoggerParameters:NoSummary -verbosity:quiet
     - name: Build
       run: |
