@@ -20,8 +20,8 @@ jobs:
         git submodule init && git submodule update
     - name: Static Code Analysis
       run: |
+        dotnet --list-sdks
         npm install pnpm -g &&
-        dotnet build src/Utilities/Lombiq.Npm.Targets/Lombiq.Npm.Targets.csproj
         dotnet build Lombiq.OSOCE.sln --no-incremental -warnaserror /p:TreatWarningsAsErrors=true /p:RunAnalyzersDuringBuild=true -nologo -consoleLoggerParameters:NoSummary -verbosity:quiet
     - name: Build
       run: |
