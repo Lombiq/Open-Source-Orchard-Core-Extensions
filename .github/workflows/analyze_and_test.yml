@@ -21,8 +21,13 @@ jobs:
     - name: Static Code Analysis
       run: |
         dotnet --list-sdks
-        npm install pnpm -g &&
-        dotnet build Lombiq.OSOCE.sln --no-incremental -warnaserror /p:TreatWarningsAsErrors=true /p:RunAnalyzersDuringBuild=true -nologo -consoleLoggerParameters:NoSummary -verbosity:quiet
+        npm install pnpm -g
+        until dotnet build Lombiq.OSOCE.sln --no-incremental -warnaserror /p:TreatWarningsAsErrors=true /p:RunAnalyzersDuringBuild=true -nologo -consoleLoggerParameters:NoSummary -verbosity:quiet >analysis.log 2>&1; do
+          grep 'error MSB3073: The command "npm run dotnet-postclean --if-present"' analysis.log >/dev/null 2>/dev/null && echo npm retry && continue
+          cat analysis.log
+          false
+          break
+        done
     - name: Build
       run: |
         dotnet build --configuration Release
