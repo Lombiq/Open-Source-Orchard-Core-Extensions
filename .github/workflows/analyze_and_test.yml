@@ -1,4 +1,4 @@
-name: Pull Request - Code Analysis and Unit Tests
+name: Pull Request - Build and Test
 on:
   pull_request:
     branches: [ dev ]
@@ -8,7 +8,7 @@ env:
 jobs:
   build_test:
     runs-on: ubuntu-latest
-    name: Build & Test
+    name: Build and Test
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core 6.0
