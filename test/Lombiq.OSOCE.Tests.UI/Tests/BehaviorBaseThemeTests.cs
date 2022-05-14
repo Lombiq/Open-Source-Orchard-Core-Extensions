@@ -2,7 +2,6 @@
 using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
-using Microsoft.SqlServer.Management.Dmf;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
