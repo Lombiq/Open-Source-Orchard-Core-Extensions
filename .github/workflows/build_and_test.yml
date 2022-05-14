@@ -44,5 +44,4 @@ jobs:
       if: failure()
       with:
           name: ui-test-failure
-          path: |
-              test/OrchardCore.Tests.UI/bin/Release/*/FailureDumps
+          path: test/**/FailureDumps
