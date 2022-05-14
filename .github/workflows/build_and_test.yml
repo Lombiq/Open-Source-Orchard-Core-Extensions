@@ -32,7 +32,7 @@ jobs:
         docker run --name azurite -d -p 10000:10000 mcr.microsoft.com/azure-storage/azurite azurite-blob --blobHost 0.0.0.0 --blobPort 10000
     - name: Tests
       run: |
-        export LOMBIQ_SHARED_TEST_CONFIGURATION="$PWD/.github/TestConfig.json"
+        export LOMBIQ_UI_TESTING_TOOLBOX_SHARED_TEST_CONFIGURATION="$PWD/.github/TestConfig.json"
         (dotnet sln list |
         grep '.Tests.' |
         grep -v 'Lombiq.Tests.UI.csproj' |
