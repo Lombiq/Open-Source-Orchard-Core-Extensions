@@ -29,20 +29,16 @@ jobs:
         done
     - name: Set up SQL Server via Docker
       run: |
-        mkdir -p ~/.local/docker/mssql/data
-        chown $USER:docker ~/.local/docker/ -R
-        chmod g+w ~/.local/docker/ -R
         docker pull mcr.microsoft.com/mssql/server
-        docker volume create --driver local -o o=bind -o type=none -o device=~/.local/docker/mssql/data mssql-data
-        docker run --name sql2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -v mssql-data:/data -p 1433:1433 -d 'mcr.microsoft.com/mssql/server:2019-latest'
+        docker run --name sql2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -p 1433:1433 -d 'mcr.microsoft.com/mssql/server:2019-latest'
         docker exec -u 0 sql2019 bash -c 'chown mssql:root /data -R'
-        echo LOMBIQ_SHARED_TEST_CONFIGURATION="$PWD/.github/TestConfig.json" >> $GITHUB_ENV
     - name: Set up Azurite via Docker
       run: |
         docker pull mcr.microsoft.com/azure-storage/azurite &&
         docker run --name azurite -d -p 10000:10000 mcr.microsoft.com/azure-storage/azurite azurite-blob --blobHost 0.0.0.0 --blobPort 10000
-    - name: Unit Tests
+    - name: Tests
       run: |
+        export LOMBIQ_SHARED_TEST_CONFIGURATION="$PWD/.github/TestConfig.json"
         (dotnet sln list |
         grep '.Tests.' |
         grep -v 'Lombiq.Tests.UI.csproj' |
@@ -50,3 +46,9 @@ jobs:
         sed -e 's/\\/\//g' -e '$atrue' -e 's/\(.*\)/echo "::group::\1" \&\&\ndotnet test -c Release --no-restore --no-build '"'\\1'"' \&\&\necho "::endgroup::" \&\&/' |
         bash && (echo SUCCESS > .ui_test_result) || (echo FAIL > .ui_test_result)) | grep -v '^Connection refused \[::ffff:127.0.0.1\]';
         grep SUCCESS .ui_test_result
+    - uses: actions/upload-artifact@v2
+      if: failure()
+      with:
+          name: ui-test-failure
+          path: |
+              test/OrchardCore.Tests.UI/bin/Release/*/FailureDumps
