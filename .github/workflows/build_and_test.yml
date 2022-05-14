@@ -18,19 +18,15 @@ jobs:
     - name: Submodule Init
       run: |
         git submodule init && git submodule update
-    - name: Static Code Analysis
+    - name: Build and Static Code Analysis
       run: |
-        dotnet --list-sdks
         npm install pnpm -g
-        until dotnet build Lombiq.OSOCE.sln --no-incremental -warnaserror /p:TreatWarningsAsErrors=true /p:RunAnalyzersDuringBuild=true -nologo -consoleLoggerParameters:NoSummary -verbosity:quiet >analysis.log 2>&1; do
+        until dotnet build Lombiq.OSOCE.sln --configuration Release -warnaserror /p:TreatWarningsAsErrors=true /p:RunAnalyzersDuringBuild=true -nologo -consoleLoggerParameters:NoSummary -verbosity:quiet >analysis.log 2>&1; do
           grep 'error MSB3073: The command "npm run dotnet-postclean --if-present"' analysis.log >/dev/null 2>/dev/null && echo npm retry && continue
           cat analysis.log
           false
           break
         done
-    - name: Build
-      run: |
-        dotnet build --configuration Release
     - name: Set up SQL Server via Docker
       run: |
         mkdir -p ~/.local/docker/mssql/data
