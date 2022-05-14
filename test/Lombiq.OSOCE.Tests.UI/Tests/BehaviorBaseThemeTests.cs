@@ -23,7 +23,6 @@ public class BehaviorBaseThemeTests : UITestBase
             {
                 await context.SignInDirectlyAndGoToHomepageAsync();
                 await context.TestBaseThemeFeaturesAsync();
-                throw new InvalidOperandException("Intentional error to test upload-artifact.");
             },
             browser);
 }
