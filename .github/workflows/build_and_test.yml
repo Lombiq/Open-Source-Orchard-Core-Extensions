@@ -25,7 +25,7 @@ jobs:
         [ -f src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj ] &&
             dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
         pwd
-        cd "$PWD/${{matrix.directory}}"
+        [[ "${{matrix.directory}}" = '.' ]] || cd "${{matrix.directory}}"
         dotnet build *.sln --configuration Release -warnaserror /p:TreatWarningsAsErrors=true /p:RunAnalyzersDuringBuild=true -nologo -consoleLoggerParameters:NoSummary -verbosity:quiet
     - name: Set up SQL Server via Docker
       run: |
@@ -51,7 +51,7 @@ jobs:
       run: |
         export LOMBIQ_UI_TESTING_TOOLBOX_SHARED_TEST_CONFIGURATION="$PWD/.github/TestConfig.json"
         pwd
-        cd ${{matrix.directory}}
+        [[ "${{matrix.directory}}" = '.' ]] || cd "${{matrix.directory}}"
         (dotnet sln list |
             grep '.Tests.' |
             grep -v 'Lombiq.Tests.UI.csproj' |
