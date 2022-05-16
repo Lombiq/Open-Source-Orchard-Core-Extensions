@@ -9,15 +9,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.Web", "src\Lom
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8B131E3B-202B-486D-A3A4-CB84AC4C3370}"
 	ProjectSection(SolutionItems) = preProject
-		tools\Lombiq.Analyzers\.editorconfig = tools\Lombiq.Analyzers\.editorconfig
+		tools\Lombiq.Analyzers\Lombiq.Analyzers\.editorconfig = tools\Lombiq.Analyzers\Lombiq.Analyzers\.editorconfig
 		.eslintrc = .eslintrc
 		.gitignore = .gitignore
 		.stylelintrc = .stylelintrc
 		Directory.Build.props = Directory.Build.props
-		tools\Lombiq.Analyzers\general.ruleset = tools\Lombiq.Analyzers\general.ruleset
+		tools\Lombiq.Analyzers\Lombiq.Analyzers\general.ruleset = tools\Lombiq.Analyzers\Lombiq.Analyzers\general.ruleset
 		License.md = License.md
 		NuGet.config = NuGet.config
-		tools\Lombiq.Analyzers\orchardcore.ruleset = tools\Lombiq.Analyzers\orchardcore.ruleset
+		tools\Lombiq.Analyzers\Lombiq.Analyzers\orchardcore.ruleset = tools\Lombiq.Analyzers\Lombiq.Analyzers\orchardcore.ruleset
 		Readme.md = Readme.md
 		Reset-Local.ps1 = Reset-Local.ps1
 		.github\workflows\build_and_test.yml = .github\workflows\build_and_test.yml
@@ -92,7 +92,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.VueJs.Samples", "src
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{BF1EDFA5-0129-416C-B9ED-8CE68A3FD526}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Analyzers", "tools\Lombiq.Analyzers\Lombiq.Analyzers.csproj", "{C7A251AA-1BD5-47D8-A61B-50D8C493223A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Analyzers", "tools\Lombiq.Analyzers\Lombiq.Analyzers\Lombiq.Analyzers.csproj", "{C7A251AA-1BD5-47D8-A61B-50D8C493223A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.DataTables", "src\Modules\Lombiq.DataTables\Lombiq.DataTables\Lombiq.DataTables.csproj", "{E5F0E0AD-421C-4F7F-B27C-5BCCCE3C9B08}"
 EndProject
