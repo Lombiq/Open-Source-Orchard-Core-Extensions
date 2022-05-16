@@ -30,8 +30,7 @@ jobs:
           -warnaserror \
           /p:TreatWarningsAsErrors=true \
           /p:RunAnalyzersDuringBuild=true \
-          /p:NoWarn=CA1014 \
-          -warnAsMessage:CS1591 \
+          /p:NoWarn='"1591;1014"'\
           -nologo \
           -consoleLoggerParameters:NoSummary \
           -verbosity:quiet
