@@ -66,4 +66,4 @@ jobs:
       if: failure() && hashFiles(matrix.directory + 'test/**/FailureDumps')
       with:
           name: ui-test-failure
-          path: ${{matrix.directory + 'test/**/FailureDumps'}}
+          path: matrix.directory + 'test/**/FailureDumps'
