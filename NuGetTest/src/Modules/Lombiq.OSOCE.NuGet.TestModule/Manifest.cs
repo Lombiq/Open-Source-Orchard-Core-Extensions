@@ -1,5 +1,7 @@
 using OrchardCore.Modules.Manifest;
+using System;
 
+[assembly:CLSCompliant(true)]
 [assembly: Module(
     Name = "Lombiq.OSOCE.NuGet.TestModule",
     Author = "Lombiq Technologies",
