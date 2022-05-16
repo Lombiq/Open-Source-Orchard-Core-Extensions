@@ -36,7 +36,7 @@ jobs:
       # - Uses 'dotnet test -c Release --no-restore --no-build' to start up each project.
       # - Before the test outputs '::group::project name' and after outputs '::endgroup::'. This tells GitHub that the
       #   outputs should be placed into a collapsible region on the Actions web UI.
-      # - Each call is connected with '&&', so it stops on the first test failure to save computational resources
+      # - Each call is connected with '&&', so it stops on the first test failure to save computational resources.
       #
       # The script is evaluated by bash and the output is passed through grep to filter out some IPv6 related garbage
       # data produced by chromedriver. The trouble is, this way the final error code will be grep's and not the test
