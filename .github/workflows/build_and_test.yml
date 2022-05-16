@@ -13,8 +13,6 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.*
-    - name: Intentional Failure
-      run: echo "fail" && false
     - name: Submodule Init
       run: |
         git submodule init && git submodule update
