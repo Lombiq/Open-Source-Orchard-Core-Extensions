@@ -21,11 +21,11 @@ jobs:
         git submodule init && git submodule update
     - name: Build and Static Code Analysis
       run: |
+        ls "${{matrix.directory}}"
+        [[ "${{matrix.directory}}" = '.' ]] || cd "${{matrix.directory}}"
         npm install pnpm -g
         [ -f src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj ] &&
             dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
-        pwd
-        [[ "${{matrix.directory}}" = '.' ]] || cd "${{matrix.directory}}"
         dotnet build *.sln --configuration Release -warnaserror /p:TreatWarningsAsErrors=true /p:RunAnalyzersDuringBuild=true -nologo -consoleLoggerParameters:NoSummary -verbosity:quiet
     - name: Set up SQL Server via Docker
       run: |
