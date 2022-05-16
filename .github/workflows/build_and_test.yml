@@ -21,8 +21,7 @@ jobs:
         git submodule init && git submodule update
     - name: Build and Static Code Analysis
       run: |
-        ls "${{matrix.directory}}"
-        [[ "${{matrix.directory}}" = '.' ]] || cd "${{matrix.directory}}"
+        cd "${{matrix.directory}}"
         npm install pnpm -g
         [ -f src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj ] &&
             dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
@@ -50,8 +49,7 @@ jobs:
       # is sent to grep. The final line sets the result according to what was written into the .ui_test_result file.
       run: |
         export LOMBIQ_UI_TESTING_TOOLBOX_SHARED_TEST_CONFIGURATION="$PWD/.github/TestConfig.json"
-        pwd
-        [[ "${{matrix.directory}}" = '.' ]] || cd "${{matrix.directory}}"
+        cd "${{matrix.directory}}"
         (dotnet sln list |
             grep '.Tests.' |
             grep -v 'Lombiq.Tests.UI.csproj' |
