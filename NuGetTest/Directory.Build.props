@@ -1,6 +1,5 @@
 <Project>
   <PropertyGroup>
-    <!-- This needs to be disabled until OSOE-110 is fixed, becuase otherwise the built-in analyzers are executed.
-    <NuGetTestbed>true</NuGetTestbed> -->
+    <NuGetTestbed>true</NuGetTestbed>
   </PropertyGroup>
 </Project>
