@@ -7,6 +7,9 @@ jobs:
   build_test:
     runs-on: ubuntu-latest
     name: Build and Test
+    strategy:
+      matrix:
+        directory: ['.', 'NuGetTest']
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core 6.0
@@ -19,8 +22,11 @@ jobs:
     - name: Build and Static Code Analysis
       run: |
         npm install pnpm -g
-        dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
-        dotnet build Lombiq.OSOCE.sln --configuration Release -warnaserror /p:TreatWarningsAsErrors=true /p:RunAnalyzersDuringBuild=true -nologo -consoleLoggerParameters:NoSummary -verbosity:quiet
+        [-f src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj ] &&
+            dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
+        pwd
+        cd ${{matrix.directory}}
+        dotnet build *.sln --configuration Release -warnaserror /p:TreatWarningsAsErrors=true /p:RunAnalyzersDuringBuild=true -nologo -consoleLoggerParameters:NoSummary -verbosity:quiet
     - name: Set up SQL Server via Docker
       run: |
         docker pull mcr.microsoft.com/mssql/server
@@ -44,6 +50,8 @@ jobs:
       # is sent to grep. The final line sets the result according to what was written into the .ui_test_result file.
       run: |
         export LOMBIQ_UI_TESTING_TOOLBOX_SHARED_TEST_CONFIGURATION="$PWD/.github/TestConfig.json"
+        pwd
+        cd ${{matrix.directory}}
         (dotnet sln list |
             grep '.Tests.' |
             grep -v 'Lombiq.Tests.UI.csproj' |
@@ -55,7 +63,7 @@ jobs:
             grep -v '^Connection refused \[::ffff:127.0.0.1\]';
         grep SUCCESS .ui_test_result
     - uses: actions/upload-artifact@v2
-      if: failure() && hashFiles('test/**/FailureDumps')
+      if: failure() && hashFiles(matrix.directory + 'test/**/FailureDumps')
       with:
           name: ui-test-failure
-          path: test/**/FailureDumps
+          path: ${{matrix.directory + 'test/**/FailureDumps'}}
