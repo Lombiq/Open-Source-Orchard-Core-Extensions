@@ -22,7 +22,7 @@ jobs:
     - name: Build and Static Code Analysis
       run: |
         npm install pnpm -g
-        [-f src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj ] &&
+        [ -f src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj ] &&
             dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
         pwd
         cd ${{matrix.directory}}
