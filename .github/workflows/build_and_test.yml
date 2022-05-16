@@ -25,7 +25,7 @@ jobs:
         [ -f src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj ] &&
             dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
         pwd
-        cd ${{matrix.directory}}
+        cd "$PWD/${{matrix.directory}}"
         dotnet build *.sln --configuration Release -warnaserror /p:TreatWarningsAsErrors=true /p:RunAnalyzersDuringBuild=true -nologo -consoleLoggerParameters:NoSummary -verbosity:quiet
     - name: Set up SQL Server via Docker
       run: |
