@@ -1,6 +1,4 @@
 <Project>
-  <Import Project="tools/Lombiq.Analyzers/Build.props"/>
-
   <PropertyGroup>
     <!-- This setting prevents .stylelintrc files from being created in projects that use Lombiq Node.js Extensions.
          Instead, we use a global .stylelintrc file at the solution root. -->
@@ -13,4 +11,12 @@
           DestinationFiles="$(ProjectDir)NuGetIcon.png"
           SkipUnchangedFiles="true" />
   </Target>
+
+  <!-- Uncomment this to switch to how NuGet-publishing GitHub Actions builds work, including referencing Lombiq NuGet
+       package dependencies instead of submodules. -->
+  <!-- <PropertyGroup>
+    <NuGetBuild>true</NuGetBuild>
+  </PropertyGroup> -->
+
+  <Import Project="tools/Lombiq.Analyzers/Build.props" Condition="'$(NuGetTestbed)' != 'true'" />
 </Project>

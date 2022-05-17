@@ -1,0 +1,5 @@
+<Project>
+  <PropertyGroup>
+    <NuGetTestbed>true</NuGetTestbed>
+  </PropertyGroup>
+</Project>
