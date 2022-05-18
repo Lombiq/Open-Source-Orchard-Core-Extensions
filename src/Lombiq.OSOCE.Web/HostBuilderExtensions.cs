@@ -18,7 +18,7 @@ public static class HostBuilderExtensions
         {
             var environment = context.HostingEnvironment;
 
-            environment.ConfigureNLog($"{environment.ContentRootPath}{Path.DirectorySeparatorChar}NLog.config");
+            environment.ConfigureNLog(Path.Combine(environment.ContentRootPath, "NLog.config"));
             LogManager.Configuration.Variables["configDir"] = environment.ContentRootPath;
         });
 
