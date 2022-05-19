@@ -14,5 +14,16 @@
     "wcag/h37": "off",
     "wcag/h67": "off",
     "wcag/h71": "off"
-  }
+  },
+
+  "elements": [
+    "html5",
+    {
+      "form": {
+        "attributes": {
+          "method": [ "get", "post", "GET", "POST" ]
+        }
+      }
+    }
+  ]
 }
