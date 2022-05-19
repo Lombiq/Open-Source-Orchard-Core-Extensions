@@ -25,8 +25,7 @@ jobs:
         npm install pnpm -g
         [ -f src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj ] &&
             dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
-        dotnet msbuild \
-          {solutionPath}.sln \
+        dotnet msbuild *.sln \
           -t:Clean,Build \
           -v:quiet \
           -property:Configuration=Release \
