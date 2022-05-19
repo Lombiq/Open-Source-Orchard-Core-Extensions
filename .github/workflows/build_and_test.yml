@@ -25,15 +25,15 @@ jobs:
         npm install pnpm -g
         [ -f src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj ] &&
             dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
-        dotnet build *.sln \
-          --configuration Release \
-          -warnaserror \
-          /p:TreatWarningsAsErrors=true \
-          /p:RunAnalyzersDuringBuild=true \
-          /p:NoWarn='"1591;CA1014"'\
-          -nologo \
-          -consoleLoggerParameters:NoSummary \
-          -verbosity:quiet
+        dotnet msbuild \
+          {solutionPath}.sln \
+          -t:Clean,Build \
+          -v:quiet \
+          -property:Configuration=Release \
+          -p:RunAnalyzersDuringBuild=true \
+          -p:TreatWarningsAsErrors=true \
+          -p:NoWarn='"1591;CA1014"' \
+          -warnAsError
     - name: Set up SQL Server via Docker
       run: |
         docker pull mcr.microsoft.com/mssql/server
