@@ -4,7 +4,6 @@
     <TargetFramework>net6.0</TargetFramework>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <DefaultItemExcludes>$(DefaultItemExcludes);.git*;node_modules\**;Tests\**</DefaultItemExcludes>
-    <EnableDefaultContentItems>false</EnableDefaultContentItems>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,10 +13,6 @@
 
   <ItemGroup>
     <EmbeddedResource Remove="package.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="package.json" />
   </ItemGroup>
 
   <ItemGroup>
