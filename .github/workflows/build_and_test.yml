@@ -23,6 +23,7 @@ jobs:
       run: |
         cd "${{matrix.directory}}"
         npm install pnpm -g
+        dotnet restore
         [ -f src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj ] &&
             dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
         dotnet msbuild *.sln \
