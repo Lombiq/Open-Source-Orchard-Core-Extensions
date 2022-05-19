@@ -130,7 +130,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.ChartJs.Samples", "s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.ChartJs.Tests.UI", "src\Modules\Lombiq.ChartJs\Lombiq.ChartJs.Tests.UI\Lombiq.ChartJs.Tests.UI.csproj", "{41724831-C0CC-4AF4-A869-7AB5AFB9F33C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8F625D58-1F51-461A-9FEC-0FF5E1A389C6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{8F625D58-1F51-461A-9FEC-0FF5E1A389C6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.Analyzers.Tests", "tools\Lombiq.Analyzers\Lombiq.Analyzers.Tests\Lombiq.Analyzers.Tests.csproj", "{4C8CAC5B-B9C1-498E-AB03-31B05348A665}"
 EndProject
