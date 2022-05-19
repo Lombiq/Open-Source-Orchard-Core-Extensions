@@ -7,6 +7,9 @@ jobs:
   build_test:
     runs-on: ubuntu-latest
     name: Build and Test
+    strategy:
+      matrix:
+        directory: ['.', 'NuGetTest']
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core 6.0
@@ -18,9 +21,19 @@ jobs:
         git submodule init && git submodule update
     - name: Build and Static Code Analysis
       run: |
+        cd "${{matrix.directory}}"
         npm install pnpm -g
-        dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
-        dotnet build Lombiq.OSOCE.sln --configuration Release -warnaserror /p:TreatWarningsAsErrors=true /p:RunAnalyzersDuringBuild=true -nologo -consoleLoggerParameters:NoSummary -verbosity:quiet
+        [ -f src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj ] &&
+            dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
+        dotnet build *.sln \
+          --configuration Release \
+          -warnaserror \
+          /p:TreatWarningsAsErrors=true \
+          /p:RunAnalyzersDuringBuild=true \
+          /p:NoWarn='"1591;CA1014"'\
+          -nologo \
+          -consoleLoggerParameters:NoSummary \
+          -verbosity:quiet
     - name: Set up SQL Server via Docker
       run: |
         docker pull mcr.microsoft.com/mssql/server
@@ -36,7 +49,7 @@ jobs:
       # - Uses 'dotnet test -c Release --no-restore --no-build' to start up each project.
       # - Before the test outputs '::group::project name' and after outputs '::endgroup::'. This tells GitHub that the
       #   outputs should be placed into a collapsible region on the Actions web UI.
-      # - Each call is connected with '&&', so it stops on the first test failure to save computational resources
+      # - Each call is connected with '&&', so it stops on the first test failure to save computational resources.
       #
       # The script is evaluated by bash and the output is passed through grep to filter out some IPv6 related garbage
       # data produced by chromedriver. The trouble is, this way the final error code will be grep's and not the test
@@ -44,6 +57,7 @@ jobs:
       # is sent to grep. The final line sets the result according to what was written into the .ui_test_result file.
       run: |
         export LOMBIQ_UI_TESTING_TOOLBOX_SHARED_TEST_CONFIGURATION="$PWD/.github/TestConfig.json"
+        cd "${{matrix.directory}}"
         (dotnet sln list |
             grep '.Tests.' |
             grep -v 'Lombiq.Tests.UI.csproj' |
@@ -55,7 +69,7 @@ jobs:
             grep -v '^Connection refused \[::ffff:127.0.0.1\]';
         grep SUCCESS .ui_test_result
     - uses: actions/upload-artifact@v2
-      if: failure()
+      if: failure() && hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
       with:
           name: ui-test-failure
-          path: test/**/FailureDumps
+          path: format('{0}/test/**/FailureDumps', matrix.directory)

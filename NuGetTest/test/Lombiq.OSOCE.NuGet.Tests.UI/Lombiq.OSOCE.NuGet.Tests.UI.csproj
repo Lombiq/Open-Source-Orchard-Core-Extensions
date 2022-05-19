@@ -16,9 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.BaseTheme.Tests.UI" Version="1.0.0" />
-    <PackageReference Include="Lombiq.DataTables.Tests.UI" Version="3.0.2" />
-    <PackageReference Include="Lombiq.Tests.UI" Version="2.1.1" />
+    <PackageReference Include="Lombiq.BaseTheme.Tests.UI" Version="1.0.1-alpha.1" />
+    <PackageReference Include="Lombiq.DataTables.Tests.UI" Version="3.0.3-alpha.2" />
+    <PackageReference Include="Lombiq.Tests.UI" Version="2.2.0-alpha.6" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
   </ItemGroup>
