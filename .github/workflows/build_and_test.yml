@@ -47,8 +47,8 @@ jobs:
       # This step gets the list of all projects, selects the test projects (excluding the two test libraries) and then
       # uses sed to create an inline bash script. What this script does:
       # - Uses 'dotnet test -c Release --no-restore --no-build' to start up each project.
-      # - Before the test outputs '::group::project name' and after outputs '::endgroup::'. This tells GitHub that the
-      #   outputs should be placed into a collapsible region on the Actions web UI.
+      # - The test output is wrapped by '::group::<project name>' before and '::endgroup::' after it. This tells GitHub
+      #   to place each test's output into a collapsible region on the Actions web UI.
       # - Each call is connected with '&&', so it stops on the first test failure to save computational resources.
       #
       # The script is evaluated by bash and the output is passed through grep to filter out some IPv6 related garbage
