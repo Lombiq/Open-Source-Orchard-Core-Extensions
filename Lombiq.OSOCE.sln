@@ -14,12 +14,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 		.stylelintrc = .stylelintrc
 		Directory.Build.props = Directory.Build.props
-		tools\Lombiq.Analyzers\General.ruleset = tools\Lombiq.Analyzers\General.ruleset
+		tools\Lombiq.Analyzers\general.ruleset = tools\Lombiq.Analyzers\general.ruleset
 		License.md = License.md
 		NuGet.config = NuGet.config
-		tools\Lombiq.Analyzers\OrchardCore.ruleset = tools\Lombiq.Analyzers\OrchardCore.ruleset
+		tools\Lombiq.Analyzers\orchardcore.ruleset = tools\Lombiq.Analyzers\orchardcore.ruleset
 		Readme.md = Readme.md
 		Reset-Local.ps1 = Reset-Local.ps1
+		.github\workflows\build_and_test.yml = .github\workflows\build_and_test.yml
+		.github\TestConfig.json = .github\TestConfig.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{11E06A11-1733-408D-BB2F-BFA07075F812}"
@@ -121,6 +123,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Themes", "Themes", "{93A678A8-93E4-4F53-BF83-22801014F27B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.BaseTheme.Tests.UI", "src\Themes\Lombiq.BaseTheme\Lombiq.BaseTheme.Tests.UI\Lombiq.BaseTheme.Tests.UI.csproj", "{2BF13E3A-B54D-4352-812E-9A867A801FFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.HelpfulLibraries.Cli", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Cli\Lombiq.HelpfulLibraries.Cli.csproj", "{F4B0F77A-4EF0-40A9-B1C0-9294B397BA36}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.ChartJs.Samples", "src\Modules\Lombiq.ChartJs\Lombiq.ChartJs.Samples\Lombiq.ChartJs.Samples.csproj", "{B22E25BC-36A8-450B-A67A-9BC0CFDD4F52}"
 EndProject
@@ -641,6 +645,18 @@ Global
 		{2BF13E3A-B54D-4352-812E-9A867A801FFE}.Release|x64.Build.0 = Release|Any CPU
 		{2BF13E3A-B54D-4352-812E-9A867A801FFE}.Release|x86.ActiveCfg = Release|Any CPU
 		{2BF13E3A-B54D-4352-812E-9A867A801FFE}.Release|x86.Build.0 = Release|Any CPU
+		{F4B0F77A-4EF0-40A9-B1C0-9294B397BA36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4B0F77A-4EF0-40A9-B1C0-9294B397BA36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4B0F77A-4EF0-40A9-B1C0-9294B397BA36}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F4B0F77A-4EF0-40A9-B1C0-9294B397BA36}.Debug|x64.Build.0 = Debug|Any CPU
+		{F4B0F77A-4EF0-40A9-B1C0-9294B397BA36}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F4B0F77A-4EF0-40A9-B1C0-9294B397BA36}.Debug|x86.Build.0 = Debug|Any CPU
+		{F4B0F77A-4EF0-40A9-B1C0-9294B397BA36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4B0F77A-4EF0-40A9-B1C0-9294B397BA36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4B0F77A-4EF0-40A9-B1C0-9294B397BA36}.Release|x64.ActiveCfg = Release|Any CPU
+		{F4B0F77A-4EF0-40A9-B1C0-9294B397BA36}.Release|x64.Build.0 = Release|Any CPU
+		{F4B0F77A-4EF0-40A9-B1C0-9294B397BA36}.Release|x86.ActiveCfg = Release|Any CPU
+		{F4B0F77A-4EF0-40A9-B1C0-9294B397BA36}.Release|x86.Build.0 = Release|Any CPU
 		{B22E25BC-36A8-450B-A67A-9BC0CFDD4F52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B22E25BC-36A8-450B-A67A-9BC0CFDD4F52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B22E25BC-36A8-450B-A67A-9BC0CFDD4F52}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -719,6 +735,7 @@ Global
 		{95D73C6A-B81E-44A3-9376-9CFEFDE3B314} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
 		{93A678A8-93E4-4F53-BF83-22801014F27B} = {FF48793C-2AC5-4FAA-9BA1-44448E3A7F98}
 		{2BF13E3A-B54D-4352-812E-9A867A801FFE} = {93A678A8-93E4-4F53-BF83-22801014F27B}
+		{F4B0F77A-4EF0-40A9-B1C0-9294B397BA36} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
 		{B22E25BC-36A8-450B-A67A-9BC0CFDD4F52} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{41724831-C0CC-4AF4-A869-7AB5AFB9F33C} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
 	EndGlobalSection

@@ -1,0 +1,75 @@
+name: Pull Request - Build and Test
+on: pull_request
+env:
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+jobs:
+  build_test:
+    runs-on: ubuntu-latest
+    name: Build and Test
+    strategy:
+      matrix:
+        directory: ['.', 'NuGetTest']
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core 6.0
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.*
+    - name: Submodule Init
+      run: |
+        git submodule init && git submodule update
+    - name: Build and Static Code Analysis
+      run: |
+        cd "${{matrix.directory}}"
+        npm install pnpm -g
+        [ -f src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj ] &&
+            dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
+        dotnet build *.sln \
+          --configuration Release \
+          -warnaserror \
+          /p:TreatWarningsAsErrors=true \
+          /p:RunAnalyzersDuringBuild=true \
+          /p:NoWarn='"1591;CA1014"'\
+          -nologo \
+          -consoleLoggerParameters:NoSummary \
+          -verbosity:quiet
+    - name: Set up SQL Server via Docker
+      run: |
+        docker pull mcr.microsoft.com/mssql/server &&
+        docker run --name sql2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password1!' -p 1433:1433 -d 'mcr.microsoft.com/mssql/server:2019-latest' &&
+        docker exec -u 0 sql2019 bash -c 'mkdir /data; chmod 777 /data -R; chown mssql:root /data'
+    - name: Set up Azurite via Docker
+      run: |
+        docker pull mcr.microsoft.com/azure-storage/azurite &&
+        docker run --name azurite -d -p 10000:10000 mcr.microsoft.com/azure-storage/azurite azurite-blob --blobHost 0.0.0.0 --blobPort 10000
+    - name: Tests
+      # This step gets the list of all projects, selects the test projects (excluding the two test libraries) and then
+      # uses sed to create an inline bash script. What this script does:
+      # - Uses 'dotnet test -c Release --no-restore --no-build' to start up each project.
+      # - The test output is wrapped by '::group::<project name>' before and '::endgroup::' after it. This tells GitHub
+      #   to place each test's output into a collapsible region on the Actions web UI.
+      # - Each call is connected with '&&', so it stops on the first test failure to save computational resources.
+      #
+      # The script is evaluated by bash and the output is passed through grep to filter out some IPv6 related garbage
+      # data produced by chromedriver. The trouble is, this way the final error code will be grep's and not the test
+      # run's, so to get around this 'SUCCESS' or 'FAILURE' is written into the .ui_test_result file before the output
+      # is sent to grep. The final line sets the result according to what was written into the .ui_test_result file.
+      run: |
+        export LOMBIQ_UI_TESTING_TOOLBOX_SHARED_TEST_CONFIGURATION="$PWD/.github/TestConfig.json"
+        cd "${{matrix.directory}}"
+        (dotnet sln list |
+            grep '.Tests.' |
+            grep -v 'Lombiq.Tests.UI.csproj' |
+            grep -v 'Lombiq.Tests.csproj' |
+            sed -e 's/\\/\//g' \
+                -e '$atrue' \
+                -e 's/\(.*\)/echo "::group::\1" \&\&\ndotnet test -c Release --no-restore --no-build '"'\\1'"' \&\&\necho "::endgroup::" \&\&/' |
+            bash && (echo SUCCESS > .ui_test_result) || (echo FAIL > .ui_test_result)) |
+            grep -v '^Connection refused \[::ffff:127.0.0.1\]';
+        grep SUCCESS .ui_test_result
+    - uses: actions/upload-artifact@v2
+      if: failure() && hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
+      with:
+          name: ui-test-failure
+          path: format('{0}/test/**/FailureDumps', matrix.directory)
