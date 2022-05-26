@@ -1,0 +1,10 @@
+{
+  "commands": {
+    "Reset Local": {
+      "fileName": "powershell.exe",
+      // Going up two folders doesn't seem to be possible otherwise, nor will $(SolutionDir) work.
+      "workingDirectory": "wwwroot\\..\\..\\..",
+      "arguments": "-ExecutionPolicy Bypass -NonInteractive -File Reset-Local.ps1"
+    }
+  }
+}

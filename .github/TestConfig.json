@@ -1,0 +1,10 @@
+{
+  "Lombiq_Tests_UI": {
+    "SqlServerDatabaseConfiguration": {
+      "ConnectionStringTemplate": "Server=.;Database=LombiqUITestingToolbox_{{id}};User Id=sa;Password=Password1!;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5"
+    },
+    "DockerConfiguration": {
+      "ContainerName": "sql2019"
+    }
+  }
+}
