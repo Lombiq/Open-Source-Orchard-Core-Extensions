@@ -1,3 +1,4 @@
+using Lombiq.ChartJs.Tests.UI.Extensions;
 using Lombiq.DataTables.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Services;
@@ -18,5 +19,11 @@ public class BehaviorModuleTests : UITestBase
     public Task DataTableShouldWork(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestDataTableRecipeDataAsync(),
+            browser);
+
+    [Theory, Chrome]
+    public Task ChartJsShouldWork(Browser browser) =>
+        ExecuteTestAfterSetupAsync(
+            context => context.TestChartJsSampleBehaviorAsync(),
             browser);
 }

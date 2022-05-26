@@ -17,6 +17,7 @@
     <PackageReference Include="Lombiq.BaseTheme" Version="1.0.1" />
     <PackageReference Include="Lombiq.BaseTheme.Samples" Version="1.0.1" />
     <PackageReference Include="Lombiq.ChartJs" Version="2.1.0" />
+    <PackageReference Include="Lombiq.ChartJs.Samples" Version="2.1.0" />
     <PackageReference Include="Lombiq.DataTables" Version="3.1.0" />
     <PackageReference Include="Lombiq.DataTables.Samples" Version="3.1.0" />
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="3.*" />
