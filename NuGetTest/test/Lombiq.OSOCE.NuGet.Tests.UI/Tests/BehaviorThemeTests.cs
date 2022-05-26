@@ -8,15 +8,15 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests;
 
-public class BehaviorBaseThemeTests : UITestBase
+public class BehaviorThemeTests : UITestBase
 {
-    public BehaviorBaseThemeTests(ITestOutputHelper testOutputHelper)
+    public BehaviorThemeTests(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)
     {
     }
 
     [Theory, Chrome]
-    public Task ThemeFeaturesShouldWork(Browser browser) =>
+    public Task BaseThemeShouldWork(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             async context =>
             {
