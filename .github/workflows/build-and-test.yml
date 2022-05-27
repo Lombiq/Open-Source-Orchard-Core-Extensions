@@ -60,10 +60,10 @@ jobs:
       run: |
         docker pull tobiasfenster/mssql-server-dev-unsupported:2019-latest &&
         docker run --name sql2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password1!' -p 1433:1433 -d 'tobiasfenster/mssql-server-dev-unsupported:2019-latest'
-    - name: Set up Azurite via Docker
-      run: |
-        docker pull mcr.microsoft.com/azure-storage/azurite &&
-        docker run --name azurite -d -p 10000:10000 mcr.microsoft.com/azure-storage/azurite azurite-blob --blobHost 0.0.0.0 --blobPort 10000
+    #- name: Set up Azurite via Docker
+    #  run: |
+    #    docker pull mcr.microsoft.com/azure-storage/azurite &&
+    #    docker run --name azurite -d -p 10000:10000 mcr.microsoft.com/azure-storage/azurite azurite-blob --blobHost 0.0.0.0 --blobPort 10000
     - name: Set up Azurite via NPM
       run: |
         npm install -g azurite
