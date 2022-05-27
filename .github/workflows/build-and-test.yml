@@ -52,7 +52,7 @@ jobs:
       # The links under https://hub.docker.com/_/microsoft-mssql-servera to Windows images are broken. You can actually
       # run Linux images on Windows, but not on GitHub-hosted agents: https://github.com/actions/virtual-environments/issues/252.
       run: |
-        docker pull tobiasfenster/mssql-server-dev-unsupported &&
+        docker pull tobiasfenster/mssql-server-dev-unsupported:2019-latest &&
         docker run --name sql2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password1!' -p 1433:1433 -d 'tobiasfenster/mssql-server-dev-unsupported:2019-latest' &&
         docker exec -u 0 sql2019 bash -c 'mkdir /data; chmod 777 /data -R; chown mssql:root /data'
     - name: Set up Azurite via Docker
