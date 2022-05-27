@@ -60,7 +60,7 @@ jobs:
       run: |
         docker pull tobiasfenster/mssql-server-dev-unsupported:2019-latest &&
         docker run --name sql2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password1!' -p 1433:1433 -d 'tobiasfenster/mssql-server-dev-unsupported:2019-latest' &&
-        docker exec -it sql2019 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'Password1!'
+        winpty docker exec -it sql2019 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'Password1!'
     - name: Set up Azurite via Docker
       run: |
         docker pull mcr.microsoft.com/azure-storage/azurite &&
