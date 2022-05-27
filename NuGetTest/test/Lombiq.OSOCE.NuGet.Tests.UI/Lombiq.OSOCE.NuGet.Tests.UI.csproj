@@ -16,10 +16,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.BaseTheme.Tests.UI" Version="1.0.1" />
-    <PackageReference Include="Lombiq.ChartJs.Tests.UI" Version="2.1.0" />
+    <PackageReference Include="Lombiq.BaseTheme.Tests.UI" Version="1.0.2-alpha.osoe-93.1" />
+    <PackageReference Include="Lombiq.ChartJs.Tests.UI" Version="2.1.1-alpha.osoe-93.0" />
     <PackageReference Include="Lombiq.DataTables.Tests.UI" Version="3.1.0" />
-    <PackageReference Include="Lombiq.Tests.UI" Version="3.0.0" />
+    <PackageReference Include="Lombiq.Privacy.Tests.UI" Version="3.1.0-alpha.osoe-93.9" />
+    <PackageReference Include="Lombiq.Tests.UI" Version="3.0.1-alpha.osoe-93.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
   </ItemGroup>
