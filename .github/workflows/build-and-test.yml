@@ -51,6 +51,8 @@ jobs:
       # There's no official Windows Docker image for SQL Server anymore: https://github.com/microsoft/mssql-docker/issues/718.
       # The links under https://hub.docker.com/_/microsoft-mssql-servera to Windows images are broken. You can actually
       # run Linux images on Windows, but not on GitHub-hosted agents: https://github.com/actions/virtual-environments/issues/252.
+      # So, we use this image: https://hub.docker.com/r/tobiasfenster/mssql-server-dev-unsupported. Another one:
+      # https://hub.docker.com/r/willh/mssql-server-windows-developer.
       run: |
         docker pull tobiasfenster/mssql-server-dev-unsupported:2019-latest &&
         docker run --name sql2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password1!' -p 1433:1433 -d 'tobiasfenster/mssql-server-dev-unsupported:2019-latest' &&
