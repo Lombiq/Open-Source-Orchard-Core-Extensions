@@ -34,9 +34,9 @@ jobs:
         dotnet build *.sln \
           --configuration Release \
           -warnaserror \
-          /p:TreatWarningsAsErrors=true \
-          /p:RunAnalyzersDuringBuild=true \
-          /p:NoWarn='"1591;CA1014"'\
+          -p:TreatWarningsAsErrors=true \
+          -p:RunAnalyzersDuringBuild=true \
+          -p:NoWarn='"1591;CA1014"'\
           -nologo \
           -consoleLoggerParameters:NoSummary \
           -verbosity:quiet
