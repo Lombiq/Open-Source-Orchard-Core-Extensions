@@ -67,7 +67,7 @@ jobs:
     - name: Set up Azurite via NPM
       run: |
         npm install -g azurite
-        azurite --silent --location c:\azurite --debug c:\azurite\debug.log
+        azurite --silent
     - name: Tests
       # This step gets the list of all projects, selects the test projects (excluding the two test libraries) and then
       # uses sed to create an inline bash script. What this script does:
