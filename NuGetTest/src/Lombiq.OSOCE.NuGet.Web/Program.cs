@@ -9,12 +9,9 @@ builder.Host.UseNLog();
 var configuration = builder.Configuration;
 
 builder.Services
-    .AddOrchardCms(builder =>
-    {
-        builder
-            .ConfigureUITesting(configuration, enableShortcutsDuringUITesting: true)
-            .AuthorizeApiRequestsIfEnabled(configuration);
-    });
+    .AddOrchardCms(builder => builder
+        .ConfigureUITesting(configuration, enableShortcutsDuringUITesting: true)
+        .AuthorizeApiRequestsIfEnabled(configuration));
 
 var app = builder.Build();
 
