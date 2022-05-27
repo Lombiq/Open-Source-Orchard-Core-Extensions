@@ -16,10 +16,10 @@ jobs:
     name: Build and Test
     strategy:
       matrix:
-        #directory: ['.', 'NuGetTest']
-        #os: [ubuntu-latest, windows-latest]
-        directory: ['NuGetTest']
-        os: [windows-latest]
+        directory: ['.', 'NuGetTest']
+        os: [ubuntu-latest, windows-latest]
+        #directory: ['NuGetTest']
+        #os: [windows-latest]
     steps:
     - uses: actions/checkout@v2
     #- name: Setup .NET Core 6.0
@@ -60,10 +60,13 @@ jobs:
       run: |
         docker pull tobiasfenster/mssql-server-dev-unsupported:2019-latest &&
         docker run --name sql2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password1!' -p 1433:1433 -d 'tobiasfenster/mssql-server-dev-unsupported:2019-latest'
-    - name: Set up Azurite via Docker
+    #- name: Set up Azurite via Docker
+    #  run: |
+    #    docker pull mcr.microsoft.com/azure-storage/azurite &&
+    #    docker run --name azurite -d -p 10000:10000 mcr.microsoft.com/azure-storage/azurite azurite-blob --blobHost 0.0.0.0 --blobPort 10000
+    - name: Set up Azurite via NPM
       run: |
-        docker pull mcr.microsoft.com/azure-storage/azurite &&
-        docker run --name azurite -d -p 10000:10000 mcr.microsoft.com/azure-storage/azurite azurite-blob --blobHost 0.0.0.0 --blobPort 10000
+        npm install -g azurite
     - name: Tests
       # This step gets the list of all projects, selects the test projects (excluding the two test libraries) and then
       # uses sed to create an inline bash script. What this script does:
