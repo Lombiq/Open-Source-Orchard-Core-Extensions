@@ -24,6 +24,7 @@ This also serves as an example of an ASP.NET Core web app using Orchard from NuG
 
 - Libraries
   - [Lombiq.HelpfulLibraries](https://github.com/Lombiq/Helpful-Libraries/tree/dev): Various libraries that can be handy when developing for Orchard Core, to be used from your own Orchard modules.
+  - [Lombiq.HelpfulLibraries.Cli](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.Cli): Command Line Libraries. This project helps with executing command line calls.
   - [Lombiq.HelpfulLibraries.LinqToDb](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.LinqToDb): With the help of this project you can write LINQ expressions and run them with a [YesSql](https://github.com/sebastienros/yessql) `ISession` extension method to query from the DB instead of writing plain SQL queries. Uses the [LINQ to DB project](https://linq2db.github.io/). You can watch a demo video of the project [here](https://www.youtube.com/watch?v=ldJOdCSsWJo).
   - [Lombiq.HelpfulLibraries.RestEase](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.RestEase): Adds a typed HTTP client to the service collection using RestEase.
   - [Lombiq.HelpfulLibraries.Targets](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.Targets): Targets project which references all Helpful Libraries. Only necessary for NuGet publishing, just as *Lombiq.HelpfulLibraries.sln*.

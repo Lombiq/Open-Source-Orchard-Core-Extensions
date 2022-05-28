@@ -18,7 +18,9 @@
       "name": "feature",
       "disable": [],
       "enable": [
+        "OrchardCore.Localization",
         "Lombiq.AuditTrailExtensions",
+        "Lombiq.BaseTheme.Samples",
         "Lombiq.ChartJs",
         "Lombiq.DataTables.Samples",
         "Lombiq.HelpfulExtensions.CodeGeneration",
@@ -26,20 +28,27 @@
         "Lombiq.HelpfulExtensions.Flows",
         "Lombiq.HelpfulExtensions.ShapeTracing",
         "Lombiq.HelpfulExtensions.Widgets",
+        "Lombiq.HelpfulLibraries.Samples",
         "Lombiq.Hosting.Azure.ApplicationInsights",
         "Lombiq.Hosting.Tenants.Admin.Login",
         "Lombiq.Hosting.Tenants.Admin.Login.SubTenant",
         "Lombiq.Hosting.Tenants.Management",
         "Lombiq.JsonEditor",
+        "Lombiq.OSOCE.Samples",
         "Lombiq.OSOCE.NuGet.TestModule",
         // We only enable these on a specific test, because it overlaps with too many things.
         // "Lombiq.Privacy.ConsentBanner",
         // "Lombiq.Privacy.FormConsent",
         // "Lombiq.Privacy.RegistrationConsent",
+        "Lombiq.TrainingDemo",
         "Lombiq.UIKit",
         "Lombiq.OSOCE.NuGet.TestTheme",
         "Lombiq.BaseTheme.Samples",
-        "Lombiq.HelpfulExtensions.Widgets"
+        "Lombiq.HelpfulExtensions.Widgets",
+        "Lombiq.VueJs",
+        "Lombiq.VueJs.Samples",
+        "TheTheme"
+        // Not enabling Lombiq.TrainingDemo.Middlewares because that would write to the error log on every request.
       ]
     },
     {
