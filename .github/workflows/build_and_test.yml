@@ -64,7 +64,8 @@ jobs:
             grep -v 'Lombiq.Tests.csproj' |
             sed -e 's/\\/\//g' \
                 -e '$atrue' \
-                -e 's/\(.*\)/echo "::group::\1" \&\&\ndotnet test -c Release --no-restore --logger GitHubActions --no-build '"'\\1'"' \&\&\necho "::endgroup::" \&\&/' |
+                -e '/\.UI\./s/\(.*\)/dotnet test -c Release --no-restore --logger GitHubActions --no-build '"'\\1'"' \&\&/' \
+                -e '/\.UI\./!s/\(.*\)/echo "::group::\1" \&\&\ndotnet test -c Release --no-restore --logger GitHubActions --no-build '"'\\1'"' \&\&\necho "::endgroup::" \&\&/' |
             bash && (echo SUCCESS > .ui_test_result) || (echo FAIL > .ui_test_result)) |
             grep -v '^Connection refused \[::ffff:127.0.0.1\]';
         grep SUCCESS .ui_test_result
