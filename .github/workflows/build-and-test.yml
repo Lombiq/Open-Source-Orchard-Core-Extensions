@@ -40,7 +40,14 @@ jobs:
         for i in {1..60}
         do
             echo "Waiting for SQL Server to start. Attempt $i/10."
-            sqlcmd -b -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null
+
+            if [ "$RUNNER_OS" == "Linux" ]
+            then
+                sqlcmd -b -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null
+            else
+                sqlcmd -b -Q -U SA -P 'Password1!' "SELECT @@SERVERNAME as ServerName" &> /dev/null
+            fi
+
             if [ $? = 0 ]
             then
                 echo "SQL Server is successfully started."
