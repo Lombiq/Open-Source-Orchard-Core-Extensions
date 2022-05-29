@@ -12,13 +12,12 @@ jobs:
         directory: ['.', 'NuGetTest']
     steps:
     - uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'
     - name: Setup .NET Core 6.0
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.*
-    - name: Submodule Init
-      run: |
-        git submodule init && git submodule update
     - name: Build and Static Code Analysis
       run: |
         cd "${{matrix.directory}}"
