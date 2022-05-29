@@ -83,6 +83,7 @@ jobs:
                     sleep 1
                 else
                     echo "SQL Server couldn't be started."
+                    sqlcmd -b -Q "SELECT @@SERVERNAME as ServerName"
                     exit 1;
                 fi
             fi
