@@ -54,10 +54,6 @@ jobs:
     - name: Prepare SQL snapshot directory on Linux
       if: matrix.os == 'ubuntu-latest'
       run: docker exec -u 0 sql2019 bash -c 'mkdir /data; chmod 777 /data -R; chown mssql:root /data'
-    #- name: Set up Azurite via Docker
-    #  run: |
-    #    docker pull mcr.microsoft.com/azure-storage/azurite &&
-    #    docker run --name azurite -d -p 10000:10000 mcr.microsoft.com/azure-storage/azurite azurite-blob --blobHost 0.0.0.0 --blobPort 10000
     - name: Set up Azurite via NPM
       run: |
         npm install -g azurite
