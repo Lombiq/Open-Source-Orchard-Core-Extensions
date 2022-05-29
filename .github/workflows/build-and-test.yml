@@ -112,7 +112,7 @@ jobs:
             grep -v '^Connection refused \[::ffff:127.0.0.1\]';
         grep SUCCESS .ui_test_result
     - uses: actions/upload-artifact@v2
-      if: hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
+      if: failure() && hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
       with:
           name: ui-test-failure-dump
           path: format('{0}/test/**/FailureDumps', matrix.directory)
