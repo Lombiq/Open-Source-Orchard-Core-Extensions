@@ -49,8 +49,7 @@ jobs:
     # https://github.com/ankane/setup-sqlserver/issues/3.
     - name: Set up SQL Server
       run: |
-        if [ "$RUNNER_OS" == "Linux" ]
-        then
+        if [ "$RUNNER_OS" == "Linux" ]; then
             docker pull mcr.microsoft.com/mssql/server &&
             docker run --name sql2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password1!' -p 1433:1433 -d 'mcr.microsoft.com/mssql/server:2019-latest' &&
             docker exec -u 0 sql2019 bash -c 'mkdir /data; chmod 777 /data -R; chown mssql:root /data'
@@ -62,15 +61,13 @@ jobs:
         do
             echo "Waiting for SQL Server to start. Attempt $i/10."
 
-            if [ "$RUNNER_OS" == "Linux" ]
-            then
+            if [ "$RUNNER_OS" == "Linux" ]; then
                 sqlcmd -b -U sa -P 'Password1!' -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null
             else
                 sqlcmd -b -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null
             fi
 
-            if [ $? = 0 ]
-            then
+            if [ $? = 0 ]; then
                 echo "SQL Server is successfully started."
                 break
             else
@@ -96,8 +93,7 @@ jobs:
       # is sent to grep. The final line sets the result according to what was written into the .ui_test_result file.
       run: |
         # On Windows we use integrated security, which is configured as the default in the UI Testing Toolbox.
-        if [ "$RUNNER_OS" == "Linux" ]
-        then
+        if [ "$RUNNER_OS" == "Linux" ]; then
             export LOMBIQ_UI_TESTING_TOOLBOX_SHARED_TEST_CONFIGURATION="$PWD/.github/TestConfig.json"
         fi
         cd "${{matrix.directory}}"
