@@ -55,6 +55,8 @@ jobs:
             docker exec -u 0 sql2019 bash -c 'mkdir /data; chmod 777 /data -R; chown mssql:root /data'
         else
             choco install sql-server-express --no-progress
+            # This is only necessary for the sqlcmd check below.
+            export SQLCMDSERVER=.\SQLEXPRESS
         fi
 
         maxTryCount=10
@@ -107,9 +109,13 @@ jobs:
       run: |
         # On Windows we use integrated security, which is configured as the default in the UI Testing Toolbox.
         if [ "$RUNNER_OS" == "Linux" ]; then
-            export LOMBIQ_UI_TESTING_TOOLBOX_SHARED_TEST_CONFIGURATION="$PWD/.github/TestConfig.json"
+            export LOMBIQ_UI_TESTING_TOOLBOX_SHARED_TEST_CONFIGURATION="$PWD/.github/LinuxTestConfig.json"
+        else
+            export LOMBIQ_UI_TESTING_TOOLBOX_SHARED_TEST_CONFIGURATION="$PWD/.github/WindowsTestConfig.json"
         fi
+
         cd "${{matrix.directory}}"
+
         (dotnet sln list |
             grep '.Tests.' |
             grep -v 'Lombiq.Tests.UI.csproj' |

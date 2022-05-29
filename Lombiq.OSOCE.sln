@@ -20,7 +20,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		tools\Lombiq.Analyzers\orchardcore.ruleset = tools\Lombiq.Analyzers\orchardcore.ruleset
 		Readme.md = Readme.md
 		Reset-Local.ps1 = Reset-Local.ps1
-		.github\TestConfig.json = .github\TestConfig.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{11E06A11-1733-408D-BB2F-BFA07075F812}"
@@ -131,7 +130,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.ChartJs.Tests.UI", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{719F19E1-0B20-490C-B325-74E5FD6C838C}"
 	ProjectSection(SolutionItems) = preProject
-		.github\TestConfig.json = .github\TestConfig.json
+		.github\LinuxTestConfig.json = .github\LinuxTestConfig.json
+		.github\WindowsTestConfig.json = .github\WindowsTestConfig.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{40E6EA88-BE15-4542-BD9A-3AA8DC69629E}"
