@@ -16,7 +16,7 @@ jobs:
     name: Build and Test
     strategy:
       matrix:
-        directory: ['.', 'NuGetTest']
+        directory: ['NuGetTest']
         os: [ubuntu-latest, windows-latest]
         #directory: ['NuGetTest']
         #os: [windows-latest]
