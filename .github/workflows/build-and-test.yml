@@ -55,21 +55,20 @@ jobs:
         else
             choco install sql-server-express --no-progress
         fi
-    - name: Setup server
-      shell: pwsh
-      run: |
-        # Wait for availability then create initial catalog
-        for ($i = 1; $i -le 30; $i++) {
-          echo "Attempt $i/30 to connect to SQL Server..."
-          sqlcmd -b -Q "SELECT @@SERVERNAME as ServerName" 2>&1>$null
-          if ($?) {
-            echo "  - SQL Server is now ready"
-            break
-          } else {
-            echo "  - Not ready, sleeping for 5s"
-            Start-Sleep -seconds 5
-          }
-        }
+
+        for i in {1..60}
+        do
+            echo "Waiting for SQL Server to start. Attempt $i/10."
+            sqlcmd -b -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null
+            if [ $? = 0 ]
+            then
+                echo "SQL Server is successfully started."
+                break
+            else
+                echo "SQL Server is not ready. Waiting for 1s."
+                sleep 1
+            fi
+        done
     - name: Set up Azurite via NPM
       run: |
         npm install -g azurite
