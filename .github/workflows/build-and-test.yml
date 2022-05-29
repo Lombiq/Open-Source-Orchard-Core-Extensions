@@ -36,8 +36,6 @@ jobs:
             choco install sql-server-express --no-progress
         fi
 
-        sqlcmd -b -Q "SELECT @@SERVERNAME as ServerName"
-
         for i in {1..60}
         do
             echo "Waiting for SQL Server to start. Attempt $i/10."
