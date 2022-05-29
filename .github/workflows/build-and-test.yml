@@ -57,17 +57,23 @@ jobs:
             choco install sql-server-express --no-progress
         fi
 
-        for i in {1..60}
+        for i in {1..10}
         do
             echo "Waiting for SQL Server to start. Attempt $i/10."
 
+            sqlServerIsStarted=false
+            
+            # Top prevent the step from failing on the first non-zero exit code, we need to put the commands into the
+            ## ifs, see: https://github.community/t/github-action-terminates-on-first-non-zero-exit-code/240701/2.
             if [ "$RUNNER_OS" == "Linux" ]; then
-                sqlcmd -b -U sa -P 'Password1!' -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null
-            else
-                sqlcmd -b -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null
+                if sqlcmd -b -U sa -P 'Password1!' -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null; then
+                    sqlServerIsStarted=true
+                fi
+            elif sqlcmd -b -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null; then
+                sqlServerIsStarted=true
             fi
 
-            if [ $? = 0 ]; then
+            if [ "$sqlServerIsStarted" = true ]; then
                 echo "SQL Server is successfully started."
                 break
             else
