@@ -36,6 +36,7 @@ public class UITestBase : OrchardCoreUITestBase
             async configuration =>
             {
                 configuration.UseSqlServer = true;
+                configuration.UseAzureBlobStorage = true;
                 if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
             });
 }
