@@ -22,28 +22,6 @@ jobs:
         os: [ubuntu-latest, windows-latest]
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core 6.0
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 6.0.*
-    - name: Submodule Init
-      run: |
-        git submodule init && git submodule update
-    - name: Build and Static Code Analysis
-      run: |
-        cd "${{matrix.directory}}"
-        npm install pnpm -g
-        [ -f src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj ] &&
-            dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
-        dotnet build *.sln \
-          --configuration Release \
-          -warnaserror \
-          -p:TreatWarningsAsErrors=true \
-          -p:RunAnalyzersDuringBuild=true \
-          -p:NoWarn='"1591;CA1014"'\
-          -nologo \
-          -consoleLoggerParameters:NoSummary \
-          -verbosity:quiet
     # This is quite slow on Windows. it might be possible to speed up with caching, see:
     # https://github.com/ankane/setup-sqlserver/issues/3.
     - name: Set up SQL Server
