@@ -20,6 +20,7 @@ jobs:
         #os: [ubuntu-latest, windows-latest]
         directory: ['NuGetTest']
         os: [ubuntu-latest, windows-latest]
+      fail-fast: false
     steps:
     - uses: actions/checkout@v2
     # This is quite slow on Windows. it might be possible to speed up with caching, see:
