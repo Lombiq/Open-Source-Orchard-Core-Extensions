@@ -46,7 +46,7 @@ jobs:
             then
                 sqlcmd -b -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null
             else
-                sqlcmd -b -Q -U SA -P 'Password1!' "SELECT @@SERVERNAME as ServerName" &> /dev/null
+                sqlcmd -b -U sa -P 'Password1!' -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null
             fi
 
             if [ $? = 0 ]
