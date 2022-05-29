@@ -68,7 +68,8 @@ jobs:
       # is sent to grep. The final line sets the result according to what was written into the .ui_test_result file.
       run: |
         # On Windows we use integrated security, which is configured as the default in the UI Testing Toolbox.
-        if [ "$RUNNER_OS" == "Linux" ]; then
+        if [ "$RUNNER_OS" == "Linux" ]
+        then
             export LOMBIQ_UI_TESTING_TOOLBOX_SHARED_TEST_CONFIGURATION="$PWD/.github/TestConfig.json"
         fi
         cd "${{matrix.directory}}"
