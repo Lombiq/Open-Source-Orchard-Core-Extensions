@@ -18,5 +18,7 @@ public class BasicOrchardFeaturesTests : UITestBase
     public Task BasicOrchardFeaturesShouldWork(Browser browser) =>
         ExecuteTestAsync(
             context => context.TestBasicOrchardFeaturesExceptRegistrationAsync("Lombiq.OSOCE.NuGet.BasicOrchardFeaturesTests"),
-            browser);
+            browser,
+            null,
+            configuration => configuration.UseSqlServer = true);
 }
