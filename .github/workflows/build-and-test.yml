@@ -44,6 +44,8 @@ jobs:
           -nologo \
           -consoleLoggerParameters:NoSummary \
           -verbosity:quiet
+    # This is quite slow on Windows. it might be possible to speed up with caching, see:
+    # https://github.com/ankane/setup-sqlserver/issues/3.
     - name: Set up SQL Server
       uses: ankane/setup-sqlserver@v1
       with:
