@@ -70,6 +70,7 @@ jobs:
       # run's, so to get around this 'SUCCESS' or 'FAILURE' is written into the .ui_test_result file before the output
       # is sent to grep. The final line sets the result according to what was written into the .ui_test_result file.
       run: |
+        export LOMBIQ_UI_TESTING_TOOLBOX_SHARED_TEST_CONFIGURATION="$PWD/.github/TestConfig.json"
         cd "${{matrix.directory}}"
         (dotnet sln list |
             grep '.Tests.' |
