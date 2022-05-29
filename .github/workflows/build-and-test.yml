@@ -55,8 +55,6 @@ jobs:
             docker exec -u 0 sql2019 bash -c 'mkdir /data; chmod 777 /data -R; chown mssql:root /data'
         else
             choco install sql-server-express --no-progress
-            # This is only necessary for the sqlcmd check below.
-            export SQLCMDSERVER=.\SQLEXPRESS
         fi
 
         maxTryCount=10
@@ -72,7 +70,7 @@ jobs:
                 if sqlcmd -b -U sa -P 'Password1!' -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null; then
                     sqlServerIsStarted=true
                 fi
-            elif sqlcmd -b -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null; then
+            elif sqlcmd -b -S .\SQLEXPRESS -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null; then
                 sqlServerIsStarted=true
             fi
 
@@ -85,7 +83,7 @@ jobs:
                     sleep 1
                 else
                     echo "SQL Server couldn't be started."
-                    sqlcmd -b -Q "SELECT @@SERVERNAME as ServerName"
+                    sqlcmd -b -S .\SQLEXPRESS -Q "SELECT @@SERVERNAME as ServerName"
                     exit 1;
                 fi
             fi
