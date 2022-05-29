@@ -57,7 +57,7 @@ jobs:
             choco install sql-server-express --no-progress
         fi
 
-        maxTryCount=2
+        maxTryCount=10
         
         for i in $(seq 1 $maxTryCount); do
             echo "Waiting for SQL Server to start. Attempt $i/$maxTryCount."
