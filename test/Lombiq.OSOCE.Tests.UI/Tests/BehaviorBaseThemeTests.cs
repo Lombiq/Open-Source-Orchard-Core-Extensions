@@ -1,9 +1,8 @@
 ﻿using Lombiq.BaseTheme.Tests.UI.Extensions;
-using Lombiq.Tests.UI;
 using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
-using Microsoft.SqlServer.Management.Dmf;
+using System;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -30,7 +29,7 @@ public class BehaviorBaseThemeTests : UITestBase
     [Theory, Chrome]
     public Task IntentionalTestError1(Browser browser) =>
         ExecuteTestAfterSetupAsync(
-            _ => throw new InvalidOperandException("I want to fail."),
+            _ => throw new InvalidOperationException("I want to fail."),
             browser);
 
     [Theory, Chrome]
@@ -42,8 +41,8 @@ public class BehaviorBaseThemeTests : UITestBase
     [Theory, Chrome]
     public Task IntentionalTestError3(Browser browser) =>
         ExecuteTestAfterSetupAsync(
-            _ => OrchardCoreUITestBase.Throw(),
+            _ => Throw(),
             browser);
 
-    private static void Throw(string message) => throw new InvalidOperandException(message);
+    private static void Throw(string message) => throw new InvalidOperationException(message);
 }
