@@ -95,6 +95,8 @@ jobs:
             }
         }
     - name: Set up Azurite via NPM
+      # This needs to run in bash for some reason. Azurite properly starts in PS but still, connections fail.
+      shell: bash
       run: |
         npm install -g azurite
         azurite --silent --location ${{matrix.directory}}/azurite --debug ${{matrix.directory}}/azurite/debug.log &
