@@ -57,7 +57,6 @@ jobs:
           sql-server-2019-docker-image-cache-${{ runner.os }}
     - name: Set up SQL Server
       run: |
-        echo ${{ steps.sql-server-docker-image-cache.outputs.cache-hit }}
         if [ "$RUNNER_OS" == "Linux" ]; then
             if [ "${{ steps.sql-server-docker-image-cache.outputs.cache-hit }}" != "true" ]; then
                 docker pull mcr.microsoft.com/mssql/server
