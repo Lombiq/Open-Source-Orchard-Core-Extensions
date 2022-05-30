@@ -19,7 +19,7 @@ jobs:
         #directory: ['.', 'NuGetTest']
         #os: [ubuntu-latest, windows-latest]
         directory: ['NuGetTest']
-        os: [ubuntu-latest, windows-latest]
+        os: [windows-latest]
       fail-fast: false
     steps:
     - uses: actions/checkout@v2
@@ -54,7 +54,15 @@ jobs:
             docker run --name sql2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password1!' -p 1433:1433 -d 'mcr.microsoft.com/mssql/server:2019-latest' &&
             docker exec -u 0 sql2019 bash -c 'mkdir /data; chmod 777 /data -R; chown mssql:root /data'
         else
-            choco install sql-server-express --no-progress
+          # There's no official Windows Docker image for SQL Server anymore:
+          # https://github.com/microsoft/mssql-docker/issues/718. The links under
+          # https://hub.docker.com/_/microsoft-mssql-servera to Windows images are broken. You can actually run Linux
+          # images on Windows, but not on GitHub-hosted agents:
+          # https://github.com/actions/virtual-environments/issues/252. So, we use this image:
+          # https://hub.docker.com/r/tobiasfenster/mssql-server-dev-unsupported. Another one:
+          # https://hub.docker.com/r/willh/mssql-server-windows-developer.
+          docker pull tobiasfenster/mssql-server-dev-unsupported:2019-latest &&
+          docker run --name sql2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password1!' -p 1433:1433 -d 'tobiasfenster/mssql-server-dev-unsupported:2019-latest'
         fi
 
         maxTryCount=10
@@ -66,11 +74,7 @@ jobs:
             
             # To prevent the step from failing on the first non-zero exit code, we need to put the commands into the
             # ifs, see: https://github.community/t/github-action-terminates-on-first-non-zero-exit-code/240701/2.
-            if [ "$RUNNER_OS" == "Linux" ]; then
-                if sqlcmd -b -U sa -P 'Password1!' -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null; then
-                    sqlServerIsStarted=true
-                fi
-            elif sqlcmd -b -S .\SQLEXPRESS -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null; then
+            if sqlcmd -b -U sa -P 'Password1!' -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null; then
                 sqlServerIsStarted=true
             fi
 
@@ -83,7 +87,7 @@ jobs:
                     sleep 1
                 else
                     echo "SQL Server couldn't be started."
-                    sqlcmd -b -S .\SQLEXPRESS -Q "SELECT @@SERVERNAME as ServerName"
+                    sqlcmd -b -Q "SELECT @@SERVERNAME as ServerName"
                     exit 1;
                 fi
             fi
@@ -105,13 +109,8 @@ jobs:
       # run's, so to get around this 'SUCCESS' or 'FAILURE' is written into the .ui_test_result file before the output
       # is sent to grep. The final line sets the result according to what was written into the .ui_test_result file.
       run: |
-        # On Windows we use integrated security, which is configured as the default in the UI Testing Toolbox.
-        if [ "$RUNNER_OS" == "Linux" ]; then
-            export Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate="Server=.;Database=LombiqUITestingToolbox_{{id}};User Id=sa;Password=Password1!;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5"
-            export Lombiq_Tests_UI__DockerConfiguration__ContainerName="sql2019"
-        else
-            export Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate="Server=.\\SQLEXPRESS;Database=LombiqUITestingToolbox_{DatabaseIdPlaceholder};Integrated Security=True;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5"
-        fi
+        export Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate="Server=.;Database=LombiqUITestingToolbox_{{id}};User Id=sa;Password=Password1!;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5"
+        export Lombiq_Tests_UI__DockerConfiguration__ContainerName="sql2019"
 
         cd "${{matrix.directory}}"
 
