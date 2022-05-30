@@ -131,7 +131,8 @@ jobs:
             bash && (echo SUCCESS > .ui_test_result) || (echo FAIL > .ui_test_result)) |
             grep -v '^Connection refused \[::ffff:127.0.0.1\]';
         grep SUCCESS .ui_test_result
-    - uses: actions/upload-artifact@v2
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
       if: hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
       with:
           name: ui-test-failure-dump
