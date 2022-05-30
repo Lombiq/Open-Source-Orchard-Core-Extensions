@@ -52,9 +52,9 @@ jobs:
       uses: actions/cache@v3
       with:
         path: ~/sql-server-docker-image-cache
-        key: sql-server-docker-image-cache-${{ runner.os }}-${{ hashFiles('*.tar') }}
+        key: sql-server-2019-docker-image-cache-${{ runner.os }}-${{ hashFiles('*.tar') }}
         restore-keys: |
-          sql-server-docker-image-cache-${{ runner.os }}
+          sql-server-2019-docker-image-cache-${{ runner.os }}
     - name: Set up SQL Server
       run: |
         echo ${{ steps.sql-server-docker-image-cache.outputs.cache-hit }}
