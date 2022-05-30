@@ -101,12 +101,6 @@ jobs:
       run: |
         npm install -g azurite
         azurite --silent --location ${{matrix.directory}}/azurite --debug ${{matrix.directory}}/azurite/debug.log &
-    - name: Check LongPathsEnabled
-      run: |
-        (Get-ItemProperty "HKLM:System\CurrentControlSet\Control\FileSystem").LongPathsEnabled
-    - name: Set LongPathsEnabled
-      run: |
-        New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
     - name: Tests
       shell: bash
       # This step gets the list of all projects, selects the test projects (excluding the two test libraries) and then
@@ -147,4 +141,3 @@ jobs:
       with:
         name: ui-test-failure-dump-${{ matrix.directory }}-${{ matrix.os }}
         path: ${{ matrix.directory }}/test/**/FailureDumps/
-        if-no-files-found: ignore
