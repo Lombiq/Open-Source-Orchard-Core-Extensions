@@ -58,6 +58,7 @@ jobs:
         {
             choco install sql-server-express --no-progress
         }
+    # Needs to be a separate step, otherwise the Chocolatey installation won't be visible.
     - name: Wait for SQL Server to start
       run: |
         $maxTryCount = 10
@@ -135,6 +136,7 @@ jobs:
         grep SUCCESS .ui_test_result
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
+      # Needs to be always() so if there's a failure dump, it'll be uploaded even if with retries the tests passed.
       if: always() && hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
       with:
         name: ui-test-failure-dump
