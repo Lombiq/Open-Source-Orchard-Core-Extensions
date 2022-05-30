@@ -55,9 +55,6 @@ jobs:
         key: sql-server-docker-image-cache-${{ runner.os }}-${{ hashFiles('*.tar') }}
         restore-keys: |
           sql-server-docker-image-cache-${{ runner.os }}
-    - if: ${{ steps.sql-server-docker-image-cache.outputs.cache-hit == 'false' }}
-      name: Test
-      run: echo "OK"
     - name: Set up SQL Server
       run: |
         echo ${{ steps.sql-server-docker-image-cache.outputs.cache-hit }}
