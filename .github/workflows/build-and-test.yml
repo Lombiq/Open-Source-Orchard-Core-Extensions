@@ -141,5 +141,5 @@ jobs:
       uses: actions/upload-artifact@v2
       if: always() && hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
       with:
-          name: ui-test-failure-dump
-          path: format('{0}/test/**/FailureDumps', matrix.directory)
+        name: ui-test-failure-dump
+        path: format('{0}/test/**/FailureDumps/', matrix.directory)
