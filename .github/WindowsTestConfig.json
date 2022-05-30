@@ -1,7 +1,0 @@
-{
-  "Lombiq_Tests_UI": {
-    "SqlServerDatabaseConfiguration": {
-      "ConnectionStringTemplate": "Server=.\\SQLEXPRESS;Database=LombiqUITestingToolbox_{DatabaseIdPlaceholder};Integrated Security=True;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5"
-    }
-  }
-}

@@ -19,7 +19,7 @@ jobs:
         #directory: ['.', 'NuGetTest']
         #os: [ubuntu-latest, windows-latest]
         directory: ['NuGetTest']
-        os: [windows-latest]
+        os: [ubuntu-latest, windows-latest]
       fail-fast: false
     steps:
     - uses: actions/checkout@v2
@@ -107,9 +107,10 @@ jobs:
       run: |
         # On Windows we use integrated security, which is configured as the default in the UI Testing Toolbox.
         if [ "$RUNNER_OS" == "Linux" ]; then
-            export LOMBIQ_UI_TESTING_TOOLBOX_SHARED_TEST_CONFIGURATION="$PWD/.github/LinuxTestConfig.json"
+            export Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate="Server=.;Database=LombiqUITestingToolbox_{{id}};User Id=sa;Password=Password1!;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5"
+            export Lombiq_Tests_UI__DockerConfiguration__ContainerName="sql2019"
         else
-            export LOMBIQ_UI_TESTING_TOOLBOX_SHARED_TEST_CONFIGURATION="$PWD/.github/WindowsTestConfig.json"
+            export Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate="Server=.\\SQLEXPRESS;Database=LombiqUITestingToolbox_{DatabaseIdPlaceholder};Integrated Security=True;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5"
         fi
 
         cd "${{matrix.directory}}"
