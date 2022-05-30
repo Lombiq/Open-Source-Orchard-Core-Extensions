@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Lombiq.OSOCE.Tests.UI.Tests;
+namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests;
 
 public class BehaviorChartJsTests : UITestBase
 {
