@@ -138,7 +138,7 @@ jobs:
     # https://github.com/actions/upload-artifact/issues/309. We can't do much about this apart from uploading artifacts
     # in a low-level way.
     - name: Upload artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       # Needs to be always() so if there's a failure dump, it'll be uploaded even if with retries the tests passed.
       if: always() && hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
       with:
