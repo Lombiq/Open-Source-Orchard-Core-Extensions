@@ -112,7 +112,6 @@ jobs:
       # run's, so to get around this 'SUCCESS' or 'FAILURE' is written into the .ui_test_result file before the output
       # is sent to grep. The final line sets the result according to what was written into the .ui_test_result file.
       run: |
-        # On Windows we use integrated security, which is configured as the default in the UI Testing Toolbox.
         if [ "$RUNNER_OS" == "Linux" ]; then
             export Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate="Server=.;Database=LombiqUITestingToolbox_{{id}};User Id=sa;Password=Password1!;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5"
             export Lombiq_Tests_UI__DockerConfiguration__ContainerName="sql2019"
