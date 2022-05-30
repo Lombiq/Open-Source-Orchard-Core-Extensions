@@ -139,5 +139,5 @@ jobs:
       # Needs to be always() so if there's a failure dump, it'll be uploaded even if with retries the tests passed.
       if: always() && hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
       with:
-        name: ui-test-failure-dump
+        name: ui-test-failure-dump-${{ matrix.directory }}-${{ matrix.os }}
         path: ${{ matrix.directory }}/test/**/FailureDumps/
