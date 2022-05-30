@@ -64,8 +64,8 @@ jobs:
 
             sqlServerIsStarted=false
             
-            # Top prevent the step from failing on the first non-zero exit code, we need to put the commands into the
-            ## ifs, see: https://github.community/t/github-action-terminates-on-first-non-zero-exit-code/240701/2.
+            # To prevent the step from failing on the first non-zero exit code, we need to put the commands into the
+            # ifs, see: https://github.community/t/github-action-terminates-on-first-non-zero-exit-code/240701/2.
             if [ "$RUNNER_OS" == "Linux" ]; then
                 if sqlcmd -b -U sa -P 'Password1!' -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null; then
                     sqlServerIsStarted=true
