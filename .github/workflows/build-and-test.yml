@@ -19,7 +19,7 @@ jobs:
         #directory: ['.', 'NuGetTest']
         #os: [ubuntu-latest, windows-latest]
         directory: ['NuGetTest']
-        os: [ubuntu-latest, windows-latest]
+        os: [windows-latest]
       fail-fast: false
     steps:
     - uses: actions/checkout@v2
@@ -56,7 +56,8 @@ jobs:
         else
             choco install sql-server-express --no-progress
         fi
-
+    - name: Wait for SQL Server to start
+      run: |
         maxTryCount=10
         
         for i in $(seq 1 $maxTryCount); do
