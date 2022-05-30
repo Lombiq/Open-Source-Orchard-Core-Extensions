@@ -45,8 +45,6 @@ jobs:
     #      -nologo \
     #      -consoleLoggerParameters:NoSummary \
     #      -verbosity:quiet
-    - name: Prepare SQL Server Docker image cache folder
-      run: mkdir --parents ~/sql-server-docker-image-cache
     - name: Cache SQL Server Docker images
       id: sql-server-docker-image-cache
       uses: actions/cache@v3
