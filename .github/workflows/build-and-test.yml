@@ -54,11 +54,11 @@ jobs:
         path: ~/sql-server-docker-image-cache
         key: sql-server-docker-image-cache-${{ runner.os }}-${{ hashFiles('*.tar') }}
         restore-keys: |
-          npm-feature-${{ hashFiles('package-lock.json') }}
+          sql-server-docker-image-cache-${{ hashFiles('package-lock.json') }}
     - name: Set up SQL Server
       run: |
         if [ "$RUNNER_OS" == "Linux" ]; then
-            if [ ${{ steps.sql-server-docker-image-cache.outputs.cache-hit }} != "true"]; then
+            if [ ${{ steps.sql-server-docker-image-cache.outputs.cache-hit }} != "true" ]; then
                 docker pull mcr.microsoft.com/mssql/server
                 docker save --output ~/sql-server-docker-image-cache/sql-server.tar mcr.microsoft.com/mssql/server
             else
@@ -75,7 +75,7 @@ jobs:
             # https://github.com/actions/virtual-environments/issues/252. So, we use this image:
             # https://hub.docker.com/r/tobiasfenster/mssql-server-dev-unsupported. Another one:
             # https://hub.docker.com/r/willh/mssql-server-windows-developer.
-            if [ ${{ steps.sql-server-docker-image-cache.outputs.cache-hit }} != "true"]; then
+            if [ ${{ steps.sql-server-docker-image-cache.outputs.cache-hit }} != "true" ]; then
                 docker pull tobiasfenster/mssql-server-dev-unsupported:2019-latest
                 docker save --output ~/sql-server-docker-image-cache/sql-server.tar mcr.microsoft.com/mssql/server
             else
