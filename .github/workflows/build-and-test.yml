@@ -75,7 +75,7 @@ jobs:
             # https://hub.docker.com/r/willh/mssql-server-windows-developer.
             if [ "${{ steps.sql-server-docker-image-cache.outputs.cache-hit }}" != "true" ]; then
                 docker pull tobiasfenster/mssql-server-dev-unsupported:2019-latest
-                docker save --output ~/sql-server-docker-image-cache/sql-server.tar mcr.microsoft.com/mssql/server
+                docker save --output ~/sql-server-docker-image-cache/sql-server.tar tobiasfenster/mssql-server-dev-unsupported
             else
                 docker load --quiet --input ~/sql-server-docker-image-cache/sql-server.tar
             fi
