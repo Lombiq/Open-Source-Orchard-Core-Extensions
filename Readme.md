@@ -3,6 +3,7 @@
 
 
 [![TeamCity build status](https://ci.lombiq.com/app/rest/builds/buildType:id:OrchardExtensions_OSOCE_Developer_PullAndBuild/statusIcon.svg)](https://ci.lombiq.com/buildConfiguration/OrchardExtensions_OSOCE_Developer_PullAndBuild?mode=builds)
+[![Build and Test](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/workflows/build-and-test.yml)
 
 
 ## About
@@ -81,8 +82,8 @@ You can activate various sample content in the site:
 - [Lombiq Base Theme for Orchard Core](https://github.com/Lombiq/Orchard-Base-Theme/tree/dev):
   - The "TEST: Basic Orchard Features" setup recipe automatically sets it up. If not using it, run the "Lombiq Orchard Core Base Theme - Layers and Zones" recipe, and then enable the theme in Admin → Design → Themes.
   - In case of theme development you can use the "Lombiq Orchard Core Base Theme - Styling Demo" theme to test against some common HTML elements.
- - [Lombiq.ChartJs](https://github.com/Lombiq/Orchard-Chart.js/tree/dev): Go to Recipes in the admin dashboard and select "Lombiq Chart.js - Sample Content - Income/Expense".
-
+- [Lombiq.ChartJs](https://github.com/Lombiq/Orchard-Chart.js/tree/dev): Go to Recipes in the admin dashboard and select "Lombiq Chart.js - Sample Content - Income/Expense".
+- [Lombiq.Privacy](https://github.com/Lombiq/Orchard-Privacy/tree/dev): Go to Recipes in the admin dashboard and select "Lombiq Privacy - Sample Content - Privacy, Forms, Workflows".
 
 ## Contributing and support
 
