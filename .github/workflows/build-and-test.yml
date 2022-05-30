@@ -48,46 +48,55 @@ jobs:
     # This is quite slow on Windows. it might be possible to speed up with caching, see:
     # https://github.com/ankane/setup-sqlserver/issues/3.
     - name: Set up SQL Server
+      shell: pwsh
       run: |
-        if [ "$RUNNER_OS" == "Linux" ]; then
+        if ($Env:RUNNER_OS -eq "Linux")
+        {
             docker pull mcr.microsoft.com/mssql/server &&
             docker run --name sql2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password1!' -p 1433:1433 -d 'mcr.microsoft.com/mssql/server:2019-latest' &&
             docker exec -u 0 sql2019 bash -c 'mkdir /data; chmod 777 /data -R; chown mssql:root /data'
+        }
         else
+        {
             choco install sql-server-express --no-progress
-        fi
-
-        maxTryCount=10
-        
-        for i in $(seq 1 $maxTryCount); do
+        }
+    - name: Wait for SQL Server to start
+      shell: pwsh
+      run: |
+        $maxTryCount = 10
+            
+        for ($i = 1; $i -le $maxTryCount; $i++)
+        {
             echo "Waiting for SQL Server to start. Attempt $i/$maxTryCount."
 
-            sqlServerIsStarted=false
-            
-            # To prevent the step from failing on the first non-zero exit code, we need to put the commands into the
-            # ifs, see: https://github.community/t/github-action-terminates-on-first-non-zero-exit-code/240701/2.
-            if [ "$RUNNER_OS" == "Linux" ]; then
-                if sqlcmd -b -U sa -P 'Password1!' -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null; then
-                    sqlServerIsStarted=true
-                fi
-            elif sqlcmd -b -S .\SQLEXPRESS -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null; then
-                sqlServerIsStarted=true
-            fi
-
-            if [ "$sqlServerIsStarted" = true ]; then
+            if ($Env:RUNNER_OS -eq "Linux")
+            {
+                sqlcmd -b -U sa -P 'Password1!' -Q "SELECT @@SERVERNAME as ServerName" 2>&1>$null
+            }
+            else
+            {
+                sqlcmd -b -S .\SQLEXPRESS -Q "SELECT @@SERVERNAME as ServerName" 2>&1>$null
+            }
+                
+            if ($?)
+            {
                 echo "SQL Server is successfully started."
                 break
+            }
             else
-                if [ $i != $maxTryCount ]; then
+            {
+                if ($i -ne $maxTryCount)
+                {
                     echo "SQL Server is not ready. Waiting for 1s."
-                    sleep 1
+                    Start-Sleep -s 1
+                }
                 else
+                {
                     echo "SQL Server couldn't be started."
-                    sqlcmd -b -S .\SQLEXPRESS -Q "SELECT @@SERVERNAME as ServerName"
-                    exit 1;
-                fi
-            fi
-        done
+                    Exit 1
+                }
+            }
+        }
     - name: Set up Azurite via NPM
       run: |
         npm install -g azurite
