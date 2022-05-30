@@ -58,7 +58,7 @@ jobs:
     - name: Set up SQL Server
       run: |
         if [ "$RUNNER_OS" == "Linux" ]; then
-            if [ ${{ steps.sql-server-docker-image-cache.outputs.cache-hit != "true" }}]; then
+            if [ ${{ steps.sql-server-docker-image-cache.outputs.cache-hit }} != "true"]; then
                 docker pull mcr.microsoft.com/mssql/server
                 docker save --output ~/sql-server-docker-image-cache/sql-server.tar mcr.microsoft.com/mssql/server
             else
