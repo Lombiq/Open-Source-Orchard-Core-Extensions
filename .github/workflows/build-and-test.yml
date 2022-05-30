@@ -134,11 +134,12 @@ jobs:
             grep -v '^Connection refused \[::ffff:127.0.0.1\]';
         grep SUCCESS .ui_test_result
     - name: Test artifacts
+      if: always()
       run: |
         Get-ChildItem -Recurse ${{matrix.directory}}/test/Lombiq.OSOCE.NuGet.Tests.UI/bin/Release/net6.0/FailureDumps
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
-      if: hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
+      if: always() && hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
       with:
           name: ui-test-failure-dump
           path: format('{0}/test/**/FailureDumps', matrix.directory)
