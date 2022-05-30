@@ -134,9 +134,10 @@ jobs:
             grep -v 'Lombiq.Tests.csproj' |
             sed -e 's/\\/\//g' \
                 -e '$atrue' \
-                -e 's/\(.*\)/echo "::group::\1" \&\&\ndotnet test -c Release --no-restore --no-build '"'\\1'"' \&\&\necho "::endgroup::" \&\&/' |
+                -e 's/\(.*\)/echo "::group::\1" \&\&\ndotnet test -c Release --no-restore --no-build --nologo --verbosity quiet '"'\\1'"' \&\&\necho "::endgroup::" \&\&/' |
             bash && (echo SUCCESS > .ui_test_result) || (echo FAIL > .ui_test_result)) |
-            grep -v '^Connection refused \[::ffff:127.0.0.1\]';
+            grep -v '^Connection refused \[::ffff:127.0.0.1\]' |
+            grep -v 'ChromeDriver was started successfully.';
         grep SUCCESS .ui_test_result
 
     # Note that this will fail under Windows if the path is too long, regardless of LongPathsEnabled, see:
