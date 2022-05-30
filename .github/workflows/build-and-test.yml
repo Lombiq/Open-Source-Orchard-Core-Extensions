@@ -131,6 +131,9 @@ jobs:
             bash && (echo SUCCESS > .ui_test_result) || (echo FAIL > .ui_test_result)) |
             grep -v '^Connection refused \[::ffff:127.0.0.1\]';
         grep SUCCESS .ui_test_result
+    - name: Test artifacts
+      run: |
+        Get-ChildItem -Recurse ${{matrix.directory}}/test/Lombiq.OSOCE.NuGet.Tests.UI/bin/Release/net6.0/FailureDumps
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
       if: hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
