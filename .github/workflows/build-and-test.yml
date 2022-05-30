@@ -23,66 +23,38 @@ jobs:
       fail-fast: false
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core 6.0
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 6.0.*
-    - name: Submodule Init
-      run: |
-        git submodule init && git submodule update
-    - name: Build and Static Code Analysis
-      run: |
-        cd "${{matrix.directory}}"
-        npm install pnpm -g
-        [ -f src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj ] &&
-            dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
-        dotnet build *.sln \
-          --configuration Release \
-          -warnaserror \
-          -p:TreatWarningsAsErrors=true \
-          -p:RunAnalyzersDuringBuild=true \
-          -p:NoWarn='"1591;CA1014"'\
-          -nologo \
-          -consoleLoggerParameters:NoSummary \
-          -verbosity:quiet
-    - name: Prepare SQL Server Docker image cache folder
-      run: mkdir --parents ~/sql-server-docker-image-cache
-    - name: Cache SQL Server Docker images
-      id: sql-server-docker-image-cache
-      uses: actions/cache@v3
-      with:
-        path: ~/sql-server-docker-image-cache
-        key: sql-server-2019-docker-image-cache-${{ runner.os }}-${{ hashFiles('*.tar') }}
-        restore-keys: |
-          sql-server-2019-docker-image-cache-${{ runner.os }}
+    #- name: Setup .NET Core 6.0
+    #  uses: actions/setup-dotnet@v1
+    #  with:
+    #    dotnet-version: 6.0.*
+    #- name: Submodule Init
+    #  run: |
+    #    git submodule init && git submodule update
+    #- name: Build and Static Code Analysis
+    #  run: |
+    #    cd "${{matrix.directory}}"
+    #    npm install pnpm -g
+    #    [ -f src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj ] &&
+    #        dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
+    #    dotnet build *.sln \
+    #      --configuration Release \
+    #      -warnaserror \
+    #      -p:TreatWarningsAsErrors=true \
+    #      -p:RunAnalyzersDuringBuild=true \
+    #      -p:NoWarn='"1591;CA1014"'\
+    #      -nologo \
+    #      -consoleLoggerParameters:NoSummary \
+    #      -verbosity:quiet
+    # This is quite slow on Windows. it might be possible to speed up with caching, see:
+    # https://github.com/ankane/setup-sqlserver/issues/3.
     - name: Set up SQL Server
       run: |
         if [ "$RUNNER_OS" == "Linux" ]; then
-            if [ "${{ steps.sql-server-docker-image-cache.outputs.cache-hit }}" != "true" ]; then
-                docker pull mcr.microsoft.com/mssql/server
-                docker save --output ~/sql-server-docker-image-cache/sql-server.tar mcr.microsoft.com/mssql/server
-            else
-                docker load --quiet --input ~/sql-server-docker-image-cache/sql-server.tar
-            fi
-
-            docker run --name sql2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password1!' -p 1433:1433 -d 'mcr.microsoft.com/mssql/server:2019-latest'
+            docker pull mcr.microsoft.com/mssql/server &&
+            docker run --name sql2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password1!' -p 1433:1433 -d 'mcr.microsoft.com/mssql/server:2019-latest' &&
             docker exec -u 0 sql2019 bash -c 'mkdir /data; chmod 777 /data -R; chown mssql:root /data'
         else
-            # There's no official Windows Docker image for SQL Server anymore:
-            # https://github.com/microsoft/mssql-docker/issues/718. The links under
-            # https://hub.docker.com/_/microsoft-mssql-servera to Windows images are broken. You can actually run Linux
-            # images on Windows, but not on GitHub-hosted agents:
-            # https://github.com/actions/virtual-environments/issues/252. So, we use this image:
-            # https://hub.docker.com/r/tobiasfenster/mssql-server-dev-unsupported. Another one:
-            # https://hub.docker.com/r/willh/mssql-server-windows-developer.
-            if [ "${{ steps.sql-server-docker-image-cache.outputs.cache-hit }}" != "true" ]; then
-                docker pull tobiasfenster/mssql-server-dev-unsupported:2019-latest
-                docker save --output ~/sql-server-docker-image-cache/sql-server.tar tobiasfenster/mssql-server-dev-unsupported
-            else
-                docker load --quiet --input ~/sql-server-docker-image-cache/sql-server.tar
-            fi
-
-            docker run --name sql2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password1!' -p 1433:1433 -d 'tobiasfenster/mssql-server-dev-unsupported:2019-latest'
+            choco install sql-server-express --no-progress
         fi
 
         maxTryCount=10
@@ -94,7 +66,11 @@ jobs:
             
             # To prevent the step from failing on the first non-zero exit code, we need to put the commands into the
             # ifs, see: https://github.community/t/github-action-terminates-on-first-non-zero-exit-code/240701/2.
-            if sqlcmd -b -U sa -P 'Password1!' -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null; then
+            if [ "$RUNNER_OS" == "Linux" ]; then
+                if sqlcmd -b -U sa -P 'Password1!' -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null; then
+                    sqlServerIsStarted=true
+                fi
+            elif sqlcmd -b -S .\SQLEXPRESS -Q "SELECT @@SERVERNAME as ServerName" &> /dev/null; then
                 sqlServerIsStarted=true
             fi
 
@@ -107,7 +83,7 @@ jobs:
                     sleep 1
                 else
                     echo "SQL Server couldn't be started."
-                    sqlcmd -b -Q "SELECT @@SERVERNAME as ServerName"
+                    sqlcmd -b -S .\SQLEXPRESS -Q "SELECT @@SERVERNAME as ServerName"
                     exit 1;
                 fi
             fi
@@ -129,8 +105,13 @@ jobs:
       # run's, so to get around this 'SUCCESS' or 'FAILURE' is written into the .ui_test_result file before the output
       # is sent to grep. The final line sets the result according to what was written into the .ui_test_result file.
       run: |
-        export Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate="Server=.;Database=LombiqUITestingToolbox_{{id}};User Id=sa;Password=Password1!;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5"
-        export Lombiq_Tests_UI__DockerConfiguration__ContainerName="sql2019"
+        # On Windows we use integrated security, which is configured as the default in the UI Testing Toolbox.
+        if [ "$RUNNER_OS" == "Linux" ]; then
+            export Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate="Server=.;Database=LombiqUITestingToolbox_{{id}};User Id=sa;Password=Password1!;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5"
+            export Lombiq_Tests_UI__DockerConfiguration__ContainerName="sql2019"
+        else
+            export Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate="Server=.\\SQLEXPRESS;Database=LombiqUITestingToolbox_{DatabaseIdPlaceholder};Integrated Security=True;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5"
+        fi
 
         cd "${{matrix.directory}}"
 
