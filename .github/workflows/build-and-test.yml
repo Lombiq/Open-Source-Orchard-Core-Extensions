@@ -9,7 +9,7 @@ env:
   DOTNET_CLI_TELEMETRY_OPTOUT: true
 defaults:
   run:
-    shell: bash
+    shell: pwsh
 jobs:
   build_test:
     runs-on: ${{ matrix.os }}
@@ -31,6 +31,7 @@ jobs:
       run: |
         git submodule init && git submodule update
     - name: Build and Static Code Analysis
+      shell: bash
       run: |
         cd "${{matrix.directory}}"
         npm install pnpm -g
@@ -46,7 +47,6 @@ jobs:
           -consoleLoggerParameters:NoSummary \
           -verbosity:quiet
     - name: Set up SQL Server
-      shell: pwsh
       run: |
         if ($Env:RUNNER_OS -eq "Linux")
         {
@@ -59,7 +59,6 @@ jobs:
             choco install sql-server-express --no-progress
         }
     - name: Wait for SQL Server to start
-      shell: pwsh
       run: |
         $maxTryCount = 10
             
@@ -100,6 +99,7 @@ jobs:
         npm install -g azurite
         azurite --silent --location ${{matrix.directory}}/azurite --debug ${{matrix.directory}}/azurite/debug.log &
     - name: Tests
+      shell: bash
       # This step gets the list of all projects, selects the test projects (excluding the two test libraries) and then
       # uses sed to create an inline bash script. What this script does:
       # - Uses 'dotnet test -c Release --no-restore --no-build' to start up each project.
