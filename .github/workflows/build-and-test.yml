@@ -144,3 +144,4 @@ jobs:
       with:
         name: ui-test-failure-dump-${{ matrix.directory }}-${{ matrix.os }}
         path: ${{ matrix.directory }}/test/**/FailureDumps/
+        if-no-files-found: ignore
