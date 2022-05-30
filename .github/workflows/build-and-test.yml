@@ -87,7 +87,7 @@ jobs:
             {
                 if ($i -ne $maxTryCount)
                 {
-                    echo "SQL Server is not ready. Waiting for 1s."
+                    echo "SQL Server is not ready. Waiting 1 second."
                     Start-Sleep -s 1
                 }
                 else
