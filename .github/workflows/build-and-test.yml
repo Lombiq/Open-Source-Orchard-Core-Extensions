@@ -1,15 +1,20 @@
 name: Build and Test
+
+# Run for PRs opened for any branch, and pushes to the dev branch.
 on:
   pull_request:
   push:
     branches:
       - dev
+
 env:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
+
 defaults:
   run:
     shell: pwsh
+
 jobs:
   build_test:
     runs-on: ${{ matrix.os }}
