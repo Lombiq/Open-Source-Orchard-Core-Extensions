@@ -1,10 +1,9 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using OrchardCore.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Host.UseNLogHost();
+builder.Host.UseNLasdfsdfogHost();
 
 var configuration = builder.Configuration;
 
