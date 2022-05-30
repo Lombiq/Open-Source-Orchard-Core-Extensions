@@ -84,19 +84,17 @@ jobs:
             if ($?)
             {
                 echo "SQL Server is successfully started."
-                break
+                Exit 0
             }
 
-            if ($i -ne $maxTryCount)
-            {
-                echo "SQL Server is not ready. Waiting 1 second."
-                Start-Sleep -s 1
-            }
-            else
+            if ($i -eq $maxTryCount)
             {
                 echo "SQL Server couldn't be started."
                 Exit 1
             }
+
+            echo "SQL Server is not ready. Waiting 1 second."
+            Start-Sleep -s 1
         }
 
     - name: Set up Azurite via NPM
