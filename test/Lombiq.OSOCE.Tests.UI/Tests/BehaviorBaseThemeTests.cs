@@ -3,6 +3,7 @@ using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using Microsoft.SqlServer.Management.Dmf;
+using OpenQA.Selenium;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -23,7 +24,18 @@ public class BehaviorBaseThemeTests : UITestBase
             {
                 await context.SignInDirectlyAndGoToHomepageAsync();
                 await context.TestBaseThemeFeaturesAsync();
-                throw new InvalidOperandException("Intentional test fail.");
+            },
+            browser);
+
+    [Theory, Chrome]
+    public Task TestAdminBackgroundTasksAsMonkeyRecursivelyShouldWorkWithAdminUserTestAdminBackgroundTasksAsMonkeyRecursivelyShouldWorkWithAdminUser(
+        Browser browser) =>
+        ExecuteTestAfterSetupAsync(
+            async context =>
+            {
+                await context.GoToRelativeUrlAsync("/nasdjklandasjlasjlsd");
+                await context.GoToHomePageAsync();
+                context.Get(By.Id("nasdjklandasjlasjlsd"));
             },
             browser);
 }
