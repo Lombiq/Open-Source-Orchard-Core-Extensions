@@ -2,6 +2,7 @@
 using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
+using Microsoft.SqlServer.Management.Dmf;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -20,6 +21,7 @@ public class BehaviorBaseThemeTests : UITestBase
         ExecuteTestAfterSetupAsync(
             async context =>
             {
+                throw new InvalidOperandException("Intentional test fail.");
                 await context.SignInDirectlyAndGoToHomepageAsync();
                 await context.TestBaseThemeFeaturesAsync();
             },
