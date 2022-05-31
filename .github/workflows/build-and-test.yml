@@ -146,15 +146,15 @@ jobs:
     - name: Merge FailureDumps
       if: always() && hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
       run: |
-        New-Item -Type Directory "${{matrix.directory}}/FailureDumps"
+        New-Item -Type Directory "../../FailureDumps"
         Get-ChildItem "${{matrix.directory}}/test" -Recurse |
           ? { $_.Name -eq 'FailureDumps' } |
           % { $_.GetDirectories() } |
-          % { Move-Item $_.FullName "${{matrix.directory}}/FailureDumps/${_.Name}" }
+          % { Move-Item $_.FullName "../../FailureDumps/${_.Name}" }
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
-      if: always() && hashFiles(format('{0}/FailureDumps', matrix.directory))
+      if: always() && hashFiles('../../FailureDumps')
       with:
         name: ui-test-failure-dump-${{ matrix.directory }}-${{ matrix.os }}
         path: ${{ matrix.directory }}/FailureDumps/
