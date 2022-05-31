@@ -100,8 +100,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.BaseTheme.Tests.UI",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.UIKit", "src\Modules\Lombiq.UIKit\Lombiq.UIKit.csproj", "{A1AE9B6E-2C5C-4D28-A589-AF9BD9F3BE4A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Gulp.Extensions", "src\Utilities\Lombiq.Gulp.Extensions\Lombiq.Gulp.Extensions.csproj", "{91D0AE77-CCA4-4F55-A334-3835D9E5349B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -484,17 +482,6 @@ Global
 		{A1AE9B6E-2C5C-4D28-A589-AF9BD9F3BE4A}.Release|x64.Build.0 = Release|Any CPU
 		{A1AE9B6E-2C5C-4D28-A589-AF9BD9F3BE4A}.Release|x86.ActiveCfg = Release|Any CPU
 		{A1AE9B6E-2C5C-4D28-A589-AF9BD9F3BE4A}.Release|x86.Build.0 = Release|Any CPU
-		{91D0AE77-CCA4-4F55-A334-3835D9E5349B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{91D0AE77-CCA4-4F55-A334-3835D9E5349B}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{91D0AE77-CCA4-4F55-A334-3835D9E5349B}.Debug|x64.Build.0 = Debug|Any CPU
-		{91D0AE77-CCA4-4F55-A334-3835D9E5349B}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{91D0AE77-CCA4-4F55-A334-3835D9E5349B}.Debug|x86.Build.0 = Debug|Any CPU
-		{91D0AE77-CCA4-4F55-A334-3835D9E5349B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{91D0AE77-CCA4-4F55-A334-3835D9E5349B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{91D0AE77-CCA4-4F55-A334-3835D9E5349B}.Release|x64.ActiveCfg = Release|Any CPU
-		{91D0AE77-CCA4-4F55-A334-3835D9E5349B}.Release|x64.Build.0 = Release|Any CPU
-		{91D0AE77-CCA4-4F55-A334-3835D9E5349B}.Release|x86.ActiveCfg = Release|Any CPU
-		{91D0AE77-CCA4-4F55-A334-3835D9E5349B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -538,7 +525,6 @@ Global
 		{93A678A8-93E4-4F53-BF83-22801014F27B} = {FF48793C-2AC5-4FAA-9BA1-44448E3A7F98}
 		{2BF13E3A-B54D-4352-812E-9A867A801FFE} = {93A678A8-93E4-4F53-BF83-22801014F27B}
 		{A1AE9B6E-2C5C-4D28-A589-AF9BD9F3BE4A} = {11E06A11-1733-408D-BB2F-BFA07075F812}
-		{91D0AE77-CCA4-4F55-A334-3835D9E5349B} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
