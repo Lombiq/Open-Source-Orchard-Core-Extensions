@@ -2,7 +2,6 @@
 using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
-using Microsoft.SqlServer.Management.Dmf;
 using OpenQA.Selenium;
 using System.Threading.Tasks;
 using Xunit;
