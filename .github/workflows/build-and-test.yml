@@ -141,9 +141,10 @@ jobs:
 
     # Note that this will fail under Windows if the path is too long, regardless of LongPathsEnabled, see:
     # https://github.com/actions/upload-artifact/issues/309. To get around that we merge all FailureDumps into the
-    # solution root.
+    # solution root. The following two steps need to be always(), so if there's a failure dump it'll be uploaded even if
+    # the tests are ultimately passed after retries. The same is true for the next step as well.
     - name: Merge FailureDumps
-      if: hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
+      if: always() && hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
       run: |
         New-Item -Type Directory "${{matrix.directory}}/FailureDumps"
         Get-ChildItem "${{matrix.directory}}/test" -Recurse |
@@ -151,10 +152,8 @@ jobs:
           % { $_.GetDirectories() } |
           % { Move-Item $_.FullName "${{matrix.directory}}/FailureDumps/${_.Name}" }
 
-
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
-      # Needs to be always(), so if there's a failure dump it'll be uploaded even if with retries the tests passed.
       if: always() && hashFiles(format('{0}/FailureDumps', matrix.directory))
       with:
         name: ui-test-failure-dump-${{ matrix.directory }}-${{ matrix.os }}
