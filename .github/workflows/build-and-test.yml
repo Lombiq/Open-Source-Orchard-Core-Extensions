@@ -21,7 +21,7 @@ jobs:
     name: Build and Test
     strategy:
       matrix:
-        directory: ['.']
+        directory: ['.', 'NuGetTest']
         os: [ubuntu-latest, windows-latest]
     steps:
     - uses: actions/checkout@v2
