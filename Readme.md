@@ -3,6 +3,7 @@
 
 
 [![TeamCity build status](https://ci.lombiq.com/app/rest/builds/buildType:id:OrchardExtensions_OSOCE_Developer_PullAndBuild/statusIcon.svg)](https://ci.lombiq.com/buildConfiguration/OrchardExtensions_OSOCE_Developer_PullAndBuild?mode=builds)
+[![Build and Test](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/workflows/build-and-test.yml)
 
 
 ## About
@@ -24,6 +25,7 @@ This also serves as an example of an ASP.NET Core web app using Orchard from NuG
 
 - Libraries
   - [Lombiq.HelpfulLibraries](https://github.com/Lombiq/Helpful-Libraries/tree/dev): Various libraries that can be handy when developing for Orchard Core, to be used from your own Orchard modules.
+  - [Lombiq.HelpfulLibraries.Cli](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.Cli): Command Line Libraries. This project helps with executing command line calls.
   - [Lombiq.HelpfulLibraries.LinqToDb](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.LinqToDb): With the help of this project you can write LINQ expressions and run them with a [YesSql](https://github.com/sebastienros/yessql) `ISession` extension method to query from the DB instead of writing plain SQL queries. Uses the [LINQ to DB project](https://linq2db.github.io/). You can watch a demo video of the project [here](https://www.youtube.com/watch?v=ldJOdCSsWJo).
   - [Lombiq.HelpfulLibraries.RestEase](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.RestEase): Adds a typed HTTP client to the service collection using RestEase.
   - [Lombiq.HelpfulLibraries.Targets](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.Targets): Targets project which references all Helpful Libraries. Only necessary for NuGet publishing, just as *Lombiq.HelpfulLibraries.sln*.
@@ -80,8 +82,8 @@ You can activate various sample content in the site:
 - [Lombiq Base Theme for Orchard Core](https://github.com/Lombiq/Orchard-Base-Theme/tree/dev):
   - The "TEST: Basic Orchard Features" setup recipe automatically sets it up. If not using it, run the "Lombiq Orchard Core Base Theme - Layers and Zones" recipe, and then enable the theme in Admin → Design → Themes.
   - In case of theme development you can use the "Lombiq Orchard Core Base Theme - Styling Demo" theme to test against some common HTML elements.
- - [Lombiq.ChartJs](https://github.com/Lombiq/Orchard-Chart.js/tree/dev): Go to Recipes in the admin dashboard and select "Lombiq Chart.js - Sample Content - Income/Expense".
-
+- [Lombiq.ChartJs](https://github.com/Lombiq/Orchard-Chart.js/tree/dev): Go to Recipes in the admin dashboard and select "Lombiq Chart.js - Sample Content - Income/Expense".
+- [Lombiq.Privacy](https://github.com/Lombiq/Orchard-Privacy/tree/dev): Go to Recipes in the admin dashboard and select "Lombiq Privacy - Sample Content - Privacy, Forms, Workflows".
 
 ## Contributing and support
 
