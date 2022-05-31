@@ -48,7 +48,7 @@ jobs:
           -p:NoWarn='"1591;CA1014"'\
           -nologo \
           -consoleLoggerParameters:NoSummary \
-          -verbosity:normal
+          -verbosity:quiet
 
     - name: Set up SQL Server
       run: |
