@@ -67,7 +67,7 @@ jobs:
     - name: Wait for SQL Server to start
       run: |
         $maxTryCount = 10
-            
+
         for ($i = 1; $i -le $maxTryCount; $i++)
         {
             echo "Waiting for SQL Server to start. Attempt $i/$maxTryCount."
@@ -80,7 +80,7 @@ jobs:
             {
                 sqlcmd -b -S .\SQLEXPRESS -Q "SELECT @@SERVERNAME as ServerName" 2>&1>$null
             }
-                
+
             if ($?)
             {
                 echo "SQL Server is successfully started."
