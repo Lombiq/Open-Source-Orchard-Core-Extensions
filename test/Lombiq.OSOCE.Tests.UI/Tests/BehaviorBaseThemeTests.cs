@@ -21,9 +21,9 @@ public class BehaviorBaseThemeTests : UITestBase
         ExecuteTestAfterSetupAsync(
             async context =>
             {
-                throw new InvalidOperandException("Intentional test fail.");
                 await context.SignInDirectlyAndGoToHomepageAsync();
                 await context.TestBaseThemeFeaturesAsync();
+                throw new InvalidOperandException("Intentional test fail.");
             },
             browser);
 }
