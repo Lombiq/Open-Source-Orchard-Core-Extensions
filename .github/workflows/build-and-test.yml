@@ -146,16 +146,16 @@ jobs:
       if: hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
       run: |
         New-Item -Type Directory "${{matrix.directory}}/FailureDumps"
-        Get-ChildItem "${{matrix.directory}}/test" -Recurse | 
+        Get-ChildItem "${{matrix.directory}}/test" -Recurse |
           ? { $_.Name -eq 'FailureDumps' } |
-          % { $_.GetDirectories() } | 
+          % { $_.GetDirectories() } |
           % { Move-Item $_.FullName "${{matrix.directory}}/FailureDumps/${_.Name}" }
 
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
-      # We don't check for failure(), so if there's a failure dump it'll be uploaded even if with retries the tests passed.
-      if: hashFiles(format('{0}/FailureDumps', matrix.directory))
+      # Needs to be always(), so if there's a failure dump it'll be uploaded even if with retries the tests passed.
+      if: always() && hashFiles(format('{0}/FailureDumps', matrix.directory))
       with:
         name: ui-test-failure-dump-${{ matrix.directory }}-${{ matrix.os }}
         path: ${{ matrix.directory }}/FailureDumps/
