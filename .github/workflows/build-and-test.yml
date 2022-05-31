@@ -151,11 +151,11 @@ jobs:
           ? { $_.Name -eq 'FailureDumps' } |
           % { $_.GetDirectories() } |
           % { Move-Item $_.FullName "../../FailureDumps/${_.Name}" }
-        echo "::set-output name=hasArtifacts::true"
+        echo hasArtifacts=true >> $GITHUB_ENV
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
-      if: always() && hasArtifacts
+      if: always() && env.hasArtifacts
       with:
         name: ui-test-failure-dump-${{ matrix.directory }}-${{ matrix.os }}
         path: ${{ matrix.directory }}/FailureDumps/
