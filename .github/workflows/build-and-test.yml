@@ -158,5 +158,5 @@ jobs:
       if: always() && env.hasArtifacts
       with:
         name: ui-test-failure-dump-${{ matrix.directory }}-${{ matrix.os }}
-        path: ${{ matrix.directory }}/FailureDumps/
+        path: ../../FailureDumps/
         if-no-files-found: ignore
