@@ -2,8 +2,6 @@
 using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
-using OpenQA.Selenium;
-using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -24,19 +22,6 @@ public class BehaviorBaseThemeTests : UITestBase
             {
                 await context.SignInDirectlyAndGoToHomepageAsync();
                 await context.TestBaseThemeFeaturesAsync();
-            },
-            browser);
-
-    [Theory, Chrome]
-    public Task TestAdminBackgroundTasksAsMonkeyRecursivelyShouldWorkWithAdminUser(
-        Browser browser) =>
-        ExecuteTestAfterSetupAsync(
-            async context =>
-            {
-                if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) return;
-                await context.GoToRelativeUrlAsync("/nasdjklandasjlasjlsd");
-                await context.GoToHomePageAsync();
-                context.Get(By.Id("nasdjklandasjlasjlsd"));
             },
             browser);
 }
