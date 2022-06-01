@@ -151,11 +151,11 @@ jobs:
           ? { $_.Name -eq 'FailureDumps' } |
           % { $_.GetDirectories() } |
           % { Move-Item $_.FullName "../../FailureDumps/${_.Name}" }
-        echo hasArtifacts=true >> $GITHUB_ENV
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
-      if: always() && env.hasArtifacts
+      # It's always as explained above. We don't need additional conditions, because of the "if-no-files-found" setting.
+      if: always()
       with:
         name: ui-test-failure-dump-${{ matrix.directory }}-${{ matrix.os }}
         path: ../../FailureDumps/
