@@ -28,7 +28,7 @@ public class BehaviorBaseThemeTests : UITestBase
             browser);
 
     [Theory, Chrome]
-    public Task TestAdminBackgroundTasksAsMonkeyRecursivelyShouldWorkWithAdminUserTestAdminBackgroundTasksAsMonkeyRecursivelyShouldWorkWithAdminUser(
+    public Task TestAdminBackgroundTasksAsMonkeyRecursivelyShouldWorkWithAdminUser(
         Browser browser) =>
         ExecuteTestAfterSetupAsync(
             async context =>
