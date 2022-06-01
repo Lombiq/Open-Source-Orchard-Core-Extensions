@@ -145,7 +145,7 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
       # Needs to be always() so if there's a failure dump, it'll be uploaded even if with retries the tests passed.
-      if: always() && hashFiles(format('{0}/test/**/FailureDumps', matrix.directory), '{0}/test/**/Temp', matrix.directory))
+      if: always() && hashFiles(format('{0}/test/**/FailureDumps', matrix.directory), format('{0}/test/**/Temp', matrix.directory))
       with:
         name: ui-test-failure-dump-${{ matrix.directory }}-${{ matrix.os }}
         path: |
