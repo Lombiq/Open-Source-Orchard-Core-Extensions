@@ -34,7 +34,7 @@ jobs:
         dotnet-version: 6.0.*
 
     - name: Build and Static Code Analysis
-      working-directory: matrix.directory
+      working-directory: ${{ matrix.directory }}
       run: |
         npm install pnpm -g
 
@@ -119,7 +119,7 @@ jobs:
     # to get around this 'SUCCESS' or 'FAILURE' is written into the .ui_test_result file before the output is sent to
     # grep. The final line sets the result according to what was written into the .ui_test_result file.
     - name: Tests
-      working-directory: matrix.directory
+      working-directory: ${{ matrix.directory }}
       run: |
         if ($Env:RUNNER_OS -eq "Linux")
         {
