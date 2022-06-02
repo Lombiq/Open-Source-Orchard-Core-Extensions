@@ -34,20 +34,23 @@ jobs:
         dotnet-version: 6.0.*
 
     - name: Build and Static Code Analysis
-      shell: bash
+      working-directory: matrix.directory
       run: |
-        cd "${{matrix.directory}}"
         npm install pnpm -g
-        [ -f src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj ] &&
+
+        if (Test-Path src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj)
+        {
             dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
-        dotnet build *.sln \
-          --configuration Release \
-          -warnaserror \
-          -p:TreatWarningsAsErrors=true \
-          -p:RunAnalyzersDuringBuild=true \
-          -p:NoWarn='"1591;CA1014"'\
-          -nologo \
-          -consoleLoggerParameters:NoSummary \
+        }
+
+        dotnet build *.sln `
+          --configuration Release `
+          -warnaserror `
+          -p:TreatWarningsAsErrors=true `
+          -p:RunAnalyzersDuringBuild=true `
+          -p:NoWarn='"1591;CA1014"'`
+          -nologo `
+          -consoleLoggerParameters:NoSummary `
           -verbosity:quiet
 
     - name: Set up SQL Server
@@ -67,7 +70,7 @@ jobs:
     - name: Wait for SQL Server to start
       run: |
         $maxTryCount = 10
-            
+
         for ($i = 1; $i -le $maxTryCount; $i++)
         {
             echo "Waiting for SQL Server to start. Attempt $i/$maxTryCount."
@@ -80,7 +83,7 @@ jobs:
             {
                 sqlcmd -b -S .\SQLEXPRESS -Q "SELECT @@SERVERNAME as ServerName" 2>&1>$null
             }
-                
+
             if ($?)
             {
                 echo "SQL Server is successfully started."
@@ -116,29 +119,45 @@ jobs:
     # to get around this 'SUCCESS' or 'FAILURE' is written into the .ui_test_result file before the output is sent to
     # grep. The final line sets the result according to what was written into the .ui_test_result file.
     - name: Tests
-      shell: bash
-
+      working-directory: matrix.directory
       run: |
-        if [ "$RUNNER_OS" == "Linux" ]; then
-            export Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate="Server=.;Database=LombiqUITestingToolbox_{{id}};User Id=sa;Password=Password1!;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5"
-            export Lombiq_Tests_UI__DockerConfiguration__ContainerName="sql2019"
+        if ($Env:RUNNER_OS -eq "Linux")
+        {
+            Set-Item -Path Env:\Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate `
+                -Value 'Server=.;Database=LombiqUITestingToolbox_{{id}};User Id=sa;Password=Password1!;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5'
+            Set-Item -Path Env:\Lombiq_Tests_UI__DockerConfiguration__ContainerName -Value 'sql2019'
+        }
         else
-            export Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate="Server=.\\SQLEXPRESS;Database=LombiqUITestingToolbox_{{id}};Integrated Security=True;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5"
-        fi
+        {
+            Set-Item -Path Env:\Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate `
+                -Value 'Server=.\\SQLEXPRESS;Database=LombiqUITestingToolbox_{{id}};Integrated Security=True;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5'
+        }
 
-        cd "${{matrix.directory}}"
+        $tests = dotnet sln list |
+            Select-Object -Skip 2 |
+            Select-String '\.Tests\.' |
+            ? {
+                $result =  (dotnet test --no-restore --list-tests --verbosity quiet $_ 2>&1) -join [System.Environment]::NewLine
+                -not [string]::IsNullOrEmpty($result) -and $result.Contains('The following Tests are available')
+            }
 
-        (dotnet sln list |
-            grep '.Tests.' |
-            grep -v 'Lombiq.Tests.UI.csproj' |
-            grep -v 'Lombiq.Tests.csproj' |
-            sed -e 's/\\/\//g' \
-                -e '$atrue' \
-                -e 's/\(.*\)/echo "::group::\1" \&\&\ndotnet test -c Release --no-restore --no-build --nologo --verbosity quiet '"'\\1'"' \&\&\necho "::endgroup::" \&\&/' |
-            bash && (echo SUCCESS > .ui_test_result) || (echo FAIL > .ui_test_result)) |
-            grep -v '^Connection refused \[::ffff:127.0.0.1\]' |
-            grep -v 'ChromeDriver was started successfully.';
-        grep SUCCESS .ui_test_result
+        foreach ($test in $tests) {
+            $result = (dotnet test -c Release --no-restore --no-build --nologo --verbosity quiet $test
+
+            if ($?)
+            {
+                echo "Test Successful: $test"
+                continue
+            }
+
+            $needsGrouping = -not $result.Contains('::group::')
+
+            if ($needsGrouping) { echo "::group::$test" }
+            echo $result
+            if ($needsGrouping) { echo "::endgroup::" }
+
+            exit 1
+        }
 
     # Note that this will fail under Windows if the path is too long, regardless of LongPathsEnabled, see:
     # https://github.com/actions/upload-artifact/issues/309. We can't do much about this apart from uploading artifacts
