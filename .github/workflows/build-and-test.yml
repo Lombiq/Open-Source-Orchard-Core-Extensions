@@ -141,7 +141,7 @@ jobs:
             }
 
         foreach ($test in $tests) {
-            $result = (dotnet test -c Release --no-restore --no-build --nologo --verbosity quiet $test
+            $result = (dotnet test -c Release --no-restore --no-build --nologo --verbosity quiet $test)
 
             if ($?)
             {
