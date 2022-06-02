@@ -43,15 +43,7 @@ jobs:
             dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
         }
 
-        dotnet build *.sln `
-          --configuration Release `
-          -warnaserror `
-          -p:TreatWarningsAsErrors=true `
-          -p:RunAnalyzersDuringBuild=true `
-          -p:NoWarn='"1591;CA1014"' `
-          -nologo `
-          -consoleLoggerParameters:NoSummary `
-          -verbosity:quiet
+        dotnet build *.sln --configuration Release -warnaserror -p:TreatWarningsAsErrors=true -p:RunAnalyzersDuringBuild=true -p:NoWarn='"1591;CA1014"' -nologo -consoleLoggerParameters:NoSummary -verbosity:quiet
 
     - name: Set up SQL Server
       run: |
