@@ -23,7 +23,7 @@ jobs:
       matrix:
         directory: ['.', 'NuGetTest']
         os: [ubuntu-latest, windows-latest]
-    timeout-minutes: 2
+    timeout-minutes: 60
     steps:
     - uses: actions/checkout@v2
       with:
