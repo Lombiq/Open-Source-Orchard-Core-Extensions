@@ -44,7 +44,7 @@ jobs:
             dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
         }
 
-        dotnet build *.sln `
+        dotnet build (Get-ChildItem *.sln).FullName `
           --configuration Release `
           -warnaserror `
           -p:TreatWarningsAsErrors=true `
