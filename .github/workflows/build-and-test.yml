@@ -168,7 +168,7 @@ jobs:
             $needsGrouping = -not $result.Contains('::group::')
 
             if ($needsGrouping) { echo "::group::$test" }
-            echo $result
+            echo $result | Select-String -NotMatch 'Connection refused [::ffff:127.0.0.1]'
             if ($needsGrouping) { echo "::endgroup::" }
 
             exit 1
