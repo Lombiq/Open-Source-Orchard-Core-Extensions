@@ -136,6 +136,8 @@ jobs:
         $tests = dotnet sln list |
             Select-Object -Skip 2 |
             Select-String '\.Tests\.' |
+            Select-String -NotMatch 'Lombiq.Tests.UI.csproj' |
+            Select-String -NotMatch 'Lombiq.Tests.csproj' |
             ? {
                 $result =  (dotnet test --no-restore --list-tests --verbosity quiet $_ 2>&1) -join [System.Environment]::NewLine
                 -not [string]::IsNullOrEmpty($result) -and $result.Contains('The following Tests are available')
