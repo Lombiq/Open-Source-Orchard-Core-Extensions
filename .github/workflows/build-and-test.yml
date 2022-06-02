@@ -44,14 +44,18 @@ jobs:
             dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
         }
 
-        dotnet build (Get-ChildItem *.sln).FullName `
-          --configuration Release `
-          -warnaserror `
-          -p:TreatWarningsAsErrors=true `
-          -p:RunAnalyzersDuringBuild=true `
-          -nologo `
-          -consoleLoggerParameters:NoSummary `
-          -verbosity:quiet
+        $buildSwitches = @(
+            '--configuration',
+            'Release',
+            '-warnaserror',
+            '-p:TreatWarningsAsErrors=true',
+            '-p:RunAnalyzersDuringBuild=true',
+            '-nologo',
+            '-consoleLoggerParameters:NoSummary',
+            '-verbosity:quiet'
+        )
+
+        dotnet build (Get-ChildItem *.sln).FullName @buildSwitches
 
     - name: Set up SQL Server
       run: |
@@ -121,16 +125,25 @@ jobs:
     - name: Tests
       working-directory: ${{ matrix.directory }}
       run: |
+        function Configure-Environment($hash) { Set-Item @hash }
+
         if ($Env:RUNNER_OS -eq "Linux")
         {
-            Set-Item -Path Env:\Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate `
-                -Value 'Server=.;Database=LombiqUITestingToolbox_{{id}};User Id=sa;Password=Password1!;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5'
-            Set-Item -Path Env:\Lombiq_Tests_UI__DockerConfiguration__ContainerName -Value 'sql2019'
+            Configure-Environment @{
+                Path = 'Env:\Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate'
+                Value = 'Server=.;Database=LombiqUITestingToolbox_{{id}};User Id=sa;Password=Password1!;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5'
+            }
+            Configure-Environment @{
+                Path = 'Env:\Lombiq_Tests_UI__DockerConfiguration__ContainerName'
+                Value = 'sql2019'
+            }
         }
         else
         {
-            Set-Item -Path Env:\Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate `
-                -Value 'Server=.\\SQLEXPRESS;Database=LombiqUITestingToolbox_{{id}};Integrated Security=True;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5'
+            Configure-Environment @{
+                Path = 'Env:\Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate',
+                Value = 'Server=.\\SQLEXPRESS;Database=LombiqUITestingToolbox_{{id}};Integrated Security=True;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5'
+            }
         }
 
         $tests = dotnet sln list |
