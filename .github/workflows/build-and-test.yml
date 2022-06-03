@@ -111,21 +111,19 @@ jobs:
         npm install -g azurite
         azurite --silent --location ${{matrix.directory}}/azurite --debug ${{matrix.directory}}/azurite/debug.log &
 
-    # This step gets the list of all test projects (excluding the two test libraries) and then runs each until one fails
-    # or all concludes. If a test fails the output is sanitized from unnecessary diagnostics messages from chromedriver
-    # if the output doesn't already contain groupings then it wraps them in '::group::<project name>'. If there are
-    # already groupings, then this is not possible to nest them (https://github.com/actions/runner/issues/802) so that's
-    # omitted. The groupings make the output collapsible region on the Actions web UI.
-    # Prior to that we set the console buffer to an arbitrarily large number to avoid text wrapping at 80 columns, and
-    # globally set test configurations using environment variables.
+    # First we globally set test configurations using environment variables. Then acquire the list of all test projects
+    # (excluding the two test libraries) and then runs each until one fails or all concludes. If a test fails the output
+    # is sanitized from unnecessary diagnostics messages from chromedriver if the output doesn't already contain
+    # groupings then it wraps them in '::group::<project name>'. If there are already groupings, then this is not
+    # possible to nest them (https://github.com/actions/runner/issues/802) so that's omitted. The groupings make the
+    # output collapsible region on the Actions web UI.
+    # Note: on Windows any output will be wrapped to 120 columns (the default buffer width) when we output into a
+    # temporary variable. We can't change the assumed column count as that would normally happen via
+    # [Console]::BufferWidth but interacting with this variable results in a "The handle is invalid." exception because
+    # the output is already redirected into GitHub. This can't be helped.
     - name: Tests
       working-directory: ${{ matrix.directory }}
       run: |
-        if ($Env:RUNNER_OS -eq "Windows")
-        {
-            [System.Console]::BufferWidth = 9999
-        }
-
         function Configure-Environment($hash) { Set-Item @hash }
 
         if ($Env:RUNNER_OS -eq "Windows")
