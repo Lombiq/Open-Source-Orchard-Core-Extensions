@@ -16,13 +16,14 @@ defaults:
     shell: pwsh
 
 jobs:
-  build_test:
+  build-and-test:
     runs-on: ${{ matrix.os }}
     name: Build and Test
     strategy:
       matrix:
         directory: ['.', 'NuGetTest']
         os: [ubuntu-latest, windows-latest]
+    timeout-minutes: 60
     steps:
     - uses: actions/checkout@v2
       with:
@@ -45,7 +46,6 @@ jobs:
           -warnaserror \
           -p:TreatWarningsAsErrors=true \
           -p:RunAnalyzersDuringBuild=true \
-          -p:NoWarn='"1591;CA1014"'\
           -nologo \
           -consoleLoggerParameters:NoSummary \
           -verbosity:quiet
