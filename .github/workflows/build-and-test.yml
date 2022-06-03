@@ -59,15 +59,15 @@ jobs:
 
     - name: Set up SQL Server
       run: |
-        if ($Env:RUNNER_OS -eq "Linux")
+        if ($Env:RUNNER_OS -eq "Windows")
+        {
+            choco install sql-server-express --no-progress
+        }
+        else
         {
             docker pull mcr.microsoft.com/mssql/server &&
             docker run --name sql2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password1!' -p 1433:1433 -d 'mcr.microsoft.com/mssql/server:2019-latest' &&
             docker exec -u 0 sql2019 bash -c 'mkdir /data; chmod 777 /data -R; chown mssql:root /data'
-        }
-        else
-        {
-            choco install sql-server-express --no-progress
         }
 
     # Needs to be a separate step, otherwise the Chocolatey installation won't be visible.
@@ -79,13 +79,13 @@ jobs:
         {
             echo "Waiting for SQL Server to start. Attempt $i/$maxTryCount."
 
-            if ($Env:RUNNER_OS -eq "Linux")
+            if ($Env:RUNNER_OS -eq "Windows")
             {
-                sqlcmd -b -U sa -P 'Password1!' -Q "SELECT @@SERVERNAME as ServerName" 2>&1>$null
+                sqlcmd -b -S .\SQLEXPRESS -Q "SELECT @@SERVERNAME as ServerName" 2>&1>$null
             }
             else
             {
-                sqlcmd -b -S .\SQLEXPRESS -Q "SELECT @@SERVERNAME as ServerName" 2>&1>$null
+                sqlcmd -b -U sa -P 'Password1!' -Q "SELECT @@SERVERNAME as ServerName" 2>&1>$null
             }
 
             if ($?)
@@ -125,7 +125,14 @@ jobs:
 
         function Configure-Environment($hash) { Set-Item @hash }
 
-        if ($Env:RUNNER_OS -eq "Linux")
+        if ($Env:RUNNER_OS -eq "Windows")
+        {
+            Configure-Environment @{
+                Path = 'Env:\Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate'
+                Value = 'Server=.\\SQLEXPRESS;Database=LombiqUITestingToolbox_{{id}};Integrated Security=True;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5'
+            }
+        }
+        else
         {
             Configure-Environment @{
                 Path = 'Env:\Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate'
@@ -134,13 +141,6 @@ jobs:
             Configure-Environment @{
                 Path = 'Env:\Lombiq_Tests_UI__DockerConfiguration__ContainerName'
                 Value = 'sql2019'
-            }
-        }
-        else
-        {
-            Configure-Environment @{
-                Path = 'Env:\Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate'
-                Value = 'Server=.\\SQLEXPRESS;Database=LombiqUITestingToolbox_{{id}};Integrated Security=True;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5'
             }
         }
 
