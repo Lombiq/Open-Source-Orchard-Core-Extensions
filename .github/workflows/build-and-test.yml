@@ -121,7 +121,10 @@ jobs:
     - name: Tests
       working-directory: ${{ matrix.directory }}
       run: |
-        [System.Console]::BufferWidth = 9999
+        if ($Env:RUNNER_OS -eq "Windows")
+        {
+            [System.Console]::BufferWidth = 9999
+        }
 
         function Configure-Environment($hash) { Set-Item @hash }
 
