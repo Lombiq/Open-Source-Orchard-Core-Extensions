@@ -111,20 +111,18 @@ jobs:
         npm install -g azurite
         azurite --silent --location ${{matrix.directory}}/azurite --debug ${{matrix.directory}}/azurite/debug.log &
 
-    # This step gets the list of all projects, selects the test projects (excluding the two test libraries) and then
-    # uses sed to create an inline bash script. What this script does:
-    # - Uses 'dotnet test -c Release --no-restore --no-build' to start up each project.
-    # - The test output is wrapped by '::group::<project name>' before and '::endgroup::' after it. This tells GitHub to
-    #   place each test's output into a collapsible region on the Actions web UI.
-    # - Each call is connected with '&&', so it stops on the first test failure to save computational resources.
-    #
-    # The script is evaluated by bash and the output is passed through grep to filter out some IPv6 related garbage data
-    # produced by chromedriver. The trouble is, this way the final error code will be grep's and not the test run's, so
-    # to get around this 'SUCCESS' or 'FAILURE' is written into the .ui_test_result file before the output is sent to
-    # grep. The final line sets the result according to what was written into the .ui_test_result file.
+    # This step gets the list of all test projects (excluding the two test libraries) and then runs each until one fails
+    # or all concludes. If a test fails the output is sanitized from unnecessary diagnostics messages from chromedriver
+    # if the output doesn't already contain groupings then it wraps them in '::group::<project name>'. If there are
+    # already groupings, then this is not possible to nest them (https://github.com/actions/runner/issues/802) so that's
+    # omitted. The groupings make the output collapsible region on the Actions web UI.
+    # Prior to that we set the console buffer to an arbitrarily large number to avoid text wrapping at 80 columns, and
+    # globally set test configurations using environment variables.
     - name: Tests
       working-directory: ${{ matrix.directory }}
       run: |
+        [System.Console]::BufferWidth = 9999
+
         function Configure-Environment($hash) { Set-Item @hash }
 
         if ($Env:RUNNER_OS -eq "Linux")
