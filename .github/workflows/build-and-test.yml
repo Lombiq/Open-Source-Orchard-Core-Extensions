@@ -117,10 +117,6 @@ jobs:
     # groupings then it wraps them in '::group::<project name>'. If there are already groupings, then this is not
     # possible to nest them (https://github.com/actions/runner/issues/802) so that's omitted. The groupings make the
     # output collapsible region on the Actions web UI.
-    # Note: on Windows any output will be wrapped to 120 columns (the default buffer width) when we output into a
-    # temporary variable. We can't change the assumed column count as that would normally happen via
-    # [Console]::BufferWidth but interacting with this variable results in a "The handle is invalid." exception because
-    # the output is already redirected into GitHub. This can't be helped.
     - name: Tests
       working-directory: ${{ matrix.directory }}
       run: |
@@ -151,12 +147,12 @@ jobs:
             Select-String -NotMatch 'Lombiq.Tests.UI.csproj' |
             Select-String -NotMatch 'Lombiq.Tests.csproj' |
             ? {
-                $result =  (dotnet test --no-restore --list-tests --verbosity quiet $_ 2>&1) -join [System.Environment]::NewLine
+                $result = dotnet test --no-restore --list-tests --verbosity quiet $_ 2>&1 | Out-String -Width 9999
                 -not [string]::IsNullOrEmpty($result) -and $result.Contains('The following Tests are available')
             }
 
         foreach ($test in $tests) {
-            $result = (dotnet test -c Release --no-restore --no-build --nologo --verbosity quiet $test)
+            $result = dotnet test -c Release --no-restore --no-build --nologo --verbosity quiet $test | Out-String -Width 9999
 
             if ($?)
             {
