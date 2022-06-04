@@ -152,7 +152,7 @@ jobs:
             }
 
         foreach ($test in $tests) {
-            $result = dotnet test -c Release --no-restore --no-build --nologo --verbosity quiet $test | Out-String -Width 9999
+            $result = dotnet test -c Release --no-restore --no-build --nologo --verbosity quiet $test 2>&1 | Out-String -Width 9999
 
             if ($?)
             {
@@ -162,7 +162,7 @@ jobs:
 
             $needsGrouping = -not $result.Contains('::group::')
 
-            if ($needsGrouping) { echo "::group::$test" }
+            if ($needsGrouping) { echo "::group::Test Failed: $test" }
 
             echo $result |
                 Select-String -NotMatch 'Connection refused \[::ffff:127.0.0.1\]' |
