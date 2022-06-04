@@ -116,7 +116,8 @@ jobs:
     # is sanitized from unnecessary diagnostics messages from chromedriver if the output doesn't already contain
     # groupings then it wraps them in '::group::<project name>'. If there are already groupings, then this is not
     # possible to nest them (https://github.com/actions/runner/issues/802) so that's omitted. The groupings make the
-    # output collapsible region on the Actions web UI.
+    # output collapsible region on the Actions web UI. Note that we use bash to output the log using bash to avoid pwsh
+    # wrapping the output to the default buffer width.
     - name: Tests
       working-directory: ${{ matrix.directory }}
       run: |
@@ -164,9 +165,7 @@ jobs:
 
             if ($needsGrouping) { echo "::group::Test Failed: $test" }
 
-            Get-Content test.out |
-                Select-String -NotMatch 'Connection refused \[::ffff:127.0.0.1\]' |
-                Select-String -NotMatch 'ChromeDriver was started successfully'
+            bash -c "cat test.out | grep -v 'Connection refused \[::ffff:127.0.0.1\]' | grep -v ChromeDriver was started successfully"
 
             if ($needsGrouping) { echo "::endgroup::" }
 
@@ -182,7 +181,5 @@ jobs:
       if: always() && hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
       with:
         name: ui-test-failure-dump-${{ matrix.directory }}-${{ matrix.os }}
-        path: |
-          ${{ matrix.directory }}/test/**/FailureDumps/
-          test.out
+        path: ${{ matrix.directory }}/test/**/FailureDumps/
         if-no-files-found: ignore
