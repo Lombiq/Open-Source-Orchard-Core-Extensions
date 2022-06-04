@@ -152,7 +152,7 @@ jobs:
             }
 
         foreach ($test in $tests) {
-            $result = dotnet test -c Release --no-restore --no-build --nologo --verbosity quiet $test 2>&1 | Out-String -Width 9999
+            $result = (dotnet test -c Release --no-restore --no-build --nologo --verbosity quiet $test 2>&1 | Out-String -Width 9999)
 
             if ($?)
             {
@@ -164,13 +164,11 @@ jobs:
 
             if ($needsGrouping) { echo "::group::Test Failed: $test" }
 
-            echo $result |
-                Select-String -NotMatch 'Connection refused \[::ffff:127.0.0.1\]' |
-                Select-String -NotMatch 'ChromeDriver was started successfully'
+            echo $result
 
             if ($needsGrouping) { echo "::endgroup::" }
 
-            exit 1
+            exit 100
         }
 
     # Note that this will fail under Windows if the path is too long, regardless of LongPathsEnabled, see:
