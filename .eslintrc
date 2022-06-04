@@ -1,5 +1,5 @@
 {
-    "extends": "./src/Utilities/Lombiq.NodeJs.Extensions/config/.eslintrc.lombiq-base.js",
+    "extends": "./src/Utilities/Lombiq.NodeJs.Extensions/Lombiq.NodeJs.Extensions/config/.eslintrc.lombiq-base.js",
 
     "rules": {
         // Add overriding rules here like this:
