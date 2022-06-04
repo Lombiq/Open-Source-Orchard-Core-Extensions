@@ -164,7 +164,9 @@ jobs:
 
             if ($needsGrouping) { echo "::group::Test Failed: $test" }
 
-            echo $result
+            echo $result.Split([Environment]::NewLine) |
+                Select-String -NotMatch 'Connection refused \[::ffff:127.0.0.1\]' |
+                Select-String -NotMatch 'ChromeDriver was started successfully'
 
             if ($needsGrouping) { echo "::endgroup::" }
 
