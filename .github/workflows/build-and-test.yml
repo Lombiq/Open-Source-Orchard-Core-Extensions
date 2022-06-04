@@ -181,5 +181,7 @@ jobs:
       if: always() && hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
       with:
         name: ui-test-failure-dump-${{ matrix.directory }}-${{ matrix.os }}
-        path: ${{ matrix.directory }}/test/**/FailureDumps/
+        path: |
+          ${{ matrix.directory }}/test/**/FailureDumps/
+          test.out
         if-no-files-found: ignore
