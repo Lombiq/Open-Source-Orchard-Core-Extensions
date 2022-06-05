@@ -127,7 +127,7 @@ jobs:
         {
             Configure-Environment @{
                 Path = 'Env:\Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate'
-                Value = 'Server=.\\SQLEXPRESS;Database=LombiqUITestingToolbox_{{id}};Integrated Security=True;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5'
+                Value = 'Server=.\SQLEXPRESS;Database=LombiqUITestingToolbox_{{id}};Integrated Security=True;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5'
             }
         }
         else
