@@ -139,7 +139,7 @@ jobs:
             grep -v '^Connection refused \[::ffff:127.0.0.1\]';
         grep SUCCESS .ui_test_result
 
-    - name: Test Reporting
+    - name: Test Reportings
       uses: phoenix-actions/test-reporting@v8
       with:
         artifact: test-results
