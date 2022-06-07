@@ -151,18 +151,10 @@ jobs:
         path: ${{ matrix.directory }}/test/**/FailureDumps/
         if-no-files-found: ignore
 
+    # Upload test results
     - name: Upload test results
       uses: actions/upload-artifact@v3
       if: always()
       with:
         name: test-results
         path: ${{ matrix.directory }}/test/**/TestResults/*.trx
-
-    # This is used to format tests nicely
-    - name: Test Reporting
-      uses: phoenix-actions/test-reporting@v8
-      with:
-          artifact: test-results
-          name: XUnit Tests
-          path: '**/TestResults/*.trx'
-          reporter: 'dotnet-trx'
