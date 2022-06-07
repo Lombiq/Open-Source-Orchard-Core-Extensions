@@ -85,6 +85,7 @@
         ]
       }
     },
+    // These roles are not created the same way as default during testing, so we need to add them here.
     {
       "name": "Roles",
       "Roles": [
