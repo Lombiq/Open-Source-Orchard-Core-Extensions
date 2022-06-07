@@ -151,6 +151,13 @@ jobs:
         path: ${{ matrix.directory }}/test/**/FailureDumps/
         if-no-files-found: ignore
 
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: test-results.trx
+        path: ${{ matrix.directory }}/test/**/TestResults/
+
     # This is used to format tests nicely
     - name: Test Reporting
       uses: phoenix-actions/test-reporting@v8
