@@ -134,10 +134,18 @@ jobs:
             grep -v 'Lombiq.Tests.csproj' |
             sed -e 's/\\/\//g' \
                 -e '$atrue' \
-                -e 's/\(.*\)/echo "::group::\1" \&\&\ndotnet test -c Release --no-restore --no-build '"'\\1'"' \&\&\necho "::endgroup::" \&\&/' |
+                -e 's/\(.*\)/echo "::group::\1" \&\&\ndotnet test -c Release --no-restore --no-build --logger "trx;LogFileName=test-results.trx" '"'\\1'"' \&\&\necho "::endgroup::" \&\&/' |
             bash && (echo SUCCESS > .ui_test_result) || (echo FAIL > .ui_test_result)) |
             grep -v '^Connection refused \[::ffff:127.0.0.1\]';
         grep SUCCESS .ui_test_result
+
+    - name: Test Reporting
+      uses: phoenix-actions/test-reporting@v8
+      with:
+        artifact: test-results
+        name: Test Results
+        path: '*.trx'
+        reporter: 'dotnet-trx'
 
     # Note that this will fail under Windows if the path is too long, regardless of LongPathsEnabled, see:
     # https://github.com/actions/upload-artifact/issues/309. We can't do much about this apart from uploading artifacts
