@@ -155,14 +155,14 @@ jobs:
       uses: actions/upload-artifact@v3
       if: always()
       with:
-        name: test-results.trx
-        path: ${{ matrix.directory }}/test/**/TestResults/
+        name: test-results
+        path: ${{ matrix.directory }}/test/**/TestResults/*.trx
 
     # This is used to format tests nicely
     - name: Test Reporting
       uses: phoenix-actions/test-reporting@v8
       with:
           artifact: test-results
-          name: Test Results
+          name: XUnit Tests
           path: '*.trx'
           reporter: 'dotnet-trx'
