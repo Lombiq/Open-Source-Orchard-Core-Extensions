@@ -156,7 +156,7 @@ jobs:
       if: always()
       with:
         name: test-results
-        path: ${{ matrix.directory }}/test/**/TestResults/
+        path: ${{ matrix.directory }}/test/**/TestResults/*.trx
 
     # This is used to format tests nicely
     - name: Test Reporting
@@ -164,5 +164,5 @@ jobs:
       with:
           artifact: test-results
           name: XUnit Tests
-          path: '*.trx'
+          path: '**/TestResults/*.trx'
           reporter: 'dotnet-trx'
