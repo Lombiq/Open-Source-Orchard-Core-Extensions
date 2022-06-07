@@ -1,17 +1,17 @@
-﻿name: 'Test Report'
+name: 'Test Report'
 on:
-    workflow_run:
-        workflows: [ 'Build and Test (., windows-latest)' ]
-        types:
-            - completed
+  workflow_run:
+    workflows: [ 'Build and Test' ]
+    types:
+      - completed
 jobs:
-    report:
-        runs-on: ubuntu-latest
-        steps:
-            -   uses: phoenix-actions/test-reporting@v8
-                id: test-report                     # Set ID reference for step
-                with:
-                    artifact: test-results
-                    name: XUnit Tests
-                    path: '**/TestResults/*.trx'
-                    reporter: 'dotnet-trx'
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: phoenix-actions/test-reporting@v8
+        id: test-report
+        with:
+          artifact: test-results
+          name: XUnit Tests
+          path: '**/TestResults/*.trx'
+          reporter: 'dotnet-trx'
