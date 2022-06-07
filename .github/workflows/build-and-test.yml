@@ -156,7 +156,7 @@ jobs:
       if: always()
       with:
         name: test-results
-        path: ${{ matrix.directory }}/test/**/TestResults/*.trx
+        path: ${{ matrix.directory }}/test/**/TestResults/
 
     # This is used to format tests nicely
     - name: Test Reporting
