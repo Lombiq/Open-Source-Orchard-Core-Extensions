@@ -1,0 +1,21 @@
+﻿name: Report Test
+
+# Runs for PRs opened for any branch, and pushes to the dev branch.
+on:
+    pull_request:
+    push:
+        branches:
+            - dev
+
+defaults:
+    run:
+        shell: pwsh
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        name: Build
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  submodules: 'recursive'
