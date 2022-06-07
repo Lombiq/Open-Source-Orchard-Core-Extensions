@@ -67,7 +67,7 @@ jobs:
     - name: Wait for SQL Server to start
       run: |
         $maxTryCount = 10
-            
+
         for ($i = 1; $i -le $maxTryCount; $i++)
         {
             echo "Waiting for SQL Server to start. Attempt $i/$maxTryCount."
@@ -80,7 +80,7 @@ jobs:
             {
                 sqlcmd -b -S .\SQLEXPRESS -Q "SELECT @@SERVERNAME as ServerName" 2>&1>$null
             }
-                
+
             if ($?)
             {
                 echo "SQL Server is successfully started."
@@ -139,14 +139,6 @@ jobs:
             grep -v '^Connection refused \[::ffff:127.0.0.1\]';
         grep SUCCESS .ui_test_result
 
-    - name: Test Reporting
-      uses: phoenix-actions/test-reporting@v8
-      with:
-        artifact: test-results
-        name: Test Results
-        path: '*.trx'
-        reporter: 'dotnet-trx'
-
     # Note that this will fail under Windows if the path is too long, regardless of LongPathsEnabled, see:
     # https://github.com/actions/upload-artifact/issues/309. We can't do much about this apart from uploading artifacts
     # in a low-level way.
@@ -158,3 +150,12 @@ jobs:
         name: ui-test-failure-dump-${{ matrix.directory }}-${{ matrix.os }}
         path: ${{ matrix.directory }}/test/**/FailureDumps/
         if-no-files-found: ignore
+
+    # This is used to format tests nicely
+    - name: Test Reporting
+      uses: phoenix-actions/test-reporting@v8
+      with:
+          artifact: test-results
+          name: Test Results
+          path: '*.trx'
+          reporter: 'dotnet-trx'
