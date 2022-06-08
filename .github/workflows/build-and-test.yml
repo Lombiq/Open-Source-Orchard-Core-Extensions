@@ -21,8 +21,8 @@ jobs:
     name: Build and Test
     strategy:
       matrix:
-        directory: ['.'] #, 'NuGetTest']
-        os: [ubuntu-latest] #, windows-latest]
+        directory: ['.', 'NuGetTest']
+        os: [ubuntu-latest, windows-latest]
     timeout-minutes: 60
     steps:
     - uses: actions/checkout@v2
