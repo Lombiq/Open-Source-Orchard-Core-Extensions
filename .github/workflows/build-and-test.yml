@@ -158,16 +158,3 @@ jobs:
       with:
         name: test-results
         path: ${{ matrix.directory }}/test/**/TestResults/*.trx
-
-  report:
-    needs: build-and-test
-    runs-on: ubuntu-latest
-    name: Report
-    steps:
-      - uses: actions/checkout@v2
-      - uses: phoenix-actions/test-reporting@v8
-        with:
-          artifact: test-results
-          name: XUnit Tests
-          path: '**/TestResults/*.trx'
-          reporter: 'dotnet-trx'
