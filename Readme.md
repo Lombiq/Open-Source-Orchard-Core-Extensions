@@ -105,7 +105,7 @@ When adding a new extension, or significant new features to existing extensions,
 - If an extension is added, removed or significantly updated in this project, then add, remove or update its description under the "Included Projects" section of this Readme.
 
 ### Opening pull requests
-- Open a pull request in this repository for every submodule pull request. That way, static code analysis and complex tests can run. If you forget this a check in the submodule will fail. Once you created the PR here, just click "Re-run jobs" in your submodule.
+- Open a pull request in this repository for every submodule pull request. That way, static code analysis and complex tests can run. If you forget to do so, a check in the submodule will fail. Once you've created the PR here, just click "Re-run jobs" in your submodule.
 - If you see build errors under your pull request then check out its details: The errors link to our TeamCity instance. Select "Log in as guest" when presented with a login screen.
 - Open a pull request for all but trivial changes (like typos) so we can nicely track them, including when generating release notes for the next release.
 
