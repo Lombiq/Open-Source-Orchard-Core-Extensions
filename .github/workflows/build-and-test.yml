@@ -124,9 +124,9 @@ jobs:
             export Lombiq_Tests_UI__DockerConfiguration__ContainerName="sql2019"
         else
             export Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate="Server=.\\SQLEXPRESS;Database=LombiqUITestingToolbox_{{id}};Integrated Security=True;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5"
-            #powershell Set-DisplayResolution -Width 1920 -Height 1080 -Force
-            export Lombiq_Tests_UI__BrowserConfiguration__Headless=true
         fi
+
+        export Lombiq_Tests_UI__BrowserConfiguration__Headless=true
 
         cd "${{matrix.directory}}"
 
