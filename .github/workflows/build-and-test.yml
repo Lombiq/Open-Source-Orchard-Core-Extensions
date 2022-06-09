@@ -111,10 +111,10 @@ jobs:
         npm install -g azurite
         azurite --silent --location ${{matrix.directory}}/azurite --debug ${{matrix.directory}}/azurite/debug.log &
 
-    # First we globally set test configurations using environment variables. Then acquire the list of all test projects
-    # (excluding the two test libraries) and then runs each until one fails or all concludes. If a test fails the output
+    # First, we globally set test configurations using environment variables. Then acquire the list of all test projects
+    # (excluding the two test libraries) and then run each until one fails or all concludes. If a test fails, the output
     # is sanitized from unnecessary diagnostics messages from chromedriver if the output doesn't already contain
-    # groupings then it wraps them in '::group::<project name>'. If there are already groupings, then this is not
+    # groupings, then it wraps them in '::group::<project name>'. If there are already groupings, then it is not
     # possible to nest them (https://github.com/actions/runner/issues/802) so that's omitted. The groupings make the
     # output collapsible region on the Actions web UI. Note that we use bash to output the log using bash to avoid pwsh
     # wrapping the output to the default buffer width.
