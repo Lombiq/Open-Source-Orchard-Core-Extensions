@@ -21,8 +21,8 @@ jobs:
     name: Build and Test
     strategy:
       matrix:
-        directory: ['.'] #, 'NuGetTest']
-        os: [ubuntu-latest] #, windows-latest]
+        directory: ['.', 'NuGetTest']
+        os: [ubuntu-latest, windows-latest]
     timeout-minutes: 60
     steps:
     - uses: actions/checkout@v2
@@ -160,17 +160,9 @@ jobs:
         path: ${{ matrix.directory }}/test/**/TestResults/*.trx
 
     # Test Report
-    - name: Test Report (1)
+    - name: Test Report
       uses: phoenix-actions/test-reporting@v8
       with:
-        name: Test Results (1)
+        name: Test Results
         path: '**/*.trx'
-        reporter: dotnet-trx
-
-    # Test Report
-    - name: Test Report (2) 
-      uses: phoenix-actions/test-reporting@v8
-      with:
-        name: Test Results (2)
-        path: '${{ matrix.directory }}/test/**/TestResults/*.trx'
         reporter: dotnet-trx
