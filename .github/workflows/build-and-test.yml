@@ -163,7 +163,7 @@ jobs:
     - name: Test Report (1)
       uses: phoenix-actions/test-reporting@v8
       with:
-        name: Test Results
+        name: Test Results (1)
         path: '**/*.trx'
         reporter: dotnet-trx
 
@@ -171,20 +171,6 @@ jobs:
     - name: Test Report (2) 
       uses: phoenix-actions/test-reporting@v8
       with:
-        name: Test Results
+        name: Test Results (2)
         path: '${{ matrix.directory }}/test/**/TestResults/*.trx'
         reporter: dotnet-trx
-
-  report:
-    needs: build-and-test
-    runs-on: ubuntu-latest
-    steps:
-      #- uses: actions/checkout@v3
-      - uses: actions/download-artifact@v2
-      - uses: phoenix-actions/test-reporting@v8
-        id: test-report
-        with:
-          artifact: test-results
-          name: Test Results
-          path: '**/*.trx'
-          reporter: dotnet-trx
