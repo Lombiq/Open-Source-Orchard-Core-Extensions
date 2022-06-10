@@ -159,6 +159,22 @@ jobs:
         name: test-results
         path: ${{ matrix.directory }}/test/**/TestResults/*.trx
 
+    # Test Report
+    - uses: phoenix-actions/test-reporting@v8
+        id: test-report
+        with:
+          name: Test Results
+          path: '**/*.trx'
+          reporter: dotnet-trx
+
+    # Test Report
+    - uses: phoenix-actions/test-reporting@v8
+        id: test-report
+        with:
+          name: Test Results
+          path: '${{ matrix.directory }}/test/**/TestResults/*.trx'
+          reporter: dotnet-trx
+
   report:
     needs: build-and-test
     runs-on: ubuntu-latest
