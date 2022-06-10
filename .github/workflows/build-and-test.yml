@@ -162,18 +162,18 @@ jobs:
     # Test Report
     - name: Test Report (1)
       uses: phoenix-actions/test-reporting@v8
-        with:
-          name: Test Results
-          path: '**/*.trx'
-          reporter: dotnet-trx
+      with:
+        name: Test Results
+        path: '**/*.trx'
+        reporter: dotnet-trx
 
     # Test Report
     - name: Test Report (2) 
       uses: phoenix-actions/test-reporting@v8
-        with:
-          name: Test Results
-          path: '${{ matrix.directory }}/test/**/TestResults/*.trx'
-          reporter: dotnet-trx
+      with:
+        name: Test Results
+        path: '${{ matrix.directory }}/test/**/TestResults/*.trx'
+        reporter: dotnet-trx
 
   report:
     needs: build-and-test
