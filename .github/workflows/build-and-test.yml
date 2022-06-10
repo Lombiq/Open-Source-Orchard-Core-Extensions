@@ -67,7 +67,7 @@ jobs:
     - name: Wait for SQL Server to start
       run: |
         $maxTryCount = 10
-            
+
         for ($i = 1; $i -le $maxTryCount; $i++)
         {
             echo "Waiting for SQL Server to start. Attempt $i/$maxTryCount."
@@ -80,7 +80,7 @@ jobs:
             {
                 sqlcmd -b -S .\SQLEXPRESS -Q "SELECT @@SERVERNAME as ServerName" 2>&1>$null
             }
-                
+
             if ($?)
             {
                 echo "SQL Server is successfully started."
@@ -140,13 +140,23 @@ jobs:
         grep SUCCESS .ui_test_result
 
     # Note that this will fail under Windows if the path is too long, regardless of LongPathsEnabled, see:
-    # https://github.com/actions/upload-artifact/issues/309. We can't do much about this apart from uploading artifacts
-    # in a low-level way.
+    # https://github.com/actions/upload-artifact/issues/309. To get around that we merge all FailureDumps into the
+    # solution root. The following two steps need to be always(), so if there's a failure dump it'll be uploaded even if
+    # the tests are ultimately passed after retries. The same is true for the next step as well.
+    - name: Merge FailureDumps
+      if: always() && hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
+      run: |
+        New-Item -Type Directory "${{matrix.directory}}/FailureDumps"
+        Get-ChildItem "${{matrix.directory}}/test" -Recurse |
+          ? { $_.Name -eq 'FailureDumps' } |
+          % { $_.GetDirectories() } |
+          % { Move-Item $_.FullName "${{matrix.directory}}/FailureDumps/${_.Name}" }
+
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
-      # Needs to be always() so if there's a failure dump, it'll be uploaded even if with retries the tests passed.
-      if: always() && hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
+      # It's always as explained above. We don't need additional conditions, because of the "if-no-files-found" setting.
+      if: always()
       with:
         name: ui-test-failure-dump-${{ matrix.directory }}-${{ matrix.os }}
-        path: ${{ matrix.directory }}/test/**/FailureDumps/
+        path: ${{ matrix.directory }}/FailureDumps/
         if-no-files-found: ignore
