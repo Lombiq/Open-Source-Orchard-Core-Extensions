@@ -6,7 +6,7 @@ name: Report
 
 on:
   workflow_run:
-    workflows: ['Build and Test']
+    workflows: [Build and Test]
     types:
       - completed
     
