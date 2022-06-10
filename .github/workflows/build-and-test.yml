@@ -160,7 +160,8 @@ jobs:
         path: ${{ matrix.directory }}/test/**/TestResults/*.trx
 
     # Test Report
-    - uses: phoenix-actions/test-reporting@v8
+    - name: Test Report (1)
+      uses: phoenix-actions/test-reporting@v8
         id: test-report
         with:
           name: Test Results
@@ -168,7 +169,8 @@ jobs:
           reporter: dotnet-trx
 
     # Test Report
-    - uses: phoenix-actions/test-reporting@v8
+    - name: Test Report (2) 
+      uses: phoenix-actions/test-reporting@v8
         id: test-report
         with:
           name: Test Results
