@@ -163,6 +163,6 @@ jobs:
     - name: Test Report
       uses: phoenix-actions/test-reporting@v8
       with:
-        name: Test Results
-        path: '**/*.trx'
+        name: Test Results (${{matrix.directory}} ${{matrix.os}})
+        path: '${{matrix.directory}}/**/*.trx'
         reporter: dotnet-trx
