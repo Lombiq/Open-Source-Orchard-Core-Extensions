@@ -191,3 +191,4 @@ src/*.Web/Localization
 /src/package.json
 /.editorconfig
 /FailureDumps/
+/test.out
