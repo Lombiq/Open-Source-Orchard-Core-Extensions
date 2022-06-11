@@ -141,6 +141,11 @@ jobs:
                 Value = 'sql2019'
             }
         }
+        
+        Configure-Environment @{
+            Path = 'Env:\Lombiq_Tests_UI__BrowserConfiguration__Headless'
+            Value = 'true'
+        }
 
         $tests = dotnet sln list |
             Select-Object -Skip 2 |
