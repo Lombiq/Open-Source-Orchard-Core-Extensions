@@ -4,5 +4,10 @@
     "rules": {
         // Add overriding rules here like this:
         // "example-rule" : "error"
+        "max-len": [
+            "warn",
+            // 150 characters is the default.
+            120
+        ]
     }
 }

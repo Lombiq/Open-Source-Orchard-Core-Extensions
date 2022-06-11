@@ -1,0 +1,11 @@
+{
+  "description": "Put this file next to the .eslintrc file which extends .eslintrc.lombiq-base.js, and run `pnpm install` there.",
+  "devDependencies": {
+    "eslint": ">= 8",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-only-warn": "^1.0.3",
+    "eslint-plugin-promise": "^6.0.0"
+  }
+}
