@@ -203,3 +203,4 @@ jobs:
         name: Test Results (${{matrix.directory}} ${{matrix.os}})
         path: '${{matrix.directory}}/**/*.trx'
         reporter: dotnet-trx
+        fail-on-error: 'false'
