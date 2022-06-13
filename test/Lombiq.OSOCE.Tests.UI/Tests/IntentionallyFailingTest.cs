@@ -1,6 +1,3 @@
-using Lombiq.DataTables.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -14,9 +11,11 @@ public class IntentionallyFailingTest : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task IntentionallyFailing(Browser browser) =>
+#pragma warning disable CA2201
+    [Fact]
+    public Task IntentionallyFailing() =>
         throw new System.Exception();
+#pragma warning restore CA2201
 
     [Fact]
     public void IntentionallyEmptyButPassing()
