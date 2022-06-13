@@ -154,6 +154,7 @@ jobs:
     # Test Report
     - name: Test Report
       uses: phoenix-actions/test-reporting@v8
+      if: success() || failure()
       with:
         name: Test Results (${{matrix.directory}} ${{matrix.os}})
         path: '${{matrix.directory}}/**/*.trx'
