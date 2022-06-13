@@ -151,7 +151,6 @@ jobs:
         path: ${{ matrix.directory }}/test/**/FailureDumps/
         if-no-files-found: ignore
 
-    # Test Report
     - name: Test Report
       uses: phoenix-actions/test-reporting@v8
       if: success() || failure()
