@@ -153,7 +153,7 @@ jobs:
             }
 
         foreach ($test in $tests) {
-            dotnet test -c Release --no-restore --no-build --nologo --verbosity quiet $test 2>&1 >test.out
+            dotnet test -c Release --no-restore --no-build --nologo --logger "trx;LogFileName=test-results.trx" --verbosity quiet $test 2>&1 >test.out
 
             if ($?)
             {
@@ -195,3 +195,12 @@ jobs:
           ${{ matrix.directory }}/FailureDumps/
           test.out
         if-no-files-found: ignore
+
+    - name: Test Report
+      uses: phoenix-actions/test-reporting@v8
+      if: success() || failure()
+      with:
+        name: Test Results (${{matrix.directory}} ${{matrix.os}})
+        path: '${{matrix.directory}}/**/*.trx'
+        reporter: dotnet-trx
+        fail-on-error: 'false'
