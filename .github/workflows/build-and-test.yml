@@ -14,8 +14,3 @@ jobs:
     with:
       os: ${{ matrix.os }}
       build-directory: ${{ matrix.directory }}
-    strategy:
-      matrix:
-        directory: ['.', 'NuGetTest']
-        os: [ubuntu-latest, windows-latest]
-    timeout-minutes: 60
