@@ -146,6 +146,10 @@ jobs:
             Path = 'Env:\Lombiq_Tests_UI__BrowserConfiguration__Headless'
             Value = 'true'
         }
+        Configure-Environment @{
+            Path = 'Env:\Lombiq_Tests_UI__OrchardCoreUITestExecutorConfiguration__MaxParallelTests'
+            Value = '1'
+        }
 
         $tests = dotnet sln list |
             Select-Object -Skip 2 |
