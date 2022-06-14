@@ -22,7 +22,8 @@ jobs:
     strategy:
       matrix:
         directory: ['.', 'NuGetTest']
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest]
+        #os: [ubuntu-latest, windows-latest]
     timeout-minutes: 60
     steps:
     - uses: actions/checkout@v2
@@ -158,7 +159,7 @@ jobs:
             }
 
         foreach ($test in $tests) {
-            if ($test -contains "*Lombiq.Tests.UI.Samples*")
+            if ($test -like "*Lombiq.Tests.UI.Samples.csproj")
             {
                 Configure-Environment @{
                     Path = 'Env:\Lombiq_Tests_UI__OrchardCoreUITestExecutorConfiguration__MaxParallelTests'
