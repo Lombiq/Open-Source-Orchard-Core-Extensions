@@ -9,14 +9,14 @@ on:
 
 jobs:
   call-build-and-test-workflow:
-    name: Build and Test
+    name: Build and Test - root solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/NEST-314
     with: 
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
       build-directories: "[\".\"]"
 
   call-build-and-test-workflow-nuget-test:
-    name: Build and Test
+    name: Build and Test - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/NEST-314
     with: 
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
