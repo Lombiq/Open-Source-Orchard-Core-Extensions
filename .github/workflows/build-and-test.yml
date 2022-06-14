@@ -34,6 +34,22 @@ jobs:
       with:
         dotnet-version: 6.0.*
 
+    - name: Investigate State
+      working-directory: ${{ matrix.directory }}
+      shell: bash
+      run: |
+        echo "ACTIONS_RUNTIME_URL '$ACTIONS_RUNTIME_URL'"
+        echo "ACTIONS_RUNTIME_TOKEN '$ACTIONS_RUNTIME_TOKEN'"
+        echo "ACTIONS_CACHE_URL '$ACTIONS_CACHE_URL'"
+        echo '## Testing Job Summary' >> $GITHUB_STEP_SUMMARY
+        echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' >> $GITHUB_STEP_SUMMARY
+        echo '![lorem ipsum image](https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Lorem_ipsum_design.svg/800px-Lorem_ipsum_design.svg.png)' >> $GITHUB_STEP_SUMMARY
+        echo '[lorem ipsum link](https://en.wikipedia.org/wiki/Lorem_ipsum) on Wikipedia.' >> $GITHUB_STEP_SUMMARY
+        echo '' >> $GITHUB_STEP_SUMMARY
+        echo '❌ $PWD ❌' >> $GITHUB_STEP_SUMMARY
+        echo '' >> $GITHUB_STEP_SUMMARY
+        env >> $GITHUB_STEP_SUMMARY
+
     - name: Build and Static Code Analysis
       working-directory: ${{ matrix.directory }}
       run: |
