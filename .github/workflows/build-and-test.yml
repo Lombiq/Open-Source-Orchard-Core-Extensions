@@ -185,7 +185,7 @@ jobs:
           % { $_.GetDirectories() } |
           % { Move-Item $_.FullName "${{matrix.directory}}/FailureDumps/${_.Name}" }
 
-    - name: Upload artifacts
+    - name: Upload UI testing artifacts
       uses: actions/upload-artifact@v3
       # It's always as explained above. We don't need additional conditions, because of the "if-no-files-found" setting.
       if: always()
