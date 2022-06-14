@@ -172,7 +172,7 @@ jobs:
             exit 100
         }
 
-    # Note that this will fail under Windows if the path is too long, regardless of LongPathsEnabled, see:
+    # Note that this would fail under Windows if the path is too long, regardless of LongPathsEnabled, see:
     # https://github.com/actions/upload-artifact/issues/309. To get around that we merge all FailureDumps into the
     # solution root. The following two steps need to be always(), so if there's a failure dump it'll be uploaded even if
     # the tests are ultimately passed after retries. The same is true for the next step as well.
