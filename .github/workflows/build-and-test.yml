@@ -11,6 +11,3 @@ jobs:
   call-publish-workflow:
     name: Build and Test
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/NEST-314
-    with:
-      os: ${{ matrix.os }}
-      build-directory: ${{ matrix.directory }}
