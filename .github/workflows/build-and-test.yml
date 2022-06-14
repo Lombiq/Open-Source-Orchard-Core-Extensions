@@ -146,10 +146,6 @@ jobs:
             Path = 'Env:\Lombiq_Tests_UI__BrowserConfiguration__Headless'
             Value = 'true'
         }
-        Configure-Environment @{
-            Path = 'Env:\Lombiq_Tests_UI__OrchardCoreUITestExecutorConfiguration__MaxParallelTests'
-            Value = '1'
-        }
 
         $tests = dotnet sln list |
             Select-Object -Skip 2 |
@@ -162,6 +158,20 @@ jobs:
             }
 
         foreach ($test in $tests) {
+            if ($test -contains "Lombiq.Tests.UI.Samples")
+            {
+                Configure-Environment @{
+                    Path = 'Env:\Lombiq_Tests_UI__OrchardCoreUITestExecutorConfiguration__MaxParallelTests'
+                    Value = '1'
+                }
+            }
+            else
+            {
+                Configure-Environment @{
+                    Path = 'Env:\Lombiq_Tests_UI__OrchardCoreUITestExecutorConfiguration__MaxParallelTests'
+                    Value = '0'
+                }
+            }
             dotnet test -c Release --no-restore --no-build --nologo --logger "trx;LogFileName=test-results.trx" --verbosity quiet $test 2>&1 >test.out
 
             if ($?)
