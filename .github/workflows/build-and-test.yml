@@ -158,7 +158,7 @@ jobs:
             }
 
         foreach ($test in $tests) {
-            if ($test -contains "Lombiq.Tests.UI.Samples")
+            if ($test -contains "*Lombiq.Tests.UI.Samples*")
             {
                 Configure-Environment @{
                     Path = 'Env:\Lombiq_Tests_UI__OrchardCoreUITestExecutorConfiguration__MaxParallelTests'
@@ -167,12 +167,9 @@ jobs:
             }
             else
             {
-                Configure-Environment @{
-                    Path = 'Env:\Lombiq_Tests_UI__OrchardCoreUITestExecutorConfiguration__MaxParallelTests'
-                    Value = '0'
-                }
+                continue
             }
-            dotnet test -c Release --no-restore --no-build --nologo --logger "trx;LogFileName=test-results.trx" --verbosity quiet $test 2>&1 >test.out
+            dotnet test -c Release --filter "FullyQualifiedName~VerifyHomePage" --no-restore --no-build --nologo --logger "trx;LogFileName=test-results.trx" --verbosity quiet $test 2>&1 >test.out
 
             if ($?)
             {
