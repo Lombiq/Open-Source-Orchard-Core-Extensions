@@ -13,4 +13,11 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/NEST-314
     with: 
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
-      build-directories: "[\".\", \"NuGetTest\"]"
+      build-directories: "[\".\"]"
+
+  call-build-and-test-workflow-nuget-test:
+    name: Build and Test
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/NEST-314
+    with: 
+      machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
+      build-directories: "[\"NuGetTest\"]"
