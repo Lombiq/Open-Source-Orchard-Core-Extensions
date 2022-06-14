@@ -38,6 +38,7 @@ jobs:
       working-directory: ${{ matrix.directory }}
       shell: bash
       run: |
+        echo "GITHUB_STEP_SUMMARY '$GITHUB_STEP_SUMMARY'"
         echo "ACTIONS_RUNTIME_URL '$ACTIONS_RUNTIME_URL'"
         echo "ACTIONS_RUNTIME_TOKEN '$ACTIONS_RUNTIME_TOKEN'"
         echo "ACTIONS_CACHE_URL '$ACTIONS_CACHE_URL'"
