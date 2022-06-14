@@ -8,6 +8,16 @@ on:
       - dev
 
 jobs:
-  call-publish-workflow:
+  build-and-test:
+    runs-on: ${{ matrix.os }}
     name: Build and Test
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/NEST-314
+    strategy:
+      matrix:
+        directory: ['.', 'NuGetTest']
+        os: [ubuntu-latest, windows-latest]
+    timeout-minutes: 60
+    steps:
+      - uses: Lombiq/GitHub-Actions/.github/actions/build-and-test-orchard-core@issue/NEST-314
+        with:
+          os: ${{ matrix.os }}
+          build-directory: ${{ matrix.directory }}
