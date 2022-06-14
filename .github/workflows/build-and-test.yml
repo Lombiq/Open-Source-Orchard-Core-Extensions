@@ -34,6 +34,14 @@ jobs:
       with:
         dotnet-version: 6.0.*
 
+    # This helps populate some settings. Feels hacky, but I have no other information. See
+    # https://github.com/cake-build/cake/discussions/3783?sort=top#discussioncomment-1879555 and
+    # https://github.com/tapika/swupd/commit/a22cd4e3e793decbbd24dc9118ccc8322d0a10d8 for details.
+    - name: Github actions environment to local environment
+      uses: cake-build/cake-action@v1
+      with:
+          script-path: routeenvvar.cake
+
     - name: Investigate State
       working-directory: ${{ matrix.directory }}
       shell: bash
@@ -43,11 +51,7 @@ jobs:
         echo "ACTIONS_RUNTIME_TOKEN '$ACTIONS_RUNTIME_TOKEN'"
         echo "ACTIONS_CACHE_URL '$ACTIONS_CACHE_URL'"
         echo '## Testing Job Summary' >> $GITHUB_STEP_SUMMARY
-        echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' >> $GITHUB_STEP_SUMMARY
-        echo '![lorem ipsum image](https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Lorem_ipsum_design.svg/800px-Lorem_ipsum_design.svg.png)' >> $GITHUB_STEP_SUMMARY
-        echo '[lorem ipsum link](https://en.wikipedia.org/wiki/Lorem_ipsum) on Wikipedia.' >> $GITHUB_STEP_SUMMARY
-        echo '' >> $GITHUB_STEP_SUMMARY
-        echo '❌ $PWD ❌' >> $GITHUB_STEP_SUMMARY
+        echo "❌ $PWD ❌" >> $GITHUB_STEP_SUMMARY
         echo '' >> $GITHUB_STEP_SUMMARY
         env >> $GITHUB_STEP_SUMMARY
 
