@@ -24,4 +24,13 @@ public class BehaviorBaseThemeTests : UITestBase
                 await context.TestBaseThemeFeaturesAsync();
             },
             browser);
+
+    [Theory, Chrome]
+    public Task IntentionalException1(Browser browser) =>
+        ExecuteTestAfterSetupAsync(
+            async context =>
+            {
+                await context.GoToRelativeUrlAsync("Go home friend, you are drunk.");
+            },
+            browser);
 }
