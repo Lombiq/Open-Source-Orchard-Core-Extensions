@@ -52,6 +52,7 @@ jobs:
         echo '## Testing Job Summary' >> $GITHUB_STEP_SUMMARY
         echo "❌ $PWD ❌" >> $GITHUB_STEP_SUMMARY
         echo '' >> $GITHUB_STEP_SUMMARY
+
         env >> $GITHUB_STEP_SUMMARY
 
     - name: Build and Static Code Analysis
