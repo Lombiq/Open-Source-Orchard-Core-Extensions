@@ -21,8 +21,8 @@ jobs:
     name: Build and Test
     strategy:
       matrix:
-        directory: ['.', 'NuGetTest']
-        os: [ubuntu-latest, windows-latest]
+        directory: ['.']
+        os: [windows-latest]
     timeout-minutes: 60
     steps:
     - uses: actions/checkout@v2
@@ -52,7 +52,7 @@ jobs:
             '-p:RunAnalyzersDuringBuild=true',
             '-nologo',
             '-consoleLoggerParameters:NoSummary',
-            '-verbosity:quiet'
+            '-verbosity:minimal'
         )
 
         dotnet build (Get-ChildItem *.sln).FullName @buildSwitches
