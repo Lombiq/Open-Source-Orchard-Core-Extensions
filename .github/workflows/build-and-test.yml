@@ -21,4 +21,4 @@ jobs:
     with: 
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
