@@ -34,13 +34,11 @@ jobs:
       with:
         dotnet-version: 6.0.*
 
-    # This helps populate some settings. Feels hacky, but I have no other information. See
-    # https://github.com/cake-build/cake/discussions/3783?sort=top#discussioncomment-1879555 and
-    # https://github.com/tapika/swupd/commit/a22cd4e3e793decbbd24dc9118ccc8322d0a10d8 for details.
+    # This exports the GitHub Actions Runtime environment variables so it's available for the subsequent steps.
     - name: Github actions environment to local environment
-      uses: cake-build/cake-action@v1
+      uses: Lombiq/GitHub-Actions/.github/actions/export-context@issue/OSOE-134
       with:
-          script-path: routeenvvar.cake
+        environment: ${{ env.GITHUB_ENV }}
 
     - name: Investigate State
       working-directory: ${{ matrix.directory }}
