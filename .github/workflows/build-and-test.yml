@@ -25,10 +25,6 @@ jobs:
         os: [windows-latest]
     timeout-minutes: 60
     steps:
-    - name: Enable long paths in Git
-      run: |
-        git config --system core.longpaths true
-
     - uses: actions/checkout@v2
       with:
         submodules: 'recursive'
