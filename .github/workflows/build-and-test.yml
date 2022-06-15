@@ -37,8 +37,6 @@ jobs:
     # This exports the GitHub Actions Runtime environment variables so it's available for the subsequent steps.
     - name: Github actions environment to local environment
       uses: Lombiq/GitHub-Actions/.github/actions/export-context@issue/OSOE-134
-      with:
-        environment: ${{ env.GITHUB_ENV }}
 
     - name: Investigate State
       working-directory: ${{ matrix.directory }}
