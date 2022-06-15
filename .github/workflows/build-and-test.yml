@@ -37,7 +37,7 @@ jobs:
     - name: Build and Static Code Analysis
       working-directory: ${{ matrix.directory }}
       run: |
-        npm install pnpm -g
+        corepack enable
 
         if (Test-Path src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj)
         {
