@@ -16,13 +16,14 @@ defaults:
     shell: pwsh
 
 jobs:
-  build_test:
+  build-and-test:
     runs-on: ${{ matrix.os }}
     name: Build and Test
     strategy:
       matrix:
         directory: ['.', 'NuGetTest']
         os: [ubuntu-latest, windows-latest]
+    timeout-minutes: 60
     steps:
     - uses: actions/checkout@v2
       with:
@@ -34,53 +35,59 @@ jobs:
         dotnet-version: 6.0.*
 
     - name: Build and Static Code Analysis
-      shell: bash
+      working-directory: ${{ matrix.directory }}
       run: |
-        cd "${{matrix.directory}}"
         npm install pnpm -g
-        [ -f src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj ] &&
+
+        if (Test-Path src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj)
+        {
             dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
-        dotnet build *.sln \
-          --configuration Release \
-          -warnaserror \
-          -p:TreatWarningsAsErrors=true \
-          -p:RunAnalyzersDuringBuild=true \
-          -p:NoWarn='"1591;CA1014"'\
-          -nologo \
-          -consoleLoggerParameters:NoSummary \
-          -verbosity:quiet
+        }
+
+        $buildSwitches = @(
+            '--configuration',
+            'Release',
+            '-warnaserror',
+            '-p:TreatWarningsAsErrors=true',
+            '-p:RunAnalyzersDuringBuild=true',
+            '-nologo',
+            '-consoleLoggerParameters:NoSummary',
+            '-verbosity:quiet'
+        )
+
+        dotnet build (Get-ChildItem *.sln).FullName @buildSwitches
 
     - name: Set up SQL Server
       run: |
-        if ($Env:RUNNER_OS -eq "Linux")
+        if ($Env:RUNNER_OS -eq "Windows")
+        {
+            choco install sql-server-express --no-progress
+        }
+        else
         {
             docker pull mcr.microsoft.com/mssql/server &&
             docker run --name sql2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password1!' -p 1433:1433 -d 'mcr.microsoft.com/mssql/server:2019-latest' &&
             docker exec -u 0 sql2019 bash -c 'mkdir /data; chmod 777 /data -R; chown mssql:root /data'
-        }
-        else
-        {
-            choco install sql-server-express --no-progress
         }
 
     # Needs to be a separate step, otherwise the Chocolatey installation won't be visible.
     - name: Wait for SQL Server to start
       run: |
         $maxTryCount = 10
-            
+
         for ($i = 1; $i -le $maxTryCount; $i++)
         {
             echo "Waiting for SQL Server to start. Attempt $i/$maxTryCount."
 
-            if ($Env:RUNNER_OS -eq "Linux")
-            {
-                sqlcmd -b -U sa -P 'Password1!' -Q "SELECT @@SERVERNAME as ServerName" 2>&1>$null
-            }
-            else
+            if ($Env:RUNNER_OS -eq "Windows")
             {
                 sqlcmd -b -S .\SQLEXPRESS -Q "SELECT @@SERVERNAME as ServerName" 2>&1>$null
             }
-                
+            else
+            {
+                sqlcmd -b -U sa -P 'Password1!' -Q "SELECT @@SERVERNAME as ServerName" 2>&1>$null
+            }
+
             if ($?)
             {
                 echo "SQL Server is successfully started."
@@ -104,49 +111,96 @@ jobs:
         npm install -g azurite
         azurite --silent --location ${{matrix.directory}}/azurite --debug ${{matrix.directory}}/azurite/debug.log &
 
-    # This step gets the list of all projects, selects the test projects (excluding the two test libraries) and then
-    # uses sed to create an inline bash script. What this script does:
-    # - Uses 'dotnet test -c Release --no-restore --no-build' to start up each project.
-    # - The test output is wrapped by '::group::<project name>' before and '::endgroup::' after it. This tells GitHub to
-    #   place each test's output into a collapsible region on the Actions web UI.
-    # - Each call is connected with '&&', so it stops on the first test failure to save computational resources.
-    #
-    # The script is evaluated by bash and the output is passed through grep to filter out some IPv6 related garbage data
-    # produced by chromedriver. The trouble is, this way the final error code will be grep's and not the test run's, so
-    # to get around this 'SUCCESS' or 'FAILURE' is written into the .ui_test_result file before the output is sent to
-    # grep. The final line sets the result according to what was written into the .ui_test_result file.
+    # First, we globally set test configurations using environment variables. Then acquire the list of all test projects
+    # (excluding the two test libraries) and then run each until one fails or all concludes. If a test fails, the output
+    # is sanitized from unnecessary diagnostics messages from chromedriver if the output doesn't already contain
+    # groupings, then it wraps them in '::group::<project name>'. If there are already groupings, then it is not
+    # possible to nest them (https://github.com/actions/runner/issues/802) so that's omitted. The groupings make the
+    # output collapsible region on the Actions web UI. Note that we use bash to output the log using bash to avoid pwsh
+    # wrapping the output to the default buffer width.
     - name: Tests
-      shell: bash
-
+      working-directory: ${{ matrix.directory }}
       run: |
-        if [ "$RUNNER_OS" == "Linux" ]; then
-            export Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate="Server=.;Database=LombiqUITestingToolbox_{{id}};User Id=sa;Password=Password1!;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5"
-            export Lombiq_Tests_UI__DockerConfiguration__ContainerName="sql2019"
+        function Configure-Environment($hash) { Set-Item @hash }
+
+        if ($Env:RUNNER_OS -eq "Windows")
+        {
+            Configure-Environment @{
+                Path = 'Env:\Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate'
+                Value = 'Server=.\SQLEXPRESS;Database=LombiqUITestingToolbox_{{id}};Integrated Security=True;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5'
+            }
+        }
         else
-            export Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate="Server=.\\SQLEXPRESS;Database=LombiqUITestingToolbox_{{id}};Integrated Security=True;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5"
-        fi
+        {
+            Configure-Environment @{
+                Path = 'Env:\Lombiq_Tests_UI__SqlServerDatabaseConfiguration__ConnectionStringTemplate'
+                Value = 'Server=.;Database=LombiqUITestingToolbox_{{id}};User Id=sa;Password=Password1!;MultipleActiveResultSets=True;Connection Timeout=60;ConnectRetryCount=15;ConnectRetryInterval=5'
+            }
+            Configure-Environment @{
+                Path = 'Env:\Lombiq_Tests_UI__DockerConfiguration__ContainerName'
+                Value = 'sql2019'
+            }
+        }
 
-        cd "${{matrix.directory}}"
+        $tests = dotnet sln list |
+            Select-Object -Skip 2 |
+            Select-String '\.Tests\.' |
+            Select-String -NotMatch 'Lombiq.Tests.UI.csproj' |
+            Select-String -NotMatch 'Lombiq.Tests.csproj' |
+            ? {
+                $result = dotnet test --no-restore --list-tests --verbosity quiet $_ 2>&1 | Out-String -Width 9999
+                -not [string]::IsNullOrEmpty($result) -and $result.Contains('The following Tests are available')
+            }
 
-        (dotnet sln list |
-            grep '.Tests.' |
-            grep -v 'Lombiq.Tests.UI.csproj' |
-            grep -v 'Lombiq.Tests.csproj' |
-            sed -e 's/\\/\//g' \
-                -e '$atrue' \
-                -e 's/\(.*\)/echo "::group::\1" \&\&\ndotnet test -c Release --no-restore --no-build '"'\\1'"' \&\&\necho "::endgroup::" \&\&/' |
-            bash && (echo SUCCESS > .ui_test_result) || (echo FAIL > .ui_test_result)) |
-            grep -v '^Connection refused \[::ffff:127.0.0.1\]';
-        grep SUCCESS .ui_test_result
+        foreach ($test in $tests) {
+            dotnet test -c Release --no-restore --no-build --nologo --logger "trx;LogFileName=test-results.trx" --verbosity quiet $test 2>&1 >test.out
+
+            if ($?)
+            {
+                echo "Test Successful: $test"
+                continue
+            }
+
+            $needsGrouping = (Select-String '::group::' test.out).Length -eq 0
+
+            if ($needsGrouping) { echo "::group::Test Failed: $test" }
+
+            bash -c "cat test.out | grep -v 'Connection refused \[::ffff:127.0.0.1\]' | grep -v 'ChromeDriver was started successfully'"
+
+            if ($needsGrouping) { echo "::endgroup::" }
+
+            exit 100
+        }
 
     # Note that this will fail under Windows if the path is too long, regardless of LongPathsEnabled, see:
-    # https://github.com/actions/upload-artifact/issues/309. We can't do much about this apart from uploading artifacts
-    # in a low-level way.
+    # https://github.com/actions/upload-artifact/issues/309. To get around that we merge all FailureDumps into the
+    # solution root. The following two steps need to be always(), so if there's a failure dump it'll be uploaded even if
+    # the tests are ultimately passed after retries. The same is true for the next step as well.
+    - name: Merge FailureDumps
+      if: always() && hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
+      run: |
+        New-Item -Type Directory "${{matrix.directory}}/FailureDumps"
+        Get-ChildItem "${{matrix.directory}}/test" -Recurse |
+          ? { $_.Name -eq 'FailureDumps' } |
+          % { $_.GetDirectories() } |
+          % { Move-Item $_.FullName "${{matrix.directory}}/FailureDumps/${_.Name}" }
+
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
-      # Needs to be always() so if there's a failure dump, it'll be uploaded even if with retries the tests passed.
-      if: always() && hashFiles(format('{0}/test/**/FailureDumps', matrix.directory))
+      # It's always as explained above. We don't need additional conditions, because of the "if-no-files-found" setting.
+      if: always()
       with:
         name: ui-test-failure-dump-${{ matrix.directory }}-${{ matrix.os }}
-        path: ${{ matrix.directory }}/test/**/FailureDumps/
+        path: |
+          ${{ matrix.directory }}/FailureDumps/
+          test.out
         if-no-files-found: ignore
+
+    - name: Test Report
+      uses: phoenix-actions/test-reporting@v8
+      if: success() || failure()
+      with:
+        name: Test Results (${{matrix.directory}} ${{matrix.os}})
+        path: '${{matrix.directory}}/**/*.trx'
+        reporter: dotnet-trx
+        fail-on-error: 'false'
