@@ -25,9 +25,8 @@ jobs:
         os: [windows-latest]
     timeout-minutes: 60
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
       with:
-        path: o
         submodules: 'recursive'
 
     - name: Setup .NET Core 6.0
