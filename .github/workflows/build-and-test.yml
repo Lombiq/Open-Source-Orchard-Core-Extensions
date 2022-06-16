@@ -24,8 +24,6 @@ jobs:
         directory: ['.']
         os: [windows-latest]
     timeout-minutes: 60
-    env:
-      GITHUB_WORKSPACE: osoce
     steps:
     - uses: actions/checkout@v2
       with:
