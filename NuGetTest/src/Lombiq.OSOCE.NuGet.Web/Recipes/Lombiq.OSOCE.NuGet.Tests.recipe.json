@@ -183,6 +183,7 @@
       ]
     },
     {
+
       "name": "themes",
       "admin": "TheAdmin",
       "site": "Lombiq.OSOCE.NuGet.TestTheme"
