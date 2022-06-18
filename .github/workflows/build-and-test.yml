@@ -34,6 +34,15 @@ jobs:
       with:
         dotnet-version: 6.0.*
 
+    - name: Map current working directory to drive letter
+      run: |
+        if ($Env:RUNNER_OS -eq "Windows")
+        {
+            subst X: (Get-Location)
+            cd X:
+            pwd
+        }
+
     - name: Build and Static Code Analysis
       working-directory: ${{ matrix.directory }}
       run: |
