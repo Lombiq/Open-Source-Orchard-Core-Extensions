@@ -1,13 +1,10 @@
 {
-    "extends": "./src/Utilities/Lombiq.NodeJs.Extensions/Lombiq.NodeJs.Extensions/config/.eslintrc.lombiq-base.js",
+  // Setting root=true prevents ESLint from taking into account .eslintrc files higher up in the directory tree.
+  "root": true,
 
-    "rules": {
-        // Add overriding rules here like this:
-        // "example-rule" : "error"
-        "max-len": [
-            "warn",
-            // 150 characters is the default.
-            120
-        ]
-    }
+  "extends": "./src/Utilities/Lombiq.NodeJs.Extensions/Lombiq.NodeJs.Extensions/config/.eslintrc.lombiq-base.js",
+
+  // Add custom rules and overrides here.
+  "rules": {
+  }
 }
