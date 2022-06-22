@@ -14,7 +14,7 @@ jobs:
     with:
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
       timeout-minutes: 60
-      build-cache-version: 1
+      build-cache-version: "0"
 
   call-build-and-test-workflow-nuget-test:
     name: Build and Test - NuGetTest solution
