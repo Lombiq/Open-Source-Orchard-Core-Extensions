@@ -37,14 +37,6 @@ jobs:
     - name: Build and Static Code Analysis
       working-directory: ${{ matrix.directory }}
       run: |
-        # Map current working directory to drive letter to shorten the absolute path of some deeply nested files.
-        if ($Env:RUNNER_OS -eq "Windows")
-        {
-            subst X: (Get-Location)
-            cd X:
-            echo "The current working directory is now (Get-Location)"
-        }
-
         corepack enable
 
         if (Test-Path src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj)
