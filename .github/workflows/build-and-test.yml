@@ -23,4 +23,3 @@ jobs:
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
       build-directory: NuGetTest
       timeout-minutes: 30
-      build-enable-npm-caching: "true"
