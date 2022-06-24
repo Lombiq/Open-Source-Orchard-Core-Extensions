@@ -7,52 +7,18 @@ on:
     branches:
       - dev
 
-env:
-  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-  DOTNET_CLI_TELEMETRY_OPTOUT: true
-
-defaults:
-  run:
-    shell: pwsh
-
 jobs:
-  build-and-test:
-    runs-on: ${{ matrix.os }}
-    name: Build and Test
-    strategy:
-      matrix:
-        directory: ['.', 'NuGetTest']
-        os: [ubuntu-latest, windows-latest]
-    timeout-minutes: 60
-    steps:
-    - uses: actions/checkout@v2
-      with:
-        submodules: 'recursive'
+  call-build-and-test-workflow:
+    name: Build and Test - root solution
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
+      timeout-minutes: 60
 
-    - name: Setup .NET Core 6.0
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 6.0.*
-
-    - name: Build and Static Code Analysis
-      working-directory: ${{ matrix.directory }}
-      run: |
-        corepack enable
-
-        if (Test-Path src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj)
-        {
-            dotnet build src/Utilities/Lombiq.Gulp.Extensions/Lombiq.Gulp.Extensions.csproj --configuration Release
-        }
-
-        $buildSwitches = @(
-            '--configuration',
-            'Release',
-            '-warnaserror',
-            '-p:TreatWarningsAsErrors=true',
-            '-p:RunAnalyzersDuringBuild=true',
-            '-nologo',
-            '-consoleLoggerParameters:NoSummary',
-            '-verbosity:minimal'
-        )
-
-        dotnet build (Get-ChildItem *.sln).FullName @buildSwitches
+  call-build-and-test-workflow-nuget-test:
+    name: Build and Test - NuGetTest solution
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
+      build-directory: NuGetTest
+      timeout-minutes: 30
