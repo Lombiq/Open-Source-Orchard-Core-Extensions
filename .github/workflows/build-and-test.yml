@@ -8,17 +8,19 @@ on:
       - dev
 
 jobs:
-  call-build-workflow:
-    name: Build and Test - root solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-dotnet.yml@issue/OSOE-125
-    with:
-      machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
-      timeout-minutes: 60
+  #call-build-workflow:
+  #  name: Build and Test - root solution
+  #  uses: Lombiq/GitHub-Actions/.github/workflows/build-dotnet.yml@issue/OSOE-125
+  #  with:
+  #    machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
+  #    timeout-minutes: 60
+  #    build-verbosity: normal
 
   call-build-workflow-nuget-test:
     name: Build and Test - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-dotnet.yml@issue/OSOE-125
     with:
-      machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
+      machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
       timeout-minutes: 30
+      build-verbosity: normal
