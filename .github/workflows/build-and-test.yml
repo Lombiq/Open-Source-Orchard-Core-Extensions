@@ -14,7 +14,7 @@ jobs:
     with:
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
       timeout-minutes: 60
-      ui-test-parallelism: 2
+      ui-test-parallelism: 3
 
   call-build-and-test-workflow-nuget-test:
     name: Build and Test - NuGetTest solution
@@ -23,4 +23,4 @@ jobs:
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
       build-directory: NuGetTest
       timeout-minutes: 30
-      ui-test-parallelism: 2
+      ui-test-parallelism: 3
