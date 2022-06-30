@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using NLog.Web;
+using OrchardCore.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Host.UseNLog();
+builder.Host.UseNLogHost();
 
 var configuration = builder.Configuration;
 
