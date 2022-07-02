@@ -1,4 +1,3 @@
-using Lombiq.ChartJs.Tests.UI.Extensions;
 using Lombiq.DataTables.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Services;
@@ -8,9 +7,9 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests;
 
-public class BehaviorModuleTests : UITestBase
+public class BehaviorDataTableTests : UITestBase
 {
-    public BehaviorModuleTests(ITestOutputHelper testOutputHelper)
+    public BehaviorDataTableTests(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)
     {
     }
@@ -19,11 +18,5 @@ public class BehaviorModuleTests : UITestBase
     public Task DataTableShouldWork(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestDataTableRecipeDataAsync(),
-            browser);
-
-    [Theory, Chrome]
-    public Task ChartJsShouldWork(Browser browser) =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestChartJsSampleBehaviorAsync(),
             browser);
 }
