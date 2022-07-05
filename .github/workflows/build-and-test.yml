@@ -11,14 +11,15 @@ jobs:
   call-build-and-test-workflow:
     name: Build and Test - root solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
-    with: 
+    with:
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
       timeout-minutes: 60
+      setup-edge-on-linux: true
 
   call-build-and-test-workflow-nuget-test:
     name: Build and Test - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
-    with: 
+    with:
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
       build-directory: NuGetTest
       timeout-minutes: 30
