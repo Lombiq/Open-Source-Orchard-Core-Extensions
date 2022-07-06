@@ -1,7 +1,6 @@
-﻿using Lombiq.ChartJs.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Attributes;
+﻿using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Services;
-using System;
+using Lombiq.UIKit.Tests.UI.Extensions;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -16,5 +15,8 @@ public class BehaviorUIKitShowcaseTests : UITestBase
     }
 
     [Theory, Chrome]
-    public Task PlaceholderTestName() { throw new NotImplementedException(); }
+    public Task UIKitShowcaseIsWorkingCorrectly(Browser browser) => ExecuteTestAfterSetupAsync(
+        context => context.TestUIKitShowcaseBehaviorAsync(),
+        browser
+        );
 }

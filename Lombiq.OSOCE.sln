@@ -139,6 +139,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Privacy.Tests.UI", "src\Modules\Lombiq.Privacy\Lombiq.Privacy.Tests.UI\Lombiq.Privacy.Tests.UI.csproj", "{F6C11C25-7080-4CB5-B278-2A54FB952108}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.UIKit.Tests.UI", "src\Modules\Lombiq.UIKit\Lombiq.UIKit.Tests.UI\Lombiq.UIKit.Tests.UI\Lombiq.UIKit.Tests.UI.csproj", "{A10F9F17-CB35-4641-B707-C6620A2C4FDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -713,6 +715,18 @@ Global
 		{F6C11C25-7080-4CB5-B278-2A54FB952108}.Release|x64.Build.0 = Release|Any CPU
 		{F6C11C25-7080-4CB5-B278-2A54FB952108}.Release|x86.ActiveCfg = Release|Any CPU
 		{F6C11C25-7080-4CB5-B278-2A54FB952108}.Release|x86.Build.0 = Release|Any CPU
+		{A10F9F17-CB35-4641-B707-C6620A2C4FDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A10F9F17-CB35-4641-B707-C6620A2C4FDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A10F9F17-CB35-4641-B707-C6620A2C4FDC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A10F9F17-CB35-4641-B707-C6620A2C4FDC}.Debug|x64.Build.0 = Debug|Any CPU
+		{A10F9F17-CB35-4641-B707-C6620A2C4FDC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A10F9F17-CB35-4641-B707-C6620A2C4FDC}.Debug|x86.Build.0 = Debug|Any CPU
+		{A10F9F17-CB35-4641-B707-C6620A2C4FDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A10F9F17-CB35-4641-B707-C6620A2C4FDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A10F9F17-CB35-4641-B707-C6620A2C4FDC}.Release|x64.ActiveCfg = Release|Any CPU
+		{A10F9F17-CB35-4641-B707-C6620A2C4FDC}.Release|x64.Build.0 = Release|Any CPU
+		{A10F9F17-CB35-4641-B707-C6620A2C4FDC}.Release|x86.ActiveCfg = Release|Any CPU
+		{A10F9F17-CB35-4641-B707-C6620A2C4FDC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -773,6 +787,7 @@ Global
 		{40E6EA88-BE15-4542-BD9A-3AA8DC69629E} = {719F19E1-0B20-490C-B325-74E5FD6C838C}
 		{B5BF5684-561B-4E48-B1D6-A543CBE1EB1D} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{F6C11C25-7080-4CB5-B278-2A54FB952108} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
+		{A10F9F17-CB35-4641-B707-C6620A2C4FDC} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
