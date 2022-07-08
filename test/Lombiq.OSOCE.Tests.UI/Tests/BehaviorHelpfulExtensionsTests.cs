@@ -15,8 +15,14 @@ public class BehaviorHelpfulExtensionsTests : UITestBase
     }
 
     [Theory, Chrome]
-    public Task FlowAdditionalStylingPartShouldActivateCorrectly(Browser browser) =>
+    public Task FeatureFlow(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestFlowAdditionalStylingPartNotActivatingGh76Async(),
+            browser);
+
+    [Theory, Chrome]
+    public Task FeatureWidgets(Browser browser) =>
+        ExecuteTestAfterSetupAsync(
+            context => context.TestFeatureWidgetsAsync(),
             browser);
 }
