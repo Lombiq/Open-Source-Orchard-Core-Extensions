@@ -6,7 +6,7 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
-  <Import Project="..\..\tools\Lombiq.Analyzers.PowerShell\Lombiq.Analyzers.PowerShell\Lombiq.Analyzers.PowerShell.targets" />
+  <Import Project="..\..\tools\Lombiq.Analyzers.PowerShell\Lombiq.Analyzers.PowerShell\Lombiq.Analyzers.PowerShell.targets" Condition="'$(GITHUB_ENV)' == ''" />
 
   <ItemGroup>
     <None Remove="Recipes\Media\meadow-orchard.jpg" />
