@@ -29,7 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.NuGet.Tests", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.NuGet.Tests.UI", "test\Lombiq.OSOCE.NuGet.Tests.UI\Lombiq.OSOCE.NuGet.Tests.UI.csproj", "{23C4D30C-3E8D-4BC5-A02E-D2A2B3EDFC08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.Analyzers.PowerShell.Tests", "..\tools\Lombiq.Analyzers.PowerShell\Lombiq.Analyzers.PowerShell.Tests\Lombiq.Analyzers.PowerShell.Tests.csproj", "{42A5CB8B-C220-4ABF-B3CE-3633C2FAE624}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{342A0D21-FA7F-45E9-895A-5F6DA5F3370E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.Analyzers.PowerShell.PackageReference", "E:\aux_c\repositories\orchard-core\Open-Source-Orchard-Core-Extensions3\tools\Lombiq.Analyzers.PowerShell\TestSolutions\Lombiq.Analyzers.PowerShell.PackageReference\Lombiq.Analyzers.PowerShell.PackageReference.csproj", "{6504905F-584A-49A0-9FFE-CCB12240E7D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,10 +59,10 @@ Global
 		{23C4D30C-3E8D-4BC5-A02E-D2A2B3EDFC08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23C4D30C-3E8D-4BC5-A02E-D2A2B3EDFC08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23C4D30C-3E8D-4BC5-A02E-D2A2B3EDFC08}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42A5CB8B-C220-4ABF-B3CE-3633C2FAE624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42A5CB8B-C220-4ABF-B3CE-3633C2FAE624}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42A5CB8B-C220-4ABF-B3CE-3633C2FAE624}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42A5CB8B-C220-4ABF-B3CE-3633C2FAE624}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6504905F-584A-49A0-9FFE-CCB12240E7D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6504905F-584A-49A0-9FFE-CCB12240E7D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6504905F-584A-49A0-9FFE-CCB12240E7D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6504905F-584A-49A0-9FFE-CCB12240E7D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,7 +75,7 @@ Global
 		{7A7AB418-7A88-4F7E-ADEF-5F5B293D53FE} = {6ECC68E0-8C39-49E9-A4F9-B21153568653}
 		{692A7BF5-5DB9-46C9-8C90-8D2EFC895BAF} = {8E53E788-C4AA-43D6-B906-6675BD10EC15}
 		{23C4D30C-3E8D-4BC5-A02E-D2A2B3EDFC08} = {8E53E788-C4AA-43D6-B906-6675BD10EC15}
-		{42A5CB8B-C220-4ABF-B3CE-3633C2FAE624} = {8E53E788-C4AA-43D6-B906-6675BD10EC15}
+		{6504905F-584A-49A0-9FFE-CCB12240E7D7} = {342A0D21-FA7F-45E9-895A-5F6DA5F3370E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7B6C224F-E9B3-47DA-8E82-205D1620F2F8}
