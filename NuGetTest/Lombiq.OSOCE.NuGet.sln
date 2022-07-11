@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.NuGet.Tests.UI
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{342A0D21-FA7F-45E9-895A-5F6DA5F3370E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.Analyzers.PowerShell.PackageReference", "E:\aux_c\repositories\orchard-core\Open-Source-Orchard-Core-Extensions3\tools\Lombiq.Analyzers.PowerShell\TestSolutions\Lombiq.Analyzers.PowerShell.PackageReference\Lombiq.Analyzers.PowerShell.PackageReference.csproj", "{6504905F-584A-49A0-9FFE-CCB12240E7D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.Analyzers.PowerShell.PackageReference", "..\tools\Lombiq.Analyzers.PowerShell\TestSolutions\Lombiq.Analyzers.PowerShell.PackageReference\Lombiq.Analyzers.PowerShell.PackageReference.csproj", "{6504905F-584A-49A0-9FFE-CCB12240E7D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
