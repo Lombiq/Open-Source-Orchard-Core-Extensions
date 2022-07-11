@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.NuGet.Tests", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.NuGet.Tests.UI", "test\Lombiq.OSOCE.NuGet.Tests.UI\Lombiq.OSOCE.NuGet.Tests.UI.csproj", "{23C4D30C-3E8D-4BC5-A02E-D2A2B3EDFC08}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{342A0D21-FA7F-45E9-895A-5F6DA5F3370E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
