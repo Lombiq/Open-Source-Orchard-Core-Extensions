@@ -192,4 +192,4 @@ src/*.Web/Localization
 /.editorconfig
 /FailureDumps/
 /test.out
-/src/Lombiq.OSOCE.Web/.ps1-analyzer-stamp
+.ps1-analyzer-stamp
