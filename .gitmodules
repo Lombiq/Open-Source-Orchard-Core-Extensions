@@ -74,7 +74,7 @@
 	path = src/Themes/Lombiq.BaseTheme
 	url = https://github.com/Lombiq/Orchard-Base-Theme.git
 	branch = dev
-[submodule "tools/Lombiq.GitHubActions"]
-	path = tools/Lombiq.GitHubActions
+[submodule "tools/Lombiq.GitHub.Actions"]
+	path = tools/Lombiq.GitHub.Actions
 	url = https://github.com/Lombiq/GitHub-Actions.git
 	branch = dev
