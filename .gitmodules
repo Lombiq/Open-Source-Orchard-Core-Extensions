@@ -64,7 +64,7 @@
 	branch = dev
 [submodule "src/Utilities/Lombiq.NodeJs.Extensions"]
 	path = src/Utilities/Lombiq.NodeJs.Extensions
-	url = https://github.com/Lombiq/NodeJs-Extensions
+	url = https://github.com/Lombiq/NodeJs-Extensions.git
 	branch = issue/OSOE-69
 [submodule "src/Modules/Lombiq.DataTables"]
 	path = src/Modules/Lombiq.DataTables
