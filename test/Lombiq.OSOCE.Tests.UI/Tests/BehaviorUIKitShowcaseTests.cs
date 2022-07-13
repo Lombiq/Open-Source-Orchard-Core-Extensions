@@ -1,8 +1,6 @@
 ﻿using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
-using OpenQA.Selenium;
-using Shouldly;
+using Lombiq.UIKit.Tests.UI.Extensions;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -19,16 +17,6 @@ public class BehaviorUIKitShowcaseTests : UITestBase
     [Theory, Chrome]
     public Task UIKitShowcasePageShouldBeCorrect(Browser browser)
         => ExecuteTestAfterSetupAsync(
-            context =>
-            {
-                // Groups are correct
-                string[] correctGroupnames =
-                {
-                    "Textbox:", "Checkbox:", "Custom classes:", "Hint positioning:", "Bootstrap dropdown:", "Bootstrap controls:"
-                };
-
-                var groupNames = context.GetAll(By.CssSelector("showcaseContainer__item h1"));
-
-                groupNames.ShouldBeSameAs(correctGroupnames);
-            }, browser);
+            context => context.TestUIKitShowcaseBehaviorAsync(),
+            browser);
 }
