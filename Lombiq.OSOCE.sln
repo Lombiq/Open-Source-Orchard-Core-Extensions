@@ -139,7 +139,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Privacy.Tests.UI", "src\Modules\Lombiq.Privacy\Lombiq.Privacy.Tests.UI\Lombiq.Privacy.Tests.UI.csproj", "{F6C11C25-7080-4CB5-B278-2A54FB952108}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.UIKit.Tests.UI", "src\Modules\Lombiq.UIKit\Lombiq.UIKit.Tests.UI\Lombiq.UIKit.Tests.UI\Lombiq.UIKit.Tests.UI.csproj", "{A10F9F17-CB35-4641-B707-C6620A2C4FDC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.UIKit.Tests.UI", "src\Modules\Lombiq.UIKit\Lombiq.UIKit.Tests.UI\Lombiq.UIKit.Tests.UI.csproj", "{A10F9F17-CB35-4641-B707-C6620A2C4FDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
