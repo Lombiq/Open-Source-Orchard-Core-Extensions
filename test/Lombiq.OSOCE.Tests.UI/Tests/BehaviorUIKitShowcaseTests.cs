@@ -1,23 +1,11 @@
 ﻿using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Services;
-using Lombiq.UIKit.Tests.UI.Extensions;
-using System.Threading.Tasks;
-using Xunit;
-using Xunit.Abstractions;
-using Lombiq.HelpfulLibraries.OrchardCore.Mvc;
-using Lombiq.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Services;
-using OpenQA.Selenium;
-using System.Drawing;
-using System.IO;
-using System.Threading.Tasks;
-using Atata;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using OpenQA.Selenium;
 using Shouldly;
-using System;
 using System.Threading.Tasks;
+using Xunit;
+using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests;
 
