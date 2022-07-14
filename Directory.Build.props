@@ -3,6 +3,8 @@
     <!-- This setting prevents .stylelintrc files from being created in projects that use Lombiq Node.js Extensions.
          Instead, we use a global .stylelintrc file at the solution root. -->
     <NodeJsExtensionsCreateStylelintConfigurationFile>false</NodeJsExtensionsCreateStylelintConfigurationFile>
+    <!-- Instruct Node.js Extensions to copy an .eslintrc file to the current directory, which is the solution root. -->
+    <NodeJsExtensionsGlobalESLintConfigurationDirectory>$(MSBuildThisFileDirectory)</NodeJsExtensionsGlobalESLintConfigurationDirectory>
   </PropertyGroup>
 
   <!-- Copying the Lombiq logo as an icon to all NuGet-published projects. -->
