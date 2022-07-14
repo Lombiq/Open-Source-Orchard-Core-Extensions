@@ -16,11 +16,11 @@ jobs:
       timeout-minutes: 60
       build-verbosity: normal
 
-  call-build-workflow-nuget-test:
-    name: Build and Test - NuGetTest solution
-    uses: Lombiq/Open-Source-Orchard-Core-Extensions/.github/workflows/build-dotnet-with-pnpm.yml@issue/OSOE-125
-    with:
-      machine-types: "[\"windows-latest\"]"
-      build-directory: NuGetTest
-      timeout-minutes: 30
-      build-verbosity: normal
+  #call-build-workflow-nuget-test:
+  #  name: Build and Test - NuGetTest solution
+  #  uses: Lombiq/Open-Source-Orchard-Core-Extensions/.github/workflows/build-dotnet-with-pnpm.yml@issue/OSOE-125
+  #  with:
+  #    machine-types: "[\"windows-latest\"]"
+  #    build-directory: NuGetTest
+  #    timeout-minutes: 30
+  #    build-verbosity: normal
