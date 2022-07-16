@@ -18,7 +18,7 @@
     <PackageReference Include="Lombiq.ChartJs.Samples" Version="2.3.1" />
     <PackageReference Include="Lombiq.DataTables" Version="3.2.1" />
     <PackageReference Include="Lombiq.DataTables.Samples" Version="3.2.1" />
-    <PackageReference Include="Lombiq.HelpfulExtensions" Version="3.3.1" />
+    <PackageReference Include="Lombiq.HelpfulExtensions" Version="3.4.1" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="3.1.0" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="2.1.0" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="2.1.0" />
@@ -26,8 +26,8 @@
     <PackageReference Include="Lombiq.Privacy" Version="3.1.1" />
     <PackageReference Include="Lombiq.Privacy.Samples" Version="3.1.1" />
     <PackageReference Include="Lombiq.SetupExtensions" Version="2.1.0" />
-    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="3.3.0" />
-    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="3.3.0" />
+    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="3.4.0" />
+    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="3.4.0" />
     <PackageReference Include="Lombiq.UIKit" Version="2.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="1.2.2" Condition="'$(RazorRuntimeCompilation)' == 'true'" />
   </ItemGroup>
