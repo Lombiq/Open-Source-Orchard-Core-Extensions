@@ -28,19 +28,20 @@ function findRecursively(startPath, includeFiles, excludeDirectories) {
     return results;
 }
 
-const searchRoot = process.argv.length > 2 ? process.argv[2] : '.';
 const files = findRecursively(
-    searchRoot,
+    process.argv.length > 2 ? process.argv[2] : '.',
     [/\.md$/i],
     [/^node_modules$/, /^\.git$/, /^obj$/, /^bin$/]);
+const config = {
+  default: true,
+  MD013: false,
+};
 
 try {
-    const results = markdownlint.sync({ files });
+    const results = markdownlint.sync({ files, config });
 
     Object.keys(results).forEach((fileName) => {
-
         results[fileName].forEach((warning) => {
-
             const line = warning.lineNumber;
             const column = (Array.isArray(warning.errorRange) && !isNaN(warning.errorRange[0])) 
                 ? warning.errorRange[0]
@@ -49,9 +50,12 @@ try {
                 ? warning.ruleNames 
                 : ['WARN', 'unknown-warning'];
 
+            // License files don't need title.
+            if (fileName.toLowerCase().endsWith('license.md') && code === 'MD041') return;
+
             let message = `${name ? name : code}: ${warning.ruleDescription.trim()}`;
             if (!message.endsWith('.')) message += '.';
-            if (warning.fixInfo) message += ' An automatic fix is available.';
+            if (warning.fixInfo) message += ' An automatic fix is available with markdownlint-cli.';
             if (warning.ruleInformation) message += ' Rule information: ' + warning.ruleInformation;
 
             console.log(`${fileName}(${line},${column}): warning ${code}: ${message}`);

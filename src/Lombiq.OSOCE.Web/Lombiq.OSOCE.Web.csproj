@@ -44,7 +44,6 @@
 
 
   <Target Name="MarkdownValidation" AfterTargets="AfterResolveReferences" BeforeTargets="Compile">
-
     <Exec Command="node markdown-to-msbuild.js" WorkingDirectory="$(SolutionDir)" />
   </Target>
 
