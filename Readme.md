@@ -1,10 +1,7 @@
 # Lombiq's Open-Source Orchard Core Extensions
 
-
-
 [![TeamCity build status](https://ci.lombiq.com/app/rest/builds/buildType:id:OrchardExtensions_OSOCE_Developer_PullAndBuild/statusIcon.svg)](https://ci.lombiq.com/buildConfiguration/OrchardExtensions_OSOCE_Developer_PullAndBuild?mode=builds)
 [![Build and Test](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/workflows/build-and-test.yml)
-
 
 ## About
 
@@ -20,7 +17,6 @@ This also serves as an example of an ASP.NET Core web app using Orchard from NuG
 
  Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source Orchard Extensions](https://github.com/Lombiq/Open-Source-Orchard-Extensions).
 
-
 ## Included Projects
 
 - Libraries
@@ -31,9 +27,9 @@ This also serves as an example of an ASP.NET Core web app using Orchard from NuG
   - [Lombiq.HelpfulLibraries.Targets](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.Targets): Targets project which references all Helpful Libraries. Only necessary for NuGet publishing, just as *Lombiq.HelpfulLibraries.sln*.
 
 - Modules
-  - [Lombiq.AuditTrailExtensions](https://github.com/Lombiq/Audit-Trail-Extensions): A module with additional features for the [Audit Trail module](https://docs.orchardcore.net/en/latest/docs/reference/modules/AuditTrail/) in Orchard Core. 
-  - [Lombiq.ChartJs](https://github.com/Lombiq/Orchard-Chart.js): An Orchard Core wrapper around the [Chart.js](https://www.chartjs.org/) library for displaying datasets as various charts. 
-  - [Lombiq.DataTables](https://github.com/Lombiq/Orchard-Data-Tables): An Orchard Core wrapper around the [DataTables](https://datatables.net/) library for displaying tabular data from custom data sources. 
+  - [Lombiq.AuditTrailExtensions](https://github.com/Lombiq/Audit-Trail-Extensions): A module with additional features for the [Audit Trail module](https://docs.orchardcore.net/en/latest/docs/reference/modules/AuditTrail/) in Orchard Core.
+  - [Lombiq.ChartJs](https://github.com/Lombiq/Orchard-Chart.js): An Orchard Core wrapper around the [Chart.js](https://www.chartjs.org/) library for displaying datasets as various charts.
+  - [Lombiq.DataTables](https://github.com/Lombiq/Orchard-Data-Tables): An Orchard Core wrapper around the [DataTables](https://datatables.net/) library for displaying tabular data from custom data sources.
   - [Lombiq.DataTables.Samples](https://github.com/Lombiq/Orchard-Data-Tables/tree/dev/Lombiq.DataTables.Samples): Example Orchard Core module that makes use of Lombiq Data Tables for Orchard Core.
   - [Lombiq.HelpfulExtensions](https://github.com/Lombiq/Helpful-Extensions): Orchard Core module containing some handy extensions (e.g. useful content types and widgets). It's also available on all sites of [DotNest, the Orchard SaaS](https://dotnest.com/).
   - [Lombiq.HelpfulLibraries.Samples](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.Samples): Example Orchard Core module that makes use of Lombiq Helpful Libraries.
@@ -53,7 +49,7 @@ This also serves as an example of an ASP.NET Core web app using Orchard from NuG
 
 - Utilities
   - [Lombiq.Gulp.Extensions](https://github.com/Lombiq/Gulp-Extensions): Various JavaScript functions and Gulp tasks that can be handy when developing Gulp pipelines.
-  - [Lombiq.Npm.Targets](https://github.com/Lombiq/NPM-Targets): Provides automatic NPM package installation and a custom NPM command execution before building a .NET project. This way it is possible for example to manage assets (e.g. .scss files or images) in a folder that will be automatically compiled into the _wwwroot_ folder on build, which then can be excluded from the version control system.
+  - [Lombiq.Npm.Targets](https://github.com/Lombiq/NPM-Targets): Provides automatic NPM package installation and a custom NPM command execution before building a .NET project. This way it is possible for example to manage assets (e.g. .scss files or images) in a folder that will be automatically compiled into the *wwwroot* folder on build, which then can be excluded from the version control system.
   - [Lombiq.SetupExtensions](https://github.com/Lombiq/Setup-Extensions): Extensions for setting up an Orchard Core application.
 
 - Testing
@@ -66,7 +62,6 @@ This also serves as an example of an ASP.NET Core web app using Orchard from NuG
 - Tools
   - [Lombiq.Analyzers](https://github.com/Lombiq/.NET-Analyzers): .NET code analyzers and code convention settings for [Lombiq](https://lombiq.com) projects, predominantly for [Orchard Core](https://www.orchardcore.net/) apps but also any .NET apps. We use these to enforce common standards across all our .NET projects, including e.g. all of our [open-source Orchard Core extensions](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions).
 
-
 ## Samples and Recipes
 
 You can activate various sample content in the site:
@@ -75,7 +70,7 @@ You can activate various sample content in the site:
   - Content Items > JSON Example Page: Shows the sample item in action. Edit shows the JSON Editor where you can change the JSON value. View demonstrates simple JavaScript consuming the JSON content.
   - Content Definition > Content Types > JSON Example Page > JsonExampleField: You can edit the this field's JSON Editor's configuration object here. Check out the Templates property!
 - [Lombiq UI Testing Toolbox](https://github.com/Lombiq/UI-Testing-Toolbox): Web UI testing toolbox mostly for Orchard Core applications. Check out [its samples](https://github.com/Lombiq/UI-Testing-Toolbox/blob/dev/Lombiq.Tests.UI.Samples/Readme.md) in this solution.
-- [Lombiq Training Demo for Orchard Core](https://github.com/Lombiq/Orchard-Training-Demo-Module/): Select the _Training Demo_ setup recipe when you first run the site.
+- [Lombiq Training Demo for Orchard Core](https://github.com/Lombiq/Orchard-Training-Demo-Module/): Select the *Training Demo* setup recipe when you first run the site.
 - [Lombiq Data Tables for Orchard Core](https://github.com/Lombiq/Orchard-Data-Tables):
   - Go to Features in the admin dashboard and select "Lombiq Data Tables - Samples".
   - Go to Recipes in the admin dashboard and select "Lombiq Data Tables - Sample Content - Employee".
@@ -92,19 +87,21 @@ Bug reports, feature requests, comments, questions, code contributions, and love
 This project is developed by [Lombiq Technologies](https://lombiq.com/). Commercial-grade support is available through Lombiq.
 
 ### Adding a new extension or significant new features
+
 When adding a new extension, or significant new features to existing extensions, do the following:
 
 - For user-facing features add a recipe to it, demonstrating its usage with sample data. In that case, refer to it in the above section.
 - If no data is needed or if the feature is more library-like, add a sample project (or in addition to the recipe). Put this project into the root of the submodule, so to have the main project's and sample project's folders side by side.
 - Add lower-level unit/integration tests as necessary with the [Lombiq Testing Toolbox for Orchard Core](https://github.com/Lombiq/Testing-Toolbox/).
 - If the sample project includes MVC actions, create a service that inherits from `MainMenuNavigationProviderBase` and adds front-end main menu items. The top level menu item should have the project's shortened name and the submenu items the individual actions. If you have several controllers, use separators and labels as you can see in the [TrainingDemoNavigationProvider.cs](https://github.com/Lombiq/Orchard-Training-Demo-Module/blob/dev/Navigation/TrainingDemoNavigationProvider.cs).
-- If the feature is user-facing, also add UI test extension method(s) with the [Lombiq UI Testing Toolbox for Orchard Core](https://github.com/Lombiq/UI-Testing-Toolbox/) that assert on some important aspects, and execute them from a new UI test in `Lombiq.OSOCE.Tests.UI` (for inpsiration, see the examples there). These methods are also meant to be executed from UI tests in other projects when testing how it integrated with other features. If you've added a demo recipe or sample project to it then utilize that in the test too (see `ExecuteRecipeDirectlyAsync()`). For this, you'll also need to enable the feauture in _Lombiq.OSOCE.Tests.recipe_.
+- If the feature is user-facing, also add UI test extension method(s) with the [Lombiq UI Testing Toolbox for Orchard Core](https://github.com/Lombiq/UI-Testing-Toolbox/) that assert on some important aspects, and execute them from a new UI test in `Lombiq.OSOCE.Tests.UI` (for inpsiration, see the examples there). These methods are also meant to be executed from UI tests in other projects when testing how it integrated with other features. If you've added a demo recipe or sample project to it then utilize that in the test too (see `ExecuteRecipeDirectlyAsync()`). For this, you'll also need to enable the feauture in *Lombiq.OSOCE.Tests.recipe*.
 - If the project is published on NuGet:
-    - For Gulp Extension-using projects you'll need to commit the *wwwroot* folder for now, see [this issue](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/issues/48).
-    - Once published on NuGet, reference it from the app in the `Lombiq.OSOCE.NuGet` solution as well, and enable its features in the _Lombiq.OSOCE.NuGet.Tests.recipe_. If it has UI testing methods, also run them from `Lombiq.OSOCE.NuGet.Tests.UI`.
+  - For Gulp Extension-using projects you'll need to commit the *wwwroot* folder for now, see [this issue](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/issues/48).
+  - Once published on NuGet, reference it from the app in the `Lombiq.OSOCE.NuGet` solution as well, and enable its features in the *Lombiq.OSOCE.NuGet.Tests.recipe*. If it has UI testing methods, also run them from `Lombiq.OSOCE.NuGet.Tests.UI`.
 - If an extension is added, removed or significantly updated in this project, then add, remove or update its description under the "Included Projects" section of this Readme.
 
 ### Opening pull requests
+
 - Open a pull request in this repository for every submodule pull request. That way, static code analysis and complex tests can run. If you forget to do so, a check in the submodule will fail. Once you've created the PR here, just click "Re-run jobs" in your submodule.
 - If you see build errors under your pull request then check out its details:
   - If the entry says "TeamCity build failed" it links to our TeamCity instance. Select "Log in as guest" when presented with a login screen.
@@ -112,6 +109,7 @@ When adding a new extension, or significant new features to existing extensions,
 - Open a pull request for all but trivial changes (like typos) so we can nicely track them, including when generating release notes for the next release.
 
 ### Dependencies between Lombiq projects
+
 When making a Lombiq project depend on another one from this solution, apart from adding a project reference and dependency in the extension manifest for Orchard Core extensions, also add a conditional package reference. This way, when published to NuGet, dependencies will still work. See the project file of `Lombiq.HelpfulExtensions` for an example.
 
 You can just have project references between projects in the same repo though if both projects are published on NuGet (like between projects of the [UI Testing Toolbox](https://github.com/Lombiq/UI-Testing-Toolbox)) since those will be turned into package dependencies automatically.
