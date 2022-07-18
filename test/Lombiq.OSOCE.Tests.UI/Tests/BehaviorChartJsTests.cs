@@ -1,6 +1,10 @@
 using Lombiq.ChartJs.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Attributes;
+using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
+using Shouldly;
+using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -17,6 +21,17 @@ public class BehaviorChartJsTests : UITestBase
     [Theory, Chrome]
     public Task RecipeDataShouldBeDisplayedCorrectly(Browser browser) =>
         ExecuteTestAfterSetupAsync(
-            context => context.TestChartJsSampleBehaviorAsync(),
-            browser);
+            context =>
+            {
+                context.TestChartJsSampleBehaviorAsync();
+                context.GoToRelativeUrlAsync("UIKitShowcase");
+            },
+            browser,
+            configuration => configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
+                async validationResult =>
+                {
+                    var errors = (await validationResult.GetErrorsAsync())
+                        .Where(error => !error.ContainsOrdinalIgnoreCase("Prefer to use the native <button> element"));
+                    errors.ShouldBeEmpty();
+                });
 }
