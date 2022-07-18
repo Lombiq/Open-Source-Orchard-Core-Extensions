@@ -21,10 +21,10 @@ public class BehaviorChartJsTests : UITestBase
     [Theory, Chrome]
     public Task RecipeDataShouldBeDisplayedCorrectly(Browser browser) =>
         ExecuteTestAfterSetupAsync(
-            context =>
+            async context =>
             {
-                context.TestChartJsSampleBehaviorAsync();
-                context.GoToRelativeUrlAsync("UIKitShowcase");
+                await context.TestChartJsSampleBehaviorAsync();
+                await context.GoToRelativeUrlAsync("UIKitShowcase");
             },
             browser,
             configuration => configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
