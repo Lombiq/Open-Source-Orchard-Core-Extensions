@@ -20,7 +20,8 @@
     <PackageReference Include="Lombiq.ChartJs.Tests.UI" Version="2.3.1" />
     <PackageReference Include="Lombiq.DataTables.Tests.UI" Version="3.2.1" />
     <PackageReference Include="Lombiq.Privacy.Tests.UI" Version="3.1.1" />
-    <PackageReference Include="Lombiq.Tests.UI" Version="3.3.0" />
+    <PackageReference Include="Lombiq.HelpfulExtensions.Tests.UI" Version="3.4.1" />
+    <PackageReference Include="Lombiq.Tests.UI" Version="3.4.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
   </ItemGroup>
