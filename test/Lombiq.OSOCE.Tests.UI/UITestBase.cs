@@ -11,7 +11,7 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI;
 
-public class UITestBase : OrchardCoreUITestBase
+public class UITestBase : OrchardCoreUITestBase<Program>
 {
     protected override string AppAssemblyPath => WebAppConfigHelper
         .GetAbsoluteApplicationAssemblyPath("Lombiq.OSOCE.Web", "net6.0");
