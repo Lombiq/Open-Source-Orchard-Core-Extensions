@@ -42,9 +42,4 @@
     <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.4.0" />
   </ItemGroup>
 
-
-  <Target Name="MarkdownValidation" AfterTargets="AfterResolveReferences" BeforeTargets="Compile">
-    <Exec Command="node markdown-to-msbuild.js" WorkingDirectory="$(SolutionDir)" />
-  </Target>
-
 </Project>
