@@ -21,17 +21,6 @@ public class BehaviorChartJsTests : UITestBase
     [Theory, Chrome]
     public Task RecipeDataShouldBeDisplayedCorrectly(Browser browser) =>
         ExecuteTestAfterSetupAsync(
-            async context =>
-            {
-                await context.TestChartJsSampleBehaviorAsync();
-                await context.GoToRelativeUrlAsync("UIKitShowcase");
-            },
-            browser,
-            configuration => configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
-                async validationResult =>
-                {
-                    var errors = (await validationResult.GetErrorsAsync())
-                        .Where(error => !error.ContainsOrdinalIgnoreCase("Prefer to use the native <button> element"));
-                    errors.ShouldBeEmpty();
-                });
+            context => context.TestChartJsSampleBehaviorAsync(),
+            browser);
 }
