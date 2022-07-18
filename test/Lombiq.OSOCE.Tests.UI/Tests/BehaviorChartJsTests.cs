@@ -1,10 +1,6 @@
 using Lombiq.ChartJs.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
-using Shouldly;
-using System;
-using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
