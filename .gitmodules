@@ -78,3 +78,6 @@
 	path = tools/Lombiq.GitHub.Actions
 	url = https://github.com/Lombiq/GitHub-Actions.git
 	branch = dev
+[submodule "tools/Lombiq.Analyzers.PowerShell"]
+	path = tools/Lombiq.Analyzers.PowerShell
+	url = https://github.com/Lombiq/PowerShell-Analyzers.git
