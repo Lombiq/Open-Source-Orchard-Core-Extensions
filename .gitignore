@@ -192,3 +192,4 @@ src/*.Web/Localization
 /.editorconfig
 /FailureDumps/
 /test.out
+.ps1-analyzer-stamp
