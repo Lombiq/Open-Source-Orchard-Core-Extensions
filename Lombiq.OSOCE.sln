@@ -90,6 +90,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries.Cli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.UIKit", "src\Modules\Lombiq.UIKit\Lombiq.UIKit.csproj", "{09F22616-3AF3-479A-9DAE-8EA45757F619}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Privacy.Samples", "src\Modules\Lombiq.Privacy\Lombiq.Privacy.Samples\Lombiq.Privacy.Samples.csproj", "{C004EB6D-91B1-450B-B95E-61C818A2B1C2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{719F19E1-0B20-490C-B325-74E5FD6C838C}"
 EndProject
