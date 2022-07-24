@@ -37,6 +37,7 @@
         // "Lombiq.Privacy.ConsentBanner",
         // "Lombiq.Privacy.FormConsent",
         // "Lombiq.Privacy.RegistrationConsent",
+        "Lombiq.Tests.UI.Shortcuts",
         "Lombiq.TrainingDemo",
         "Lombiq.UIKit",
         "Lombiq.VueJs",
