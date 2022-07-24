@@ -26,6 +26,6 @@ public partial class Program
 {
     protected Program()
     {
-
+        // Nothing to do here.
     }
 }
