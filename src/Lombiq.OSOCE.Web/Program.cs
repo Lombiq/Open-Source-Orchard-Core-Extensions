@@ -8,10 +8,12 @@ builder.Host.UseNLogHost();
 
 var configuration = builder.Configuration;
 
-// Here we're configuring the UI Testing Toolbox (https://github.com/Lombiq/UI-Testing-Toolbox) so UI tests can be
-// executed on the app. For a tutorial on how to create UI tests check out the project. ConfigureUITesting() won't do
-// anything when the app is not run for UI testing.
-builder.Services.AddOrchardCms(orchard => orchard.ConfigureUITesting(configuration, enableShortcutsDuringUITesting: true));
+// Here we're adding the configuration to builder services. It will be used to configuring the UI Testing Toolbox
+// (https://github.com/Lombiq/UI-Testing-Toolbox) so UI tests can be executed on the app. For a tutorial on how to create
+// UI tests check out the project. ConfigureUITesting() won't do anything when the app is not run for UI testing.
+builder.Services.Add(new ServiceDescriptor(configuration.GetType(), configuration));
+
+builder.Services.AddOrchardCms();
 
 var app = builder.Build();
 
