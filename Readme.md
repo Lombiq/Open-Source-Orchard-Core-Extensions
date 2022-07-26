@@ -12,10 +12,6 @@ Since the extensions are included as git submodules when cloning this repo be su
 
 This also serves as an example of an ASP.NET Core web app using Orchard from NuGet.
 
-```
-This will fail.
-```
-
 **You'll need to install NPM and Gulp for the solution to build** since multiple modules depend on them. Check out [the Vue.js module's Readme](https://github.com/Lombiq/Orchard-Vue.js#prerequisites) for details.
 
  Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source Orchard Extensions](https://github.com/Lombiq/Open-Source-Orchard-Extensions).
@@ -110,12 +106,6 @@ When adding a new extension, or significant new features to existing extensions,
   - If the entry says "TeamCity build failed" it links to our TeamCity instance. Select "Log in as guest" when presented with a login screen.
   - If it has the GitHub icon it will send you to the failed step in the Actions tab. You can also click on the "Summary" on the sidebar to download the artifacts (logs, screenshots, etc) and in case of failed UI tests you find the annotations linking to which test failed.
 - Open a pull request for all but trivial changes (like typos) so we can nicely track them, including when generating release notes for the next release.
-
-
-```
-test
-```
-
 
 ### Dependencies between Lombiq projects
 
