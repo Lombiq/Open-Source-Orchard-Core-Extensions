@@ -1,1 +1,8 @@
+ignore$
+\.png$
+\.t$
+^LICENSE\.txt$
+^\.github/
 \.sln$
+\.recipe.json$
+\.config$
