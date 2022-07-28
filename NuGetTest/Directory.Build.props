@@ -4,6 +4,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.Analyzers" Version="2.1.1-osoe-110.12" />
+    <PackageReference Include="Lombiq.Analyzers" Version="2.1.1-osoe-110.14" />
   </ItemGroup>
 </Project>
