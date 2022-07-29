@@ -16,12 +16,10 @@ jobs:
       timeout-minutes: 60
 
   dotnet-info:
+    runs-on: ubuntu-latest
     steps:
       - name: Print .NET SDK info
         run: dotnet info
-        with:
-          machine-types: "[\"windows-latest\"]"
-          timeout-minutes: 1
 
   call-build-and-test-workflow-nuget-test:
     name: Build and Test - NuGetTest solution
