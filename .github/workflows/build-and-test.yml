@@ -19,7 +19,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Print .NET SDK info
-        run: dotnet info
+        run: dotnet --info
 
   call-build-and-test-workflow-nuget-test:
     name: Build and Test - NuGetTest solution
