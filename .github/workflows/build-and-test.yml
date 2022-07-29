@@ -19,9 +19,9 @@ jobs:
     steps:
       - name: Print .NET SDK info
         run: dotnet info
-    with:
-      machine-types: "[\"windows-latest\"]"
-      timeout-minutes: 1
+        with:
+          machine-types: "[\"windows-latest\"]"
+          timeout-minutes: 1
 
   call-build-and-test-workflow-nuget-test:
     name: Build and Test - NuGetTest solution
