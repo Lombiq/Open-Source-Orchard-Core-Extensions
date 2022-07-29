@@ -6,6 +6,8 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <Import Project="..\..\tools\Lombiq.Analyzers.PowerShell\Lombiq.Analyzers.PowerShell\Lombiq.Analyzers.PowerShell.targets" />
+
   <ItemGroup>
     <None Remove="Recipes\Media\meadow-orchard.jpg" />
   </ItemGroup>
@@ -28,7 +30,7 @@
     <ProjectReference Include="..\Modules\Lombiq.ChartJs\Lombiq.ChartJs.Samples\Lombiq.ChartJs.Samples.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.ChartJs\Lombiq.ChartJs\Lombiq.ChartJs.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.DataTables\Lombiq.DataTables.Samples\Lombiq.DataTables.Samples.csproj" />
-    <ProjectReference Include="..\Modules\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Azure.ApplicationInsights\Lombiq.Hosting.Azure.ApplicationInsights.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.Admin.Login\Lombiq.Hosting.Tenants.Admin.Login.csproj" />
@@ -46,9 +48,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OrchardCore.Admin.Abstractions" Version="1.3.0" />
-    <PackageReference Include="OrchardCore.Logging.NLog" Version="1.3.0" />
-    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.3.0" />
+    <PackageReference Include="OrchardCore.Admin.Abstractions" Version="1.4.0" />
+    <PackageReference Include="OrchardCore.Logging.NLog" Version="1.4.0" />
+    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.4.0" />
   </ItemGroup>
 
 </Project>
