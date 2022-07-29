@@ -4,10 +4,15 @@
     <TargetFramework>net6.0</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <RazorRuntimeCompilation>false</RazorRuntimeCompilation>
+    
+    <MarkdownAnalysis>solution</MarkdownAnalysis>
+    <ExecDotnetPostcleanCommand>false</ExecDotnetPostcleanCommand>
+    <ExecDotnetPrebuildCommand>false</ExecDotnetPrebuildCommand>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\" />
+    <None Remove="node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +28,7 @@
     <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="2.1.0" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="2.1.0" />
     <PackageReference Include="Lombiq.JsonEditor" Version="2.1.0" />
+    <PackageReference Include="Lombiq.NodeJs.Extensions" Version="1.0.0-osoe-128.1" />
     <PackageReference Include="Lombiq.Privacy" Version="3.1.1" />
     <PackageReference Include="Lombiq.Privacy.Samples" Version="3.1.1" />
     <PackageReference Include="Lombiq.SetupExtensions" Version="2.1.0" />
