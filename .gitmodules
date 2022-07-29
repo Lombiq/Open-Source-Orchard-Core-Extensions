@@ -74,3 +74,7 @@
 	path = src/Themes/Lombiq.BaseTheme
 	url = https://github.com/Lombiq/Orchard-Base-Theme.git
 	branch = dev
+[submodule "src/Themes/Lombiq.Hosting.MediaTheme"]
+	path = src/Themes/Lombiq.Hosting.MediaTheme
+	url = https://github.com/Lombiq/Hosting-Media-Theme
+	branch = dev
