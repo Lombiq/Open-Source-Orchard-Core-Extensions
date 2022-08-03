@@ -12,9 +12,12 @@ Since the extensions are included as git submodules when cloning this repo be su
 
 This also serves as an example of an ASP.NET Core web app using Orchard from NuGet.
 
-**You'll need to install NPM and Gulp for the solution to build** since multiple modules depend on them. Check out [the Vue.js module's Readme](https://github.com/Lombiq/Orchard-Vue.js#prerequisites) for details.
-
  Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source Orchard Extensions](https://github.com/Lombiq/Open-Source-Orchard-Extensions).
+
+## Pre-requisites
+
+- You'll need to install NPM and Gulp for the solution to build since multiple modules depend on them. Check out [the Vue.js module's Readme](https://github.com/Lombiq/Orchard-Vue.js#prerequisites) for details.
+- Install what's necessary for [Lombiq PowerShell Analyzers](https://github.com/Lombiq/PowerShell-Analyzers/), otherwise you'll get build errors for PowerShell files.
 
 ## Included Projects
 
