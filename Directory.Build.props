@@ -2,7 +2,7 @@
   <!-- Copying the Lombiq logo as an icon to all NuGet-published projects. -->
   <Target Name="Copy NuGet icon"
           AfterTargets="AfterResolveReferences"
-          Condition="'$(PackageLicenseFile)' != ''>
+          Condition="'$(PackageLicenseFile)' != ''">
     <Copy SourceFiles="$(MSBuildThisFileDirectory)LombiqSymbolLogoColorWhiteFlaskSquareForNuGetPackages.png"
           DestinationFiles="$(ProjectDir)NuGetIcon.png"
           SkipUnchangedFiles="true"/>
