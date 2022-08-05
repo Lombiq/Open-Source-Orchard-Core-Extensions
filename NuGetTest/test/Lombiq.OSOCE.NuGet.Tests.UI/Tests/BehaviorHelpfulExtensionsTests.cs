@@ -26,4 +26,3 @@ public class BehaviorHelpfulExtensionsTests : UITestBase
             context => context.TestFeatureWidgetsAsync(),
             browser);
 }
-
