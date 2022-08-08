@@ -16,8 +16,8 @@ Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source
 
 ## Pre-requisites
 
-- You'll need to install NPM and Gulp for the solution to build since multiple modules depend on them. Check out [the Vue.js module's Readme](https://github.com/Lombiq/Orchard-Vue.js#prerequisites) for details.
-- Install what's necessary for [Lombiq PowerShell Analyzers](https://github.com/Lombiq/PowerShell-Analyzers/), otherwise you'll get build errors for PowerShell files.
+- You need Node.js for building client-side assets in multiple projects. Check out [Lombiq Node.js Extensions Readme](https://github.com/Lombiq/NodeJs-Extensions/Readme.md#prerequisites) for details.
+- [Install PowerShell 7](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell) or newer for [Lombiq PowerShell Analyzers](https://github.com/Lombiq/PowerShell-Analyzers/). The `Lombiq PowerShell Analyzers` project is compatible with Windows PowerShell (PowerShell 5), but the scripts in _tools/Lombiq.GitHub.Actions_ only have to run on PS7 and don't need to be backwards compatible so PS7 is required specifically in this solution.
 
 ## Included Projects
 
