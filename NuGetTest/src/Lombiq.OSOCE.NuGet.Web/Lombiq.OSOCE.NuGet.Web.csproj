@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <RazorRuntimeCompilation>false</RazorRuntimeCompilation>
-    
+
     <MarkdownAnalysis>solution</MarkdownAnalysis>
     <ExecDotnetPostcleanCommand>false</ExecDotnetPostcleanCommand>
     <ExecDotnetPrebuildCommand>false</ExecDotnetPrebuildCommand>
@@ -19,8 +19,8 @@
     <PackageReference Include="Lombiq.AuditTrailExtensions" Version="2.1.0" />
     <PackageReference Include="Lombiq.BaseTheme" Version="1.1.2" />
     <PackageReference Include="Lombiq.BaseTheme.Samples" Version="1.1.2" />
-    <PackageReference Include="Lombiq.ChartJs" Version="2.3.1" />
-    <PackageReference Include="Lombiq.ChartJs.Samples" Version="2.3.1" />
+    <PackageReference Include="Lombiq.ChartJs" Version="2.3.2-alpha.osoe-161.8" />
+    <PackageReference Include="Lombiq.ChartJs.Samples" Version="2.3.2-alpha.osoe-161.8" />
     <PackageReference Include="Lombiq.DataTables" Version="3.2.1" />
     <PackageReference Include="Lombiq.DataTables.Samples" Version="3.2.1" />
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="3.4.1" />
@@ -28,7 +28,7 @@
     <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="2.1.0" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="2.1.0" />
     <PackageReference Include="Lombiq.JsonEditor" Version="2.1.0" />
-    <PackageReference Include="Lombiq.NodeJs.Extensions" Version="1.0.0-osoe-128.1" />
+    <PackageReference Include="Lombiq.NodeJs.Extensions" Version="1.0.0-alpha.osoe-161.8" />
     <PackageReference Include="Lombiq.Privacy" Version="3.1.1" />
     <PackageReference Include="Lombiq.Privacy.Samples" Version="3.1.1" />
     <PackageReference Include="Lombiq.SetupExtensions" Version="2.1.0" />
