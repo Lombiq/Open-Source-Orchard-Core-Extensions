@@ -64,6 +64,8 @@ This also serves as an example of an ASP.NET Core web app using Orchard from NuG
 
 - Tools
   - [Lombiq.Analyzers](https://github.com/Lombiq/.NET-Analyzers): .NET code analyzers and code convention settings for [Lombiq](https://lombiq.com) projects, predominantly for [Orchard Core](https://www.orchardcore.net/) apps but also any .NET apps. We use these to enforce common standards across all our .NET projects, including e.g. all of our [open-source Orchard Core extensions](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions).
+  - [Lombiq GitHub Actions](https://github.com/Lombiq/GitHub-Actions): Some common workflows and actions for Github Actions shared between Lombiq projects, e.g. to build and test Orchard Core apps, publish packages to NuGet, verify that a Git submodule pull request has a corresponding superproject one. These can be invoked from any other repository's build.
+  - [Lombiq PowerShell Analyzers](https://github.com/Lombiq/PowerShell-Analyzers): PowerShell static code analysis via [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) and Lombiq's recommended configuration for it. Use it from the CLI, in GitHub Actions, or integrated into MSBuild builds.
 
 ## Samples and Recipes
 
