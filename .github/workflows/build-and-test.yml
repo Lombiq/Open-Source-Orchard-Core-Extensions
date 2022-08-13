@@ -13,7 +13,7 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-167
     with:
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
-      timeout-minutes: 60
+      timeout-minutes: 360
 
   call-build-and-test-workflow-nuget-test:
     name: Build and Test - NuGetTest solution
@@ -21,4 +21,4 @@ jobs:
     with:
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 30
+      timeout-minutes: 360
