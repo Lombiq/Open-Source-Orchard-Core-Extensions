@@ -23,6 +23,7 @@
     <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="2.1.0" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="2.1.0" />
     <PackageReference Include="Lombiq.JsonEditor" Version="2.1.0" />
+    <PackageReference Include="Lombiq.OrchardCoreApiClient" Version="1.0.0" />
     <PackageReference Include="Lombiq.Privacy" Version="3.1.2" />
     <PackageReference Include="Lombiq.Privacy.Samples" Version="3.1.2" />
     <PackageReference Include="Lombiq.SetupExtensions" Version="2.1.0" />

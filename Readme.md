@@ -27,6 +27,7 @@ This also serves as an example of an ASP.NET Core web app using Orchard from NuG
   - [Lombiq.HelpfulLibraries.LinqToDb](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.LinqToDb): With the help of this project you can write LINQ expressions and run them with a [YesSql](https://github.com/sebastienros/yessql) `ISession` extension method to query from the DB instead of writing plain SQL queries. Uses the [LINQ to DB project](https://linq2db.github.io/). You can watch a demo video of the project [here](https://www.youtube.com/watch?v=ldJOdCSsWJo).
   - [Lombiq.HelpfulLibraries.RestEase](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.RestEase): Adds a typed HTTP client to the service collection using RestEase.
   - [Lombiq.HelpfulLibraries.Targets](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.Targets): Targets project which references all Helpful Libraries. Only necessary for NuGet publishing, just as _Lombiq.HelpfulLibraries.sln_.
+  - [Lombiq.OrchardCoreApiClient](https://github.com/Lombiq/Orchard-Core-API-Client): A client library for communicating with the [Orchard Core](https://www.orchardcore.net/) web APIs, it contains an implementation for the tenant management API and a console application for testing and demonstration.
 
 - Modules
   - [Lombiq.AuditTrailExtensions](https://github.com/Lombiq/Audit-Trail-Extensions): A module with additional features for the [Audit Trail module](https://docs.orchardcore.net/en/latest/docs/reference/modules/AuditTrail/) in Orchard Core.
@@ -64,6 +65,8 @@ This also serves as an example of an ASP.NET Core web app using Orchard from NuG
 
 - Tools
   - [Lombiq.Analyzers](https://github.com/Lombiq/.NET-Analyzers): .NET code analyzers and code convention settings for [Lombiq](https://lombiq.com) projects, predominantly for [Orchard Core](https://www.orchardcore.net/) apps but also any .NET apps. We use these to enforce common standards across all our .NET projects, including e.g. all of our [open-source Orchard Core extensions](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions).
+  - [Lombiq GitHub Actions](https://github.com/Lombiq/GitHub-Actions): Some common workflows and actions for Github Actions shared between Lombiq projects, e.g. to build and test Orchard Core apps, publish packages to NuGet, verify that a Git submodule pull request has a corresponding superproject one. These can be invoked from any other repository's build.
+  - [Lombiq PowerShell Analyzers](https://github.com/Lombiq/PowerShell-Analyzers): PowerShell static code analysis via [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) and Lombiq's recommended configuration for it. Use it from the CLI, in GitHub Actions, or integrated into MSBuild builds.
 
 ## Samples and Recipes
 
