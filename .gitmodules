@@ -85,3 +85,7 @@
 	path = src/Themes/Lombiq.Hosting.MediaTheme
 	url = https://github.com/Lombiq/Hosting-Media-Theme
 	branch = dev
+[submodule "src/Libraries/Lombiq.OrchardCoreApiClient"]
+	path = src/Libraries/Lombiq.OrchardCoreApiClient
+	url = https://github.com/Lombiq/Orchard-Core-API-Client.git
+	branch = issue/NEST-295
