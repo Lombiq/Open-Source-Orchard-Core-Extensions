@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Lombiq.OSOCE.Tests.UI.Tests;
+namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests;
 
 public class BehaviorApplicationInsightsTests : UITestBase
 {
@@ -21,10 +21,6 @@ public class BehaviorApplicationInsightsTests : UITestBase
         ExecuteTestAfterSetupAsync(
             async context =>
             {
-                // Note that the below section is duplicated between this and the corresponding test in the NuGetTest
-                // solution. This is not nice, but the alternative is sharing a project between the solutions (which
-                // brings its own issues) just for this, or publishing it as a NuGet package (that depends both on the
-                // AI and Privacy modules). Not worth it for a few lines.
                 await context.EnableFeatureDirectlyAsync("Lombiq.Hosting.Azure.ApplicationInsights");
                 await context.EnableFeatureDirectlyAsync("Lombiq.Privacy.ConsentBanner");
 
