@@ -30,17 +30,5 @@ public class IdleTenantTests : UITestBase
                         "Shutting down tenant \"Default\" because of idle timeout");
                 };
             },
-            browser,
-            configuration =>
-            {
-                configuration.OrchardCoreConfiguration.BeforeAppStart +=
-                    (_, argumentsBuilder) =>
-                    {
-                        argumentsBuilder
-                            .Add("--Lombiq_Hosting_Tenants_IdleTenantManagement:IdleMinutesOptions")
-                            .Add("1");
-
-                        return Task.CompletedTask;
-                    };
-            });
+            browser);
 }
