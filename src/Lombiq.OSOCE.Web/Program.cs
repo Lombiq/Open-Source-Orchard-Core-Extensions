@@ -1,8 +1,5 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using NLog;
-using NLog.Config;
 using OrchardCore.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,15 +12,6 @@ var configuration = builder.Configuration;
 // executed on the app. For a tutorial on how to create UI tests check out the project. ConfigureUITesting() won't do
 // anything when the app is not run for UI testing.
 builder.Services.AddOrchardCms(orchard => orchard.ConfigureUITesting(configuration, enableShortcutsDuringUITesting: true));
-
-if (configuration.IsUITesting())
-{
-    LogManager.Configuration.LoggingRules.Add(
-        new LoggingRule(
-            "Lombiq.Hosting.Tenants.IdleTenantManagement.*",
-            LogLevel.Info,
-            LogManager.Configuration.FindTargetByName("allfile")));
-}
 
 var app = builder.Build();
 

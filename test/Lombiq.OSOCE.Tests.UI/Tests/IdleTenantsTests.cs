@@ -18,12 +18,9 @@ public class IdleTenantTests : UITestBase
     [Theory, Chrome]
     public Task ShuttingDownIdleTenantsShouldWork(Browser browser) =>
         ExecuteTestAfterSetupAsync(
-            async context =>
+            context =>
             {
                 System.Threading.Thread.Sleep(71000);
-
-                await context.SignInDirectlyAsync();
-                await context.GoToDashboardAsync();
 
                 context.Configuration.AssertAppLogsAsync = async webApplicationInstance =>
                 {
@@ -31,9 +28,6 @@ public class IdleTenantTests : UITestBase
 
                     webAppInstanceLog.ShouldContain(
                         "Shutting down tenant \"Default\" because of idle timeout");
-
-                    webAppInstanceLog.ShouldContain(
-                        "Creating shell context for tenant 'Default'");
                 };
             },
             browser,
@@ -43,7 +37,7 @@ public class IdleTenantTests : UITestBase
                     (_, argumentsBuilder) =>
                     {
                         argumentsBuilder
-                            .Add("--OrchardCore:Lombiq_Hosting_Tenants_IdleTenantManagement:IdleMinutesOptions")
+                            .Add("--Lombiq_Hosting_Tenants_IdleTenantManagement:IdleMinutesOptions")
                             .Add("1");
 
                         return Task.CompletedTask;
