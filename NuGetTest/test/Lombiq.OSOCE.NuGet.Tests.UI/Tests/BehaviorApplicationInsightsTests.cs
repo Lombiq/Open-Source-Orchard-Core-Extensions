@@ -1,8 +1,8 @@
 using Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI.Extensions;
+using Lombiq.Privacy.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
-using OpenQA.Selenium;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -22,13 +22,8 @@ public class BehaviorApplicationInsightsTests : UITestBase
             async context =>
             {
                 await context.EnableFeatureDirectlyAsync("Lombiq.Hosting.Azure.ApplicationInsights");
-                await context.EnableFeatureDirectlyAsync("Lombiq.Privacy.ConsentBanner");
 
-                await context.GoToHomePageAsync();
-
-                // For tracking to be enabled, even in offline mode, the user needs to give consent.
-                await context.ClickReliablyOnAsync(By.Id("privacy-consent-accept-button"));
-                context.Refresh();
+                await context.EnablePrivacyConsentBannerFeatureAndAcceptPrivacyConsentAsync();
 
                 context.TestApplicationInsightsTrackingInOfflineOperation();
             },
