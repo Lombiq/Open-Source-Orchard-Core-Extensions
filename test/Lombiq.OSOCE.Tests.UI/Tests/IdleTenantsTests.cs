@@ -1,4 +1,5 @@
-﻿using Lombiq.Tests.UI.Attributes;
+﻿using CliWrap.Builders;
+using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using Shouldly;
@@ -30,5 +31,15 @@ public class IdleTenantTests : UITestBase
                         "Shutting down tenant \"Default\" because of idle timeout");
                 };
             },
-            browser);
+            browser,
+            config =>
+            {
+                config.BrowserConfiguration.Headless = false;
+                var argsBuilder = new ArgumentsBuilder();
+                config.OrchardCoreConfiguration.BeforeAppStart += (_) =>
+                {
+                    argsBuilder.Add("--Lombiq_Hosting_Tenants_IdleTenantManagement:DisableIdleTenants").Add("1");
+                };
+            }
+        );
 }
