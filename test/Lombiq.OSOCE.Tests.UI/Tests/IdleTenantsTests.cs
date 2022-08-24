@@ -1,5 +1,4 @@
-﻿using CliWrap.Builders;
-using Lombiq.Tests.UI.Attributes;
+﻿using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using Shouldly;
@@ -19,8 +18,10 @@ public class IdleTenantTests : UITestBase
     [Theory, Chrome]
     public Task ShuttingDownIdleTenantsShouldWork(Browser browser) =>
         ExecuteTestAfterSetupAsync(
-            context =>
+            async context =>
             {
+                await context.SignInDirectlyAsync();
+                await context.GoToDashboardAsync();
                 System.Threading.Thread.Sleep(71000);
 
                 context.Configuration.AssertAppLogsAsync = async webApplicationInstance =>
@@ -32,14 +33,16 @@ public class IdleTenantTests : UITestBase
                 };
             },
             browser,
-            config =>
+            configuration =>
             {
-                config.BrowserConfiguration.Headless = false;
-                var argsBuilder = new ArgumentsBuilder();
-                config.OrchardCoreConfiguration.BeforeAppStart += (_) =>
+                configuration.BrowserConfiguration.Headless = false;
+                configuration.OrchardCoreConfiguration.BeforeAppStart += (_, argumentsBuilder) =>
                 {
-                    argsBuilder.Add("--Lombiq_Hosting_Tenants_IdleTenantManagement:DisableIdleTenants").Add("1");
+                    argumentsBuilder
+                        .Add("--OrchardCore:Lombiq_Hosting_Tenants_IdleTenantManagement:IdleMinutesOptions")
+                        .Add("1");
+
+                    return Task.CompletedTask;
                 };
-            }
-        );
+            });
 }
