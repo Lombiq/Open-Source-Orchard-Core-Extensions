@@ -18,10 +18,8 @@ public class IdleTenantTests : UITestBase
     [Theory, Chrome]
     public Task ShuttingDownIdleTenantsShouldWork(Browser browser) =>
         ExecuteTestAfterSetupAsync(
-            async context =>
+            context =>
             {
-                await context.SignInDirectlyAsync();
-                await context.GoToDashboardAsync();
                 System.Threading.Thread.Sleep(71000);
 
                 context.Configuration.AssertAppLogsAsync = async webApplicationInstance =>
@@ -34,15 +32,13 @@ public class IdleTenantTests : UITestBase
             },
             browser,
             configuration =>
-            {
-                configuration.BrowserConfiguration.Headless = false;
                 configuration.OrchardCoreConfiguration.BeforeAppStart += (_, argumentsBuilder) =>
                 {
                     argumentsBuilder
-                        .Add("--OrchardCore:Lombiq_Hosting_Tenants_IdleTenantManagement:IdleMinutesOptions")
+                        .Add("--OrchardCore:Lombiq_Hosting_Tenants_IdleTenantManagement:IdleMinutesOptions:MaxIdleMinutes")
                         .Add("1");
 
                     return Task.CompletedTask;
-                };
-            });
+                }
+            );
 }
