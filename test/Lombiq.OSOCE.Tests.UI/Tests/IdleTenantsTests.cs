@@ -20,6 +20,8 @@ public class IdleTenantTests : UITestBase
         ExecuteTestAfterSetupAsync(
             context =>
             {
+                // We are letting the site to sit idle for more than a minute so that the
+                // tenant could be shut down by the background task.
                 System.Threading.Thread.Sleep(71000);
 
                 context.Configuration.AssertAppLogsAsync = async webApplicationInstance =>
