@@ -43,8 +43,6 @@ public class UITestBase : OrchardCoreUITestBase<Program>
                 configuration.BrowserConfiguration.Headless =
                     TestConfigurationManager.GetBoolConfiguration("BrowserConfiguration:Headless", defaultValue: false);
 
-                configuration.OrchardCoreConfiguration.EnableApplicationInsightsOfflineOperation();
-
                 configuration.AssertAppLogsAsync = async webApplicationInstance =>
                     (await webApplicationInstance.GetLogOutputAsync())
                     .ReplaceOrdinalIgnoreCase(
