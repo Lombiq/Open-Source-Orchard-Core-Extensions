@@ -1,7 +1,6 @@
-﻿using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Extensions;
+using Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI.Extensions;
+using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Services;
-using Shouldly;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -20,32 +19,14 @@ public class IdleTenantTests : UITestBase
         ExecuteTestAfterSetupAsync(
             async context =>
             {
-                // We are letting the site to sit idle for more than a minute so that the
-                // tenant could be shut down by the background task.
-                System.Threading.Thread.Sleep(71000);
-
-                // If we can access the admin menu after the tenant shut down that means the new shell was created
-                // and it is working as intended.
-                await context.SignInDirectlyAsync();
-                await context.GoToDashboardAsync();
+                await context.TestIdleTenantManagerBehaviorAsync();
 
                 context.Configuration.AssertAppLogsAsync = async webApplicationInstance =>
                 {
-                    var webAppInstanceLog = await webApplicationInstance.GetLogOutputAsync();
-
-                    webAppInstanceLog.ShouldContain(
-                        "Shutting down tenant \"Default\" because of idle timeout");
+                    await AssertAppLogsDefaultOSOCEAsync(webApplicationInstance);
+                    await IdleTenantManagementExtensions.AssertAppLogsWithIdleCheckAsync(webApplicationInstance);
                 };
             },
             browser,
-            configuration =>
-                configuration.OrchardCoreConfiguration.BeforeAppStart += (_, argumentsBuilder) =>
-                {
-                    argumentsBuilder
-                        .Add("--OrchardCore:Lombiq_Hosting_Tenants_IdleTenantManagement:IdleMinutesOptions:MaxIdleMinutes")
-                        .Add("1");
-
-                    return Task.CompletedTask;
-                }
-            );
+            configuration => configuration.SetMaxIdleMinutesAndLoggingForUITest());
 }
