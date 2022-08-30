@@ -30,6 +30,7 @@
         "Lombiq.Hosting.Tenants.Admin.Login",
         "Lombiq.Hosting.Tenants.Admin.Login.SubTenant",
         "Lombiq.Hosting.Tenants.Management",
+        "Lombiq.Hosting.Tenants.IdleTenantManagement.DisableIdleTenants",
         "Lombiq.JsonEditor",
         "Lombiq.OSOCE.Samples",
         // We only enable these on a specific test, because it overlaps with too many things.

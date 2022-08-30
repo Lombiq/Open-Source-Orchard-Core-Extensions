@@ -43,13 +43,16 @@ public class UITestBase : OrchardCoreUITestBase
                 configuration.BrowserConfiguration.Headless =
                     TestConfigurationManager.GetBoolConfiguration("BrowserConfiguration:Headless", defaultValue: false);
 
-                configuration.AssertAppLogsAsync = async webApplicationInstance =>
-                    (await webApplicationInstance.GetLogOutputAsync())
-                    .ReplaceOrdinalIgnoreCase(
-                        "|Lombiq.TrainingDemo.Services.DemoBackgroundTask|ERROR|Expected non-error",
-                        "|Lombiq.TrainingDemo.Services.DemoBackgroundTask|EXPECTED_ERROR|Expected non-error")
-                    .ShouldNotContain("|ERROR|");
+                configuration.AssertAppLogsAsync = AssertAppLogsDefaultOSOCEAsync;
 
                 if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
             });
+
+    public static readonly Func<IWebApplicationInstance, Task> AssertAppLogsDefaultOSOCEAsync =
+        async webApplicationInstance =>
+            (await webApplicationInstance.GetLogOutputAsync())
+            .ReplaceOrdinalIgnoreCase(
+                "|Lombiq.TrainingDemo.Services.DemoBackgroundTask|ERROR|Expected non-error",
+                "|Lombiq.TrainingDemo.Services.DemoBackgroundTask|EXPECTED_ERROR|Expected non-error")
+            .ShouldNotContain("|ERROR|");
 }
