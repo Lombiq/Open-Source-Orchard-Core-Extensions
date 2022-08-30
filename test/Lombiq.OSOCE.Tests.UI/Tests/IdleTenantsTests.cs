@@ -18,11 +18,16 @@ public class IdleTenantTests : UITestBase
     [Theory, Chrome]
     public Task ShuttingDownIdleTenantsShouldWork(Browser browser) =>
         ExecuteTestAfterSetupAsync(
-            context =>
+            async context =>
             {
                 // We are letting the site to sit idle for more than a minute so that the
                 // tenant could be shut down by the background task.
                 System.Threading.Thread.Sleep(71000);
+
+                // If we can access the admin menu after the tenant shut down that means the new shell was created
+                // and it is working as intended.
+                await context.SignInDirectlyAsync();
+                await context.GoToDashboardAsync();
 
                 context.Configuration.AssertAppLogsAsync = async webApplicationInstance =>
                 {
