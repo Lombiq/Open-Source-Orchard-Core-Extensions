@@ -23,7 +23,6 @@ public class IdleTenantTests : UITestBase
 
                 context.Configuration.AssertAppLogsAsync = async webApplicationInstance =>
                 {
-                    await AssertAppLogsDefaultOSOCEAsync(webApplicationInstance);
                     await IdleTenantManagementExtensions.AssertAppLogsWithIdleCheckAsync(webApplicationInstance);
                 };
             },
