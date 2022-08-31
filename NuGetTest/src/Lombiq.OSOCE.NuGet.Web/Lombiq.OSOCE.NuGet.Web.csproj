@@ -20,8 +20,9 @@
     <PackageReference Include="Lombiq.DataTables.Samples" Version="3.2.1" />
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="3.5.0" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="3.2.1-alpha.osoe-74.0" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="2.1.0" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="2.1.0" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="2.2.0" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="2.2.0" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="2.2.0" />
     <PackageReference Include="Lombiq.JsonEditor" Version="2.1.0" />
     <PackageReference Include="Lombiq.OrchardCoreApiClient" Version="1.0.0" />
     <PackageReference Include="Lombiq.Privacy" Version="3.1.2" />
