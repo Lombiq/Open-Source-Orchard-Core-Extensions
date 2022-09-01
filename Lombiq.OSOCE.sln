@@ -127,6 +127,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Hosting.MediaTheme.B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.NodeJs.Extensions.SolutionMarkdownAnalysis", "src\Utilities\Lombiq.NodeJs.Extensions\Lombiq.NodeJs.Extensions.SolutionMarkdownAnalysis\Lombiq.NodeJs.Extensions.SolutionMarkdownAnalysis.csproj", "{6774F282-8896-4187-89C7-00D2CCB0ABA7}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OrchardCoreApiClient", "src\Libraries\Lombiq.OrchardCoreApiClient\Lombiq.OrchardCoreApiClient\Lombiq.OrchardCoreApiClient.csproj", "{265283DA-2F31-4BA8-82A0-93A6E2C881DD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OrchardCoreApiClient.Tester", "src\Libraries\Lombiq.OrchardCoreApiClient\Lombiq.OrchardCoreApiClient.Tester\Lombiq.OrchardCoreApiClient.Tester.csproj", "{8D780D8D-0AFD-40F1-BD79-F687727384EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -629,6 +633,30 @@ Global
 		{6774F282-8896-4187-89C7-00D2CCB0ABA7}.Release|x64.Build.0 = Release|Any CPU
 		{6774F282-8896-4187-89C7-00D2CCB0ABA7}.Release|x86.ActiveCfg = Release|Any CPU
 		{6774F282-8896-4187-89C7-00D2CCB0ABA7}.Release|x86.Build.0 = Release|Any CPU
+		{265283DA-2F31-4BA8-82A0-93A6E2C881DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{265283DA-2F31-4BA8-82A0-93A6E2C881DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{265283DA-2F31-4BA8-82A0-93A6E2C881DD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{265283DA-2F31-4BA8-82A0-93A6E2C881DD}.Debug|x64.Build.0 = Debug|Any CPU
+		{265283DA-2F31-4BA8-82A0-93A6E2C881DD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{265283DA-2F31-4BA8-82A0-93A6E2C881DD}.Debug|x86.Build.0 = Debug|Any CPU
+		{265283DA-2F31-4BA8-82A0-93A6E2C881DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{265283DA-2F31-4BA8-82A0-93A6E2C881DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{265283DA-2F31-4BA8-82A0-93A6E2C881DD}.Release|x64.ActiveCfg = Release|Any CPU
+		{265283DA-2F31-4BA8-82A0-93A6E2C881DD}.Release|x64.Build.0 = Release|Any CPU
+		{265283DA-2F31-4BA8-82A0-93A6E2C881DD}.Release|x86.ActiveCfg = Release|Any CPU
+		{265283DA-2F31-4BA8-82A0-93A6E2C881DD}.Release|x86.Build.0 = Release|Any CPU
+		{8D780D8D-0AFD-40F1-BD79-F687727384EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D780D8D-0AFD-40F1-BD79-F687727384EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D780D8D-0AFD-40F1-BD79-F687727384EA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8D780D8D-0AFD-40F1-BD79-F687727384EA}.Debug|x64.Build.0 = Debug|Any CPU
+		{8D780D8D-0AFD-40F1-BD79-F687727384EA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8D780D8D-0AFD-40F1-BD79-F687727384EA}.Debug|x86.Build.0 = Debug|Any CPU
+		{8D780D8D-0AFD-40F1-BD79-F687727384EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D780D8D-0AFD-40F1-BD79-F687727384EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D780D8D-0AFD-40F1-BD79-F687727384EA}.Release|x64.ActiveCfg = Release|Any CPU
+		{8D780D8D-0AFD-40F1-BD79-F687727384EA}.Release|x64.Build.0 = Release|Any CPU
+		{8D780D8D-0AFD-40F1-BD79-F687727384EA}.Release|x86.ActiveCfg = Release|Any CPU
+		{8D780D8D-0AFD-40F1-BD79-F687727384EA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -682,6 +710,8 @@ Global
 		{4A82D540-2B46-439F-B120-4931E6418B07} = {574156BC-2074-47C9-8EA8-70DED6658DD5}
 		{24F0B084-9A9F-4C13-88AD-C322A82DE0BC} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{6774F282-8896-4187-89C7-00D2CCB0ABA7} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
+		{265283DA-2F31-4BA8-82A0-93A6E2C881DD} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
+		{8D780D8D-0AFD-40F1-BD79-F687727384EA} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
