@@ -1,5 +1,16 @@
 <Project>
   <PropertyGroup>
     <NuGetTestbed>true</NuGetTestbed>
+    <!-- This setting prevents .stylelintrc files from being created in projects that use Lombiq Node.js Extensions.
+         Instead, we use a global .stylelintrc file at the solution root. -->
+    <NodeJsExtensionsCreateStylelintConfigurationFile>false</NodeJsExtensionsCreateStylelintConfigurationFile>
+    <!-- Instruct Node.js Extensions to copy an .eslintrc file to the current directory, which is the solution root. -->
+    <NodeJsExtensionsGlobalESLintConfigurationDirectory>$(MSBuildThisFileDirectory)..</NodeJsExtensionsGlobalESLintConfigurationDirectory>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Lombiq.Analyzers" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
 </Project>

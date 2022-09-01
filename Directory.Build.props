@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <!-- Copying the Lombiq logo as an icon to all NuGet-published projects. -->
-  <Target Name="Copy NuGet icon" AfterTargets="AfterResolveReferences" Condition="'$(PackageLicenseFile)' != ''">
+  <Target Name="Copy NuGet icon"
+          AfterTargets="AfterResolveReferences"
+          Condition="'$(PackageLicenseFile)' != ''">
     <Copy SourceFiles="$(MSBuildThisFileDirectory)LombiqSymbolLogoColorWhiteFlaskSquareForNuGetPackages.png"
           DestinationFiles="$(ProjectDir)NuGetIcon.png"
           SkipUnchangedFiles="true" />
@@ -20,5 +22,5 @@
     <NuGetBuild>true</NuGetBuild>
   </PropertyGroup> -->
 
-  <Import Project="tools/Lombiq.Analyzers/Build.props" Condition="'$(NuGetTestbed)' != 'true'" />
+  <Import Project="tools/Lombiq.Analyzers/Lombiq.Analyzers/Build.props" />
 </Project>
