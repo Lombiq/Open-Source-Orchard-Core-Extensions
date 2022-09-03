@@ -33,7 +33,18 @@ public class UITestBase : OrchardCoreUITestBase<Program>
         Func<UITestContext, Task<Uri>> setupOperation,
         Func<OrchardCoreUITestExecutorConfiguration, Task> changeConfigurationAsync) =>
         base.ExecuteTestAsync(
-            testAsync,
+            async context =>
+            {
+                try
+                {
+                    await testAsync(context);
+                }
+                finally
+                {
+                    var logs = await context.Application.GetLogOutputAsync();
+                    context.AppendFailureDump("orchard.log", logs);
+                }
+            },
             browser,
             setupOperation,
             async configuration =>
