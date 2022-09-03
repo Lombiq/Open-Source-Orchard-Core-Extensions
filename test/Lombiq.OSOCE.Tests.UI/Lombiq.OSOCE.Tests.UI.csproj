@@ -9,7 +9,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Compile Remove="Tests\BehaviorApplicationInsightsTests.cs" />
       <Compile Remove="Tests\BehaviorBaseThemeTests.cs" />
       <Compile Remove="Tests\BehaviorChartJsTests.cs" />
       <Compile Remove="Tests\BehaviorHelpfulExtensionsTests.cs" />
@@ -20,7 +19,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Include="Tests\BehaviorApplicationInsightsTests.cs" />
       <None Include="Tests\BehaviorBaseThemeTests.cs" />
       <None Include="Tests\BehaviorChartJsTests.cs" />
       <None Include="Tests\BehaviorHelpfulExtensionsTests.cs" />
