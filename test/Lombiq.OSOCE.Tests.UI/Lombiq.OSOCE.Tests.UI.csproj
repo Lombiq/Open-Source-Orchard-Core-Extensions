@@ -8,6 +8,40 @@
       <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Compile Remove="Tests\BehaviorApplicationInsightsTests.cs" />
+      <Compile Remove="Tests\BehaviorBaseThemeTests.cs" />
+      <Compile Remove="Tests\BehaviorChartJsTests.cs" />
+      <Compile Remove="Tests\BehaviorHelpfulExtensionsTests.cs" />
+      <Compile Remove="Tests\BehaviorPrivacyTests.cs" />
+      <Compile Remove="Tests\BehaviorVueTests.cs" />
+      <Compile Remove="Tests\CustomAdminPrefixTests.cs" />
+      <Compile Remove="Tests\RetrievalDataTablesTests.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="appsettings.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="appsettings.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="Tests\BehaviorApplicationInsightsTests.cs" />
+      <None Include="Tests\BehaviorBaseThemeTests.cs" />
+      <None Include="Tests\BehaviorChartJsTests.cs" />
+      <None Include="Tests\BehaviorHelpfulExtensionsTests.cs" />
+      <None Include="Tests\BehaviorPrivacyTests.cs" />
+      <None Include="Tests\BehaviorVueTests.cs" />
+      <None Include="Tests\CustomAdminPrefixTests.cs" />
+      <None Include="Tests\RetrievalDataTablesTests.cs" />
+    </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
