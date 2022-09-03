@@ -9,6 +9,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Remove="Tests\IdleTenantsTests.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
       <None Remove="appsettings.json" />
     </ItemGroup>
 
@@ -18,6 +22,10 @@
         <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="Tests\IdleTenantsTests.cs" />
     </ItemGroup>
 
   <ItemGroup>
