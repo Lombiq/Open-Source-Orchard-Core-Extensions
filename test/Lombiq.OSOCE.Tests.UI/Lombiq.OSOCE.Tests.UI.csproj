@@ -9,13 +9,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Compile Remove="Tests\BehaviorVueTests.cs" />
       <Compile Remove="Tests\CustomAdminPrefixTests.cs" />
       <Compile Remove="Tests\RetrievalDataTablesTests.cs" />
     </ItemGroup>
 
     <ItemGroup>
-      <None Include="Tests\BehaviorVueTests.cs" />
       <None Include="Tests\CustomAdminPrefixTests.cs" />
       <None Include="Tests\RetrievalDataTablesTests.cs" />
     </ItemGroup>
