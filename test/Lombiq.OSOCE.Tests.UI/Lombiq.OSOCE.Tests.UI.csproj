@@ -9,7 +9,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Compile Remove="Tests\BehaviorHelpfulExtensionsTests.cs" />
       <Compile Remove="Tests\BehaviorPrivacyTests.cs" />
       <Compile Remove="Tests\BehaviorVueTests.cs" />
       <Compile Remove="Tests\CustomAdminPrefixTests.cs" />
@@ -17,7 +16,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Include="Tests\BehaviorHelpfulExtensionsTests.cs" />
       <None Include="Tests\BehaviorPrivacyTests.cs" />
       <None Include="Tests\BehaviorVueTests.cs" />
       <None Include="Tests\CustomAdminPrefixTests.cs" />
