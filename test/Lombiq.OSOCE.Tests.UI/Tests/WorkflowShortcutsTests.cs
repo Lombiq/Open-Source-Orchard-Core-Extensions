@@ -24,7 +24,7 @@ public class WorkflowShortcutsTests : UITestBase
             {
                 await context.EnableFeatureDirectlyAsync(ShortcutsFeatureIds.Workflows);
                 await context.ExecutePrivacySampleRecipeDirectlyAsync();
-                (await context.WorkflowsHttpEventGenerateUrlAsync(
+                (await context.GenerateHttpEventUrlAsync(
                     "registrationworkflow000000",
                     "registrationhttpevent00000"))
                     .ShouldStartWith("/workflows/Invoke?token=");

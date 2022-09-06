@@ -37,7 +37,7 @@ public class SecurityShortcutsTests : UITestBase
                 await context.SignOutDirectlyAsync();
 
                 await context.AddUserToRoleAsync(UserUserName, AuthorRole);
-                await context.AllowPermissionToRoleAsync(ViewContentTypesPermission, AuthorRole);
+                await context.AddPermissionToRoleAsync(ViewContentTypesPermission, AuthorRole);
 
                 await context.SignInDirectlyAsync(UserUserName);
                 await context.GoToContentTypesListAsync();
@@ -67,7 +67,7 @@ public class SecurityShortcutsTests : UITestBase
         ExecuteTestAfterSetupAsync(
             async context =>
             {
-                await context.AllowPermissionToRoleAsync(FakePermission, AuthorRole)
+                await context.AddPermissionToRoleAsync(FakePermission, AuthorRole)
                     .ShouldThrowAsync<PageChangeAssertionException>();
                 CleanUpLogs(context);
             },
