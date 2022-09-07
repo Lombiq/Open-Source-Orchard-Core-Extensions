@@ -18,6 +18,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{97DCF32A-0BBB-441D-9709-860757DFC2E0}"
 	ProjectSection(SolutionItems) = preProject
 		commands.json = commands.json
+		Directory.Build.props = Directory.Build.props
 		Readme.md = Readme.md
 		Reset-Local.ps1 = Reset-Local.ps1
 		Update-LombiqNuGetPackages.ps1 = Update-LombiqNuGetPackages.ps1
@@ -31,7 +32,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.NuGet.Tests.UI
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{342A0D21-FA7F-45E9-895A-5F6DA5F3370E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.Analyzers.PowerShell.PackageReference", "..\tools\Lombiq.Analyzers.PowerShell\TestSolutions\Lombiq.Analyzers.PowerShell.PackageReference\Lombiq.Analyzers.PowerShell.PackageReference.csproj", "{6504905F-584A-49A0-9FFE-CCB12240E7D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Analyzers.PowerShell.PackageReference", "..\tools\Lombiq.Analyzers.PowerShell\TestSolutions\Lombiq.Analyzers.PowerShell.PackageReference\Lombiq.Analyzers.PowerShell.PackageReference.csproj", "{6504905F-584A-49A0-9FFE-CCB12240E7D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
