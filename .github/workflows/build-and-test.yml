@@ -22,4 +22,3 @@ jobs:
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
       build-directory: NuGetTest
       timeout-minutes: 30
-      ui-test-parallelism: "1"
