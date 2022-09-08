@@ -1,9 +1,4 @@
-^\QLombiqSymbolLogoColorWhiteFlaskSquareForNuGetPackages.png\E$
-^\QNuGetTest/src/Themes/Lombiq.OSOCE.NuGet.TestTheme/package.json\E$
-^\Qallow.txt\E$
-^\Qexcludes.txt\E$
-^\Qspelling/configs/expect/Startup.cs.txt\E$
-^\Qsrc/Lombiq.OSOCE.Web/Recipes/Media/meadow-orchard.jpg\E$
+.jpg$
 ignore$
 \.png$
 \.t$
@@ -18,3 +13,7 @@ ignore$
 .ndproj$
 dotnet-tools.json$
 .git
+.htmlvalidate.json$
+appsettings.json$
+package.json$
+package-lock.json$
