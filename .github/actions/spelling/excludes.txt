@@ -1,0 +1,6 @@
+^\QLombiqSymbolLogoColorWhiteFlaskSquareForNuGetPackages.png\E$
+^\QNuGetTest/src/Themes/Lombiq.OSOCE.NuGet.TestTheme/package.json\E$
+^\Qallow.txt\E$
+^\Qexcludes.txt\E$
+^\Qspelling/configs/expect/Startup.cs.txt\E$
+^\Qsrc/Lombiq.OSOCE.Web/Recipes/Media/meadow-orchard.jpg\E$
