@@ -1,6 +1,5 @@
 eur
 GDPR
-lombiq
 ICaching
 IClock
 iis
