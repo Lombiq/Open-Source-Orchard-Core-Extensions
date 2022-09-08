@@ -14,4 +14,7 @@ ignore$
 \.config$
 .csproj$
 .stylelintrc$
+..eslintrc$
 .ndproj$
+dotnet-tools.json$
+.git$
