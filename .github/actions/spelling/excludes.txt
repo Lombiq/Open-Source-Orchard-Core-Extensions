@@ -12,3 +12,6 @@ ignore$
 \.sln$
 \.recipe.json$
 \.config$
+.csproj$
+.stylelintrc$
+.ndproj$
