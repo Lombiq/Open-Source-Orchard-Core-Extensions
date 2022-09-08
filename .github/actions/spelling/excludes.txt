@@ -17,4 +17,4 @@ ignore$
 .eslintrc$
 .ndproj$
 dotnet-tools.json$
-.git$
+.git
