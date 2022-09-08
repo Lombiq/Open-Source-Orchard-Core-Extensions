@@ -4,3 +4,11 @@
 ^\Qexcludes.txt\E$
 ^\Qspelling/configs/expect/Startup.cs.txt\E$
 ^\Qsrc/Lombiq.OSOCE.Web/Recipes/Media/meadow-orchard.jpg\E$
+ignore$
+\.png$
+\.t$
+^LICENSE\.txt$
+^\.github/
+\.sln$
+\.recipe.json$
+\.config$
