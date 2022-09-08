@@ -1,3 +1,10 @@
 eur
 GDPR
 lombiq
+ICaching
+IClock
+iis
+IService
+ISession
+ITest
+IWeb
