@@ -1,7 +1,6 @@
 using Lombiq.Tests.UI;
 using Lombiq.Tests.UI.Constants;
 using Lombiq.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Helpers;
 using Lombiq.Tests.UI.Samples.Helpers;
 using Lombiq.Tests.UI.Services;
 using Shouldly;
@@ -13,9 +12,6 @@ namespace Lombiq.OSOCE.Tests.UI;
 
 public class UITestBase : OrchardCoreUITestBase<Program>
 {
-    protected override string AppAssemblyPath => WebAppConfigHelper
-        .GetAbsoluteApplicationAssemblyPath("Lombiq.OSOCE.Web", "net6.0");
-
     protected UITestBase(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)
     {
