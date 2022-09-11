@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="Lombiq.Tests.UI.Samples" />
+    <InternalsVisibleTo Include="Lombiq.OSOCE.Tests.UI" />
   </ItemGroup>
   
   <ItemGroup>
