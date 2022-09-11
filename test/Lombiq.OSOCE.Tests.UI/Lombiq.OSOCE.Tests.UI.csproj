@@ -12,7 +12,6 @@
       <Compile Remove="Tests\Samples\AccessibilityTest.cs" />
       <Compile Remove="Tests\Samples\AzureBlobStorageTests.cs" />
       <Compile Remove="Tests\Samples\BasicOrchardFeaturesTests.cs" />
-      <Compile Remove="Tests\Samples\BasicTests.cs" />
       <Compile Remove="Tests\Samples\BasicVisualVerificationTests.cs" />
       <Compile Remove="Tests\Samples\DatabaseSnapshotTests.cs" />
       <Compile Remove="Tests\Samples\EmailTests.cs" />
@@ -26,7 +25,6 @@
       <None Include="Tests\Samples\AccessibilityTest.cs" />
       <None Include="Tests\Samples\AzureBlobStorageTests.cs" />
       <None Include="Tests\Samples\BasicOrchardFeaturesTests.cs" />
-      <None Include="Tests\Samples\BasicTests.cs" />
       <None Include="Tests\Samples\BasicVisualVerificationTests.cs" />
       <None Include="Tests\Samples\DatabaseSnapshotTests.cs" />
       <None Include="Tests\Samples\EmailTests.cs" />
