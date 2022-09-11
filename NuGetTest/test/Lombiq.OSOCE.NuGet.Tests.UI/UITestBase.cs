@@ -1,6 +1,5 @@
 using Lombiq.OSOCE.NuGet.Tests.UI.Helpers;
 using Lombiq.Tests.UI;
-using Lombiq.Tests.UI.Helpers;
 using Lombiq.Tests.UI.Services;
 using System;
 using System.Threading.Tasks;
@@ -8,11 +7,8 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.NuGet.Tests.UI;
 
-public class UITestBase : OrchardCoreUITestBase
+public class UITestBase : OrchardCoreUITestBase<Program>
 {
-    protected override string AppAssemblyPath => WebAppConfigHelper
-        .GetAbsoluteApplicationAssemblyPath("Lombiq.OSOCE.NuGet.Web", "net6.0");
-
     protected UITestBase(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)
     {
