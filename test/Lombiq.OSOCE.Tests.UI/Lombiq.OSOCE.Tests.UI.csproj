@@ -8,6 +8,34 @@
       <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Compile Remove="Tests\Samples\AccessibilityTest.cs" />
+      <Compile Remove="Tests\Samples\AzureBlobStorageTests.cs" />
+      <Compile Remove="Tests\Samples\BasicOrchardFeaturesTests.cs" />
+      <Compile Remove="Tests\Samples\BasicTests.cs" />
+      <Compile Remove="Tests\Samples\BasicVisualVerificationTests.cs" />
+      <Compile Remove="Tests\Samples\DatabaseSnapshotTests.cs" />
+      <Compile Remove="Tests\Samples\EmailTests.cs" />
+      <Compile Remove="Tests\Samples\ErrorHandlingTests.cs" />
+      <Compile Remove="Tests\Samples\MonkeyTests.cs" />
+      <Compile Remove="Tests\Samples\SqlServerTests.cs" />
+      <Compile Remove="Tests\Samples\TenantTests.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="Tests\Samples\AccessibilityTest.cs" />
+      <None Include="Tests\Samples\AzureBlobStorageTests.cs" />
+      <None Include="Tests\Samples\BasicOrchardFeaturesTests.cs" />
+      <None Include="Tests\Samples\BasicTests.cs" />
+      <None Include="Tests\Samples\BasicVisualVerificationTests.cs" />
+      <None Include="Tests\Samples\DatabaseSnapshotTests.cs" />
+      <None Include="Tests\Samples\EmailTests.cs" />
+      <None Include="Tests\Samples\ErrorHandlingTests.cs" />
+      <None Include="Tests\Samples\MonkeyTests.cs" />
+      <None Include="Tests\Samples\SqlServerTests.cs" />
+      <None Include="Tests\Samples\TenantTests.cs" />
+    </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
