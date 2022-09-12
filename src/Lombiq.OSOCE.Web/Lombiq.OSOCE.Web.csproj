@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <InternalsVisibleTo Include="Lombiq.OSOCE.Tests.UI" />
+    <InternalsVisibleTo Include="Lombiq.Tests.UI.Samples" />
   </ItemGroup>
   
   <ItemGroup>
