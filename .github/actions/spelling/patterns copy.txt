@@ -1,0 +1,8 @@
+[Ll]ombiq
+(\((.*?)\))
+[Hh]ome[Pp]age
+[Dd]otnet
+[Ll][Ii][Nn][Qq]
+[Ll]ocalhost
+[Mm][Vv][Cc]
+[Uu]ncomment
