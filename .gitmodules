@@ -74,6 +74,18 @@
 	path = src/Themes/Lombiq.BaseTheme
 	url = https://github.com/Lombiq/Orchard-Base-Theme.git
 	branch = dev
-[submodule "tools/Lombiq.GitHubActions"]
-	path = tools/Lombiq.GitHubActions
+[submodule "tools/Lombiq.GitHub.Actions"]
+	path = tools/Lombiq.GitHub.Actions
 	url = https://github.com/Lombiq/GitHub-Actions.git
+	branch = dev
+[submodule "tools/Lombiq.Analyzers.PowerShell"]
+	path = tools/Lombiq.Analyzers.PowerShell
+	url = https://github.com/Lombiq/PowerShell-Analyzers.git
+[submodule "src/Themes/Lombiq.Hosting.MediaTheme"]
+	path = src/Themes/Lombiq.Hosting.MediaTheme
+	url = https://github.com/Lombiq/Hosting-Media-Theme
+	branch = dev
+[submodule "src/Libraries/Lombiq.OrchardCoreApiClient"]
+	path = src/Libraries/Lombiq.OrchardCoreApiClient
+	url = https://github.com/Lombiq/Orchard-Core-API-Client.git
+	branch = issue/NEST-295

@@ -16,8 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.Analyzers" Version="2.1.0" />
-    <PackageReference Include="Lombiq.HelpfulLibraries" Version="4.4.0" />
+    <PackageReference Include="Lombiq.HelpfulLibraries" Version="4.6.1-alpha.walma-15.1" />
     <PackageReference Include="OrchardCore.Module.Targets" Version="1.4.0" />
     <PackageReference Include="OrchardCore.ContentManagement" Version="1.4.0" />
     <PackageReference Include="OrchardCore.ContentTypes.Abstractions" Version="1.4.0" />
