@@ -39,6 +39,7 @@
         // "Lombiq.Privacy.RegistrationConsent",
         "Lombiq.TrainingDemo",
         "Lombiq.UIKit",
+        "Lombiq.UIKit.Showcase",
         "Lombiq.VueJs",
         "Lombiq.VueJs.Samples",
         "TheTheme"
