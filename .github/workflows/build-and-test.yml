@@ -22,3 +22,7 @@ jobs:
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
       build-directory: NuGetTest
       timeout-minutes: 30
+
+  check-spelling:
+    name: Check Spelling
+    uses: Lombiq/GitHub-Actions/.github/workflows/check-spelling.yml@issue/OSOE-158
