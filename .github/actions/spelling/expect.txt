@@ -1,5 +1,5 @@
 eur
-gdpr
+GDPR
 ICaching
 IClock
 iis
