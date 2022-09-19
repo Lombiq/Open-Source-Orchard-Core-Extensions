@@ -23,14 +23,8 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 30
 
-  where-am-i:
-    name: Print Information
-    shell: pwsh
-    run: |
-      echo "${{ github.action_path }}"
-
   check-spelling:
     name: Check Spelling
     uses: Lombiq/GitHub-Actions/.github/workflows/check-spelling.yml@issue/OSOE-158
     with:
-      config: ../../tools/Lombiq.GitHub.Actions/.github/actions/spelling
+      config: tools/Lombiq.GitHub.Actions/.github/actions/spelling
