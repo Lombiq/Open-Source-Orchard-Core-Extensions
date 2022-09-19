@@ -27,5 +27,5 @@ jobs:
     name: Check Spelling
     uses: Lombiq/GitHub-Actions/.github/workflows/check-spelling.yml@issue/OSOE-158
     with:
-      #config: .github/actions/spelling
-      config: tools/Lombiq.GitHub.Actions/spelling
+      config: .github/actions/spelling
+      #config: tools/Lombiq.GitHub.Actions/spelling
