@@ -4,6 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <TieredCompilation>true</TieredCompilation>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    
+    <PreserveCompilationContext>true</PreserveCompilationContext>
   </PropertyGroup>
 
   <Import Project="..\..\tools\Lombiq.Analyzers.PowerShell\Lombiq.Analyzers.PowerShell\Lombiq.Analyzers.PowerShell.targets" />
