@@ -6,3 +6,4 @@
 [Ll]ocalhost
 [Mm][Vv][Cc]
 [Uu]ncomment
+[Jj]ira
