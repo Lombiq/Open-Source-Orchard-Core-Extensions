@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Tests\BehaviorPrivacyTests.cs" />
     <Compile Remove="Tests\BehaviorThemeTests.cs" />
     <Compile Remove="Tests\IdleTenantsTests.cs" />
   </ItemGroup>
@@ -22,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Tests\BehaviorPrivacyTests.cs" />
     <None Include="Tests\BehaviorThemeTests.cs" />
     <None Include="Tests\IdleTenantsTests.cs" />
   </ItemGroup>
