@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Tests\BasicOrchardFeaturesTests.cs" />
+    <Compile Remove="Tests\BehaviorApplicationInsightsTests.cs" />
+    <Compile Remove="Tests\BehaviorChartJsTests.cs" />
+    <Compile Remove="Tests\BehaviorDataTableTests.cs" />
+    <Compile Remove="Tests\BehaviorFileUploadTests.cs" />
+    <Compile Remove="Tests\BehaviorHelpfulExtensionsTests.cs" />
+    <Compile Remove="Tests\BehaviorPrivacyTests.cs" />
     <Compile Remove="Tests\IdleTenantsTests.cs" />
   </ItemGroup>
 
@@ -20,6 +27,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Tests\BasicOrchardFeaturesTests.cs" />
+    <None Include="Tests\BehaviorApplicationInsightsTests.cs" />
+    <None Include="Tests\BehaviorChartJsTests.cs" />
+    <None Include="Tests\BehaviorDataTableTests.cs" />
+    <None Include="Tests\BehaviorFileUploadTests.cs" />
+    <None Include="Tests\BehaviorHelpfulExtensionsTests.cs" />
+    <None Include="Tests\BehaviorPrivacyTests.cs" />
     <None Include="Tests\IdleTenantsTests.cs" />
   </ItemGroup>
 
