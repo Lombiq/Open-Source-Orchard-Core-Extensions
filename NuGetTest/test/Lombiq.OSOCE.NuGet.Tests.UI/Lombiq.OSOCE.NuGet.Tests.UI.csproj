@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Tests\BehaviorChartJsTests.cs" />
     <Compile Remove="Tests\BehaviorDataTableTests.cs" />
     <Compile Remove="Tests\BehaviorFileUploadTests.cs" />
     <Compile Remove="Tests\BehaviorHelpfulExtensionsTests.cs" />
@@ -26,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Tests\BehaviorChartJsTests.cs" />
     <None Include="Tests\BehaviorDataTableTests.cs" />
     <None Include="Tests\BehaviorFileUploadTests.cs" />
     <None Include="Tests\BehaviorHelpfulExtensionsTests.cs" />
