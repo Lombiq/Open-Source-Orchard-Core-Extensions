@@ -6,6 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Tests\BehaviorApplicationInsightsTests.cs" />
+    <Compile Remove="Tests\BehaviorChartJsTests.cs" />
+    <Compile Remove="Tests\BehaviorDataTableTests.cs" />
+    <Compile Remove="Tests\BehaviorFileUploadTests.cs" />
+    <Compile Remove="Tests\BehaviorHelpfulExtensionsTests.cs" />
+    <Compile Remove="Tests\BehaviorPrivacyTests.cs" />
+    <Compile Remove="Tests\BehaviorThemeTests.cs" />
+    <Compile Remove="Tests\IdleTenantsTests.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove=".htmlvalidate.json" />
   </ItemGroup>
 
@@ -13,6 +24,17 @@
     <Content Include=".htmlvalidate.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Tests\BehaviorApplicationInsightsTests.cs" />
+    <None Include="Tests\BehaviorChartJsTests.cs" />
+    <None Include="Tests\BehaviorDataTableTests.cs" />
+    <None Include="Tests\BehaviorFileUploadTests.cs" />
+    <None Include="Tests\BehaviorHelpfulExtensionsTests.cs" />
+    <None Include="Tests\BehaviorPrivacyTests.cs" />
+    <None Include="Tests\BehaviorThemeTests.cs" />
+    <None Include="Tests\IdleTenantsTests.cs" />
   </ItemGroup>
 
   <ItemGroup>
