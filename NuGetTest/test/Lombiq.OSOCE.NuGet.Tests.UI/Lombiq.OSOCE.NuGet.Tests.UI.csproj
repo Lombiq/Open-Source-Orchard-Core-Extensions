@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Tests\BehaviorFileUploadTests.cs" />
     <Compile Remove="Tests\BehaviorHelpfulExtensionsTests.cs" />
     <Compile Remove="Tests\BehaviorPrivacyTests.cs" />
     <Compile Remove="Tests\BehaviorThemeTests.cs" />
@@ -24,7 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Tests\BehaviorFileUploadTests.cs" />
     <None Include="Tests\BehaviorHelpfulExtensionsTests.cs" />
     <None Include="Tests\BehaviorPrivacyTests.cs" />
     <None Include="Tests\BehaviorThemeTests.cs" />
