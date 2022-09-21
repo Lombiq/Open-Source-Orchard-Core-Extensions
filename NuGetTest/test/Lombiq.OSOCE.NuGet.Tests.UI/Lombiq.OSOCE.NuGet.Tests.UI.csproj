@@ -6,17 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Tests\BasicOrchardFeaturesTests.cs" />
-    <Compile Remove="Tests\BehaviorApplicationInsightsTests.cs" />
-    <Compile Remove="Tests\BehaviorChartJsTests.cs" />
-    <Compile Remove="Tests\BehaviorDataTableTests.cs" />
-    <Compile Remove="Tests\BehaviorFileUploadTests.cs" />
-    <Compile Remove="Tests\BehaviorHelpfulExtensionsTests.cs" />
-    <Compile Remove="Tests\BehaviorPrivacyTests.cs" />
-    <Compile Remove="Tests\IdleTenantsTests.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove=".htmlvalidate.json" />
   </ItemGroup>
 
@@ -27,17 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Tests\BasicOrchardFeaturesTests.cs" />
-    <None Include="Tests\BehaviorApplicationInsightsTests.cs" />
-    <None Include="Tests\BehaviorChartJsTests.cs" />
-    <None Include="Tests\BehaviorDataTableTests.cs" />
-    <None Include="Tests\BehaviorFileUploadTests.cs" />
-    <None Include="Tests\BehaviorHelpfulExtensionsTests.cs" />
-    <None Include="Tests\BehaviorPrivacyTests.cs" />
-    <None Include="Tests\IdleTenantsTests.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Lombiq.BaseTheme.Tests.UI" Version="1.1.3-alpha.osoe-46.3" />
     <PackageReference Include="Lombiq.ChartJs.Tests.UI" Version="2.3.2-alpha.osoe-46.3" />
     <PackageReference Include="Lombiq.DataTables.Tests.UI" Version="3.2.2-alpha.osoe-46.3" />
@@ -45,7 +23,7 @@
     <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI" Version="2.2.1-alpha.osoe-46.3" />
     <PackageReference Include="Lombiq.Privacy.Tests.UI" Version="3.1.3-alpha.osoe-46.3" />
     <PackageReference Include="Lombiq.HelpfulExtensions.Tests.UI" Version="3.5.1-alpha.osoe-46.3" />
-    <PackageReference Include="Lombiq.Tests.UI" Version="3.5.1-alpha.osoe-46.4" />
+    <PackageReference Include="Lombiq.Tests.UI" Version="3.5.1-alpha.osoe-46.5" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
   </ItemGroup>

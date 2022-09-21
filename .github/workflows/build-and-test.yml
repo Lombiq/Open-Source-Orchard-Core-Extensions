@@ -14,6 +14,7 @@ jobs:
     with:
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
       timeout-minutes: 60
+      verify-dotnet-consolidation: false
 
   call-build-and-test-workflow-nuget-test:
     name: Build and Test - NuGetTest solution
@@ -22,3 +23,4 @@ jobs:
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
       build-directory: NuGetTest
       timeout-minutes: 30
+      verify-dotnet-consolidation: false
