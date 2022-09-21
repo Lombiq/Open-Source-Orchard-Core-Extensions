@@ -42,6 +42,8 @@
         "Lombiq.UIKit.Showcase",
         "Lombiq.VueJs",
         "Lombiq.VueJs.Samples",
+        "OrchardCore.Tenants.FeatureProfiles",
+        "FeaturesGuard",
         "TheTheme"
         // Not enabling Lombiq.TrainingDemo.Middlewares because that would write to the error log on every request.
       ]
@@ -201,6 +203,31 @@
       // Using a custom theme that relies on "Lombiq.BaseTheme". Previously we used "TheTheme" because the default
       // "TheBlogTheme" uses the PageTitle shape for <title> and Shape Tracing Helpful Extensions would mess it up.
       "site": "Lombiq.BaseTheme.Samples"
+    },
+    {
+      "name": "FeatureProfiles",
+      "FeatureProfiles": {
+        "Features Guard": {
+          "FeatureRules": [
+            {
+              "Rule": "Exclude",
+              "Expression": "OrchardCore.Workflows.Session"
+            },
+            {
+              "Rule": "Exclude",
+              "Expression": "OrchardCore.Lucene"
+            },
+            {
+              "Rule": "Exclude",
+              "Expression": "OrchardCore.MiniProfiler"
+            },
+            {
+              "Rule": "Exclude",
+              "Expression": "Lombiq.Tests.UI.Shortcuts"
+            }
+          ]
+        }
+      }
     },
     {
       "name": "recipes",
