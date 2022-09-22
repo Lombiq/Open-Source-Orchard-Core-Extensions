@@ -10,7 +10,7 @@ on:
 jobs:
   call-build-and-test-workflow-nuget-test:
     name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-156-buildjet
     with:
       machine-types: "[\"buildjet-4vcpu-ubuntu-2204\"]"
       build-directory: NuGetTest
