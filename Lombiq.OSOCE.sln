@@ -133,17 +133,18 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{40E6EA88-BE15-4542-BD9A-3AA8DC69629E}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\build-and-test.yml = .github\workflows\build-and-test.yml
+		.github\workflows\create-jira-issues-for-community-activities.yml = .github\workflows\create-jira-issues-for-community-activities.yml
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Privacy.Tests.UI", "src\Modules\Lombiq.Privacy\Lombiq.Privacy.Tests.UI\Lombiq.Privacy.Tests.UI.csproj", "{F6C11C25-7080-4CB5-B278-2A54FB952108}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.UIKit.Tests.UI", "src\Modules\Lombiq.UIKit\Lombiq.UIKit.Tests.UI\Lombiq.UIKit.Tests.UI.csproj", "{A10F9F17-CB35-4641-B707-C6620A2C4FDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.UIKit.Tests.UI", "src\Modules\Lombiq.UIKit\Lombiq.UIKit.Tests.UI\Lombiq.UIKit.Tests.UI.csproj", "{A10F9F17-CB35-4641-B707-C6620A2C4FDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.Analyzers.PowerShell", "tools\Lombiq.Analyzers.PowerShell\Lombiq.Analyzers.PowerShell\Lombiq.Analyzers.PowerShell.csproj", "{D00D1636-6898-4BBD-A794-5740B7C81072}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Analyzers.PowerShell", "tools\Lombiq.Analyzers.PowerShell\Lombiq.Analyzers.PowerShell\Lombiq.Analyzers.PowerShell.csproj", "{D00D1636-6898-4BBD-A794-5740B7C81072}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulExtensions.Tests.UI", "src\Modules\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions.Tests.UI\Lombiq.HelpfulExtensions.Tests.UI.csproj", "{9DFD40DB-217C-4012-83FB-18F3AEBC3DD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.UIKit", "src\Modules\Lombiq.UIKit\Lombiq.UIKit\Lombiq.UIKit.csproj", "{66A55DDC-0BD5-46F5-AC09-2994B19BE038}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.UIKit", "src\Modules\Lombiq.UIKit\Lombiq.UIKit\Lombiq.UIKit.csproj", "{66A55DDC-0BD5-46F5-AC09-2994B19BE038}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{02FCA648-8394-41A3-B699-87FB1097500A}"
 EndProject
