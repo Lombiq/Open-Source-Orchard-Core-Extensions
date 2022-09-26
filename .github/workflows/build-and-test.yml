@@ -10,6 +10,7 @@ on:
 jobs:
   call-build-and-test-workflow:
     name: Build and Test - root solution
+    runs-on: [self-hosted, Windows, X64, TC-mod]
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
@@ -17,6 +18,7 @@ jobs:
 
   call-build-and-test-workflow-nuget-test:
     name: Build and Test - NuGetTest solution
+    runs-on: [self-hosted, Windows, X64, TC-mod]
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
