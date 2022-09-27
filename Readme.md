@@ -37,6 +37,7 @@ Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source
   - [Lombiq.HelpfulExtensions](https://github.com/Lombiq/Helpful-Extensions): Orchard Core module containing some handy extensions (e.g. useful content types and widgets). It's also available on all sites of [DotNest, the Orchard SaaS](https://dotnest.com/).
   - [Lombiq.HelpfulLibraries.Samples](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.Samples): Example Orchard Core module that makes use of Lombiq Helpful Libraries.
   - [Lombiq.Hosting.Azure.ApplicationInsights](https://github.com/Lombiq/Orchard-Azure-Application-Insights): This [Orchard Core](https://orchardcore.net/) module enables easy integration of [Azure Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview) telemetry into Orchard. Just install the module, configure the instrumentation key from a configuration source (like the _appsettings.json_ file) as normally for AI, and collected data will start appearing in the Azure Portal. As seen on [the Orchard community meeting](https://www.youtube.com/watch?v=NKKR4R3UPog). Note that this module has an Orchard 1 version in the [dev-orchard-1 branch](https://github.com/Lombiq/Orchard-Azure-Application-Insights/tree/dev-orchard-1). Note that the module depends on [Helpful Libraries](https://github.com/Lombiq/Helpful-Libraries/).
+  - [Lombiq.Hosting.MediaTheme.Bridge](https://github.com/Lombiq/Hosting-Media-Theme): With the help of this module, you'll be able to host your theme assets and templates from Media Library. It can be used together with the [Lombiq.Hosting.MediaTheme](https://github.com/Lombiq/Hosting-Media-Theme).
   - [Lombiq.Hosting.Tenants.Admin.Login](https://github.com/Lombiq/Hosting-Tenants/tree/dev/Lombiq.Hosting.Tenants.Admin.Login): With the help of this module, you can log in from the Default tenant's admin dashboard to any other tenants as an administrator user. This is useful if you manage a lot of customer tenants and don't want to create individual logins of yours for each of them.
   - [Lombiq.Hosting.Tenants.Management](https://github.com/Lombiq/Hosting-Tenants/tree/dev/Lombiq.Hosting.Tenants.Management): With the help of this module, you can set restrictions on tenant creation.
   - [Lombiq.Hosting.Tenants.IdleTenantManagement](https://github.com/Lombiq/Hosting-Tenants/tree/dev/Lombiq.Hosting.Tenants.IdleTenantManagement): With the help of this module, you can ensure that any tenant where the feature is enabled will shutdown after a preset time is elapsed. This can be used to free up resources.
@@ -50,6 +51,7 @@ Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source
 - Themes
   - [Lombiq.BaseTheme](https://github.com/Lombiq/Orchard-Base-Theme): This theme contains infrastructure for custom Bootstrap 5 themes with standardized zones and built-in front end menu display.
   - [Lombiq.BaseTheme.Samples](https://github.com/Lombiq/Orchard-Base-Theme/tree/dev/Lombiq.BaseTheme.Samples): A sample theme that demonstrates the features of the [Lombiq.BaseTheme](https://github.com/Lombiq/Orchard-Base-Theme).
+  - [Lombiq.Hosting.MediaTheme](https://github.com/Lombiq/Hosting-Media-Theme): With the help of this theme and its dependency, the [Lombiq.Hosting.MediaTheme.Bridge](https://github.com/Lombiq/Hosting-Media-Theme), you'll be able to host your theme assets and templates from Media Library.
 
 - Utilities
   - [Lombiq.NodeJs.Extensions](https://github.com/Lombiq/NodeJs-Extensions): Configurable and MSBuild-integrated frontend asset pipelines for SCSS, JS, MD, and external libraries implemented using npm scripts. Uses NPM Targets under the hood.
@@ -85,6 +87,7 @@ You can activate various sample content in the site:
   - In case of theme development you can use the "Lombiq Orchard Core Base Theme - Styling Demo" theme to test against some common HTML elements.
 - [Lombiq.ChartJs](https://github.com/Lombiq/Orchard-Chart.js): Go to Recipes in the admin dashboard and select "Lombiq Chart.js - Sample Content - Income/Expense".
 - [Lombiq.Privacy](https://github.com/Lombiq/Orchard-Privacy): Go to Recipes in the admin dashboard and select "Lombiq Privacy - Sample Content - Privacy, Forms, Workflows".
+- [Lombiq Hosting Media Theme Samples](https://github.com/Lombiq/Hosting-Media-Theme): Go to Recipes in the admin dashboard and select "Lombiq Hosting - Media Theme - Samples".
 
 ## Contributing and support
 
