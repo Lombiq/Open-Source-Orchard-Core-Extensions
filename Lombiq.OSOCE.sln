@@ -133,6 +133,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{40E6EA88-BE15-4542-BD9A-3AA8DC69629E}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\build-and-test.yml = .github\workflows\build-and-test.yml
+		.github\workflows\create-jira-issues-for-community-activities.yml = .github\workflows\create-jira-issues-for-community-activities.yml
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Privacy.Tests.UI", "src\Modules\Lombiq.Privacy\Lombiq.Privacy.Tests.UI\Lombiq.Privacy.Tests.UI.csproj", "{F6C11C25-7080-4CB5-B278-2A54FB952108}"
@@ -164,6 +165,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI", "src\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI\Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI.csproj", "{05A037F9-82A1-4647-85CA-5DFD37FD56FA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Hosting.MultiTenancy.Tenants.Tests.UI", "src\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.MultiTenancy.Tenants.Tests.UI\Lombiq.Hosting.MultiTenancy.Tenants.Tests.UI.csproj", "{10C5D057-E33B-4CE7-A72E-10E5D5A04A28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.Hosting.MediaTheme.Tests.UI", "src\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.Tests.UI\Lombiq.Hosting.MediaTheme.Tests.UI.csproj", "{7219E9F7-6FE0-4D8F-B3E2-01D5BFA945FC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Hosting.MultiTenancy.Tenants", "src\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.MultiTenancy.Tenants\Lombiq.Hosting.MultiTenancy.Tenants.csproj", "{249BFD96-FD01-42E4-A2B1-84BEDC3E448D}"
 EndProject
@@ -885,6 +888,18 @@ Global
 		{10C5D057-E33B-4CE7-A72E-10E5D5A04A28}.Release|x64.Build.0 = Release|Any CPU
 		{10C5D057-E33B-4CE7-A72E-10E5D5A04A28}.Release|x86.ActiveCfg = Release|Any CPU
 		{10C5D057-E33B-4CE7-A72E-10E5D5A04A28}.Release|x86.Build.0 = Release|Any CPU
+		{7219E9F7-6FE0-4D8F-B3E2-01D5BFA945FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7219E9F7-6FE0-4D8F-B3E2-01D5BFA945FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7219E9F7-6FE0-4D8F-B3E2-01D5BFA945FC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7219E9F7-6FE0-4D8F-B3E2-01D5BFA945FC}.Debug|x64.Build.0 = Debug|Any CPU
+		{7219E9F7-6FE0-4D8F-B3E2-01D5BFA945FC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7219E9F7-6FE0-4D8F-B3E2-01D5BFA945FC}.Debug|x86.Build.0 = Debug|Any CPU
+		{7219E9F7-6FE0-4D8F-B3E2-01D5BFA945FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7219E9F7-6FE0-4D8F-B3E2-01D5BFA945FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7219E9F7-6FE0-4D8F-B3E2-01D5BFA945FC}.Release|x64.ActiveCfg = Release|Any CPU
+		{7219E9F7-6FE0-4D8F-B3E2-01D5BFA945FC}.Release|x64.Build.0 = Release|Any CPU
+		{7219E9F7-6FE0-4D8F-B3E2-01D5BFA945FC}.Release|x86.ActiveCfg = Release|Any CPU
+		{7219E9F7-6FE0-4D8F-B3E2-01D5BFA945FC}.Release|x86.Build.0 = Release|Any CPU
 		{249BFD96-FD01-42E4-A2B1-84BEDC3E448D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{249BFD96-FD01-42E4-A2B1-84BEDC3E448D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{249BFD96-FD01-42E4-A2B1-84BEDC3E448D}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -970,6 +985,7 @@ Global
 		{B29511EC-8325-4659-B807-2DF0F6C915BC} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
 		{05A037F9-82A1-4647-85CA-5DFD37FD56FA} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
 		{10C5D057-E33B-4CE7-A72E-10E5D5A04A28} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
+		{7219E9F7-6FE0-4D8F-B3E2-01D5BFA945FC} = {93A678A8-93E4-4F53-BF83-22801014F27B}
 		{249BFD96-FD01-42E4-A2B1-84BEDC3E448D} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
