@@ -16,9 +16,11 @@ public class BehaviorMultiTenancyTests : UITestBase
 
     [Theory, Chrome]
     public Task ForbiddenFeaturesShouldNotBeActivatableOnTenants(Browser browser) =>
-        ExecuteTestAfterSetupAsync(context => context.TestForbiddenFeaturesAsync(), browser);
+        ExecuteTestAfterSetupAsync(context => context.TestForbiddenFeaturesAsync(), browser, configuration =>
+            configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false);
 
     [Theory, Chrome]
     public Task AlwaysEnabledFeaturesShouldNotBeDeactivatableOnTenants(Browser browser) =>
-        ExecuteTestAfterSetupAsync(context => context.TestAlwaysEnabledFeaturesAsync(), browser);
+        ExecuteTestAfterSetupAsync(context => context.TestAlwaysEnabledFeaturesAsync(), browser, configuration =>
+            configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false);
 }
