@@ -20,6 +20,8 @@
     <PackageReference Include="Lombiq.DataTables.Samples" Version="3.2.2-alpha.walma-15.2" />
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="3.5.1-alpha-osoe-185.0" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="3.2.1-alpha.walma-15.2" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="1.0.0-alpha.nest-332.0" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="1.0.0-alpha.nest-332.0" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="2.2.1-alpha.walma-15.2" />
     <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="2.2.1-alpha.walma-15.2" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="2.2.1-alpha.walma-15.2" />
