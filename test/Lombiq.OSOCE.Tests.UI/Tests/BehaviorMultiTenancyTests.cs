@@ -14,13 +14,13 @@ public class BehaviorMultiTenancyTests : UITestBase
     {
     }
 
-    // HTML validation is disabled as the OC login page's password visibility toggle button contains an error.
+    // HTML validation is disabled as OC's login and dashboard pages contain several errors.
     [Theory, Chrome]
     public Task ForbiddenFeaturesShouldNotBeActivatableOnTenants(Browser browser) =>
         ExecuteTestAfterSetupAsync(context => context.TestForbiddenFeaturesAsync(), browser, configuration =>
             configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false);
 
-    // HTML validation is disabled as the OC login page's password visibility toggle button contains an error.
+    // HTML validation is disabled as OC's login and dashboard pages contain several errors.
     [Theory, Chrome]
     public Task AlwaysEnabledFeaturesShouldNotBeDeactivatableOnTenants(Browser browser) =>
         ExecuteTestAfterSetupAsync(context => context.TestAlwaysEnabledFeaturesAsync(), browser, configuration =>
