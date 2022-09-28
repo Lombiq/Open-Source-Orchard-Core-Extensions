@@ -47,6 +47,8 @@
         "Lombiq.HelpfulExtensions.Widgets",
         "Lombiq.VueJs",
         "Lombiq.VueJs.Samples",
+        "OrchardCore.Tenants.FeatureProfiles",
+        "Lombiq.Hosting.MultiTenancy.Tenants.FeaturesGuard",
         "TheTheme"
         // Not enabling Lombiq.TrainingDemo.Middlewares because that would write to the error log on every request.
       ]
@@ -181,6 +183,31 @@
           ]
         }
       ]
+    },
+    {
+      "name": "FeatureProfiles",
+      "FeatureProfiles": {
+        "Features Guard": {
+          "FeatureRules": [
+            {
+              "Rule": "Exclude",
+              "Expression": "OrchardCore.Workflows.Session"
+            },
+            {
+              "Rule": "Exclude",
+              "Expression": "OrchardCore.Lucene"
+            },
+            {
+              "Rule": "Exclude",
+              "Expression": "OrchardCore.MiniProfiler"
+            },
+            {
+              "Rule": "Exclude",
+              "Expression": "Lombiq.Tests.UI.Shortcuts"
+            }
+          ]
+        }
+      }
     },
     {
 
