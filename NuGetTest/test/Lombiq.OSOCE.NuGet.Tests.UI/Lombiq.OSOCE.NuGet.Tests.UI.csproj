@@ -20,8 +20,8 @@
     <PackageReference Include="Lombiq.ChartJs.Tests.UI" Version="2.3.3-alpha.nest-282.2" />
     <PackageReference Include="Lombiq.DataTables.Tests.UI" Version="3.2.3-alpha.nest-282.1" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI" Version="3.2.2-alpha.nest-282.1" />
-    <PackageReference Include="Lombiq.Hosting.MultiTenancy.Tenants.Tests.UI" Version="2.2.2-alpha.nest-282.14" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI" Version="2.2.2-alpha.nest-282.14" />
+    <PackageReference Include="Lombiq.Hosting.MultiTenancy.Tenants.Tests.UI" Version="2.2.2-alpha.nest-282.15" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI" Version="2.2.2-alpha.nest-282.15" />
     <PackageReference Include="Lombiq.Privacy.Tests.UI" Version="3.1.4-alpha.nest-282.1" />
     <PackageReference Include="Lombiq.HelpfulExtensions.Tests.UI" Version="3.5.2-alpha.nest-282.1" />
     <PackageReference Include="Lombiq.Tests.UI" Version="3.5.2-alpha.nest-282.1" />
