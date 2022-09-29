@@ -12,25 +12,26 @@
 
   <ItemGroup>
     <PackageReference Include="Lombiq.AuditTrailExtensions" Version="2.1.0" />
-    <PackageReference Include="Lombiq.BaseTheme" Version="1.1.3-alpha.walma-15.2" />
-    <PackageReference Include="Lombiq.BaseTheme.Samples" Version="1.1.3-alpha.walma-15.2" />
-    <PackageReference Include="Lombiq.ChartJs" Version="2.3.2-alpha.walma-15.2" />
-    <PackageReference Include="Lombiq.ChartJs.Samples" Version="2.3.2-alpha.walma-15.2" />
-    <PackageReference Include="Lombiq.DataTables" Version="3.2.2-alpha.walma-15.2" />
-    <PackageReference Include="Lombiq.DataTables.Samples" Version="3.2.2-alpha.walma-15.2" />
-    <PackageReference Include="Lombiq.HelpfulExtensions" Version="3.5.1-alpha-osoe-185.0" />
-    <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="3.2.1-alpha.walma-15.2" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="2.2.1-alpha.walma-15.2" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="2.2.1-alpha.walma-15.2" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="2.2.1-alpha.walma-15.2" />
+    <PackageReference Include="Lombiq.BaseTheme" Version="1.1.4-alpha.nest-282.1" />
+    <PackageReference Include="Lombiq.BaseTheme.Samples" Version="1.1.4-alpha.nest-282.1" />
+    <PackageReference Include="Lombiq.ChartJs" Version="2.3.3-alpha.nest-282.2" />
+    <PackageReference Include="Lombiq.ChartJs.Samples" Version="2.3.3-alpha.nest-282.2" />
+    <PackageReference Include="Lombiq.DataTables" Version="3.2.3-alpha.nest-282.1" />
+    <PackageReference Include="Lombiq.DataTables.Samples" Version="3.2.3-alpha.nest-282.1" />
+    <PackageReference Include="Lombiq.HelpfulExtensions" Version="3.5.2-alpha.nest-282.1" />
+    <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="3.2.2-alpha.nest-282.1" />
+    <PackageReference Include="Lombiq.Hosting.MultiTenancy.Tenants" Version="2.2.2-alpha.nest-282.16" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="2.2.2-alpha.nest-282.16" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="2.2.2-alpha.nest-282.16" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="2.2.2-alpha.nest-282.16" />
     <PackageReference Include="Lombiq.JsonEditor" Version="2.1.1-alpha.walma-15.0" />
     <PackageReference Include="Lombiq.OrchardCoreApiClient" Version="1.0.0" />
-    <PackageReference Include="Lombiq.Privacy" Version="3.1.3-alpha.walma-15.2" />
-    <PackageReference Include="Lombiq.Privacy.Samples" Version="3.1.3-alpha.walma-15.2" />
+    <PackageReference Include="Lombiq.Privacy" Version="3.1.4-alpha.nest-282.1" />
+    <PackageReference Include="Lombiq.Privacy.Samples" Version="3.1.4-alpha.nest-282.1" />
     <PackageReference Include="Lombiq.SetupExtensions" Version="2.1.0" />
-    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="3.5.1-alpha.walma-15.4" />
-    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="3.5.1-alpha.walma-15.4" />
-    <PackageReference Include="Lombiq.UIKit" Version="2.1.0" />
+    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="3.5.2-alpha.nest-282.1" />
+    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="3.5.2-alpha.nest-282.1" />
+    <PackageReference Include="Lombiq.UIKit" Version="2.1.2-alpha.nest-282.4" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="1.2.2" Condition="'$(RazorRuntimeCompilation)' == 'true'" />
   </ItemGroup>
 
