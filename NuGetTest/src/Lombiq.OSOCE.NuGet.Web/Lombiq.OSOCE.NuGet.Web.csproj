@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="Lombiq.OSOCE.NuGet.Tests.UI" />
-  </ItemGroup>
-  
-  <ItemGroup>
     <PackageReference Include="Lombiq.AuditTrailExtensions" Version="2.1.0" />
     <PackageReference Include="Lombiq.BaseTheme" Version="1.1.3-alpha.osoe-46.4" />
     <PackageReference Include="Lombiq.BaseTheme.Samples" Version="1.1.3-alpha.osoe-46.4" />

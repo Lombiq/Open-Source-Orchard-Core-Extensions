@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using OrchardCore.Logging;
+using System.Diagnostics.CodeAnalysis;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,7 @@ var configuration = builder.Configuration;
 // Here we're adding the configuration to builder services. It will be used to configuring the UI Testing Toolbox
 // (https://github.com/Lombiq/UI-Testing-Toolbox) so UI tests can be executed on the app. For a tutorial on how to create
 // UI tests check out the project.
-builder.Services.Add(new ServiceDescriptor(configuration.GetType(), configuration));
+builder.Services.AddSingleton(configuration);
 
 builder.Services.AddOrchardCms();
 
@@ -21,10 +22,11 @@ app.UseStaticFiles();
 app.UseOrchardCore();
 app.Run();
 
-// As described here(https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-6.0).
-#pragma warning disable CA1050
+[SuppressMessage(
+    "Design",
+    "CA1050: Declare types in namespaces",
+    Justification = "As described here(https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-6.0).")]
 public partial class Program
-#pragma warning restore CA1050
 {
     protected Program()
     {

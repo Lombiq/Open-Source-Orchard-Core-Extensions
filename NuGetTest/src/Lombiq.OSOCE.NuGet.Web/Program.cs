@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseNLogHost();
 
 var configuration = builder.Configuration;
-builder.Services.Add(new ServiceDescriptor(configuration.GetType(), configuration));
+builder.Services.AddSingleton(configuration);
 
 builder.Services
     .AddOrchardCms(builder => builder
