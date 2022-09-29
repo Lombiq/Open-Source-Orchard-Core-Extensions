@@ -1,10 +1,9 @@
+using Lombiq.OSOCE.Tests.UI.Helpers;
 using Lombiq.Tests.UI;
 using Lombiq.Tests.UI.Constants;
-using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Helpers;
 using Lombiq.Tests.UI.Samples.Helpers;
 using Lombiq.Tests.UI.Services;
-using Shouldly;
 using System;
 using System.Threading.Tasks;
 using Xunit.Abstractions;
@@ -43,16 +42,8 @@ public class UITestBase : OrchardCoreUITestBase
                 configuration.BrowserConfiguration.Headless =
                     TestConfigurationManager.GetBoolConfiguration("BrowserConfiguration:Headless", defaultValue: false);
 
-                configuration.AssertAppLogsAsync = AssertAppLogsDefaultOSOCEAsync;
+                configuration.AssertAppLogsAsync = AssertAppLogsHelpers.AssertOsoceAppLogsAreEmptyAsync;
 
                 if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
             });
-
-    public static readonly Func<IWebApplicationInstance, Task> AssertAppLogsDefaultOSOCEAsync =
-        async webApplicationInstance =>
-            (await webApplicationInstance.GetLogOutputAsync())
-            .ReplaceOrdinalIgnoreCase(
-                "|Lombiq.TrainingDemo.Services.DemoBackgroundTask|ERROR|Expected non-error",
-                "|Lombiq.TrainingDemo.Services.DemoBackgroundTask|EXPECTED_ERROR|Expected non-error")
-            .ShouldNotContain("|ERROR|");
 }

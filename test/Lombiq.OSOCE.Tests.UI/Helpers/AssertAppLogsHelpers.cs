@@ -32,6 +32,7 @@ public static class AssertAppLogsHelpers
                 !message.Contains("Microsoft.Hosting.Lifetime|INFO|") &&
                 !string.IsNullOrEmpty(message) &&
                 !message.Contains("System.IO") &&
+                !message.Contains("|Lombiq.TrainingDemo.Services.DemoBackgroundTask|ERROR|Expected non-error") &&
                 !message.Contains("Azure Media Storage is enabled but not active because the 'ContainerName' is missing or empty") &&
                 !message.Contains("Azure Media Storage is enabled but not active because the 'ConnectionString' is missing") &&
                 !message.Contains("OrchardCore.Media.Core.DefaultMediaFileStoreCacheFileProvider.TryDeleteDirectoryAsync") &&

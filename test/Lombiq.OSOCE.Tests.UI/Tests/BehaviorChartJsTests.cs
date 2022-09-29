@@ -1,5 +1,4 @@
 using Lombiq.ChartJs.Tests.UI.Extensions;
-using Lombiq.OSOCE.Tests.UI.Helpers;
 using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
@@ -19,10 +18,5 @@ public class BehaviorChartJsTests : UITestBase
     public Task RecipeDataShouldBeDisplayedCorrectly(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestChartJsSampleBehaviorAsync(),
-            browser,
-            changeConfigurationAsync: config =>
-            {
-                config.AssertAppLogsAsync = AssertAppLogsHelpers.AssertOsoceAppLogsAreEmptyAsync;
-                return Task.CompletedTask;
-            });
+            browser);
 }
