@@ -29,9 +29,6 @@ public static class AssertAppLogsHelpers
             // Temporarily filtering out irrelevant cache errors from logs.
             var filteredLogOutput = messages.Where(message =>
                 !message.Contains("|Lombiq.TrainingDemo.Services.DemoBackgroundTask|ERROR|Expected non-error") &&
-                !message.Contains("Azure Media Storage is enabled but not active because the 'ContainerName' is missing or empty") &&
-                !message.Contains("Azure Media Storage is enabled but not active because the 'ConnectionString' is missing") &&
-                !message.Contains("OrchardCore.Media.Core.DefaultMediaFileStoreCacheFileProvider.TryDeleteDirectoryAsync") &&
                 !message.Contains("OrchardCore.Media.Core.DefaultMediaFileStoreCacheFileProvider|ERROR|Error deleting cache folder"));
 
             filteredLogOutput.ShouldNotContain("|ERROR|");
