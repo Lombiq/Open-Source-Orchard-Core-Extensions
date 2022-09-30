@@ -15,7 +15,6 @@ public static class AssertAppLogsHelpers
 
     public static async Task OsoceLogsShouldBeEmptyAsync(
         this IWebApplicationInstance webApplicationInstance,
-        bool canContainWarnings = false,
         CancellationToken cancellationToken = default)
     {
         if (cancellationToken == default) cancellationToken = CancellationToken.None;
