@@ -39,6 +39,12 @@ public static class AssertAppLogsHelpers
                 !message.Contains("OrchardCore.Media.Core.DefaultMediaFileStoreCacheFileProvider.TryDeleteDirectoryAsync") &&
                 !message.Contains("OrchardCore.Media.Core.DefaultMediaFileStoreCacheFileProvider|ERROR|Error deleting cache folder"));
 
+            if (filteredLogOutput.Count() == 1 &&
+                filteredLogOutput.FirstOrDefault().Contains("Shutting down tenant \"Default\" because of idle timeout"))
+            {
+                return;
+            }
+
             filteredLogOutput.ShouldBeEmpty();
 
             return;
