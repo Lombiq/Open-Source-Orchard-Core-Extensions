@@ -28,8 +28,6 @@ public static class AssertAppLogsHelpers
 
             // Temporarily filtering out irrelevant cache errors from logs.
             var filteredLogOutput = messages.Where(message =>
-                !message.Contains("orchard-log-") &&
-                !string.IsNullOrEmpty(message) &&
                 !message.Contains("|Lombiq.TrainingDemo.Services.DemoBackgroundTask|ERROR|Expected non-error") &&
                 !message.Contains("Azure Media Storage is enabled but not active because the 'ContainerName' is missing or empty") &&
                 !message.Contains("Azure Media Storage is enabled but not active because the 'ConnectionString' is missing") &&
@@ -40,16 +38,6 @@ public static class AssertAppLogsHelpers
             filteredLogOutput.ShouldNotContain("|FATAL|");
 
             return;
-        }
-
-        if (canContainWarnings)
-        {
-            logOutput.ShouldNotContain("|ERROR|");
-            logOutput.ShouldNotContain("|FATAL|");
-        }
-        else
-        {
-            logOutput.ShouldBeEmpty();
         }
     }
 }
