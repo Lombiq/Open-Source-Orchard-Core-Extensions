@@ -1,3 +1,4 @@
+using Lombiq.OSOCE.Tests.UI.Helpers;
 using Lombiq.Tests.UI;
 using Lombiq.Tests.UI.Constants;
 using Lombiq.Tests.UI.Extensions;
@@ -43,7 +44,7 @@ public class UITestBase : OrchardCoreUITestBase
                 configuration.BrowserConfiguration.Headless =
                     TestConfigurationManager.GetBoolConfiguration("BrowserConfiguration:Headless", defaultValue: false);
 
-                configuration.AssertAppLogsAsync = AssertAppLogsDefaultOSOCEAsync;
+                configuration.AssertAppLogsAsync = AssertAppLogsHelpers.AssertOsoceAppLogsAreEmptyAsync;
 
                 if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
             });
