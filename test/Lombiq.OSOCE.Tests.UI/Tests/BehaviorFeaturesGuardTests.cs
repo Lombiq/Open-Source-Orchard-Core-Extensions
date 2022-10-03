@@ -1,4 +1,4 @@
-using Lombiq.Hosting.MultiTenancy.Tenants.Tests.UI.Extensions;
+using Lombiq.Hosting.Tenants.FeaturesGuard.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
@@ -7,9 +7,9 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests;
 
-public class BehaviorMultiTenancyTests : UITestBase
+public class BehaviorFeaturesGuardTests : UITestBase
 {
-    public BehaviorMultiTenancyTests(ITestOutputHelper testOutputHelper)
+    public BehaviorFeaturesGuardTests(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)
     {
     }
