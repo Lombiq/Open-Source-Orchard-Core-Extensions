@@ -35,6 +35,8 @@ public class UITestBase : OrchardCoreUITestBase
             setupOperation,
             async configuration =>
             {
+                configuration.AssertAppLogsAsync = AssertAppLogsHelpers.AssertOsoceAppLogsAreEmptyAsync;
+
                 if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
             });
 }
