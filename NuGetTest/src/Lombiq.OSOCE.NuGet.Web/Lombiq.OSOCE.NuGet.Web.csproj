@@ -22,8 +22,8 @@
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="3.2.1-alpha.osoe-46.5" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="1.0.0-alpha.osoe-46.0" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="1.0.0-alpha.osoe-46.0" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="2.2.1-alpha.osoe-46.6" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="2.2.1-alpha.osoe-46.6" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="2.2.1-alpha.osoe-46.6" />
     <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="2.2.1-alpha.osoe-46.6" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="2.2.1-alpha.osoe-46.6" />
     <PackageReference Include="Lombiq.JsonEditor" Version="2.1.1-alpha.walma-15.0" />
