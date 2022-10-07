@@ -10,10 +10,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8B131E3B-202B-486D-A3A4-CB84AC4C3370}"
 	ProjectSection(SolutionItems) = preProject
 		tools\Lombiq.Analyzers\Lombiq.Analyzers\.editorconfig = tools\Lombiq.Analyzers\Lombiq.Analyzers\.editorconfig
-		.eslintrc.json = .eslintrc.json
+		.eslintrc.js = .eslintrc.js
 		.gitignore = .gitignore
-		.stylelintrc = .stylelintrc
 		Directory.Build.props = Directory.Build.props
+		.stylelintrc.js = .stylelintrc.js
 		tools\Lombiq.Analyzers\Lombiq.Analyzers\general.ruleset = tools\Lombiq.Analyzers\Lombiq.Analyzers\general.ruleset
 		License.md = License.md
 		NuGet.config = NuGet.config
@@ -908,8 +908,8 @@ Global
 		{3E5295F8-A196-466B-A857-177AB6EF6E04} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{11F2CB14-D92A-484F-9C1E-2836B1B04DB8} = {648D3BB6-201F-401B-9EF9-D7BBBC6D3ECA}
 		{7EEC51ED-5483-4A27-93B5-FCD920493604} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
-		{53D45048-C7C6-4D04-A9DA-8B8271510F99} = {648D3BB6-201F-401B-9EF9-D7BBBC6D3ECA}
 		{E9721628-1170-4F81-A40E-C0F3E24E23A2} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
+		{53D45048-C7C6-4D04-A9DA-8B8271510F99} = {648D3BB6-201F-401B-9EF9-D7BBBC6D3ECA}
 		{01A2A5A4-E453-4658-92F1-D57C00B16DA0} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
 		{7DEB3535-5A2A-468A-A626-11B668C53AE0} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{A31B73D3-C075-4510-A504-A1DC0832D006} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
