@@ -2,8 +2,6 @@
   <PropertyGroup>
     <!-- Instruct Node.js Extensions to create .eslintrc and .stylelintrc files in the current directory, which is the
          solution root directory. -->
-    <!--<NodeJsExtensionsNpmPackageSourcePath>$(MSBuildThisFileDirectory)/node_modules/.nx</NodeJsExtensionsNpmPackageSourcePath>
-    <IsGlobalNodeJsExtensionsNpmPackage>true</IsGlobalNodeJsExtensionsNpmPackage>-->
     <NodeJsExtensionsGlobalESLintConfigurationDirectory>$(MSBuildThisFileDirectory)</NodeJsExtensionsGlobalESLintConfigurationDirectory>
     <NodeJsExtensionsGlobalStylelintConfigurationDirectory>$(MSBuildThisFileDirectory)</NodeJsExtensionsGlobalStylelintConfigurationDirectory>
   </PropertyGroup>
