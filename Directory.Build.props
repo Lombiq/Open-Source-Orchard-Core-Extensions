@@ -4,6 +4,7 @@
          solution root directory. -->
     <NodeJsExtensionsGlobalESLintConfigurationDirectory>$(MSBuildThisFileDirectory)</NodeJsExtensionsGlobalESLintConfigurationDirectory>
     <NodeJsExtensionsGlobalStylelintConfigurationDirectory>$(MSBuildThisFileDirectory)</NodeJsExtensionsGlobalStylelintConfigurationDirectory>
+    <DefaultItemExcludes>node_modules\**;.git*;bin\**;obj\**;Tests\**;**/*.*proj;**/*.sln;pnpm-lock.yaml;**/*.user;</DefaultItemExcludes>
   </PropertyGroup>
 
   <!-- Copying the Lombiq logo as an icon to all NuGet-published projects. -->
