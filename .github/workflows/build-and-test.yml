@@ -12,13 +12,13 @@ jobs:
     name: Build and Test - root solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      machine-types: "[\"ubuntu-latest-16core\", \"windows-latest-16core\"]"
+      machine-types: "[\"ubuntu-latest-32core\", \"windows-latest-32core\"]"
       timeout-minutes: 60
 
   call-build-and-test-workflow-nuget-test:
     name: Build and Test - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      machine-types: "[\"ubuntu-latest-16core\", \"windows-latest-16core\"]"
+      machine-types: "[\"ubuntu-latest-32core\", \"windows-latest-32core\"]"
       build-directory: NuGetTest
       timeout-minutes: 30
