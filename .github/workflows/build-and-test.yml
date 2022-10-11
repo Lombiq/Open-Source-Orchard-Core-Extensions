@@ -8,26 +8,83 @@ on:
       - dev
 
 jobs:
-  call-build-and-test-workflow-ubuntu:
-    name: Build and Test - root solution (Ubuntu)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
-    with:
-      machine-types: "[\"ubuntu-latest-4core\"]"
-      timeout-minutes: 60
-      ui-test-parallelism: 6
-
-  call-build-and-test-workflow-windows:
-    name: Build and Test - root solution (Windows)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
-    with:
-      machine-types: "[\"windows-latest-8core\"]"
-      timeout-minutes: 60
-      ui-test-parallelism: 12
-
-  call-build-and-test-workflow-nuget-test:
-    name: Build and Test - NuGetTest solution
+  call-build-and-test-workflow-nuget-test00:
+    name: Build and Test - NuGetTest solution 00
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
       build-directory: NuGetTest
       timeout-minutes: 30
+      ui-test-parallelism: 0
+
+  call-build-and-test-workflow-nuget-test01:
+    name: Build and Test - NuGetTest solution 01
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
+      build-directory: NuGetTest
+      timeout-minutes: 30
+      ui-test-parallelism: 0
+
+  call-build-and-test-workflow-nuget-test02:
+    name: Build and Test - NuGetTest solution 02
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
+      build-directory: NuGetTest
+      timeout-minutes: 30
+      ui-test-parallelism: 0
+
+  call-build-and-test-workflow-nuget-test20:
+    name: Build and Test - NuGetTest solution 20
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
+      build-directory: NuGetTest
+      timeout-minutes: 30
+      ui-test-parallelism: 2
+
+  call-build-and-test-workflow-nuget-test21:
+    name: Build and Test - NuGetTest solution 21
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
+      build-directory: NuGetTest
+      timeout-minutes: 30
+      ui-test-parallelism: 2
+
+  call-build-and-test-workflow-nuget-test22:
+    name: Build and Test - NuGetTest solution 22
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
+      build-directory: NuGetTest
+      timeout-minutes: 30
+      ui-test-parallelism: 2
+
+  call-build-and-test-workflow-nuget-test40:
+    name: Build and Test - NuGetTest solution 40
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
+      build-directory: NuGetTest
+      timeout-minutes: 30
+      ui-test-parallelism: 4
+
+  call-build-and-test-workflow-nuget-test41:
+    name: Build and Test - NuGetTest solution 41
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
+      build-directory: NuGetTest
+      timeout-minutes: 30
+      ui-test-parallelism: 4
+
+  call-build-and-test-workflow-nuget-test42:
+    name: Build and Test - NuGetTest solution 42
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
+      build-directory: NuGetTest
+      timeout-minutes: 30
+      ui-test-parallelism: 4
