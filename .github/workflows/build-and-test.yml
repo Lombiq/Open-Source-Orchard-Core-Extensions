@@ -8,8 +8,8 @@ on:
       - dev
 
 jobs:
-  call-build-and-test-workflow-ubuntu:
-    name: Build and Test - root solution (Ubuntu)
+  call-build-and-test-workflow:
+    name: Build and Test - root solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       machine-types: "[\"ubuntu-latest-4core\", \"windows-latest-8core\"]"
