@@ -52,7 +52,15 @@ public class BehaviorHelpfulLibrariesTests : UITestBase
                             That = 10,
                         };
 
-                        JsonConvert.SerializeObject(json).ShouldBe(JsonConvert.SerializeObject(expected));
+                        var resolver = new DefaultContractResolver { NamingStrategy = new CamelCaseNamingStrategy() };
+                        var settings = new JsonSerializerSettings
+                        {
+                            ContractResolver = resolver,
+                            Formatting = Formatting.Indented,
+                        };
+
+                        JsonConvert.SerializeObject(json, settings)
+                            .ShouldBe(JsonConvert.SerializeObject(expected, settings));
                     }
                 }
 
