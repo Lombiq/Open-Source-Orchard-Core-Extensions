@@ -15,7 +15,7 @@ jobs:
       machine-types: "[\"ubuntu-latest-4core\", \"windows-latest-8core\"]"
       timeout-minutes: 60
       ui-test-parallelism: 0
-      build-enable-nuget-caching: "true"
+      build-enable-npm-caching: "true"
 
   call-build-and-test-workflow1:
     name: Build and Test - root solution
@@ -24,7 +24,7 @@ jobs:
       machine-types: "[\"ubuntu-latest-4core\", \"windows-latest-8core\"]"
       timeout-minutes: 60
       ui-test-parallelism: 0
-      build-enable-nuget-caching: "true"
+      build-enable-npm-caching: "true"
 
   call-build-and-test-workflow2:
     name: Build and Test - root solution
@@ -33,7 +33,7 @@ jobs:
       machine-types: "[\"ubuntu-latest-4core\", \"windows-latest-8core\"]"
       timeout-minutes: 60
       ui-test-parallelism: 0
-      build-enable-nuget-caching: "true"
+      build-enable-npm-caching: "true"
 
   call-build-and-test-workflow3:
     name: Build and Test - root solution
@@ -42,4 +42,4 @@ jobs:
       machine-types: "[\"ubuntu-latest-4core\", \"windows-latest-8core\"]"
       timeout-minutes: 60
       ui-test-parallelism: 0
-      build-enable-nuget-caching: "true"
+      build-enable-npm-caching: "true"
