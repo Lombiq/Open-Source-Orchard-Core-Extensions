@@ -2,23 +2,12 @@ name: Build and Test
 
 # Runs for PRs opened for any branch, and pushes to the dev branch.
 on:
-  pull_request:
-  push:
-    branches:
-      - dev
+  workflow_dispatch:
 
 jobs:
   call-build-and-test-workflow:
     name: Build and Test - root solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      machine-types: "[\"TC-mod\"]"
+      machine-types: "[\"self-hosted\"]"
       timeout-minutes: 60
-
-  call-build-and-test-workflow-nuget-test:
-    name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
-    with:
-      machine-types: "[\"TC-mod\"]"
-      build-directory: NuGetTest
-      timeout-minutes: 30
