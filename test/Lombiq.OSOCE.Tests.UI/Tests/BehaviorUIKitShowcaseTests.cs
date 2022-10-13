@@ -28,6 +28,6 @@ public class BehaviorUIKitShowcaseTests : UITestBase
                 {
                     var errors = (await validationResult.GetErrorsAsync())
                         .Where(error => !error.ContainsOrdinalIgnoreCase("Prefer to use the native <button> element"));
-                    errors.ShouldNotBeEmpty();
+                    errors.ShouldBeEmpty();
                 });
 }
