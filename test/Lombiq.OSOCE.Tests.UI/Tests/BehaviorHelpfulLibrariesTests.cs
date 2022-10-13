@@ -2,10 +2,12 @@
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using OpenQA.Selenium;
 using Shouldly;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -68,6 +70,10 @@ public class BehaviorHelpfulLibrariesTests : UITestBase
                 await CheckButton(By.Id("error"), isError: true);
                 await CheckButton(By.Id("error-await"), isError: true);
                 await CheckButton(By.Id("success"), isError: false);
+
+                // The errors should also appear in the logs.
+                await Should.ThrowAsync<ShouldAssertException>(context.AssertLogsAsync);
+                foreach (var log in context.Application.GetLogs()) log.Remove();
             },
             browser);
 }
