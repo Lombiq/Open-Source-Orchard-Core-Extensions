@@ -1,4 +1,4 @@
-﻿using Lombiq.Tests.UI.Attributes;
+using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using Lombiq.UIKit.Tests.UI.Extensions;
@@ -28,6 +28,6 @@ public class BehaviorUIKitShowcaseTests : UITestBase
                 {
                     var errors = (await validationResult.GetErrorsAsync())
                         .Where(error => !error.ContainsOrdinalIgnoreCase("Prefer to use the native <button> element"));
-                    errors.ShouldBeEmpty();
+                    errors.ShouldNotBeEmpty();
                 });
 }
