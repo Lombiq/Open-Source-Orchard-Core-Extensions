@@ -10,7 +10,7 @@ on:
 jobs:
   call-build-and-test-workflow:
     name: Build and Test - root solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/INFRA-111
     with:
       machine-types: "[\"self-hosted\"]"
       timeout-minutes: 60
