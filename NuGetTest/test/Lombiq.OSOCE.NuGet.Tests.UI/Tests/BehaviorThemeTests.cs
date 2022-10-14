@@ -1,4 +1,4 @@
-﻿using Lombiq.BaseTheme.Tests.UI.Extensions;
+using Lombiq.BaseTheme.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
@@ -23,7 +23,7 @@ public class BehaviorThemeTests : UITestBase
                 await context.SignInDirectlyAsync();
                 await context.ExecuteRecipeDirectlyAsync("Lombiq.OSOCE.NuGet.BaseTheme");
 
-                await context.GoToHomePageAsync();
+                await context.GoToHomePageAsync(onlyIfNotAlreadyThere: false);
                 await context.TestBaseThemeFeaturesAsync();
             },
             browser);
