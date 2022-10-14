@@ -1,4 +1,5 @@
 name: Validate Pull Request
+
 on:
   push:
   pull_request_target:
