@@ -89,3 +89,7 @@
 	path = src/Libraries/Lombiq.OrchardCoreApiClient
 	url = https://github.com/Lombiq/Orchard-Core-API-Client.git
 	branch = issue/NEST-295
+[submodule "src/Modules/Lombiq.ContentEditors"]
+	path = src/Modules/Lombiq.ContentEditors
+	url = http://github.com/Lombiq/Orchard-Content-Editors
+	branch = dev
