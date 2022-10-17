@@ -55,7 +55,12 @@ public class SecurityShortcutsTests : UITestBase
             async context =>
             {
                 await context.AddUserToRoleAsync(UserUserName, FakeRole)
-                    .ShouldThrowAsync<PageChangeAssertionException>();
+                    .ShouldThrowAsync<UserNotFoundException>();
+
+                await context.CreateUserAsync(UserUserName, DefaultUser.Password, UserEmail);
+                await context.AddUserToRoleAsync(UserUserName, FakeRole)
+                    .ShouldThrowAsync<RoleNotFoundException>();
+
                 CleanUpLogs(context);
             },
             browser,
@@ -68,7 +73,8 @@ public class SecurityShortcutsTests : UITestBase
             async context =>
             {
                 await context.AddPermissionToRoleAsync(FakePermission, AuthorRole)
-                    .ShouldThrowAsync<PageChangeAssertionException>();
+                    .ShouldThrowAsync<PermissionNotFoundException>();
+
                 CleanUpLogs(context);
             },
             browser,
