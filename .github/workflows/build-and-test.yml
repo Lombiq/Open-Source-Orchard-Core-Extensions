@@ -25,46 +25,4 @@ jobs:
 
   check-spelling:
     name: Check Spelling
-    # uses: Lombiq/GitHub-Actions/.github/workflows/check-spelling.yml@issue/OSOE-158
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          submodules: 'recursive'
-
-      - name: Stub repo layout
-        shell: bash
-        run: |
-          echo ::group::Looking around
-          find .
-          echo ::end_group::
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
-          rm -rf .git
-          git init .
-          git add .
-          git commit -m 'stub commit -- includes submodules'
-          echo ::group::Looking around again
-          find .
-          echo ::end_group::
-      
-      - name: Check Spelling
-        uses: check-spelling/check-spelling@prerelease
-        with:
-          dictionary_source_prefixes: '{"cspell": "https://raw.githubusercontent.com/check-spelling/cspell-dicts/v20220427/dictionaries/"}'
-          extra_dictionaries:
-            cspell:filetypes/filetypes.txt
-            cspell:django/django.txt
-            cspell:aws/aws.txt
-            cspell:html/html.txt
-            cspell:css/css.txt
-            cspell:csharp/csharp.txt
-            cspell:rust/rust.txt
-            cspell:npm/npm.txt
-            cspell:dotnet/dotnet.txt
-            cspell:scala/scala.txt
-          spell_check_this: Lombiq/GitHub-Actions@issue/OSOE-158
-          config: .github/actions/check-spelling
-          debug: 1
-
+    uses: Lombiq/GitHub-Actions/.github/workflows/check-spelling.yml@issue/OSOE-158
