@@ -26,6 +26,7 @@ jobs:
   check-spelling:
     name: Check Spelling
     # uses: Lombiq/GitHub-Actions/.github/workflows/check-spelling.yml@issue/OSOE-158
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
