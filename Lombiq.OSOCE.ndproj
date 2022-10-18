@@ -3715,7 +3715,7 @@ select new {
 // this exception shouldn't be used anywhere in code.
 //
 // *NotImplementedException* should not be used permanently
-// to mean something like *this method should be overriden*
+// to mean something like *this method should be overridden*
 // or *this implementation doesn't support this facility*.
 // Artefact like *abstract method* or *abstract class* should 
 // be used instead, to favor a *compile time* error over a 
@@ -6392,12 +6392,12 @@ where
    m.IsPubliclyVisible &&
   !m.ParentType.IsSealed &&
    m.ParentType.IsClass
-let overridenInterface = 
+let overriddenInterface = 
    m.OverriddensBase.FirstOrDefault(mb => mb.ParentType.IsInterface && !mb.ParentType.IsPubliclyVisible)
-where overridenInterface != null
+where overriddenInterface != null
 select new { 
   m,
-  overridenInterface = overridenInterface.ParentType,
+  overriddenInterface = overriddenInterface.ParentType,
   Debt = 30.ToMinutes().ToDebt(),
   Severity = Severity.High
  }
