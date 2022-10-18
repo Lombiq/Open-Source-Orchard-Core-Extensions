@@ -1,4 +1,4 @@
-﻿using Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI.Extensions;
+using Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
@@ -21,10 +21,8 @@ public class IdleTenantTests : UITestBase
             {
                 await context.TestIdleTenantManagerBehaviorAsync();
 
-                context.Configuration.AssertAppLogsAsync = async webApplicationInstance =>
-                {
-                    await IdleTenantManagementExtensions.AssertAppLogsWithIdleCheckAsync(webApplicationInstance);
-                };
+                context.Configuration.AssertAppLogsAsync = webApplicationInstance =>
+                    IdleTenantManagementExtensions.AssertAppLogsWithIdleCheckAsync(webApplicationInstance);
             },
             browser,
             configuration => configuration.SetMaxIdleMinutesAndLoggingForUITest());
