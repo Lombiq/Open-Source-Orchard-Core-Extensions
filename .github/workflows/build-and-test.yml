@@ -23,6 +23,6 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 30
 
-  check-spelling:
-    name: Check Spelling
+  spelling:
+    name: Spelling
     uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@issue/OSOE-158
