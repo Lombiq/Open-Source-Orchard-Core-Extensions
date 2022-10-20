@@ -1,99 +1,25 @@
-﻿name: Build .NET solution
+name: Build and Test
 
+# Runs for PRs opened for any branch, and pushes to the dev branch.
 on:
-  workflow_call:
-    inputs:
-      # This needs to be stringified JSON because inputs don't support arrays, see 
-      # https://github.community/t/reusable-workflow-with-strategy-matrix/205676/2.
-      machine-types:
-        required: false
-        type: string
-        default: "[\"ubuntu-latest\"]"
-        description: >
-            Stringified JSON array with the name of the type of machine(s) to run the workflow under, e.g.
-            "[\"ubuntu-latest\"]" or "[\"ubuntu-latest\", \"windows-latest\"]".
-      dotnet-version:
-        required: false
-        type: string
-        default: 6.0.*
-        description: Version of the .NET SDK to set up.
-      build-directory:
-        required: false
-        type: string
-        default: .
-        description: Path to the directory where a solution file can be found.
-      build-verbosity:
-        required: false
-        type: string
-        default: quiet
-        description: Verbosity parameter for dotnet build.
-      build-enable-code-analysis:
-        required: false
-        type: string
-        default: "true"
-        description: Indicates whether to enable static code analysis during dotnet build.
-      build-enable-nuget-caching:
-        required: false
-        type: string
-        default: "false"
-        description: >
-          If set to "true", the NuGet packages will be cached by GitHub. This is faster if you have a lot of NuGet
-          packages, but negligible or even slower if you only have a handful.
-      build-enable-npm-caching:
-        required: false
-        type: string
-        default: "false"
-        description: >
-          If set to "true", the NPM packages will be cached by GitHub. This is faster if you have a lot of NPM packages,
-          but negligible or even slower if you only have a handful.
-      build-cache-version:
-        required: false
-        type: string
-        default: "0"
-        description: >
-          Change this to any other value to alter the cache key, effectively invalidating the latest cache. This is the 
-          only current way to force "clear" the cache (https://github.community/t/how-to-clear-cache-in-github-actions/129038/5)
-          until the associated issue (https://github.com/actions/cache/issues/2) is resolved.
-      timeout-minutes:
-        required: false
-        type: number
-        default: 360
-        description: Configuration for the timeout-minutes parameter of the workflow. The 360 is GitHub's default.
+  pull_request:
+  push:
+    branches:
+      - dev
 
 jobs:
-  # While the below steps seem suitable to DRY with build-and-test-orchard-core, since reusable workflows can't call
-  # other workflows, they'd need to be encapsulated in a composite action. That, however, will result in a single step
-  # being shown under the build details with all below steps mushed together.
-  build:
-    runs-on: ${{ matrix.machine-type }}
-    name: Build and Test
-    # Timeout-minutes is in the matrix only because the config can't be set directly from the inputs, see:
-    # https://github.com/actions/runner/issues/1555.
-    strategy:
-      matrix:
-        machine-type: ${{ fromJson(inputs.machine-types) }}
-        timeout-minutes:
-        - ${{ inputs.timeout-minutes }}
-    timeout-minutes: ${{ matrix.timeout-minutes }}
-    steps:
-    - uses: actions/checkout@v3
-      with:
-        submodules: 'recursive'
+  call-build-and-test-workflow:
+    name: Build and Test - root solution
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "[\"ubuntu-latest-4core\", \"windows-latest-8core\"]"
+      timeout-minutes: 60
+      ui-test-parallelism: 0
 
-    - name: Set up .NET
-      uses: Lombiq/GitHub-Actions/.github/actions/setup-dotnet@dev
-      with:
-        dotnet-version: ${{ inputs.dotnet-version }}
-
-    - name: Enable Node corepack
-      uses: Lombiq/GitHub-Actions/.github/actions/enable-corepack@dev
-
-    - name: Build and Static Code Analysis
-      uses: Lombiq/GitHub-Actions/.github/actions/build-dotnet@dev
-      with:
-        directory: ${{ inputs.build-directory}}
-        verbosity: ${{ inputs.build-verbosity}}
-        enable-code-analysis: ${{ inputs.build-enable-code-analysis}}
-        enable-nuget-caching: ${{ inputs.build-enable-nuget-caching }}
-        enable-npm-caching: ${{ inputs.build-enable-npm-caching }}
-        cache-version: ${{ inputs.build-cache-version }}
+  call-build-and-test-workflow-nuget-test:
+    name: Build and Test - NuGetTest solution
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
+      build-directory: NuGetTest
+      timeout-minutes: 30
