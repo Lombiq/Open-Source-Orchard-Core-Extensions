@@ -12,8 +12,9 @@ jobs:
     name: Build and Test - root solution
     uses: Lombiq/Open-Source-Orchard-Core-Extensions/.github/workflows/build-dotnet-with-pnpm.yml@issue/OSOE-125
     with:
-      machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
+      machine-types: "[\"ubuntu-latest-4core\", \"windows-latest-8core\"]"
       timeout-minutes: 60
+      ui-test-parallelism: 0
 
   call-build-workflow-nuget-test:
     name: Build and Test - NuGetTest solution
