@@ -1,5 +1,6 @@
 using Lombiq.Hosting.Tenants.FeaturesGuard.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Attributes;
+using Lombiq.Tests.UI.Helpers;
 using Lombiq.Tests.UI.Samples.Helpers;
 using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ public class BehaviorFeaturesGuardTests : UITestBase
         ExecuteTestAfterSetupAsync(
             context => context.TestForbiddenFeaturesAsync(SetupHelpers.RecipeId),
             browser,
-            configuration => configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false);
+            ConfigurationHelper.DisableHtmlValidation);
 
     // HTML validation is disabled as OC's login and dashboard pages contain several errors. See:
     // https://github.com/OrchardCMS/OrchardCore/issues/12271
@@ -31,5 +32,5 @@ public class BehaviorFeaturesGuardTests : UITestBase
         ExecuteTestAfterSetupAsync(
             context => context.TestAlwaysEnabledFeaturesAsync(SetupHelpers.RecipeId),
             browser,
-            configuration => configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false);
+            ConfigurationHelper.DisableHtmlValidation);
 }
