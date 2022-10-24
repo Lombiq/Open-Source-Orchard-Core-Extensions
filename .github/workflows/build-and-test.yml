@@ -33,3 +33,7 @@ jobs:
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
       build-directory: NuGetTest
       timeout-minutes: 30
+
+  spelling:
+    name: Spelling
+    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@issue/OSOE-158
