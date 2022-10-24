@@ -18,5 +18,11 @@ public class BehaviorDataTablesTests : UITestBase
     public Task RecipeDataShouldBeDisplayedCorrectly(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestDataTableRecipeDataAsync(),
-            browser);
+            browser,
+            configuration =>
+            {
+                configuration.CounterConfiguration.Running.DbReaderReadThreshold = 57;
+                configuration.CounterConfiguration.Running.DbReaderReadPerNavigationThreshold = 57;
+                return Task.CompletedTask;
+            });
 }

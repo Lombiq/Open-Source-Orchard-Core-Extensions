@@ -18,5 +18,11 @@ public class BehaviorChartJsTests : UITestBase
     public Task RecipeDataShouldBeDisplayedCorrectly(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestChartJsSampleBehaviorAsync(),
-            browser);
+            browser,
+            configuration =>
+            {
+                configuration.CounterConfiguration.Running.DbReaderReadThreshold = 404;
+                configuration.CounterConfiguration.Running.DbReaderReadPerNavigationThreshold = 70;
+                return Task.CompletedTask;
+            });
 }
