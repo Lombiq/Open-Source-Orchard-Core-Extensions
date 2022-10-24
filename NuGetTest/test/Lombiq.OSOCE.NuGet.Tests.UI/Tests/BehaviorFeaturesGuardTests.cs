@@ -1,4 +1,5 @@
 using Lombiq.Hosting.Tenants.FeaturesGuard.Tests.UI.Extensions;
+using Lombiq.OSOCE.NuGet.Tests.UI.Helpers;
 using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ public class BehaviorFeaturesGuardTests : UITestBase
     [Theory(Skip = "Temporarily skipped while FeaturesGuard is disabled."), Chrome]
 #pragma warning restore xUnit1004 // Test methods should not be skipped
     public Task ForbiddenFeaturesShouldNotBeActivatableOnTenants(Browser browser) =>
-        ExecuteTestAfterSetupAsync(context => context.TestForbiddenFeaturesAsync(), browser, configuration =>
+        ExecuteTestAfterSetupAsync(context => context.TestForbiddenFeaturesAsync(SetupHelpers.RecipeId), browser, configuration =>
             configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false);
 
     // HTML validation is disabled as OC's login and dashboard pages contain several errors. See:
@@ -31,6 +32,6 @@ public class BehaviorFeaturesGuardTests : UITestBase
     [Theory(Skip = "Temporarily skipped while FeaturesGuard is disabled."), Chrome]
 #pragma warning restore xUnit1004 // Test methods should not be skipped
     public Task AlwaysEnabledFeaturesShouldNotBeDeactivatableOnTenants(Browser browser) =>
-        ExecuteTestAfterSetupAsync(context => context.TestAlwaysEnabledFeaturesAsync(), browser, configuration =>
+        ExecuteTestAfterSetupAsync(context => context.TestAlwaysEnabledFeaturesAsync(SetupHelpers.RecipeId), browser, configuration =>
             configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false);
 }
