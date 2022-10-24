@@ -30,6 +30,7 @@
     <ProjectReference Include="..\..\src\Themes\Lombiq.BaseTheme\Lombiq.BaseTheme.Tests.UI\Lombiq.BaseTheme.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.Tests.UI\Lombiq.Hosting.MediaTheme.Tests.UI.csproj" />
     <ProjectReference Include="..\Lombiq.UITestingToolbox\Lombiq.Tests.UI.Samples\Lombiq.Tests.UI.Samples.csproj" />
+    <ProjectReference Include="..\Lombiq.UITestingToolbox\Lombiq.Tests.UI.Tests.UI\Lombiq.Tests.UI.Tests.UI.csproj" />
   </ItemGroup>
 
 </Project>
