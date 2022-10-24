@@ -16,14 +16,18 @@ public class BehaviorFeaturesGuardTests : UITestBase
 
     // HTML validation is disabled as OC's login and dashboard pages contain several errors. See:
     // https://github.com/OrchardCMS/OrchardCore/issues/12271
-    [Theory, Chrome]
+#pragma warning disable xUnit1004 // Test methods should not be skipped
+    [Theory(Skip = "Temporarily skipped while FeaturesGuard is disabled."), Chrome]
+#pragma warning restore xUnit1004 // Test methods should not be skipped
     public Task ForbiddenFeaturesShouldNotBeActivatableOnTenants(Browser browser) =>
         ExecuteTestAfterSetupAsync(context => context.TestForbiddenFeaturesAsync(), browser, configuration =>
             configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false);
 
     // HTML validation is disabled as OC's login and dashboard pages contain several errors. See:
     // https://github.com/OrchardCMS/OrchardCore/issues/12271
-    [Theory, Chrome]
+#pragma warning disable xUnit1004 // Test methods should not be skipped
+    [Theory(Skip = "Temporarily skipped while FeaturesGuard is disabled."), Chrome]
+#pragma warning restore xUnit1004 // Test methods should not be skipped
     public Task AlwaysEnabledFeaturesShouldNotBeDeactivatableOnTenants(Browser browser) =>
         ExecuteTestAfterSetupAsync(context => context.TestAlwaysEnabledFeaturesAsync(), browser, configuration =>
             configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false);
