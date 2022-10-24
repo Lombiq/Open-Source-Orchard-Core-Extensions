@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Lombiq.OSOCE.Tests.UI.Tests;
+namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
 public class BehaviorUIKitShowcaseTests : UITestBase
 {
