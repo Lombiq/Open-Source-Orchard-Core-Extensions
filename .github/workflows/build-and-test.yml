@@ -28,11 +28,13 @@ jobs:
 
   call-build-and-test-workflow-nuget-test:
     name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-420
     with:
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
       build-directory: NuGetTest
       timeout-minutes: 30
+      set-up-sql-server: "false"
+      set-up-azurite: "false"
 
   spelling:
     name: Spelling
