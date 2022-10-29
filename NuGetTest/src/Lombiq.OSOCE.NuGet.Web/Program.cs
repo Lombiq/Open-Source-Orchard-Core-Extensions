@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OrchardCore.Logging;
 using System.Diagnostics.CodeAnalysis;
@@ -11,8 +12,15 @@ var configuration = builder.Configuration;
 
 builder.Services
     .AddSingleton(configuration)
-    .AddOrchardCms(builder => builder
-        .AuthorizeApiRequestsIfEnabled(configuration));
+    .AddOrchardCms(orchardCoreBuilder =>
+    {
+        orchardCoreBuilder.AuthorizeApiRequestsIfEnabled(configuration);
+
+        if (configuration.IsUITesting())
+        {
+            orchardCoreBuilder.ConfigureFeaturesGuardForUITesting();
+        }
+    });
 
 var app = builder.Build();
 
