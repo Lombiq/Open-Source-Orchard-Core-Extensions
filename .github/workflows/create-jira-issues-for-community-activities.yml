@@ -7,7 +7,6 @@ on:
     types: opened
   pull_request:
     types: opened
-  push:
 
 jobs:
   call-create-jira-issues-for-community-activities-workflow:
