@@ -14,7 +14,7 @@ This also serves as an example of an ASP.NET Core web app using Orchard from NuG
 
 Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source Orchard Extensions](https://github.com/Lombiq/Open-Source-Orchard-Extensions).
 
-## Pre-requisites
+## Prerequisites
 
 - You need Node.js for building client-side assets in multiple projects. Check out [Lombiq Node.js Extensions Readme](https://github.com/Lombiq/NodeJs-Extensions/Readme.md#prerequisites) for details.
 - [Install PowerShell 7](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell) or newer for [Lombiq PowerShell Analyzers](https://github.com/Lombiq/PowerShell-Analyzers/). The `Lombiq PowerShell Analyzers` project is compatible with Windows PowerShell (PowerShell 5), but the scripts in _tools/Lombiq.GitHub.Actions_ only have to run on PS7 and don't need to be backwards compatible so PS7 is required specifically in this solution.
