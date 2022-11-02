@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OrchardCore.Logging;
 using System.Diagnostics.CodeAnalysis;
@@ -15,13 +14,7 @@ var configuration = builder.Configuration;
 // create UI tests check out the project.
 builder.Services
     .AddSingleton(configuration)
-    .AddOrchardCms(orchardCoreBuilder =>
-    {
-        if (configuration.IsUITesting())
-        {
-            orchardCoreBuilder.ConfigureFeaturesGuardForUITesting();
-        }
-    });
+    .AddOrchardCms();
 
 var app = builder.Build();
 
