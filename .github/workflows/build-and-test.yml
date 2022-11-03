@@ -8,7 +8,7 @@ on:
 
 jobs:
   test-workflow-webhook:
-    runs-on: "[\"self-hosted\", \"lombiq-windows-latest-8core\"]"
+    runs-on: "[\"self-hosted\"]"
     name: Test
     timeout-minutes: 10
     steps:
