@@ -8,10 +8,11 @@ on:
       - dev
 
 jobs:
-  call-build-and-test-workflow-on-self-hosted-runner:
-    name: Build and Test - root solution (self-hosted runner)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/INFRA-111
-    with:
-      machine-types: "[\"self-hosted\"]"
-      timeout-minutes: 60
-      ui-test-parallelism: 0
+  test-workflow-webhook:
+    runs-on: "[\"ubuntu-latest\"]"
+    name: Test
+    timeout-minutes: 1
+    steps:
+      - name: Who am I?
+        shell: pwsh
+        run: whoami
