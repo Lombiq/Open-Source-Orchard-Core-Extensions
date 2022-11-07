@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using OrchardCore.Logging;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,8 +12,15 @@ var configuration = builder.Configuration;
 
 builder.Services
     .AddSingleton(configuration)
-    .AddOrchardCms(builder => builder
-        .AuthorizeApiRequestsIfEnabled(configuration));
+    .AddOrchardCms(orchardCoreBuilder =>
+    {
+        orchardCoreBuilder.AuthorizeApiRequestsIfEnabled(configuration);
+        orchardCoreBuilder.ConfigureFeaturesGuard(
+            new Dictionary<string, IEnumerable<string>>
+            {
+                ["OrchardCore.Twitter"] = new[] { "Lombiq.UIKit", "Lombiq.ChartJs" },
+            });
+    });
 
 var app = builder.Build();
 
