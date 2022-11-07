@@ -22,7 +22,10 @@ public class IdleTenantTests : UITestBase
                 await context.TestIdleTenantManagerBehaviorAsync();
 
                 context.Configuration.AssertAppLogsAsync = async webApplicationInstance =>
+                {
+                    await AssertAppLogsDefaultOSOCEAsync(webApplicationInstance);
                     await IdleTenantManagementExtensions.AssertAppLogsWithIdleCheckAsync(webApplicationInstance);
+                };
             },
             browser,
             configuration => configuration.SetMaxIdleMinutesAndLoggingForUITest());
