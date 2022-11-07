@@ -4,7 +4,7 @@
 
 ## About
 
-Looking for some useful Orchard Core extensions? Here's a bundle solution of all of Lombiq's open-source Orchard Core extensions (modules and themes). Clone and try them out!
+Looking for some usful Orchard Core extensions? Here's a bndle solution of all of Lombiq's open-source Orchard Core extensions (modules and themes). Clone and try them out!
 
 This is an [Orchard Core](https://www.orchardcore.net/) Visual Studio solution that contains most of [Lombiq](https://lombiq.com)'s open-source Orchard modules and themes, as well as related utilities and libraries. Please keep in mind that only those extensions are included which use the latest released version of Orchard (i.e. the very cutting-edge ones depending on a nightly build are not yet here).
 
