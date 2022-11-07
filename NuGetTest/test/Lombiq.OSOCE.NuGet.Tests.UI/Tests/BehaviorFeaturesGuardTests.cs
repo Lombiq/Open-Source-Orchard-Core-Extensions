@@ -18,9 +18,7 @@ public class BehaviorFeaturesGuardTests : UITestBase
     // HTML validation is disabled as OC's login and dashboard pages contain several errors. See:
     // https://github.com/OrchardCMS/OrchardCore/issues/12271
     // https://github.com/OrchardCMS/OrchardCore/issues/12271
-#pragma warning disable xUnit1004 // Test methods should not be skipped
-    [Theory(Skip = "Temporarily skipped while FeaturesGuard is disabled."), Chrome]
-#pragma warning restore xUnit1004 // Test methods should not be skipped
+    [Theory, Chrome]
     public Task ForbiddenFeaturesShouldNotBeActivatableOnTenants(Browser browser) =>
         ExecuteTestAfterSetupAsync(context => context.TestForbiddenFeaturesAsync(SetupHelpers.RecipeId), browser, configuration =>
             configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false);
@@ -28,10 +26,8 @@ public class BehaviorFeaturesGuardTests : UITestBase
     // HTML validation is disabled as OC's login and dashboard pages contain several errors. See:
     // https://github.com/OrchardCMS/OrchardCore/issues/12271
     // https://github.com/OrchardCMS/OrchardCore/issues/12271
-#pragma warning disable xUnit1004 // Test methods should not be skipped
-    [Theory(Skip = "Temporarily skipped while FeaturesGuard is disabled."), Chrome]
-#pragma warning restore xUnit1004 // Test methods should not be skipped
-    public Task AlwaysEnabledFeaturesShouldNotBeDeactivatableOnTenants(Browser browser) =>
-        ExecuteTestAfterSetupAsync(context => context.TestAlwaysEnabledFeaturesAsync(SetupHelpers.RecipeId), browser, configuration =>
+    [Theory, Chrome]
+    public Task ConditionallyEnabledFeaturesShouldWorkCorrectlyOnTenants(Browser browser) =>
+        ExecuteTestAfterSetupAsync(context => context.TestConditionallyEnabledFeaturesAsync(SetupHelpers.RecipeId), browser, configuration =>
             configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false);
 }
