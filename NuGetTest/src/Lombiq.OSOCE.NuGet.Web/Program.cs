@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using OrchardCore.Logging;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,11 +9,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseNLogHost();
 
 var configuration = builder.Configuration;
-builder.Services.AddSingleton(configuration);
 
 builder.Services
-    .AddOrchardCms(builder => builder
-        .AuthorizeApiRequestsIfEnabled(configuration));
+    .AddSingleton(configuration)
+    .AddOrchardCms(orchardCoreBuilder =>
+    {
+        orchardCoreBuilder.AuthorizeApiRequestsIfEnabled(configuration);
+        orchardCoreBuilder.ConfigureFeaturesGuard(
+            new Dictionary<string, IEnumerable<string>>
+            {
+                ["OrchardCore.Twitter"] = new[] { "Lombiq.UIKit", "Lombiq.ChartJs" },
+            });
+    });
 
 var app = builder.Build();
 
@@ -23,7 +31,7 @@ app.Run();
 [SuppressMessage(
     "Design",
     "CA1050: Declare types in namespaces",
-    Justification = "As described here(https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-6.0).")]
+    Justification = "As described here: https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-6.0.")]
 public partial class Program
 {
     protected Program()

@@ -1,4 +1,3 @@
-// This is almost a copy of Lombiq.OSOCE.Tests.recipe in the parent solution.
 {
   "name": "Lombiq.OSOCE.NuGet.Tests",
   "displayName": "TEST: Lombiq's Open-Source Orchard Core Extensions",
