@@ -215,7 +215,7 @@
             },
             {
               "Rule": "Exclude",
-              "Expression": "OrchardCore.Lucene"
+              "Expression": "OrchardCore.Search.Lucene"
             },
             {
               "Rule": "Exclude",
