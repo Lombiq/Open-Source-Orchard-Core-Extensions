@@ -17,7 +17,16 @@ public class IdleTenantTests : UITestBase
     [Theory, Chrome]
     public Task ShuttingDownIdleTenantsShouldWork(Browser browser) =>
         ExecuteTestAfterSetupAsync(
-            async context => await context.TestIdleTenantManagerBehaviorAsync(),
+            async context =>
+            {
+                await context.TestIdleTenantManagerBehaviorAsync();
+
+                context.Configuration.AssertAppLogsAsync = async webApplicationInstance =>
+                {
+                    await AssertAppLogsDefaultOSOCEAsync(webApplicationInstance);
+                    await IdleTenantManagementExtensions.AssertAppLogsWithIdleCheckAsync(webApplicationInstance);
+                };
+            },
             browser,
             configuration => configuration.SetMaxIdleMinutesAndLoggingForUITest());
 }
