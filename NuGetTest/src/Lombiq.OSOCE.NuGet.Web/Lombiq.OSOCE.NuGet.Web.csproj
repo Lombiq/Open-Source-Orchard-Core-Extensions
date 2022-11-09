@@ -16,8 +16,8 @@
     <PackageReference Include="Lombiq.BaseTheme.Samples" Version="1.2.2-alpha.0.osoe-412" />
     <PackageReference Include="Lombiq.ChartJs" Version="2.4.2-alpha.1.osoe-412" />
     <PackageReference Include="Lombiq.ChartJs.Samples" Version="2.4.2-alpha.1.osoe-412" />
-    <PackageReference Include="Lombiq.ContentEditors" Version="1.0.0-alpha.osoe-56.1" />
-    <PackageReference Include="Lombiq.ContentEditors.Samples" Version="1.0.0-alpha.osoe-56.1" />
+    <PackageReference Include="Lombiq.ContentEditors" Version="1.0.0-alpha.osoe-56.3" />
+    <PackageReference Include="Lombiq.ContentEditors.Samples" Version="1.0.0-alpha.osoe-56.3" />
     <PackageReference Include="Lombiq.DataTables" Version="3.3.2-alpha.0.osoe-412" />
     <PackageReference Include="Lombiq.DataTables.Samples" Version="3.3.2-alpha.0.osoe-412" />
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="3.6.2-alpha.0.osoe-412" />
