@@ -9,7 +9,7 @@
   </Target>
 
   <!-- Uncomment this to switch to how NuGet-publishing GitHub Actions builds work, including referencing Lombiq NuGet
-       package dependencies instead of submodules. -->
+       package dependencies instead of submodules.  -->
   <!-- <PropertyGroup>
     <NuGetBuild>true</NuGetBuild>
   </PropertyGroup> -->
