@@ -14,7 +14,7 @@ public class CustomAdminPrefixTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
+    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
     public Task NavigationWithCustomAdminPrefixShouldWork(Browser browser) =>
         CustomAdminPrefixTestCases.NavigationWithCustomAdminPrefixShouldWorkAsync(ExecuteTestAfterSetupAsync, browser);
 }

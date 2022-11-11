@@ -14,7 +14,7 @@ public class BehaviorDataTablesTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
+    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
     public Task RecipeDataShouldBeDisplayedCorrectly(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestDataTableRecipeDataAsync(),
