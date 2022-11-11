@@ -31,7 +31,3 @@ jobs:
       timeout-minutes: 60
       set-up-sql-server: "true"
       set-up-azurite: "true"
-
-  spelling:
-    name: Spelling
-    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
