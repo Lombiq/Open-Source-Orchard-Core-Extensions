@@ -14,7 +14,7 @@ public class IdleTenantTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
+    [Theory(Skip = "Skipping for testing purposes"), Chrome]
     public Task ShuttingDownIdleTenantsShouldWork(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             async context =>
