@@ -10,7 +10,7 @@ on:
 jobs:
   call-build-and-test-workflow-nuget-test0:
     name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-464
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
@@ -18,7 +18,7 @@ jobs:
 
   call-build-and-test-workflow-nuget-test1:
     name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-464
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
@@ -26,7 +26,7 @@ jobs:
 
   call-build-and-test-workflow-nuget-test2:
     name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-464
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
@@ -34,7 +34,7 @@ jobs:
 
   call-build-and-test-workflow-nuget-test3:
     name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-464
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
@@ -42,7 +42,7 @@ jobs:
 
   call-build-and-test-workflow-nuget-test4:
     name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-464
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
@@ -50,7 +50,7 @@ jobs:
 
   call-build-and-test-workflow-nuget-test5:
     name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-464
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
@@ -58,7 +58,7 @@ jobs:
 
   call-build-and-test-workflow-nuget-test6:
     name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-464
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
@@ -66,7 +66,7 @@ jobs:
 
   call-build-and-test-workflow-nuget-test7:
     name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-464
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
@@ -74,7 +74,7 @@ jobs:
 
   call-build-and-test-workflow-nuget-test8:
     name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-464
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
@@ -82,7 +82,7 @@ jobs:
 
   call-build-and-test-workflow-nuget-test9:
     name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-464
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
