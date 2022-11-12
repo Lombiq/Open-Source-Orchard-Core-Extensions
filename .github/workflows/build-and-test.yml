@@ -14,7 +14,7 @@ jobs:
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
 
   call-build-and-test-workflow-nuget-test1:
     name: Build and Test - NuGetTest solution
@@ -22,7 +22,7 @@ jobs:
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
 
   call-build-and-test-workflow-nuget-test2:
     name: Build and Test - NuGetTest solution
@@ -30,7 +30,7 @@ jobs:
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
 
   call-build-and-test-workflow-nuget-test3:
     name: Build and Test - NuGetTest solution
@@ -38,7 +38,7 @@ jobs:
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
 
   call-build-and-test-workflow-nuget-test4:
     name: Build and Test - NuGetTest solution
@@ -46,7 +46,7 @@ jobs:
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
 
   call-build-and-test-workflow-nuget-test5:
     name: Build and Test - NuGetTest solution
@@ -54,7 +54,7 @@ jobs:
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
 
   call-build-and-test-workflow-nuget-test6:
     name: Build and Test - NuGetTest solution
@@ -62,7 +62,7 @@ jobs:
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
 
   call-build-and-test-workflow-nuget-test7:
     name: Build and Test - NuGetTest solution
@@ -70,7 +70,7 @@ jobs:
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
 
   call-build-and-test-workflow-nuget-test8:
     name: Build and Test - NuGetTest solution
@@ -78,7 +78,7 @@ jobs:
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
 
   call-build-and-test-workflow-nuget-test9:
     name: Build and Test - NuGetTest solution
@@ -86,7 +86,7 @@ jobs:
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
 
   call-build-and-test-workflow-nuget-test10:
     name: Build and Test - NuGetTest solution
@@ -94,7 +94,7 @@ jobs:
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
 
   call-build-and-test-workflow-nuget-test11:
     name: Build and Test - NuGetTest solution
@@ -102,7 +102,7 @@ jobs:
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
 
   call-build-and-test-workflow-nuget-test12:
     name: Build and Test - NuGetTest solution
@@ -110,7 +110,7 @@ jobs:
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
 
   call-build-and-test-workflow-nuget-test13:
     name: Build and Test - NuGetTest solution
@@ -118,7 +118,7 @@ jobs:
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
 
   call-build-and-test-workflow-nuget-test14:
     name: Build and Test - NuGetTest solution
@@ -126,7 +126,7 @@ jobs:
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
 
   call-build-and-test-workflow-nuget-test15:
     name: Build and Test - NuGetTest solution
@@ -134,7 +134,7 @@ jobs:
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
 
   call-build-and-test-workflow-nuget-test16:
     name: Build and Test - NuGetTest solution
@@ -142,7 +142,7 @@ jobs:
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
 
   call-build-and-test-workflow-nuget-test17:
     name: Build and Test - NuGetTest solution
@@ -150,7 +150,7 @@ jobs:
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
 
   call-build-and-test-workflow-nuget-test18:
     name: Build and Test - NuGetTest solution
@@ -158,7 +158,7 @@ jobs:
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
 
   call-build-and-test-workflow-nuget-test19:
     name: Build and Test - NuGetTest solution
@@ -166,4 +166,4 @@ jobs:
     with:
       machine-types: "[\"windows-latest\"]"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
