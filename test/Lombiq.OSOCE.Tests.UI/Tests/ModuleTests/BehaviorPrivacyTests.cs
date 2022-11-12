@@ -15,11 +15,11 @@ public class BehaviorPrivacyTests : UITestBase
     {
     }
 
-    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [Theory, Chrome]
     public Task ConsentBannerShouldWorkAnonymous(Browser browser) =>
         ExecuteTestAfterSetupAsync(context => context.TestConsentBannerAsync(), browser);
 
-    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [Theory, Chrome]
     public Task ConsentBannerShouldWorkAdmin(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             async context =>
@@ -30,7 +30,7 @@ public class BehaviorPrivacyTests : UITestBase
             browser);
 
     // This test is for https://github.com/Lombiq/Orchard-Privacy/issues/15
-    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [Theory, Chrome]
     public async Task ConsentBannerShouldWorkWithRazorAndLiquidBasedThemes(Browser browser)
     {
         // First should work with liquid based theme
@@ -43,11 +43,11 @@ public class BehaviorPrivacyTests : UITestBase
             browser);
     }
 
-    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [Theory, Chrome]
     public Task RegistrationConsentCheckboxShouldWork(Browser browser) =>
         ExecuteTestAfterSetupAsync(context => context.TestRegistrationConsentCheckboxAsync(), browser);
 
-    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [Theory, Chrome]
     public Task FormConsentCheckboxShouldWork(Browser browser) =>
         ExecuteTestAfterSetupAsync(context => context.TestPrivacySampleBehaviorAsync(), browser);
 }

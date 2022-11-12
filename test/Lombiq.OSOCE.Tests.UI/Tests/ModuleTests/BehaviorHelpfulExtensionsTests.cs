@@ -14,19 +14,19 @@ public class BehaviorHelpfulExtensionsTests : UITestBase
     {
     }
 
-    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [Theory, Chrome]
     public Task FeatureFlow(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestFlowAdditionalStylingPartAsync(),
             browser);
 
-    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [Theory, Chrome]
     public Task FeatureWidgets(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestFeatureWidgetsAsync(),
             browser);
 
-    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [Theory, Chrome]
     public Task FeatureCodeGeneration(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestFeatureCodeGenerationsAsync(),

@@ -14,7 +14,7 @@ public class BehaviorMediaThemeTests : UITestBase
     {
     }
 
-    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [Theory, Chrome]
     public Task MediaThemeShouldRenderTemplatesFromMediaLibrary(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestMediaThemeTemplateRenderingBehaviorAsync(),

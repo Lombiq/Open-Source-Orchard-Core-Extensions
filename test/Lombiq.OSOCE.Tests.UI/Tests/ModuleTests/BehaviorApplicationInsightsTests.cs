@@ -14,7 +14,7 @@ public class BehaviorApplicationInsightsTests : UITestBase
     {
     }
 
-    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [Theory, Chrome]
     public Task ApplicationInsightsTrackingInOfflineOperationShouldWork(Browser browser) =>
         ApplicationInsightsTestCases.ApplicationInsightsTrackingInOfflineOperationShouldWorkAsync(ExecuteTestAfterSetupAsync, browser);
 }

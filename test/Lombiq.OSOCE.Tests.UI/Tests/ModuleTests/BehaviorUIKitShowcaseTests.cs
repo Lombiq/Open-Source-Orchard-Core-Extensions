@@ -18,7 +18,7 @@ public class BehaviorUIKitShowcaseTests : UITestBase
     {
     }
 
-    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [Theory, Chrome]
     public Task UIKitShowcasePageShouldBeCorrect(Browser browser)
         => ExecuteTestAfterSetupAsync(
             context => context.TestUIKitShowcaseBehaviorAsync(),

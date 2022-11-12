@@ -14,7 +14,7 @@ public class WorkflowShortcutsTests : UITestBase
     {
     }
 
-    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [Theory, Chrome]
     public Task GenerateHttpEventUrlShouldWork(Browser browser) =>
         WorkflowShortcutsTestCases.GenerateHttpEventUrlShouldWorkAsync(ExecuteTestAfterSetupAsync, browser);
 }

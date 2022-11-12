@@ -1,4 +1,4 @@
-using Lombiq.Tests.UI.Attributes;
+﻿using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using Lombiq.VueJs.Tests.UI.Extensions;
@@ -15,7 +15,7 @@ public class BehaviorVueTests : UITestBase
     {
     }
 
-    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [Theory, Chrome]
     public Task RecipeDataShouldBeDisplayedCorrectly(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             async context =>

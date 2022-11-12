@@ -1,4 +1,4 @@
-using Lombiq.BaseTheme.Tests.UI.Extensions;
+﻿using Lombiq.BaseTheme.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
@@ -15,7 +15,7 @@ public class BehaviorBaseThemeTests : UITestBase
     {
     }
 
-    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [Theory, Chrome]
     public Task ThemeFeaturesShouldWork(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             async context =>
