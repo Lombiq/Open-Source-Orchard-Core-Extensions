@@ -18,5 +18,3 @@ jobs:
       set-up-sql-server: "true"
       set-up-azurite: "true"
       ui-test-parallelism: 0
-      build-enable-nuget-caching: "true"
-      build-enable-npm-caching: "true"
