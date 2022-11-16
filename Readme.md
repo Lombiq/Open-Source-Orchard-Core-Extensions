@@ -1,4 +1,4 @@
-# Lombiq's Open-Source Orchard Core Extensions dummy commit
+# Lombiq's Open-Source Orchard Core Extensions
 
 [![Build and Test](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/workflows/build-and-test.yml)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Lombiq/Open-Source-Orchard-Core-Extensions)
