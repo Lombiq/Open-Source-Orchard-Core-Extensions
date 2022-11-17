@@ -14,9 +14,10 @@ jobs:
     with:
       build-directory: NuGetTest
       timeout-minutes: 30
-      cancel-workflow-on-failure: "false"
+      cancel-workflow-on-failure: false
 
   spelling:
     name: Spelling
     uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
-    cancel-workflow-on-failure: "false"
+    with:
+      cancel-workflow-on-failure: false
