@@ -39,6 +39,6 @@ jobs:
   #    build-directory: NuGetTest
   #    timeout-minutes: 30
 
-  spelling:
-    name: Spelling
-    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
+  #spelling:
+  #  name: Spelling
+  #  uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
