@@ -15,7 +15,8 @@ var configuration = builder.Configuration;
 // create UI tests check out the project.
 builder.Services
     .AddSingleton(configuration)
-    .AddOrchardCms(orchardCoreBuilder =>
+    .AddOrch
+    ardCms(orchardCoreBuilder =>
         orchardCoreBuilder.ConfigureFeaturesGuard(
             new Dictionary<string, IEnumerable<string>>
             {
