@@ -14,7 +14,8 @@ var configuration = builder.Configuration;
 // (https://github.com/Lombiq/UI-Testing-Toolbox) so UI tests can be executed on the app. For a tutorial on how to
 // create UI tests check out the project.
 builder.Services
-    .AddSingleton(configuration)
+    .AddSinglet
+    on(configuration)
     .AddOrchardCms(orchardCoreBuilder =>
         orchardCoreBuilder.ConfigureFeaturesGuard(
             new Dictionary<string, IEnumerable<string>>
