@@ -8,10 +8,13 @@ on:
       - dev
 
 jobs:
-  call-build-and-test-workflow-nuget-test:
-    name: Build and Test - NuGetTest solution
+  call-build-and-test-workflow-larger-runners:
+    if: github.ref_name != github.event.repository.default_branch
+    name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-464-build-errors-not-failing
     with:
-      machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
-      build-directory: NuGetTest
+      machine-types: "[\"ubuntu-latest-4core\", \"windows-latest-8core\"]"
       timeout-minutes: 30
+      set-up-sql-server: "true"
+      set-up-azurite: "true"
+      ui-test-parallelism: 0
