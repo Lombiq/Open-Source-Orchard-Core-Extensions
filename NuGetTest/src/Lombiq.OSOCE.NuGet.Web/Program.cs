@@ -14,13 +14,11 @@ builder.Services
     .AddSingleton(configuration)
     .AddOrchardCms(orchardCoreBuilder =>
     {
-    orchardCoreBuilder.AuthorizeApiRequestsIfEnabled(configuration);
-    orchardCoreBuilder.ConfigureFeaturesGuard(
-        new Di
-
-        ctionary<string, IEnumerable<string>>
+        orchardCoreBuilder.AuthorizeApiRequestsIfEnabled(configuration);
+        orchardCoreBuilder.ConfigureFeaturesGuard(
+            new Dictionary<string, IEnumerable<string>>
             {
-        ["OrchardCore.Twitter"] = new[] { "Lombiq.UIKit", "Lombiq.ChartJs" },
+                ["OrchardCore.Twitter"] = new[] { "Lombiq.UIKit", "Lombiq.ChartJs" },
             });
     });
 
