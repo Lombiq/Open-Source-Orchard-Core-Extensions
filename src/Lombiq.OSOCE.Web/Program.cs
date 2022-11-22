@@ -29,6 +29,9 @@ app.UseStaticFiles();
 app.UseOrchardCore();
 app.Run();
 
+var log = LogManager.GetCurrentClassLogger();
+log.Warn("The app is started");
+
 [SuppressMessage(
     "Design",
     "CA1050: Declare types in namespaces",
@@ -37,7 +40,6 @@ public partial class Program
 {
     protected Program()
     {
-        var log = LogManager.GetCurrentClassLogger();
-        log.Info("The app is started");
+        // Nothing to do here.
     }
 }
