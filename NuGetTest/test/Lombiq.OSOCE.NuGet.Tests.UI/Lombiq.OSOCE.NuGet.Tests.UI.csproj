@@ -20,7 +20,7 @@
     <PackageReference Include="Lombiq.ChartJs.Tests.UI" Version="2.4.2-alpha.1.osoe-412" />
     <PackageReference Include="Lombiq.DataTables.Tests.UI" Version="3.3.2-alpha.0.osoe-412" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI" Version="3.3.2-alpha.1.osoe-412" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Tests.UI" Version="1.0.2-alpha.1.osoe-456" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Tests.UI" Version="1.0.2-alpha.2.osoe-456" />
     <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard.Tests.UI" Version="2.3.3-alpha.14.nest-358" />
     <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI" Version="2.3.3-alpha.14.nest-358" />
     <PackageReference Include="Lombiq.Privacy.Tests.UI" Version="3.2.2-alpha.0.osoe-412" />
