@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using NLog;
 using OrchardCore.Logging;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -36,6 +37,7 @@ public partial class Program
 {
     protected Program()
     {
-        // Nothing to do here.
+        var log = LogManager.GetCurrentClassLogger();
+        log.Info("The app is started");
     }
 }
