@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using NLog;
 using OrchardCore.Logging;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,8 +31,13 @@ app.UseStaticFiles();
 app.UseOrchardCore();
 app.Run();
 
-var log = LogManager.GetCurrentClassLogger();
-log.Warn("The app is started");
+string path = Path.Combine(Environment.CurrentDirectory, "App_Data\\Testing.txt");
+
+using (var sw = File.CreateText(path))
+{
+    var time = DateTime.Now.ToString("G", CultureInfo.InvariantCulture);
+    sw.WriteLine(time + " - The app started.");
+}
 
 [SuppressMessage(
     "Design",
