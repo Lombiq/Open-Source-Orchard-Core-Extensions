@@ -42,4 +42,4 @@ jobs:
     name: Spelling
     uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
     with:
-      spell_check_this: Lombiq/GitHub-Actions@issue/OSOE-363
+      spell_check_this: Lombiq/GitHub-Actions/.github/actions/spelling@issue/OSOE-363
