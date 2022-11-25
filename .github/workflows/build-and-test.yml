@@ -41,3 +41,5 @@ jobs:
   spelling:
     name: Spelling
     uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@issue/CARE-265
+    with:
+      spell-check-this: Lombiq/GitHub-Actions@dev
