@@ -31,7 +31,7 @@
     <PackageReference Include="Lombiq.Privacy" Version="3.2.2-alpha.0.osoe-412" />
     <PackageReference Include="Lombiq.Privacy.Samples" Version="3.2.2-alpha.0.osoe-412" />
     <PackageReference Include="Lombiq.SetupExtensions" Version="2.1.0" />
-    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="4.0.2-alpha.0.osoe-470" />
+    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="4.0.2-alpha.0.osoe-412" />
     <PackageReference Include="Lombiq.UIKit" Version="2.3.2-alpha.0.osoe-412" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="1.2.2" Condition="'$(RazorRuntimeCompilation)' == 'true'" />
   </ItemGroup>
