@@ -12,7 +12,7 @@ var configuration = builder.Configuration;
 
 // Here we're adding the configuration to builder services. It will be used for configuring the UI Testing Toolbox
 // (https://github.com/Lombiq/UI-Testing-Toolbox) so UI tests can be executed on the app. For a tutorial on how to
-// create UI tests check out the project. Also testing here 08ba202c-026c-4e90-a3fa-697c4a142988.
+// create UI tests check out the project. Also testing here 08ba202c-026c-4e90-a3fa-697c4a142988eeeeee.
 builder.Services
     .AddSingleton(configuration)
     .AddOrchardCms(orchardCoreBuilder =>
