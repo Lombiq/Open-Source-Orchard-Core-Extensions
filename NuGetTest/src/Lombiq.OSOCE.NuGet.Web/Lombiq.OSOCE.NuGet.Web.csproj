@@ -25,12 +25,12 @@
     <PackageReference Include="Lombiq.DataTables.Samples" Version="3.3.2-alpha.1.osoe-84" />
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="3.6.2-alpha.0.osoe-412" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="3.3.2-alpha.1.osoe-412" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="1.0.2-alpha.0.osoe-412" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="1.0.2-alpha.0.osoe-412" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="2.3.2-alpha.0.osoe-412" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="2.3.2-alpha.0.osoe-412" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="2.3.2-alpha.0.osoe-412" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="2.3.2-alpha.0.osoe-412" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="1.0.2-alpha.2.osoe-456" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="1.0.2-alpha.2.osoe-456" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="2.3.3-alpha.14.nest-358" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="2.3.3-alpha.14.nest-358" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="2.3.3-alpha.14.nest-358" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="2.3.3-alpha.14.nest-358" />
     <PackageReference Include="Lombiq.JsonEditor" Version="2.2.1-alpha.1.osoe-84" />
     <PackageReference Include="Lombiq.NodeJs.Extensions" Version="1.0.0-alpha.osoe-84.5" />
     <PackageReference Include="Lombiq.OrchardCoreApiClient" Version="1.1.0" />
