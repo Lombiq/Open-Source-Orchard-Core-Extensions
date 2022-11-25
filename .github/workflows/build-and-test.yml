@@ -42,4 +42,6 @@ jobs:
     name: Spelling
     uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
     with:
+      # While this is the same as the default usually, it's here to allow you to easily change the branch specifier to
+      # an issue branch if you adjust the dictionaries.
       spell-check-this: Lombiq/GitHub-Actions@dev
