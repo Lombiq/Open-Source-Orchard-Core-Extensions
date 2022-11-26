@@ -11,7 +11,7 @@ jobs:
   call-build-and-test-workflow-larger-runners:
     if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/CARE-265
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       machine-types: "[\"ubuntu-latest-4core\", \"windows-latest-8core\"]"
       timeout-minutes: 30
@@ -32,7 +32,7 @@ jobs:
 
   call-build-and-test-workflow-nuget-test:
     name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/CARE-265
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
       build-directory: NuGetTest
@@ -40,7 +40,7 @@ jobs:
 
   spelling:
     name: Spelling
-    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@issue/CARE-265
+    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
     with:
       # While this is the same as the default usually, it's here to allow you to easily change the branch specifier to
       # an issue branch if you adjust the dictionaries.
