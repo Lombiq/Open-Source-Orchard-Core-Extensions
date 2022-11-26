@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using OrchardCore.Logging;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Host.UseNLogHost();
+builder.Host.UseNLo
+    gHost();
 
 var configuration = builder.Configuration;
 
