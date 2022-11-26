@@ -11,10 +11,7 @@ jobs:
   call-build-and-test-workflow-larger-runners:
     if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-dotnet.yml@dev
     with:
-      machine-types: "[\"windows-latest\"]"
-      timeout-minutes: 45
-      set-up-sql-server: "true"
-      set-up-azurite: "true"
-      ui-test-parallelism: 0
+      machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
+      timeout-minutes: 30
