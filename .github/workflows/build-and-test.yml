@@ -45,3 +45,7 @@ jobs:
       # While this is the same as the default usually, it's here to allow you to easily change the branch specifier to
       # an issue branch if you adjust the dictionaries.
       spell-check-this: Lombiq/GitHub-Actions@dev
+
+  call-post-checks-automation-workflow:
+    needs: [call-build-and-test-workflow-larger-runners, call-build-and-test-workflow-nuget-test, spelling]
+    uses: Lombiq/GitHub-Actions/.github/workflows/post-checks-automation.yml@issue/OSOE-477
