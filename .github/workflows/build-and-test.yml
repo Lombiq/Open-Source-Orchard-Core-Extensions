@@ -15,3 +15,4 @@ jobs:
     with:
       machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
       timeout-minutes: 30
+      build-verbosity: normal
