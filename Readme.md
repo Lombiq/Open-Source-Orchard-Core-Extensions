@@ -1,6 +1,9 @@
 # Lombiq's Open-Source Orchard Core Extensions
 
 [![Build and Test](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/workflows/build-and-test.yml)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Lombiq/Open-Source-Orchard-Core-Extensions)](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/commits/dev)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Lombiq/Open-Source-Orchard-Core-Extensions)](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/commits/dev)
+[![GitHub contributors](https://img.shields.io/github/contributors/Lombiq/Open-Source-Orchard-Core-Extensions)](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/graphs/contributors)
 
 ## About
 
@@ -37,7 +40,7 @@ This also serves as an example of an ASP.NET Core web app using Orchard from NuG
   - [Lombiq.HelpfulExtensions](https://github.com/Lombiq/Helpful-Extensions): Orchard Core module containing some handy extensions (e.g. useful content types and widgets). It's also available on all sites of [DotNest, the Orchard SaaS](https://dotnest.com/).
   - [Lombiq.HelpfulLibraries.Samples](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.Samples): Example Orchard Core module that makes use of Lombiq Helpful Libraries.
   - [Lombiq.Hosting.Azure.ApplicationInsights](https://github.com/Lombiq/Orchard-Azure-Application-Insights): This [Orchard Core](https://www.orchardcore.net/) module enables easy integration of [Azure Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview) telemetry into Orchard. Just install the module, configure the instrumentation key from a configuration source (like the _appsettings.json_ file) as normally for AI, and collected data will start appearing in the Azure Portal. As seen on [the Orchard community meeting](https://www.youtube.com/watch?v=NKKR4R3UPog). Note that this module has an Orchard 1 version in the [dev-orchard-1 branch](https://github.com/Lombiq/Orchard-Azure-Application-Insights/tree/dev-orchard-1). Note that the module depends on [Helpful Libraries](https://github.com/Lombiq/Helpful-Libraries/).
-  - [Lombiq.Hosting.MultiTenancy.Tenants](https://github.com/Lombiq/Hosting-Tenants/tree/dev/Lombiq.Hosting.MultiTenancy.Tenants): This module contains the FeaturesGuard feature, which prevents disabling a configurable set of features on tenants.
+  - [Lombiq.Hosting.Tenants.FeaturesGuard](https://github.com/Lombiq/Hosting-Tenants/tree/dev/Lombiq.Hosting.Tenants.FeaturesGuard): A module that makes it possible to conditionally enable and conditionally keep enabled, or entirely prevent enabling, configurable sets of features on tenants.
   - [Lombiq.Hosting.MediaTheme.Bridge](https://github.com/Lombiq/Hosting-Media-Theme): With the help of this module, you'll be able to host your theme assets and templates from Media Library. It can be used together with the [Lombiq.Hosting.MediaTheme](https://github.com/Lombiq/Hosting-Media-Theme).
   - [Lombiq.Hosting.Tenants.Admin.Login](https://github.com/Lombiq/Hosting-Tenants/tree/dev/Lombiq.Hosting.Tenants.Admin.Login): With the help of this module, you can log in from the Default tenant's admin dashboard to any other tenants as an administrator user. This is useful if you manage a lot of customer tenants and don't want to create individual logins of yours for each of them.
   - [Lombiq.Hosting.Tenants.Management](https://github.com/Lombiq/Hosting-Tenants/tree/dev/Lombiq.Hosting.Tenants.Management): With the help of this module, you can set restrictions on tenant creation.
