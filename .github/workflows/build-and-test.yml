@@ -31,7 +31,7 @@ jobs:
       set-up-sql-server: "true"
       set-up-azurite: "true"
 
-  #call-build-and-test-workflow-nuget-test :
+  #build-and-test-nuget-test:
   #  name: Build and Test - NuGetTest solution
   #  uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
   #  with:
@@ -41,13 +41,13 @@ jobs:
       # This is a test configuration for https://github.com/Lombiq/UI-Testing-Toolbox/issues/228.
   #    ui-test-parallelism: 0
 
-  spelling:
-    name: Spelling
-    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
-    with:
+  #spelling:
+  #  name: Spelling
+  #  uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
+  #  with:
       # While this is the same as the default usually, it's here to allow you to easily change the branch specifier to
       # an issue branch if you adjust the dictionaries.
-      spell-check-this: Lombiq/GitHub-Actions@issue/OSOE-483
+  #    spell-check-this: Lombiq/GitHub-Actions@issue/OSOE-483
 
   #post-pull-request-checks-automation:
   #  needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling]
