@@ -42,11 +42,11 @@ jobs:
 
   spelling:
     name: Spelling
-    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@issue/OSOE-84-final
     with:
       # While this is the same as the default usually, it's here to allow you to easily change the branch specifier to
       # an issue branch if you adjust the dictionaries.
-      spell-check-this: Lombiq/GitHub-Actions@dev
+      spell-check-this: Lombiq/GitHub-Actions@issue/OSOE-84-final
 
   post-pull-request-checks-automation:
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling]
