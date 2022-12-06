@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.HelpfulLibraries" Version="4.7.1-alpha.0.osoe-392" />
-    <PackageReference Include="Lombiq.Tests" Version="2.1.0" />
+    <PackageReference Include="Lombiq.HelpfulLibraries" Version="5.0.0" />
+    <PackageReference Include="Lombiq.Tests" Version="2.2.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5" />
   </ItemGroup>
