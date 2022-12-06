@@ -21,8 +21,8 @@ public class BehaviorDataTablesTests : UITestBase
             browser,
             configuration =>
             {
-                configuration.CounterConfiguration.Running.DbReaderReadThreshold = 57;
-                configuration.CounterConfiguration.Running.DbReaderReadPerNavigationThreshold = 57;
+                configuration.CounterConfiguration.Running.PhaseThreshold.DbReaderReadThreshold = 57;
+                configuration.CounterConfiguration.Running.NavigationThreshold.DbReaderReadThreshold = 57;
                 return Task.CompletedTask;
             });
 }

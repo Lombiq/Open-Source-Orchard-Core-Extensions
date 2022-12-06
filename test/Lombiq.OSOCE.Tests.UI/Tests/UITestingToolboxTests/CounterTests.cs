@@ -27,7 +27,7 @@ public class CounterTests : UITestBase
                     // The test is guaranteed to fail so we don't want to retry it needlessly.
                     configuration.MaxRetryCount = 0;
 
-                    configuration.CounterConfiguration.Running.DbCommandExecutionRepetitionThreshold = 0;
+                    configuration.CounterConfiguration.Running.SessionThreshold.DbCommandExecutionThreshold = 0;
 
                     return Task.CompletedTask;
                 }));
@@ -43,7 +43,7 @@ public class CounterTests : UITestBase
                     // The test is guaranteed to fail so we don't want to retry it needlessly.
                     configuration.MaxRetryCount = 0;
 
-                    configuration.CounterConfiguration.Running.DbReaderReadPerNavigationThreshold = 0;
+                    configuration.CounterConfiguration.Running.NavigationThreshold.DbReaderReadThreshold = 0;
 
                     return Task.CompletedTask;
                 }));

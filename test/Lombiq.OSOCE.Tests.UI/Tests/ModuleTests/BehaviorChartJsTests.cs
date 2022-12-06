@@ -21,8 +21,8 @@ public class BehaviorChartJsTests : UITestBase
             browser,
             configuration =>
             {
-                configuration.CounterConfiguration.Running.DbReaderReadThreshold = 404;
-                configuration.CounterConfiguration.Running.DbReaderReadPerNavigationThreshold = 70;
+                configuration.CounterConfiguration.Running.PhaseThreshold.DbReaderReadThreshold = 404;
+                configuration.CounterConfiguration.Running.NavigationThreshold.DbReaderReadThreshold = 70;
                 return Task.CompletedTask;
             });
 }
