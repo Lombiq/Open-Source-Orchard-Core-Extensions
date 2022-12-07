@@ -40,9 +40,17 @@ jobs:
       # This is a test configuration for https://github.com/Lombiq/UI-Testing-Toolbox/issues/228.
       ui-test-parallelism: 0
 
+  spelling:
+    name: Spelling
+    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@issue/OSOE-84-final
+    with:
+      # While this is the same as the default usually, it's here to allow you to easily change the branch specifier to
+      # an issue branch if you adjust the dictionaries.
+      spell-check-this: Lombiq/GitHub-Actions@issue/OSOE-84-final
+
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
-    needs: [build-and-test-larger-runners, build-and-test-nuget-test]
+    needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling]
     if: github.event.pull_request != ''
     uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
     secrets:
