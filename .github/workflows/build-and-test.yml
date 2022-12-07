@@ -49,6 +49,7 @@ jobs:
       spell-check-this: Lombiq/GitHub-Actions@issue/OSOE-84-final
 
   post-pull-request-checks-automation:
+    name: Post Pull Request Checks Automation
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling]
     if: github.event.pull_request != ''
     uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev

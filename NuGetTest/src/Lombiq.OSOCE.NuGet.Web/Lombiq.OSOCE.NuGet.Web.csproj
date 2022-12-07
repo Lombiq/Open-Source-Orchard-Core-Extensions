@@ -16,35 +16,34 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.AuditTrailExtensions" Version="2.1.0" />
-    <PackageReference Include="Lombiq.BaseTheme" Version="1.2.2-alpha.0.osoe-412" />
-    <PackageReference Include="Lombiq.BaseTheme.Samples" Version="1.2.2-alpha.0.osoe-412" />
-    <PackageReference Include="Lombiq.ChartJs" Version="2.4.2-alpha.1.osoe-412" />
-    <PackageReference Include="Lombiq.ChartJs.Samples" Version="2.4.2-alpha.1.osoe-412" />
-    <PackageReference Include="Lombiq.DataTables" Version="3.3.2-alpha.0.osoe-412" />
-    <PackageReference Include="Lombiq.DataTables.Samples" Version="3.3.2-alpha.0.osoe-412" />
-    <PackageReference Include="Lombiq.HelpfulExtensions" Version="3.6.2-alpha.0.osoe-412" />
-    <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="3.3.2-alpha.1.osoe-412" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="1.0.2-alpha.0.nest-370" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="1.0.2-alpha.0.nest-370" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="2.3.3-alpha.14.nest-358" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="2.3.3-alpha.14.nest-358" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="2.3.3-alpha.14.nest-358" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="2.3.3-alpha.14.nest-358" />
-    <PackageReference Include="Lombiq.JsonEditor" Version="2.2.1-alpha.1.osoe-84" />
-    <PackageReference Include="Lombiq.NodeJs.Extensions" Version="1.0.0-alpha.osoe-84.5" />
-    <PackageReference Include="Lombiq.OrchardCoreApiClient" Version="1.1.0" />
-    <PackageReference Include="Lombiq.Privacy" Version="3.2.2-alpha.0.osoe-84" />
-    <PackageReference Include="Lombiq.Privacy.Samples" Version="3.2.2-alpha.0.osoe-84" />
-    <PackageReference Include="Lombiq.SetupExtensions" Version="2.1.0" />
-    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="4.0.2-alpha.7.osoe-84" />
-    <PackageReference Include="Lombiq.UIKit" Version="2.3.2-alpha.0.osoe-84" />
+    <PackageReference Include="Lombiq.AuditTrailExtensions" Version="3.0.0" />
+    <PackageReference Include="Lombiq.BaseTheme" Version="2.0.0" />
+    <PackageReference Include="Lombiq.BaseTheme.Samples" Version="2.0.0" />
+    <PackageReference Include="Lombiq.ChartJs" Version="3.0.0" />
+    <PackageReference Include="Lombiq.ChartJs.Samples" Version="3.0.0" />
+    <PackageReference Include="Lombiq.DataTables" Version="4.0.0" />
+    <PackageReference Include="Lombiq.DataTables.Samples" Version="4.0.0" />
+    <PackageReference Include="Lombiq.HelpfulExtensions" Version="4.0.0" />
+    <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="4.0.0" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="2.0.0" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="2.0.0" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="3.0.0" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="3.0.0" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="3.0.0" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="3.0.0" />
+    <PackageReference Include="Lombiq.JsonEditor" Version="3.0.0" />
+    <PackageReference Include="Lombiq.OrchardCoreApiClient" Version="2.0.0" />
+    <PackageReference Include="Lombiq.Privacy" Version="4.0.0" />
+    <PackageReference Include="Lombiq.Privacy.Samples" Version="4.0.0" />
+    <PackageReference Include="Lombiq.SetupExtensions" Version="3.0.0" />
+    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="5.0.0" />
+    <PackageReference Include="Lombiq.UIKit" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="1.2.2" Condition="'$(RazorRuntimeCompilation)' == 'true'" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OrchardCore.Logging.NLog" Version="1.4.0" />
-    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.4.0" />
+    <PackageReference Include="OrchardCore.Logging.NLog" Version="1.5.0" />
+    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.5.0" />
   </ItemGroup>
 
   <ItemGroup>
