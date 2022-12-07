@@ -49,9 +49,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OrchardCore.Admin.Abstractions" Version="1.4.0" />
-    <PackageReference Include="OrchardCore.Logging.NLog" Version="1.4.0" />
-    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.4.0" />
+    <PackageReference Include="OrchardCore.Admin.Abstractions" Version="1.5.0" />
+    <PackageReference Include="OrchardCore.Logging.NLog" Version="1.5.0" />
+    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.5.0" />
   </ItemGroup>
 
 </Project>
