@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-    <UseGlobalNodeJsExtensionsNpmPackage>true</UseGlobalNodeJsExtensionsNpmPackage>
+    <UseGlobalNodeJsExtensionsNpmPackage>false</UseGlobalNodeJsExtensionsNpmPackage>
     <NodeJsExtensionsNpmPackageSourcePath>$(MSBuildThisFileDirectory)/node_modules/.nx</NodeJsExtensionsNpmPackageSourcePath>
     <!-- Instruct Node.js Extensions to create .eslintrc and .stylelintrc files in the current directory, which is the
          solution root directory. -->
