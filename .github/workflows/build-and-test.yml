@@ -38,7 +38,7 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 20
       # This is a test configuration for https://github.com/Lombiq/UI-Testing-Toolbox/issues/228.
-      ui-test-parallelism: 0
+      xunit-max-parallel-threads: -1
 
   spelling:
     name: Spelling
@@ -49,6 +49,7 @@ jobs:
       spell-check-this: Lombiq/GitHub-Actions@dev
 
   post-pull-request-checks-automation:
+    name: Post Pull Request Checks Automation
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling]
     if: github.event.pull_request != ''
     uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
