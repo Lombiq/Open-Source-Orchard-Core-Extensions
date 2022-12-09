@@ -13,7 +13,7 @@ jobs:
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-470
     with:
-      machine-types: "[\"ubuntu-latest-4core\", \"windows-latest-8core\"]"
+      machine-types: "['ubuntu-latest-4core', 'windows-latest-8core']"
       timeout-minutes: 30
       set-up-sql-server: "true"
       set-up-azurite: "true"
@@ -25,7 +25,7 @@ jobs:
     name: Build and Test - root solution (standard runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-470
     with:
-      machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
+      machine-types: "['ubuntu-latest', 'windows-latest']"
       timeout-minutes: 60
       set-up-sql-server: "true"
       set-up-azurite: "true"
@@ -34,7 +34,7 @@ jobs:
     name: Build and Test - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-470
     with:
-      machine-types: "[\"ubuntu-latest\", \"windows-latest\"]"
+      machine-types: "['ubuntu-latest', 'windows-latest']"
       build-directory: NuGetTest
       timeout-minutes: 20
       # This is a test configuration for https://github.com/Lombiq/UI-Testing-Toolbox/issues/228.
