@@ -18,7 +18,6 @@ jobs:
       set-up-sql-server: "true"
       set-up-azurite: "true"
       ui-test-parallelism: 0
-      build-create-binary-log: "true"
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
