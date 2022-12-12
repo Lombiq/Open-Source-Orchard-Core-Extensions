@@ -9,7 +9,6 @@ on:
 
 jobs:
   build-and-test-larger-runners:
-    if: false
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-470
     with:
@@ -22,7 +21,6 @@ jobs:
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
-    if: false
     name: Build and Test - root solution (standard runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-470
     with:
@@ -32,7 +30,6 @@ jobs:
       set-up-azurite: "true"
 
   build-and-test-nuget-test:
-    if: false
     name: Build and Test - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-470
     with:
