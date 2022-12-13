@@ -9,6 +9,7 @@ on:
 
 jobs:
   build-and-test-larger-runners:
+    if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
@@ -17,10 +18,10 @@ jobs:
       set-up-sql-server: "true"
       set-up-azurite: "true"
       ui-test-parallelism: 0
-      build-create-binary-log: "true"
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
+    if: github.ref_name == github.event.repository.default_branch
     name: Build and Test - root solution (standard runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
@@ -36,8 +37,6 @@ jobs:
       machine-types: "['ubuntu-latest', 'windows-latest']"
       build-directory: NuGetTest
       timeout-minutes: 20
-      # This is a test configuration for https://github.com/Lombiq/UI-Testing-Toolbox/issues/228.
-      xunit-max-parallel-threads: -1
 
   spelling:
     name: Spelling
