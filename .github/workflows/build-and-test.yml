@@ -37,8 +37,6 @@ jobs:
       machine-types: "['ubuntu-latest', 'windows-latest']"
       build-directory: NuGetTest
       timeout-minutes: 20
-      # This is a test configuration for https://github.com/Lombiq/UI-Testing-Toolbox/issues/228.
-      xunit-max-parallel-threads: -1
 
   spelling:
     name: Spelling
