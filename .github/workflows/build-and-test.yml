@@ -13,12 +13,13 @@ jobs:
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-84-final
     with:
-      machine-types: "['ubuntu-22.04-4core', 'windows-2022-8core']"
-      timeout-minutes: 30
+      machine-types: "['ubuntu-22.04-8core']"
+      timeout-minutes: 15
       set-up-sql-server: "true"
       set-up-azurite: "true"
       ui-test-parallelism: 0
       build-create-binary-log: "true"
+      build-verbosity: normal
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
@@ -31,14 +32,6 @@ jobs:
       set-up-sql-server: "true"
       set-up-azurite: "true"
 
-  build-and-test-nuget-test:
-    name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-84-final
-    with:
-      machine-types: "['ubuntu-22.04', 'windows-2022']"
-      build-directory: NuGetTest
-      timeout-minutes: 20
-
   spelling:
     name: Spelling
     uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
@@ -49,7 +42,7 @@ jobs:
 
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
-    needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling]
+    needs: [build-and-test-larger-runners, spelling]
     if: github.event.pull_request != ''
     uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
     secrets:
