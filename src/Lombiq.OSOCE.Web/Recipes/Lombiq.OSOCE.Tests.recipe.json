@@ -44,6 +44,7 @@
         "Lombiq.VueJs.Samples",
         "OrchardCore.Tenants.FeatureProfiles",
         "Lombiq.Hosting.Tenants.FeaturesGuard",
+        "OrchardCore.Media",
         "TheTheme"
         // Not enabling Lombiq.TrainingDemo.Middlewares because that would write to the error log on every request.
       ]
@@ -215,7 +216,7 @@
             },
             {
               "Rule": "Exclude",
-              "Expression": "OrchardCore.Lucene"
+              "Expression": "OrchardCore.Search.Lucene"
             },
             {
               "Rule": "Exclude",
