@@ -11,7 +11,7 @@ jobs:
   build-and-test-larger-runners:
     if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-482
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       machine-types: "['ubuntu-22.04-4core', 'windows-2022-8core']"
       timeout-minutes: 30
@@ -23,7 +23,7 @@ jobs:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
     if: github.ref_name == github.event.repository.default_branch
     name: Build and Test - root solution (standard runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-482
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       machine-types: "['ubuntu-22.04', 'windows-2022']"
       timeout-minutes: 60
@@ -32,7 +32,7 @@ jobs:
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-482
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       machine-types: "['ubuntu-22.04', 'windows-2022']"
       build-directory: NuGetTest
