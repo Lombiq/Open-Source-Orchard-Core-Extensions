@@ -1,6 +1,6 @@
 using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
+using System;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -17,6 +17,6 @@ public class BasicOrchardFeaturesTests : UITestBase
     [Theory, Chrome]
     public Task BasicOrchardFeaturesShouldWork(Browser browser) =>
         ExecuteTestAsync(
-            context => context.TestBasicOrchardFeaturesExceptRegistrationAsync("Lombiq.OSOCE.NuGet.BasicOrchardFeaturesTests"),
+            context => throw new InvalidOperationException("This is expected."),
             browser);
 }
