@@ -31,8 +31,6 @@ public static class AssertAppLogsHelpers
                 !message.Contains("OrchardCore.Media.Core.DefaultMediaFileStoreCacheFileProvider|ERROR|Error deleting cache folder"));
 
             filteredLogOutput.ShouldNotContain(item => item.Contains("|ERROR|") || item.Contains("|FATAL|"));
-
-            return;
         }
     }
 }
