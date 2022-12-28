@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-and-test-larger-runners:
-    if: github.ref_name != github.event.repository.default_branch
+    if: false
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-84-final
     with:
@@ -39,6 +39,7 @@ jobs:
       machine-types: "['ubuntu-22.04', 'windows-2022']"
       build-directory: NuGetTest
       timeout-minutes: 20
+      build-create-binary-log: "true"
 
   spelling:
     name: Spelling
