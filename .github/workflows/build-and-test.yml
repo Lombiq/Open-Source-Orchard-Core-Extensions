@@ -32,6 +32,14 @@ jobs:
       set-up-sql-server: "true"
       set-up-azurite: "true"
 
+  build-and-test-nuget-test:
+    name: Build and Test - NuGetTest solution
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "['ubuntu-22.04', 'windows-2022']"
+      build-directory: NuGetTest
+      timeout-minutes: 20
+
   spelling:
     name: Spelling
     uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
@@ -42,7 +50,7 @@ jobs:
 
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
-    needs: [build-and-test-larger-runners, spelling]
+    needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling]
     if: github.event.pull_request != ''
     uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
     secrets:
