@@ -5,6 +5,8 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/Lombiq/Open-Source-Orchard-Core-Extensions)](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/commits/dev)
 [![GitHub contributors](https://img.shields.io/github/contributors/Lombiq/Open-Source-Orchard-Core-Extensions)](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/graphs/contributors)
 
+Intentionally bad spleling to test run cancellation.
+
 ## About
 
 Looking for some useful Orchard Core extensions? Here's a bundle solution of all of Lombiq's open-source Orchard Core extensions (modules and themes). Clone and try them out!
