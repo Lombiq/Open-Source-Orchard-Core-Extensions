@@ -12,6 +12,8 @@ jobs:
     if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-84-final
+    env:
+      Lombiq_Tests_UI__OrchardCoreUITestExecutorConfiguration__MaxRetryCount: 0
     with:
       machine-types: "['ubuntu-22.04-4core', 'windows-2022-8core']"
       timeout-minutes: 25
