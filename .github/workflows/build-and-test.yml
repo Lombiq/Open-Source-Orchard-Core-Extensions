@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-and-test-larger-runners:
-    if: false
+    if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/NEST-369
     with:
@@ -21,7 +21,7 @@ jobs:
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
-    if: false
+    if: github.ref_name == github.event.repository.default_branch
     name: Build and Test - root solution (standard runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/NEST-369
     with:
