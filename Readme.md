@@ -17,7 +17,7 @@ This also serves as an example of an ASP.NET Core web app using Orchard from NuG
 
 Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source Orchard Extensions](https://github.com/Lombiq/Open-Source-Orchard-Extensions).
 
-## Pre-requisites
+## Prerequisites
 
 - You need Node.js for building client-side assets in multiple projects. Check out [Lombiq Node.js Extensions Readme](https://github.com/Lombiq/NodeJs-Extensions/Readme.md#prerequisites) for details.
 - [Install PowerShell 7](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell) or newer for [Lombiq PowerShell Analyzers](https://github.com/Lombiq/PowerShell-Analyzers/). The `Lombiq PowerShell Analyzers` project is compatible with Windows PowerShell (PowerShell 5), but the scripts in _tools/Lombiq.GitHub.Actions_ only have to run on PS7 and don't need to be backwards compatible so PS7 is required specifically in this solution.
@@ -108,9 +108,7 @@ When adding a new extension, or significant new features to existing extensions,
 - Add lower-level unit/integration tests as necessary with the [Lombiq Testing Toolbox for Orchard Core](https://github.com/Lombiq/Testing-Toolbox/).
 - If the sample project includes MVC actions, create a service that inherits from `MainMenuNavigationProviderBase` and adds front-end main menu items. The top level menu item should have the project's shortened name and the submenu items the individual actions. If you have several controllers, use separators and labels as you can see in the [TrainingDemoNavigationProvider.cs](https://github.com/Lombiq/Orchard-Training-Demo-Module/blob/dev/Navigation/TrainingDemoNavigationProvider.cs).
 - If the feature is user-facing, also add UI test extension method(s) with the [Lombiq UI Testing Toolbox for Orchard Core](https://github.com/Lombiq/UI-Testing-Toolbox/) that assert on some important aspects, and execute them from a new UI test in `Lombiq.OSOCE.Tests.UI` (for inspiration, see the examples there). These methods are also meant to be executed from UI tests in other projects when testing how it integrated with other features. If you've added a demo recipe or sample project to it then utilize that in the test too (see `ExecuteRecipeDirectlyAsync()`). For this, you'll also need to enable the feature in _Lombiq.OSOCE.Tests.recipe_.
-- If the project is published on NuGet:
-  - For Gulp Extension-using projects you'll need to commit the _wwwroot_ folder for now, see [this issue](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/issues/48).
-  - Once published on NuGet, reference it from the app in the `Lombiq.OSOCE.NuGet` solution as well, and enable its features in the _Lombiq.OSOCE.NuGet.Tests.recipe_. If it has UI testing methods, also run them from `Lombiq.OSOCE.NuGet.Tests.UI`.
+- If the project is published on NuGet, reference it from the app in the `Lombiq.OSOCE.NuGet` solution as well, and enable its features in the _Lombiq.OSOCE.NuGet.Tests.recipe_. If it has UI testing methods, also run them from `Lombiq.OSOCE.NuGet.Tests.UI`.
 - If an extension is added, removed or significantly updated in this project, then add, remove or update its description under the "Included Projects" section of this Readme.
 
 ### Opening pull requests
