@@ -1,4 +1,4 @@
-lockfileVersion: 5.4
+lockfileVersion: 5.3
 
 specifiers:
   eslint: ^8.25.0
@@ -10,7 +10,7 @@ specifiers:
 
 devDependencies:
   eslint: 8.25.0
-  eslint-config-airbnb-base: 15.0.0_fyln4uq2tv75svthy6prqvt6lm
+  eslint-config-airbnb-base: 15.0.0_2e16de521a9d7fd95667c79f18567e5b
   eslint-plugin-import: 2.26.0_eslint@8.25.0
   eslint-plugin-node: 11.1.0_eslint@8.25.0
   eslint-plugin-only-warn: 1.0.3
@@ -327,7 +327,7 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-config-airbnb-base/15.0.0_fyln4uq2tv75svthy6prqvt6lm:
+  /eslint-config-airbnb-base/15.0.0_2e16de521a9d7fd95667c79f18567e5b:
     resolution: {integrity: sha512-xaX3z4ZZIcFLvh2oUNvcX5oEofXda7giYmuplVxoOg5A7EXJMrUyqRgR+mhDhPK8LZ4PttFOBvCYDbX3sUoUig==}
     engines: {node: ^10.12.0 || >=12.0.0}
     peerDependencies:
@@ -351,7 +351,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-module-utils/2.7.3_ulu2225r2ychl26a37c6o2rfje:
+  /eslint-module-utils/2.7.3_a2e9ad6bb1d60475ebc0dfc5e76a2549:
     resolution: {integrity: sha512-088JEC7O3lDZM9xGe0RerkOMd0EjFl+Yvd1jPWIkMT5u3H9+HC34mWWPnqPrN13gieT9pBOO+Qt07Nb/6TresQ==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -403,7 +403,7 @@ packages:
       doctrine: 2.1.0
       eslint: 8.25.0
       eslint-import-resolver-node: 0.3.6
-      eslint-module-utils: 2.7.3_ulu2225r2ychl26a37c6o2rfje
+      eslint-module-utils: 2.7.3_a2e9ad6bb1d60475ebc0dfc5e76a2549
       has: 1.0.3
       is-core-module: 2.9.0
       is-glob: 4.0.3
