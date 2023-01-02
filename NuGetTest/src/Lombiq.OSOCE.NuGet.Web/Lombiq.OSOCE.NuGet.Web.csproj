@@ -20,8 +20,8 @@
     <PackageReference Include="Lombiq.DataTables.Samples" Version="4.0.0" />
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="4.0.0" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="4.0.0" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="2.0.0" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="2.0.0" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="2.0.1" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="2.0.1" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="3.0.0" />
     <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="3.0.0" />
     <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="3.0.0" />
