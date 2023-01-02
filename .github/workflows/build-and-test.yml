@@ -31,7 +31,6 @@ jobs:
       set-up-azurite: "true"
 
   build-and-test-nuget-test:
-    if: false
     name: Build and Test - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
