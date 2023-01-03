@@ -32,6 +32,7 @@ public class UITestBase : OrchardCoreUITestBase<Program>
             async configuration =>
             {
                 configuration.AssertAppLogsAsync = AssertAppLogsHelpers.AssertOsoceAppLogsAreEmptyAsync;
+                configuration.MaxRetryCount = 2;
 
                 if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
             });
