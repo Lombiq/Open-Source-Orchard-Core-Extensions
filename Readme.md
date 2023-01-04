@@ -117,9 +117,7 @@ When adding a new extension, or significant new features to existing extensions,
 ### Opening pull requests
 
 - Open a pull request in this repository for every submodule pull request. That way, static code analysis and complex tests can run. If you forget to do so, a check in the submodule will fail. Once you've created the PR here, just click "Re-run jobs" in your submodule.
-- If you see build errors under your pull request then check out its details:
-  - If the entry says "TeamCity build failed" it links to our TeamCity instance. Select "Log in as guest" when presented with a login screen.
-  - If it has the GitHub icon it will send you to the failed step in the Actions tab. You can also click on the "Summary" on the sidebar to download the artifacts (logs, screenshots, etc) and in case of failed UI tests you find the annotations linking to which test failed.
+- If you see build errors under your pull request then check out its details: It will send you to the failed step in the Actions tab. You can also click on the "Summary" on the sidebar to download the artifacts (logs, screenshots, etc) and in case of failed UI tests you find the annotations linking to which test failed.
 - Open a pull request for all but trivial changes (like typos) so we can nicely track them, including when generating release notes for the next release.
 
 ### Dependencies between Lombiq projects
