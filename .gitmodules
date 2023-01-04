@@ -89,3 +89,7 @@
 	path = src/Libraries/Lombiq.OrchardCoreApiClient
 	url = https://github.com/Lombiq/Orchard-Core-API-Client.git
 	branch = issue/NEST-295
+[submodule "src/Modules/Lombiq.Hosting.BuildVersionDisplay"]
+	path = src/Modules/Lombiq.Hosting.BuildVersionDisplay
+	url = https://github.com/Lombiq/Hosting-Build-Version-Display.git
+	branch = dev
