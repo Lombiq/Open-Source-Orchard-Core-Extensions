@@ -5,7 +5,9 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <RazorRuntimeCompilation>false</RazorRuntimeCompilation>
     <!-- Test value for Lombiq.Hosting.BuildVersionDisplay. Intentionally different than the value in its props file. -->
-    <BuildUrl>https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/runs/456</BuildUrl>
+    <BuildVersionDisplay_BuildUrl>
+      https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/runs/456
+    </BuildVersionDisplay_BuildUrl>
   </PropertyGroup>
 
   <ItemGroup>
