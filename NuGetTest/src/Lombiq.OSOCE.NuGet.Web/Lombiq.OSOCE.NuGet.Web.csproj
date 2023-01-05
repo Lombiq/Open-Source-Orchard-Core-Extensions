@@ -24,7 +24,7 @@
     <PackageReference Include="Lombiq.DataTables.Samples" Version="4.0.0" />
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="4.0.0" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="4.0.0" />
-    <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay" Version="0.0.1-alpha.5.nest-339" />
+    <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay" Version="0.0.1-alpha.6.nest-339" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="2.0.1" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="2.0.1" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="3.0.0" />

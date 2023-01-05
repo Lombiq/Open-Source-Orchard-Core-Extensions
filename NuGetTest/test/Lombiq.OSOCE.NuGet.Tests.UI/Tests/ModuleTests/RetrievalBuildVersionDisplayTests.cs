@@ -14,12 +14,9 @@ public class RetrievalBuildVersionDisplayTests : UITestBase
     {
     }
 
-    // The build link won't be displayed, since the UI test project doesn't (shouldn't) reference the module
-    // package directly and thus won't use its targets file either, breaking the BuildVersionDisplay_BuildUrl
-    // property. This is not an error, the link is still displayed when the web app is run directly.
     [Theory, Chrome]
     public Task BuildVersionShouldBeBeDisplayedCorrectly(Browser browser) =>
         ExecuteTestAfterSetupAsync(
-            context => context.TestBuildVersionDisplayAsync(checkBuildLink: false),
+            context => context.TestBuildVersionDisplayAsync(),
             browser);
 }
