@@ -28,6 +28,7 @@
         "Lombiq.HelpfulExtensions.ShapeTracing",
         "Lombiq.HelpfulExtensions.Widgets",
         "Lombiq.HelpfulLibraries.Samples",
+        "Lombiq.Hosting.BuildVersionDisplay",
         "Lombiq.Hosting.Tenants.Admin.Login",
         "Lombiq.Hosting.Tenants.Admin.Login.SubTenant",
         "Lombiq.Hosting.Tenants.Management",
@@ -35,7 +36,7 @@
         "Lombiq.JsonEditor",
         "Lombiq.OSOCE.Samples",
         "Lombiq.OSOCE.NuGet.TestModule",
-        // We only enable these on a specific test, because it overlaps with too many things.
+        // We only enable these in a specific test, because the banner overlaps with too many things.
         // "Lombiq.Privacy.ConsentBanner",
         // "Lombiq.Privacy.FormConsent",
         // "Lombiq.Privacy.RegistrationConsent",

@@ -27,6 +27,7 @@
         "Lombiq.HelpfulExtensions.ShapeTracing",
         "Lombiq.HelpfulExtensions.Widgets",
         "Lombiq.HelpfulLibraries.Samples",
+        "Lombiq.Hosting.BuildVersionDisplay",
         "Lombiq.Hosting.Tenants.Admin.Login",
         "Lombiq.Hosting.Tenants.Admin.Login.SubTenant",
         "Lombiq.Hosting.Tenants.Management",
