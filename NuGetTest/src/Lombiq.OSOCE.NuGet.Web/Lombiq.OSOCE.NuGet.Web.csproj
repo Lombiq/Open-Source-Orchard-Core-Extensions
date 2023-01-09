@@ -33,8 +33,8 @@
     <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="3.0.0" />
     <PackageReference Include="Lombiq.JsonEditor" Version="3.0.0" />
     <PackageReference Include="Lombiq.OrchardCoreApiClient" Version="2.0.0" />
-    <PackageReference Include="Lombiq.Privacy" Version="4.0.0" />
-    <PackageReference Include="Lombiq.Privacy.Samples" Version="4.0.0" />
+    <PackageReference Include="Lombiq.Privacy" Version="4.0.1-alpha.6.osoe-530" />
+    <PackageReference Include="Lombiq.Privacy.Samples" Version="4.0.1-alpha.6.osoe-530" />
     <PackageReference Include="Lombiq.SetupExtensions" Version="3.0.0" />
     <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="5.0.1-alpha.1.osoe-464" />
     <PackageReference Include="Lombiq.UIKit" Version="3.0.0" />
