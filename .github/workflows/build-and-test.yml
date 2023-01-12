@@ -12,7 +12,7 @@ jobs:
     # if: github.ref_name != github.event.repository.default_branch
     if: false
     name: Build and Test - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-487
     with:
       machine-types: "['ubuntu-22.04-4core', 'windows-2022-8core']"
       timeout-minutes: 30
@@ -25,7 +25,7 @@ jobs:
     # if: github.ref_name == github.event.repository.default_branch
     if: false
     name: Build and Test - root solution (standard runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-487
     with:
       machine-types: "['ubuntu-22.04', 'windows-2022']"
       timeout-minutes: 60
@@ -35,7 +35,7 @@ jobs:
   build-and-test-nuget-test:
     if: false
     name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-487
     with:
       machine-types: "['ubuntu-22.04', 'windows-2022']"
       build-directory: NuGetTest
@@ -43,17 +43,17 @@ jobs:
 
   spelling:
     name: Spelling
-    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@issue/OSOE-487
     with:
       # While this is the same as the default usually, it's here to allow you to easily change the branch specifier to
       # an issue branch if you adjust the dictionaries.
-      spell-check-this: Lombiq/GitHub-Actions@dev
+      spell-check-this: Lombiq/GitHub-Actions@issue/OSOE-487
 
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling]
     if: github.event.pull_request != ''
-    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@issue/OSOE-487
     secrets:
       JIRA_BASE_URL: ${{ secrets.DEFAULT_JIRA_BASE_URL }}
       JIRA_USER_EMAIL: ${{ secrets.DEFAULT_JIRA_USER_EMAIL }}
