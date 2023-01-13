@@ -33,11 +33,11 @@ public class BehaviorPrivacyTests : UITestBase
     [Theory, Chrome]
     public async Task ConsentBannerShouldWorkWithRazorAndLiquidBasedThemes(Browser browser)
     {
-        // First should work with liquid based theme
+        // First should work with Liquid-based theme
         await ExecuteTestAfterSetupAsync(
             context => context.TestConsentBannerWithThemeAsync("TheBlogTheme"),
             browser);
-        // Then should work with razor based theme
+        // Then should work with Razor-based theme
         await ExecuteTestAfterSetupAsync(
             context => context.TestConsentBannerWithThemeAsync("TheTheme"),
             browser);
