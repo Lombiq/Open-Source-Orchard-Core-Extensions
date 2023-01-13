@@ -28,6 +28,7 @@
     <ProjectReference Include="..\Modules\Lombiq.AuditTrailExtensions\Lombiq.AuditTrailExtensions.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.ChartJs\Lombiq.ChartJs.Samples\Lombiq.ChartJs.Samples.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.ChartJs\Lombiq.ChartJs\Lombiq.ChartJs.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.Hosting.BuildVersionDisplay\Lombiq.Hosting.BuildVersionDisplay\Lombiq.Hosting.BuildVersionDisplay.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.FeaturesGuard\Lombiq.Hosting.Tenants.FeaturesGuard.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.UIKit\Lombiq.UIKit\Lombiq.UIKit.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.DataTables\Lombiq.DataTables.Samples\Lombiq.DataTables.Samples.csproj" />
