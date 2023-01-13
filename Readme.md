@@ -1,9 +1,6 @@
 # Lombiq's Open-Source Orchard Core Extensions
 
-[![Build and Test](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/workflows/build-and-test.yml)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Lombiq/Open-Source-Orchard-Core-Extensions)](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/commits/dev)
-[![GitHub last commit](https://img.shields.io/github/last-commit/Lombiq/Open-Source-Orchard-Core-Extensions)](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/commits/dev)
-[![GitHub contributors](https://img.shields.io/github/contributors/Lombiq/Open-Source-Orchard-Core-Extensions)](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/graphs/contributors)
+[![Build and Test](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/workflows/build-and-test.yml) [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Lombiq/Open-Source-Orchard-Core-Extensions)](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/commits/dev) [![GitHub last commit](https://img.shields.io/github/last-commit/Lombiq/Open-Source-Orchard-Core-Extensions)](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/commits/dev) [![GitHub contributors](https://img.shields.io/github/contributors/Lombiq/Open-Source-Orchard-Core-Extensions)](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/graphs/contributors)
 
 ## About
 
