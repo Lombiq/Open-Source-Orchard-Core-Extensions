@@ -20,6 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		commands.json = commands.json
 		..\Directory.Build.props = ..\Directory.Build.props
 		Directory.Build.props = Directory.Build.props
+		NuGet.config = NuGet.config
 		Readme.md = Readme.md
 		Reset-Local.ps1 = Reset-Local.ps1
 		Update-LombiqNuGetPackages.ps1 = Update-LombiqNuGetPackages.ps1
