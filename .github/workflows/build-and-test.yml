@@ -16,7 +16,7 @@ jobs:
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-84-final
     with:
-      machine-types: "['ubuntu-22.04-4core']"
+      machine-types: "['ubuntu-22.04-4core', 'windows-2022-8core']"
       timeout-minutes: 30
       set-up-sql-server: "true"
       set-up-azurite: "true"
@@ -36,7 +36,6 @@ jobs:
       set-up-azurite: "true"
 
   build-and-test-nuget-test:
-    if: false
     name: Build and Test - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
