@@ -42,34 +42,6 @@ jobs:
     name: Spelling
     uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
     with:
-      dictionary-source-prefixes: >
-        {
-          "lombiq": "https://raw.githubusercontent.com/Lombiq/GitHub-Actions/dev/.github/actions/spelling/",
-          "cspell": "https://raw.githubusercontent.com/check-spelling/cspell-dicts/v20220816/dictionaries/"
-        }
-      extra-dictionaries: |
-        cspell:aws/aws.txt
-        cspell:cpp/src/cpp.txt
-        cspell:csharp/csharp.txt
-        cspell:css/css.txt
-        cspell:django/django.txt
-        cspell:dotnet/dotnet.txt
-        cspell:filetypes/filetypes.txt
-        cspell:fullstack/fullstack.txt
-        cspell:html/html.txt
-        cspell:node/node.txt
-        cspell:npm/npm.txt
-        cspell:php/php.txt
-        cspell:python/src/python/python-lib.txt
-        cspell:rust/rust.txt
-        cspell:scala/scala.txt
-        cspell:software-terms/src/software-terms.txt
-        cspell:typescript/typescript.txt
-        lombiq:allow.txt
-        lombiq:excludes.txt
-        lombiq:expect.txt
-        lombiq:liquid.txt
-        lombiq:patterns.txt
       # While this is the same as the default usually, it's here to allow you to easily change the branch specifier to
       # an issue branch if you adjust the dictionaries.
       spell-check-this: Lombiq/GitHub-Actions@dev
