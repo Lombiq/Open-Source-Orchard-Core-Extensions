@@ -62,6 +62,7 @@ This also serves as an example of an ASP.NET Core web app using Orchard from NuG
   - [`Lombiq.Gulp.Extensions`](https://github.com/Lombiq/Gulp-Extensions): Various JavaScript functions and Gulp tasks that can be handy when developing Gulp pipelines.
   - [`Lombiq.Npm.Targets`](https://github.com/Lombiq/NPM-Targets): Provides automatic NPM package installation and a custom NPM command execution before building a .NET project. This way it is possible for example to manage assets (e.g. .scss files or images) in a folder that will be automatically compiled into the _wwwroot_ folder on build, which then can be excluded from the version control system.
   - [`Lombiq.SetupExtensions`](https://github.com/Lombiq/Setup-Extensions): Extensions for setting up an Orchard Core application.
+  - [`Lombiq.Hosting.MediaTheme.Targets`](https://github.com/Lombiq/Hosting-Media-Theme): Provides automatic media theme package creation during build.
 
 - Testing
   - [`Lombiq.Tests`](https://github.com/Lombiq/Testing-Toolbox): General and unit testing extensions and helpers, mostly for ASP.NET Core and Orchard Core. Also see our [UI Testing Toolbox](https://github.com/Lombiq/UI-Testing-Toolbox).
