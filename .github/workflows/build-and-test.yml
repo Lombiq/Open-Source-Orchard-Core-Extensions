@@ -66,6 +66,8 @@ jobs:
         cspell:software-terms/src/software-terms.txt
         cspell:typescript/typescript.txt
         lombiq:allow.txt
+        lombiq:expect.txt
+        lombiq:excludes.txt
       # While this is the same as the default usually, it's here to allow you to easily change the branch specifier to
       # an issue branch if you adjust the dictionaries.
       spell-check-this: Lombiq/GitHub-Actions@dev
