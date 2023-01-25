@@ -48,16 +48,23 @@ jobs:
           "cspell": "https://raw.githubusercontent.com/check-spelling/cspell-dicts/v20220816/dictionaries/"
         }
       extra-dictionaries: |
-        cspell:filetypes/filetypes.txt
-        cspell:django/django.txt
         cspell:aws/aws.txt
-        cspell:html/html.txt
-        cspell:css/css.txt
+        cspell:cpp/src/cpp.txt
         cspell:csharp/csharp.txt
-        cspell:rust/rust.txt
-        cspell:npm/npm.txt
+        cspell:css/css.txt
+        cspell:django/django.txt
         cspell:dotnet/dotnet.txt
+        cspell:filetypes/filetypes.txt
+        cspell:fullstack/fullstack.txt
+        cspell:html/html.txt
+        cspell:node/node.txt
+        cspell:npm/npm.txt
+        cspell:php/php.txt
+        cspell:python/src/python/python-lib.txt
+        cspell:rust/rust.txt
         cspell:scala/scala.txt
+        cspell:software-terms/src/software-terms.txt
+        cspell:typescript/typescript.txt
         lombiq:allow.txt
       # While this is the same as the default usually, it's here to allow you to easily change the branch specifier to
       # an issue branch if you adjust the dictionaries.
