@@ -18,6 +18,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{97DCF32A-0BBB-441D-9709-860757DFC2E0}"
 	ProjectSection(SolutionItems) = preProject
 		commands.json = commands.json
+		..\Directory.Build.props = ..\Directory.Build.props
 		Directory.Build.props = Directory.Build.props
 		NuGet.config = NuGet.config
 		Readme.md = Readme.md
@@ -30,6 +31,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.NuGet.Tests", "test\Lombiq.OSOCE.NuGet.Tests\Lombiq.OSOCE.NuGet.Tests.csproj", "{692A7BF5-5DB9-46C9-8C90-8D2EFC895BAF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.NuGet.Tests.UI", "test\Lombiq.OSOCE.NuGet.Tests.UI\Lombiq.OSOCE.NuGet.Tests.UI.csproj", "{23C4D30C-3E8D-4BC5-A02E-D2A2B3EDFC08}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{FB27E080-5C89-425F-A6F1-CD4E690CF195}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.NodeJs.Extensions.Samples.NuGet", "..\src\Utilities\Lombiq.NodeJs.Extensions\Lombiq.NodeJs.Extensions.Samples.NuGet\Lombiq.NodeJs.Extensions.Samples.NuGet.csproj", "{25103E6E-D628-4D36-8FE5-965A293C36D3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{342A0D21-FA7F-45E9-895A-5F6DA5F3370E}"
 EndProject
@@ -61,6 +66,10 @@ Global
 		{23C4D30C-3E8D-4BC5-A02E-D2A2B3EDFC08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23C4D30C-3E8D-4BC5-A02E-D2A2B3EDFC08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23C4D30C-3E8D-4BC5-A02E-D2A2B3EDFC08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25103E6E-D628-4D36-8FE5-965A293C36D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25103E6E-D628-4D36-8FE5-965A293C36D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25103E6E-D628-4D36-8FE5-965A293C36D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25103E6E-D628-4D36-8FE5-965A293C36D3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6504905F-584A-49A0-9FFE-CCB12240E7D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6504905F-584A-49A0-9FFE-CCB12240E7D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6504905F-584A-49A0-9FFE-CCB12240E7D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -77,7 +86,9 @@ Global
 		{7A7AB418-7A88-4F7E-ADEF-5F5B293D53FE} = {6ECC68E0-8C39-49E9-A4F9-B21153568653}
 		{692A7BF5-5DB9-46C9-8C90-8D2EFC895BAF} = {8E53E788-C4AA-43D6-B906-6675BD10EC15}
 		{23C4D30C-3E8D-4BC5-A02E-D2A2B3EDFC08} = {8E53E788-C4AA-43D6-B906-6675BD10EC15}
+		{FB27E080-5C89-425F-A6F1-CD4E690CF195} = {B9D4219F-B537-4665-8679-6E10C29ED62E}
 		{6504905F-584A-49A0-9FFE-CCB12240E7D7} = {342A0D21-FA7F-45E9-895A-5F6DA5F3370E}
+		{25103E6E-D628-4D36-8FE5-965A293C36D3} = {FB27E080-5C89-425F-A6F1-CD4E690CF195}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7B6C224F-E9B3-47DA-8E82-205D1620F2F8}
