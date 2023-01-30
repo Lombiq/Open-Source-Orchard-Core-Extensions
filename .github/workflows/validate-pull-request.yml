@@ -15,9 +15,9 @@ jobs:
       - name: Checking your input
         run: |
           echo "github.event.pull_request.opened   : $MERGED_RAW"
-          echo "github.event.pull_request : $MERGED_TRUE_STR"
+          echo "github.event.action == 'opened' : $MERGED_TRUE_STR"
           echo "github.event.pull_request.opened  == true  : $MERGED_TRUE_BOOL"
         env:
           MERGED_RAW: ${{ github.event.pull_request.opened }}
-          MERGED_TRUE_STR: ${{ github.event.pull_request }}
+          MERGED_TRUE_STR: ${{ github.event.action == 'opened' }}
           MERGED_TRUE_BOOL: ${{ github.event.pull_request.opened  == true }}
