@@ -8,16 +8,3 @@ on:
 jobs:
   validate-pull-request:
     uses: Lombiq/GitHub-Actions/.github/workflows/validate-pull-request.yml@issue/OSOE-505
-  build:
-    name: Input check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checking your input
-        run: |
-          echo "github.event.pull_request.opened   : $MERGED_RAW"
-          echo "github.event.action == 'opened' : $MERGED_TRUE_STR"
-          echo "github.event.pull_request.opened  == true  : $MERGED_TRUE_BOOL"
-        env:
-          MERGED_RAW: ${{ github.event.pull_request.opened }}
-          MERGED_TRUE_STR: ${{ github.event.action == 'opened' }}
-          MERGED_TRUE_BOOL: ${{ github.event.pull_request.opened  == true }}
