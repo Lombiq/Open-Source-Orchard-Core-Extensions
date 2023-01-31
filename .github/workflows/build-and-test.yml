@@ -18,6 +18,8 @@ jobs:
       set-up-sql-server: "true"
       set-up-azurite: "true"
       ui-test-parallelism: 0
+      build-enable-nuget-caching: "true"
+      build-enable-npm-caching: "true"
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
@@ -29,6 +31,8 @@ jobs:
       timeout-minutes: 60
       set-up-sql-server: "true"
       set-up-azurite: "true"
+      build-enable-nuget-caching: "true"
+      build-enable-npm-caching: "true"
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
@@ -37,6 +41,8 @@ jobs:
       machine-types: "['ubuntu-22.04', 'windows-2022']"
       build-directory: NuGetTest
       timeout-minutes: 20
+      build-enable-nuget-caching: "true"
+      build-enable-npm-caching: "true"
 
   spelling:
     name: Spelling
