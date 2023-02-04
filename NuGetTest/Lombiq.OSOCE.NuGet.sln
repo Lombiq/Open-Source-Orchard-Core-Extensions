@@ -36,10 +36,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.NodeJs.Extensions.Samples.NuGet", "..\src\Utilities\Lombiq.NodeJs.Extensions\Lombiq.NodeJs.Extensions.Samples.NuGet\Lombiq.NodeJs.Extensions.Samples.NuGet.csproj", "{25103E6E-D628-4D36-8FE5-965A293C36D3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{342A0D21-FA7F-45E9-895A-5F6DA5F3370E}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Analyzers.PowerShell.PackageReference", "..\tools\Lombiq.Analyzers.PowerShell\TestSolutions\Lombiq.Analyzers.PowerShell.PackageReference\Lombiq.Analyzers.PowerShell.PackageReference.csproj", "{6504905F-584A-49A0-9FFE-CCB12240E7D7}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,10 +66,6 @@ Global
 		{25103E6E-D628-4D36-8FE5-965A293C36D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25103E6E-D628-4D36-8FE5-965A293C36D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25103E6E-D628-4D36-8FE5-965A293C36D3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6504905F-584A-49A0-9FFE-CCB12240E7D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6504905F-584A-49A0-9FFE-CCB12240E7D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6504905F-584A-49A0-9FFE-CCB12240E7D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6504905F-584A-49A0-9FFE-CCB12240E7D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,7 +79,6 @@ Global
 		{692A7BF5-5DB9-46C9-8C90-8D2EFC895BAF} = {8E53E788-C4AA-43D6-B906-6675BD10EC15}
 		{23C4D30C-3E8D-4BC5-A02E-D2A2B3EDFC08} = {8E53E788-C4AA-43D6-B906-6675BD10EC15}
 		{FB27E080-5C89-425F-A6F1-CD4E690CF195} = {B9D4219F-B537-4665-8679-6E10C29ED62E}
-		{6504905F-584A-49A0-9FFE-CCB12240E7D7} = {342A0D21-FA7F-45E9-895A-5F6DA5F3370E}
 		{25103E6E-D628-4D36-8FE5-965A293C36D3} = {FB27E080-5C89-425F-A6F1-CD4E690CF195}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

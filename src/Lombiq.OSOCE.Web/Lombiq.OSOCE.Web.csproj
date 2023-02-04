@@ -6,8 +6,6 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
-  <Import Project="..\..\tools\Lombiq.Analyzers.PowerShell\Lombiq.Analyzers.PowerShell\Lombiq.Analyzers.PowerShell.targets" />
-
   <ItemGroup>
     <None Remove="Recipes\Media\meadow-orchard.jpg" />
   </ItemGroup>
