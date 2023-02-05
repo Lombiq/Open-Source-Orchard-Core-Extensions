@@ -8,9 +8,9 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests;
 
-public class BasicAsyncEditorTests : UITestBase
+public class BehaviorAsyncEditorTests : UITestBase
 {
-    public BasicAsyncEditorTests(ITestOutputHelper testOutputHelper)
+    public BehaviorAsyncEditorTests(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)
     {
     }
