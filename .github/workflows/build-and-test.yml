@@ -48,6 +48,12 @@ jobs:
       # an issue branch if you adjust the dictionaries.
       spell-check-this: Lombiq/GitHub-Actions@dev
 
+  powershell-static-code-analysis:
+    name: PowerShell Static Code Analysis
+    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
+    with:
+      run-windows-powershell: "false"
+
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling]
