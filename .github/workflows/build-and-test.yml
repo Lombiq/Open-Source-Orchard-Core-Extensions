@@ -51,6 +51,7 @@ jobs:
       additional-dictionaries: |
         cspell:cpp/src/cpp.txt
         cspell:csharp/csharp.txt
+        cspell:fullstack/fullstack.txt
         cspell:html/html.txt
         cspell:npm/npm.txt
         lombiq-lgha:lombiq-common.txt
