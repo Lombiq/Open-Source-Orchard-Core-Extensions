@@ -56,7 +56,7 @@ jobs:
         cspell:html/html.txt
         cspell:npm/npm.txt
         lombiq-lgha:Liquid.txt
-        lombiq-lgha:Lombiq.people.txt
+        lombiq-lgha:Lombiq.common.txt
         lombiq-lgha:Lombiq.people.txt
 
   powershell-static-code-analysis:
