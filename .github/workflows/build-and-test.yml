@@ -55,7 +55,9 @@ jobs:
         cspell:fullstack/fullstack.txt
         cspell:html/html.txt
         cspell:npm/npm.txt
-        lombiq-lgha:lombiq-common.txt
+        lombiq-lgha:Liquid.txt
+        lombiq-lgha:Lombiq.people.txt
+        lombiq-lgha:Lombiq.people.txt
 
   powershell-static-code-analysis:
     if: false
