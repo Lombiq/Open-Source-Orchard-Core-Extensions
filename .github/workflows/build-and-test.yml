@@ -52,6 +52,7 @@ jobs:
         cspell:cpp/src/cpp.txt
         cspell:csharp/csharp.txt
         cspell:html/html.txt
+        cspell:npm/npm.txt
         lombiq-lgha:lombiq-common.txt
 
   powershell-static-code-analysis:
