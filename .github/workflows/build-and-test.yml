@@ -51,6 +51,7 @@ jobs:
       additional-dictionaries: |
         cspell:cpp/src/cpp.txt
         cspell:csharp/csharp.txt
+        cspell:css/css.txt
         cspell:fullstack/fullstack.txt
         cspell:html/html.txt
         cspell:npm/npm.txt
