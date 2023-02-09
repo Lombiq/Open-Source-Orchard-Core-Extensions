@@ -1,5 +1,6 @@
 activatable
 apiclienttenant
+autoinit
 autorun
 basethemesample
 Bubl
@@ -8,7 +9,9 @@ chartjs
 Chro
 chromedriver
 codeanalysis
+codestyle
 Codeuctivity
+colorpicker
 contentitemid
 copyfiles
 createstate
@@ -28,9 +31,12 @@ hashable
 hsva
 htmlvalidate
 icbin
+JMES
+jsoneditor
 jsoneditoronline
 lastgremlinsclick
 linebreak
+lintrc
 listheader
 logtest
 lombiqdt
@@ -42,11 +48,12 @@ mogwais
 mso
 multisubmit
 Noda
+npmrc
 omnisharp
 onspecial
 osoce
 parallelizable
-Pickr
+pickr
 PII
 popstate
 Portainer
@@ -54,6 +61,7 @@ postclean
 prebuild
 retriable
 rnwood
+rolename
 sanitizers
 scrollbars
 sfc
@@ -68,10 +76,12 @@ textlint
 Tful
 Timestamped
 Toolset
+trainingdemo
 tundora
 uncached
 unclickable
 visualstudioextension
 vuejs
+XDG
 xsessionrc
 Yarp
