@@ -51,6 +51,7 @@ jobs:
       additional-dictionaries: |
         cspell:cpp/src/cpp.txt
         cspell:csharp/csharp.txt
+        cspell:html/html.txt
         lombiq-lgha:lombiq-common.txt
 
   powershell-static-code-analysis:
