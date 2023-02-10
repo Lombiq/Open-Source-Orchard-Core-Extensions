@@ -31,4 +31,4 @@ sha[0-9]{3}-[0-9a-zA-Z+/]{64}
 
 # Ignore a code block (defined by opening and closing braces) when it contains the "#spell-check-ignore-code-block"
 # marker text. Note: Doesn't work with nested code blocks.
-{\X*#spell-check-ignore-code-block\X*}
+{(?s:.)*#spell-check-ignore-code-block(?s:.)*}
