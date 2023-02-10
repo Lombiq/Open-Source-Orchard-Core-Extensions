@@ -53,6 +53,7 @@ jobs:
         cspell:css/css.txt
         cspell:fullstack/fullstack.txt
         cspell:html/html.txt
+        cspell:node/node.txt
         cspell:npm/npm.txt
         lombiq-lgha:Liquid.txt
         lombiq-lgha:Lombiq.common.txt
