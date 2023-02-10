@@ -49,7 +49,6 @@ jobs:
       # an issue branch if you adjust the dictionaries.
       spell-check-this: Lombiq/GitHub-Actions@issue/OSOE-523
       additional-dictionaries: |
-        cspell:cpp/src/cpp.txt
         cspell:csharp/csharp.txt
         cspell:css/css.txt
         cspell:fullstack/fullstack.txt
