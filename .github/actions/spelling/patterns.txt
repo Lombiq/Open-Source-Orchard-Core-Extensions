@@ -28,7 +28,3 @@ sha[0-9]{3}-[0-9a-zA-Z+/]{64}
 
 # Ignore lines that contain the "#spell-check-ignore-line" marker text.
 .*#spell-check-ignore-line.*
-
-# Ignore a code block (defined by opening and closing braces) when it contains the "#spell-check-ignore-code-block"
-# marker text. Note: Doesn't work with nested code blocks.
-{(?s:.)*#spell-check-ignore-code-block(?s:.)*}
