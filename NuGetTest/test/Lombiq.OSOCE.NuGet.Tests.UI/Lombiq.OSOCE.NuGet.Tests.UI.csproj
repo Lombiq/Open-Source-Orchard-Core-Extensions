@@ -27,7 +27,7 @@
     <PackageReference Include="Lombiq.Privacy.Tests.UI" Version="5.0.1" />
     <PackageReference Include="Lombiq.HelpfulExtensions.Tests.UI" Version="5.0.0" />
     <PackageReference Include="Lombiq.Tests.UI" Version="6.0.0" />
-    <PackageReference Include="Lombiq.VueJs.Tests.UI" Version="1.0.1-alpha.7.osoe-553" />
+    <PackageReference Include="Lombiq.VueJs.Tests.UI" Version="v1.0.1-alpha.9.osoe-553" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5" />
   </ItemGroup>
