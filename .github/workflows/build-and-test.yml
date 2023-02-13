@@ -33,7 +33,7 @@ jobs:
       build-create-binary-log: "true"
 
   build-and-test-nuget-test:
-  	if: false
+    if: false
     name: Build and Test - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
@@ -50,7 +50,7 @@ jobs:
       spell-check-this: Lombiq/GitHub-Actions@dev
 
   powershell-static-code-analysis:
-  	if: false
+    if: false
     name: PowerShell Static Code Analysis
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
