@@ -45,9 +45,6 @@ jobs:
     name: Spelling
     uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@issue/OSOE-523
     with:
-      # While this is the same as the default usually, it's here to allow you to easily change the branch specifier to
-      # an issue branch if you adjust the dictionaries.
-      spell-check-this: Lombiq/GitHub-Actions@issue/OSOE-523
       additional-dictionaries: |
         cspell:csharp/csharp.txt
         cspell:css/css.txt
