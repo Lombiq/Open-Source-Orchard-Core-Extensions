@@ -1,3 +1,3 @@
-# Spell checking configuration informations and advices
+# Spell checking configuration advice
 
-Check out [our recommendations for maintaining spell checking configuration in the Lombiq/GitHub.Actions repository](https://github.com/Lombiq/GitHub-Actions/blob/dev/.github/actions/spelling/advice.md)!
+Please read [our recommendations for maintaining the spell checking configuration](https://github.com/Lombiq/GitHub-Actions/blob/dev/Docs/SpellCheckingConfiguration.md) carefully!
