@@ -39,7 +39,6 @@ jobs:
       machine-types: "['ubuntu-22.04', 'windows-2022']"
       build-directory: NuGetTest
       timeout-minutes: 20
-      build-create-binary-log: "true"
 
   spelling:
     name: Spelling
