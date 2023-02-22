@@ -50,7 +50,6 @@ Noda
 npmrc
 omnisharp
 onspecial
-osoce
 parallelizable
 pickr
 PII
