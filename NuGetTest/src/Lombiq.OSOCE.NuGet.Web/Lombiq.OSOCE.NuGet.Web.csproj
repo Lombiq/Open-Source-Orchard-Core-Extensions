@@ -42,6 +42,8 @@
     <PackageReference Include="Lombiq.SetupExtensions" Version="3.0.0" />
     <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="6.0.0" />
     <PackageReference Include="Lombiq.UIKit" Version="4.0.0" />
+    <PackageReference Include="Lombiq.VueJs" Version="1.0.0" />
+    <PackageReference Include="Lombiq.VueJs.Samples" Version="1.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="1.2.2" Condition="'$(RazorRuntimeCompilation)' == 'true'" />
   </ItemGroup>
 
