@@ -17,7 +17,7 @@ Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source
 ## Prerequisites
 
 - You need Node.js for building client-side assets in multiple projects. Check out [Lombiq Node.js Extensions Readme](https://github.com/Lombiq/NodeJs-Extensions/#prerequisites) for details.
-- To develop and test scripts written in PowerShell, install and use [Install PowerShell 7](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell) instead of Windows PowerShell (i.e., up to version 5.x). Static code analysis is only executed through PowerShell 7.
+- To develop and test scripts written in PowerShell, install and use [PowerShell 7](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell) instead of Windows PowerShell (i.e., up to version 5.x). Static code analysis is only executed through PowerShell 7.
 
 ## Included Projects
 
