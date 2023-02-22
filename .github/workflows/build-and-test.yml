@@ -52,9 +52,8 @@ jobs:
         cspell:html/html.txt
         cspell:node/node.txt
         cspell:npm/npm.txt
-        lombiq-lgha:Liquid.txt
-        lombiq-lgha:Lombiq.common.txt
-        lombiq-lgha:Lombiq.people.txt
+        lombiq-lgha:dictionaries/Liquid.txt
+        lombiq-lgha:dictionaries/Lombiq.people.txt
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
