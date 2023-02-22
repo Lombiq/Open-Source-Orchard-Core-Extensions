@@ -1,4 +1,3 @@
-apiclienttenant
 autoinit
 basethemesample
 Bubl
