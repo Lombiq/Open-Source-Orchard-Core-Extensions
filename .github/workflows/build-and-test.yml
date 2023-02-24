@@ -19,7 +19,7 @@ jobs:
       set-up-azurite: "true"
       ui-test-parallelism: 0
       build-create-binary-log: "true"
-      blame-hang-timeout: "2s"
+      blame-hang-timeout: "5m"
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
@@ -41,7 +41,7 @@ jobs:
       machine-types: "['ubuntu-22.04', 'windows-2022']"
       build-directory: NuGetTest
       timeout-minutes: 20
-      blame-hang-timeout: "10s"
+      blame-hang-timeout: "5m"
 
   spelling:
     name: Spelling
