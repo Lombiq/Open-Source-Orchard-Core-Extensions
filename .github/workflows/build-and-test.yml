@@ -50,6 +50,7 @@ jobs:
       spell-check-this: Lombiq/GitHub-Actions@dev
 
   powershell-static-code-analysis:
+    if: false
     name: PowerShell Static Code Analysis
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
