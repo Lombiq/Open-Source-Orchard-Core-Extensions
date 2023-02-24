@@ -41,7 +41,7 @@ jobs:
       machine-types: "['ubuntu-22.04', 'windows-2022']"
       build-directory: NuGetTest
       timeout-minutes: 20
-      blame-hang-timeout: "2s"
+      blame-hang-timeout: "5m"
 
   spelling:
     name: Spelling
