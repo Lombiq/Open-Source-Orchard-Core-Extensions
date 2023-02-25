@@ -6,8 +6,6 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
-  <Import Project="..\..\tools\Lombiq.Analyzers.PowerShell\Lombiq.Analyzers.PowerShell\Lombiq.Analyzers.PowerShell.targets" />
-
   <ItemGroup>
     <None Remove="Recipes\Media\meadow-orchard.jpg" />
   </ItemGroup>
@@ -43,7 +41,6 @@
     <ProjectReference Include="..\Modules\Lombiq.Privacy\Lombiq.Privacy\Lombiq.Privacy.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.TrainingDemo\Lombiq.TrainingDemo.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.VueJs\Lombiq.VueJs.Samples\Lombiq.VueJs.Samples.csproj" />
-    <ProjectReference Include="..\Modules\Lombiq.VueJs\Lombiq.VueJs\Lombiq.VueJs.csproj" />
     <ProjectReference Include="..\Themes\Lombiq.BaseTheme\Lombiq.BaseTheme.Samples\Lombiq.BaseTheme.Samples.csproj" />
     <ProjectReference Include="..\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.Bridge\Lombiq.Hosting.MediaTheme.Bridge.csproj" />
     <ProjectReference Include="..\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.csproj" />

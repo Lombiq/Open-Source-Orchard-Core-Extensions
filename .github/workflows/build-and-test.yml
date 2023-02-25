@@ -18,6 +18,7 @@ jobs:
       set-up-sql-server: "true"
       set-up-azurite: "true"
       ui-test-parallelism: 0
+      build-create-binary-log: "true"
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
@@ -29,6 +30,7 @@ jobs:
       timeout-minutes: 60
       set-up-sql-server: "true"
       set-up-azurite: "true"
+      build-create-binary-log: "true"
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
@@ -42,9 +44,21 @@ jobs:
     name: Spelling
     uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
     with:
-      # While this is the same as the default usually, it's here to allow you to easily change the branch specifier to
-      # an issue branch if you adjust the dictionaries.
-      spell-check-this: Lombiq/GitHub-Actions@dev
+      additional-dictionaries: |
+        cspell:csharp/csharp.txt
+        cspell:css/css.txt
+        cspell:fullstack/fullstack.txt
+        cspell:html/html.txt
+        cspell:node/node.txt
+        cspell:npm/npm.txt
+        lombiq-lgha:dictionaries/Liquid.txt
+        lombiq-lgha:dictionaries/Lombiq.people.txt
+
+  powershell-static-code-analysis:
+    name: PowerShell Static Code Analysis
+    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
+    with:
+      run-windows-powershell: "false"
 
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
