@@ -7,4 +7,4 @@ on:
 
 jobs:
   validate-pull-request:
-    uses: Lombiq/GitHub-Actions/.github/workflows/validate-pull-request.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/validate-pull-request.yml@issue/OSOE-503
