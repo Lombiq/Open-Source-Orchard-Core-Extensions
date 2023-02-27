@@ -55,6 +55,7 @@ jobs:
         cspell:node/node.txt
         cspell:npm/npm.txt
         lombiq-lgha:dictionaries/Liquid.txt
+        lombiq-lgha:dictionaries/Xml.txt
         lombiq-lgha:dictionaries/Lombiq.people.txt
 
   powershell-static-code-analysis:
