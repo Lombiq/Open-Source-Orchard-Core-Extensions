@@ -1,0 +1,16 @@
+activatable
+autorun
+chainable
+flyout
+hackish
+hashable
+parallelizable
+retriable
+sanitizers
+scrollbars
+shortcutting
+sudoing
+Timestamped
+Toolset
+uncached
+unclickable
