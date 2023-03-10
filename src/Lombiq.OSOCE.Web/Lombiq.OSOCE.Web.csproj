@@ -26,10 +26,10 @@
     <ProjectReference Include="..\Modules\Lombiq.AuditTrailExtensions\Lombiq.AuditTrailExtensions.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.ChartJs\Lombiq.ChartJs.Samples\Lombiq.ChartJs.Samples.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.ChartJs\Lombiq.ChartJs\Lombiq.ChartJs.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.ContentEditors\Lombiq.ContentEditors\Lombiq.ContentEditors.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.DataTables\Lombiq.DataTables.Samples\Lombiq.DataTables.Samples.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.BuildVersionDisplay\Lombiq.Hosting.BuildVersionDisplay\Lombiq.Hosting.BuildVersionDisplay.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.FeaturesGuard\Lombiq.Hosting.Tenants.FeaturesGuard.csproj" />
-    <ProjectReference Include="..\Modules\Lombiq.UIKit\Lombiq.UIKit\Lombiq.UIKit.csproj" />
-    <ProjectReference Include="..\Modules\Lombiq.DataTables\Lombiq.DataTables.Samples\Lombiq.DataTables.Samples.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Azure.ApplicationInsights\Lombiq.Hosting.Azure.ApplicationInsights\Lombiq.Hosting.Azure.ApplicationInsights.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.Admin.Login\Lombiq.Hosting.Tenants.Admin.Login.csproj" />
@@ -40,6 +40,7 @@
     <ProjectReference Include="..\Modules\Lombiq.Privacy\Lombiq.Privacy.Samples\Lombiq.Privacy.Samples.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Privacy\Lombiq.Privacy\Lombiq.Privacy.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.TrainingDemo\Lombiq.TrainingDemo.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.UIKit\Lombiq.UIKit\Lombiq.UIKit.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.VueJs\Lombiq.VueJs.Samples\Lombiq.VueJs.Samples.csproj" />
     <ProjectReference Include="..\Themes\Lombiq.BaseTheme\Lombiq.BaseTheme.Samples\Lombiq.BaseTheme.Samples.csproj" />
     <ProjectReference Include="..\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.Bridge\Lombiq.Hosting.MediaTheme.Bridge.csproj" />
