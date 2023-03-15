@@ -16,8 +16,8 @@ Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source
 
 ## Prerequisites
 
-- You need Node.js for building client-side assets in multiple projects. Check out [Lombiq Node.js Extensions Readme](https://github.com/Lombiq/NodeJs-Extensions/Readme.md#prerequisites) for details.
-- [Install PowerShell 7](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell) or newer for [Lombiq PowerShell Analyzers](https://github.com/Lombiq/PowerShell-Analyzers/). The `Lombiq PowerShell Analyzers` project is compatible with Windows PowerShell (PowerShell 5), but the scripts in _tools/Lombiq.GitHub.Actions_ only have to run on PS7 and don't need to be backwards compatible so PS7 is required specifically in this solution.
+- You need Node.js for building client-side assets in multiple projects. Check out [Lombiq Node.js Extensions Readme](https://github.com/Lombiq/NodeJs-Extensions/#prerequisites) for details.
+- To develop and test scripts written in PowerShell, install and use [PowerShell 7](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell) instead of Windows PowerShell (i.e., up to version 5.x). Static code analysis is only executed through PowerShell 7.
 
 ## Included Projects
 
