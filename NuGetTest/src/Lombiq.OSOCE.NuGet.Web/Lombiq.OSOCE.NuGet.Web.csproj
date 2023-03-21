@@ -29,9 +29,9 @@
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="5.0.0" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="5.0.0" />
     <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay" Version="2.0.0" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="3.0.0-alpha.0.nest-407" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="3.0.0-alpha.0.nest-407" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Targets" Version="3.0.0-alpha.0.nest-407" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="3.0.0-alpha.5.nest-407" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="3.0.0-alpha.5.nest-407" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Targets" Version="3.0.0-alpha.5.nest-407" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="4.0.0" />
     <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="4.0.0" />
     <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="4.0.0" />
