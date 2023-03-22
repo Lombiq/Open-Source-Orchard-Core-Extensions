@@ -19,6 +19,7 @@ jobs:
       set-up-azurite: "true"
       ui-test-parallelism: 0
       build-create-binary-log: "true"
+      blame-hang-timeout: "5m"
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
@@ -31,6 +32,7 @@ jobs:
       set-up-sql-server: "true"
       set-up-azurite: "true"
       build-create-binary-log: "true"
+      blame-hang-timeout: "5m"
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
@@ -39,14 +41,22 @@ jobs:
       machine-types: "['ubuntu-22.04', 'windows-2022']"
       build-directory: NuGetTest
       timeout-minutes: 20
+      blame-hang-timeout: "5m"
 
   spelling:
     name: Spelling
     uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
     with:
-      # While this is the same as the default usually, it's here to allow you to easily change the branch specifier to
-      # an issue branch if you adjust the dictionaries.
-      spell-check-this: Lombiq/GitHub-Actions@issue/OSOE-353
+      additional-dictionaries: |
+        cspell:csharp/csharp.txt
+        cspell:css/css.txt
+        cspell:fullstack/fullstack.txt
+        cspell:html/html.txt
+        cspell:node/node.txt
+        cspell:npm/npm.txt
+        lombiq-lgha:dictionaries/Liquid.txt
+        lombiq-lgha:dictionaries/Xml.txt
+        lombiq-lgha:dictionaries/Lombiq.people.txt
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
