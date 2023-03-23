@@ -4,6 +4,7 @@ chainable
 flyout
 hackish
 hashable
+mjpeg
 parallelizable
 retriable
 sanitizers
