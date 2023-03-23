@@ -15,3 +15,4 @@ Timestamped
 Toolset
 uncached
 unclickable
+yuv
