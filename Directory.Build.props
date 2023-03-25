@@ -29,4 +29,8 @@
   </PropertyGroup> -->
 
   <Import Project="tools/Lombiq.Analyzers/Lombiq.Analyzers/Build.props" />
+
+  <PropertyGroup>
+    <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
+  </PropertyGroup>
 </Project>
