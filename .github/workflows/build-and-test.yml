@@ -8,12 +8,64 @@ on:
       - dev
 
 jobs:
-  build-and-test-larger-runners:
+  build-and-test-larger-runners0:
     if: github.ref_name != github.event.repository.default_branch
-    name: Build and Test - root solution (larger runners)
+    name: Build and Test - root solution (larger runners)0
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      machine-types: "['gitrunners-ubuntu-2204-x64-4vcpu']"
+      machine-types: "['ubuntu-22.04-4core', 'gitrunners-ubuntu-2204-x64-4vcpu']"
+      timeout-minutes: 30
+      set-up-sql-server: "true"
+      set-up-azurite: "true"
+      ui-test-parallelism: 0
+      build-create-binary-log: "true"
+      blame-hang-timeout: "5m"
+
+  build-and-test-larger-runners1:
+    if: github.ref_name != github.event.repository.default_branch
+    name: Build and Test - root solution (larger runners)1
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "['ubuntu-22.04-4core', 'gitrunners-ubuntu-2204-x64-4vcpu']"
+      timeout-minutes: 30
+      set-up-sql-server: "true"
+      set-up-azurite: "true"
+      ui-test-parallelism: 0
+      build-create-binary-log: "true"
+      blame-hang-timeout: "5m"
+
+  build-and-test-larger-runners2:
+    if: github.ref_name != github.event.repository.default_branch
+    name: Build and Test - root solution (larger runners)2
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "['ubuntu-22.04-4core', 'gitrunners-ubuntu-2204-x64-4vcpu']"
+      timeout-minutes: 30
+      set-up-sql-server: "true"
+      set-up-azurite: "true"
+      ui-test-parallelism: 0
+      build-create-binary-log: "true"
+      blame-hang-timeout: "5m"
+
+  build-and-test-larger-runners3:
+    if: github.ref_name != github.event.repository.default_branch
+    name: Build and Test - root solution (larger runners)3
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "['ubuntu-22.04-4core', 'gitrunners-ubuntu-2204-x64-4vcpu']"
+      timeout-minutes: 30
+      set-up-sql-server: "true"
+      set-up-azurite: "true"
+      ui-test-parallelism: 0
+      build-create-binary-log: "true"
+      blame-hang-timeout: "5m"
+
+  build-and-test-larger-runners4:
+    if: github.ref_name != github.event.repository.default_branch
+    name: Build and Test - root solution (larger runners)4
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "['ubuntu-22.04-4core', 'gitrunners-ubuntu-2204-x64-4vcpu']"
       timeout-minutes: 30
       set-up-sql-server: "true"
       set-up-azurite: "true"
