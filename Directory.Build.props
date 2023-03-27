@@ -30,6 +30,9 @@
 
   <Import Project="tools/Lombiq.Analyzers/Lombiq.Analyzers/Build.props" />
 
+  <!-- This option hasn't improved the build time in this solution, we will keep it turned on regardless because it
+  might be the default one day, and it's not causing any issues.
+  https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/issues/423 -->
   <PropertyGroup>
     <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
   </PropertyGroup>
