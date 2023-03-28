@@ -1,4 +1,18 @@
 <Project>
+  <PropertyGroup Condition="'$([MSBuild]::IsOSUnixLike())' == 'false'">
+    <!-- Use a single installation of Node.js Extensions for all projects in the solution. Currently, only works on
+         Windows. -->
+    <UseGlobalNodeJsExtensionsNpmPackage>true</UseGlobalNodeJsExtensionsNpmPackage>
+    <NodeJsExtensionsNpmPackageSourcePath>$(MSBuildThisFileDirectory)node_modules/.nx</NodeJsExtensionsNpmPackageSourcePath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- Instruct Node.js Extensions to create .eslintrc and .stylelintrc files in the current directory, which is the
+         solution root directory. -->
+    <NodeJsExtensionsGlobalESLintConfigurationDirectory>$(MSBuildThisFileDirectory)</NodeJsExtensionsGlobalESLintConfigurationDirectory>
+    <NodeJsExtensionsGlobalStylelintConfigurationDirectory>$(MSBuildThisFileDirectory)</NodeJsExtensionsGlobalStylelintConfigurationDirectory>
+  </PropertyGroup>
+
   <!-- Copying the Lombiq logo as an icon to all NuGet-published projects. -->
   <Target Name="Copy NuGet icon"
           AfterTargets="AfterResolveReferences"
@@ -15,4 +29,11 @@
   </PropertyGroup> -->
 
   <Import Project="tools/Lombiq.Analyzers/Lombiq.Analyzers/Build.props" />
+
+  <!-- This option hasn't improved the build time in this solution, but we'll keep it turned on regardless because it
+  might be the default one day, it can perhaps help in some cases, and it's not causing any issues.
+  See https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/issues/423. -->
+  <PropertyGroup>
+    <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
+  </PropertyGroup>
 </Project>
