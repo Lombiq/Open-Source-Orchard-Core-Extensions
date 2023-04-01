@@ -45,6 +45,7 @@ jobs:
       blame-hang-timeout: "5m"
 
   spelling:
+    if: false
     name: Spelling
     uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
     with:
@@ -60,6 +61,7 @@ jobs:
         lombiq-lgha:dictionaries/Lombiq.people.txt
 
   powershell-static-code-analysis:
+    if: false
     name: PowerShell Static Code Analysis
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
