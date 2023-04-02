@@ -20,6 +20,7 @@ jobs:
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-nuget-test-dev0:
     name: Build and Test - NuGetTest solution
@@ -29,6 +30,7 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 20
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-larger-runners-dev1:
     if: github.ref_name != github.event.repository.default_branch
@@ -42,6 +44,7 @@ jobs:
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-nuget-test-dev1:
     name: Build and Test - NuGetTest solution
@@ -51,6 +54,7 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 20
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-larger-runners-dev2:
     if: github.ref_name != github.event.repository.default_branch
@@ -64,6 +68,7 @@ jobs:
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-nuget-test-dev2:
     name: Build and Test - NuGetTest solution
@@ -73,6 +78,7 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 20
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-larger-runners-dev3:
     if: github.ref_name != github.event.repository.default_branch
@@ -86,6 +92,7 @@ jobs:
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-nuget-test-dev3:
     name: Build and Test - NuGetTest solution
@@ -95,6 +102,7 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 20
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-larger-runners-dev4:
     if: github.ref_name != github.event.repository.default_branch
@@ -108,6 +116,7 @@ jobs:
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-nuget-test-dev4:
     name: Build and Test - NuGetTest solution
@@ -117,6 +126,7 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 20
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-larger-runners-maxCpuCount0:
     if: github.ref_name != github.event.repository.default_branch
@@ -130,6 +140,7 @@ jobs:
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-nuget-test-maxCpuCount0:
     name: Build and Test maxCpuCount - NuGetTest solution
@@ -139,6 +150,7 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 20
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-larger-runners-maxCpuCount1:
     if: github.ref_name != github.event.repository.default_branch
@@ -152,6 +164,7 @@ jobs:
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-nuget-test-maxCpuCount1:
     name: Build and Test maxCpuCount - NuGetTest solution
@@ -161,6 +174,7 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 20
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-larger-runners-maxCpuCount2:
     if: github.ref_name != github.event.repository.default_branch
@@ -174,6 +188,7 @@ jobs:
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-nuget-test-maxCpuCount2:
     name: Build and Test maxCpuCount - NuGetTest solution
@@ -183,6 +198,7 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 20
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-larger-runners-maxCpuCount3:
     if: github.ref_name != github.event.repository.default_branch
@@ -196,6 +212,7 @@ jobs:
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-nuget-test-maxCpuCount3:
     name: Build and Test maxCpuCount - NuGetTest solution
@@ -205,6 +222,7 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 20
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-larger-runners-maxCpuCount4:
     if: github.ref_name != github.event.repository.default_branch
@@ -218,6 +236,7 @@ jobs:
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-nuget-test-maxCpuCount4:
     name: Build and Test maxCpuCount - NuGetTest solution
@@ -227,3 +246,4 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 20
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
