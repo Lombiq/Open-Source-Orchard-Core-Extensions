@@ -120,7 +120,7 @@ jobs:
 
   build-and-test-larger-runners-maxCpuCount0:
     if: github.ref_name != github.event.repository.default_branch
-    name: Build and Test - root solution (larger runners)
+    name: Build and Test maxCpuCount - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/COLI-870
     with:
       machine-types: "['gitrunners-ubuntu-2204-x64-4vcpu', 'windows-2022-8core']"
@@ -132,7 +132,7 @@ jobs:
       blame-hang-timeout: "5m"
 
   build-and-test-nuget-test-maxCpuCount0:
-    name: Build and Test - NuGetTest solution
+    name: Build and Test maxCpuCount - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/COLI-870
     with:
       machine-types: "['ubuntu-22.04', 'windows-2022']"
@@ -142,7 +142,7 @@ jobs:
 
   build-and-test-larger-runners-maxCpuCount1:
     if: github.ref_name != github.event.repository.default_branch
-    name: Build and Test - root solution (larger runners)
+    name: Build and Test maxCpuCount - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/COLI-870
     with:
       machine-types: "['gitrunners-ubuntu-2204-x64-4vcpu', 'windows-2022-8core']"
@@ -154,7 +154,7 @@ jobs:
       blame-hang-timeout: "5m"
 
   build-and-test-nuget-test-maxCpuCount1:
-    name: Build and Test - NuGetTest solution
+    name: Build and Test maxCpuCount - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/COLI-870
     with:
       machine-types: "['ubuntu-22.04', 'windows-2022']"
@@ -164,7 +164,7 @@ jobs:
 
   build-and-test-larger-runners-maxCpuCount2:
     if: github.ref_name != github.event.repository.default_branch
-    name: Build and Test - root solution (larger runners)
+    name: Build and Test maxCpuCount - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/COLI-870
     with:
       machine-types: "['gitrunners-ubuntu-2204-x64-4vcpu', 'windows-2022-8core']"
@@ -176,7 +176,7 @@ jobs:
       blame-hang-timeout: "5m"
 
   build-and-test-nuget-test-maxCpuCount2:
-    name: Build and Test - NuGetTest solution
+    name: Build and Test maxCpuCount - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/COLI-870
     with:
       machine-types: "['ubuntu-22.04', 'windows-2022']"
@@ -186,7 +186,7 @@ jobs:
 
   build-and-test-larger-runners-maxCpuCount3:
     if: github.ref_name != github.event.repository.default_branch
-    name: Build and Test - root solution (larger runners)
+    name: Build and Test maxCpuCount - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/COLI-870
     with:
       machine-types: "['gitrunners-ubuntu-2204-x64-4vcpu', 'windows-2022-8core']"
@@ -198,7 +198,7 @@ jobs:
       blame-hang-timeout: "5m"
 
   build-and-test-nuget-test-maxCpuCount3:
-    name: Build and Test - NuGetTest solution
+    name: Build and Test maxCpuCount - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/COLI-870
     with:
       machine-types: "['ubuntu-22.04', 'windows-2022']"
@@ -208,7 +208,7 @@ jobs:
 
   build-and-test-larger-runners-maxCpuCount4:
     if: github.ref_name != github.event.repository.default_branch
-    name: Build and Test - root solution (larger runners)
+    name: Build and Test maxCpuCount - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/COLI-870
     with:
       machine-types: "['gitrunners-ubuntu-2204-x64-4vcpu', 'windows-2022-8core']"
@@ -220,7 +220,7 @@ jobs:
       blame-hang-timeout: "5m"
 
   build-and-test-nuget-test-maxCpuCount4:
-    name: Build and Test - NuGetTest solution
+    name: Build and Test maxCpuCount - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/COLI-870
     with:
       machine-types: "['ubuntu-22.04', 'windows-2022']"
