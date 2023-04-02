@@ -8,7 +8,7 @@ on:
       - dev
 
 jobs:
-  build-and-test-larger-runners-dev0:
+  build-and-test-larger-runners:
     if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
@@ -20,9 +20,21 @@ jobs:
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
-      cancel-workflow-on-failure: "false"
 
-  build-and-test-nuget-test-dev0:
+  build-and-test-standard-runners:
+    # Since dev builds are not awaited by anyone, they can run on the slower free runners.
+    if: github.ref_name == github.event.repository.default_branch
+    name: Build and Test - root solution (standard runners)
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "['ubuntu-22.04', 'windows-2022']"
+      timeout-minutes: 60
+      set-up-sql-server: "true"
+      set-up-azurite: "true"
+      build-create-binary-log: "true"
+      blame-hang-timeout: "5m"
+
+  build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
@@ -30,220 +42,35 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 20
       blame-hang-timeout: "5m"
-      cancel-workflow-on-failure: "false"
 
-  build-and-test-larger-runners-dev1:
-    if: github.ref_name != github.event.repository.default_branch
-    name: Build and Test - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+  spelling:
+    name: Spelling
+    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
     with:
-      machine-types: "['gitrunners-ubuntu-2204-x64-4vcpu', 'windows-2022-8core']"
-      timeout-minutes: 30
-      set-up-sql-server: "true"
-      set-up-azurite: "true"
-      ui-test-parallelism: 0
-      build-create-binary-log: "true"
-      blame-hang-timeout: "5m"
-      cancel-workflow-on-failure: "false"
+      additional-dictionaries: |
+        cspell:csharp/csharp.txt
+        cspell:css/css.txt
+        cspell:fullstack/fullstack.txt
+        cspell:html/html.txt
+        cspell:node/node.txt
+        cspell:npm/npm.txt
+        lombiq-lgha:dictionaries/Liquid.txt
+        lombiq-lgha:dictionaries/Xml.txt
+        lombiq-lgha:dictionaries/Lombiq.people.txt
 
-  build-and-test-nuget-test-dev1:
-    name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+  powershell-static-code-analysis:
+    name: PowerShell Static Code Analysis
+    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
-      machine-types: "['ubuntu-22.04', 'windows-2022']"
-      build-directory: NuGetTest
-      timeout-minutes: 20
-      blame-hang-timeout: "5m"
-      cancel-workflow-on-failure: "false"
+      run-windows-powershell: "false"
 
-  build-and-test-larger-runners-dev2:
-    if: github.ref_name != github.event.repository.default_branch
-    name: Build and Test - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
-    with:
-      machine-types: "['gitrunners-ubuntu-2204-x64-4vcpu', 'windows-2022-8core']"
-      timeout-minutes: 30
-      set-up-sql-server: "true"
-      set-up-azurite: "true"
-      ui-test-parallelism: 0
-      build-create-binary-log: "true"
-      blame-hang-timeout: "5m"
-      cancel-workflow-on-failure: "false"
-
-  build-and-test-nuget-test-dev2:
-    name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
-    with:
-      machine-types: "['ubuntu-22.04', 'windows-2022']"
-      build-directory: NuGetTest
-      timeout-minutes: 20
-      blame-hang-timeout: "5m"
-      cancel-workflow-on-failure: "false"
-
-  build-and-test-larger-runners-dev3:
-    if: github.ref_name != github.event.repository.default_branch
-    name: Build and Test - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
-    with:
-      machine-types: "['gitrunners-ubuntu-2204-x64-4vcpu', 'windows-2022-8core']"
-      timeout-minutes: 30
-      set-up-sql-server: "true"
-      set-up-azurite: "true"
-      ui-test-parallelism: 0
-      build-create-binary-log: "true"
-      blame-hang-timeout: "5m"
-      cancel-workflow-on-failure: "false"
-
-  build-and-test-nuget-test-dev3:
-    name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
-    with:
-      machine-types: "['ubuntu-22.04', 'windows-2022']"
-      build-directory: NuGetTest
-      timeout-minutes: 20
-      blame-hang-timeout: "5m"
-      cancel-workflow-on-failure: "false"
-
-  build-and-test-larger-runners-dev4:
-    if: github.ref_name != github.event.repository.default_branch
-    name: Build and Test - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
-    with:
-      machine-types: "['gitrunners-ubuntu-2204-x64-4vcpu', 'windows-2022-8core']"
-      timeout-minutes: 30
-      set-up-sql-server: "true"
-      set-up-azurite: "true"
-      ui-test-parallelism: 0
-      build-create-binary-log: "true"
-      blame-hang-timeout: "5m"
-      cancel-workflow-on-failure: "false"
-
-  build-and-test-nuget-test-dev4:
-    name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
-    with:
-      machine-types: "['ubuntu-22.04', 'windows-2022']"
-      build-directory: NuGetTest
-      timeout-minutes: 20
-      blame-hang-timeout: "5m"
-      cancel-workflow-on-failure: "false"
-
-  build-and-test-larger-runners-maxCpuCount0:
-    if: github.ref_name != github.event.repository.default_branch
-    name: Build and Test maxCpuCount - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/COLI-870
-    with:
-      machine-types: "['gitrunners-ubuntu-2204-x64-4vcpu', 'windows-2022-8core']"
-      timeout-minutes: 30
-      set-up-sql-server: "true"
-      set-up-azurite: "true"
-      ui-test-parallelism: 0
-      build-create-binary-log: "true"
-      blame-hang-timeout: "5m"
-      cancel-workflow-on-failure: "false"
-
-  build-and-test-nuget-test-maxCpuCount0:
-    name: Build and Test maxCpuCount - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/COLI-870
-    with:
-      machine-types: "['ubuntu-22.04', 'windows-2022']"
-      build-directory: NuGetTest
-      timeout-minutes: 20
-      blame-hang-timeout: "5m"
-      cancel-workflow-on-failure: "false"
-
-  build-and-test-larger-runners-maxCpuCount1:
-    if: github.ref_name != github.event.repository.default_branch
-    name: Build and Test maxCpuCount - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/COLI-870
-    with:
-      machine-types: "['gitrunners-ubuntu-2204-x64-4vcpu', 'windows-2022-8core']"
-      timeout-minutes: 30
-      set-up-sql-server: "true"
-      set-up-azurite: "true"
-      ui-test-parallelism: 0
-      build-create-binary-log: "true"
-      blame-hang-timeout: "5m"
-      cancel-workflow-on-failure: "false"
-
-  build-and-test-nuget-test-maxCpuCount1:
-    name: Build and Test maxCpuCount - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/COLI-870
-    with:
-      machine-types: "['ubuntu-22.04', 'windows-2022']"
-      build-directory: NuGetTest
-      timeout-minutes: 20
-      blame-hang-timeout: "5m"
-      cancel-workflow-on-failure: "false"
-
-  build-and-test-larger-runners-maxCpuCount2:
-    if: github.ref_name != github.event.repository.default_branch
-    name: Build and Test maxCpuCount - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/COLI-870
-    with:
-      machine-types: "['gitrunners-ubuntu-2204-x64-4vcpu', 'windows-2022-8core']"
-      timeout-minutes: 30
-      set-up-sql-server: "true"
-      set-up-azurite: "true"
-      ui-test-parallelism: 0
-      build-create-binary-log: "true"
-      blame-hang-timeout: "5m"
-      cancel-workflow-on-failure: "false"
-
-  build-and-test-nuget-test-maxCpuCount2:
-    name: Build and Test maxCpuCount - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/COLI-870
-    with:
-      machine-types: "['ubuntu-22.04', 'windows-2022']"
-      build-directory: NuGetTest
-      timeout-minutes: 20
-      blame-hang-timeout: "5m"
-      cancel-workflow-on-failure: "false"
-
-  build-and-test-larger-runners-maxCpuCount3:
-    if: github.ref_name != github.event.repository.default_branch
-    name: Build and Test maxCpuCount - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/COLI-870
-    with:
-      machine-types: "['gitrunners-ubuntu-2204-x64-4vcpu', 'windows-2022-8core']"
-      timeout-minutes: 30
-      set-up-sql-server: "true"
-      set-up-azurite: "true"
-      ui-test-parallelism: 0
-      build-create-binary-log: "true"
-      blame-hang-timeout: "5m"
-      cancel-workflow-on-failure: "false"
-
-  build-and-test-nuget-test-maxCpuCount3:
-    name: Build and Test maxCpuCount - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/COLI-870
-    with:
-      machine-types: "['ubuntu-22.04', 'windows-2022']"
-      build-directory: NuGetTest
-      timeout-minutes: 20
-      blame-hang-timeout: "5m"
-      cancel-workflow-on-failure: "false"
-
-  build-and-test-larger-runners-maxCpuCount4:
-    if: github.ref_name != github.event.repository.default_branch
-    name: Build and Test maxCpuCount - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/COLI-870
-    with:
-      machine-types: "['gitrunners-ubuntu-2204-x64-4vcpu', 'windows-2022-8core']"
-      timeout-minutes: 30
-      set-up-sql-server: "true"
-      set-up-azurite: "true"
-      ui-test-parallelism: 0
-      build-create-binary-log: "true"
-      blame-hang-timeout: "5m"
-      cancel-workflow-on-failure: "false"
-
-  build-and-test-nuget-test-maxCpuCount4:
-    name: Build and Test maxCpuCount - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/COLI-870
-    with:
-      machine-types: "['ubuntu-22.04', 'windows-2022']"
-      build-directory: NuGetTest
-      timeout-minutes: 20
-      blame-hang-timeout: "5m"
-      cancel-workflow-on-failure: "false"
+  post-pull-request-checks-automation:
+    name: Post Pull Request Checks Automation
+    needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling]
+    if: github.event.pull_request != ''
+    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
+    secrets:
+      JIRA_BASE_URL: ${{ secrets.DEFAULT_JIRA_BASE_URL }}
+      JIRA_USER_EMAIL: ${{ secrets.DEFAULT_JIRA_USER_EMAIL }}
+      JIRA_API_TOKEN: ${{ secrets.DEFAULT_JIRA_API_TOKEN }}
+      MERGE_TOKEN: ${{ secrets.LOMBIQBOT_GITHUB_PERSONAL_ACCESS_TOKEN }}
