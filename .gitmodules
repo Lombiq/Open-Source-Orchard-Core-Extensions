@@ -93,3 +93,6 @@
 	path = src/Modules/Lombiq.Hosting.BuildVersionDisplay
 	url = https://github.com/Lombiq/Hosting-Build-Version-Display.git
 	branch = dev
+[submodule "src/Modules/Lombiq.ContentEditors"]
+	path = src/Modules/Lombiq.ContentEditors
+	url = https://github.com/Lombiq/Orchard-Content-Editors.git

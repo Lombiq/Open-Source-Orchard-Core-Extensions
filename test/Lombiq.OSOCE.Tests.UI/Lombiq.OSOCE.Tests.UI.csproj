@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -19,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Lombiq.OSOCE.Web\Lombiq.OSOCE.Web.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.ChartJs\Lombiq.ChartJs.Tests.UI\Lombiq.ChartJs.Tests.UI.csproj" />
+    <ProjectReference Include="..\..\src\Modules\Lombiq.ContentEditors\Lombiq.ContentEditors.Tests.UI\Lombiq.ContentEditors.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.DataTables\Lombiq.DataTables\Tests\Lombiq.DataTables.Tests.UI\Lombiq.DataTables.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions.Tests.UI\Lombiq.HelpfulExtensions.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.Hosting.Azure.ApplicationInsights\Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI\Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI.csproj" />
