@@ -13,8 +13,8 @@ jobs:
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-593
     with:
-      machine-types: "['windows-2022']"
-      timeout-minutes: 60
+      machine-types: "['gitrunners-ubuntu-2204-x64-4vcpu', 'windows-2022-8core']"
+      timeout-minutes: 30
       set-up-sql-server: "true"
       set-up-azurite: "true"
       ui-test-parallelism: 0
@@ -35,7 +35,6 @@ jobs:
       blame-hang-timeout: "5m"
 
   build-and-test-nuget-test:
-    if: false
     name: Build and Test - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
@@ -45,7 +44,6 @@ jobs:
       blame-hang-timeout: "5m"
 
   spelling:
-    if: false
     name: Spelling
     uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
     with:
@@ -61,7 +59,6 @@ jobs:
         lombiq-lgha:dictionaries/Lombiq.people.txt
 
   powershell-static-code-analysis:
-    if: false
     name: PowerShell Static Code Analysis
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
