@@ -178,7 +178,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Hosting.BuildVersion
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Hosting.BuildVersionDisplay.Tests.UI", "src\Modules\Lombiq.Hosting.BuildVersionDisplay\Lombiq.Hosting.BuildVersionDisplay.Tests.UI\Lombiq.Hosting.BuildVersionDisplay.Tests.UI.csproj", "{B261E437-D773-49A7-AA4B-72CFE7A8DE35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.Hosting.MediaTheme.Targets", "src\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.Targets\Lombiq.Hosting.MediaTheme.Targets.csproj", "{8C24107C-10AA-43EE-A85E-55173EB5B65F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Hosting.MediaTheme.Targets", "src\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.Targets\Lombiq.Hosting.MediaTheme.Targets.csproj", "{8C24107C-10AA-43EE-A85E-55173EB5B65F}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "actions", "actions", "{A48B16D8-61C2-4EAD-978E-5DD77121CFA1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "spelling", "spelling", "{106B5DDD-D775-4D25-BE16-4569226620E0}"
@@ -186,6 +187,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "spelling", "spelling", "{10
 		.github\actions\spelling\allow.txt = .github\actions\spelling\allow.txt
 		.github\actions\spelling\excludes.txt = .github\actions\spelling\excludes.txt
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.ContentEditors", "src\Modules\Lombiq.ContentEditors\Lombiq.ContentEditors\Lombiq.ContentEditors.csproj", "{1B7C5C5D-E20F-4707-A0B5-8602DF7DA78D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.ContentEditors.Samples", "src\Modules\Lombiq.ContentEditors\Lombiq.ContentEditors.Samples\Lombiq.ContentEditors.Samples.csproj", "{66571E77-70C3-4A1E-8C0F-9E15F933E771}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.ContentEditors.Tests.UI", "src\Modules\Lombiq.ContentEditors\Lombiq.ContentEditors.Tests.UI\Lombiq.ContentEditors.Tests.UI.csproj", "{C90E70CD-B792-4C1D-BE8A-FB47C1C33A36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -989,6 +996,42 @@ Global
 		{8C24107C-10AA-43EE-A85E-55173EB5B65F}.Release|x64.Build.0 = Release|Any CPU
 		{8C24107C-10AA-43EE-A85E-55173EB5B65F}.Release|x86.ActiveCfg = Release|Any CPU
 		{8C24107C-10AA-43EE-A85E-55173EB5B65F}.Release|x86.Build.0 = Release|Any CPU
+		{1B7C5C5D-E20F-4707-A0B5-8602DF7DA78D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B7C5C5D-E20F-4707-A0B5-8602DF7DA78D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B7C5C5D-E20F-4707-A0B5-8602DF7DA78D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1B7C5C5D-E20F-4707-A0B5-8602DF7DA78D}.Debug|x64.Build.0 = Debug|Any CPU
+		{1B7C5C5D-E20F-4707-A0B5-8602DF7DA78D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1B7C5C5D-E20F-4707-A0B5-8602DF7DA78D}.Debug|x86.Build.0 = Debug|Any CPU
+		{1B7C5C5D-E20F-4707-A0B5-8602DF7DA78D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B7C5C5D-E20F-4707-A0B5-8602DF7DA78D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B7C5C5D-E20F-4707-A0B5-8602DF7DA78D}.Release|x64.ActiveCfg = Release|Any CPU
+		{1B7C5C5D-E20F-4707-A0B5-8602DF7DA78D}.Release|x64.Build.0 = Release|Any CPU
+		{1B7C5C5D-E20F-4707-A0B5-8602DF7DA78D}.Release|x86.ActiveCfg = Release|Any CPU
+		{1B7C5C5D-E20F-4707-A0B5-8602DF7DA78D}.Release|x86.Build.0 = Release|Any CPU
+		{66571E77-70C3-4A1E-8C0F-9E15F933E771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66571E77-70C3-4A1E-8C0F-9E15F933E771}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66571E77-70C3-4A1E-8C0F-9E15F933E771}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{66571E77-70C3-4A1E-8C0F-9E15F933E771}.Debug|x64.Build.0 = Debug|Any CPU
+		{66571E77-70C3-4A1E-8C0F-9E15F933E771}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{66571E77-70C3-4A1E-8C0F-9E15F933E771}.Debug|x86.Build.0 = Debug|Any CPU
+		{66571E77-70C3-4A1E-8C0F-9E15F933E771}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66571E77-70C3-4A1E-8C0F-9E15F933E771}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66571E77-70C3-4A1E-8C0F-9E15F933E771}.Release|x64.ActiveCfg = Release|Any CPU
+		{66571E77-70C3-4A1E-8C0F-9E15F933E771}.Release|x64.Build.0 = Release|Any CPU
+		{66571E77-70C3-4A1E-8C0F-9E15F933E771}.Release|x86.ActiveCfg = Release|Any CPU
+		{66571E77-70C3-4A1E-8C0F-9E15F933E771}.Release|x86.Build.0 = Release|Any CPU
+		{C90E70CD-B792-4C1D-BE8A-FB47C1C33A36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C90E70CD-B792-4C1D-BE8A-FB47C1C33A36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C90E70CD-B792-4C1D-BE8A-FB47C1C33A36}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C90E70CD-B792-4C1D-BE8A-FB47C1C33A36}.Debug|x64.Build.0 = Debug|Any CPU
+		{C90E70CD-B792-4C1D-BE8A-FB47C1C33A36}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C90E70CD-B792-4C1D-BE8A-FB47C1C33A36}.Debug|x86.Build.0 = Debug|Any CPU
+		{C90E70CD-B792-4C1D-BE8A-FB47C1C33A36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C90E70CD-B792-4C1D-BE8A-FB47C1C33A36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C90E70CD-B792-4C1D-BE8A-FB47C1C33A36}.Release|x64.ActiveCfg = Release|Any CPU
+		{C90E70CD-B792-4C1D-BE8A-FB47C1C33A36}.Release|x64.Build.0 = Release|Any CPU
+		{C90E70CD-B792-4C1D-BE8A-FB47C1C33A36}.Release|x86.ActiveCfg = Release|Any CPU
+		{C90E70CD-B792-4C1D-BE8A-FB47C1C33A36}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1070,6 +1113,9 @@ Global
 		{8C24107C-10AA-43EE-A85E-55173EB5B65F} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
 		{A48B16D8-61C2-4EAD-978E-5DD77121CFA1} = {719F19E1-0B20-490C-B325-74E5FD6C838C}
 		{106B5DDD-D775-4D25-BE16-4569226620E0} = {A48B16D8-61C2-4EAD-978E-5DD77121CFA1}
+		{1B7C5C5D-E20F-4707-A0B5-8602DF7DA78D} = {11E06A11-1733-408D-BB2F-BFA07075F812}
+		{66571E77-70C3-4A1E-8C0F-9E15F933E771} = {11E06A11-1733-408D-BB2F-BFA07075F812}
+		{C90E70CD-B792-4C1D-BE8A-FB47C1C33A36} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
