@@ -13,7 +13,7 @@ jobs:
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-593
     with:
-      machine-types: "['ubuntu-22.04', 'windows-2022']"
+      machine-types: "['windows-2022']"
       timeout-minutes: 60
       set-up-sql-server: "true"
       set-up-azurite: "true"
