@@ -11,9 +11,9 @@ jobs:
   build-and-test-larger-runners:
     if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-593
     with:
-      machine-types: "['windows-2022', 'windows-2022', 'windows-2022', 'windows-2022', 'windows-2022']"
+      machine-types: "['windows-2022']"
       timeout-minutes: 60
       set-up-sql-server: "true"
       set-up-azurite: "true"
