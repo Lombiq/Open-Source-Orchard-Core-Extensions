@@ -54,7 +54,7 @@ jobs:
     if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners)3
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
-    with: 
+    with:
       machine-types: "['gitrunners-windows-2022-x64-16vcpu']"
       timeout-minutes: 180
       set-up-sql-server: "true"
