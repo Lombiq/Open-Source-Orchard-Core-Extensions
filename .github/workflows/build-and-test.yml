@@ -20,6 +20,7 @@ jobs:
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-larger-runners1:
     if: github.ref_name != github.event.repository.default_branch
@@ -33,6 +34,7 @@ jobs:
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-larger-runners2:
     if: github.ref_name != github.event.repository.default_branch
@@ -46,6 +48,7 @@ jobs:
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-larger-runners3:
     if: github.ref_name != github.event.repository.default_branch
@@ -59,6 +62,7 @@ jobs:
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
 
   build-and-test-larger-runners4:
     if: github.ref_name != github.event.repository.default_branch
@@ -72,3 +76,4 @@ jobs:
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
+      cancel-workflow-on-failure: "false"
