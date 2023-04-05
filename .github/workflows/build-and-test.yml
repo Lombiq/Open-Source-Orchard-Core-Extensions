@@ -13,7 +13,7 @@ jobs:
     name: Build and Test - root solution (larger runners)0
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      machine-types: "['windows-2022-8core', 'gitrunners-windows-2022-x64-8vcpu']"
+      machine-types: "['gitrunners-windows-2022-x64-16vcpu']"
       timeout-minutes: 180
       set-up-sql-server: "true"
       set-up-azurite: "true"
@@ -27,7 +27,7 @@ jobs:
     name: Build and Test - root solution (larger runners)1
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      machine-types: "['windows-2022-8core', 'gitrunners-windows-2022-x64-8vcpu']"
+      machine-types: "['gitrunners-windows-2022-x64-16vcpu']"
       timeout-minutes: 180
       set-up-sql-server: "true"
       set-up-azurite: "true"
@@ -41,7 +41,7 @@ jobs:
     name: Build and Test - root solution (larger runners)2
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      machine-types: "['windows-2022-8core', 'gitrunners-windows-2022-x64-8vcpu']"
+      machine-types: "['gitrunners-windows-2022-x64-16vcpu']"
       timeout-minutes: 180
       set-up-sql-server: "true"
       set-up-azurite: "true"
@@ -55,7 +55,7 @@ jobs:
     name: Build and Test - root solution (larger runners)3
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      machine-types: "['windows-2022-8core', 'gitrunners-windows-2022-x64-8vcpu']"
+      machine-types: "['gitrunners-windows-2022-x64-16vcpu']"
       timeout-minutes: 180
       set-up-sql-server: "true"
       set-up-azurite: "true"
@@ -69,7 +69,7 @@ jobs:
     name: Build and Test - root solution (larger runners)4
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      machine-types: "['windows-2022-8core', 'gitrunners-windows-2022-x64-8vcpu']"
+      machine-types: "['gitrunners-windows-2022-x64-16vcpu']"
       timeout-minutes: 180
       set-up-sql-server: "true"
       set-up-azurite: "true"
