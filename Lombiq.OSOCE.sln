@@ -194,7 +194,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.ContentEditors.Sampl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.ContentEditors.Tests.UI", "src\Modules\Lombiq.ContentEditors\Lombiq.ContentEditors.Tests.UI\Lombiq.ContentEditors.Tests.UI.csproj", "{C90E70CD-B792-4C1D-BE8A-FB47C1C33A36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.NodeJs.Extensions.Tests", "src\Utilities\Lombiq.NodeJs.Extensions\Lombiq.NodeJs.Extensions.Tests\Lombiq.NodeJs.Extensions.Tests.csproj", "{B5D907C6-FD72-4024-94D8-5CDBE4F11D3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.NodeJs.Extensions.Tests", "src\Utilities\Lombiq.NodeJs.Extensions\Lombiq.NodeJs.Extensions.Tests\Lombiq.NodeJs.Extensions.Tests.csproj", "{B5D907C6-FD72-4024-94D8-5CDBE4F11D3E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{7AD3C143-3B8B-46A3-97B0-CABFCC973335}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1130,7 +1132,8 @@ Global
 		{1B7C5C5D-E20F-4707-A0B5-8602DF7DA78D} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{66571E77-70C3-4A1E-8C0F-9E15F933E771} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{C90E70CD-B792-4C1D-BE8A-FB47C1C33A36} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
-		{B5D907C6-FD72-4024-94D8-5CDBE4F11D3E} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
+		{B5D907C6-FD72-4024-94D8-5CDBE4F11D3E} = {7AD3C143-3B8B-46A3-97B0-CABFCC973335}
+		{7AD3C143-3B8B-46A3-97B0-CABFCC973335} = {FF48793C-2AC5-4FAA-9BA1-44448E3A7F98}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
