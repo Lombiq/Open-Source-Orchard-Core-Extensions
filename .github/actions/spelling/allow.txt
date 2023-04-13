@@ -1,11 +1,14 @@
 activatable
 autorun
+barcode
 chainable
 flyout
 hackish
 hashable
 mjpeg
+Overconstrained
 parallelizable
+qrcode
 retriable
 sanitizers
 scrollbars
@@ -16,3 +19,4 @@ Toolset
 uncached
 unclickable
 yuv
+ZXing
