@@ -1,3 +1,4 @@
+Lombiq\.VueJs\.Tests\.UI/Assets/Media/(john\.doe | richard\.roe)\.mjpeg$
 test/Lombiq\.UITestingToolbox/Lombiq\.Tests\.UI/Constants/CommonDisplayResolutions\.cs
 tools/Lombiq.GitHub.Actions/
 UnmanagedNodeModules/
