@@ -36,6 +36,7 @@
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.FeaturesGuard\Lombiq.Hosting.Tenants.FeaturesGuard.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.IdleTenantManagement\Lombiq.Hosting.Tenants.IdleTenantManagement.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.Management\Lombiq.Hosting.Tenants.Management.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.MediaStorageManagement\Lombiq.Hosting.Tenants.MediaStorageManagement.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.JsonEditor\Lombiq.JsonEditor.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.OSOCE.Samples\Lombiq.OSOCE.Samples.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Privacy\Lombiq.Privacy\Lombiq.Privacy.csproj" />
