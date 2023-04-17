@@ -54,7 +54,7 @@ public class BehaviorVueTests : UITestBase
                     OrchardCoreUITestExecutorConfiguration.AssertBrowserLogIsEmpty(
                         logEntries.Where(logEntry =>
                             // The fetch call reports an error to the browser console if the QrCardController.GetBusinessCard
-                            // results in NotFound.
+                            // action results in NotFound.
                             !(
                                 logEntry.Message.ContainsOrdinalIgnoreCase(nameof(QrCardController.GetBusinessCard))
                                 && logEntry.Message.ContainsOrdinalIgnoreCase(
