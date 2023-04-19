@@ -45,6 +45,7 @@
         "Lombiq.VueJs.Samples",
         "OrchardCore.Tenants.FeatureProfiles",
         "Lombiq.Hosting.Tenants.FeaturesGuard",
+        "Lombiq.Hosting.Tenants.MediaStorageManagement",
         "OrchardCore.Media",
         "TheTheme"
         // Not enabling Lombiq.TrainingDemo.Middlewares because that would write to the error log on every request.
