@@ -19,7 +19,7 @@ builder.Services
         orchardCoreBuilder.ConfigureFeaturesGuard(
             new Dictionary<string, IEnumerable<string>>
             {
-                ["OrchardCore.Facebook"] = new[] { "Lombiq.UIKit", "Lombiq.ChartJs" },
+                ["OrchardCore.Twitter"] = new[] { "Lombiq.UIKit" },
             }));
 
 var app = builder.Build();
