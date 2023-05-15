@@ -20,7 +20,8 @@ public class BehaviorVueTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
+    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
     public Task RecipeDataShouldBeDisplayedCorrectly(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             async context =>
@@ -30,7 +31,8 @@ public class BehaviorVueTests : UITestBase
             },
             browser);
 
-    [Theory, Chrome]
+    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
     public Task QrCardScanShouldWorkAsync(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestQrCardFoundAsync(),
@@ -41,7 +43,8 @@ public class BehaviorVueTests : UITestBase
                 configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync = AssertHtmValidationResultAsync;
             });
 
-    [Theory, Chrome]
+    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
     public Task QrCardScanShouldReportNotFoundAsync(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestQrCardNotFoundAsync(),

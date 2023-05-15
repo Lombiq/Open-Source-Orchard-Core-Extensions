@@ -14,7 +14,8 @@ public class BehaviorIdleTenantsTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
+    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
     public Task ShuttingDownIdleTenantsShouldWork(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             async context =>

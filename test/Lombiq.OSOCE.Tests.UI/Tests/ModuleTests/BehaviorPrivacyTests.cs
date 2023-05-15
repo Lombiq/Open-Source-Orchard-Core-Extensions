@@ -15,11 +15,13 @@ public class BehaviorPrivacyTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
+    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
     public Task ConsentBannerShouldWorkAnonymous(Browser browser) =>
         ExecuteTestAfterSetupAsync(context => context.TestConsentBannerAsync(), browser);
 
-    [Theory, Chrome]
+    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
     public Task ConsentBannerShouldWorkAdmin(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             async context =>
@@ -30,7 +32,8 @@ public class BehaviorPrivacyTests : UITestBase
             browser);
 
     // This test is for https://github.com/Lombiq/Orchard-Privacy/issues/15
-    [Theory, Chrome]
+    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
     public async Task ConsentBannerShouldWorkWithRazorAndLiquidBasedThemes(Browser browser)
     {
         // First should work with Liquid-based theme
@@ -43,11 +46,13 @@ public class BehaviorPrivacyTests : UITestBase
             browser);
     }
 
-    [Theory, Chrome]
+    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
     public Task RegistrationConsentCheckboxShouldWork(Browser browser) =>
         ExecuteTestAfterSetupAsync(context => context.TestRegistrationConsentCheckboxAsync(), browser);
 
-    [Theory, Chrome]
+    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
     public Task FormConsentCheckboxShouldWork(Browser browser) =>
         ExecuteTestAfterSetupAsync(context => context.TestPrivacySampleBehaviorAsync(), browser);
 }

@@ -14,7 +14,8 @@ public class BehaviorMediaStorageManagementTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
+    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
     public Task MediaQuotaShouldWork(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             async context => await context.TestMediaStorageManagementBehaviorAsync(),

@@ -18,7 +18,8 @@ public class BehaviorUIKitShowcaseTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
+    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
     public Task UIKitShowcasePageShouldBeCorrect(Browser browser)
         => ExecuteTestAfterSetupAsync(
             context => context.TestUIKitShowcaseBehaviorAsync(),

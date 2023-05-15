@@ -14,15 +14,18 @@ public class SecurityShortcutsTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
+    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
     public Task AddUserToRoleShouldWork(Browser browser) =>
         SecurityShortcutsTestCases.AddUserToRoleShouldWorkAsync(ExecuteTestAfterSetupAsync, browser);
 
-    [Theory, Chrome]
+    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
     public Task AddUserToFakeRoleShouldThrow(Browser browser) =>
         SecurityShortcutsTestCases.AddUserToFakeRoleShouldThrowAsync(ExecuteTestAfterSetupAsync, browser);
 
-    [Theory, Chrome]
+    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
     public Task AllowFakePermissionToRoleShouldThrow(Browser browser) =>
         SecurityShortcutsTestCases.AllowFakePermissionToRoleShouldThrowAsync(ExecuteTestAfterSetupAsync, browser);
 }

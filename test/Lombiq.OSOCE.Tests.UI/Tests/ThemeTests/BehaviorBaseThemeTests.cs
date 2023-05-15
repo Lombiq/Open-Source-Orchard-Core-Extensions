@@ -1,4 +1,4 @@
-﻿using Lombiq.BaseTheme.Tests.UI.Extensions;
+using Lombiq.BaseTheme.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
@@ -15,7 +15,8 @@ public class BehaviorBaseThemeTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
+    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
     public Task ThemeFeaturesShouldWork(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             async context =>

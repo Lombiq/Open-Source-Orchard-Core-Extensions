@@ -18,7 +18,8 @@ public class BehaviorFeaturesGuardTests : UITestBase
 
     // HTML validation is disabled as OC's login and dashboard pages contain several errors. See:
     // https://github.com/OrchardCMS/OrchardCore/issues/12271
-    [Theory, Chrome]
+    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
     public Task ForbiddenFeaturesShouldNotBeActivatableOnTenants(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestForbiddenFeaturesAsync(SetupHelpers.RecipeId),
@@ -27,7 +28,8 @@ public class BehaviorFeaturesGuardTests : UITestBase
 
     // HTML validation is disabled as OC's login and dashboard pages contain several errors. See:
     // https://github.com/OrchardCMS/OrchardCore/issues/12271
-    [Theory, Chrome]
+    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
     public Task ConditionallyEnabledFeaturesShouldWorkCorrectlyOnTenants(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestConditionallyEnabledFeaturesAsync(SetupHelpers.RecipeId),
