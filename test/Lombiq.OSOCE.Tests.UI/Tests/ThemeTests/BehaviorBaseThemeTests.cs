@@ -33,6 +33,14 @@ public class BehaviorBaseThemeTests : UITestBase
             async context =>
             {
                 await context.SignInDirectlyAsync();
+                await context.GoToRelativeUrlAsync("/Admin/Themes");
+
+                await context.ClickReliablyOnAsync(By.CssSelector(
+                    "form[action='/Admin/Themes/SetCurrentTheme/Lombiq.BaseTheme.Samples'] button"));
+                context.ShouldBeSuccess();
+
+                await context.GoToHomePageAsync();
+                await context.TestBaseThemeFeaturesAsync();
             },
             browser,
             async context =>
@@ -47,8 +55,6 @@ public class BehaviorBaseThemeTests : UITestBase
                         TablePrefix = "OSOCE_blog",
                         SiteTimeZoneValue = "Europe/Budapest",
                     });
-
-                context.Exists(By.Id("navbar"));
 
                 return homepageUri;
             },
