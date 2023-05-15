@@ -14,22 +14,19 @@ public class BehaviorHelpfulExtensionsTests : UITestBase
     {
     }
 
-    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
+    [Theory, Chrome]
     public Task FeatureFlow(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestFlowAdditionalStylingPartAsync(),
             browser);
 
-    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
+    [Theory, Chrome]
     public Task FeatureWidgets(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestFeatureWidgetsAsync(),
             browser);
 
-    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
+    [Theory, Chrome]
     public Task FeatureCodeGeneration(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestFeatureCodeGenerationsAsync(),

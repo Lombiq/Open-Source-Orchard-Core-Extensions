@@ -15,8 +15,7 @@ public class BehaviorAsyncEditorTests : UITestBase
     {
     }
 
-    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
+    [Theory, Chrome]
     public Task DemoAsyncEditorShouldLoad(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             async context =>

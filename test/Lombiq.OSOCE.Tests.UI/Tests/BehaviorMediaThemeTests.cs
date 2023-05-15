@@ -14,8 +14,7 @@ public class BehaviorMediaThemeTests : UITestBase
     {
     }
 
-    [Theory(Skip = "Not needed for troubleshooting."), Chrome]
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "I'm debugging.")]
+    [Theory, Chrome]
     public Task MediaThemeShouldRenderTemplatesFromMediaLibrary(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestMediaThemeTemplateRenderingBehaviorAsync(),
