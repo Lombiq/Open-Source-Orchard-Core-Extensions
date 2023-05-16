@@ -4,6 +4,7 @@ using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Pages;
 using Lombiq.Tests.UI.Services;
 using OpenQA.Selenium;
+using Shouldly;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -40,6 +41,11 @@ public class BehaviorBaseThemeTests : UITestBase
                 context.ShouldBeSuccess();
 
                 await context.GoToHomePageAsync();
+
+                // Verify the menu items added by the Blog recipe.
+                context.Get(By.CssSelector(".menuWidget__content .nav-link[href='/']")).Text.Trim().ShouldBe("Home");
+                context.Get(By.CssSelector(".menuWidget__content .nav-link[href='/about']")).Text.Trim().ShouldBe("About");
+
                 await context.TestBaseThemeFeaturesAsync(skipLogin: true);
             },
             browser,
