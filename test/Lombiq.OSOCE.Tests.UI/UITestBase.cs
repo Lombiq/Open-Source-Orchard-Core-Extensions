@@ -55,5 +55,8 @@ public class UITestBase : OrchardCoreUITestBase<Program>
             .ReplaceOrdinalIgnoreCase(
                 "|Lombiq.TrainingDemo.Services.DemoBackgroundTask|ERROR|Expected non-error",
                 "|Lombiq.TrainingDemo.Services.DemoBackgroundTask|EXPECTED_ERROR|Expected non-error")
+            .ReplaceOrdinalIgnoreCase(
+                "|OrchardCore.Media.Core.DefaultMediaFileStoreCacheFileProvider|ERROR|Error deleting cache folder",
+                "|OrchardCore.Media.Core.DefaultMediaFileStoreCacheFileProvider|EXPECTED_ERROR|Error deleting cache folder")
             .ShouldNotContain("|ERROR|");
 }
