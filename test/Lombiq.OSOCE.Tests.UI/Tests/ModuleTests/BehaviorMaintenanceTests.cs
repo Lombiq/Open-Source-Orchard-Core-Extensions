@@ -1,4 +1,3 @@
-using Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI.Extensions;
 using Lombiq.Hosting.Tenants.Maintenance.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Services;
@@ -16,20 +15,9 @@ public class BehaviorMaintenanceTests : UITestBase
     }
 
     [Theory, Chrome]
-    public Task NecessaryMaintenanceTasksShouldBeExecutedSuccessfullyAndOthersSkipped(Browser browser) =>
+    public Task MaintenanceTaskShouldBeExecutedSuccessfully(Browser browser) =>
         ExecuteTestAfterSetupAsync(
-            async context =>
-            {
-                await context.TestMaintenanceExecutionAsync();
-
-                context.Configuration.AssertAppLogsAsync = async webApplicationInstance =>
-                {
-                    await AssertAppLogsDefaultOSOCEAsync(webApplicationInstance);
-                    await MaintenanceExtensions.AssertAppLogsWithMaintenanceExecutionStartAsync(webApplicationInstance);
-                    await MaintenanceExtensions.AssertAppLogsWithSuccessfulUpdateSiteUrlExecutionAsync(webApplicationInstance);
-                    await MaintenanceExtensions.AssertAppLogsWithSkippedUpdateShellRequestUrlExecutionAsync(webApplicationInstance);
-                };
-            },
+            async context => await context.TestSiteUrlMaintenanceExecution(),
             browser,
             configuration => configuration.SetUpdateSiteUrlMaintenanceConfiguration());
 }
