@@ -13,7 +13,7 @@ jobs:
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      machine-types: "['ubuntu-22.04']"
+      machine-types: "['gitrunners-ubuntu-2204-x64-4vcpu', 'gitrunners-windows-2022-x64-8vcpu']"
       timeout-minutes: 30
       set-up-sql-server: "true"
       set-up-azurite: "true"
@@ -32,6 +32,15 @@ jobs:
       set-up-sql-server: "true"
       set-up-azurite: "true"
       build-create-binary-log: "true"
+      blame-hang-timeout: "5m"
+
+  build-and-test-nuget-test:
+    name: Build and Test - NuGetTest solution
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "['ubuntu-22.04', 'windows-2022']"
+      build-directory: NuGetTest
+      timeout-minutes: 20
       blame-hang-timeout: "5m"
 
   spelling:
@@ -57,7 +66,7 @@ jobs:
 
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
-    needs: [build-and-test-larger-runners, spelling]
+    needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling]
     if: github.event.pull_request != ''
     uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
     secrets:
