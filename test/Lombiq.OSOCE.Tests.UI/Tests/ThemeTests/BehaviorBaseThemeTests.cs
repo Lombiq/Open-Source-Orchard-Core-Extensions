@@ -40,7 +40,7 @@ public class BehaviorBaseThemeTests : UITestBase
                 context.ShouldBeSuccess();
 
                 await context.GoToHomePageAsync();
-                await context.TestBaseThemeFeaturesAsync();
+                await context.TestBaseThemeFeaturesAsync(skipLogin: true);
             },
             browser,
             async context =>
