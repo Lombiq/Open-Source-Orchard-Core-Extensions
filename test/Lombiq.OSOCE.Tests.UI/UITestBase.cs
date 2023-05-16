@@ -35,15 +35,19 @@ public class UITestBase : OrchardCoreUITestBase<Program>
             setupOperation,
             async configuration =>
             {
-                configuration.BrowserConfiguration.DefaultBrowserSize = CommonDisplayResolutions.HdPlus;
-
-                configuration.BrowserConfiguration.Headless =
-                    TestConfigurationManager.GetBoolConfiguration("BrowserConfiguration:Headless", defaultValue: false);
-
-                configuration.AssertAppLogsAsync = AssertAppLogsHelpers.AssertOsoceAppLogsAreEmptyAsync;
-
+                ChangeConfiguration(configuration);
                 if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
             });
+
+    protected void ChangeConfiguration(OrchardCoreUITestExecutorConfiguration configuration)
+    {
+        configuration.BrowserConfiguration.DefaultBrowserSize = CommonDisplayResolutions.HdPlus;
+
+        configuration.BrowserConfiguration.Headless =
+            TestConfigurationManager.GetBoolConfiguration("BrowserConfiguration:Headless", defaultValue: false);
+
+        configuration.AssertAppLogsAsync = AssertAppLogsHelpers.AssertOsoceAppLogsAreEmptyAsync;
+    }
 
     public static readonly Func<IWebApplicationInstance, Task> AssertAppLogsDefaultOSOCEAsync =
         async webApplicationInstance =>
@@ -51,5 +55,8 @@ public class UITestBase : OrchardCoreUITestBase<Program>
             .ReplaceOrdinalIgnoreCase(
                 "|Lombiq.TrainingDemo.Services.DemoBackgroundTask|ERROR|Expected non-error",
                 "|Lombiq.TrainingDemo.Services.DemoBackgroundTask|EXPECTED_ERROR|Expected non-error")
+            .ReplaceOrdinalIgnoreCase(
+                "|OrchardCore.Media.Core.DefaultMediaFileStoreCacheFileProvider|ERROR|Error deleting cache folder",
+                "|OrchardCore.Media.Core.DefaultMediaFileStoreCacheFileProvider|EXPECTED_ERROR|Error deleting cache folder")
             .ShouldNotContain("|ERROR|");
 }
