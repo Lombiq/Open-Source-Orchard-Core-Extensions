@@ -17,7 +17,7 @@ public class BehaviorMaintenanceTests : UITestBase
     [Theory, Chrome]
     public Task MaintenanceTaskShouldBeExecutedSuccessfully(Browser browser) =>
         ExecuteTestAfterSetupAsync(
-            async context => await context.TestSiteUrlMaintenanceExecution(),
+            async context => await context.TestSiteUrlMaintenanceExecutionAsync(),
             browser,
             configuration => configuration.SetUpdateSiteUrlMaintenanceConfiguration());
 }
