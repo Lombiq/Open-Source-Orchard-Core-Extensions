@@ -31,6 +31,8 @@
         "Lombiq.Hosting.Tenants.Admin.Login",
         "Lombiq.Hosting.Tenants.Admin.Login.SubTenant",
         "Lombiq.Hosting.Tenants.Management",
+        "Lombiq.Hosting.Tenants.Maintenance",
+        "Lombiq.Hosting.Tenants.Maintenance.UpdateSiteUrl",
         "Lombiq.Hosting.Tenants.IdleTenantManagement.ShutDownIdleTenants",
         "Lombiq.JsonEditor",
         "Lombiq.OSOCE.Samples",
@@ -45,6 +47,7 @@
         "Lombiq.VueJs.Samples",
         "OrchardCore.Tenants.FeatureProfiles",
         "Lombiq.Hosting.Tenants.FeaturesGuard",
+        "Lombiq.Hosting.Tenants.MediaStorageManagement",
         "OrchardCore.Media",
         "TheTheme"
         // Not enabling Lombiq.TrainingDemo.Middlewares because that would write to the error log on every request.

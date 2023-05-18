@@ -1,2 +1,2 @@
-Remove-Item '.\src\Lombiq.OSOCE.Web\App_Data' -Recurse -ErrorAction Ignore
-Write-Output 'Successfully reset website.'
+Remove-Item '.\src\Lombiq.OSOCE.NuGet.Web\App_Data' -Recurse && Write-Output 'Successfully reset website.'
+
