@@ -33,6 +33,7 @@
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Azure.ApplicationInsights\Lombiq.Hosting.Azure.ApplicationInsights\Lombiq.Hosting.Azure.ApplicationInsights.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.BuildVersionDisplay\Lombiq.Hosting.BuildVersionDisplay\Lombiq.Hosting.BuildVersionDisplay.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.Admin.Login\Lombiq.Hosting.Tenants.Admin.Login.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.EnvironmentRobots\Lombiq.Hosting.Tenants.EnvironmentRobots.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.FeaturesGuard\Lombiq.Hosting.Tenants.FeaturesGuard.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.IdleTenantManagement\Lombiq.Hosting.Tenants.IdleTenantManagement.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.Maintenance\Lombiq.Hosting.Tenants.Maintenance.csproj" />
