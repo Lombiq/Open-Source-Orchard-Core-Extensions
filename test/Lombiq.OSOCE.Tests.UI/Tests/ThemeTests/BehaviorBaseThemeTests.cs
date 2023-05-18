@@ -61,6 +61,11 @@ public class BehaviorBaseThemeTests : UITestBase
             configuration =>
             {
                 ChangeConfiguration(configuration);
+
+                // Disable HTML validation, because it's out of the scope of this test, and we have no control over the
+                // HTML in the Blog and the content added by the Blog recipe.
+                configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false;
+
                 return Task.CompletedTask;
             });
 }
