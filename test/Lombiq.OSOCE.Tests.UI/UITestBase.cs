@@ -70,6 +70,9 @@ public class UITestBase : OrchardCoreUITestBase<Program>
                 // by the Blog recipe.
                 configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false;
 
+                // Force using SQL Server so TablePrefix is respected.
+                configuration.UseSqlServer = true;
+
                 changeConfiguration?.Invoke(configuration);
 
                 return Task.CompletedTask;
