@@ -17,20 +17,20 @@ public class BehaviorEnvironmentRobotsTests : UITestBase
     [Theory, Chrome]
     public Task RobotsMetaTagShouldBeMissing(Browser browser) =>
         ExecuteTestAfterSetupAsync(
-            async context => await context.TestRobotMetaTagIsPresentOrMissingAsync(missing: true),
+            async context => await context.TestRobotMetaTagIsMissingAsync(shouldBeMissing: true),
             browser,
             configuration => configuration.SetEnvironmentRobotsOptionsConfiguration(isProduction: true));
 
     [Theory, Chrome]
     public Task RobotsMetaTagShouldBeMissingWithoutConfiguration(Browser browser) =>
         ExecuteTestAfterSetupAsync(
-            async context => await context.TestRobotMetaTagIsPresentOrMissingAsync(missing: false),
+            async context => await context.TestRobotMetaTagIsMissingAsync(shouldBeMissing: false),
             browser);
 
     [Theory, Chrome]
     public Task RobotsMetaTagShouldBePresent(Browser browser) =>
         ExecuteTestAfterSetupAsync(
-            async context => await context.TestRobotMetaTagIsPresentOrMissingAsync(missing: false),
+            async context => await context.TestRobotMetaTagIsMissingAsync(shouldBeMissing: false),
             browser,
             configuration => configuration.SetEnvironmentRobotsOptionsConfiguration(isProduction: false));
 }
