@@ -30,6 +30,11 @@ public class BlogBehaviorBaseThemeTests : UITestBase
                     "form[action='/Admin/Themes/SetCurrentTheme/Lombiq.BaseTheme.Samples'] button"));
                 context.ShouldBeSuccess();
 
+                // Verify that the feature is indeed enabled.
+                await context.GoToRelativeUrlAsync("/Admin/Features");
+                await context.ClickAndFillInWithRetriesAsync(By.Id("search-box"), "Helpful Widgets");
+                context.Exists(By.Id("btn-disable-Lombiq_HelpfulExtensions_Widgets"));
+
                 await context.GoToHomePageAsync();
                 await context.TestBaseThemeFeaturesAsync(skipLogin: true);
             },
