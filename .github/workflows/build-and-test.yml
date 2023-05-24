@@ -36,12 +36,13 @@ jobs:
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-548
     with:
       machine-types: "['windows-2022']"
       build-directory: NuGetTest
       timeout-minutes: 20
       blame-hang-timeout: "5m"
+      print-config-summary: "true"
 
   spelling:
     name: Spelling
