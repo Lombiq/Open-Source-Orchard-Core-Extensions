@@ -47,7 +47,7 @@ jobs:
       blame-hang-timeout: "5m"
 
   powershell-static-code-analysis:
-    name: PowerShell Static Code Analysis
+    name: PowerShell Static Code Analysis Windows
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
       machine-types: "['windows-2022']"
