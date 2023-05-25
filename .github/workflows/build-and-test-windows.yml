@@ -1,0 +1,64 @@
+name: Build and Test Windows
+
+# Windows builds are only run on-demand, enforced to be run once before merging a PR, and for pushes to dev. This is
+# because Windows builds are much slower and more expensive than Ubuntu ones, and them catching issues that aren't
+# surfaced under Ubuntu is rare (but does happen). So, not running them for every push of every PR.
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build-and-test-larger-runners:
+    if: github.ref_name != github.event.repository.default_branch
+    name: Build and Test Windows - root solution (larger runners)
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "['gitrunners-windows-2022-x64-8vcpu']"
+      timeout-minutes: 30
+      set-up-sql-server: "true"
+      set-up-azurite: "true"
+      ui-test-parallelism: 0
+      build-create-binary-log: "true"
+      blame-hang-timeout: "5m"
+
+  build-and-test-standard-runners:
+    # Since dev builds are not awaited by anyone, they can run on the slower free runners.
+    if: github.ref_name == github.event.repository.default_branch
+    name: Build and Test Windows - root solution (standard runners)
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "['windows-2022']"
+      timeout-minutes: 60
+      set-up-sql-server: "true"
+      set-up-azurite: "true"
+      build-create-binary-log: "true"
+      blame-hang-timeout: "5m"
+
+  build-and-test-nuget-test:
+    name: Build and Test Windows - NuGetTest solution
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      machine-types: "[ 'windows-2022']"
+      build-directory: NuGetTest
+      timeout-minutes: 20
+      blame-hang-timeout: "5m"
+
+  powershell-static-code-analysis:
+    name: PowerShell Static Code Analysis Windows
+    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
+    with:
+      machine-types: "['windows-2022']"
+      run-windows-powershell: "false"
+
+  post-pull-request-checks-automation:
+    name: Post Pull Request Checks Automation
+    needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
+    if: github.event.pull_request != ''
+    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
+    secrets:
+      JIRA_BASE_URL: ${{ secrets.DEFAULT_JIRA_BASE_URL }}
+      JIRA_USER_EMAIL: ${{ secrets.DEFAULT_JIRA_USER_EMAIL }}
+      JIRA_API_TOKEN: ${{ secrets.DEFAULT_JIRA_API_TOKEN }}
+      MERGE_TOKEN: ${{ secrets.LOMBIQBOT_GITHUB_PERSONAL_ACCESS_TOKEN }}
