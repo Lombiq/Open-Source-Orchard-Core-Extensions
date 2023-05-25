@@ -1,8 +1,10 @@
-name: Build and Test
+name: Build and Test Windows
 
-# Runs for PRs opened for any branch, and pushes to the dev branch.
+# Windows builds are only run on-demand, enforced to be run once before merging a PR, and for pushes to dev. This is
+# because Windows builds are much slower and more expensive than Ubuntu ones, and them catching issues that aren't
+# surfaced under Ubuntu is rare (but does happen). So, not running them for every push of every PR.
 on:
-  pull_request:
+  workflow_dispatch:
   push:
     branches:
       - dev
@@ -10,11 +12,11 @@ on:
 jobs:
   build-and-test-larger-runners:
     if: github.ref_name != github.event.repository.default_branch
-    name: Build and Test - root solution (larger runners)
+    name: Build and Test Windows - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      machine-types: "['gitrunners-ubuntu-2204-x64-4vcpu']"
-      timeout-minutes: 20
+      machine-types: "['gitrunners-windows-2022-x64-8vcpu']"
+      timeout-minutes: 30
       set-up-sql-server: "true"
       set-up-azurite: "true"
       ui-test-parallelism: 0
@@ -24,47 +26,28 @@ jobs:
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
     if: github.ref_name == github.event.repository.default_branch
-    name: Build and Test - root solution (standard runners)
+    name: Build and Test Windows - root solution (standard runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      timeout-minutes: 30
+      machine-types: "['windows-2022']"
+      timeout-minutes: 60
       set-up-sql-server: "true"
       set-up-azurite: "true"
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
 
   build-and-test-nuget-test:
-    name: Build and Test - NuGetTest solution
+    name: Build and Test Windows - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
+      machine-types: "[ 'windows-2022']"
       build-directory: NuGetTest
-      timeout-minutes: 10
+      timeout-minutes: 20
       blame-hang-timeout: "5m"
-
-  spelling:
-    name: Spelling
-    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
-    with:
-      additional-dictionaries: |
-        cspell:csharp/csharp.txt
-        cspell:css/css.txt
-        cspell:fullstack/fullstack.txt
-        cspell:html/html.txt
-        cspell:node/node.txt
-        cspell:npm/npm.txt
-        lombiq-lgha:dictionaries/Liquid.txt
-        lombiq-lgha:dictionaries/Xml.txt
-        lombiq-lgha:dictionaries/Lombiq.people.txt
-
-  powershell-static-code-analysis:
-    name: PowerShell Static Code Analysis
-    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
-    with:
-      run-windows-powershell: "false"
 
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
-    needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling]
+    needs: [build-and-test-larger-runners, build-and-test-nuget-test]
     if: github.event.pull_request != ''
     uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
     secrets:

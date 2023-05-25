@@ -135,6 +135,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Privacy.Samples", "s
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{40E6EA88-BE15-4542-BD9A-3AA8DC69629E}"
 	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build-and-test-windows.yml = .github\workflows\build-and-test-windows.yml
 		.github\workflows\build-and-test.yml = .github\workflows\build-and-test.yml
 		.github\workflows\create-jira-issues-for-community-activities.yml = .github\workflows\create-jira-issues-for-community-activities.yml
 		.github\workflows\validate-pull-request.yml = .github\workflows\validate-pull-request.yml
