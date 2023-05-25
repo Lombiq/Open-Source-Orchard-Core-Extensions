@@ -1,8 +1,8 @@
 name: Build and Test Windows
 
-# Windows builds are only run on-demand, enforced to be run once before merging a PR, and for pushes to dev. This is
-# because Windows builds are much slower and more expensive than Ubuntu ones, and them catching issues that aren't
-# surfaced under Ubuntu is rare (but does happen). So, not running them for every push of every PR.
+# Windows builds are only run on-demand, to be run once before merging a PR, and for pushes to dev. This is because
+# Windows builds are much slower and more expensive than Ubuntu ones, and them catching issues that aren't surfaced
+# under Ubuntu is rare (but does happen). So, not running them for every push of every PR.
 on:
   pull_request:
   workflow_dispatch:
