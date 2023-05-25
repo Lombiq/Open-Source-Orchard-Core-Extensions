@@ -4,6 +4,7 @@ name: Build and Test Windows
 # because Windows builds are much slower and more expensive than Ubuntu ones, and them catching issues that aren't
 # surfaced under Ubuntu is rare (but does happen). So, not running them for every push of every PR.
 on:
+  pull_request:
   workflow_dispatch:
   push:
     branches:
