@@ -60,7 +60,7 @@ jobs:
     name: PowerShell Static Code Analysis
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
-      run-windows-powershell: "false"
+      machine-types: "['ubuntu-22.04']"
 
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
