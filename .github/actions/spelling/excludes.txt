@@ -1,4 +1,5 @@
 Lombiq\.VueJs\.Tests\.UI/Assets/Media/.*\.mjpeg$
+^\Qsrc/Modules/Lombiq.Hosting.Tenants/Readme.md\E$
 test/Lombiq\.UITestingToolbox/Lombiq\.Tests\.UI/Constants/CommonDisplayResolutions\.cs
 tools/Lombiq.GitHub.Actions/
 UnmanagedNodeModules/
