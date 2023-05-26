@@ -30,6 +30,7 @@
         "Lombiq.Hosting.BuildVersionDisplay",
         "Lombiq.Hosting.Tenants.Admin.Login",
         "Lombiq.Hosting.Tenants.Admin.Login.SubTenant",
+        "Lombiq.Hosting.Tenants.EnvironmentRobots",
         "Lombiq.Hosting.Tenants.Management",
         "Lombiq.Hosting.Tenants.Maintenance",
         "Lombiq.Hosting.Tenants.Maintenance.UpdateSiteUrl",
