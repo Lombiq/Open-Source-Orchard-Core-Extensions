@@ -66,9 +66,8 @@ jobs:
   remove-windows-build-warning-label:
     name: Remove Windows Build Warning Label
     runs-on: ubuntu-22.04
-    timeout-minutes: 2
-    if: ${{ always() }}
-    needs: [post-pull-request-checks-automation]
+    timeout-minutes: 2}
+    needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
     steps:
     - name: Remove Windows Build Warning Label
       # v2.0.0
