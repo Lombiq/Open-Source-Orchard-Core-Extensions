@@ -48,7 +48,7 @@ jobs:
     with:
       machine-types: "['windows-2022']"
       build-directory: NuGetTest
-      timeout-minutes: 20
+      timeout-minutes: 25
       blame-hang-timeout: "5m"
 
   powershell-static-code-analysis:
