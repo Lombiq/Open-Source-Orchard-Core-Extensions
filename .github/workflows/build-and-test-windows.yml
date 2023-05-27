@@ -40,8 +40,9 @@ jobs:
       blame-hang-timeout: "5m"
 
   build-and-test-nuget-test:
-    if: github.ref_name == github.event.repository.default_branch && 
-      (github.event_name == 'workflow_dispatch' || github.event.review.state == 'approved')
+    if: github.ref_name == github.event.repository.default_branch || 
+        github.event_name == 'workflow_dispatch' ||
+        github.event.review.state == 'approved'
     name: Build and Test Windows - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
@@ -51,8 +52,9 @@ jobs:
       blame-hang-timeout: "5m"
 
   powershell-static-code-analysis:
-    if: github.ref_name == github.event.repository.default_branch && 
-      (github.event_name == 'workflow_dispatch' || github.event.review.state == 'approved')
+    if: github.ref_name == github.event.repository.default_branch || 
+        github.event_name == 'workflow_dispatch' ||
+        github.event.review.state == 'approved'
     name: PowerShell Static Code Analysis Windows
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
