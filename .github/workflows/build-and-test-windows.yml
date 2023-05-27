@@ -5,13 +5,15 @@ name: Build and Test Windows
 # under Ubuntu is rare (but does happen). So, not running them for every push of every PR.
 on:
   workflow_dispatch:
+  pull_request_review:
+    types: [submitted]
   push:
     branches:
       - dev
 
 jobs:
   build-and-test-larger-runners:
-    if: github.ref_name != github.event.repository.default_branch
+    if: github.ref_name != github.event.repository.default_branch && github.event.review.state == 'approved'
     name: Build and Test Windows - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
@@ -37,6 +39,7 @@ jobs:
       blame-hang-timeout: "5m"
 
   build-and-test-nuget-test:
+    if: github.ref_name == github.event.repository.default_branch || github.event.review.state == 'approved'
     name: Build and Test Windows - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
@@ -46,6 +49,7 @@ jobs:
       blame-hang-timeout: "5m"
 
   powershell-static-code-analysis:
+    if: github.ref_name == github.event.repository.default_branch || github.event.review.state == 'approved'
     name: PowerShell Static Code Analysis Windows
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
