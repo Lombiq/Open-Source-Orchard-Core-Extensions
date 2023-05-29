@@ -77,8 +77,7 @@ jobs:
     name: Add Windows Build Warning Label
     runs-on: ubuntu-22.04
     timeout-minutes: 2
-    if: ${{ always() }}
-    needs: [post-pull-request-checks-automation]
+    needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
     steps:
     - name: Add Windows Build Warning Label
       # v2.0.0
