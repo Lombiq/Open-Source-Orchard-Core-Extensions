@@ -32,13 +32,13 @@
     <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="3.0.0-alpha.5.nest-407" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="3.0.0-alpha.5.nest-407" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme.Targets" Version="3.0.0-alpha.5.nest-407" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="4.0.2-alpha.1.nest-422" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots" Version="4.0.3-alpha.19.osoe-621" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="4.0.2-alpha.1.nest-422" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="4.0.2-alpha.1.nest-422" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Maintenance" Version="4.0.3-alpha.16.nest-326" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="4.0.2-alpha.1.nest-422" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement" Version="4.0.2-alpha.1.nest-422" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="4.1.0-alpha.2.nest-391" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots" Version="4.1.0-alpha.2.nest-391" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="4.1.0-alpha.2.nest-391" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="4.1.0-alpha.2.nest-391" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Maintenance" Version="4.1.0-alpha.2.nest-391" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="4.1.0-alpha.2.nest-391" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement" Version="4.1.0-alpha.2.nest-391" />
     <PackageReference Include="Lombiq.JsonEditor" Version="4.0.0" />
     <PackageReference Include="Lombiq.OrchardCoreApiClient" Version="2.0.0" />
     <PackageReference Include="Lombiq.Privacy" Version="5.0.1" />
