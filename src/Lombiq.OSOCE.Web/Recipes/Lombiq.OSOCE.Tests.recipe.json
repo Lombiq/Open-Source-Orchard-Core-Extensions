@@ -34,6 +34,7 @@
         "Lombiq.Hosting.Tenants.Management",
         "Lombiq.Hosting.Tenants.Maintenance",
         "Lombiq.Hosting.Tenants.Maintenance.UpdateSiteUrl",
+        "Lombiq.Hosting.Tenants.Maintenance.AddSiteOwnerPermissionToRole",
         "Lombiq.Hosting.Tenants.IdleTenantManagement.ShutDownIdleTenants",
         "Lombiq.JsonEditor",
         "Lombiq.OSOCE.Samples",
