@@ -2,13 +2,12 @@ using Lombiq.OSOCE.Tests.UI.Helpers;
 using Lombiq.Tests.UI;
 using Lombiq.Tests.UI.Constants;
 using Lombiq.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Pages;
-using Lombiq.Tests.UI.Samples.Helpers;
 using Lombiq.Tests.UI.Services;
 using Shouldly;
 using System;
 using System.Threading.Tasks;
 using Xunit.Abstractions;
+using SetupHelpers=Lombiq.Tests.UI.Samples.Helpers.SetupHelpers;
 
 namespace Lombiq.OSOCE.Tests.UI;
 
@@ -40,42 +39,7 @@ public class UITestBase : OrchardCoreUITestBase<Program>
                 if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
             });
 
-    protected Task ExecuteTestAfterSetupWithBlogRecipeAsync(
-        Func<UITestContext, Task> testAsync,
-        Browser browser,
-        Action<OrchardCoreUITestExecutorConfiguration> changeConfiguration = null) =>
-        ExecuteTestAsync(
-            testAsync,
-            browser,
-            async context =>
-            {
-                // We must use a custom configuration with the "Blog" setup to test if the feature works when enabled on
-                // an existing stock site without setup pre-configuration.
-                var homepageUri = await context.GoToSetupPageAndSetupOrchardCoreAsync(
-                    new OrchardCoreSetupParameters(context)
-                    {
-                        SiteName = "Lombiq's OSOCE - UI Testing - With Blog Setup",
-                        RecipeId = "Blog",
-                        TablePrefix = "OSOCE_blog",
-                        SiteTimeZoneValue = "Europe/Budapest",
-                    });
-
-                return homepageUri;
-            },
-            configuration =>
-            {
-                ChangeConfiguration(configuration);
-
-                // Disable HTML validation, because we have no control over the HTML in the Blog and the content added
-                // by the Blog recipe.
-                configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false;
-
-                changeConfiguration?.Invoke(configuration);
-
-                return Task.CompletedTask;
-            });
-
-    protected void ChangeConfiguration(OrchardCoreUITestExecutorConfiguration configuration)
+    protected static void ChangeConfiguration(OrchardCoreUITestExecutorConfiguration configuration)
     {
         configuration.BrowserConfiguration.DefaultBrowserSize = CommonDisplayResolutions.HdPlus;
 

@@ -1,9 +1,10 @@
 ﻿using Lombiq.BaseTheme.Tests.UI.Extensions;
-using Lombiq.Tests.UI;
+using Lombiq.OSOCE.Tests.UI.Helpers;
 using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using OpenQA.Selenium;
+using System;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -23,15 +24,10 @@ public class BlogBehaviorBaseThemeTests : UITestBase
 
     [Theory, Chrome]
     public Task ThemeWithoutSetupShouldWork(Browser browser) =>
-        ExecuteTestAfterSetupWithBlogRecipeAsync(
+        ExecuteTestAfterSetupAndThemeSwitchAsync(
             async context =>
             {
                 await context.SignInDirectlyAsync();
-                await context.GoToRelativeUrlAsync("/Admin/Themes");
-
-                await context.ClickReliablyOnAsync(By.CssSelector(
-                    "form[action='/Admin/Themes/SetCurrentTheme/Lombiq.BaseTheme.Samples'] button"));
-                context.ShouldBeSuccess();
 
                 // Verify that the feature is indeed enabled.
                 await context.GoToRelativeUrlAsync("/Admin/Features");
@@ -42,4 +38,32 @@ public class BlogBehaviorBaseThemeTests : UITestBase
                 await context.TestBaseThemeFeaturesAsync(skipLogin: true);
             },
             browser);
+
+    private Task ExecuteTestAfterSetupAndThemeSwitchAsync(Func<UITestContext, Task> testAsync, Browser browser) =>
+        ExecuteTestAsync(
+            testAsync,
+            browser,
+            async context =>
+            {
+                var homePageUri = await SetupHelpers.RunBlogSetupAsync(context);
+
+                await context.SignInDirectlyAsync();
+                await context.GoToRelativeUrlAsync("/Admin/Themes");
+
+                await context.ClickReliablyOnAsync(By.CssSelector(
+                    "form[action='/Admin/Themes/SetCurrentTheme/Lombiq.BaseTheme.Samples'] button"));
+                context.ShouldBeSuccess();
+
+                return homePageUri;
+            },
+            configuration =>
+            {
+                ChangeConfiguration(configuration);
+
+                // Disable HTML validation, because we have no control over the HTML in the Blog and the content added
+                // by the Blog recipe.
+                configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false;
+
+                return Task.CompletedTask;
+            });
 }
