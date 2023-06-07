@@ -42,7 +42,6 @@ jobs:
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
-      dotnet-version: "7.0.x"
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
@@ -56,7 +55,6 @@ jobs:
       set-up-azurite: "true"
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
-      dotnet-version: "7.0.x"
 
   build-and-test-nuget-test:
     if: github.ref_name == github.event.repository.default_branch || 
@@ -69,7 +67,6 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 25
       blame-hang-timeout: "5m"
-      dotnet-version: "7.0.x"
 
   powershell-static-code-analysis:
     if: github.ref_name == github.event.repository.default_branch || 
