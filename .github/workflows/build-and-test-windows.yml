@@ -33,7 +33,7 @@ jobs:
     if: github.ref_name != github.event.repository.default_branch && 
         (github.event_name == 'workflow_dispatch' || github.event.label.name == 'run-windows-build')
     name: Build and Test Windows - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/SPAL-23
     with:
       machine-types: "['gitrunners-windows-2022-x64-8vcpu']"
       timeout-minutes: 30
@@ -42,13 +42,12 @@ jobs:
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
-      dotnet-version: "7.0.x"
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
     if: github.ref_name == github.event.repository.default_branch
     name: Build and Test Windows - root solution (standard runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/SPAL-23
     with:
       machine-types: "['windows-2022']"
       timeout-minutes: 60
@@ -56,20 +55,18 @@ jobs:
       set-up-azurite: "true"
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
-      dotnet-version: "7.0.x"
 
   build-and-test-nuget-test:
     if: github.ref_name == github.event.repository.default_branch || 
         github.event_name == 'workflow_dispatch' ||
         github.event.label.name == 'run-windows-build'
     name: Build and Test Windows - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/SPAL-23
     with:
       machine-types: "['windows-2022']"
       build-directory: NuGetTest
       timeout-minutes: 25
       blame-hang-timeout: "5m"
-      dotnet-version: "7.0.x"
 
   powershell-static-code-analysis:
     if: github.ref_name == github.event.repository.default_branch || 
