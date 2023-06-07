@@ -95,5 +95,4 @@
 	branch = dev
 [submodule "src/Modules/Lombiq.ContentEditors"]
 	path = src/Modules/Lombiq.ContentEditors
-	url = http://github.com/Lombiq/Orchard-Content-Editors
-	branch = dev
+	url = https://github.com/Lombiq/Orchard-Content-Editors.git
