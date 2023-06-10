@@ -13,7 +13,8 @@ on:
 
 jobs:
   remove-run-windows-build-label:
-    if: github.ref_name != github.event.repository.default_branch
+    if: github.ref_name != github.event.repository.default_branch && 
+        github.event.label.name == 'run-windows-build'
     name: Remove Run Windows Build Label
     runs-on: ubuntu-22.04
     timeout-minutes: 2
