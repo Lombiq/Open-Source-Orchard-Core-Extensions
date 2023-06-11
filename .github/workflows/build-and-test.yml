@@ -21,7 +21,6 @@ jobs:
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
 
-
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
     if: github.ref_name == github.event.repository.default_branch
@@ -33,7 +32,6 @@ jobs:
       set-up-azurite: "true"
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
-
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
