@@ -21,7 +21,6 @@ public class BehaviorAsyncEditorTests : UITestBase
             async context =>
             {
                 await context.SignInDirectlyAsync();
-                await context.EnableContentEditorsSamplesFeatureAsync();
                 await context.TestDemoAsyncEditorLoadOnAdminAsync();
             },
             browser);
