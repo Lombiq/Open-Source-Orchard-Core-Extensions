@@ -21,6 +21,7 @@
         "Lombiq.AuditTrailExtensions",
         "Lombiq.BaseTheme.Samples",
         "Lombiq.ChartJs",
+        "Lombiq.ContentEditors.Samples",
         "Lombiq.DataTables.Samples",
         "Lombiq.HelpfulExtensions.CodeGeneration",
         "Lombiq.HelpfulExtensions.ContentTypes",
