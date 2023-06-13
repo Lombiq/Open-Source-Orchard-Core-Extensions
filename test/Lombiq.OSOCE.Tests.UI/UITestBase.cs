@@ -11,7 +11,7 @@ using SetupHelpers=Lombiq.Tests.UI.Samples.Helpers.SetupHelpers;
 
 namespace Lombiq.OSOCE.Tests.UI;
 
-public class UITestBase : OrchardCoreUITestBase<Program>
+public abstract class UITestBase : OrchardCoreUITestBase<Program>
 {
     protected UITestBase(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)

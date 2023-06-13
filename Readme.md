@@ -26,6 +26,7 @@ Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source
   - [`Lombiq.HelpfulLibraries.Cli`](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.Cli): Command Line Libraries. This project helps with executing command line calls.
   - [`Lombiq.HelpfulLibraries.LinqToDb`](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.LinqToDb): With the help of this project you can write LINQ expressions and run them with a [YesSql](https://github.com/sebastienros/yessql) `ISession` extension method to query from the DB instead of writing plain SQL queries. Uses the [LINQ to DB project](https://linq2db.github.io/). You can watch a demo video of the project [here](https://www.youtube.com/watch?v=ldJOdCSsWJo).
   - [`Lombiq.HelpfulLibraries.RestEase`](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.RestEase): Adds a typed HTTP client to the service collection using RestEase.
+  - [`Lombiq.HelpfulLibraries.Refit`](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.Refit): Adds helpers for working with [Refit](https://github.com/reactiveui/refit).
   - [`Lombiq.HelpfulLibraries.Targets`](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.Targets): Targets project which references all Helpful Libraries. Only necessary for NuGet publishing, just as _Lombiq.HelpfulLibraries.sln_.
   - [`Lombiq.OrchardCoreApiClient`](https://github.com/Lombiq/Orchard-Core-API-Client): A client library for communicating with the [Orchard Core](https://www.orchardcore.net/) web APIs, it contains an implementation for the tenant management API and a console application for testing and demonstration.
 
@@ -61,7 +62,7 @@ Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source
   - [`Lombiq.NodeJs.Extensions`](https://github.com/Lombiq/NodeJs-Extensions): Configurable and MSBuild-integrated frontend asset pipelines for SCSS, JS, MD, and external libraries implemented using npm scripts. Uses NPM Targets under the hood.
   - [`Lombiq.Npm.Targets`](https://github.com/Lombiq/NPM-Targets): Provides automatic NPM package installation and a custom NPM command execution before building a .NET project. This way it is possible for example to manage assets (e.g. .scss files or images) in a folder that will be automatically compiled into the _wwwroot_ folder on build, which then can be excluded from the version control system.
   - [`Lombiq.SetupExtensions`](https://github.com/Lombiq/Setup-Extensions): Extensions for setting up an Orchard Core application.
-  - [`Lombiq.Hosting.MediaTheme.Targets`](https://github.com/Lombiq/Hosting-Media-Theme): Provides automatic media theme package creation during build.
+  - [`Lombiq.Hosting.MediaTheme.Targets`](https://github.com/Lombiq/Hosting-Media-Theme): Provides automatic Media Theme package creation during build.
 
 - Testing
   - [`Lombiq.Tests`](https://github.com/Lombiq/Testing-Toolbox): General and unit testing extensions and helpers, mostly for ASP.NET Core and Orchard Core. Also see our [UI Testing Toolbox](https://github.com/Lombiq/UI-Testing-Toolbox).
