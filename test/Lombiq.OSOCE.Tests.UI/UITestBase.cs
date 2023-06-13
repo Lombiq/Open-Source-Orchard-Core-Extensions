@@ -7,7 +7,6 @@ using Shouldly;
 using System;
 using System.Threading.Tasks;
 using Xunit.Abstractions;
-using SetupHelpers=Lombiq.Tests.UI.Samples.Helpers.SetupHelpers;
 
 namespace Lombiq.OSOCE.Tests.UI;
 
@@ -22,7 +21,7 @@ public abstract class UITestBase : OrchardCoreUITestBase<Program>
         Func<UITestContext, Task> testAsync,
         Browser browser,
         Func<OrchardCoreUITestExecutorConfiguration, Task> changeConfigurationAsync) =>
-        ExecuteTestAsync(testAsync, browser, SetupHelpers.RunSetupAsync, changeConfigurationAsync);
+        ExecuteTestAsync(testAsync, browser, Lombiq.Tests.UI.Samples.Helpers.SetupHelpers.RunSetupAsync, changeConfigurationAsync);
 
     protected override Task ExecuteTestAsync(
         Func<UITestContext, Task> testAsync,
