@@ -1,5 +1,4 @@
-﻿using Lombiq.Tests.UI.Constants;
-using Lombiq.Tests.UI.Extensions;
+﻿using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Pages;
 using Lombiq.Tests.UI.Services;
 using System;
