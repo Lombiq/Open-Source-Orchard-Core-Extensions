@@ -2,7 +2,6 @@ using Lombiq.OSOCE.Tests.UI.Helpers;
 using Lombiq.Tests.UI;
 using Lombiq.Tests.UI.Constants;
 using Lombiq.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Samples.Helpers;
 using Lombiq.Tests.UI.Services;
 using Shouldly;
 using System;
@@ -11,7 +10,7 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI;
 
-public class UITestBase : OrchardCoreUITestBase<Program>
+public abstract class UITestBase : OrchardCoreUITestBase<Program>
 {
     protected UITestBase(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)
@@ -22,7 +21,7 @@ public class UITestBase : OrchardCoreUITestBase<Program>
         Func<UITestContext, Task> testAsync,
         Browser browser,
         Func<OrchardCoreUITestExecutorConfiguration, Task> changeConfigurationAsync) =>
-        ExecuteTestAsync(testAsync, browser, SetupHelpers.RunSetupAsync, changeConfigurationAsync);
+        ExecuteTestAsync(testAsync, browser, Lombiq.Tests.UI.Samples.Helpers.SetupHelpers.RunSetupAsync, changeConfigurationAsync);
 
     protected override Task ExecuteTestAsync(
         Func<UITestContext, Task> testAsync,
@@ -39,7 +38,7 @@ public class UITestBase : OrchardCoreUITestBase<Program>
                 if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
             });
 
-    protected void ChangeConfiguration(OrchardCoreUITestExecutorConfiguration configuration)
+    protected static void ChangeConfiguration(OrchardCoreUITestExecutorConfiguration configuration)
     {
         configuration.BrowserConfiguration.DefaultBrowserSize = CommonDisplayResolutions.HdPlus;
 
