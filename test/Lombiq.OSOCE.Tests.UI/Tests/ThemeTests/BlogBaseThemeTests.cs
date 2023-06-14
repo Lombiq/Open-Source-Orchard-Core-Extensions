@@ -37,6 +37,7 @@ public class BlogBehaviorBaseThemeTests : UITestBase
 
                 await context.GoToHomePageAsync();
                 await context.TestBaseThemeFeaturesAsync(skipLogin: true);
+                await context.SignInDirectlyAndGoToHomepageAsync();
 
                 // Verify the menu items added by the Blog recipe.
                 context.Get(By.CssSelector(".menuWidget__content .nav-link[href='/']")).Text.Trim().ShouldBe("Home");
