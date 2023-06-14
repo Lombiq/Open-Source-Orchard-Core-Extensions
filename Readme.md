@@ -93,7 +93,6 @@ You can activate various sample content in the site:
   - The "TEST: Basic Orchard Features" setup recipe automatically sets it up. If not using it, run the "Lombiq Orchard Core Base Theme - Layers and Zones" recipe, and then enable the theme in Admin → Design → Themes.
   - In case of theme development you can use the "Lombiq Orchard Core Base Theme - Styling Demo" theme to test against some common HTML elements.
 - [`Lombiq.ChartJs`](https://github.com/Lombiq/Orchard-Chart.js): Go to Recipes in the admin dashboard and select "Lombiq Chart.js - Sample Content - Income/Expense".
-- [`Lombiq.ContentEditors`](https://github.com/Lombiq/Orchard-Content-Editors): Go to Features in the admin dashboard and enable the `Lombiq Content Editors - Sample` feature.
 - [`Lombiq.Privacy`](https://github.com/Lombiq/Orchard-Privacy): Go to Recipes in the admin dashboard and select "Lombiq Privacy - Sample Content - Privacy, Forms, Workflows".
 - [`Lombiq.Hosting.MediaTheme`](https://github.com/Lombiq/Hosting-Media-Theme): Go to Recipes in the admin dashboard and select "Lombiq Hosting - Media Theme - Samples".
 
