@@ -24,5 +24,4 @@ public class BehaviorBaseThemeTests : UITestBase
                 await context.TestBaseThemeFeaturesAsync();
             },
             browser);
-
 }
