@@ -17,8 +17,6 @@ public static class AssertAppLogsHelpers
         this IWebApplicationInstance webApplicationInstance,
         CancellationToken cancellationToken = default)
     {
-        if (cancellationToken == default) cancellationToken = CancellationToken.None;
-
         var logOutput = await webApplicationInstance.GetLogOutputAsync(cancellationToken);
 
         if (!string.IsNullOrEmpty(logOutput))
