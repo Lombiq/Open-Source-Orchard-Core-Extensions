@@ -55,8 +55,9 @@ public class BlogBehaviorBaseThemeTests : UITestBase
                 await context.GoToRelativeUrlAsync("/Admin/Contents/ContentItems/Menu");
                 await context.ClickReliablyOnAsync(By.ClassName("edit"));
 
-                await context.ClickReliablyOnAsync(By.XPath($"//button[contains(., 'Add Menu Item')]"));
-                await context.ClickReliablyOnAsync(By.XPath("//div[contains(@class, 'card') and .//h4[contains(., 'Content Menu Item')]]//div[contains(@class, 'card-footer')]//a"));
+                await context.ClickReliablyOnAsync(By.XPath("//button[contains(., 'Add Menu Item')]"));
+                await context.ClickReliablyOnAsync(By.XPath(
+                    "//div[contains(@class, 'card') and .//h4[contains(., 'Content Menu Item')]]//div[contains(@class, 'card-footer')]//a"));
                 await context.ClickAndFillInWithRetriesAsync(By.Id("ContentMenuItemPart_Name"), "My Content");
 
                 // Find content item index by display text and select it from the content picker..
