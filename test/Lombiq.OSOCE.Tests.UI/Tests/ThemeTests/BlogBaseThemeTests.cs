@@ -29,17 +29,14 @@ public class BlogBehaviorBaseThemeTests : UITestBase
             async context =>
             {
                 await context.SignInDirectlyAsync();
-
-                // Verify that the feature is indeed enabled.
-                await context.GoToAdminRelativeUrlAsync("/Features");
-                await context.ClickAndFillInWithRetriesAsync(By.Id("search-box"), "Helpful Widgets");
-                context.Exists(By.Id("btn-disable-Lombiq_HelpfulExtensions_Widgets"));
+                await context.BaseThemeDependencyShouldBeEnabled();
 
                 await context.GoToHomePageAsync();
                 await context.TestBaseThemeFeaturesAsync(skipLogin: true);
                 await context.SignInDirectlyAndGoToHomepageAsync();
 
-                // Verify the menu items added by the Blog recipe.
+                // Verify the menu items added by the Blog recipe. This is not in an extension method because it relies
+                // on this specific setup and content.
                 context.Get(By.CssSelector(".menuWidget__content .nav-link[href='/']")).Text.Trim().ShouldBe("Home");
                 context.Get(By.CssSelector(".menuWidget__content .nav-link[href='/about']")).Text.Trim().ShouldBe("About");
             },
