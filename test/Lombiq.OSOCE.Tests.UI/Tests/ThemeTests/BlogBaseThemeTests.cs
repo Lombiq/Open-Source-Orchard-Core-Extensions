@@ -44,7 +44,7 @@ public class BlogBehaviorBaseThemeTests : UITestBase
             async context =>
             {
                 await context.SignInDirectlyAsync();
-                await context.TestAddingMenuItemToBlogMainMenu();
+                await context.TestAddingMenuItemToBlogMainMenuAsync();
             },
             browser);
 
