@@ -6,7 +6,6 @@ using Lombiq.Tests.UI.Services;
 using OpenQA.Selenium;
 using Shouldly;
 using System;
-using System.Globalization;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -32,7 +31,7 @@ public class BlogBehaviorBaseThemeTests : UITestBase
                 await context.SignInDirectlyAsync();
 
                 // Verify that the feature is indeed enabled.
-                await context.GoToRelativeUrlAsync("/Admin/Features");
+                await context.GoToAdminRelativeUrlAsync("/Features");
                 await context.ClickAndFillInWithRetriesAsync(By.Id("search-box"), "Helpful Widgets");
                 context.Exists(By.Id("btn-disable-Lombiq_HelpfulExtensions_Widgets"));
 
@@ -52,7 +51,7 @@ public class BlogBehaviorBaseThemeTests : UITestBase
             async context =>
             {
                 await context.SignInDirectlyAsync();
-                await context.GoToRelativeUrlAsync("/Admin/Contents/ContentItems/Menu");
+                await context.GoToAdminRelativeUrlAsync("/Contents/ContentItems/Menu");
                 await context.ClickReliablyOnAsync(By.ClassName("edit"));
 
                 await context.ClickReliablyOnAsync(By.XPath("//button[contains(., 'Add Menu Item')]"));
@@ -87,10 +86,10 @@ public class BlogBehaviorBaseThemeTests : UITestBase
                 var homePageUri = await SetupHelpers.RunBlogSetupAsync(context);
 
                 await context.SignInDirectlyAsync();
-                await context.GoToRelativeUrlAsync("/Admin/Themes");
+                await context.GoToAdminRelativeUrlAsync("/Themes");
 
                 await context.ClickReliablyOnAsync(By.CssSelector(
-                    "form[action='/Admin/Themes/SetCurrentTheme/Lombiq.BaseTheme.Samples'] button"));
+                    "form[action*='SetCurrentTheme/Lombiq.BaseTheme.Samples'] button"));
                 context.ShouldBeSuccess();
 
                 return homePageUri;
