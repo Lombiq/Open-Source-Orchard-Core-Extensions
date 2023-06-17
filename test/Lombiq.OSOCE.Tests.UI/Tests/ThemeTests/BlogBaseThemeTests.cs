@@ -29,7 +29,7 @@ public class BlogBehaviorBaseThemeTests : UITestBase
             async context =>
             {
                 await context.SignInDirectlyAsync();
-                await context.BaseThemeDependencyShouldBeEnabled();
+                await context.BaseThemeDependencyShouldBeEnabledAsync();
 
                 await context.GoToHomePageAsync();
                 await context.TestBaseThemeFeaturesAsync(skipLogin: true);
