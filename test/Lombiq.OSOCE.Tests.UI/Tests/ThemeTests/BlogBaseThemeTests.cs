@@ -60,22 +60,10 @@ public class BlogBehaviorBaseThemeTests : UITestBase
                     "//div[contains(@class, 'card') and .//h4[contains(., 'Content Menu Item')]]//div[contains(@class, 'card-footer')]//a"));
                 await context.ClickAndFillInWithRetriesAsync(By.Id("ContentMenuItemPart_Name"), "My Content");
 
-                // Find content item index by display text and select it from the content picker..
-                context.ExecuteScript(@"
-                    fetch('/Admin/ContentFields/SearchContentItems?part=ContentMenuItemPart&field=SelectedContentItem')
-                        .then((response) => response.json())
-                        .then((json) => json
-                            .map((item, index) => { item.index = index; return item })
-                            .filter((item) => item.displayText === 'Man must explore, and this is exploration at its greatest')[0]
-                            .index)
-                        .then((index) => {
-                            const div = document.createElement('div');
-                            div.id = 'target-index';
-                            div.innerHTML = index;
-                            document.querySelector('.ta-content').appendChild(div);
-                        });");
-                var index = int.Parse(context.Get(By.Id("target-index")).Text.Trim(), CultureInfo.InvariantCulture);
-                await context.SetContentPickerByIndexAsync("ContentMenuItemPart", "SelectedContentItem", index);
+                await context.SetContentPickerByDisplayTextAsync(
+                    "ContentMenuItemPart",
+                    "SelectedContentItem",
+                    "Man must explore, and this is exploration at its greatest");
 
                 await context.ClickPublishAsync();
                 await context.ClickPublishAsync();
