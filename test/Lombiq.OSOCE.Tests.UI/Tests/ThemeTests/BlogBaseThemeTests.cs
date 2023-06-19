@@ -4,7 +4,6 @@ using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using OpenQA.Selenium;
-using Shouldly;
 using System;
 using System.Threading.Tasks;
 using Xunit;
@@ -29,19 +28,23 @@ public class BlogBehaviorBaseThemeTests : UITestBase
             async context =>
             {
                 await context.SignInDirectlyAsync();
-
-                // Verify that the feature is indeed enabled.
-                await context.GoToRelativeUrlAsync("/Admin/Features");
-                await context.ClickAndFillInWithRetriesAsync(By.Id("search-box"), "Helpful Widgets");
-                context.Exists(By.Id("btn-disable-Lombiq_HelpfulExtensions_Widgets"));
+                await context.TestBaseThemeDependencyIsEnabledAsync();
 
                 await context.GoToHomePageAsync();
                 await context.TestBaseThemeFeaturesAsync(skipLogin: true);
                 await context.SignInDirectlyAndGoToHomepageAsync();
 
-                // Verify the menu items added by the Blog recipe.
-                context.Get(By.CssSelector(".menuWidget__content .nav-link[href='/']")).Text.Trim().ShouldBe("Home");
-                context.Get(By.CssSelector(".menuWidget__content .nav-link[href='/about']")).Text.Trim().ShouldBe("About");
+                context.TestBlogRecipeMenuItemsAddedToMainMenu();
+            },
+            browser);
+
+    [Theory, Chrome]
+    public Task ContentMenuItemShouldWorkCorrectly(Browser browser) =>
+        ExecuteTestAfterSetupAndThemeSwitchAsync(
+            async context =>
+            {
+                await context.SignInDirectlyAsync();
+                await context.TestAddingMenuItemToBlogMainMenuAsync();
             },
             browser);
 
@@ -54,10 +57,10 @@ public class BlogBehaviorBaseThemeTests : UITestBase
                 var homePageUri = await SetupHelpers.RunBlogSetupAsync(context);
 
                 await context.SignInDirectlyAsync();
-                await context.GoToRelativeUrlAsync("/Admin/Themes");
+                await context.GoToAdminRelativeUrlAsync("/Themes");
 
                 await context.ClickReliablyOnAsync(By.CssSelector(
-                    "form[action='/Admin/Themes/SetCurrentTheme/Lombiq.BaseTheme.Samples'] button"));
+                    "form[action*='SetCurrentTheme/Lombiq.BaseTheme.Samples'] button"));
                 context.ShouldBeSuccess();
 
                 return homePageUri;
