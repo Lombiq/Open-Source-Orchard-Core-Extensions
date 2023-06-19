@@ -238,15 +238,6 @@
           ]
         }
       }
-    },
-    {
-      "name": "recipes",
-      "Values": [
-        {
-          "executionid": "Lombiq.OSOCE.Web",
-          "name": "Lombiq.BaseTheme.LayersAndZones"
-        }
-      ]
     }
   ]
 }
