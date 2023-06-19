@@ -22,15 +22,6 @@
       ]
     },
     {
-      "name": "recipes",
-      "Values": [
-        {
-          "executionid": "Lombiq.OSOCE.NuGet.Web",
-          "name": "Lombiq.BaseTheme.LayersAndZones"
-        }
-      ]
-    },
-    {
       "name": "themes",
       "admin": "TheAdmin",
       "site": "Lombiq.BaseTheme.Samples"
