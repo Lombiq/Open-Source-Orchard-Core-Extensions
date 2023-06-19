@@ -18,7 +18,6 @@
       "disable": [],
       "enable": [
         "Lombiq.AuditTrailExtensions",
-        "Lombiq.BaseTheme.Samples",
         "Lombiq.ChartJs",
         "Lombiq.DataTables.Samples",
         "Lombiq.HelpfulExtensions.CodeGeneration",
@@ -210,9 +209,7 @@
     {
       "name": "themes",
       "admin": "TheAdmin",
-      // Using a custom theme that relies on "Lombiq.BaseTheme". Previously we used "TheTheme" because the default
-      // "TheBlogTheme" uses the PageTitle shape for <title> and Shape Tracing Helpful Extensions would mess it up.
-      "site": "Lombiq.BaseTheme.Samples"
+      "site":  "SafeMode"
     },
     {
       "name": "FeatureProfiles",
@@ -238,6 +235,15 @@
           ]
         }
       }
+    },
+    {
+      "name": "recipes",
+      "Values": [
+        {
+          "executionid": "Lombiq.OSOCE.Web",
+          "name": "Lombiq.OSOCE.BaseTheme"
+        }
+      ]
     }
   ]
 }
