@@ -22,10 +22,10 @@
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI" Version="6.0.0" />
     <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay.Tests.UI" Version="3.0.0" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme.Tests.UI" Version="4.0.0" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots.Tests.UI" Version="5.0.0" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard.Tests.UI" Version="5.0.0" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI" Version="5.0.0" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement.Tests.UI" Version="5.0.0" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots.Tests.UI" Version="5.0.1-alpha.0.nest-437" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard.Tests.UI" Version="5.0.1-alpha.0.nest-437" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI" Version="5.0.1-alpha.0.nest-437" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement.Tests.UI" Version="5.0.1-alpha.0.nest-437" />
     <PackageReference Include="Lombiq.Privacy.Tests.UI" Version="6.0.0" />
     <PackageReference Include="Lombiq.HelpfulExtensions.Tests.UI" Version="6.0.0" />
     <PackageReference Include="Lombiq.Tests.UI" Version="7.0.0" />
