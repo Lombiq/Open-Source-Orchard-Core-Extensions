@@ -1,5 +1,7 @@
 {
-  "name": "Lombiq.OSOCE.NuGet.BaseTheme",
+  // This is necessary to be in a separate recipe, because otherwise the widget and layer setup from
+  // Lombiq.BaseTheme.LayersAndZones.recipe would be superseded by the default config.
+  "name": "Lombiq.OSOCE.BaseTheme",
   "displayName": "Switch to Lombiq.BaseTheme.Sample",
   "description": "Switch to Lombiq.BaseTheme.Sample.",
   "author": "Lombiq Technologies",
