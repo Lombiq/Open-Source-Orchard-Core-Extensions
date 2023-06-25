@@ -57,6 +57,7 @@
     <PackageReference Include="OrchardCore.Admin.Abstractions" Version="1.6.0" />
     <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.6.0" />
     <PackageReference Include="OrchardCore.Logging.NLog" Version="1.6.0" />
+    <PackageReference Include="SixLabors.ImageSharp.Web" Version="3.0.1" />
   </ItemGroup>
 
 </Project>
