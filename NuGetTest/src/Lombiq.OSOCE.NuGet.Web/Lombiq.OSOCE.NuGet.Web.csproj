@@ -40,7 +40,6 @@
     <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="5.0.0" />
     <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement" Version="5.0.0" />
     <PackageReference Include="Lombiq.JsonEditor" Version="5.0.0" />
-    <PackageReference Include="Lombiq.OrchardCoreApiClient" Version="3.0.0" />
     <PackageReference Include="Lombiq.Privacy" Version="6.0.0" />
     <PackageReference Include="Lombiq.Privacy.Samples" Version="6.0.0" />
     <PackageReference Include="Lombiq.SetupExtensions" Version="4.0.0" />
