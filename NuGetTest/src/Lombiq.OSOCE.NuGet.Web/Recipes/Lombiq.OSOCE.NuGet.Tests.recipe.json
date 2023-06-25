@@ -19,7 +19,6 @@
       "enable": [
         "OrchardCore.Localization",
         "Lombiq.AuditTrailExtensions",
-        "Lombiq.BaseTheme.Samples",
         "Lombiq.ChartJs",
         "Lombiq.DataTables.Samples",
         "Lombiq.HelpfulExtensions.CodeGeneration",
@@ -31,6 +30,7 @@
         "Lombiq.Hosting.BuildVersionDisplay",
         "Lombiq.Hosting.Tenants.Admin.Login",
         "Lombiq.Hosting.Tenants.Admin.Login.SubTenant",
+        "Lombiq.Hosting.Tenants.EnvironmentRobots",
         "Lombiq.Hosting.Tenants.Management",
         "Lombiq.Hosting.Tenants.IdleTenantManagement.ShutDownIdleTenants",
         "Lombiq.JsonEditor",
@@ -43,7 +43,6 @@
         "Lombiq.TrainingDemo",
         "Lombiq.UIKit",
         "Lombiq.OSOCE.NuGet.TestTheme",
-        "Lombiq.BaseTheme.Samples",
         "Lombiq.HelpfulExtensions.Widgets",
         "Lombiq.VueJs",
         "Lombiq.VueJs.Samples",
