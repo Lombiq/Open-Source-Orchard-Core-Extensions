@@ -19,7 +19,6 @@
       "enable": [
         "OrchardCore.Localization",
         "Lombiq.AuditTrailExtensions",
-        "Lombiq.BaseTheme.Samples",
         "Lombiq.ChartJs",
         "Lombiq.ContentEditors.Samples",
         "Lombiq.DataTables.Samples",
@@ -45,7 +44,6 @@
         "Lombiq.TrainingDemo",
         "Lombiq.UIKit",
         "Lombiq.OSOCE.NuGet.TestTheme",
-        "Lombiq.BaseTheme.Samples",
         "Lombiq.HelpfulExtensions.Widgets",
         "Lombiq.VueJs",
         "Lombiq.VueJs.Samples",
