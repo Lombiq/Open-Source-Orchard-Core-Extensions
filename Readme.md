@@ -33,6 +33,8 @@ Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source
 - Modules
   - [`Lombiq.AuditTrailExtensions`](https://github.com/Lombiq/Audit-Trail-Extensions): A module with additional features for the [Audit Trail module](https://docs.orchardcore.net/en/latest/docs/reference/modules/AuditTrail/) in Orchard Core.
   - [`Lombiq.ChartJs`](https://github.com/Lombiq/Orchard-Chart.js): An Orchard Core wrapper around the [Chart.js](https://www.chartjs.org/) library for displaying datasets as various charts.
+  - [`Lombiq.ContentEditors`](https://github.com/Lombiq/Orchard-Content-Editors): With the help of this module you can create custom multi-page editors with async loading and saving.
+  - [`Lombiq.ContentEditors.Samples`](https://github.com/Lombiq/Orchard-Content-Editors/tree/dev/Lombiq.ContentEditors.Samples): Example Orchard Core module that makes use of Lombiq Content Editors.
   - [`Lombiq.DataTables`](https://github.com/Lombiq/Orchard-Data-Tables): An Orchard Core wrapper around the [DataTables](https://datatables.net/) library for displaying tabular data from custom data sources.
   - [`Lombiq.DataTables.Samples`](https://github.com/Lombiq/Orchard-Data-Tables/tree/dev/Lombiq.DataTables.Samples): Example Orchard Core module that makes use of Lombiq Data Tables for Orchard Core.
   - [`Lombiq.HelpfulExtensions`](https://github.com/Lombiq/Helpful-Extensions): Orchard Core module containing some handy extensions (e.g. useful content types and widgets). It's also available on all sites of [DotNest, the Orchard SaaS](https://dotnest.com/).
