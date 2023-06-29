@@ -5,6 +5,7 @@ chainable
 flyout
 hackish
 hashable
+idletenantshutdown
 mjpeg
 Overconstrained
 parallelizable
