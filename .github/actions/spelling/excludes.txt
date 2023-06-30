@@ -5,3 +5,4 @@ UnmanagedNodeModules/
 UploadingTestFileDOCX\.docx$
 UploadingTestFileXLSX\.xlsx$
 test/Lombiq.UITestingToolbox/Lombiq.Tests.UI.Shortcuts/Services/FakeOpenIddictValidationAspNetCoreHandler.cs
+test/Lombiq.UITestingToolbox/Lombiq.Tests.UI.Shortcuts/Startup.cs
