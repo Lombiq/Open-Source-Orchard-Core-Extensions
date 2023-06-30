@@ -15,7 +15,6 @@ datalabels
 datatables
 dddd
 Demystifier
-een
 Embedd
 endgroup
 executesql
@@ -26,7 +25,6 @@ Giraudel
 hsva
 htmlvalidate
 icbin
-Ik
 JMES
 jsoneditor
 jsoneditoronline
@@ -58,7 +56,6 @@ sfc
 SFCs
 smtpport
 Subresource
-taart
 taxonomyfield
 testid
 textlint
@@ -67,7 +64,6 @@ trainingdemo
 tundora
 visualstudioextension
 vuejs
-wil
 XDG
 xsessionrc
 Yarp
