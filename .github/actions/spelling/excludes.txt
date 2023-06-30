@@ -4,3 +4,4 @@ tools/Lombiq.GitHub.Actions/
 UnmanagedNodeModules/
 UploadingTestFileDOCX\.docx$
 UploadingTestFileXLSX\.xlsx$
+test/Lombiq.UITestingToolbox/Lombiq.Tests.UI.Shortcuts/Services/FakeOpenIddictValidationAspNetCoreHandler.cs
