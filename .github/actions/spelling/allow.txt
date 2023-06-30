@@ -14,6 +14,7 @@ sanitizers
 scrollbars
 shortcutting
 sudoing
+templating
 Timestamped
 Toolset
 uncached
