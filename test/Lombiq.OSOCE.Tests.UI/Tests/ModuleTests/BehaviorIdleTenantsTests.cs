@@ -25,7 +25,7 @@ public class BehaviorIdleTenantsTests : UITestBase
 
                 await context.TestIdleTenantManagerBehaviorAsync(
                     IdleTenantShutdown,
-                    idletenantprefix,
+                    IdleTenantPrefix,
                     "Lombiq.OSOCE.Tests");
 
                 context.Configuration.AssertAppLogsAsync = async webApplicationInstance =>
