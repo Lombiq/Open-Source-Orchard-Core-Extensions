@@ -5,7 +5,7 @@ using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
-using static Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI.Constants.TenantNames;
+using static Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI.Constants.IdleTenantData;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
@@ -23,10 +23,7 @@ public class BehaviorIdleTenantsTests : UITestBase
             {
                 await context.SignInDirectlyAsync();
 
-                await context.TestIdleTenantManagerBehaviorAsync(
-                    IdleTenantShutdown,
-                    IdleTenantPrefix,
-                    "Lombiq.OSOCE.Tests");
+                await context.TestIdleTenantManagerBehaviorAsync();
 
                 context.Configuration.AssertAppLogsAsync = async webApplicationInstance =>
                 {
