@@ -1,5 +1,6 @@
 using Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Attributes;
+using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
@@ -19,6 +20,8 @@ public class BehaviorIdleTenantsTests : UITestBase
         ExecuteTestAfterSetupAsync(
             async context =>
             {
+                await context.SignInDirectlyAsync();
+
                 await context.TestIdleTenantManagerBehaviorAsync();
 
                 context.Configuration.AssertAppLogsAsync = async webApplicationInstance =>
