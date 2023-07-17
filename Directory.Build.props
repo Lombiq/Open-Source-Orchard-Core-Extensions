@@ -24,10 +24,15 @@
 
   <!-- Uncomment this to switch to how NuGet-publishing GitHub Actions builds work, including referencing Lombiq NuGet
        package dependencies instead of submodules. -->
-  <!-- <PropertyGroup>
+   <!--<PropertyGroup>
     <NuGetBuild>true</NuGetBuild>
-  </PropertyGroup> -->
+  </PropertyGroup>--> 
 
+  <!-- Uncomment this to run .NET static code analyzers during rebuilds. -->
+  <!--<PropertyGroup>
+    <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+  </PropertyGroup>-->
+    
   <Import Project="tools/Lombiq.Analyzers/Lombiq.Analyzers/Build.props" />
 
   <!-- This option hasn't improved the build time in this solution, but we'll keep it turned on regardless because it

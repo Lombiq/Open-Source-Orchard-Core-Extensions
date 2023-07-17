@@ -18,21 +18,25 @@
       "disable": [],
       "enable": [
         "Lombiq.AuditTrailExtensions",
-        "Lombiq.BaseTheme.Samples",
         "Lombiq.ChartJs",
+        "Lombiq.ContentEditors.Samples",
         "Lombiq.DataTables.Samples",
         "Lombiq.HelpfulExtensions.CodeGeneration",
         "Lombiq.HelpfulExtensions.ContentTypes",
         "Lombiq.HelpfulExtensions.Flows",
-        "Lombiq.HelpfulExtensions.ShapeTracing",
+        // Shape Tracing messes with the title and thus can break other things, see:
+        // https://github.com/Lombiq/Helpful-Extensions/issues/120.
+        // "Lombiq.HelpfulExtensions.ShapeTracing",
         "Lombiq.HelpfulExtensions.Widgets",
         "Lombiq.HelpfulLibraries.Samples",
         "Lombiq.Hosting.BuildVersionDisplay",
         "Lombiq.Hosting.Tenants.Admin.Login",
         "Lombiq.Hosting.Tenants.Admin.Login.SubTenant",
+        "Lombiq.Hosting.Tenants.EnvironmentRobots",
         "Lombiq.Hosting.Tenants.Management",
         "Lombiq.Hosting.Tenants.Maintenance",
         "Lombiq.Hosting.Tenants.Maintenance.UpdateSiteUrl",
+        "Lombiq.Hosting.Tenants.Maintenance.AddSiteOwnerPermissionToRole",
         "Lombiq.Hosting.Tenants.IdleTenantManagement.ShutDownIdleTenants",
         "Lombiq.JsonEditor",
         "Lombiq.OSOCE.Samples",
@@ -49,6 +53,7 @@
         "Lombiq.Hosting.Tenants.FeaturesGuard",
         "Lombiq.Hosting.Tenants.MediaStorageManagement",
         "OrchardCore.Media",
+        "OrchardCore.Feature",
         "TheTheme"
         // Not enabling Lombiq.TrainingDemo.Middlewares because that would write to the error log on every request.
       ]
@@ -205,9 +210,7 @@
     {
       "name": "themes",
       "admin": "TheAdmin",
-      // Using a custom theme that relies on "Lombiq.BaseTheme". Previously we used "TheTheme" because the default
-      // "TheBlogTheme" uses the PageTitle shape for <title> and Shape Tracing Helpful Extensions would mess it up.
-      "site": "Lombiq.BaseTheme.Samples"
+      "site":  "SafeMode"
     },
     {
       "name": "FeatureProfiles",
@@ -239,7 +242,7 @@
       "Values": [
         {
           "executionid": "Lombiq.OSOCE.Web",
-          "name": "Lombiq.BaseTheme.LayersAndZones"
+          "name": "Lombiq.OSOCE.BaseTheme"
         }
       ]
     }
