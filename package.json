@@ -6,7 +6,6 @@
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-only-warn": "1.1.0",
-    "eslint-plugin-promise": "6.1.1",
-    "semver": "7.5.4"
+    "eslint-plugin-promise": "6.1.1"
   }
 }
