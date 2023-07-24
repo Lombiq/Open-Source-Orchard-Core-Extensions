@@ -1,3 +1,4 @@
+Assets/Vendors/
 \QLombiq.VueJs.Tests.UI/Assets/Media/\E.*\.mjpeg$
 ^\Qsrc/Modules/Lombiq.Hosting.Tenants/Readme.md\E$
 ^\Qtest/Lombiq.UITestingToolbox/Lombiq.Tests.UI/Constants/CommonDisplayResolutions.cs\E$
