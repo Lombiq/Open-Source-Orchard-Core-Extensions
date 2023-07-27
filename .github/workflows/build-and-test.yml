@@ -13,11 +13,9 @@ jobs:
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      machine-types: "['gitrunners-ubuntu-2204-x64-4vcpu']"
-      timeout-minutes: 20
+      timeout-minutes: 40
       set-up-sql-server: "true"
       set-up-azurite: "true"
-      ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
 
