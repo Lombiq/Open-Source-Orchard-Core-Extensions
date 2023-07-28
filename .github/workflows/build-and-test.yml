@@ -1,8 +1,5 @@
 name: Build and Test
 
-env:
-  RUN_ONLY_LATEST_WORKFLOW: true
-
 # Runs for PRs opened for any branch, and pushes to the dev branch.
 on:
   pull_request:
