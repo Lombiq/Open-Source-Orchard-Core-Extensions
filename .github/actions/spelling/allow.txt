@@ -2,6 +2,7 @@ activatable
 autorun
 barcode
 chainable
+clickable
 flyout
 hackish
 hashable
