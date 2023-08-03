@@ -30,7 +30,7 @@ public class BehaviorVueTests : UITestBase
             },
             browser);
 
-    [Theory, Edge]
+    [Theory, Chrome]
     public Task QrCardScanShouldWorkAsync(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestQrCardFoundAsync(),
@@ -41,7 +41,7 @@ public class BehaviorVueTests : UITestBase
                 configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync = AssertHtmValidationResultAsync;
             });
 
-    [Theory, Edge]
+    [Theory, Chrome]
     public Task QrCardScanShouldReportNotFoundAsync(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestQrCardNotFoundAsync(),
