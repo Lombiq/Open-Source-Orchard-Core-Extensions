@@ -51,6 +51,7 @@
     <PackageReference Include="Lombiq.VueJs" Version="2.0.0" />
     <PackageReference Include="Lombiq.VueJs.Samples" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="1.2.2" Condition="'$(RazorRuntimeCompilation)' == 'true'" />
+    <PackageReference Include="SixLabors.ImageSharp.Web" Version="3.0.1" />
   </ItemGroup>
 
   <ItemGroup>
