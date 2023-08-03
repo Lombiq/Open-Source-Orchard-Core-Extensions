@@ -28,7 +28,7 @@
     <PackageReference Include="Lombiq.ContentEditors.Samples" Version="1.0.0" />
     <PackageReference Include="Lombiq.DataTables" Version="6.0.0" />
     <PackageReference Include="Lombiq.DataTables.Samples" Version="6.0.0" />
-    <PackageReference Include="Lombiq.HelpfulExtensions" Version="6.0.0" />
+    <PackageReference Include="Lombiq.HelpfulExtensions" Version="6.0.1-alpha.2.osoe-603" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="6.0.0" />
     <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay" Version="3.0.0" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="4.0.0" />
@@ -42,8 +42,8 @@
     <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="5.0.0" />
     <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement" Version="5.0.0" />
     <PackageReference Include="Lombiq.JsonEditor" Version="5.0.0" />
-    <PackageReference Include="Lombiq.Privacy" Version="6.0.0" />
-    <PackageReference Include="Lombiq.Privacy.Samples" Version="6.0.0" />
+    <PackageReference Include="Lombiq.Privacy" Version="6.0.1-alpha.2.osoe-603" />
+    <PackageReference Include="Lombiq.Privacy.Samples" Version="6.0.1-alpha.2.osoe-603" />
     <PackageReference Include="Lombiq.SetupExtensions" Version="4.0.0" />
     <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="7.1.0" />
     <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="7.1.0" />
