@@ -17,6 +17,6 @@ public class BehaviorJsonEditorTests : UITestBase
     [Theory, Chrome]
     public Task JsonEditorShouldWorkCorrectly(Browser browser) =>
         ExecuteTestAfterSetupAsync(
-            async context => await context.TestJsonEditorSampleBehaviorAsync(),
+            async context => await context.TestJsonEditorBehaviorAsync(),
             browser);
 }
