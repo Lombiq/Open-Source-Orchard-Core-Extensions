@@ -22,6 +22,7 @@ Timestamped
 Toolset
 uncached
 unclickable
+VSTHRD
 Wxga
 yuv
 ZXing
