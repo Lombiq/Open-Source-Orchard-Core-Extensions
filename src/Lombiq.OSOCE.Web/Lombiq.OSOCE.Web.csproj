@@ -40,7 +40,7 @@
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.Maintenance\Lombiq.Hosting.Tenants.Maintenance.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.Management\Lombiq.Hosting.Tenants.Management.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.MediaStorageManagement\Lombiq.Hosting.Tenants.MediaStorageManagement.csproj" />
-    <ProjectReference Include="..\Modules\Lombiq.JsonEditor\Lombiq.JsonEditor.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.JsonEditor\Lombiq.JsonEditor\Lombiq.JsonEditor.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.OSOCE.Samples\Lombiq.OSOCE.Samples.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Privacy\Lombiq.Privacy\Lombiq.Privacy.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Privacy\Lombiq.Privacy.Samples\Lombiq.Privacy.Samples.csproj" />
