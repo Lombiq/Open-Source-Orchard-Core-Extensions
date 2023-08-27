@@ -22,15 +22,7 @@ public class CounterTests : UITestBase
             ExecuteTestAfterSetupAsync(
                 context => context.SignInDirectlyAndGoToHomepageAsync(),
                 browser,
-                configuration =>
-                {
-                    // The test is guaranteed to fail so we don't want to retry it needlessly.
-                    configuration.MaxRetryCount = 0;
-
-                    configuration.CounterConfiguration.Running.SessionThreshold.DbCommandExecutionThreshold = 0;
-
-                    return Task.CompletedTask;
-                }));
+                ConfigureAsync));
 
     [Theory, Chrome]
     public Task DbReaderReadDuringRunningPhaseShouldThrow(Browser browser) =>
@@ -38,13 +30,16 @@ public class CounterTests : UITestBase
             ExecuteTestAfterSetupAsync(
                 async context => await context.GoToHomePageAsync(onlyIfNotAlreadyThere: false),
                 browser,
-                configuration =>
-                {
-                    // The test is guaranteed to fail so we don't want to retry it needlessly.
-                    configuration.MaxRetryCount = 0;
+                ConfigureAsync));
 
-                    configuration.CounterConfiguration.Running.NavigationThreshold.DbReaderReadThreshold = 0;
+    private static Task ConfigureAsync(OrchardCoreUITestExecutorConfiguration configuration)
+    {
+        // The test is guaranteed to fail so we don't want to retry it needlessly.
+        configuration.MaxRetryCount = 0;
 
-                    return Task.CompletedTask;
-                }));
+        configuration.CounterConfiguration.Running.NavigationThreshold.Disable = false;
+        configuration.CounterConfiguration.Running.NavigationThreshold.DbReaderReadThreshold = 0;
+
+        return Task.CompletedTask;
+    }
 }
