@@ -38,7 +38,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Update="Lombiq.Analyzers" Version="3.3.0" />
   </ItemGroup>
 
   <ItemGroup>
