@@ -2,5 +2,5 @@
 
 public static class RecipeIds
 {
-    public const string NugetRecipeId = "Lombiq.OSOCE.NuGet.Tests";
+    public const string TestsSetupRecipeId = "Lombiq.OSOCE.NuGet.Tests";
 }
