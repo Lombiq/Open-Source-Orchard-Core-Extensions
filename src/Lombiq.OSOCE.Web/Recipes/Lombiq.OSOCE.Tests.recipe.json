@@ -243,6 +243,10 @@
         {
           "executionid": "Lombiq.OSOCE.Web",
           "name": "Lombiq.OSOCE.BaseTheme"
+        },
+        {
+          "executionid": "Lombiq.OSOCE.Web",
+          "name": "Lombiq.HelpfulExtensions.ContentSets.Samples"
         }
       ]
     }
