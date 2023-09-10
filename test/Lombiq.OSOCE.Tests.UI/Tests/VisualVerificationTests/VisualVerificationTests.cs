@@ -14,7 +14,7 @@ public class VisualVerificationTests : UITestBase
 {
     public static readonly Size[] VisualVerificationSizes =
     {
-        CommonDisplayResolutions.Fhd,
+        CommonDisplayResolutions.Standard,
     };
 
     public VisualVerificationTests(ITestOutputHelper testOutputHelper)
