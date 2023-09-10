@@ -23,7 +23,7 @@ public class IdleTenantTests : UITestBase
             {
                 await context.SignInDirectlyAsync();
 
-                await context.TestIdleTenantManagerBehaviorAsync(NugetRecipeId);
+                await context.TestIdleTenantManagerBehaviorAsync(TestsSetupRecipeId);
 
                 context.Configuration.AssertAppLogsAsync = webApplicationInstance =>
                     IdleTenantManagementExtensions.AssertAppLogsWithIdleCheckAsync(webApplicationInstance);
