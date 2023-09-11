@@ -53,7 +53,6 @@
     <ProjectReference Include="..\Utilities\Lombiq.SetupExtensions\Lombiq.SetupExtensions.csproj" />
   </ItemGroup>
 
-  
   <ItemGroup>
     <PackageReference Include="OrchardCore.Admin.Abstractions" Version="1.7.0" />
     <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.7.0" />
