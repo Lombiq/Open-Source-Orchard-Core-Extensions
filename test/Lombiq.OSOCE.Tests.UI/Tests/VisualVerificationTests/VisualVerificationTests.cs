@@ -4,6 +4,8 @@ using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using OpenQA.Selenium;
 using SixLabors.ImageSharp;
+using System;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -28,6 +30,8 @@ public class VisualVerificationTests : UITestBase
         ExecuteTestAfterSetupAsync(
             context => context.AssertVisualVerificationOnAllResolutions(
                 VisualVerificationSizes,
-                _ => By.TagName("body")),
+                _ => By.TagName("body"),
+                configurator: configuration => configuration.WithFileNameSuffix(
+                    RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "Windows" : "Unix")),
             browser);
 }
