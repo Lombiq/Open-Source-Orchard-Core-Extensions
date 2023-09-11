@@ -4,7 +4,6 @@ using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using OpenQA.Selenium;
 using SixLabors.ImageSharp;
-using System;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Xunit;
