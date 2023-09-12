@@ -13,7 +13,7 @@ namespace Lombiq.OSOCE.Tests.UI.Tests.VisualVerificationTests;
 
 public class VisualVerificationTests : UITestBase
 {
-    public static readonly Size[] VisualVerificationSizes =
+    private static readonly Size[] _visualVerificationSizes =
     {
         CommonDisplayResolutions.Standard,
     };
@@ -28,7 +28,7 @@ public class VisualVerificationTests : UITestBase
         // Check the whole page so we can verify the margins and to see if header/footer is affected.
         ExecuteTestAfterSetupAsync(
             context => context.AssertVisualVerificationOnAllResolutions(
-                VisualVerificationSizes,
+                _visualVerificationSizes,
                 _ => By.TagName("body"),
                 configurator: configuration => configuration.WithFileNameSuffix(
                     RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "Windows" : "Unix")),
