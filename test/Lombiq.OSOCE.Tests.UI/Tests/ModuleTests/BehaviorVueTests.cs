@@ -30,10 +30,7 @@ public class BehaviorVueTests : UITestBase
             },
             browser);
 
-    // See Skip comment.
-#pragma warning disable xUnit1004 // Test methods should not be skipped
-    [Theory(Skip = "Fails in dev, skipped until we fix this: https://github.com/Lombiq/Orchard-Vue.js/issues/93"), Chrome]
-#pragma warning restore xUnit1004 // Test methods should not be skipped
+    [Theory, Chrome]
     public Task QrCardScanShouldWorkAsync(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestQrCardFoundAsync(),
@@ -44,10 +41,7 @@ public class BehaviorVueTests : UITestBase
                 configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync = AssertHtmValidationResultAsync;
             });
 
-    // See Skip comment.
-#pragma warning disable xUnit1004 // Test methods should not be skipped
-    [Theory(Skip = "Fails in dev, skipped until we fix this: https://github.com/Lombiq/Orchard-Vue.js/issues/93"), Chrome]
-#pragma warning restore xUnit1004 // Test methods should not be skipped
+    [Theory, Chrome]
     public Task QrCardScanShouldReportNotFoundAsync(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestQrCardNotFoundAsync(),
