@@ -58,7 +58,6 @@ prebuild
 rnwood
 rolename
 sfc
-SFCs
 smtpport
 ssml
 Subresource
