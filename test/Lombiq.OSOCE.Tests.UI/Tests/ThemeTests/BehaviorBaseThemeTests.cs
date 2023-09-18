@@ -22,6 +22,9 @@ public class BehaviorBaseThemeTests : UITestBase
             {
                 await context.SignInDirectlyAndGoToHomepageAsync();
                 await context.TestBaseThemeFeaturesAsync();
+
+                await context.SignInDirectlyAsync();
+                await context.TestBaseThemeSiteSettingsAsync();
             },
             browser);
 }

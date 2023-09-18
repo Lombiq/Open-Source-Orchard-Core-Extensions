@@ -31,4 +31,10 @@ public class BehaviorHelpfulExtensionsTests : UITestBase
         ExecuteTestAfterSetupAsync(
             context => context.TestFeatureCodeGenerationsAsync(),
             browser);
+
+    [Theory, Chrome]
+    public Task FeatureContentSets(Browser browser) =>
+        ExecuteTestAfterSetupAsync(
+            context => context.TestFeatureContentSetsAsync(),
+            browser);
 }

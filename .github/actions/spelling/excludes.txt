@@ -1,6 +1,8 @@
-Lombiq\.VueJs\.Tests\.UI/Assets/Media/.*\.mjpeg$
-test/Lombiq\.UITestingToolbox/Lombiq\.Tests\.UI/Constants/CommonDisplayResolutions\.cs
-tools/Lombiq.GitHub.Actions/
-UnmanagedNodeModules/
-UploadingTestFileDOCX\.docx$
-UploadingTestFileXLSX\.xlsx$
+Assets/Vendors/
+\QLombiq.VueJs.Tests.UI/Assets/Media/\E.*\.mjpeg$
+^\Qsrc/Modules/Lombiq.Hosting.Tenants/Readme.md\E$
+^\Qtest/Lombiq.UITestingToolbox/Lombiq.Tests.UI/Constants/CommonDisplayResolutions.cs\E$
+^\Qtools/Lombiq.GitHub.Actions/\E
+\QUnmanagedNodeModules/\E
+\QUploadingTestFileDOCX.docx\E$
+\QUploadingTestFileXLSX.xlsx\E$

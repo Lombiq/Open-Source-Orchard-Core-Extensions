@@ -2,9 +2,12 @@ activatable
 autorun
 barcode
 chainable
+clickable
 flyout
 hackish
 hashable
+idletenantprefix
+idletenantshutdown
 mjpeg
 Overconstrained
 parallelizable
@@ -14,10 +17,13 @@ sanitizers
 scrollbars
 shortcutting
 sudoing
+templating
 Timestamped
 Toolset
 uncached
 unclickable
+VSTHRD
 Wxga
 yuv
 ZXing
+WTW
