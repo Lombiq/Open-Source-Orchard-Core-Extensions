@@ -34,14 +34,14 @@
     <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="5.0.0" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="5.0.0" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme.Targets" Version="5.0.0" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="6.0.1" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots" Version="6.0.1" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="6.0.1" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="6.0.1" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Maintenance" Version="6.0.1" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="6.0.1" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement" Version="6.0.1" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.EmailQuotaManagement" Version="6.0.1" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="6.1.0-alpha.3.nest-423" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots" Version="6.1.0-alpha.3.nest-423" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="6.1.0-alpha.3.nest-423" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="6.1.0-alpha.3.nest-423" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Maintenance" Version="6.1.0-alpha.3.nest-423" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="6.1.0-alpha.3.nest-423" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement" Version="6.1.0-alpha.3.nest-423" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.EmailQuotaManagement" Version="6.1.0-alpha.3.nest-423" />
     <PackageReference Include="Lombiq.JsonEditor" Version="6.0.0" />
     <PackageReference Include="Lombiq.JsonEditor.Tests.UI" Version="6.0.0" />
     <PackageReference Include="Lombiq.Privacy" Version="7.0.1" />
