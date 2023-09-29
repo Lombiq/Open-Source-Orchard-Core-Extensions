@@ -22,7 +22,7 @@ public class BehaviorEmailQuotaTests : UITestBase
             configuration => configuration.SetEmailQuotaManagementOptionsForUITest(10));
 
     [Theory, Chrome]
-    public Task EmailQuotaShouldNotBlockEmails(Browser browser) =>
+    public Task EmailQuotaShouldNotBlockEmailsWhenDifferentHostIsUsedThanOriginalFromConfig(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestEmailQuotaManagementBehaviorAsync(1, moduleShouldInterfere: false),
             browser,
