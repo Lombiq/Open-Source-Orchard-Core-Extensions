@@ -185,6 +185,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "spelling", "spelling", "{10
 	ProjectSection(SolutionItems) = preProject
 		.github\actions\spelling\allow.txt = .github\actions\spelling\allow.txt
 		.github\actions\spelling\excludes.txt = .github\actions\spelling\excludes.txt
+		.github\actions\spelling\expect.txt = .github\actions\spelling\expect.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.ContentEditors", "src\Modules\Lombiq.ContentEditors\Lombiq.ContentEditors\Lombiq.ContentEditors.csproj", "{1B7C5C5D-E20F-4707-A0B5-8602DF7DA78D}"
