@@ -218,6 +218,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.JsonEditor", "src\Mo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.JsonEditor.Tests.UI", "src\Modules\Lombiq.JsonEditor\Lombiq.JsonEditor.Test.UI\Lombiq.JsonEditor.Tests.UI.csproj", "{B26CB762-7E04-4630-ADB5-B84145642441}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.Hosting.Tenants.EmailQuotaManagement", "src\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.EmailQuotaManagement\Lombiq.Hosting.Tenants.EmailQuotaManagement.csproj", "{890050AB-04F8-467A-81CB-8D83B4E61527}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.Hosting.Tenants.EmailQuotaManagement.Tests.UI", "src\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.EmailQuotaManagement.Tests.UI\Lombiq.Hosting.Tenants.EmailQuotaManagement.Tests.UI.csproj", "{818CA6CB-ED8F-4396-AEBE-F69619C75DA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1176,6 +1180,30 @@ Global
 		{B26CB762-7E04-4630-ADB5-B84145642441}.Release|x64.Build.0 = Release|Any CPU
 		{B26CB762-7E04-4630-ADB5-B84145642441}.Release|x86.ActiveCfg = Release|Any CPU
 		{B26CB762-7E04-4630-ADB5-B84145642441}.Release|x86.Build.0 = Release|Any CPU
+		{890050AB-04F8-467A-81CB-8D83B4E61527}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{890050AB-04F8-467A-81CB-8D83B4E61527}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{890050AB-04F8-467A-81CB-8D83B4E61527}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{890050AB-04F8-467A-81CB-8D83B4E61527}.Debug|x64.Build.0 = Debug|Any CPU
+		{890050AB-04F8-467A-81CB-8D83B4E61527}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{890050AB-04F8-467A-81CB-8D83B4E61527}.Debug|x86.Build.0 = Debug|Any CPU
+		{890050AB-04F8-467A-81CB-8D83B4E61527}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{890050AB-04F8-467A-81CB-8D83B4E61527}.Release|Any CPU.Build.0 = Release|Any CPU
+		{890050AB-04F8-467A-81CB-8D83B4E61527}.Release|x64.ActiveCfg = Release|Any CPU
+		{890050AB-04F8-467A-81CB-8D83B4E61527}.Release|x64.Build.0 = Release|Any CPU
+		{890050AB-04F8-467A-81CB-8D83B4E61527}.Release|x86.ActiveCfg = Release|Any CPU
+		{890050AB-04F8-467A-81CB-8D83B4E61527}.Release|x86.Build.0 = Release|Any CPU
+		{818CA6CB-ED8F-4396-AEBE-F69619C75DA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{818CA6CB-ED8F-4396-AEBE-F69619C75DA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{818CA6CB-ED8F-4396-AEBE-F69619C75DA7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{818CA6CB-ED8F-4396-AEBE-F69619C75DA7}.Debug|x64.Build.0 = Debug|Any CPU
+		{818CA6CB-ED8F-4396-AEBE-F69619C75DA7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{818CA6CB-ED8F-4396-AEBE-F69619C75DA7}.Debug|x86.Build.0 = Debug|Any CPU
+		{818CA6CB-ED8F-4396-AEBE-F69619C75DA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{818CA6CB-ED8F-4396-AEBE-F69619C75DA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{818CA6CB-ED8F-4396-AEBE-F69619C75DA7}.Release|x64.ActiveCfg = Release|Any CPU
+		{818CA6CB-ED8F-4396-AEBE-F69619C75DA7}.Release|x64.Build.0 = Release|Any CPU
+		{818CA6CB-ED8F-4396-AEBE-F69619C75DA7}.Release|x86.ActiveCfg = Release|Any CPU
+		{818CA6CB-ED8F-4396-AEBE-F69619C75DA7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1271,6 +1299,8 @@ Global
 		{E260CF47-4830-49B5-B9C8-6A3694778445} = {41CE6E12-92B4-4CF5-9D9C-C214C41CA8FE}
 		{3F09FC77-F6D2-4214-AAC6-853D55BA5B52} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{B26CB762-7E04-4630-ADB5-B84145642441} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
+		{890050AB-04F8-467A-81CB-8D83B4E61527} = {11E06A11-1733-408D-BB2F-BFA07075F812}
+		{818CA6CB-ED8F-4396-AEBE-F69619C75DA7} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
