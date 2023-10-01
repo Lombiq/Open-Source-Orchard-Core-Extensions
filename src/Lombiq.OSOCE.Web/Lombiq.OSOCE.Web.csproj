@@ -34,6 +34,7 @@
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Azure.ApplicationInsights\Lombiq.Hosting.Azure.ApplicationInsights\Lombiq.Hosting.Azure.ApplicationInsights.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.BuildVersionDisplay\Lombiq.Hosting.BuildVersionDisplay\Lombiq.Hosting.BuildVersionDisplay.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.Admin.Login\Lombiq.Hosting.Tenants.Admin.Login.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.EmailQuotaManagement\Lombiq.Hosting.Tenants.EmailQuotaManagement.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.EnvironmentRobots\Lombiq.Hosting.Tenants.EnvironmentRobots.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.FeaturesGuard\Lombiq.Hosting.Tenants.FeaturesGuard.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.IdleTenantManagement\Lombiq.Hosting.Tenants.IdleTenantManagement.csproj" />
@@ -54,9 +55,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OrchardCore.Admin.Abstractions" Version="1.6.0" />
-    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.6.0" />
-    <PackageReference Include="OrchardCore.Logging.NLog" Version="1.6.0" />
+    <PackageReference Include="OrchardCore.Admin.Abstractions" Version="1.7.0" />
+    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.7.0" />
+    <PackageReference Include="OrchardCore.Logging.NLog" Version="1.7.0" />
     <PackageReference Include="SixLabors.ImageSharp.Web" Version="3.0.1" />
   </ItemGroup>
 
