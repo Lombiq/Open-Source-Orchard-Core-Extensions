@@ -14,4 +14,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Update="Lombiq.Analyzers" Version="3.4.0" />
+  </ItemGroup>
+
 </Project>
