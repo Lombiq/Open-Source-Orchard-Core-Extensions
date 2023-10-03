@@ -15,14 +15,14 @@ public class BehaviorEmailQuotaTests : UITestBase
     }
 
     [Theory, Chrome]
-    public Task EmailQuotaShouldBlockEmailsOverLimit(Browser browser) =>
+    public Task EmailQuotaShouldBlockEmailsOverLimitAndWarn(Browser browser) =>
         ExecuteTestAfterSetupAsync(
-            context => context.TestEmailQuotaManagementBehaviorAsync(1),
+            context => context.TestEmailQuotaManagementBehaviorAsync(10),
             browser,
-            configuration => configuration.SetEmailQuotaManagementOptionsForUITest(1));
+            configuration => configuration.SetEmailQuotaManagementOptionsForUITest(10));
 
     [Theory, Chrome]
-    public Task EmailQuotaShouldNotBlockEmails(Browser browser) =>
+    public Task EmailQuotaShouldNotBlockEmailsWhenDifferentHostIsUsedThanOriginalFromConfig(Browser browser) =>
         ExecuteTestAfterSetupAsync(
             context => context.TestEmailQuotaManagementBehaviorAsync(1, moduleShouldInterfere: false),
             browser,
