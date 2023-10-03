@@ -13,8 +13,7 @@ namespace Lombiq.OSOCE.Tests.UI;
 public abstract class UITestBase : OrchardCoreUITestBase<Program>
 {
     protected UITestBase(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
+        : base(testOutputHelper) {
     }
 
     protected override Task ExecuteTestAfterSetupAsync(
