@@ -1,5 +1,5 @@
 <Project>
-  <PropertyGroup Condition="'$([MSBuild]::IsOSUnixLike())' == 'false'">
+  <PropertyGroup>
     <!-- Use a single installation of Node.js Extensions for all projects in the solution. Currently, only works on
          Windows. -->
     <UseGlobalNodeJsExtensionsNpmPackage>true</UseGlobalNodeJsExtensionsNpmPackage>
@@ -26,13 +26,13 @@
        package dependencies instead of submodules. -->
    <!--<PropertyGroup>
     <NuGetBuild>true</NuGetBuild>
-  </PropertyGroup>--> 
+  </PropertyGroup>-->
 
   <!-- Uncomment this to run .NET static code analyzers during rebuilds. -->
   <!--<PropertyGroup>
     <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
   </PropertyGroup>-->
-    
+
   <Import Project="tools/Lombiq.Analyzers/Lombiq.Analyzers/Build.props" />
 
   <!-- This option hasn't improved the build time in this solution, but we'll keep it turned on regardless because it
