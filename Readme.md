@@ -8,16 +8,15 @@ Looking for some useful Orchard Core extensions? Here's a bundle solution of all
 
 This is an [Orchard Core](https://orchardcore.net/) Visual Studio solution that contains most of [Lombiq](https://lombiq.com)'s open-source Orchard modules and themes, as well as related utilities and libraries. Please keep in mind that only those extensions are included which use the latest released version of Orchard (i.e. the very cutting-edge ones depending on a nightly build are not yet here).
 
-Since the extensions are included as git submodules when cloning this repo be sure to initialize submodules: When using a GUI this will most possibly happen by default, and when using the command line use the `--recurse-submodules` switch. If you cloned without initializing submodules, then you can run `git submodule update --init --recursive` to initialize them later.
-
 This also serves as an example of an ASP.NET Core web app using Orchard from NuGet.
 
 Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source Orchard Extensions](https://github.com/Lombiq/Open-Source-Orchard-Extensions).
 
-## Prerequisites
+## Prerequisites and getting started
 
 - You need Node.js for building client-side assets in multiple projects. Check out [Lombiq Node.js Extensions Readme](https://github.com/Lombiq/NodeJs-Extensions/#prerequisites) for details.
 - To develop and test scripts written in PowerShell, install and use [PowerShell 7](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell) instead of Windows PowerShell (i.e., up to version 5.x). Static code analysis is only executed through PowerShell 7.
+- Since the extensions are included as git submodules when cloning this repo be sure to initialize submodules: When using a GUI this will most possibly happen by default, and when using the command line use the `--recurse-submodules` switch. If you cloned without initializing submodules, then you can run `git submodule update --init --recursive` to initialize them later.
 
 ## Included Projects
 
