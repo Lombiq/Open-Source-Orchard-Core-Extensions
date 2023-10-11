@@ -67,8 +67,4 @@
     <ProjectReference Include="..\Themes\Lombiq.OSOCE.NuGet.TestTheme\Lombiq.OSOCE.NuGet.TestTheme.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Update="Lombiq.Analyzers" Version="3.4.0" />
-  </ItemGroup>
-
 </Project>
