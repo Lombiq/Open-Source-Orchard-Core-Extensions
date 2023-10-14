@@ -37,6 +37,7 @@
         "Lombiq.Hosting.Tenants.Maintenance",
         "Lombiq.Hosting.Tenants.Maintenance.UpdateSiteUrl",
         "Lombiq.Hosting.Tenants.Maintenance.AddSiteOwnerPermissionToRole",
+        "Lombiq.Hosting.Tenants.Maintenance.ChangeUserSensitiveContent",
         "Lombiq.Hosting.Tenants.IdleTenantManagement.ShutDownIdleTenants",
         "Lombiq.Hosting.Tenants.EmailQuotaManagement",
         "Lombiq.JsonEditor",
