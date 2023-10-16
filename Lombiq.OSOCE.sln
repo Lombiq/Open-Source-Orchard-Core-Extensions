@@ -185,6 +185,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "spelling", "spelling", "{10
 	ProjectSection(SolutionItems) = preProject
 		.github\actions\spelling\allow.txt = .github\actions\spelling\allow.txt
 		.github\actions\spelling\excludes.txt = .github\actions\spelling\excludes.txt
+		.github\actions\spelling\expect.txt = .github\actions\spelling\expect.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.ContentEditors", "src\Modules\Lombiq.ContentEditors\Lombiq.ContentEditors\Lombiq.ContentEditors.csproj", "{1B7C5C5D-E20F-4707-A0B5-8602DF7DA78D}"
@@ -220,6 +221,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.Hosting.Tenants.EmailQuotaManagement", "src\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.EmailQuotaManagement\Lombiq.Hosting.Tenants.EmailQuotaManagement.csproj", "{890050AB-04F8-467A-81CB-8D83B4E61527}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.Hosting.Tenants.EmailQuotaManagement.Tests.UI", "src\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.EmailQuotaManagement.Tests.UI\Lombiq.Hosting.Tenants.EmailQuotaManagement.Tests.UI.csproj", "{818CA6CB-ED8F-4396-AEBE-F69619C75DA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.Hosting.Tenants.Management.Tests.UI", "src\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.Management.Tests.UI\Lombiq.Hosting.Tenants.Management.Tests.UI.csproj", "{C312CD69-7F9B-4430-B99F-CCF2D48A301A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1203,6 +1206,18 @@ Global
 		{818CA6CB-ED8F-4396-AEBE-F69619C75DA7}.Release|x64.Build.0 = Release|Any CPU
 		{818CA6CB-ED8F-4396-AEBE-F69619C75DA7}.Release|x86.ActiveCfg = Release|Any CPU
 		{818CA6CB-ED8F-4396-AEBE-F69619C75DA7}.Release|x86.Build.0 = Release|Any CPU
+		{C312CD69-7F9B-4430-B99F-CCF2D48A301A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C312CD69-7F9B-4430-B99F-CCF2D48A301A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C312CD69-7F9B-4430-B99F-CCF2D48A301A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C312CD69-7F9B-4430-B99F-CCF2D48A301A}.Debug|x64.Build.0 = Debug|Any CPU
+		{C312CD69-7F9B-4430-B99F-CCF2D48A301A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C312CD69-7F9B-4430-B99F-CCF2D48A301A}.Debug|x86.Build.0 = Debug|Any CPU
+		{C312CD69-7F9B-4430-B99F-CCF2D48A301A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C312CD69-7F9B-4430-B99F-CCF2D48A301A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C312CD69-7F9B-4430-B99F-CCF2D48A301A}.Release|x64.ActiveCfg = Release|Any CPU
+		{C312CD69-7F9B-4430-B99F-CCF2D48A301A}.Release|x64.Build.0 = Release|Any CPU
+		{C312CD69-7F9B-4430-B99F-CCF2D48A301A}.Release|x86.ActiveCfg = Release|Any CPU
+		{C312CD69-7F9B-4430-B99F-CCF2D48A301A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1300,6 +1315,7 @@ Global
 		{B26CB762-7E04-4630-ADB5-B84145642441} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
 		{890050AB-04F8-467A-81CB-8D83B4E61527} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{818CA6CB-ED8F-4396-AEBE-F69619C75DA7} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
+		{C312CD69-7F9B-4430-B99F-CCF2D48A301A} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
