@@ -27,8 +27,4 @@
     <PackageReference Include="OrchardCore.ResourceManagement" Version="1.7.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Update="Lombiq.Analyzers" Version="3.4.0" />
-  </ItemGroup>
-
 </Project>
