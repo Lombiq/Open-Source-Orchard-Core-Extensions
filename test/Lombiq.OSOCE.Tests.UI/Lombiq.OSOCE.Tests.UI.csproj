@@ -30,6 +30,7 @@
     <ProjectReference Include="..\..\src\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.FeaturesGuard.Tests.UI\Lombiq.Hosting.Tenants.FeaturesGuard.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI\Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.Maintenance.Tests.UI\Lombiq.Hosting.Tenants.Maintenance.Tests.UI.csproj" />
+    <ProjectReference Include="..\..\src\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.Management.Tests.UI\Lombiq.Hosting.Tenants.Management.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.MediaStorageManagement.Tests.UI\Lombiq.Hosting.Tenants.MediaStorageManagement.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.JsonEditor\Lombiq.JsonEditor.Test.UI\Lombiq.JsonEditor.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.Privacy\Lombiq.Privacy.Tests.UI\Lombiq.Privacy.Tests.UI.csproj" />

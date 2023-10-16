@@ -33,6 +33,7 @@
         "Lombiq.Hosting.Tenants.Admin.Login.SubTenant",
         "Lombiq.Hosting.Tenants.EnvironmentRobots",
         "Lombiq.Hosting.Tenants.Management",
+        "Lombiq.Hosting.Tenants.Management.ShellSettingsEditor",
         "Lombiq.Hosting.Tenants.EmailQuotaManagement",
         "Lombiq.Hosting.Tenants.IdleTenantManagement.ShutDownIdleTenants",
         "Lombiq.JsonEditor",
