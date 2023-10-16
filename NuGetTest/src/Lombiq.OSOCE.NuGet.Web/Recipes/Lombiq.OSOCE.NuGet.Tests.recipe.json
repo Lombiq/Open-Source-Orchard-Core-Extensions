@@ -36,6 +36,7 @@
         "Lombiq.Hosting.Tenants.Management.ShellSettingsEditor",
         "Lombiq.Hosting.Tenants.EmailQuotaManagement",
         "Lombiq.Hosting.Tenants.IdleTenantManagement.ShutDownIdleTenants",
+        "Lombiq.Hosting.Tenants.Maintenance.ChangeUserSensitiveContent",
         "Lombiq.JsonEditor",
         "Lombiq.OSOCE.Samples",
         "Lombiq.OSOCE.NuGet.TestModule",
