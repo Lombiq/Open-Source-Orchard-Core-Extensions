@@ -33,7 +33,7 @@
     <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
   </PropertyGroup>-->
 
-  <Import Project="tools/Lombiq.Analyzers/Lombiq.Analyzers/Build.props" />
+  <Import Project="tools/Lombiq.Analyzers/Lombiq.Analyzers.OrchardCore/Build.props" />
 
   <!-- This option hasn't improved the build time in this solution, but we'll keep it turned on regardless because it
   might be the default one day, it can perhaps help in some cases, and it's not causing any issues.
