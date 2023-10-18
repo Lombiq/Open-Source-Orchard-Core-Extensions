@@ -27,4 +27,11 @@ public class BehaviorMaintenanceTests : UITestBase
             async context => await context.TestSiteOwnerPermissionToRoleMaintenanceExecutionAsync(),
             browser,
             configuration => configuration.SetAddSiteOwnerPermissionToRoleMaintenanceConfiguration());
+
+    [Theory, Chrome]
+    public Task ChangeUserSensitiveContentMaintenanceTaskShouldBeExecutedSuccessfully(Browser browser) =>
+        ExecuteTestAfterSetupAsync(
+            async context => await context.ChangeUserSensitiveContentMaintenanceExecutionAsync(),
+            browser,
+            configuration => configuration.ChangeUserSensitiveContentMaintenanceConfiguration());
 }
