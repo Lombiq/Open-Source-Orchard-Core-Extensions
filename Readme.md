@@ -8,16 +8,15 @@ Looking for some useful Orchard Core extensions? Here's a bundle solution of all
 
 This is an [Orchard Core](https://orchardcore.net/) Visual Studio solution that contains most of [Lombiq](https://lombiq.com)'s open-source Orchard modules and themes, as well as related utilities and libraries. Please keep in mind that only those extensions are included which use the latest released version of Orchard (i.e. the very cutting-edge ones depending on a nightly build are not yet here).
 
-Since the extensions are included as git submodules when cloning this repo be sure to initialize submodules: When using a GUI this will most possibly happen by default, and when using the command line use the `--recurse-submodules` switch. If you cloned without initializing submodules, then you can run `git submodule update --init --recursive` to initialize them later.
-
 This also serves as an example of an ASP.NET Core web app using Orchard from NuGet.
 
 Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source Orchard Extensions](https://github.com/Lombiq/Open-Source-Orchard-Extensions).
 
-## Prerequisites
+## Prerequisites and getting started
 
 - You need Node.js for building client-side assets in multiple projects. Check out [Lombiq Node.js Extensions Readme](https://github.com/Lombiq/NodeJs-Extensions/#prerequisites) for details.
 - To develop and test scripts written in PowerShell, install and use [PowerShell 7](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell) instead of Windows PowerShell (i.e., up to version 5.x). Static code analysis is only executed through PowerShell 7.
+- Since the extensions are included as git submodules when cloning this repo be sure to initialize submodules: When using a GUI this will most possibly happen by default, and when using the command line use the `--recurse-submodules` switch. If you cloned without initializing submodules, then you can run `git submodule update --init --recursive` to initialize them later.
 
 ## Included Projects
 
@@ -45,7 +44,7 @@ Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source
   - [`Lombiq.Hosting.MediaTheme.Bridge`](https://github.com/Lombiq/Hosting-Media-Theme): With the help of this module, you'll be able to host your theme assets and templates from Media Library. It can be used together with the [`Lombiq.Hosting.MediaTheme`](https://github.com/Lombiq/Hosting-Media-Theme).
   - [`Lombiq.Hosting.Tenants.Admin.Login`](https://github.com/Lombiq/Hosting-Tenants/tree/dev/Lombiq.Hosting.Tenants.Admin.Login): With the help of this module, you can log in from the Default tenant's admin dashboard to any other tenants as an administrator user. This is useful if you manage a lot of customer tenants and don't want to create individual logins of yours for each of them.
   - [`Lombiq.Hosting.Tenants.Maintenance`](https://github.com/Lombiq/Hosting-Tenants/tree/dev/Lombiq.Hosting.Tenants.Maintenance): With the help of this module, you can execute maintenance tasks on tenants.
-  - [`Lombiq.Hosting.Tenants.Management`](https://github.com/Lombiq/Hosting-Tenants/tree/dev/Lombiq.Hosting.Tenants.Management): With the help of this module, you can set restrictions on tenant creation.
+  - [`Lombiq.Hosting.Tenants.Management`](https://github.com/Lombiq/Hosting-Tenants/tree/dev/Lombiq.Hosting.Tenants.Management): With the help of this module, you can set restrictions on tenant creation and set tenant level shell settings in the tenant editor.
   - [`Lombiq.Hosting.Tenants.IdleTenantManagement`](https://github.com/Lombiq/Hosting-Tenants/tree/dev/Lombiq.Hosting.Tenants.IdleTenantManagement): With the help of this module, you can ensure that any tenant where the feature is enabled will shutdown after a preset time is elapsed. This can be used to free up resources.
   - [`Lombiq.Hosting.Tenants.EnvironmentRobots`](https://github.com/Lombiq/Hosting-Tenants/tree/dev/Lombiq.Hosting.Tenants.EnvironmentRobots): With the help of this module, you can ensure that your sites will not be indexed by search bots. Check out a demo video of this module [here](https://youtu.be/Rp3ao2ZbNRs).
   - [`Lombiq.JsonEditor`](https://github.com/Lombiq/Orchard-JSON-Editor): Orchard Core module for displaying a JSON Editor like on [jsoneditoronline.org](https://jsoneditoronline.org/). Watch a demo video of it from the Orchard Community Meeting [here](https://www.youtube.com/watch?app=desktop&v=nFhRjhXTKAY).
