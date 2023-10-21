@@ -1,5 +1,5 @@
 <Project>
-  <PropertyGroup>
+  <PropertyGroup Condition="'$([MSBuild]::IsOSUnixLike())' == 'false'">
     <!-- Use a single installation of Node.js Extensions for all projects in the solution. Currently, only works on
          Windows. -->
     <UseGlobalNodeJsExtensionsNpmPackage>true</UseGlobalNodeJsExtensionsNpmPackage>
