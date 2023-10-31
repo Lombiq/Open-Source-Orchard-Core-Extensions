@@ -20,7 +20,7 @@ jobs:
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
-      build-verbosity: "debug"
+      build-verbosity: "detailed"
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
