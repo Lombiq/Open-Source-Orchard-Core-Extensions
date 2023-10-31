@@ -16,6 +16,7 @@ var configuration = builder.Configuration;
 // create UI tests check out the project.
 builder.Services
     .AddSingleton(configuration)
+    .InitializeApplicationInsightsTelemetry(configuration)
     .AddOrchardCms(orchardCoreBuilder =>
     {
         orchardCoreBuilder.ConfigureFeaturesGuard(
