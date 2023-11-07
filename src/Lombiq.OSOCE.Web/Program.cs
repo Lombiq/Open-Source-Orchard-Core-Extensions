@@ -16,10 +16,11 @@ var configuration = builder.Configuration;
 // create UI tests check out the project.
 builder.Services
     .AddSingleton(configuration)
-    .AddOrchardCoreApplicationInsightsTelemetry(configuration)
     .AddOrchardCms(orchardCoreBuilder =>
     {
-        orchardCoreBuilder.ConfigureFeaturesGuard(
+        orchardCoreBuilder
+            .AddOrchardCoreApplicationInsightsTelemetry(builder.Services, configuration)
+            .ConfigureFeaturesGuard(
             new Dictionary<string, IEnumerable<string>>
             {
                 ["OrchardCore.Twitter"] = new[] { "Lombiq.UIKit", "Lombiq.ChartJs" },
