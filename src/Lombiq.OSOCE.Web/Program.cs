@@ -19,7 +19,7 @@ builder.Services
     .AddOrchardCms(orchardCoreBuilder =>
     {
         orchardCoreBuilder
-            .AddOrchardCoreApplicationInsightsTelemetry(builder.Services, configuration)
+            .AddOrchardCoreApplicationInsightsTelemetry(configuration)
             .ConfigureFeaturesGuard(
             new Dictionary<string, IEnumerable<string>>
             {
