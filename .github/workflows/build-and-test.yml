@@ -22,7 +22,6 @@ jobs:
       blame-hang-timeout: "5m"
       build-enable-nuget-caching: "true"
       build-enable-npm-caching: "true"
-      dotnet-consolidation-exclude-version-regex: ""
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
