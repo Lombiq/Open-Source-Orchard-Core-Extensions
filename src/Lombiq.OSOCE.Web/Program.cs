@@ -22,8 +22,8 @@ builder.Services
             {
                 ["OrchardCore.Twitter"] = new[]
                 {
-                    "Lombiq.UIKit",
-                    "Lombiq.ChartJs",
+                    Lombiq.UIKit.FeatureIds.Base,
+                    Lombiq.ChartJs.Constants.FeatureIds.Default,
                 },
             })
         .EnableAutoSetupIfNotUITesting(configuration));
