@@ -33,7 +33,7 @@ jobs:
     if: github.ref_name != github.event.repository.default_branch && 
         (github.event_name == 'workflow_dispatch' || github.event.label.name == 'run-windows-build')
     name: Build and Test Windows - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-723
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       machine-types: "['gitrunners-windows-2022-x64-8vcpu']"
       timeout-minutes: 30
