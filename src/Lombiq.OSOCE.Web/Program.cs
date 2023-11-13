@@ -18,7 +18,9 @@ builder.Services
     .AddSingleton(configuration)
     .AddOrchardCms(orchardCoreBuilder =>
     {
-        orchardCoreBuilder.ConfigureFeaturesGuard(
+        orchardCoreBuilder
+            .AddOrchardCoreApplicationInsightsTelemetry(configuration)
+            .ConfigureFeaturesGuard(
             new Dictionary<string, IEnumerable<string>>
             {
                 ["OrchardCore.Twitter"] = new[] { "Lombiq.UIKit", "Lombiq.ChartJs" },
