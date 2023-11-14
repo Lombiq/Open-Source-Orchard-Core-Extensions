@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OrchardCore.Logging;
 using System.Collections.Generic;
@@ -16,19 +15,18 @@ var configuration = builder.Configuration;
 // create UI tests check out the project.
 builder.Services
     .AddSingleton(configuration)
-    .AddOrchardCms(orchardCoreBuilder =>
-    {
-        orchardCoreBuilder.ConfigureFeaturesGuard(
+    .AddOrchardCms(orchardCoreBuilder => orchardCoreBuilder
+        .AddOrchardCoreApplicationInsightsTelemetry(configuration)
+        .ConfigureFeaturesGuard(
             new Dictionary<string, IEnumerable<string>>
             {
-                ["OrchardCore.Twitter"] = new[] { "Lombiq.UIKit", "Lombiq.ChartJs" },
-            });
-
-        if (!configuration.IsUITesting())
-        {
-            orchardCoreBuilder.AddSetupFeatures("OrchardCore.AutoSetup");
-        }
-    });
+                ["OrchardCore.Twitter"] = new[]
+                {
+                    Lombiq.UIKit.FeatureIds.Base,
+                    Lombiq.ChartJs.Constants.FeatureIds.Default,
+                },
+            })
+        .EnableAutoSetupIfNotUITesting(configuration));
 
 var app = builder.Build();
 
