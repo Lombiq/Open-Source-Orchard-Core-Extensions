@@ -37,8 +37,6 @@ jobs:
     with:
       machine-types: "['gitrunners-windows-2022-x64-8vcpu']"
       timeout-minutes: 30
-      set-up-sql-server: "true"
-      set-up-azurite: "true"
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
