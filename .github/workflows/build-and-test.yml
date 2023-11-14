@@ -15,12 +15,11 @@ jobs:
     with:
       machine-types: "['buildjet-4vcpu-ubuntu-2204']"
       timeout-minutes: 20
-      set-up-sql-server: "true"
-      set-up-azurite: "true"
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
       build-enable-nuget-caching: "true"
       build-enable-npm-caching: "true"
-      build-enable-code-analysis: false
+      build-enable-code-analysis: "false"
       test-filter: "SecurityScanningTests"
+      warnings-as-errors: "false"
