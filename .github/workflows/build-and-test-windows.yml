@@ -43,8 +43,6 @@ jobs:
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
       test-filter: "FullyQualifiedName!~SecurityScanningTests"
-      build-enable-code-analysis: "false"
-      warnings-as-errors: "false"
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
