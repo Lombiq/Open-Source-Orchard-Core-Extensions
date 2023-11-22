@@ -1,8 +1,6 @@
 using Lombiq.ContentEditors.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Helpers;
-using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -16,24 +14,22 @@ public class BehaviorAsyncEditorTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task DemoContentItemAsyncEditorShouldWork(Browser browser) =>
+    [Fact]
+    public Task DemoContentItemAsyncEditorShouldWork() =>
         ExecuteTestAfterSetupAsync(
             async context =>
             {
                 await context.SignInDirectlyAsync();
                 await context.TestDemoContentItemAsyncEditorAsync();
-            },
-            browser);
+            });
 
-    [Theory, Chrome]
-    public Task DemoFrontEndAsyncEditorShouldWork(Browser browser) =>
+    [Fact]
+    public Task DemoFrontEndAsyncEditorShouldWork() =>
         ExecuteTestAfterSetupAsync(
             async context =>
             {
                 await context.SignInDirectlyAsync();
                 await context.TestDemoFrontEndAsyncEditorAsync();
             },
-            browser,
             ConfigurationHelper.DisableHtmlValidation);
 }

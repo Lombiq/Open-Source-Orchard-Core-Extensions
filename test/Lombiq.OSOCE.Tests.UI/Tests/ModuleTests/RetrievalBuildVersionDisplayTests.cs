@@ -1,6 +1,4 @@
 using Lombiq.Hosting.BuildVersionDisplay.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -14,9 +12,7 @@ public class RetrievalBuildVersionDisplayTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task BuildVersionShouldBeBeDisplayedCorrectly(Browser browser) =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestBuildVersionDisplayAsync(),
-            browser);
+    [Fact]
+    public Task BuildVersionShouldBeBeDisplayedCorrectly() =>
+        ExecuteTestAfterSetupAsync(context => context.TestBuildVersionDisplayAsync());
 }
