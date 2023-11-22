@@ -1,6 +1,4 @@
-using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Services;
 using Lombiq.UIKit.Tests.UI.Extensions;
 using Shouldly;
 using System;
@@ -18,11 +16,10 @@ public class BehaviorUIKitShowcaseTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task UIKitShowcasePageShouldBeCorrect(Browser browser)
+    [Fact]
+    public Task UIKitShowcasePageShouldBeCorrect()
         => ExecuteTestAfterSetupAsync(
             context => context.TestUIKitShowcaseBehaviorAsync(),
-            browser,
             configuration => configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
                 async validationResult =>
                 {
