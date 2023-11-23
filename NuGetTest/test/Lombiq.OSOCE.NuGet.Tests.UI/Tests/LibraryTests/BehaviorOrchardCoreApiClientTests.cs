@@ -1,6 +1,4 @@
 using Lombiq.OrchardCoreApiClient.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -14,9 +12,7 @@ public class BehaviorOrchardCoreApiClientTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task OrchardCoreApiClientShouldWork(Browser browser) =>
-        ExecuteTestAfterSetupAsync(
-            async context => await context.TestOrchardCoreApiClientBehaviorAsync(),
-            browser);
+    [Fact]
+    public Task OrchardCoreApiClientShouldWork() =>
+        ExecuteTestAfterSetupAsync(context => context.TestOrchardCoreApiClientBehaviorAsync());
 }

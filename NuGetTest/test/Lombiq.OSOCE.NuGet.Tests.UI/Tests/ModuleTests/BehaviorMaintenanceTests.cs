@@ -1,6 +1,4 @@
 using Lombiq.Hosting.Tenants.Maintenance.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -14,10 +12,9 @@ public class BehaviorMaintenanceTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task ChangeUserSensitiveContentMaintenanceTaskShouldBeExecutedSuccessfully(Browser browser) =>
+    [Fact]
+    public Task ChangeUserSensitiveContentMaintenanceTaskShouldBeExecutedSuccessfully() =>
         ExecuteTestAfterSetupAsync(
-            async context => await context.ChangeUserSensitiveContentMaintenanceExecutionAsync(),
-            browser,
+            context => context.ChangeUserSensitiveContentMaintenanceExecutionAsync(),
             configuration => configuration.ChangeUserSensitiveContentMaintenanceConfiguration());
 }

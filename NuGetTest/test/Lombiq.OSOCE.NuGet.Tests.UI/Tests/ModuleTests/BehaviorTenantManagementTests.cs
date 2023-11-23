@@ -1,6 +1,4 @@
-﻿using Lombiq.Hosting.Tenants.Management.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Services;
+using Lombiq.Hosting.Tenants.Management.Tests.UI.Extensions;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -14,9 +12,7 @@ public class BehaviorTenantManagementTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task TenantShellSettingsEditorShouldSaveSettings(Browser browser) =>
-        ExecuteTestAfterSetupAsync(
-            async context => await context.TestShellSettingsEditorFeatureAsync(),
-            browser);
+    [Fact]
+    public Task TenantShellSettingsEditorShouldSaveSettings() =>
+        ExecuteTestAfterSetupAsync(context => context.TestShellSettingsEditorFeatureAsync());
 }
