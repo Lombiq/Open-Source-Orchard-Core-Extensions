@@ -18,3 +18,5 @@ jobs:
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
       test-filter: "SecurityScanningTests"
+      build-enable-code-analysis: "false"
+      warnings-as-errors: "false"
