@@ -1,6 +1,4 @@
 using Lombiq.Hosting.Tenants.EnvironmentRobots.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -14,23 +12,20 @@ public class BehaviorEnvironmentRobotsTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task RobotsMetaTagShouldBeMissing(Browser browser) =>
+    [Fact]
+    public Task RobotsMetaTagShouldBeMissing() =>
         ExecuteTestAfterSetupAsync(
-            async context => await context.TestRobotMetaTagIsMissingAsync(shouldBeMissing: true),
-            browser,
+            context => context.TestRobotMetaTagIsMissingAsync(shouldBeMissing: true),
             configuration => configuration.SetEnvironmentRobotsOptionsConfiguration(isProduction: true));
 
-    [Theory, Chrome]
-    public Task RobotsMetaTagShouldBeMissingWithoutConfiguration(Browser browser) =>
+    [Fact]
+    public Task RobotsMetaTagShouldBeMissingWithoutConfiguration() =>
         ExecuteTestAfterSetupAsync(
-            async context => await context.TestRobotMetaTagIsMissingAsync(shouldBeMissing: false),
-            browser);
+            context => context.TestRobotMetaTagIsMissingAsync(shouldBeMissing: false));
 
-    [Theory, Chrome]
-    public Task RobotsMetaTagShouldBePresent(Browser browser) =>
+    [Fact]
+    public Task RobotsMetaTagShouldBePresent() =>
         ExecuteTestAfterSetupAsync(
-            async context => await context.TestRobotMetaTagIsMissingAsync(shouldBeMissing: false),
-            browser,
+            context => context.TestRobotMetaTagIsMissingAsync(shouldBeMissing: false),
             configuration => configuration.SetEnvironmentRobotsOptionsConfiguration(isProduction: false));
 }

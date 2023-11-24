@@ -20,7 +20,7 @@
     <PackageReference Include="Lombiq.ChartJs.Tests.UI" Version="6.0.2-alpha.0.osoe-638" />
     <PackageReference Include="Lombiq.ContentEditors.Tests.UI" Version="2.0.1-alpha.0.osoe-638" />
     <PackageReference Include="Lombiq.DataTables.Tests.UI" Version="7.0.2-alpha.0.osoe-638" />
-    <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI" Version="7.0.1-alpha.0.osoe-638" />
+    <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI" Version="7.0.2-alpha.1.osoe-733" />
     <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay.Tests.UI" Version="4.0.1-alpha.0.osoe-638" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme.Tests.UI" Version="5.0.1-alpha.0.osoe-638" />
     <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots.Tests.UI" Version="6.3.0-alpha.2.lmbq-249" />
