@@ -7,10 +7,11 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <!-- Instruct Node.js Extensions to create .eslintrc and .stylelintrc files in the current directory, which is the
+    <!-- Instruct Node.js Extensions to create .eslintrc, .stylelintrc and .prettierrc files in the current directory, which is the
          solution root directory. -->
     <NodeJsExtensionsGlobalESLintConfigurationDirectory>$(MSBuildThisFileDirectory)</NodeJsExtensionsGlobalESLintConfigurationDirectory>
     <NodeJsExtensionsGlobalStylelintConfigurationDirectory>$(MSBuildThisFileDirectory)</NodeJsExtensionsGlobalStylelintConfigurationDirectory>
+    <NodeJsExtensionsGlobalPrettierStyleConfigurationDirectory>$(MSBuildThisFileDirectory)</NodeJsExtensionsGlobalPrettierStyleConfigurationDirectory>
   </PropertyGroup>
 
   <!-- Copying the Lombiq logo as an icon to all NuGet-published projects. -->
