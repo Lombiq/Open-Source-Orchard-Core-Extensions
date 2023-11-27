@@ -1,6 +1,4 @@
 using Lombiq.HelpfulExtensions.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -14,21 +12,15 @@ public class BehaviorHelpfulExtensionsTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task FeatureFlow(Browser browser) =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestFlowAdditionalStylingPartAsync(),
-            browser);
+    [Fact]
+    public Task FeatureFlow() =>
+        ExecuteTestAfterSetupAsync(context => context.TestFlowAdditionalStylingPartAsync());
 
-    [Theory, Chrome]
-    public Task FeatureWidgets(Browser browser) =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestFeatureWidgetsAsync(),
-            browser);
+    [Fact]
+    public Task FeatureWidgets() =>
+        ExecuteTestAfterSetupAsync(context => context.TestFeatureWidgetsAsync());
 
-    [Theory, Chrome]
-    public Task FeatureCodeGeneration(Browser browser) =>
-    ExecuteTestAfterSetupAsync(
-        context => context.TestFeatureCodeGenerationsAsync(),
-        browser);
+    [Fact]
+    public Task FeatureCodeGeneration() =>
+        ExecuteTestAfterSetupAsync(context => context.TestFeatureCodeGenerationsAsync());
 }
