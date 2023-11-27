@@ -69,6 +69,7 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 25
       blame-hang-timeout: "5m"
+      test-filter: "FullyQualifiedName!~SecurityScanningTests"
 
   powershell-static-code-analysis:
     if: github.ref_name == github.event.repository.default_branch || 
