@@ -22,7 +22,6 @@ jobs:
       blame-hang-timeout: "5m"
       build-enable-nuget-caching: "true"
       build-enable-npm-caching: "true"
-      cancel-in-progress-for-this-pr: 'true'
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
@@ -35,7 +34,6 @@ jobs:
       set-up-azurite: "true"
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
-      cancel-in-progress-for-this-pr: 'true'
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
@@ -44,7 +42,6 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 15
       blame-hang-timeout: "5m"
-      cancel-in-progress-for-this-pr: 'true'
 
   spelling:
     name: Spelling
@@ -62,7 +59,6 @@ jobs:
         lombiq-lgha:dictionaries/Liquid.txt
         lombiq-lgha:dictionaries/Xml.txt
         lombiq-lgha:dictionaries/Lombiq.people.txt
-      cancel-in-progress-for-this-pr: 'true'
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
