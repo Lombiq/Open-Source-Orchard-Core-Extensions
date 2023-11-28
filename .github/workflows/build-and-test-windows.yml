@@ -13,7 +13,7 @@ on:
 
 jobs:
   remove-run-windows-build-label:
-    if: github.ref_name != github.event.repository.default_branch && 
+    if: github.ref_name != github.event.repository.default_branch &&
         github.event.label.name == 'run-windows-build'
     name: Remove Run Windows Build Label
     runs-on: ubuntu-22.04
@@ -30,10 +30,10 @@ jobs:
         type: remove
 
   build-and-test-larger-runners:
-    if: github.ref_name != github.event.repository.default_branch && 
+    if: github.ref_name != github.event.repository.default_branch &&
         (github.event_name == 'workflow_dispatch' || github.event.label.name == 'run-windows-build')
     name: Build and Test Windows - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-743
     with:
       machine-types: "['gitrunners-windows-2022-x64-8vcpu']"
       timeout-minutes: 30
@@ -42,12 +42,13 @@ jobs:
       ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
+      cancel-in-progress-for-this-pr: 'true'
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
     if: github.ref_name == github.event.repository.default_branch
     name: Build and Test Windows - root solution (standard runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-743
     with:
       machine-types: "['windows-2022']"
       timeout-minutes: 60
@@ -55,25 +56,27 @@ jobs:
       set-up-azurite: "true"
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
+      cancel-in-progress-for-this-pr: 'true'
 
   build-and-test-nuget-test:
-    if: github.ref_name == github.event.repository.default_branch || 
+    if: github.ref_name == github.event.repository.default_branch ||
         github.event_name == 'workflow_dispatch' ||
         github.event.label.name == 'run-windows-build'
     name: Build and Test Windows - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-743
     with:
       machine-types: "['windows-2022']"
       build-directory: NuGetTest
       timeout-minutes: 25
       blame-hang-timeout: "5m"
+      cancel-in-progress-for-this-pr: 'true'
 
   powershell-static-code-analysis:
-    if: github.ref_name == github.event.repository.default_branch || 
+    if: github.ref_name == github.event.repository.default_branch ||
         github.event_name == 'workflow_dispatch' ||
         github.event.label.name == 'run-windows-build'
     name: PowerShell Static Code Analysis Windows
-    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
+    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@issue/OSOE-743
     with:
       machine-types: "['windows-2022']"
       run-windows-powershell: "false"
@@ -82,7 +85,7 @@ jobs:
     name: Post Pull Request Checks Automation
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
     if: github.event.pull_request != ''
-    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@issue/OSOE-743
     secrets:
       JIRA_BASE_URL: ${{ secrets.DEFAULT_JIRA_BASE_URL }}
       JIRA_USER_EMAIL: ${{ secrets.DEFAULT_JIRA_USER_EMAIL }}

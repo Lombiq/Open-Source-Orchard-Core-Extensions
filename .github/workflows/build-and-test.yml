@@ -11,7 +11,7 @@ jobs:
   build-and-test-larger-runners:
     if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-743
     with:
       machine-types: "['buildjet-4vcpu-ubuntu-2204']"
       timeout-minutes: 20
@@ -22,30 +22,33 @@ jobs:
       blame-hang-timeout: "5m"
       build-enable-nuget-caching: "true"
       build-enable-npm-caching: "true"
+      cancel-in-progress-for-this-pr: 'true'
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
     if: github.ref_name == github.event.repository.default_branch
     name: Build and Test - root solution (standard runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-743
     with:
       timeout-minutes: 40
       set-up-sql-server: "true"
       set-up-azurite: "true"
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
+      cancel-in-progress-for-this-pr: 'true'
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-743
     with:
       build-directory: NuGetTest
       timeout-minutes: 15
       blame-hang-timeout: "5m"
+      cancel-in-progress-for-this-pr: 'true'
 
   spelling:
     name: Spelling
-    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@issue/OSOE-743
     with:
       additional-dictionaries: |
         cspell:csharp/csharp.txt
@@ -59,10 +62,11 @@ jobs:
         lombiq-lgha:dictionaries/Liquid.txt
         lombiq-lgha:dictionaries/Xml.txt
         lombiq-lgha:dictionaries/Lombiq.people.txt
+      cancel-in-progress-for-this-pr: 'true'
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
-    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
+    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@issue/OSOE-743
     with:
       machine-types: "['ubuntu-22.04']"
 
@@ -70,7 +74,7 @@ jobs:
     name: Post Pull Request Checks Automation
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling, powershell-static-code-analysis]
     if: github.event.pull_request != ''
-    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@issue/OSOE-743
     secrets:
       JIRA_BASE_URL: ${{ secrets.DEFAULT_JIRA_BASE_URL }}
       JIRA_USER_EMAIL: ${{ secrets.DEFAULT_JIRA_USER_EMAIL }}
