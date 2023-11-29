@@ -1,6 +1,5 @@
-﻿using Lombiq.BaseTheme.Tests.UI.Extensions;
+using Lombiq.BaseTheme.Tests.UI.Extensions;
 using Lombiq.OSOCE.Tests.UI.Helpers;
-using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using OpenQA.Selenium;
@@ -22,8 +21,8 @@ public class BlogBehaviorBaseThemeTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task ThemeWithoutSetupShouldWork(Browser browser) =>
+    [Fact]
+    public Task ThemeWithoutSetupShouldWork() =>
         ExecuteTestAfterSetupAndThemeSwitchAsync(
             async context =>
             {
@@ -35,23 +34,20 @@ public class BlogBehaviorBaseThemeTests : UITestBase
                 await context.SignInDirectlyAndGoToHomepageAsync();
 
                 context.TestBlogRecipeMenuItemsAddedToMainMenu();
-            },
-            browser);
+            });
 
-    [Theory, Chrome]
-    public Task ContentMenuItemShouldWorkCorrectly(Browser browser) =>
+    [Fact]
+    public Task ContentMenuItemShouldWorkCorrectly() =>
         ExecuteTestAfterSetupAndThemeSwitchAsync(
             async context =>
             {
                 await context.SignInDirectlyAsync();
                 await context.TestAddingMenuItemToBlogMainMenuAsync();
-            },
-            browser);
+            });
 
-    private Task ExecuteTestAfterSetupAndThemeSwitchAsync(Func<UITestContext, Task> testAsync, Browser browser) =>
+    private Task ExecuteTestAfterSetupAndThemeSwitchAsync(Func<UITestContext, Task> testAsync) =>
         ExecuteTestAsync(
             testAsync,
-            browser,
             async context =>
             {
                 var homePageUri = await SetupHelpers.RunBlogSetupAsync(context);
@@ -72,7 +68,5 @@ public class BlogBehaviorBaseThemeTests : UITestBase
                 // Disable HTML validation, because we have no control over the HTML in the Blog and the content added
                 // by the Blog recipe.
                 configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false;
-
-                return Task.CompletedTask;
             });
 }

@@ -1,5 +1,3 @@
-using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Services;
 using Lombiq.Tests.UI.Tests.UI.TestCases;
 using System.Threading.Tasks;
 using Xunit;
@@ -14,7 +12,7 @@ public class WorkflowShortcutsTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task GenerateHttpEventUrlShouldWork(Browser browser) =>
-        WorkflowShortcutsTestCases.GenerateHttpEventUrlShouldWorkAsync(ExecuteTestAfterSetupAsync, browser);
+    [Fact]
+    public Task GenerateHttpEventUrlShouldWork() =>
+        WorkflowShortcutsTestCases.GenerateHttpEventUrlShouldWorkAsync(ExecuteTestAfterSetupAsync);
 }

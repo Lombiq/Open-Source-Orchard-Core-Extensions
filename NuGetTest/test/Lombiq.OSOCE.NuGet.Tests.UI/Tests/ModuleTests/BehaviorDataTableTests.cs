@@ -1,6 +1,4 @@
 using Lombiq.DataTables.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -14,9 +12,6 @@ public class BehaviorDataTableTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task DataTableShouldWork(Browser browser) =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestDataTableRecipeDataAsync(),
-            browser);
+    [Fact]
+    public Task DataTableShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestDataTableRecipeDataAsync());
 }
