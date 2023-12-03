@@ -40,7 +40,7 @@
 	branch = dev
 [submodule "src/Modules/Lombiq.JsonEditor"]
 	path = src/Modules/Lombiq.JsonEditor
-	url = https://github.com/Lombiq/Orchard-JSON-Editor.git
+	url = https://github.com/sarahelsaig/Orchard-JSON-Editor.git
 	branch = dev
 [submodule "src/Modules/Lombiq.AuditTrailExtensions"]
 	path = src/Modules/Lombiq.AuditTrailExtensions
