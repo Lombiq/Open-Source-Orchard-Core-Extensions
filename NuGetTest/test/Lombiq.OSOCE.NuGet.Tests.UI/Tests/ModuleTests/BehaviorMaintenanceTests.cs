@@ -1,4 +1,7 @@
 using Lombiq.Hosting.Tenants.Maintenance.Tests.UI.Extensions;
+using Lombiq.Tests.UI.Extensions;
+using Lombiq.Tests.UI.Pages;
+using OpenQA.Selenium;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -14,7 +17,21 @@ public class BehaviorMaintenanceTests : UITestBase
 
     [Fact]
     public Task ChangeUserSensitiveContentMaintenanceTaskShouldBeExecutedSuccessfully() =>
-        ExecuteTestAfterSetupAsync(
+        ExecuteTestAsync(
             context => context.ChangeUserSensitiveContentMaintenanceExecutionAsync(),
+            setupOperation: async context => {
+                var homepageUri = await context.GoToSetupPageAndSetupOrchardCoreAsync(
+                    new OrchardCoreSetupParameters(context)
+                    {
+                        SiteName = "Lombiq's OSOCE - UI Testing",
+                        RecipeId = "Lombiq.OSOCE.NuGet.Tests",
+                        TablePrefix = "OSOCE",
+                        SiteTimeZoneValue = "Europe/Budapest",
+                    });
+
+                context.Exists(By.Id("navbar"));
+
+                return homepageUri;
+            },
             configuration => configuration.ChangeUserSensitiveContentMaintenanceConfiguration());
 }
