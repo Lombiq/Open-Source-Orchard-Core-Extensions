@@ -19,7 +19,8 @@ public class BehaviorMaintenanceTests : UITestBase
     public Task ChangeUserSensitiveContentMaintenanceTaskShouldBeExecutedSuccessfully() =>
         ExecuteTestAsync(
             context => context.ChangeUserSensitiveContentMaintenanceExecutionAsync(),
-            setupOperation: async context => {
+            async context =>
+            {
                 var homepageUri = await context.GoToSetupPageAndSetupOrchardCoreAsync(
                     new OrchardCoreSetupParameters(context)
                     {
