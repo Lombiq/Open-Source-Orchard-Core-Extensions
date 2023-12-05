@@ -15,9 +15,10 @@ public class BehaviorMaintenanceTests : UITestBase
     {
     }
 
-    // This test employs ExecuteTestAsync with a distinct setup delegate instead of ExecuteTestAfterSetupAsync.
-    // This choice is prompted by the modifications it applies to the appsettings.json file, occasionally leading
-    // to failures in subsequent tests within the NuGet solution in the CI environment
+    // This test uses ExecuteTestAsync with a different setup delegate instead of ExecuteTestAfterSetupAsync because the
+    // maintenance does changes to the DB on startup only necessary for this test (like depersonalizing user accounts).
+    // This would occasionally lead to failures in subsequent tests if this was the first test to run and thus create
+    // the DB snapshot after running the setup.
     [Fact]
     public Task ChangeUserSensitiveContentMaintenanceTaskShouldBeExecutedSuccessfully() =>
         ExecuteTestAsync(
