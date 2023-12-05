@@ -24,7 +24,6 @@ public class BehaviorMaintenanceTests : UITestBase
             async context =>
             {
                 var homepageUri = await SetupHelpers.RunSetupAsync(context);
-
                 return homepageUri;
             },
             configuration => configuration.ChangeUserSensitiveContentMaintenanceConfiguration());
