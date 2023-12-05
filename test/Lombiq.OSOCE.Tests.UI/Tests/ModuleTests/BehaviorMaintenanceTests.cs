@@ -40,7 +40,7 @@ public class BehaviorMaintenanceTests : UITestBase
                     new OrchardCoreSetupParameters(context)
                     {
                         SiteName = "Lombiq's OSOCE - UI Testing",
-                        RecipeId = "Lombiq.OSOCE.NuGet.Tests",
+                        RecipeId = "Lombiq.OSOCE.Tests",
                         TablePrefix = "OSOCE",
                         SiteTimeZoneValue = "Europe/Budapest",
                     });
