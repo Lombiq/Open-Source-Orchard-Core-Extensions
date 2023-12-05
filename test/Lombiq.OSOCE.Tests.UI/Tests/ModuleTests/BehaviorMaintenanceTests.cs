@@ -40,8 +40,6 @@ public class BehaviorMaintenanceTests : UITestBase
             {
                 var homepageUri = await SetupHelpers.RunSetupAsync(context);
 
-                context.Exists(By.Id("navbar"));
-
                 return homepageUri;
             },
             configuration => configuration.ChangeUserSensitiveContentMaintenanceConfiguration());
