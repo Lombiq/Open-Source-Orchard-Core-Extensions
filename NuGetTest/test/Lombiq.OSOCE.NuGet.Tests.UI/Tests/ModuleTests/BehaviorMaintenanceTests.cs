@@ -1,8 +1,5 @@
 using Lombiq.Hosting.Tenants.Maintenance.Tests.UI.Extensions;
 using Lombiq.OSOCE.NuGet.Tests.UI.Helpers;
-using Lombiq.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Pages;
-using OpenQA.Selenium;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
