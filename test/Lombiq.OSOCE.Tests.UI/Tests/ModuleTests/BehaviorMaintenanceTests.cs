@@ -1,6 +1,7 @@
 using Lombiq.Hosting.Tenants.Maintenance.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Pages;
+using Lombiq.Tests.UI.Samples.Helpers;
 using OpenQA.Selenium;
 using System.Threading.Tasks;
 using Xunit;
@@ -37,14 +38,7 @@ public class BehaviorMaintenanceTests : UITestBase
             context => context.ChangeUserSensitiveContentMaintenanceExecutionAsync(),
             async context =>
             {
-                var homepageUri = await context.GoToSetupPageAndSetupOrchardCoreAsync(
-                    new OrchardCoreSetupParameters(context)
-                    {
-                        SiteName = "Lombiq's OSOCE - UI Testing",
-                        RecipeId = "Lombiq.OSOCE.Tests",
-                        TablePrefix = "OSOCE",
-                        SiteTimeZoneValue = "Europe/Budapest",
-                    });
+                var homepageUri = await SetupHelpers.RunSetupAsync(context);
 
                 context.Exists(By.Id("navbar"));
 
