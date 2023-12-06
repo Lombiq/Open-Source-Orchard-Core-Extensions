@@ -17,6 +17,7 @@ jobs:
       set-up-azurite: "true"
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
+      cancel-in-progress-for-this-pr: "false"
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
@@ -25,3 +26,4 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 15
       blame-hang-timeout: "5m"
+      cancel-in-progress-for-this-pr: "false"
