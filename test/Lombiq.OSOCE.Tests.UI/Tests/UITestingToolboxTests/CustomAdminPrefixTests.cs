@@ -1,5 +1,3 @@
-using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Services;
 using Lombiq.Tests.UI.Tests.UI.TestCases;
 using System.Threading.Tasks;
 using Xunit;
@@ -14,7 +12,7 @@ public class CustomAdminPrefixTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task NavigationWithCustomAdminPrefixShouldWork(Browser browser) =>
-        CustomAdminPrefixTestCases.NavigationWithCustomAdminPrefixShouldWorkAsync(ExecuteTestAfterSetupAsync, browser);
+    [Fact]
+    public Task NavigationWithCustomAdminPrefixShouldWork() =>
+        CustomAdminPrefixTestCases.NavigationWithCustomAdminPrefixShouldWorkAsync(ExecuteTestAfterSetupAsync);
 }

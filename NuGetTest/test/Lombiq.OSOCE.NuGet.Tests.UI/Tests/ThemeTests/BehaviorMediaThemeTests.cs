@@ -1,6 +1,4 @@
 using Lombiq.Hosting.MediaTheme.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -14,9 +12,7 @@ public class BehaviorMediaThemeTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task MediaThemeShouldRenderTemplatesFromMediaLibrary(Browser browser) =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestMediaThemeTemplateRenderingBehaviorAsync(),
-            browser);
+    [Fact]
+    public Task MediaThemeShouldRenderTemplatesFromMediaLibrary() =>
+        ExecuteTestAfterSetupAsync(context => context.TestMediaThemeTemplateRenderingBehaviorAsync());
 }

@@ -1,7 +1,5 @@
 using Lombiq.BaseTheme.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -15,8 +13,8 @@ public class BehaviorThemeTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task BaseThemeShouldWork(Browser browser) =>
+    [Fact]
+    public Task BaseThemeShouldWork() =>
         ExecuteTestAfterSetupAsync(
             async context =>
             {
@@ -25,6 +23,5 @@ public class BehaviorThemeTests : UITestBase
 
                 await context.GoToHomePageAsync(onlyIfNotAlreadyThere: false);
                 await context.TestBaseThemeFeaturesAsync();
-            },
-            browser);
+            });
 }
