@@ -85,7 +85,7 @@ jobs:
         github.event_name == 'workflow_dispatch' ||
         github.event.label.name == 'run-windows-build'
     name: PowerShell Static Code Analysis Windows
-    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
+    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@issue/OSOE-743
     with:
       machine-types: "['windows-2022']"
       run-windows-powershell: "false"
