@@ -42,6 +42,7 @@
         "Lombiq.Hosting.Tenants.IdleTenantManagement.ShutDownIdleTenants",
         "Lombiq.Hosting.Tenants.EmailQuotaManagement",
         "Lombiq.JsonEditor",
+        "Lombiq.LoginAsAnybody",
         "Lombiq.OSOCE.Samples",
         // We only enable these on a specific test, because it overlaps with too many things.
         // "Lombiq.Privacy.ConsentBanner",
