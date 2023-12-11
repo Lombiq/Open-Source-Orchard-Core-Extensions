@@ -83,7 +83,7 @@ jobs:
   #       run: yamllint -c .trunk/configs/.yamllint.yaml .
   yaml-linting:
     name: YAML Linting
-    uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@issue/OSOE-188
     with:
       machine-types: "['ubuntu-22.04']"
 
