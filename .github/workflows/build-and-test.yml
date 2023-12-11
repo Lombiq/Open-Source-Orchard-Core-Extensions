@@ -87,7 +87,7 @@ jobs:
     with:
       machine-types: "['ubuntu-22.04']"
       config-file-path: '.trunk/configs/.yamllint.yaml'
-      search-path: '.'
+      search-path: '.github'
 
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
