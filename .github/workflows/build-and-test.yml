@@ -2,7 +2,6 @@ name: Build and Test
 
 # Runs for PRs opened for any branch, and pushes to the dev branch.
 on:
-  workflow_dispatch:
   pull_request:
   push:
     branches:
@@ -70,16 +69,6 @@ jobs:
     with:
       machine-types: "['ubuntu-22.04']"
 
-  # yaml-linting:
-  #   runs-on: ubuntu-22.04
-  #   steps:
-  #     - name: Checkout
-  #       uses: Lombiq/GitHub-Actions/.github/actions/checkout@dev
-  #       with:
-  #         token: ${{ secrets.CHECKOUT_TOKEN }}
-
-  #     - name: Run yamllint with custom config
-  #       run: yamllint -c .trunk/configs/.yamllint.yaml .
   yaml-linting:
     name: YAML Linting
     uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@dev 
