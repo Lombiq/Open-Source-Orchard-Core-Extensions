@@ -7,7 +7,6 @@ on:
   push:
     branches:
       - dev
-      - issue/OSOE-188
 
 jobs:
   build-and-test-larger-runners:
@@ -83,7 +82,7 @@ jobs:
   #       run: yamllint -c .trunk/configs/.yamllint.yaml .
   yaml-linting:
     name: YAML Linting
-    uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@issue/OSOE-188 
+    uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@dev 
     with:
       machine-types: "['ubuntu-22.04']"
       config-file-path: '.trunk/configs/.yamllint.yaml'
