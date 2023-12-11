@@ -80,7 +80,7 @@ jobs:
           token: ${{ secrets.CHECKOUT_TOKEN }}
 
       - name: Run yamllint with custom config
-        run: yamllint -c .trunk/configs/.yamllint.yaml ./github
+        run: yamllint -c .trunk/configs/.yamllint.yaml .
 
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
