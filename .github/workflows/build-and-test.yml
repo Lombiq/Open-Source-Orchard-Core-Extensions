@@ -69,6 +69,12 @@ jobs:
     with:
       machine-types: "['ubuntu-22.04']"
 
+  yaml-linting:
+    runs-on: ubuntu-22.04
+    steps:
+       - name: Run yamllint with custom config
+         run: yamllint -c .trunk/configs/.yamllint.yaml ./github
+
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling, powershell-static-code-analysis]
