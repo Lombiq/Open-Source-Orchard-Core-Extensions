@@ -74,8 +74,13 @@ jobs:
   yaml-linting:
     runs-on: ubuntu-22.04
     steps:
-       - name: Run yamllint with custom config
-         run: yamllint -c .trunk/configs/.yamllint.yaml ./github
+      - name: Checkout
+        uses: Lombiq/GitHub-Actions/.github/actions/checkout@dev
+        with:
+          token: ${{ secrets.CHECKOUT_TOKEN }}
+
+      - name: Run yamllint with custom config
+        run: yamllint -c .trunk/configs/.yamllint.yaml ./github
 
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
