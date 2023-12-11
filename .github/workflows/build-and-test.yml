@@ -71,16 +71,22 @@ jobs:
     with:
       machine-types: "['ubuntu-22.04']"
 
-  yaml-linting:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout
-        uses: Lombiq/GitHub-Actions/.github/actions/checkout@dev
-        with:
-          token: ${{ secrets.CHECKOUT_TOKEN }}
+  # yaml-linting:
+  #   runs-on: ubuntu-22.04
+  #   steps:
+  #     - name: Checkout
+  #       uses: Lombiq/GitHub-Actions/.github/actions/checkout@dev
+  #       with:
+  #         token: ${{ secrets.CHECKOUT_TOKEN }}
 
-      - name: Run yamllint with custom config
-        run: yamllint -c .trunk/configs/.yamllint.yaml .
+  #     - name: Run yamllint with custom config
+  #       run: yamllint -c .trunk/configs/.yamllint.yaml .
+  yaml-linting:
+    name: YAML Linting
+    uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint@dev
+    with:
+      machine-types: "['ubuntu-22.04']"
+
 
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
