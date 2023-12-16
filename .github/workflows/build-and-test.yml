@@ -71,7 +71,7 @@ jobs:
 
   yaml-linting:
     name: YAML Linting
-    uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@dev 
+    uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@dev
     with:
       machine-types: "['ubuntu-22.04']"
       config-file-path: '.trunk/configs/.yamllint.yaml'

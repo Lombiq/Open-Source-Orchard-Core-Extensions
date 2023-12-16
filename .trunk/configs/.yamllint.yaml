@@ -1,7 +1,3 @@
 rules:
     trailing-spaces: {}
-    quoted-strings:
-        required: false
     key-duplicates: {}
-    octal-values:
-        forbid-implicit-octal: true
