@@ -13,16 +13,12 @@ jobs:
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      parent-job-name: "root-solution-larger-runners"
-      machine-types: "['buildjet-4vcpu-ubuntu-2204']"
-      timeout-minutes: 20
+      parent-job-name: "root-solution-standard-runners"
+      timeout-minutes: 40
       set-up-sql-server: "true"
       set-up-azurite: "true"
-      ui-test-parallelism: 0
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
-      build-enable-nuget-caching: "true"
-      build-enable-npm-caching: "true"
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
