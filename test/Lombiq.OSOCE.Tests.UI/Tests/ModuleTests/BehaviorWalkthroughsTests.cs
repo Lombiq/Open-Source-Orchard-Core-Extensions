@@ -1,6 +1,7 @@
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Pages;
 using Lombiq.Walkthroughs.Tests.UI.Extensions;
+using Shouldly;
 using System;
 using System.Threading.Tasks;
 using Xunit;
