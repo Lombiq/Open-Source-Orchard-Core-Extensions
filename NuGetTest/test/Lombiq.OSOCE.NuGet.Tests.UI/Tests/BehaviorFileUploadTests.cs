@@ -1,7 +1,5 @@
-using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Helpers;
-using Lombiq.Tests.UI.Services;
 using OpenQA.Selenium;
 using Shouldly;
 using System.Threading.Tasks;
@@ -17,8 +15,8 @@ public class BehaviorFileUploadTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task SampleFilesShouldBeAccessible(Browser browser) =>
+    [Fact]
+    public Task SampleFilesShouldBeAccessible() =>
         ExecuteTestAfterSetupAsync(
             async context =>
             {
@@ -29,6 +27,5 @@ public class BehaviorFileUploadTests : UITestBase
                 context.Get(By.CssSelector(".message-error"))
                     .Text
                     .ShouldContain("Only zip or json files are supported.");
-            },
-            browser);
+            });
 }

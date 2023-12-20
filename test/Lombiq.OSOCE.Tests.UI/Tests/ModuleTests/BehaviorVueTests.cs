@@ -1,5 +1,4 @@
 using Atata.HtmlValidation;
-using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using Lombiq.VueJs.Samples.Controllers;
@@ -20,32 +19,29 @@ public class BehaviorVueTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task RecipeDataShouldBeDisplayedCorrectly(Browser browser) =>
+    [Fact]
+    public Task RecipeDataShouldBeDisplayedCorrectly() =>
         ExecuteTestAfterSetupAsync(
             async context =>
             {
                 await context.SignInDirectlyAsync();
                 await context.TestVueSampleBehaviorAsync();
-            },
-            browser);
+            });
 
-    [Theory, Chrome]
-    public Task QrCardScanShouldWorkAsync(Browser browser) =>
+    [Fact]
+    public Task QrCardScanShouldWorkAsync() =>
         ExecuteTestAfterSetupAsync(
             context => context.TestQrCardFoundAsync(),
-            browser,
             configuration =>
             {
                 configuration.BrowserConfiguration.ConfigureFakeVideoSourceForPositiveTest();
                 configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync = AssertHtmValidationResultAsync;
             });
 
-    [Theory, Chrome]
-    public Task QrCardScanShouldReportNotFoundAsync(Browser browser) =>
+    [Fact]
+    public Task QrCardScanShouldReportNotFoundAsync() =>
         ExecuteTestAfterSetupAsync(
             context => context.TestQrCardNotFoundAsync(),
-            browser,
             configuration =>
             {
                 configuration.BrowserConfiguration.ConfigureFakeVideoSourceForNegativeTest();

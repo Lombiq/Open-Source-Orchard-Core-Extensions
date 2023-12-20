@@ -1,7 +1,5 @@
 using Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -16,8 +14,8 @@ public class IdleTenantTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task ShuttingDownIdleTenantsShouldWork(Browser browser) =>
+    [Fact]
+    public Task ShuttingDownIdleTenantsShouldWork() =>
         ExecuteTestAfterSetupAsync(
             async context =>
             {
@@ -28,6 +26,5 @@ public class IdleTenantTests : UITestBase
                 context.Configuration.AssertAppLogsAsync = webApplicationInstance =>
                     IdleTenantManagementExtensions.AssertAppLogsWithIdleCheckAsync(webApplicationInstance);
             },
-            browser,
             configuration => configuration.SetMaxIdleMinutesAndLoggingForUITest());
 }

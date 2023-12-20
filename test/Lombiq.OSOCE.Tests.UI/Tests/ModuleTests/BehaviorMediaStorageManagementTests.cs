@@ -1,6 +1,4 @@
 using Lombiq.Hosting.Tenants.MediaStorageManagement.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -14,11 +12,10 @@ public class BehaviorMediaStorageManagementTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task MediaQuotaShouldWork(Browser browser) =>
+    [Fact]
+    public Task MediaQuotaShouldWork() =>
         ExecuteTestAfterSetupAsync(
-            async context => await context.TestMediaStorageManagementBehaviorAsync(),
-            browser,
+            context => context.TestMediaStorageManagementBehaviorAsync(),
             // Setting maximum storage quota for 50 000 bytes to see if it fails with the sample png file.
             configuration => configuration.SetMediaStorageManagementOptionsForUITest(50_000));
 }

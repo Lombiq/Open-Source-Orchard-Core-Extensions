@@ -1,6 +1,4 @@
 using Lombiq.JsonEditor.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -14,9 +12,7 @@ public class BehaviorJsonEditorTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task JsonEditorShouldWorkCorrectly(Browser browser) =>
-        ExecuteTestAfterSetupAsync(
-            async context => await context.TestJsonEditorBehaviorAsync(),
-            browser);
+    [Fact]
+    public Task JsonEditorShouldWorkCorrectly() =>
+        ExecuteTestAfterSetupAsync(context => context.TestJsonEditorBehaviorAsync());
 }
