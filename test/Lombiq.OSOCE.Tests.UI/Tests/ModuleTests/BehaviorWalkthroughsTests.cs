@@ -8,7 +8,6 @@ using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Pages;
 using System;
 using Shouldly;
-using Lombiq.Tests.UI.Services;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
@@ -19,7 +18,7 @@ public class BehaviorWalkthroughsTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
+    [Fact]
     public Task WalkthroughsShouldWorkCorrectly(Browser browser) =>
         ExecuteTestAsync(
             async context =>
@@ -35,8 +34,8 @@ public class BehaviorWalkthroughsTests : UITestBase
 
                 await context.TestWalkthroughsBehaviorAsync();
             },
-            browser,
             // Could be removed if https://github.com/shepherd-pro/shepherd/issues/2555 is fixed.
+            // Or could be made simpler if this is fixed https://github.com/atata-framework/atata-htmlvalidation/issues/8.
             changeConfiguration: configuration => configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
                 validationResult =>
                 {
