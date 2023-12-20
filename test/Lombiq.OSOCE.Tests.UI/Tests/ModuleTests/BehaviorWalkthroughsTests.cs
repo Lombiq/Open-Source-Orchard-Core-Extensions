@@ -18,7 +18,7 @@ public class BehaviorWalkthroughsTests : UITestBase
     }
 
     [Fact]
-    public Task WalkthroughsShouldWorkCorrectly(Browser browser) =>
+    public Task WalkthroughsShouldWorkCorrectly() =>
         ExecuteTestAsync(
             async context =>
             {
