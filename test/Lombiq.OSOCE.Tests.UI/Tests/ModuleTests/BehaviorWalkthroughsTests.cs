@@ -1,13 +1,12 @@
-using Lombiq.Walkthroughs.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Attributes;
+using Lombiq.Tests.UI.Extensions;
+using Lombiq.Tests.UI.Pages;
 using Lombiq.Tests.UI.Services;
+using Lombiq.Walkthroughs.Tests.UI.Extensions;
+using Shouldly;
+using System;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
-using Lombiq.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Pages;
-using System;
-using Shouldly;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
