@@ -5,6 +5,7 @@
 
   "rules": {
     "attribute-boolean-style": "off",
+    "element-required-attributes": "off",
     "no-trailing-whitespace": "off",
     "no-inline-style": "off",
     "no-implicit-button-type": "off",
@@ -14,5 +15,7 @@
     "wcag/h37": "off",
     "wcag/h67": "off",
     "wcag/h71": "off"
-  }
+  },
+
+  "root":  true
 }
