@@ -35,6 +35,6 @@ public class BehaviorWalkthroughsTests : UITestBase
             // Could be removed if https://github.com/shepherd-pro/shepherd/issues/2555 is fixed.
             changeConfiguration: configuration => configuration.HtmlValidationConfiguration.HtmlValidationOptions =
                 configuration.HtmlValidationConfiguration.HtmlValidationOptions
-                    .CloneWith(valiadtionOptions => valiadtionOptions.ConfigPath =
+                    .CloneWith(validationOptions => validationOptions.ConfigPath =
                         Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "BehaviorWalkthroughsTests.htmlvalidate.json")));
 }
