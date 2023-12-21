@@ -15,7 +15,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <Content Include="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
-    <Content Include="Tests\ModuleTests\BehaviorWalkthroughsTests.htmlvalidate.json">
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="BehaviorWalkthroughsTests.htmlvalidate.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <PackageCopyToOutput>true</PackageCopyToOutput>
     </Content>
