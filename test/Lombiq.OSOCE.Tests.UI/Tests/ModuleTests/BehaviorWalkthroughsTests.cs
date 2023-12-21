@@ -1,8 +1,8 @@
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Pages;
 using Lombiq.Walkthroughs.Tests.UI.Extensions;
-using Shouldly;
 using System;
+using System.IO;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -33,22 +33,8 @@ public class BehaviorWalkthroughsTests : UITestBase
                 await context.TestWalkthroughsBehaviorAsync();
             },
             // Could be removed if https://github.com/shepherd-pro/shepherd/issues/2555 is fixed.
-            // Or could be made simpler if this is fixed https://github.com/atata-framework/atata-htmlvalidation/issues/8.
-            changeConfiguration: configuration => configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
-                validationResult =>
-                {
-                    var validationResultOutput = validationResult.Output;
-
-                    if (!validationResultOutput.Contains(
-                        "1 problem (1 error, 0 warnings)",
-                        StringComparison.InvariantCultureIgnoreCase) ||
-                    !validationResultOutput.Contains(
-                        "error  <button> is missing required \"type\" attribute  element-required-attributes",
-                        StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        validationResult.Output.ShouldBeEmpty();
-                    }
-
-                    return Task.CompletedTask;
-                });
+            changeConfiguration: configuration => configuration.HtmlValidationConfiguration.HtmlValidationOptions =
+                configuration.HtmlValidationConfiguration.HtmlValidationOptions
+                    .CloneWith(valiadtionOptions => valiadtionOptions.ConfigPath =
+                        Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "BehaviorWalkthroughsTests.htmlvalidate.json")));
 }
