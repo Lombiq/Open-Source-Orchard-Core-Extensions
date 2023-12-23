@@ -96,3 +96,7 @@
 [submodule "src/Modules/Lombiq.ContentEditors"]
 	path = src/Modules/Lombiq.ContentEditors
 	url = https://github.com/Lombiq/Orchard-Content-Editors.git
+[submodule "src/Modules/Lombiq.LoginAsAnybody"]
+	path = src/Modules/Lombiq.LoginAsAnybody
+	url = https://github.com/Lombiq/Orchard-Login-as-Anybody
+	branch = dev
