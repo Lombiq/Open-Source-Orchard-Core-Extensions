@@ -1,8 +1,6 @@
 using Lombiq.Hosting.Tenants.FeaturesGuard.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Helpers;
 using Lombiq.Tests.UI.Samples.Helpers;
-using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -18,19 +16,17 @@ public class BehaviorFeaturesGuardTests : UITestBase
 
     // HTML validation is disabled as OC's login and dashboard pages contain several errors. See:
     // https://github.com/OrchardCMS/OrchardCore/issues/12271
-    [Theory, Chrome]
-    public Task ForbiddenFeaturesShouldNotBeActivatableOnTenants(Browser browser) =>
+    [Fact]
+    public Task ForbiddenFeaturesShouldNotBeActivatableOnTenants() =>
         ExecuteTestAfterSetupAsync(
             context => context.TestForbiddenFeaturesAsync(SetupHelpers.RecipeId),
-            browser,
             ConfigurationHelper.DisableHtmlValidation);
 
     // HTML validation is disabled as OC's login and dashboard pages contain several errors. See:
     // https://github.com/OrchardCMS/OrchardCore/issues/12271
-    [Theory, Chrome]
-    public Task ConditionallyEnabledFeaturesShouldWorkCorrectlyOnTenants(Browser browser) =>
+    [Fact]
+    public Task ConditionallyEnabledFeaturesShouldWorkCorrectlyOnTenants() =>
         ExecuteTestAfterSetupAsync(
             context => context.TestConditionallyEnabledFeaturesAsync(SetupHelpers.RecipeId),
-            browser,
             ConfigurationHelper.DisableHtmlValidation);
 }

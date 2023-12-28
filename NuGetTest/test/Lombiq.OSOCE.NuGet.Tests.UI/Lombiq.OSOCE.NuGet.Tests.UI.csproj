@@ -20,7 +20,7 @@
     <PackageReference Include="Lombiq.ChartJs.Tests.UI" Version="6.0.2-alpha.0.osoe-638" />
     <PackageReference Include="Lombiq.ContentEditors.Tests.UI" Version="2.0.1-alpha.0.osoe-638" />
     <PackageReference Include="Lombiq.DataTables.Tests.UI" Version="7.0.2-alpha.0.osoe-638" />
-    <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI" Version="7.0.1-alpha.0.osoe-638" />
+    <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI" Version="7.0.2-alpha.1.osoe-733" />
     <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay.Tests.UI" Version="4.0.1-alpha.0.osoe-638" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme.Tests.UI" Version="5.0.1-alpha.0.osoe-638" />
     <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots.Tests.UI" Version="6.3.0-alpha.2.lmbq-249" />
@@ -31,10 +31,11 @@
     <PackageReference Include="Lombiq.Hosting.Tenants.Maintenance.Tests.UI" Version="6.3.0-alpha.2.lmbq-249" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Management.Tests.UI" Version="6.3.0-alpha.2.lmbq-249" />
     <PackageReference Include="Lombiq.JsonEditor.Tests.UI" Version="6.0.1-alpha.0.osoe-638" />
+    <PackageReference Include="Lombiq.LoginAsAnybody.Tests.UI" Version="1.0.0" />
     <PackageReference Include="Lombiq.OrchardCoreApiClient.Tests.UI" Version="4.0.1-alpha.0.osoe-638" />
     <PackageReference Include="Lombiq.Privacy.Tests.UI" Version="7.0.2-alpha.2.osoe-638" />
     <PackageReference Include="Lombiq.HelpfulExtensions.Tests.UI" Version="7.0.2-alpha.2.osoe-683" />
-    <PackageReference Include="Lombiq.Tests.UI" Version="8.2.1-alpha.0.nest-462" />
+    <PackageReference Include="Lombiq.Tests.UI" Version="8.2.1-alpha.6.osoe-351" />
     <PackageReference Include="Lombiq.VueJs.Tests.UI" Version="3.0.1-alpha.0.osoe-638" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.1">
