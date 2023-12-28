@@ -74,7 +74,7 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@issue/OSOE-188
     with:
       config-file-path: 'tools/Lombiq.GitHub.Actions/.trunk/configs/.yamllint.yaml'
-      search-path: '.github'
+      search-path: '.'
 
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
