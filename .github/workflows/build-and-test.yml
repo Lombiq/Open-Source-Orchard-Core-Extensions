@@ -62,6 +62,7 @@ jobs:
         lombiq-lgha:dictionaries/Liquid.txt
         lombiq-lgha:dictionaries/Xml.txt
         lombiq-lgha:dictionaries/Lombiq.people.txt
+        lombiq-lgha:dictionaries/Security.txt
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
