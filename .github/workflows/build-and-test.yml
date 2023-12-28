@@ -73,7 +73,7 @@ jobs:
     name: YAML Linting
     uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@issue/OSOE-188
     with:
-      config-file-path: '.trunk/configs/.yamllint.yaml'
+      config-file-path: 'tools/Lombiq.GitHub.Actions/.trunk/configs/.yamllint.yaml'
       search-path: '.github'
 
   post-pull-request-checks-automation:
