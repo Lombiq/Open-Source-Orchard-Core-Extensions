@@ -16,5 +16,9 @@ runtimes:
         - python@3.10.8
 # This is the section where you manage your linters. (https://docs.trunk.io/check/configuration)
 lint:
+    definitions:
+      - name: yamllint
+        commands:
+        - run: yamllint -c ./tools/Lombiq.GitHub.Actions/.trunk/configs/.yamllint.yaml -f parsable ${target}
     enabled:
         - yamllint@1.33.0
