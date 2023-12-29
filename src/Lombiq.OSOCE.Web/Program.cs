@@ -26,12 +26,16 @@ builder.Services
                     Lombiq.ChartJs.Constants.FeatureIds.Default,
                 },
             })
-        .EnableAutoSetupIfNotUITesting(configuration));
+        .EnableAutoSetupIfNotUITesting(configuration)
+        .ConfigureSecurityDefaults());
 
 var app = builder.Build();
 
-app.UseStaticFiles();
-app.UseOrchardCore();
+app
+    .UseSecurityDefaults()
+    .UseStaticFiles()
+    .UseOrchardCore();
+
 app.Run();
 
 [SuppressMessage(
