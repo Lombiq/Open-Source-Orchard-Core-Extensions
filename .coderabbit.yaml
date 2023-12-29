@@ -1,5 +1,5 @@
 # Schema with docs on the properties: https://coderabbit.ai/integrations/coderabbit-overrides.v2.json. This only
-# includes overrides for defaults.
+# includes overrides for defaults and mandatory elements.
 
 early_access: false
 reviews:
@@ -9,4 +9,6 @@ reviews:
   review_status: true
   collapse_walkthrough: false
   auto_review:
+    enabled: true
 chat:
+  auto_reply: true
