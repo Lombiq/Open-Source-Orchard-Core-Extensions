@@ -6,8 +6,10 @@ reviews:
   request_changes_workflow: true
   high_level_summary: true
   poem: false
-  review_status: true
-  collapse_walkthrough: false
+  # Usually just noise, enable for debugging.
+  review_status: false
+  # Maybe true?
+  collapse_walkthrough: true
   auto_review:
     enabled: true
 chat:
