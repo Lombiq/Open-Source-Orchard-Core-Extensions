@@ -31,10 +31,8 @@ builder.Services
 
 var app = builder.Build();
 
-app
-    .UseSecurityDefaults()
-    .UseStaticFiles()
-    .UseOrchardCore();
+app.UseStaticFiles();
+app.UseOrchardCore();
 
 app.Run();
 
