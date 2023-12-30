@@ -5,7 +5,7 @@
 # The chat and auto_review sections just repeat the defaults because they're required. That's a bug that'll be fixed:
 # https://discord.com/channels/1134356397673414807/1134356398260629598/1190412620755374172.
 
-early_access: false
+early_access: true
 reviews:
   request_changes_workflow: true
   high_level_summary: true
