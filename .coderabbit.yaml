@@ -8,7 +8,8 @@
 early_access: true
 reviews:
   request_changes_workflow: true
-  high_level_summary: true
+  # Very rarely contains useful info, mostly is just noise.
+  high_level_summary: false
   poem: false
   # The code walkthrough's text may take a lot of space, so collapsing it is nicer UX.
   collapse_walkthrough: true
