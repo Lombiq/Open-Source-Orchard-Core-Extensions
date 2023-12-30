@@ -3,6 +3,7 @@ autorun
 barcode
 chainable
 clickable
+coderabbit
 flyout
 hackish
 hashable
