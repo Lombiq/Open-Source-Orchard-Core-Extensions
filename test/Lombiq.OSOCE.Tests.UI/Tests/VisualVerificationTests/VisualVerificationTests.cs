@@ -24,10 +24,13 @@ public class VisualVerificationTests : UITestBase
     [Fact]
     public Task VerifyHomePageAndLayout() =>
         // Check the whole page so we can verify the margins and to see if header/footer is affected.
+        // The threshold is necessary so the year changing in the footer doesn't cause the test to crash (or other tiny
+        // changes in font rendering).
         ExecuteTestAfterSetupAsync(
             context => context.AssertVisualVerificationOnAllResolutions(
                 _visualVerificationSizes,
                 _ => By.TagName("body"),
+                pixelErrorPercentageThreshold: 0.005,
                 configurator: configuration => configuration.WithFileNameSuffix(
                     RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "Windows" : "Unix")));
 }
