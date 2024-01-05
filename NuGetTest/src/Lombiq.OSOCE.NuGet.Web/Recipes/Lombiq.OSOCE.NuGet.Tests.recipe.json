@@ -38,6 +38,7 @@
         "Lombiq.Hosting.Tenants.IdleTenantManagement.ShutDownIdleTenants",
         "Lombiq.Hosting.Tenants.Maintenance.ChangeUserSensitiveContent",
         "Lombiq.JsonEditor",
+        "Lombiq.LoginAsAnybody",
         "Lombiq.OSOCE.Samples",
         "Lombiq.OSOCE.NuGet.TestModule",
         // We only enable these in a specific test, because the banner overlaps with too many things.
