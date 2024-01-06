@@ -27,7 +27,7 @@ builder.Services
                 },
             })
         .EnableAutoSetupIfNotUITesting(configuration)
-        .ConfigureSecurityDefaults());
+        .ConfigureSecurityDefaults(allowInlineStyle: true)); // Necessary because style attributes are used in the Blog theme.
 
 var app = builder.Build();
 
