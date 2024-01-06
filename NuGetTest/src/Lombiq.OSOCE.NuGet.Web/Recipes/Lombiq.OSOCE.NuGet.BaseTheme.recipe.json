@@ -19,15 +19,7 @@
         "Lombiq.HelpfulExtensions.ShapeTracing"
       ],
       "enable": [
-      ]
-    },
-    {
-      "name": "recipes",
-      "Values": [
-        {
-          "executionid": "Lombiq.OSOCE.NuGet.Web",
-          "name": "Lombiq.BaseTheme.LayersAndZones"
-        }
+        "Lombiq.BaseTheme.Samples"
       ]
     },
     {

@@ -1,7 +1,5 @@
 using Lombiq.Privacy.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -15,39 +13,36 @@ public class BehaviorPrivacyTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task ConsentBannerShouldWorkAnonymous(Browser browser) =>
-        ExecuteTestAfterSetupAsync(context => context.TestConsentBannerAsync(), browser);
+    [Fact]
+    public Task ConsentBannerShouldWorkAnonymous() =>
+        ExecuteTestAfterSetupAsync(context => context.TestConsentBannerAsync());
 
-    [Theory, Chrome]
-    public Task ConsentBannerShouldWorkAdmin(Browser browser) =>
+    [Fact]
+    public Task ConsentBannerShouldWorkAdmin() =>
         ExecuteTestAfterSetupAsync(
             async context =>
             {
                 await context.SignInDirectlyAsync();
                 await context.TestConsentBannerAsync();
-            },
-            browser);
+            });
 
     // This test is for https://github.com/Lombiq/Orchard-Privacy/issues/15
-    [Theory, Chrome]
-    public async Task ConsentBannerShouldWorkWithRazorAndLiquidBasedThemes(Browser browser)
+    [Fact]
+    public async Task ConsentBannerShouldWorkWithRazorAndLiquidBasedThemes()
     {
         // First should work with Liquid-based theme
         await ExecuteTestAfterSetupAsync(
-            context => context.TestConsentBannerWithThemeAsync("TheBlogTheme"),
-            browser);
+            context => context.TestConsentBannerWithThemeAsync("TheBlogTheme"));
         // Then should work with Razor-based theme
         await ExecuteTestAfterSetupAsync(
-            context => context.TestConsentBannerWithThemeAsync("TheTheme"),
-            browser);
+            context => context.TestConsentBannerWithThemeAsync("TheTheme"));
     }
 
-    [Theory, Chrome]
-    public Task RegistrationConsentCheckboxShouldWork(Browser browser) =>
-        ExecuteTestAfterSetupAsync(context => context.TestRegistrationConsentCheckboxAsync(), browser);
+    [Fact]
+    public Task RegistrationConsentCheckboxShouldWork() =>
+        ExecuteTestAfterSetupAsync(context => context.TestRegistrationConsentCheckboxAsync());
 
-    [Theory, Chrome]
-    public Task FormConsentCheckboxShouldWork(Browser browser) =>
-        ExecuteTestAfterSetupAsync(context => context.TestPrivacySampleBehaviorAsync(), browser);
+    [Fact]
+    public Task FormConsentCheckboxShouldWork() =>
+        ExecuteTestAfterSetupAsync(context => context.TestPrivacySampleBehaviorAsync());
 }

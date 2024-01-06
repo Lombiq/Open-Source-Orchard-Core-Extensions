@@ -7,10 +7,11 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <!-- Instruct Node.js Extensions to create .eslintrc and .stylelintrc files in the current directory, which is the
+    <!-- Instruct Node.js Extensions to create .eslintrc, .stylelintrc and .prettierrc files in the current directory, which is the
          solution root directory. -->
     <NodeJsExtensionsGlobalESLintConfigurationDirectory>$(MSBuildThisFileDirectory)</NodeJsExtensionsGlobalESLintConfigurationDirectory>
     <NodeJsExtensionsGlobalStylelintConfigurationDirectory>$(MSBuildThisFileDirectory)</NodeJsExtensionsGlobalStylelintConfigurationDirectory>
+    <NodeJsExtensionsGlobalPrettierStyleConfigurationDirectory>$(MSBuildThisFileDirectory)</NodeJsExtensionsGlobalPrettierStyleConfigurationDirectory>
   </PropertyGroup>
 
   <!-- Copying the Lombiq logo as an icon to all NuGet-published projects. -->
@@ -24,11 +25,16 @@
 
   <!-- Uncomment this to switch to how NuGet-publishing GitHub Actions builds work, including referencing Lombiq NuGet
        package dependencies instead of submodules. -->
-  <!-- <PropertyGroup>
+   <!--<PropertyGroup>
     <NuGetBuild>true</NuGetBuild>
-  </PropertyGroup> -->
+  </PropertyGroup>-->
 
-  <Import Project="tools/Lombiq.Analyzers/Lombiq.Analyzers/Build.props" />
+  <!-- Uncomment this to run .NET static code analyzers during rebuilds. -->
+  <!--<PropertyGroup>
+    <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+  </PropertyGroup>-->
+
+  <Import Project="tools/Lombiq.Analyzers/Lombiq.Analyzers.OrchardCore/Build.props" />
 
   <!-- This option hasn't improved the build time in this solution, but we'll keep it turned on regardless because it
   might be the default one day, it can perhaps help in some cases, and it's not causing any issues.

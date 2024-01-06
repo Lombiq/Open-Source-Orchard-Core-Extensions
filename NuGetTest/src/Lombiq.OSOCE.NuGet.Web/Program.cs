@@ -12,15 +12,15 @@ var configuration = builder.Configuration;
 
 builder.Services
     .AddSingleton(configuration)
-    .AddOrchardCms(orchardCoreBuilder =>
-    {
-        orchardCoreBuilder.AuthorizeApiRequestsIfEnabled(configuration);
-        orchardCoreBuilder.ConfigureFeaturesGuard(
+    .AddOrchardCms(orchardCoreBuilder => orchardCoreBuilder
+        .AddOrchardCoreApplicationInsightsTelemetry(configuration)
+        .AuthorizeApiRequestsIfEnabled(configuration)
+        .ConfigureFeaturesGuard(
             new Dictionary<string, IEnumerable<string>>
             {
                 ["OrchardCore.Twitter"] = new[] { "Lombiq.UIKit", "Lombiq.ChartJs" },
-            });
-    });
+            })
+        .EnableAutoSetupIfNotUITesting(configuration));
 
 var app = builder.Build();
 

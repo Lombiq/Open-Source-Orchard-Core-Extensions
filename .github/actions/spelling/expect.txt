@@ -1,9 +1,11 @@
 autoinit
 basethemesample
+btns
 Bubl
 chartjs
 Chro
 chromedriver
+clike
 codeanalysis
 codestyle
 Codeuctivity
@@ -34,6 +36,7 @@ lintrc
 listheader
 logtest
 lombiqdt
+mathml
 mcr
 mde
 mediatheme
@@ -41,11 +44,13 @@ MHTML
 mogwais
 mso
 Noda
+notlike
 npmrc
 omnisharp
 onspecial
 pickr
 PII
+plsql
 popstate
 Portainer
 postclean
@@ -53,8 +58,8 @@ prebuild
 rnwood
 rolename
 sfc
-SFCs
 smtpport
+ssml
 Subresource
 taxonomyfield
 testid

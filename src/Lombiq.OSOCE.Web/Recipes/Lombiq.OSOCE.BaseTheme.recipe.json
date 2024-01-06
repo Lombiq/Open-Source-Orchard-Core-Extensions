@@ -1,0 +1,33 @@
+{
+  // This is necessary to be in a separate recipe, because otherwise the widget and layer setup from
+  // Lombiq.BaseTheme.LayersAndZones.recipe would be superseded by the default config.
+  "name": "Lombiq.OSOCE.BaseTheme",
+  "displayName": "Switch to Lombiq.BaseTheme.Sample",
+  "description": "Switch to Lombiq.BaseTheme.Sample.",
+  "author": "Lombiq Technologies",
+  "website": "https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions",
+  "version": "1.0",
+  "issetuprecipe": false,
+  "categories": [
+    "test"
+  ],
+  "tags": [
+    "test"
+  ],
+  "steps": [
+    {
+      "name": "feature",
+      "disable": [
+        "Lombiq.HelpfulExtensions.ShapeTracing"
+      ],
+      "enable": [
+        "Lombiq.BaseTheme.Samples"
+      ]
+    },
+    {
+      "name": "themes",
+      "admin": "TheAdmin",
+      "site": "Lombiq.BaseTheme.Samples"
+    }
+  ]
+}

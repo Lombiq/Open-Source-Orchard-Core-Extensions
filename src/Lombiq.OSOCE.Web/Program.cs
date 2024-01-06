@@ -15,12 +15,18 @@ var configuration = builder.Configuration;
 // create UI tests check out the project.
 builder.Services
     .AddSingleton(configuration)
-    .AddOrchardCms(orchardCoreBuilder =>
-        orchardCoreBuilder.ConfigureFeaturesGuard(
+    .AddOrchardCms(orchardCoreBuilder => orchardCoreBuilder
+        .AddOrchardCoreApplicationInsightsTelemetry(configuration)
+        .ConfigureFeaturesGuard(
             new Dictionary<string, IEnumerable<string>>
             {
-                ["OrchardCore.Twitter"] = new[] { "Lombiq.UIKit", "Lombiq.ChartJs" },
-            }));
+                ["OrchardCore.Twitter"] = new[]
+                {
+                    Lombiq.UIKit.FeatureIds.Base,
+                    Lombiq.ChartJs.Constants.FeatureIds.Default,
+                },
+            })
+        .EnableAutoSetupIfNotUITesting(configuration));
 
 var app = builder.Build();
 
@@ -31,7 +37,7 @@ app.Run();
 [SuppressMessage(
     "Design",
     "CA1050: Declare types in namespaces",
-    Justification = "As described here: https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-6.0.")]
+    Justification = "As described here: https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests.")]
 public partial class Program
 {
     protected Program()

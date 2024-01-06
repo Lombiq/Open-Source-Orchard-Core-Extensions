@@ -1,5 +1,3 @@
-using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Services;
 using Lombiq.Tests.UI.Tests.UI.TestCases;
 using System.Threading.Tasks;
 using Xunit;
@@ -14,15 +12,15 @@ public class SecurityShortcutsTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task AddUserToRoleShouldWork(Browser browser) =>
-        SecurityShortcutsTestCases.AddUserToRoleShouldWorkAsync(ExecuteTestAfterSetupAsync, browser);
+    [Fact]
+    public Task AddUserToRoleShouldWork() =>
+        SecurityShortcutsTestCases.AddUserToRoleShouldWorkAsync(ExecuteTestAfterSetupAsync);
 
-    [Theory, Chrome]
-    public Task AddUserToFakeRoleShouldThrow(Browser browser) =>
-        SecurityShortcutsTestCases.AddUserToFakeRoleShouldThrowAsync(ExecuteTestAfterSetupAsync, browser);
+    [Fact]
+    public Task AddUserToFakeRoleShouldThrow() =>
+        SecurityShortcutsTestCases.AddUserToFakeRoleShouldThrowAsync(ExecuteTestAfterSetupAsync);
 
-    [Theory, Chrome]
-    public Task AllowFakePermissionToRoleShouldThrow(Browser browser) =>
-        SecurityShortcutsTestCases.AllowFakePermissionToRoleShouldThrowAsync(ExecuteTestAfterSetupAsync, browser);
+    [Fact]
+    public Task AllowFakePermissionToRoleShouldThrow() =>
+        SecurityShortcutsTestCases.AllowFakePermissionToRoleShouldThrowAsync(ExecuteTestAfterSetupAsync);
 }

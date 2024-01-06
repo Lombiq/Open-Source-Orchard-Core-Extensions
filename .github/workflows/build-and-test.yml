@@ -13,7 +13,8 @@ jobs:
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-464-executing-dotnet-test-with-process-timeout
     with:
-      machine-types: "['gitrunners-ubuntu-2204-x64-4vcpu']"
+      parent-job-name: "root-solution-larger-runners"
+      machine-types: "['buildjet-4vcpu-ubuntu-2204']"
       timeout-minutes: 20
       set-up-sql-server: "true"
       set-up-azurite: "true"
@@ -21,6 +22,8 @@ jobs:
       build-create-binary-log: "true"
       blame-hang-timeout: "5m"
       dotnet-test-process-timeout: 360000
+      build-enable-nuget-caching: "true"
+      build-enable-npm-caching: "true"
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
@@ -28,7 +31,8 @@ jobs:
     name: Build and Test - root solution (standard runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      timeout-minutes: 30
+      parent-job-name: "root-solution-standard-runners"
+      timeout-minutes: 40
       set-up-sql-server: "true"
       set-up-azurite: "true"
       build-create-binary-log: "true"
@@ -38,8 +42,9 @@ jobs:
     name: Build and Test - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-464-executing-dotnet-test-with-process-timeout
     with:
+      parent-job-name: "nuget-solution"
       build-directory: NuGetTest
-      timeout-minutes: 10
+      timeout-minutes: 15
       blame-hang-timeout: "5m"
       dotnet-test-process-timeout: 360000
 
@@ -49,11 +54,13 @@ jobs:
     with:
       additional-dictionaries: |
         cspell:csharp/csharp.txt
-        cspell:css/css.txt
-        cspell:fullstack/fullstack.txt
-        cspell:html/html.txt
-        cspell:node/node.txt
-        cspell:npm/npm.txt
+        cspell:css/dict/css.txt
+        cspell:fullstack/dict/fullstack.txt
+        cspell:html-symbol-entities/entities.txt
+        cspell:html/dict/html.txt
+        cspell:html/src/svg.txt
+        cspell:node/dict/node.txt
+        cspell:npm/dict/npm.txt
         lombiq-lgha:dictionaries/Liquid.txt
         lombiq-lgha:dictionaries/Xml.txt
         lombiq-lgha:dictionaries/Lombiq.people.txt

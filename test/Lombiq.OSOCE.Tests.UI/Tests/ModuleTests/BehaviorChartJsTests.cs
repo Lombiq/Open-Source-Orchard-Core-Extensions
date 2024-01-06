@@ -1,6 +1,4 @@
 using Lombiq.ChartJs.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -14,9 +12,7 @@ public class BehaviorChartJsTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task RecipeDataShouldBeDisplayedCorrectly(Browser browser) =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestChartJsSampleBehaviorAsync(),
-            browser);
+    [Fact]
+    public Task RecipeDataShouldBeDisplayedCorrectly() =>
+        ExecuteTestAfterSetupAsync(context => context.TestChartJsSampleBehaviorAsync());
 }
