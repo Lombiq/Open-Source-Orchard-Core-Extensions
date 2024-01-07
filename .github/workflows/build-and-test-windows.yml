@@ -42,7 +42,6 @@ jobs:
       set-up-azurite: "true"
       ui-test-parallelism: 0
       build-create-binary-log: "true"
-      blame-hang-timeout: "5m"
       dotnet-test-process-timeout: 360000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
@@ -76,7 +75,6 @@ jobs:
       machine-types: "['windows-2022']"
       build-directory: NuGetTest
       timeout-minutes: 25
-      blame-hang-timeout: "5m"
       dotnet-test-process-timeout: 360000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
