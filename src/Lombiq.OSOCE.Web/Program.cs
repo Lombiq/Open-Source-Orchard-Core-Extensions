@@ -1,10 +1,9 @@
+using Lombiq.UIKit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using OrchardCore.Logging;
-using SixLabors.ImageSharp.Web.Middleware;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Host.UseNLogHost();
@@ -23,7 +22,7 @@ builder.Services
             {
                 ["OrchardCore.Twitter"] = new[]
                 {
-                    Lombiq.UIKit.FeatureIds.Base,
+                    FeatureIds.Base,
                     Lombiq.ChartJs.Constants.FeatureIds.Default,
                 },
             })
