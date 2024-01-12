@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using OrchardCore.Logging;
+using SixLabors.ImageSharp.Web.Middleware;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
@@ -27,13 +28,11 @@ builder.Services
                 },
             })
         .EnableAutoSetupIfNotUITesting(configuration)
-        .ConfigureSecurityDefaults(allowInlineStyle: true)); // Necessary because style attributes are used in the Blog theme.
+        // allowInlineStyle is necessary because style attributes are used in the Blog theme.
+        .ConfigureSecurityDefaultsWithStaticFiles(allowInlineStyle: true));
 
 var app = builder.Build();
-
-app.UseStaticFiles();
 app.UseOrchardCore();
-
 app.Run();
 
 [SuppressMessage(
