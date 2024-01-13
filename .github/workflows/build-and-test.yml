@@ -20,7 +20,7 @@ jobs:
       set-up-azurite: "true"
       ui-test-parallelism: 0
       build-create-binary-log: "true"
-      blame-hang-timeout: "5m"
+      dotnet-test-process-timeout: 360000
       build-enable-nuget-caching: "true"
       build-enable-npm-caching: "true"
 
@@ -44,7 +44,7 @@ jobs:
       parent-job-name: "nuget-solution"
       build-directory: NuGetTest
       timeout-minutes: 15
-      blame-hang-timeout: "5m"
+      dotnet-test-process-timeout: 360000
 
   spelling:
     name: Spelling
