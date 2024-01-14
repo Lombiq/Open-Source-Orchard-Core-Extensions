@@ -35,7 +35,7 @@ jobs:
       set-up-sql-server: "true"
       set-up-azurite: "true"
       build-create-binary-log: "true"
-      blame-hang-timeout: "5m"
+      dotnet-test-process-timeout: 360000
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
