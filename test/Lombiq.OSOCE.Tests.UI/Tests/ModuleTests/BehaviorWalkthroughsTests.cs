@@ -1,5 +1,4 @@
 using Lombiq.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Pages;
 using Lombiq.Walkthroughs.Tests.UI.Extensions;
 using System;
 using System.IO;
@@ -21,14 +20,7 @@ public class BehaviorWalkthroughsTests : UITestBase
         ExecuteTestAsync(
             async context =>
             {
-                await context.GoToSetupPageAndSetupOrchardCoreAsync(
-                    new OrchardCoreSetupParameters(context)
-                    {
-                        SiteName = "Lombiq's OSOCE - UI Testing",
-                        RecipeId = "Lombiq.Walkthroughs",
-                        TablePrefix = "OSOCE",
-                        SiteTimeZoneValue = "Europe/Budapest",
-                    });
+                await context.GoToSetupPageAndSetupOrchardCoreAsync("Lombiq.Walkthroughs");
 
                 await context.TestWalkthroughsBehaviorAsync();
             },
