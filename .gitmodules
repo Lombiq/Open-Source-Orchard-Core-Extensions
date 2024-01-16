@@ -100,3 +100,7 @@
 	path = src/Modules/Lombiq.LoginAsAnybody
 	url = https://github.com/Lombiq/Orchard-Login-as-Anybody
 	branch = dev
+[submodule "src/Modules/Lombiq.Walkthroughs"]
+	path = src/Modules/Lombiq.Walkthroughs
+	url = https://github.com/Lombiq/Orchard-Walkthroughs
+	branch = dev
