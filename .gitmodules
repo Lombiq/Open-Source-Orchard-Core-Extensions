@@ -103,4 +103,4 @@
 [submodule "src/Modules/Lombiq.Walkthroughs"]
 	path = src/Modules/Lombiq.Walkthroughs
 	url = https://github.com/Lombiq/Orchard-Walkthroughs
-	branch = issue/NEST-113
+	branch = dev
