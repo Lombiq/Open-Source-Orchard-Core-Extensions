@@ -1,8 +1,10 @@
+using Lombiq.ChartJs.Constants;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using OrchardCore.Logging;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using UIKitFeatureIds = Lombiq.UIKit.FeatureIds;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,15 +24,15 @@ builder.Services
             {
                 ["OrchardCore.Twitter"] = new[]
                 {
-                    Lombiq.UIKit.FeatureIds.Base,
-                    Lombiq.ChartJs.Constants.FeatureIds.Default,
+                    UIKitFeatureIds.Base,
+                    FeatureIds.Default,
                 },
             })
-        .EnableAutoSetupIfNotUITesting(configuration));
+        .EnableAutoSetupIfNotUITesting(configuration)
+        // allowInlineStyle is necessary because style attributes are used in the Blog theme.
+        .ConfigureSecurityDefaultsWithStaticFiles(allowInlineStyle: true));
 
 var app = builder.Build();
-
-app.UseStaticFiles();
 app.UseOrchardCore();
 app.Run();
 
