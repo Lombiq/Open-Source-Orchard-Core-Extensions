@@ -31,7 +31,7 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: "root-solution-standard-runners"
-      timeout-minutes: 40
+      timeout-minutes: 50
       set-up-sql-server: "true"
       set-up-azurite: "true"
       build-create-binary-log: "true"
@@ -62,6 +62,7 @@ jobs:
         lombiq-lgha:dictionaries/Liquid.txt
         lombiq-lgha:dictionaries/Xml.txt
         lombiq-lgha:dictionaries/Lombiq.people.txt
+        lombiq-lgha:dictionaries/Security.txt
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
