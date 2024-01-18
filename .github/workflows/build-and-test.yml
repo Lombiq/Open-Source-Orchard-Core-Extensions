@@ -10,7 +10,7 @@ on:
 jobs:
   build-and-test-larger-runners:
     name: Build and Test - root solution (BuildJet 4vcpu vs. GH 4vcpu)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-773
     with:
       parent-job-name: "root-solution-larger-runners"
       machine-types: "['buildjet-4vcpu-ubuntu-2204', 'ubuntu-22.04']"
@@ -38,7 +38,7 @@ jobs:
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution (BuildJet 4vcpu vs. GH 4vcpu)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-773
     with:
       parent-job-name: "nuget-solution"
       machine-types: "['buildjet-4vcpu-ubuntu-2204', 'ubuntu-22.04']"
