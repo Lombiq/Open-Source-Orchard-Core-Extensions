@@ -9,12 +9,11 @@ on:
 
 jobs:
   build-and-test-larger-runners:
-    if: github.ref_name != github.event.repository.default_branch
-    name: Build and Test - root solution (larger runners)
+    name: Build and Test - root solution (BuildJet 4vcpu vs. GH 4vcpu)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: "root-solution-larger-runners"
-      machine-types: "['buildjet-4vcpu-ubuntu-2204']"
+      machine-types: "['buildjet-4vcpu-ubuntu-2204', 'ubuntu-22.04']"
       timeout-minutes: 20
       set-up-sql-server: "true"
       set-up-azurite: "true"
@@ -26,7 +25,7 @@ jobs:
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
-    if: github.ref_name == github.event.repository.default_branch
+    if: false
     name: Build and Test - root solution (standard runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
@@ -38,10 +37,11 @@ jobs:
       blame-hang-timeout: "5m"
 
   build-and-test-nuget-test:
-    name: Build and Test - NuGetTest solution
+    name: Build and Test - NuGetTest solution (BuildJet 4vcpu vs. GH 4vcpu)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: "nuget-solution"
+      machine-types: "['buildjet-4vcpu-ubuntu-2204', 'ubuntu-22.04']"
       build-directory: NuGetTest
       timeout-minutes: 15
       blame-hang-timeout: "5m"
@@ -49,6 +49,7 @@ jobs:
   spelling:
     name: Spelling
     uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
+    if: false
     with:
       additional-dictionaries: |
         cspell:csharp/csharp.txt
@@ -67,13 +68,14 @@ jobs:
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
+    if: false
     with:
       machine-types: "['ubuntu-22.04']"
 
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling, powershell-static-code-analysis]
-    if: github.event.pull_request != ''
+    if: false
     uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
     secrets:
       JIRA_BASE_URL: ${{ secrets.DEFAULT_JIRA_BASE_URL }}
@@ -84,6 +86,7 @@ jobs:
   add-windows-build-warning-label:
     name: Add Windows Build Warning Label
     runs-on: ubuntu-22.04
+    if: false
     timeout-minutes: 2
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
     steps:

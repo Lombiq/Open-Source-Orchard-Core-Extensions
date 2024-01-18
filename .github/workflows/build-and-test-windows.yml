@@ -6,15 +6,13 @@ name: Build and Test Windows
 on:
   workflow_dispatch:
   pull_request:
-    types: [labeled]
   push:
     branches:
       - dev
 
 jobs:
   remove-run-windows-build-label:
-    if: github.ref_name != github.event.repository.default_branch &&
-        github.event.label.name == 'run-windows-build'
+    if: false
     name: Remove Run Windows Build Label
     runs-on: ubuntu-22.04
     timeout-minutes: 2
@@ -30,13 +28,11 @@ jobs:
         type: remove
 
   build-and-test-larger-runners:
-    if: github.ref_name != github.event.repository.default_branch &&
-        (github.event_name == 'workflow_dispatch' || github.event.label.name == 'run-windows-build')
-    name: Build and Test Windows - root solution (larger runners)
+    name: Build and Test Windows - root solution (GitRunners 8vcpu vs. GH 4vcpu)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: "root-solution-larger-runners"
-      machine-types: "['gitrunners-windows-2022-x64-8vcpu']"
+      machine-types: "['gitrunners-windows-2022-x64-8vcpu', 'windows-2022']"
       timeout-minutes: 30
       set-up-sql-server: "true"
       set-up-azurite: "true"
@@ -49,7 +45,7 @@ jobs:
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
-    if: github.ref_name == github.event.repository.default_branch
+    if: false
     name: Build and Test Windows - root solution (standard runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
@@ -65,9 +61,7 @@ jobs:
       test-filter: "FullyQualifiedName!~SecurityScanningTests"
 
   build-and-test-nuget-test:
-    if: github.ref_name == github.event.repository.default_branch ||
-        github.event_name == 'workflow_dispatch' ||
-        github.event.label.name == 'run-windows-build'
+    if: false
     name: Build and Test Windows - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
@@ -81,9 +75,7 @@ jobs:
       test-filter: "FullyQualifiedName!~SecurityScanningTests"
 
   powershell-static-code-analysis:
-    if: github.ref_name == github.event.repository.default_branch ||
-        github.event_name == 'workflow_dispatch' ||
-        github.event.label.name == 'run-windows-build'
+    if: false
     name: PowerShell Static Code Analysis Windows
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
@@ -93,7 +85,7 @@ jobs:
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
-    if: github.event.pull_request != ''
+    if: false
     uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
     secrets:
       JIRA_BASE_URL: ${{ secrets.DEFAULT_JIRA_BASE_URL }}
@@ -102,6 +94,7 @@ jobs:
       MERGE_TOKEN: ${{ secrets.LOMBIQBOT_GITHUB_PERSONAL_ACCESS_TOKEN }}
 
   remove-windows-build-warning-label:
+    if: false
     name: Remove Windows Build Warning Label
     runs-on: ubuntu-22.04
     timeout-minutes: 2
