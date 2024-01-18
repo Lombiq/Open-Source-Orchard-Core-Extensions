@@ -69,7 +69,7 @@ jobs:
         github.event_name == 'workflow_dispatch' ||
         github.event.label.name == 'run-windows-build'
     name: Build and Test Windows - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-774
     with:
       parent-job-name: "nuget-solution"
       machine-types: "['windows-2022']"
