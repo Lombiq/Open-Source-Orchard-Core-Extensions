@@ -12,9 +12,9 @@ namespace Lombiq.OSOCE.Tests.UI.Tests.VisualVerificationTests;
 public class VisualVerificationTests : UITestBase
 {
     private static readonly Size[] _visualVerificationSizes =
-    {
+    [
         CommonDisplayResolutions.Standard,
-    };
+    ];
 
     public VisualVerificationTests(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)
