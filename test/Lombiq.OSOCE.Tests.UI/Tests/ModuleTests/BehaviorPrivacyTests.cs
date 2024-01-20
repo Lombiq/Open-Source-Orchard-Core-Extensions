@@ -6,13 +6,8 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
-public class BehaviorPrivacyTests : UITestBase
+public class BehaviorPrivacyTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
 {
-    public BehaviorPrivacyTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
-
     [Fact]
     public Task ConsentBannerShouldWorkAnonymous() =>
         ExecuteTestAfterSetupAsync(context => context.TestConsentBannerAsync());

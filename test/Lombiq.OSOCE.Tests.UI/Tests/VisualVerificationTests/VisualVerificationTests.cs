@@ -2,6 +2,7 @@ using Lombiq.Tests.UI.Constants;
 using Lombiq.Tests.UI.Extensions;
 using OpenQA.Selenium;
 using SixLabors.ImageSharp;
+using System;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Xunit;
@@ -9,17 +10,12 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.VisualVerificationTests;
 
-public class VisualVerificationTests : UITestBase
+public class VisualVerificationTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
 {
     private static readonly Size[] _visualVerificationSizes =
     [
         CommonDisplayResolutions.Standard,
     ];
-
-    public VisualVerificationTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
 
     [Fact]
     public Task VerifyHomePageAndLayout() =>
@@ -32,5 +28,5 @@ public class VisualVerificationTests : UITestBase
                 _ => By.TagName("body"),
                 pixelErrorPercentageThreshold: 0.005,
                 configurator: configuration => configuration.WithFileNameSuffix(
-                    RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "Windows" : "Unix")));
+                    OperatingSystem.IsOSPlatform(nameof(OSPlatform.Windows)) ? "Windows" : "Unix")));
 }
