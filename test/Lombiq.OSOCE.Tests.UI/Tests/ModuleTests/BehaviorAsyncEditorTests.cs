@@ -7,13 +7,8 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
-public class BehaviorAsyncEditorTests : UITestBase
+public class BehaviorAsyncEditorTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
 {
-    public BehaviorAsyncEditorTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
-
     [Fact]
     public Task DemoContentItemAsyncEditorShouldWork() =>
         ExecuteTestAfterSetupAsync(

@@ -5,13 +5,8 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.UITestingToolboxTests;
 
-public class CustomAdminPrefixTests : UITestBase
+public class CustomAdminPrefixTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
 {
-    public CustomAdminPrefixTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
-
     [Fact]
     public Task NavigationWithCustomAdminPrefixShouldWork() =>
         CustomAdminPrefixTestCases.NavigationWithCustomAdminPrefixShouldWorkAsync(ExecuteTestAfterSetupAsync);

@@ -8,13 +8,8 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
-public class BehaviorWalkthroughsTests : UITestBase
+public class BehaviorWalkthroughsTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
 {
-    public BehaviorWalkthroughsTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
-
     [Fact]
     public Task WalkthroughsShouldWorkCorrectly() =>
         ExecuteTestAsync(

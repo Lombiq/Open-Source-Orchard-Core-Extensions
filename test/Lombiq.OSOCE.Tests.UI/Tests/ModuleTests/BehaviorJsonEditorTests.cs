@@ -5,13 +5,8 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
-public class BehaviorJsonEditorTests : UITestBase
+public class BehaviorJsonEditorTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
 {
-    public BehaviorJsonEditorTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
-
     [Fact]
     public Task JsonEditorShouldWorkCorrectly() =>
         ExecuteTestAfterSetupAsync(context => context.TestJsonEditorBehaviorAsync());

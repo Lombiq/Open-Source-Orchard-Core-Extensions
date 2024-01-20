@@ -5,13 +5,8 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.LibraryTests;
 
-public class BehaviorOrchardCoreApiClientTests : UITestBase
+public class BehaviorOrchardCoreApiClientTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
 {
-    public BehaviorOrchardCoreApiClientTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
-
     [Fact]
     public Task OrchardCoreApiClientShouldWork() =>
         ExecuteTestAfterSetupAsync(context => context.TestOrchardCoreApiClientBehaviorAsync());

@@ -5,13 +5,8 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
-public class BehaviorEnvironmentRobotsTests : UITestBase
+public class BehaviorEnvironmentRobotsTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
 {
-    public BehaviorEnvironmentRobotsTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
-
     [Fact]
     public Task RobotsMetaTagShouldBeMissing() =>
         ExecuteTestAfterSetupAsync(

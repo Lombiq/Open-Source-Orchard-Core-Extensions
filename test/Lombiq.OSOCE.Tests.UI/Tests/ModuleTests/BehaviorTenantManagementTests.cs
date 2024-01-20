@@ -5,13 +5,8 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
-public class BehaviorTenantManagementTests : UITestBase
+public class BehaviorTenantManagementTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
 {
-    public BehaviorTenantManagementTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
-
     [Fact]
     public Task TenantShellSettingsEditorShouldSaveSettings() =>
         ExecuteTestAfterSetupAsync(context => context.TestShellSettingsEditorFeatureAsync());

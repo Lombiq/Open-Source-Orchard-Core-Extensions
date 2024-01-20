@@ -6,13 +6,8 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
-public class BehaviorIdleTenantsTests : UITestBase
+public class BehaviorIdleTenantsTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
 {
-    public BehaviorIdleTenantsTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
-
     [Fact]
     public Task ShuttingDownIdleTenantsShouldWork() =>
         ExecuteTestAfterSetupAsync(
