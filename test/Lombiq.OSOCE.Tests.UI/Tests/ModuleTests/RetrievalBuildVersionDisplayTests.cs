@@ -5,13 +5,8 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
-public class RetrievalBuildVersionDisplayTests : UITestBase
+public class RetrievalBuildVersionDisplayTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
 {
-    public RetrievalBuildVersionDisplayTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
-
     [Fact]
     public Task BuildVersionShouldBeBeDisplayedCorrectly() =>
         ExecuteTestAfterSetupAsync(context => context.TestBuildVersionDisplayAsync());

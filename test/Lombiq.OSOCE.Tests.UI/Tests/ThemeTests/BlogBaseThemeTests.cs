@@ -14,13 +14,8 @@ namespace Lombiq.OSOCE.Tests.UI.Tests.ThemeTests;
 // would be seen as missing even when their feature is enabled.
 [Collection(nameof(BlogBehaviorBaseThemeTests))]
 [CollectionDefinition(nameof(BlogBehaviorBaseThemeTests), DisableParallelization = true)]
-public class BlogBehaviorBaseThemeTests : UITestBase
+public class BlogBehaviorBaseThemeTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
 {
-    public BlogBehaviorBaseThemeTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
-
     [Fact]
     public Task ThemeWithoutSetupShouldWork() =>
         ExecuteTestAfterSetupAndThemeSwitchAsync(

@@ -9,13 +9,8 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
-public class BehaviorUIKitShowcaseTests : UITestBase
+public class BehaviorUIKitShowcaseTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
 {
-    public BehaviorUIKitShowcaseTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
-
     [Fact]
     public Task UIKitShowcasePageShouldBeCorrect()
         => ExecuteTestAfterSetupAsync(
