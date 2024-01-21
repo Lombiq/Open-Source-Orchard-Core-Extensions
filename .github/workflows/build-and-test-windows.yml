@@ -33,7 +33,7 @@ jobs:
     if: github.ref_name != github.event.repository.default_branch &&
         (github.event_name == 'workflow_dispatch' || github.event.label.name == 'run-windows-build')
     name: Build and Test Windows - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-464-executing-dotnet-test-with-process-timeout
     with:
       parent-job-name: "root-solution-larger-runners"
       machine-types: "['gitrunners-windows-2022-x64-8vcpu']"
@@ -42,7 +42,7 @@ jobs:
       set-up-azurite: "true"
       ui-test-parallelism: 0
       build-create-binary-log: "true"
-      blame-hang-timeout: "5m"
+      dotnet-test-process-timeout: 360000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
       test-filter: "FullyQualifiedName!~SecurityScanningTests"
@@ -51,7 +51,7 @@ jobs:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
     if: github.ref_name == github.event.repository.default_branch
     name: Build and Test Windows - root solution (standard runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-464-executing-dotnet-test-with-process-timeout
     with:
       parent-job-name: "root-solution-standard-runners"
       machine-types: "['windows-2022']"
@@ -59,7 +59,7 @@ jobs:
       set-up-sql-server: "true"
       set-up-azurite: "true"
       build-create-binary-log: "true"
-      blame-hang-timeout: "5m"
+      dotnet-test-process-timeout: 720000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
       test-filter: "FullyQualifiedName!~SecurityScanningTests"
@@ -69,13 +69,13 @@ jobs:
         github.event_name == 'workflow_dispatch' ||
         github.event.label.name == 'run-windows-build'
     name: Build and Test Windows - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-464-executing-dotnet-test-with-process-timeout
     with:
       parent-job-name: "nuget-solution"
       machine-types: "['windows-2022']"
       build-directory: NuGetTest
       timeout-minutes: 25
-      blame-hang-timeout: "5m"
+      dotnet-test-process-timeout: 360000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
       test-filter: "FullyQualifiedName!~SecurityScanningTests"
