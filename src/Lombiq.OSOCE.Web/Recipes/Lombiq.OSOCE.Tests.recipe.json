@@ -28,6 +28,7 @@
         // https://github.com/Lombiq/Helpful-Extensions/issues/120.
         // "Lombiq.HelpfulExtensions.ShapeTracing",
         "Lombiq.HelpfulExtensions.Widgets",
+        "Lombiq.HelpfulExtensions.ResourceManagement",
         "Lombiq.HelpfulLibraries.Samples",
         "Lombiq.Hosting.BuildVersionDisplay",
         "Lombiq.Hosting.Tenants.Admin.Login",
