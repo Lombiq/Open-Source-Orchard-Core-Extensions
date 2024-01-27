@@ -20,7 +20,7 @@ public class BehaviorWalkthroughsTests : UITestBase
         ExecuteTestAsync(
             async context =>
             {
-                await context.GoToSetupPageAndSetupOrchardCoreAsync("Lombiq.Walkthroughs");
+                await context.GoToSetupPageAndSetupOrchardCoreAsync("Lombiq.Walkthroughs.Setup");
 
                 await context.TestWalkthroughsBehaviorAsync();
             },
