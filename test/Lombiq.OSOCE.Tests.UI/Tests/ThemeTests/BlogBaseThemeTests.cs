@@ -4,6 +4,7 @@ using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using OpenQA.Selenium;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -69,5 +70,15 @@ public class BlogBehaviorBaseThemeTests(ITestOutputHelper testOutputHelper) : UI
                 // Disable HTML validation, because we have no control over the HTML in the Blog and the content added
                 // by the Blog recipe.
                 configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false;
+
+                // This is needed temporarily until https://github.com/OrchardCMS/OrchardCore/pull/15183 is released.
+                configuration.AssertBrowserLog = logEntries =>
+                {
+                    var messageWithoutJqueryError = logEntries.Where(logEntry =>
+                    !logEntry.Message.ContainsOrdinalIgnoreCase(
+                        "Uncaught ReferenceError: $ is not defined"));
+
+                    OrchardCoreUITestExecutorConfiguration.AssertBrowserLogIsEmpty(messageWithoutJqueryError);
+                };
             });
 }
