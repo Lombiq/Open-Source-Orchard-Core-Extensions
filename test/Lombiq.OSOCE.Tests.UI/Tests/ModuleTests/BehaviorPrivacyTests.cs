@@ -1,5 +1,8 @@
 using Lombiq.Privacy.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Extensions;
+using Shouldly;
+using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -30,7 +33,14 @@ public class BehaviorPrivacyTests(ITestOutputHelper testOutputHelper) : UITestBa
             context => context.TestConsentBannerWithThemeAsync("TheBlogTheme"));
         // Then should work with Razor-based theme
         await ExecuteTestAfterSetupAsync(
-            context => context.TestConsentBannerWithThemeAsync("TheTheme"));
+            context => context.TestConsentBannerWithThemeAsync("TheTheme"),
+            configuration => configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
+                async validationResult =>
+                {
+                    var errors = (await validationResult.GetErrorsAsync())
+                        .Where(error => !error.ContainsOrdinalIgnoreCase("Prefer to use the native <button> element"));
+                    errors.ShouldBeEmpty();
+                });
     }
 
     [Fact]

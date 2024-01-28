@@ -48,6 +48,12 @@ public class BlogBehaviorBaseThemeTests(ITestOutputHelper testOutputHelper) : UI
                 var homePageUri = await SetupHelpers.RunBlogSetupAsync(context);
 
                 await context.SignInDirectlyAsync();
+
+                // This is needed to avoid missing jQuery
+                // Can be removed after this issue is resolved and deployed https://github.com/OrchardCMS/OrchardCore/issues/15181
+                await context.GoToFeaturesPageAsync();
+                await context.EnableFeatureDirectlyAsync("Lombiq.HelpfulExtensions.ResourceManagement");
+
                 await context.GoToAdminRelativeUrlAsync("/Themes");
 
                 await context.ClickReliablyOnAsync(By.CssSelector(

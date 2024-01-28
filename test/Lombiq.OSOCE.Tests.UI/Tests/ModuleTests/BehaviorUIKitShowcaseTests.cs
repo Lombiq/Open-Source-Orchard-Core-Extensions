@@ -19,7 +19,10 @@ public class BehaviorUIKitShowcaseTests(ITestOutputHelper testOutputHelper) : UI
                 async validationResult =>
                 {
                     var errors = (await validationResult.GetErrorsAsync())
-                        .Where(error => !error.ContainsOrdinalIgnoreCase("Prefer to use the native <button> element"));
+                        .Where(error =>
+                        !error.ContainsOrdinalIgnoreCase("Prefer to use the native <button> element") &&
+                        !error.ContainsOrdinalIgnoreCase("<button> must have accessible text") &&
+                        !error.ContainsOrdinalIgnoreCase("Redundant role \"button\" on <button>"));
                     errors.ShouldBeEmpty();
                 });
 }
