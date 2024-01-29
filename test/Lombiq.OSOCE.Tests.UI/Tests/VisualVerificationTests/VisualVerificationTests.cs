@@ -3,7 +3,6 @@ using Lombiq.Tests.UI.Extensions;
 using OpenQA.Selenium;
 using SixLabors.ImageSharp;
 using System;
-using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
