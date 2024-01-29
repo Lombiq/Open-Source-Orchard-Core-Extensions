@@ -28,5 +28,5 @@ public class VisualVerificationTests(ITestOutputHelper testOutputHelper) : UITes
                 _ => By.TagName("body"),
                 pixelErrorPercentageThreshold: 0.005,
                 configurator: configuration => configuration.WithFileNameSuffix(
-                    OperatingSystem.IsOSPlatform(nameof(OSPlatform.Windows)) ? "Windows" : "Unix")));
+                    OperatingSystem.IsWindows() ? "Windows" : "Unix")));
 }
