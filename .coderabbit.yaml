@@ -11,9 +11,12 @@ reviews:
   # Very rarely contains useful info, mostly is just noise.
   high_level_summary: false
   poem: false
+  # Comments useful for debugging but not otherwise.
+  review_status: false
   # The code walkthrough's text may take a lot of space, so collapsing it is nicer UX.
   collapse_walkthrough: true
   auto_review:
     enabled: true
+    drafts: false
 chat:
   auto_reply: true
