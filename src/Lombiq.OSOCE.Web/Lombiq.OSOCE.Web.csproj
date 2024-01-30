@@ -42,12 +42,14 @@
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.Management\Lombiq.Hosting.Tenants.Management.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.MediaStorageManagement\Lombiq.Hosting.Tenants.MediaStorageManagement.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.JsonEditor\Lombiq.JsonEditor\Lombiq.JsonEditor.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.LoginAsAnybody\Lombiq.LoginAsAnybody\Lombiq.LoginAsAnybody.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.OSOCE.Samples\Lombiq.OSOCE.Samples.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Privacy\Lombiq.Privacy\Lombiq.Privacy.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Privacy\Lombiq.Privacy.Samples\Lombiq.Privacy.Samples.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.TrainingDemo\Lombiq.TrainingDemo.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.UIKit\Lombiq.UIKit\Lombiq.UIKit.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.VueJs\Lombiq.VueJs.Samples\Lombiq.VueJs.Samples.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.Walkthroughs\Lombiq.Walkthroughs\Lombiq.Walkthroughs.csproj" />
     <ProjectReference Include="..\Themes\Lombiq.BaseTheme\Lombiq.BaseTheme.Samples\Lombiq.BaseTheme.Samples.csproj" />
     <ProjectReference Include="..\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.csproj" />
     <ProjectReference Include="..\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.Bridge\Lombiq.Hosting.MediaTheme.Bridge.csproj" />

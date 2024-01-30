@@ -13,7 +13,7 @@ on:
 
 jobs:
   remove-run-windows-build-label:
-    if: github.ref_name != github.event.repository.default_branch && 
+    if: github.ref_name != github.event.repository.default_branch &&
         github.event.label.name == 'run-windows-build'
     name: Remove Run Windows Build Label
     runs-on: ubuntu-22.04
@@ -30,18 +30,22 @@ jobs:
         type: remove
 
   build-and-test-larger-runners:
-    if: github.ref_name != github.event.repository.default_branch && 
+    if: github.ref_name != github.event.repository.default_branch &&
         (github.event_name == 'workflow_dispatch' || github.event.label.name == 'run-windows-build')
     name: Build and Test Windows - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
+      parent-job-name: "root-solution-larger-runners"
       machine-types: "['gitrunners-windows-2022-x64-8vcpu']"
       timeout-minutes: 30
       set-up-sql-server: "true"
       set-up-azurite: "true"
       ui-test-parallelism: 0
       build-create-binary-log: "true"
-      blame-hang-timeout: "5m"
+      dotnet-test-process-timeout: 360000
+      # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
+      # supported by GHA.
+      test-filter: "FullyQualifiedName!~SecurityScanningTests"
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
@@ -49,27 +53,35 @@ jobs:
     name: Build and Test Windows - root solution (standard runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
+      parent-job-name: "root-solution-standard-runners"
       machine-types: "['windows-2022']"
       timeout-minutes: 60
       set-up-sql-server: "true"
       set-up-azurite: "true"
       build-create-binary-log: "true"
-      blame-hang-timeout: "5m"
+      dotnet-test-process-timeout: 720000
+      # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
+      # supported by GHA.
+      test-filter: "FullyQualifiedName!~SecurityScanningTests"
 
   build-and-test-nuget-test:
-    if: github.ref_name == github.event.repository.default_branch || 
+    if: github.ref_name == github.event.repository.default_branch ||
         github.event_name == 'workflow_dispatch' ||
         github.event.label.name == 'run-windows-build'
     name: Build and Test Windows - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
+      parent-job-name: "nuget-solution"
       machine-types: "['windows-2022']"
       build-directory: NuGetTest
       timeout-minutes: 25
-      blame-hang-timeout: "5m"
+      dotnet-test-process-timeout: 360000
+      # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
+      # supported by GHA.
+      test-filter: "FullyQualifiedName!~SecurityScanningTests"
 
   powershell-static-code-analysis:
-    if: github.ref_name == github.event.repository.default_branch || 
+    if: github.ref_name == github.event.repository.default_branch ||
         github.event_name == 'workflow_dispatch' ||
         github.event.label.name == 'run-windows-build'
     name: PowerShell Static Code Analysis Windows

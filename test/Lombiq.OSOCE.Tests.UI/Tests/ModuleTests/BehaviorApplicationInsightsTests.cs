@@ -1,6 +1,4 @@
 using Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI.TestCases;
-using Lombiq.Tests.UI.Attributes;
-using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -14,7 +12,7 @@ public class BehaviorApplicationInsightsTests : UITestBase
     {
     }
 
-    [Theory, Chrome]
-    public Task ApplicationInsightsTrackingInOfflineOperationShouldWork(Browser browser) =>
-        ApplicationInsightsTestCases.ApplicationInsightsTrackingInOfflineOperationShouldWorkAsync(ExecuteTestAfterSetupAsync, browser);
+    [Fact]
+    public Task ApplicationInsightsTrackingInOfflineOperationShouldWork() =>
+        ApplicationInsightsTestCases.ApplicationInsightsTrackingInOfflineOperationShouldWorkAsync(ExecuteTestAfterSetupAsync);
 }
