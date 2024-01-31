@@ -1,4 +1,3 @@
-using Lombiq.Tests.UI.Extensions;
 using Lombiq.Walkthroughs.Tests.UI.Extensions;
 using System;
 using System.IO;
@@ -18,12 +17,7 @@ public class BehaviorWalkthroughsTests : UITestBase
     [Fact]
     public Task WalkthroughsShouldWorkCorrectly() =>
         ExecuteTestAsync(
-            async context =>
-            {
-                await context.GoToSetupPageAndSetupOrchardCoreAsync("Lombiq.Walkthroughs");
-
-                await context.TestWalkthroughsBehaviorAsync();
-            },
+            context => context.RunSetupAndTestWalkthroughsBehaviorAsync(),
             // Could be removed if https://github.com/shepherd-pro/shepherd/issues/2555 is fixed.
             changeConfiguration: configuration => configuration.HtmlValidationConfiguration.HtmlValidationOptions =
                 configuration.HtmlValidationConfiguration.HtmlValidationOptions
