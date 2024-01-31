@@ -5,8 +5,13 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.UITestingToolboxTests;
 
-public class SecurityShortcutsTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
+public class SecurityShortcutsTests : UITestBase
 {
+    public SecurityShortcutsTests(ITestOutputHelper testOutputHelper)
+        : base(testOutputHelper)
+    {
+    }
+
     [Fact]
     public Task AddUserToRoleShouldWork() =>
         SecurityShortcutsTestCases.AddUserToRoleShouldWorkAsync(ExecuteTestAfterSetupAsync);

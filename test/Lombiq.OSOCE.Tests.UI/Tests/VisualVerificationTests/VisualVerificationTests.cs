@@ -9,12 +9,17 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.VisualVerificationTests;
 
-public class VisualVerificationTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
+public class VisualVerificationTests : UITestBase
 {
     private static readonly Size[] _visualVerificationSizes =
     [
         CommonDisplayResolutions.Standard,
     ];
+
+    public VisualVerificationTests(ITestOutputHelper testOutputHelper)
+        : base(testOutputHelper)
+    {
+    }
 
     [Fact]
     public Task VerifyHomePageAndLayout() =>
