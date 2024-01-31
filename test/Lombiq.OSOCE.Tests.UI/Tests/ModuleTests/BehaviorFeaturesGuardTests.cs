@@ -7,8 +7,13 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
-public class BehaviorFeaturesGuardTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
+public class BehaviorFeaturesGuardTests : UITestBase
 {
+    public BehaviorFeaturesGuardTests(ITestOutputHelper testOutputHelper)
+        : base(testOutputHelper)
+    {
+    }
+
     // HTML validation is disabled as OC's login and dashboard pages contain several errors. See:
     // https://github.com/OrchardCMS/OrchardCore/issues/12271
     [Fact]

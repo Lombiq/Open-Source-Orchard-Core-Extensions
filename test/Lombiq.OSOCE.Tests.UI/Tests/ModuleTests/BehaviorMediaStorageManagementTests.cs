@@ -5,8 +5,13 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
-public class BehaviorMediaStorageManagementTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
+public class BehaviorMediaStorageManagementTests : UITestBase
 {
+    public BehaviorMediaStorageManagementTests(ITestOutputHelper testOutputHelper)
+        : base(testOutputHelper)
+    {
+    }
+
     [Fact]
     public Task MediaQuotaShouldWork() =>
         ExecuteTestAfterSetupAsync(

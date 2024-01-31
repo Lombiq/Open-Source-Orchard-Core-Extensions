@@ -6,8 +6,13 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ThemeTests;
 
-public class BehaviorBaseThemeTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
+public class BehaviorBaseThemeTests : UITestBase
 {
+    public BehaviorBaseThemeTests(ITestOutputHelper testOutputHelper)
+        : base(testOutputHelper)
+    {
+    }
+
     [Fact]
     public Task ThemeFeaturesShouldWork() =>
         ExecuteTestAfterSetupAsync(

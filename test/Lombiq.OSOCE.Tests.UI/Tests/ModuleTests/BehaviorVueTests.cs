@@ -12,8 +12,13 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
-public class BehaviorVueTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
+public class BehaviorVueTests : UITestBase
 {
+    public BehaviorVueTests(ITestOutputHelper testOutputHelper)
+        : base(testOutputHelper)
+    {
+    }
+
     [Fact]
     public Task RecipeDataShouldBeDisplayedCorrectly() =>
         ExecuteTestAfterSetupAsync(

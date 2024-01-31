@@ -5,8 +5,13 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ThemeTests;
 
-public class BehaviorMediaThemeTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
+public class BehaviorMediaThemeTests : UITestBase
 {
+    public BehaviorMediaThemeTests(ITestOutputHelper testOutputHelper)
+        : base(testOutputHelper)
+    {
+    }
+
     [Fact]
     public Task MediaThemeShouldRenderTemplatesFromMediaLibrary() =>
         ExecuteTestAfterSetupAsync(context => context.TestMediaThemeTemplateRenderingBehaviorAsync());
