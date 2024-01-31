@@ -5,8 +5,13 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
-public class BehaviorEmailQuotaTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
+public class BehaviorEmailQuotaTests : UITestBase
 {
+    public BehaviorEmailQuotaTests(ITestOutputHelper testOutputHelper)
+        : base(testOutputHelper)
+    {
+    }
+
     [Fact]
     public Task EmailQuotaShouldBlockEmailsOverLimitAndWarn() =>
         ExecuteTestAfterSetupAsync(

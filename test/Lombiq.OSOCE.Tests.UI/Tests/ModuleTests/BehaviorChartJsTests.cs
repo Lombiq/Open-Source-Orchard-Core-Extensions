@@ -5,8 +5,13 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
-public class BehaviorChartJsTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
+public class BehaviorChartJsTests : UITestBase
 {
+    public BehaviorChartJsTests(ITestOutputHelper testOutputHelper)
+        : base(testOutputHelper)
+    {
+    }
+
     [Fact]
     public Task RecipeDataShouldBeDisplayedCorrectly() =>
         ExecuteTestAfterSetupAsync(context => context.TestChartJsSampleBehaviorAsync());
