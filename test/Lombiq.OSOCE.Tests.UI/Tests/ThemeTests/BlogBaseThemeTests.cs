@@ -78,12 +78,6 @@ public class BlogBehaviorBaseThemeTests : UITestBase
 
                 // This is to not fail on a browser error caused by jQuery missing. Can be removed after this issue is
                 // resolved and released: https://github.com/OrchardCMS/OrchardCore/issues/15181.
-                var messageWithoutJqueryError = logEntries.Where(logEntry =>
-                    !logEntry.Message.ContainsOrdinalIgnoreCase(
-                        "Uncaught ReferenceError: $ is not defined"));
-
-                // This is to not fail on a browser error caused by jQuery missing. Can be removed after this issue is
-                // resolved and released: https://github.com/OrchardCMS/OrchardCore/issues/15181.
                 configuration.AssertBrowserLog = logEntries =>
                 {
                     var messageWithoutJqueryError = logEntries.Where(logEntry =>
