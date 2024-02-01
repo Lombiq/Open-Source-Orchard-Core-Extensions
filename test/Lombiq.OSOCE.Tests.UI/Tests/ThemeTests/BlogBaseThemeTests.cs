@@ -54,8 +54,6 @@ public class BlogBehaviorBaseThemeTests : UITestBase
                 var homePageUri = await SetupHelpers.RunBlogSetupAsync(context);
 
                 await context.SignInDirectlyAsync();
-                await context.GoToFeaturesPageAsync();
-                await context.EnableFeatureDirectlyAsync("Lombiq.HelpfulExtensions.ResourceManagement");
 
                 await context.GoToAdminRelativeUrlAsync("/Themes");
 
