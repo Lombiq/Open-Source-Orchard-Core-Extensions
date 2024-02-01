@@ -76,12 +76,13 @@ public class BlogBehaviorBaseThemeTests : UITestBase
                 // by the Blog recipe.
                 configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false;
 
-                // This is needed temporarily until https://github.com/OrchardCMS/OrchardCore/pull/15183 is released.
+                // This is to not fail on a browser error caused by jQuery missing. Can be removed after this issue is
+                // resolved and released: https://github.com/OrchardCMS/OrchardCore/issues/15181.
                 configuration.AssertBrowserLog = logEntries =>
                 {
                     var messageWithoutJqueryError = logEntries.Where(logEntry =>
-                    !logEntry.Message.ContainsOrdinalIgnoreCase(
-                        "Uncaught ReferenceError: $ is not defined"));
+                        !logEntry.Message.ContainsOrdinalIgnoreCase(
+                            "Uncaught ReferenceError: $ is not defined"));
 
                     OrchardCoreUITestExecutorConfiguration.AssertBrowserLogIsEmpty(messageWithoutJqueryError);
                 };

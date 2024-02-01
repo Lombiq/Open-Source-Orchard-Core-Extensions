@@ -22,11 +22,11 @@ public class BehaviorJsonEditorTests : UITestBase
             context.TestJsonEditorBehaviorAsync(),
             configuration => configuration.AssertBrowserLog = logEntries =>
             {
-                // This is needed to avoid missing jQuery
-                // Can be removed after this issue is resolved and deployed https://github.com/OrchardCMS/OrchardCore/issues/15181
+                // This is to not fail on a browser error caused by jQuery missing. Can be removed after this issue is
+                // resolved and released: https://github.com/OrchardCMS/OrchardCore/issues/15181.
                 var messageWithoutJqueryError = logEntries.Where(logEntry =>
-                !logEntry.Message.ContainsOrdinalIgnoreCase(
-                    "Uncaught ReferenceError: $ is not defined"));
+                    !logEntry.Message.ContainsOrdinalIgnoreCase(
+                        "Uncaught ReferenceError: $ is not defined"));
 
                 OrchardCoreUITestExecutorConfiguration.AssertBrowserLogIsEmpty(messageWithoutJqueryError);
             });
