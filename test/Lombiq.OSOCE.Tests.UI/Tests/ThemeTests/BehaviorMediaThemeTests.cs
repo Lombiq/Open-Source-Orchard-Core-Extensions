@@ -13,6 +13,10 @@ public class BehaviorMediaThemeTests : UITestBase
     }
 
     [Fact]
-    public Task MediaThemeShouldRenderTemplatesFromMediaLibrary() =>
-        ExecuteTestAfterSetupAsync(context => context.TestMediaThemeTemplateRenderingBehaviorAsync());
+    public Task MediaThemeShouldWorkWhenDeployed() =>
+        ExecuteTestAfterSetupAsync(context => context.TestMediaThemeDeployedBehaviorAsync());
+
+    [Fact]
+    public Task MediaThemeShouldWorkLocally() =>
+        ExecuteTestAfterSetupAsync(context => context.TestMediaThemeLocalBehaviorAsync());
 }
