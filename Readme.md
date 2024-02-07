@@ -60,6 +60,7 @@ Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source
   - [`Lombiq.BaseTheme`](https://github.com/Lombiq/Orchard-Base-Theme): This theme contains infrastructure for custom Bootstrap 5 themes with standardized zones and built-in front end menu display.
   - [`Lombiq.BaseTheme.Samples`](https://github.com/Lombiq/Orchard-Base-Theme/tree/dev/Lombiq.BaseTheme.Samples): A sample theme that demonstrates the features of the [`Lombiq.BaseTheme`](https://github.com/Lombiq/Orchard-Base-Theme).
   - [`Lombiq.Hosting.MediaTheme`](https://github.com/Lombiq/Hosting-Media-Theme): With the help of this theme and its dependency, the [`Lombiq.Hosting.MediaTheme.Bridge`](https://github.com/Lombiq/Hosting-Media-Theme), you'll be able to host your theme assets and templates from Media Library.
+  - [`Lombiq.Hosting.MediaTheme.Tests.Theme`](https://github.com/Lombiq/Hosting-Media-Theme): A theme only used for testing that demonstrates the local development version of a Media Theme.
 
 - Utilities
   - [`Lombiq.NodeJs.Extensions`](https://github.com/Lombiq/NodeJs-Extensions): Configurable and MSBuild-integrated frontend asset pipelines for SCSS, JS, MD, and external libraries implemented using npm scripts. Uses NPM Targets under the hood.
