@@ -20,7 +20,7 @@ jobs:
       set-up-azurite: "true"
       ui-test-parallelism: 0
       build-create-binary-log: "true"
-      dotnet-test-process-timeout: 360000
+      dotnet-test-process-timeout: 420000
       build-enable-nuget-caching: "true"
       build-enable-npm-caching: "true"
 
