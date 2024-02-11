@@ -42,9 +42,9 @@
     <PackageReference Include="Lombiq.OrchardCoreApiClient.Tests.UI" Version="4.0.1-alpha.0.osoe-638" />
     <PackageReference Include="Lombiq.Privacy.Tests.UI" Version="7.0.2-alpha.2.osoe-638" />
     <PackageReference Include="Lombiq.HelpfulExtensions.Tests.UI" Version="7.0.2-alpha.2.osoe-683" />
-    <PackageReference Include="Lombiq.Tests.UI" Version="8.2.1-alpha.14.osoe-767" />
+    <PackageReference Include="Lombiq.Tests.UI" Version="8.2.1-alpha.16.osoe-771" />
     <PackageReference Include="Lombiq.VueJs.Tests.UI" Version="3.0.1-alpha.0.osoe-638" />
-    <PackageReference Include="Lombiq.Walkthroughs.Tests.UI" Version="1.0.0-alpha.2.nest-522" />
+    <PackageReference Include="Lombiq.Walkthroughs.Tests.UI" Version="1.0.0-alpha.3.osoe-771" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.1">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
