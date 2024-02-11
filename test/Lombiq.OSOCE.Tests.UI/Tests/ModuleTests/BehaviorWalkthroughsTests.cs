@@ -39,8 +39,8 @@ public class BehaviorWalkthroughsTests : UITestBase
     private static bool IsValidLogEntry(LogEntry logEntry) =>
         OrchardCoreUITestExecutorConfiguration.IsValidBrowserLogEntry(logEntry) &&
         // See https://github.com/OrchardCMS/OrchardCore/issues/15301.
-        !logEntry.Message.ContainsOrdinalIgnoreCase(
-            "/OrchardCore.Resources/Scripts/jquery.js?v=NZgNvzR7iJazTVAtnyirXhsLcMZkO1V7t4f3DXx0vqE 3128:6 Uncaught") &&
+        !(logEntry.Message.ContainsOrdinalIgnoreCase("/OrchardCore.Resources/Scripts/jquery.js?v=") &&
+            logEntry.Message.ContainsOrdinalIgnoreCase("3128:6 Uncaught")) &&
         // See https://github.com/OrchardCMS/OrchardCore/issues/14598. This error has multiple variations, so targeting
         // the lower common denominator with the file name.
         !logEntry.Message.ContainsOrdinalIgnoreCase("/monaco/IStandaloneEditorConstructionOptions.json");
