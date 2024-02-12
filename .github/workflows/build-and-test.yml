@@ -8,71 +8,98 @@ on:
       - dev
 
 jobs:
-  build-and-test-larger-runners1:
+  build-and-test-larger-runners:
     if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      parent-job-name: "root-solution-larger-runners1"
+      parent-job-name: "root-solution-larger-runners"
       machine-types: "['buildjet-4vcpu-ubuntu-2204']"
-      timeout-minutes: 25
+      timeout-minutes: 30
       set-up-sql-server: "true"
       set-up-azurite: "true"
       ui-test-parallelism: 0
       build-create-binary-log: "true"
-      dotnet-test-process-timeout: 480000
+      dotnet-test-process-timeout: 540000
       build-enable-nuget-caching: "true"
       build-enable-npm-caching: "true"
-      cancel-in-progress-for-this-pr: "false"
 
-  build-and-test-larger-runners2:
-    if: github.ref_name != github.event.repository.default_branch
-    name: Build and Test - root solution (larger runners)
+  build-and-test-standard-runners:
+    # Since dev builds are not awaited by anyone, they can run on the slower free runners.
+    if: github.ref_name == github.event.repository.default_branch
+    name: Build and Test - root solution (standard runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      parent-job-name: "root-solution-larger-runners2"
-      machine-types: "['buildjet-4vcpu-ubuntu-2204']"
-      timeout-minutes: 25
+      parent-job-name: "root-solution-standard-runners"
+      timeout-minutes: 50
       set-up-sql-server: "true"
       set-up-azurite: "true"
-      ui-test-parallelism: 0
       build-create-binary-log: "true"
-      dotnet-test-process-timeout: 480000
-      build-enable-nuget-caching: "true"
-      build-enable-npm-caching: "true"
-      cancel-in-progress-for-this-pr: "false"
+      dotnet-test-process-timeout: 720000
 
-  build-and-test-larger-runners3:
-    if: github.ref_name != github.event.repository.default_branch
-    name: Build and Test - root solution (larger runners)
+  build-and-test-nuget-test:
+    name: Build and Test - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      parent-job-name: "root-solution-larger-runners3"
-      machine-types: "['buildjet-4vcpu-ubuntu-2204']"
-      timeout-minutes: 25
-      set-up-sql-server: "true"
-      set-up-azurite: "true"
-      ui-test-parallelism: 0
-      build-create-binary-log: "true"
-      dotnet-test-process-timeout: 480000
-      build-enable-nuget-caching: "true"
-      build-enable-npm-caching: "true"
-      cancel-in-progress-for-this-pr: "false"
+      parent-job-name: nuget-solution
+      build-directory: NuGetTest
+      timeout-minutes: 20
+      dotnet-test-process-timeout: 420000
 
-  build-and-test-larger-runners4:
-    if: github.ref_name != github.event.repository.default_branch
-    name: Build and Test - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+  spelling:
+    name: Spelling
+    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
     with:
-      parent-job-name: "root-solution-larger-runners4"
-      machine-types: "['buildjet-4vcpu-ubuntu-2204']"
-      timeout-minutes: 25
-      set-up-sql-server: "true"
-      set-up-azurite: "true"
-      ui-test-parallelism: 0
-      build-create-binary-log: "true"
-      dotnet-test-process-timeout: 480000
-      build-enable-nuget-caching: "true"
-      build-enable-npm-caching: "true"
-      cancel-in-progress-for-this-pr: "false"
+      additional-dictionaries: |
+        cspell:csharp/csharp.txt
+        cspell:css/dict/css.txt
+        cspell:fullstack/dict/fullstack.txt
+        cspell:html-symbol-entities/entities.txt
+        cspell:html/dict/html.txt
+        cspell:html/src/svg.txt
+        cspell:node/dict/node.txt
+        cspell:npm/dict/npm.txt
+        lombiq-lgha:dictionaries/Liquid.txt
+        lombiq-lgha:dictionaries/Xml.txt
+        lombiq-lgha:dictionaries/Lombiq.people.txt
+        lombiq-lgha:dictionaries/Security.txt
 
+  powershell-static-code-analysis:
+    name: PowerShell Static Code Analysis
+    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
+    with:
+      machine-types: '["ubuntu-22.04"]'
+
+  yaml-linting:
+    name: YAML Linting
+    uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@issue/OSOE-188
+    with:
+      config-file-path: tools/Lombiq.GitHub.Actions/.trunk/configs/.yamllint.yaml
+      search-path: .
+
+  post-pull-request-checks-automation:
+    name: Post Pull Request Checks Automation
+    needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling, powershell-static-code-analysis]
+    if: github.event.pull_request != ''
+    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
+    secrets:
+      JIRA_BASE_URL: ${{ secrets.DEFAULT_JIRA_BASE_URL }}
+      JIRA_USER_EMAIL: ${{ secrets.DEFAULT_JIRA_USER_EMAIL }}
+      JIRA_API_TOKEN: ${{ secrets.DEFAULT_JIRA_API_TOKEN }}
+      MERGE_TOKEN: ${{ secrets.LOMBIQBOT_GITHUB_PERSONAL_ACCESS_TOKEN }}
+
+  add-windows-build-warning-label:
+    name: Add Windows Build Warning Label
+    runs-on: ubuntu-22.04
+    timeout-minutes: 2
+    needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
+    steps:
+    - name: Add Windows Build Warning Label
+      # v2.0.0
+      uses: buildsville/add-remove-label@eeae411a9be2e173f2420e1644514edbecc4e835
+      with:
+        # The token is necessary to be able to add the label even if the workflow is triggered by a pull request coming
+        # from a fork.
+        token: ${{ secrets.LOMBIQBOT_GITHUB_PERSONAL_ACCESS_TOKEN }}
+        labels: requires-windows-build
+        type: add

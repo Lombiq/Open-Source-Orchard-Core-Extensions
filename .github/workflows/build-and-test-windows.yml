@@ -36,8 +36,9 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: "root-solution-larger-runners"
-      # Should be windows-2022-8core but temporarily isn't due to this bug: https://github.com/Lombiq/GitHub-Actions/issues/320.
-      # Once this is reverted, timeout-minutes below should also be reverted to 30 and dotnet-test-process-timeout  to 360000.
+      # Should be windows-2022-8core but temporarily isn't due to this bug:
+      # https://github.com/Lombiq/GitHub-Actions/issues/320. Once this is reverted, timeout-minutes below should also be
+      # reverted to 30 and dotnet-test-process-timeout to 360000.
       machine-types: "['windows-2022']"
       timeout-minutes: 60
       set-up-sql-server: "true"
