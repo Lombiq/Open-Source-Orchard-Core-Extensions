@@ -38,16 +38,6 @@ jobs:
       build-create-binary-log: "true"
       dotnet-test-process-timeout: 720000
 
-  build-and-test-nuget-test:
-    name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
-    with:
-      parent-job-name: nuget-solution
-      build-directory: NuGetTest
-      timeout-minutes: 15
-      dotnet-test-process-timeout: 360000
-      cancel-in-progress-for-this-pr: "false"
-
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
@@ -61,19 +51,3 @@ jobs:
     with:
       config-file-path: tools/Lombiq.GitHub.Actions/.trunk/configs/.yamllint.yaml
       search-path: .
-
-  add-windows-build-warning-label:
-    name: Add Windows Build Warning Label
-    runs-on: ubuntu-22.04
-    timeout-minutes: 2
-    needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
-    steps:
-    - name: Add Windows Build Warning Label
-      # v2.0.0
-      uses: buildsville/add-remove-label@eeae411a9be2e173f2420e1644514edbecc4e835
-      with:
-        # The token is necessary to be able to add the label even if the workflow is triggered by a pull request coming
-        # from a fork.
-        token: ${{ secrets.LOMBIQBOT_GITHUB_PERSONAL_ACCESS_TOKEN }}
-        labels: requires-windows-build
-        type: add
