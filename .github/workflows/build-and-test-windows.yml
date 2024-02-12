@@ -33,7 +33,7 @@ jobs:
     if: github.ref_name != github.event.repository.default_branch &&
         (github.event_name == 'workflow_dispatch' || github.event.label.name == 'run-windows-build')
     name: Build and Test Windows - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-807
     with:
       parent-job-name: "root-solution-larger-runners"
       # Should be windows-2022-8core but temporarily isn't due to this bug: https://github.com/Lombiq/GitHub-Actions/issues/320.
