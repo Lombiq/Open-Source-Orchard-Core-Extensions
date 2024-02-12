@@ -12,9 +12,9 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
-public class ABehaviorWalkthroughsTests : UITestBase
+public class ABehaviorWalkthroughsTests : UITestBase // #spell-check-ignore-line
 {
-    public ABehaviorWalkthroughsTests(ITestOutputHelper testOutputHelper)
+    public ABehaviorWalkthroughsTests(ITestOutputHelper testOutputHelper) // #spell-check-ignore-line
         : base(testOutputHelper)
     {
     }
