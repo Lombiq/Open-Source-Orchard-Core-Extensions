@@ -51,6 +51,7 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
     with:
       additional-dictionaries: |
+        cspell:companies/src/companies.txt
         cspell:csharp/csharp.txt
         cspell:css/dict/css.txt
         cspell:fullstack/dict/fullstack.txt
