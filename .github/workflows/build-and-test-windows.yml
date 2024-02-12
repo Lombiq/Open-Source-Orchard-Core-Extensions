@@ -65,9 +65,6 @@ jobs:
       test-filter: "FullyQualifiedName!~SecurityScanningTests"
 
   build-and-test-nuget-test:
-    if: github.ref_name == github.event.repository.default_branch ||
-        github.event_name == 'workflow_dispatch' ||
-        github.event.label.name == 'run-windows-build'
     name: Build and Test Windows - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
