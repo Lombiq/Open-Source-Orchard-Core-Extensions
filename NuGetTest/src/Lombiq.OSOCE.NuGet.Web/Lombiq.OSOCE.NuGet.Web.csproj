@@ -53,7 +53,7 @@
     <PackageReference Include="Lombiq.UIKit" Version="6.0.1-alpha.0.osoe-638" />
     <PackageReference Include="Lombiq.VueJs" Version="3.0.1-alpha.0.osoe-638" />
     <PackageReference Include="Lombiq.VueJs.Samples" Version="3.0.1-alpha.0.osoe-638" />
-    <PackageReference Include="Lombiq.Walkthroughs" Version="1.0.0-alpha.3.osoe-771" />
+    <PackageReference Include="Lombiq.Walkthroughs" Version="1.0.0-alpha.4.osoe-771" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="1.2.2" Condition="'$(RazorRuntimeCompilation)' == 'true'" />
     <PackageReference Include="SixLabors.ImageSharp.Web" Version="3.0.1" />
   </ItemGroup>
