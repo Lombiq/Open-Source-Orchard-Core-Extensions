@@ -11,11 +11,10 @@ on:
 jobs:
   create-jira-issues-for-community-activities:
     name: Create Jira issues for community activities
-    uses: Lombiq/GitHub-Actions/.github/workflows/create-jira-issues-for-community-activities.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/create-jira-issues-for-community-activities.yml@issue/OSOE-726
     secrets:
-      JIRA_BASE_URL: ${{ secrets.DEFAULT_JIRA_BASE_URL }}
-      JIRA_USER_EMAIL: ${{ secrets.DEFAULT_JIRA_USER_EMAIL }}
-      JIRA_API_TOKEN: ${{ secrets.DEFAULT_JIRA_API_TOKEN }}
+      JIRA_ENDPOINT_URL: ${{ secrets.DEFAULT_JIRA_ENDPOINT_URL }}
+      JIRA_API_KEY: ${{ secrets.DEFAULT_JIRA_API_KEY }}
       JIRA_PROJECT_KEY: ${{ secrets.DEFAULT_JIRA_PROJECT_KEY }}
       DISCUSSION_JIRA_ISSUE_DESCRIPTION: ${{ secrets.DEFAULT_DISCUSSION_JIRA_ISSUE_DESCRIPTION }}
       ISSUE_JIRA_ISSUE_DESCRIPTION: ${{ secrets.DEFAULT_ISSUE_JIRA_ISSUE_DESCRIPTION }}
