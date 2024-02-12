@@ -13,7 +13,7 @@ jobs:
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      parent-job-name: "root-solution-larger-runners"
+      parent-job-name: "root-solution-larger-runners1"
       machine-types: "['buildjet-4vcpu-ubuntu-2204']"
       timeout-minutes: 25
       set-up-sql-server: "true"
@@ -30,7 +30,7 @@ jobs:
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      parent-job-name: "root-solution-larger-runners"
+      parent-job-name: "root-solution-larger-runners2"
       machine-types: "['buildjet-4vcpu-ubuntu-2204']"
       timeout-minutes: 25
       set-up-sql-server: "true"
@@ -47,7 +47,7 @@ jobs:
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      parent-job-name: "root-solution-larger-runners"
+      parent-job-name: "root-solution-larger-runners3"
       machine-types: "['buildjet-4vcpu-ubuntu-2204']"
       timeout-minutes: 25
       set-up-sql-server: "true"
@@ -64,7 +64,7 @@ jobs:
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      parent-job-name: "root-solution-larger-runners"
+      parent-job-name: "root-solution-larger-runners4"
       machine-types: "['buildjet-4vcpu-ubuntu-2204']"
       timeout-minutes: 25
       set-up-sql-server: "true"
