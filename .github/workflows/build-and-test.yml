@@ -48,25 +48,6 @@ jobs:
       dotnet-test-process-timeout: 360000
       cancel-in-progress-for-this-pr: "false"
 
-  spelling:
-    name: Spelling
-    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
-    with:
-      additional-dictionaries: |
-        cspell:csharp/csharp.txt
-        cspell:css/dict/css.txt
-        cspell:fullstack/dict/fullstack.txt
-        cspell:html-symbol-entities/entities.txt
-        cspell:html/dict/html.txt
-        cspell:html/src/svg.txt
-        cspell:node/dict/node.txt
-        cspell:npm/dict/npm.txt
-        lombiq-lgha:dictionaries/Liquid.txt
-        lombiq-lgha:dictionaries/Xml.txt
-        lombiq-lgha:dictionaries/Lombiq.people.txt
-        lombiq-lgha:dictionaries/Security.txt
-      cancel-in-progress-for-this-pr: "false"
-
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
@@ -80,17 +61,6 @@ jobs:
     with:
       config-file-path: tools/Lombiq.GitHub.Actions/.trunk/configs/.yamllint.yaml
       search-path: .
-
-  post-pull-request-checks-automation:
-    name: Post Pull Request Checks Automation
-    needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling, powershell-static-code-analysis]
-    if: github.event.pull_request != ''
-    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
-    secrets:
-      JIRA_BASE_URL: ${{ secrets.DEFAULT_JIRA_BASE_URL }}
-      JIRA_USER_EMAIL: ${{ secrets.DEFAULT_JIRA_USER_EMAIL }}
-      JIRA_API_TOKEN: ${{ secrets.DEFAULT_JIRA_API_TOKEN }}
-      MERGE_TOKEN: ${{ secrets.LOMBIQBOT_GITHUB_PERSONAL_ACCESS_TOKEN }}
 
   add-windows-build-warning-label:
     name: Add Windows Build Warning Label
