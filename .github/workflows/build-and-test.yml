@@ -11,7 +11,7 @@ jobs:
   build-and-test-larger-runners:
     if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-807
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: "root-solution-larger-runners"
       machine-types: "['buildjet-4vcpu-ubuntu-2204']"
@@ -39,7 +39,7 @@ jobs:
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-807
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: nuget-solution
       build-directory: NuGetTest
