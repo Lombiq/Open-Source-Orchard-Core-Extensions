@@ -12,9 +12,9 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
-public class ABehaviorWalkthroughsTests : UITestBase
+public class BehaviorWalkthroughsTests : UITestBase
 {
-    public ABehaviorWalkthroughsTests(ITestOutputHelper testOutputHelper)
+    public BehaviorWalkthroughsTests(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)
     {
     }
