@@ -4,7 +4,9 @@ name: Build and Test Windows
 # Windows builds are much slower and more expensive than Ubuntu ones, and them catching issues that aren't surfaced
 # under Ubuntu is rare (but does happen). So, not running them for every push of every PR.
 on:
+  workflow_dispatch:
   pull_request:
+    types: [labeled]
   push:
     branches:
       - dev
@@ -28,6 +30,8 @@ jobs:
         type: remove
 
   build-and-test-larger-runners:
+    if: github.ref_name != github.event.repository.default_branch &&
+        (github.event_name == 'workflow_dispatch' || github.event.label.name == 'run-windows-build')
     name: Build and Test Windows - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
@@ -45,7 +49,6 @@ jobs:
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
       test-filter: "FullyQualifiedName!~SecurityScanningTests"
-      cancel-in-progress-for-this-pr: "false"
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
@@ -65,18 +68,20 @@ jobs:
       test-filter: "FullyQualifiedName!~SecurityScanningTests"
 
   build-and-test-nuget-test:
+    if: github.ref_name == github.event.repository.default_branch ||
+        github.event_name == 'workflow_dispatch' ||
+        github.event.label.name == 'run-windows-build'
     name: Build and Test Windows - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: "nuget-solution"
       machine-types: "['windows-2022']"
       build-directory: NuGetTest
-      timeout-minutes: 30
-      dotnet-test-process-timeout: 420000
+      timeout-minutes: 25
+      dotnet-test-process-timeout: 360000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
       test-filter: "FullyQualifiedName!~SecurityScanningTests"
-      cancel-in-progress-for-this-pr: "false"
 
   powershell-static-code-analysis:
     if: github.ref_name == github.event.repository.default_branch ||

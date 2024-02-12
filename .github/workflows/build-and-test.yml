@@ -23,7 +23,6 @@ jobs:
       dotnet-test-process-timeout: 540000
       build-enable-nuget-caching: "true"
       build-enable-npm-caching: "true"
-      cancel-in-progress-for-this-pr: "false"
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
@@ -46,7 +45,6 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 20
       dotnet-test-process-timeout: 420000
-      cancel-in-progress-for-this-pr: "false"
 
   spelling:
     name: Spelling
@@ -65,7 +63,6 @@ jobs:
         lombiq-lgha:dictionaries/Xml.txt
         lombiq-lgha:dictionaries/Lombiq.people.txt
         lombiq-lgha:dictionaries/Security.txt
-      cancel-in-progress-for-this-pr: "false"
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
