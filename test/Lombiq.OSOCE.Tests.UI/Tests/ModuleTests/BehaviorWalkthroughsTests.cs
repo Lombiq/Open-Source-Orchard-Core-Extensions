@@ -26,6 +26,7 @@ public class BehaviorWalkthroughsTests : UITestBase
             // Could be removed if https://github.com/shepherd-pro/shepherd/issues/2555 is fixed.
             changeConfiguration: configuration =>
             {
+                // Could be removed if https://github.com/shepherd-pro/shepherd/issues/2555 is fixed.
                 configuration.HtmlValidationConfiguration.HtmlValidationOptions =
                     configuration.HtmlValidationConfiguration.HtmlValidationOptions
                         .CloneWith(validationOptions => validationOptions.ConfigPath =
