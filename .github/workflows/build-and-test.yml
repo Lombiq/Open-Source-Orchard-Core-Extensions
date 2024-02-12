@@ -23,6 +23,7 @@ jobs:
       dotnet-test-process-timeout: 480000
       build-enable-nuget-caching: "true"
       build-enable-npm-caching: "true"
+      cancel-in-progress-for-this-pr: "false"
 
   build-and-test-standard-runners:
     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
@@ -45,6 +46,7 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 15
       dotnet-test-process-timeout: 360000
+      cancel-in-progress-for-this-pr: "false"
 
   spelling:
     name: Spelling
@@ -63,12 +65,14 @@ jobs:
         lombiq-lgha:dictionaries/Xml.txt
         lombiq-lgha:dictionaries/Lombiq.people.txt
         lombiq-lgha:dictionaries/Security.txt
+      cancel-in-progress-for-this-pr: "false"
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
       machine-types: '["ubuntu-22.04"]'
+      cancel-in-progress-for-this-pr: "false"
 
   yaml-linting:
     name: YAML Linting
