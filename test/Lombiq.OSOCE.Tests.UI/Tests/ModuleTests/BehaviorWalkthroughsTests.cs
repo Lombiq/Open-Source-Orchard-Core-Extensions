@@ -12,15 +12,15 @@ using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
-public class ABehaviorWalkthroughsTests : UITestBase
+public class BehaviorWalkthroughsTests : UITestBase
 {
-    public ABehaviorWalkthroughsTests(ITestOutputHelper testOutputHelper)
+    public BehaviorWalkthroughsTests(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)
     {
     }
 
     [Fact]
-    public Task WalkthroughsShouldWorkCorrectly() =>
+    public Task AllWalkthroughsShouldWorkCorrectly() =>
         ExecuteTestAsync(
             context => context.RunSetupAndTestWalkthroughsBehaviorAsync(),
             // Could be removed if https://github.com/shepherd-pro/shepherd/issues/2555 is fixed.
