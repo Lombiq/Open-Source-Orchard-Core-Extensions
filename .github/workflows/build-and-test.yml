@@ -8,7 +8,7 @@ on:
       - dev
 
 jobs:
-  build-and-test-larger-runners:
+  build-and-test-larger-runners1:
     if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
@@ -25,29 +25,54 @@ jobs:
       build-enable-npm-caching: "true"
       cancel-in-progress-for-this-pr: "false"
 
-  build-and-test-standard-runners:
-    # Since dev builds are not awaited by anyone, they can run on the slower free runners.
-    if: github.ref_name == github.event.repository.default_branch
-    name: Build and Test - root solution (standard runners)
+  build-and-test-larger-runners2:
+    if: github.ref_name != github.event.repository.default_branch
+    name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      parent-job-name: "root-solution-standard-runners"
-      timeout-minutes: 50
+      parent-job-name: "root-solution-larger-runners"
+      machine-types: "['buildjet-4vcpu-ubuntu-2204']"
+      timeout-minutes: 25
       set-up-sql-server: "true"
       set-up-azurite: "true"
+      ui-test-parallelism: 0
       build-create-binary-log: "true"
-      dotnet-test-process-timeout: 720000
-
-  powershell-static-code-analysis:
-    name: PowerShell Static Code Analysis
-    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
-    with:
-      machine-types: '["ubuntu-22.04"]'
+      dotnet-test-process-timeout: 480000
+      build-enable-nuget-caching: "true"
+      build-enable-npm-caching: "true"
       cancel-in-progress-for-this-pr: "false"
 
-  yaml-linting:
-    name: YAML Linting
-    uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@issue/OSOE-188
+  build-and-test-larger-runners3:
+    if: github.ref_name != github.event.repository.default_branch
+    name: Build and Test - root solution (larger runners)
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      config-file-path: tools/Lombiq.GitHub.Actions/.trunk/configs/.yamllint.yaml
-      search-path: .
+      parent-job-name: "root-solution-larger-runners"
+      machine-types: "['buildjet-4vcpu-ubuntu-2204']"
+      timeout-minutes: 25
+      set-up-sql-server: "true"
+      set-up-azurite: "true"
+      ui-test-parallelism: 0
+      build-create-binary-log: "true"
+      dotnet-test-process-timeout: 480000
+      build-enable-nuget-caching: "true"
+      build-enable-npm-caching: "true"
+      cancel-in-progress-for-this-pr: "false"
+
+  build-and-test-larger-runners4:
+    if: github.ref_name != github.event.repository.default_branch
+    name: Build and Test - root solution (larger runners)
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      parent-job-name: "root-solution-larger-runners"
+      machine-types: "['buildjet-4vcpu-ubuntu-2204']"
+      timeout-minutes: 25
+      set-up-sql-server: "true"
+      set-up-azurite: "true"
+      ui-test-parallelism: 0
+      build-create-binary-log: "true"
+      dotnet-test-process-timeout: 480000
+      build-enable-nuget-caching: "true"
+      build-enable-npm-caching: "true"
+      cancel-in-progress-for-this-pr: "false"
+
