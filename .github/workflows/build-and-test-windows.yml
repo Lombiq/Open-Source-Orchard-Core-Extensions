@@ -11,11 +11,11 @@ on:
       - dev
 
 jobs:
-  build-and-test-larger-runners:
+  build-and-test-larger-runners1:
     name: Build and Test Windows - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-796
     with:
-      parent-job-name: "root-solution-larger-runners"
+      parent-job-name: "root-solution-larger-runners1"
       machine-types: "['windows-2022-8core']"
       timeout-minutes: 30
       set-up-sql-server: "true"
@@ -27,3 +27,55 @@ jobs:
       # supported by GHA.
       test-filter: "FullyQualifiedName!~SecurityScanningTests"
       cancel-in-progress-for-this-pr: 'false'
+      
+  build-and-test-larger-runners2:
+    name: Build and Test Windows - root solution (larger runners)
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-796
+    with:
+      parent-job-name: "root-solution-larger-runners2"
+      machine-types: "['windows-2022-8core']"
+      timeout-minutes: 30
+      set-up-sql-server: "true"
+      set-up-azurite: "true"
+      ui-test-parallelism: 0
+      build-create-binary-log: "true"
+      dotnet-test-process-timeout: 540000
+      # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
+      # supported by GHA.
+      test-filter: "FullyQualifiedName!~SecurityScanningTests"
+      cancel-in-progress-for-this-pr: 'false'
+      
+  build-and-test-larger-runners3:
+    name: Build and Test Windows - root solution (larger runners)
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-796
+    with:
+      parent-job-name: "root-solution-larger-runners3"
+      machine-types: "['windows-2022-8core']"
+      timeout-minutes: 30
+      set-up-sql-server: "true"
+      set-up-azurite: "true"
+      ui-test-parallelism: 0
+      build-create-binary-log: "true"
+      dotnet-test-process-timeout: 540000
+      # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
+      # supported by GHA.
+      test-filter: "FullyQualifiedName!~SecurityScanningTests"
+      cancel-in-progress-for-this-pr: 'false'
+      
+  build-and-test-larger-runners4:
+    name: Build and Test Windows - root solution (larger runners)
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-796
+    with:
+      parent-job-name: "root-solution-larger-runners4"
+      machine-types: "['windows-2022-8core']"
+      timeout-minutes: 30
+      set-up-sql-server: "true"
+      set-up-azurite: "true"
+      ui-test-parallelism: 0
+      build-create-binary-log: "true"
+      dotnet-test-process-timeout: 540000
+      # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
+      # supported by GHA.
+      test-filter: "FullyQualifiedName!~SecurityScanningTests"
+      cancel-in-progress-for-this-pr: 'false'
+   
