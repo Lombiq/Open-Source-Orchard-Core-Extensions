@@ -36,8 +36,9 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-751
     with:
       parent-job-name: "root-solution-larger-runners"
-      # Should be windows-2022-8core but temporarily isn't due to this bug: https://github.com/Lombiq/GitHub-Actions/issues/320.
-      # Once this is reverted, timeout-minutes below should also be reverted to 30 and dotnet-test-process-timeout  to 360000.
+      # Should be windows-2022-8core but temporarily isn't due to this bug:
+      # https://github.com/Lombiq/GitHub-Actions/issues/320. Once this is reverted, timeout-minutes below should also be
+      # reverted to 30 and dotnet-test-process-timeout to 540000.
       machine-types: "['windows-2022']"
       timeout-minutes: 60
       set-up-sql-server: "true"
@@ -76,8 +77,8 @@ jobs:
       parent-job-name: "nuget-solution"
       machine-types: "['windows-2022']"
       build-directory: NuGetTest
-      timeout-minutes: 25
-      dotnet-test-process-timeout: 360000
+      timeout-minutes: 30
+      dotnet-test-process-timeout: 420000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
       test-filter: "FullyQualifiedName!~SecurityScanningTests"
