@@ -11,26 +11,7 @@ on:
       - dev
 
 jobs:
-  remove-run-windows-build-label:
-    if: github.ref_name != github.event.repository.default_branch &&
-        github.event.label.name == 'run-windows-build'
-    name: Remove Run Windows Build Label
-    runs-on: ubuntu-22.04
-    timeout-minutes: 2
-    steps:
-    - name: Remove Run Windows Build Label
-      # v2.0.0
-      uses: buildsville/add-remove-label@eeae411a9be2e173f2420e1644514edbecc4e835
-      with:
-        # The token is necessary to be able to remove the label even if the workflow is triggered by a pull request
-        # coming from a fork.
-        token: ${{ secrets.LOMBIQBOT_GITHUB_PERSONAL_ACCESS_TOKEN }}
-        labels: run-windows-build
-        type: remove
-
   build-and-test-larger-runners:
-    if: github.ref_name != github.event.repository.default_branch &&
-        (github.event_name == 'workflow_dispatch' || github.event.label.name == 'run-windows-build')
     name: Build and Test Windows - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-796
     with:
