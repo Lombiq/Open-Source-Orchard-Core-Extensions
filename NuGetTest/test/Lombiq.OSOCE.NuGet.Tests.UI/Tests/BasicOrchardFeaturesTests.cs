@@ -16,10 +16,5 @@ public class BasicOrchardFeaturesTests : UITestBase
     [Fact]
     public Task BasicOrchardFeaturesShouldWork() =>
         ExecuteTestAsync(
-            context => context.TestBasicOrchardFeaturesExceptRegistrationAsync("Lombiq.OSOCE.NuGet.BasicOrchardFeaturesTests"),
-            changeConfiguration =>
-            {
-                changeConfiguration.AssertBrowserLog = AssertBrowserLogHelpers.AssertBrowserLogIsEmpty;
-                return Task.CompletedTask;
-            });
+            context => context.TestBasicOrchardFeaturesExceptRegistrationAsync("Lombiq.OSOCE.NuGet.BasicOrchardFeaturesTests"));
 }

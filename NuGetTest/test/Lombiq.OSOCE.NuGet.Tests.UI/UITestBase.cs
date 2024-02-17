@@ -32,6 +32,9 @@ public class UITestBase : OrchardCoreUITestBase<Program>
             async configuration =>
             {
                 configuration.AssertAppLogsAsync = AssertAppLogsHelpers.AssertOsoceAppLogsAreEmptyAsync;
+                configuration.AssertBrowserLog = AssertHtmlAndBrowserErrorsHelper.AssertBrowserLogIsEmpty;
+                configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
+                    AssertHtmlAndBrowserErrorsHelper.AssertHtmlErrorsAreEmpty;
 
                 if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
             });
