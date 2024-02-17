@@ -7,8 +7,8 @@
   <ItemGroup>
     <PackageReference Include="Lombiq.HelpfulLibraries" Version="8.1.1-alpha.7.osoe-751" />
     <PackageReference Include="Lombiq.Tests" Version="2.2.6-alpha.0.osoe-751" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.1">
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.7">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
