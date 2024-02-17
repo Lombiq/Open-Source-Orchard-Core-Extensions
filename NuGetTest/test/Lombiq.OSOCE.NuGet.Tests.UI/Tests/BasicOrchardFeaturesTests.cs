@@ -20,6 +20,6 @@ public class BasicOrchardFeaturesTests : UITestBase
             changeConfiguration =>
             {
                 changeConfiguration.AssertBrowserLog = AssertBrowserLogHelpers.AssertBrowserLogIsEmpty;
-                return Task
+                return Task.CompletedTask;
             });
 }
