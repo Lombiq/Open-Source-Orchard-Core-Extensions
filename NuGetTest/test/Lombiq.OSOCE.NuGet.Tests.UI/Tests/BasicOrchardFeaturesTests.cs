@@ -19,9 +19,7 @@ public class BasicOrchardFeaturesTests : UITestBase
             context => context.TestBasicOrchardFeaturesExceptRegistrationAsync("Lombiq.OSOCE.NuGet.BasicOrchardFeaturesTests"),
             changeConfiguration =>
             {
-                changeConfiguration.AssertBrowserLog = AssertHtmlAndBrowserErrorsHelper.AssertBrowserLogIsEmpty;
-                changeConfiguration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
-                    AssertHtmlAndBrowserErrorsHelper.AssertHtmlErrorsAreEmpty;
+                changeConfiguration.AssertBrowserLog = AssertBrowserLogHelpers.AssertBrowserLogIsEmpty;
                 return Task.CompletedTask;
             });
 }

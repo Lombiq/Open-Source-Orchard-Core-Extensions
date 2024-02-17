@@ -26,10 +26,5 @@ public class SecurityScanningTests : UITestBase
                 // the alerts can be simply expected and this number should be increased.
                 sarifLog => sarifLog.Runs[0].Results.Count.ShouldBeLessThan(3)),
             // Can be removed once  https://github.com/OrchardCMS/OrchardCore/issues/15222 is done.
-            changeConfiguration =>
-            {
-                changeConfiguration.AssertBrowserLog = AssertHtmlAndBrowserErrorsHelper.AssertBrowserLogIsEmpty;
-                changeConfiguration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
-                    AssertHtmlAndBrowserErrorsHelper.AssertHtmlErrorsAreEmpty;
-            });
+            changeConfiguration => changeConfiguration.AssertBrowserLog = AssertBrowserLogHelpers.AssertBrowserLogIsEmpty);
 }
