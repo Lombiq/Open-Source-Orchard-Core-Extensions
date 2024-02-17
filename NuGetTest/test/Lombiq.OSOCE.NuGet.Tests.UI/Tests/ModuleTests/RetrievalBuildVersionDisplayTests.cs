@@ -1,4 +1,5 @@
 using Lombiq.Hosting.BuildVersionDisplay.Tests.UI.Extensions;
+using Lombiq.OSOCE.NuGet.Tests.UI.Helpers;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -14,5 +15,8 @@ public class RetrievalBuildVersionDisplayTests : UITestBase
 
     [Fact]
     public Task BuildVersionShouldBeBeDisplayedCorrectly() =>
-        ExecuteTestAfterSetupAsync(context => context.TestBuildVersionDisplayAsync());
+        ExecuteTestAfterSetupAsync(
+            context => context.TestBuildVersionDisplayAsync(),
+            // Can be removed once  https://github.com/OrchardCMS/OrchardCore/issues/15222 is done.
+            changeConfiguration => changeConfiguration.AssertBrowserLog = AssertBrowserLogHelpers.AssertBrowserLogIsEmpty);
 }

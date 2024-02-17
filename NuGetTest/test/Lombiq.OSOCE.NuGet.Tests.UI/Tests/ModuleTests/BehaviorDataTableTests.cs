@@ -1,4 +1,5 @@
 using Lombiq.DataTables.Tests.UI.Extensions;
+using Lombiq.OSOCE.NuGet.Tests.UI.Helpers;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -13,5 +14,8 @@ public class BehaviorDataTableTests : UITestBase
     }
 
     [Fact]
-    public Task DataTableShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestDataTableRecipeDataAsync());
+    public Task DataTableShouldWork() => ExecuteTestAfterSetupAsync(
+        context => context.TestDataTableRecipeDataAsync(),
+        // Can be removed once  https://github.com/OrchardCMS/OrchardCore/issues/15222 is done.
+        changeConfiguration => changeConfiguration.AssertBrowserLog = AssertBrowserLogHelpers.AssertBrowserLogIsEmpty);
 }

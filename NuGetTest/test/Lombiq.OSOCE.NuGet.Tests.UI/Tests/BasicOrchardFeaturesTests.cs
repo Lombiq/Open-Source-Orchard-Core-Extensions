@@ -1,3 +1,4 @@
+using Lombiq.OSOCE.NuGet.Tests.UI.Helpers;
 using Lombiq.Tests.UI.Extensions;
 using System.Threading.Tasks;
 using Xunit;
@@ -15,5 +16,10 @@ public class BasicOrchardFeaturesTests : UITestBase
     [Fact]
     public Task BasicOrchardFeaturesShouldWork() =>
         ExecuteTestAsync(
-            context => context.TestBasicOrchardFeaturesExceptRegistrationAsync("Lombiq.OSOCE.NuGet.BasicOrchardFeaturesTests"));
+            context => context.TestBasicOrchardFeaturesExceptRegistrationAsync("Lombiq.OSOCE.NuGet.BasicOrchardFeaturesTests"),
+            changeConfiguration =>
+            {
+                changeConfiguration.AssertBrowserLog = AssertBrowserLogHelpers.AssertBrowserLogIsEmpty;
+                return Task
+            });
 }
