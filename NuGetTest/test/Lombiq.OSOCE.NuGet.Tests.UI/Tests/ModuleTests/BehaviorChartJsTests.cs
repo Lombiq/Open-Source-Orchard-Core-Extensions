@@ -18,5 +18,10 @@ public class BehaviorChartJsTests : UITestBase
         ExecuteTestAfterSetupAsync(
             context => context.TestChartJsSampleBehaviorAsync(),
             // Can be removed once  https://github.com/OrchardCMS/OrchardCore/issues/15222 is done.
-            changeConfiguration => changeConfiguration.AssertBrowserLog = AssertBrowserLogHelpers.AssertBrowserLogIsEmpty);
+            changeConfiguration =>
+            {
+                changeConfiguration.AssertBrowserLog = AssertHtmlAndBrowserErrorsHelper.AssertBrowserLogIsEmpty;
+                changeConfiguration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
+                    AssertHtmlAndBrowserErrorsHelper.AssertHtmlErrorsAreEmpty;
+            });
 }
