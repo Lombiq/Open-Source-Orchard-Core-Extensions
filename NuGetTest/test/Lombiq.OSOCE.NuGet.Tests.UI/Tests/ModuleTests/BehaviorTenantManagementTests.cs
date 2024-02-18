@@ -1,5 +1,4 @@
 using Lombiq.Hosting.Tenants.Management.Tests.UI.Extensions;
-using Lombiq.OSOCE.NuGet.Tests.UI.Helpers;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -16,7 +15,5 @@ public class BehaviorTenantManagementTests : UITestBase
     [Fact]
     public Task TenantShellSettingsEditorShouldSaveSettings() =>
         ExecuteTestAfterSetupAsync(
-            context => context.TestShellSettingsEditorFeatureAsync(),
-            // Can be removed once  https://github.com/OrchardCMS/OrchardCore/issues/15222 is done.
-            changeConfiguration => changeConfiguration.AssertBrowserLog = AssertBrowserLogHelpers.AssertBrowserLogIsEmpty);
+            context => context.TestShellSettingsEditorFeatureAsync());
 }
