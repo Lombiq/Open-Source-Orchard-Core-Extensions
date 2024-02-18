@@ -30,7 +30,7 @@ builder.Services
             })
         .EnableAutoSetupIfNotUITesting(configuration)
         // allowInlineStyle is necessary because style attributes are used in the Blog theme.
-        ); // .ConfigureSecurityDefaultsWithStaticFiles(allowInlineStyle: true));
+        .ConfigureSecurityDefaultsWithStaticFiles(allowInlineStyle: true));
 
 var app = builder.Build();
 app.UseOrchardCore();
