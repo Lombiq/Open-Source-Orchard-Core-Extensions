@@ -1,8 +1,5 @@
-using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using Lombiq.Walkthroughs.Tests.UI.Extensions;
-using OpenQA.Selenium;
-using Shouldly;
 using System;
 using System.IO;
 using System.Linq;
