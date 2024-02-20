@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Lombiq.OSOCE.NuGet.Tests.UI.Helpers;
+
 public static class AssertHtmlAndBrowserErrorsHelper
 {
     public static readonly Action<IEnumerable<LogEntry>> AssertBrowserLogIsEmpty =
@@ -17,7 +18,7 @@ public static class AssertHtmlAndBrowserErrorsHelper
     public static readonly Func<HtmlValidationResult, Task> AssertHtmlErrorsAreEmpty = async errors =>
     {
         var errorResult = (await errors.GetErrorsAsync())
-        .Where(error => !error.ContainsOrdinalIgnoreCase("Prefer to use the native <button> element"));
+            .Where(error => !error.ContainsOrdinalIgnoreCase("Prefer to use the native <button> element"));
 
         errorResult.ShouldBeEmpty();
     };
