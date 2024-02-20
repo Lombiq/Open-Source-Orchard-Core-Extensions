@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -26,7 +26,7 @@
     <PackageReference Include="Lombiq.BaseTheme.Tests.UI" Version="5.0.3-alpha.1.osoe-751" />
     <PackageReference Include="Lombiq.ChartJs.Tests.UI" Version="6.0.2-alpha.2.osoe-751" />
     <PackageReference Include="Lombiq.ContentEditors.Tests.UI" Version="2.0.1-alpha.2.osoe-751" />
-    <PackageReference Include="Lombiq.DataTables.Tests.UI" Version="7.0.3-alpha.1.osoe-751" />
+    <PackageReference Include="Lombiq.DataTables.Tests.UI" Version="7.0.3-alpha.3.osoe-751" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI" Version="7.0.2-alpha.3.osoe-751" />
     <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay.Tests.UI" Version="4.0.1-alpha.1.osoe-751" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme.Tests.UI" Version="5.0.2-alpha.0.osoe-751" />
@@ -42,11 +42,11 @@
     <PackageReference Include="Lombiq.OrchardCoreApiClient.Tests.UI" Version="4.0.2-alpha.0.osoe-751" />
     <PackageReference Include="Lombiq.Privacy.Tests.UI" Version="7.0.2-alpha.4.osoe-751" />
     <PackageReference Include="Lombiq.HelpfulExtensions.Tests.UI" Version="7.0.3-alpha.1.osoe-751" />
-    <PackageReference Include="Lombiq.Tests.UI" Version="8.2.1-alpha.17.osoe-751" />
+    <PackageReference Include="Lombiq.Tests.UI" Version="8.2.1-alpha.18.osoe-751" />
     <PackageReference Include="Lombiq.VueJs.Tests.UI" Version="3.0.2-alpha.1.osoe-751" />
     <PackageReference Include="Lombiq.Walkthroughs.Tests.UI" Version="1.0.0-alpha.6.osoe-751" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.7">
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.1">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
