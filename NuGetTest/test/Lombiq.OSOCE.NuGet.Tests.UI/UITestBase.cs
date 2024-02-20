@@ -32,7 +32,8 @@ public class UITestBase : OrchardCoreUITestBase<Program>
             async configuration =>
             {
                 configuration.AssertAppLogsAsync = AssertAppLogsHelpers.AssertOsoceAppLogsAreEmptyAsync;
-                // Can be removed once  https://github.com/OrchardCMS/OrchardCore/issues/15222 is done.
+
+                // These two can be removed once  https://github.com/OrchardCMS/OrchardCore/issues/15222 is done.
                 configuration.AssertBrowserLog = AssertHtmlAndBrowserErrorsHelper.AssertBrowserLogIsEmpty;
                 configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
                     AssertHtmlAndBrowserErrorsHelper.AssertHtmlErrorsAreEmpty;
