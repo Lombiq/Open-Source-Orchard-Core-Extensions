@@ -14,7 +14,8 @@ public class BehaviorHelpfulExtensionsTests : UITestBase
 
     [Fact]
     public Task FeatureFlow() =>
-        ExecuteTestAfterSetupAsync(context => context.TestFlowAdditionalStylingPartAsync());
+        ExecuteTestAfterSetupAsync(
+            context => context.TestFlowAdditionalStylingPartAsync());
 
     [Fact]
     public Task FeatureWidgets() =>

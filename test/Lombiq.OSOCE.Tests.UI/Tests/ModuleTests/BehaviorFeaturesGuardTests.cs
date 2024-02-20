@@ -15,7 +15,7 @@ public class BehaviorFeaturesGuardTests : UITestBase
     }
 
     // HTML validation is disabled as OC's login and dashboard pages contain several errors. See:
-    // https://github.com/OrchardCMS/OrchardCore/issues/12271
+    // https://github.com/OrchardCMS/OrchardCore/issues/12271.
     [Fact]
     public Task ForbiddenFeaturesShouldNotBeActivatableOnTenants() =>
         ExecuteTestAfterSetupAsync(
@@ -23,7 +23,7 @@ public class BehaviorFeaturesGuardTests : UITestBase
             ConfigurationHelper.DisableHtmlValidation);
 
     // HTML validation is disabled as OC's login and dashboard pages contain several errors. See:
-    // https://github.com/OrchardCMS/OrchardCore/issues/12271
+    // https://github.com/OrchardCMS/OrchardCore/issues/12271.
     [Fact]
     public Task ConditionallyEnabledFeaturesShouldWorkCorrectlyOnTenants() =>
         ExecuteTestAfterSetupAsync(
