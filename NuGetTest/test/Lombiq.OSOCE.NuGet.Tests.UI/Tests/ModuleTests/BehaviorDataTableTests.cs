@@ -14,5 +14,5 @@ public class BehaviorDataTableTests : UITestBase
 
     [Fact]
     public Task DataTableShouldWork() => ExecuteTestAfterSetupAsync(
-        context => context.TestDataTableRecipeDataAsync(isNugetTest: true));
+        tcontext => context.TestDataTableRecipeDataAsync(isNugetTest: true));
 }
