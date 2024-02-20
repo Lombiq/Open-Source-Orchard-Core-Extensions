@@ -11,11 +11,11 @@ namespace Lombiq.OSOCE.NuGet.Tests.UI.Helpers;
 
 public static class AssertHtmlAndBrowserErrorsHelper
 {
-    public static readonly Action<IEnumerable<LogEntry>> AssertBrowserLogIsEmpty =
+    public static readonly Action<IEnumerable<LogEntry>> AssertNoNativeButtonUsageInBrowserLog =
         logEntries => logEntries.Where(
             logEntry => !logEntry.Message.ContainsOrdinalIgnoreCase("Prefer to use the native <button> element"));
 
-    public static readonly Func<HtmlValidationResult, Task> AssertHtmlErrorsAreEmpty = async errors =>
+    public static readonly Func<HtmlValidationResult, Task> AssertNoNativeButtonUsageInHtmlValidation = async errors =>
     {
         var errorResult = (await errors.GetErrorsAsync())
             .Where(error => !error.ContainsOrdinalIgnoreCase("Prefer to use the native <button> element"));

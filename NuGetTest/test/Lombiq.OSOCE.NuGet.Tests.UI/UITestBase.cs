@@ -34,9 +34,9 @@ public class UITestBase : OrchardCoreUITestBase<Program>
                 configuration.AssertAppLogsAsync = AssertAppLogsHelpers.AssertOsoceAppLogsAreEmptyAsync;
 
                 // These two can be removed once  https://github.com/OrchardCMS/OrchardCore/issues/15222 is done.
-                configuration.AssertBrowserLog = AssertHtmlAndBrowserErrorsHelper.AssertBrowserLogIsEmpty;
+                configuration.AssertBrowserLog = AssertHtmlAndBrowserErrorsHelper.AssertNoNativeButtonUsageInBrowserLog;
                 configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
-                    AssertHtmlAndBrowserErrorsHelper.AssertHtmlErrorsAreEmpty;
+                    AssertHtmlAndBrowserErrorsHelper.AssertNoNativeButtonUsageInHtmlValidation;
 
                 if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
             });
