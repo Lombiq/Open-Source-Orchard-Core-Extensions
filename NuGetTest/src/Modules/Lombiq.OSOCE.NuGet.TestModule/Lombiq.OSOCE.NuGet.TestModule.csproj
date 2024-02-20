@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -21,10 +21,6 @@
     <PackageReference Include="OrchardCore.ContentManagement" Version="1.8.2" />
     <PackageReference Include="OrchardCore.ContentTypes.Abstractions" Version="1.8.2" />
     <PackageReference Include="OrchardCore.DisplayManagement" Version="1.8.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Update="Lombiq.Analyzers.OrchardCore" Version="4.0.1-alpha.0.osoe-751" />
   </ItemGroup>
 
 </Project>

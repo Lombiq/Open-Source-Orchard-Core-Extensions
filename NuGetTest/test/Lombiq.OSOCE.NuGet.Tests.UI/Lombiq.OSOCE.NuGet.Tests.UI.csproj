@@ -56,8 +56,4 @@
     <ProjectReference Include="..\..\src\Lombiq.OSOCE.NuGet.Web\Lombiq.OSOCE.NuGet.Web.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Update="Lombiq.Analyzers.OrchardCore" Version="4.0.1-alpha.0.osoe-751" />
-  </ItemGroup>
-
 </Project>
