@@ -14,5 +14,6 @@ public class BehaviorJsonEditorTests : UITestBase
 
     [Fact]
     public Task JsonEditorShouldWorkCorrectly() =>
-        ExecuteTestAfterSetupAsync(context => context.TestJsonEditorBehaviorAsync());
+        ExecuteTestAfterSetupAsync(
+            context => context.TestJsonEditorBehaviorAsync());
 }

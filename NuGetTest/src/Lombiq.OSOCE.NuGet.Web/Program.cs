@@ -18,7 +18,7 @@ builder.Services
         .ConfigureFeaturesGuard(
             new Dictionary<string, IEnumerable<string>>
             {
-                ["OrchardCore.Twitter"] = new[] { "Lombiq.UIKit", "Lombiq.ChartJs" },
+                ["OrchardCore.Twitter"] = ["Lombiq.UIKit", "Lombiq.ChartJs"],
             })
         .EnableAutoSetupIfNotUITesting(configuration));
 

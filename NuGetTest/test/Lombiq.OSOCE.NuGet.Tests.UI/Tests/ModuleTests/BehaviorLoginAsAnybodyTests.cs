@@ -14,7 +14,8 @@ public class BehaviorLoginAsAnybodyTests : UITestBase
 
     [Fact]
     public Task SwitchingUserShouldWorkCorrectly() =>
-        ExecuteTestAfterSetupAsync(context => context.TestLoginAsAnybodyAsync());
+        ExecuteTestAfterSetupAsync(
+            context => context.TestLoginAsAnybodyAsync());
 
     [Fact]
     public Task PermissionCheckShouldWorkCorrectly() =>

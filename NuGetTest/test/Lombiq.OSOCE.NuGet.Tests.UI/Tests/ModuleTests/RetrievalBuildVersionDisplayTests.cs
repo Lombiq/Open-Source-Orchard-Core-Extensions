@@ -14,5 +14,6 @@ public class RetrievalBuildVersionDisplayTests : UITestBase
 
     [Fact]
     public Task BuildVersionShouldBeBeDisplayedCorrectly() =>
-        ExecuteTestAfterSetupAsync(context => context.TestBuildVersionDisplayAsync());
+        ExecuteTestAfterSetupAsync(
+            context => context.TestBuildVersionDisplayAsync());
 }
