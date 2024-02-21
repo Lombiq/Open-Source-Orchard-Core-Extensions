@@ -14,6 +14,5 @@ public class BehaviorTenantManagementTests : UITestBase
 
     [Fact]
     public Task TenantShellSettingsEditorShouldSaveSettings() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestShellSettingsEditorFeatureAsync());
+        ExecuteTestAfterSetupAsync(context => context.TestShellSettingsEditorFeatureAsync());
 }

@@ -14,6 +14,5 @@ public class BehaviorChartJsTests : UITestBase
 
     [Fact]
     public Task RecipeDataShouldBeDisplayedCorrectly() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestChartJsSampleBehaviorAsync());
+        ExecuteTestAfterSetupAsync(context => context.TestChartJsSampleBehaviorAsync());
 }

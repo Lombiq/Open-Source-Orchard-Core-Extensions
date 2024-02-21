@@ -13,11 +13,11 @@ namespace Lombiq.OSOCE.Tests.UI.Tests.ThemeTests;
 
 // Different tests with different setups should not be run at the same time, as it upsets the shape table so shapes
 // would be seen as missing even when their feature is enabled.
-[Collection(nameof(BlogBehaviorBaseThemeTests))]
-[CollectionDefinition(nameof(BlogBehaviorBaseThemeTests), DisableParallelization = true)]
-public class BlogBehaviorBaseThemeTests : UITestBase
+[Collection(nameof(BehaviorBlogBaseThemeTests))]
+[CollectionDefinition(nameof(BehaviorBlogBaseThemeTests), DisableParallelization = true)]
+public class BehaviorBlogBaseThemeTests : UITestBase
 {
-    public BlogBehaviorBaseThemeTests(ITestOutputHelper testOutputHelper)
+    public BehaviorBlogBaseThemeTests(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)
     {
     }
