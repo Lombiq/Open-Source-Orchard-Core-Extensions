@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <RazorRuntimeCompilation>false</RazorRuntimeCompilation>
     <!-- Test value for Lombiq.Hosting.BuildVersionDisplay. Intentionally different than the value in its props file. -->
@@ -19,48 +19,48 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.AuditTrailExtensions" Version="5.0.0" />
-    <PackageReference Include="Lombiq.BaseTheme" Version="5.0.2-alpha.0.osoe-638" />
-    <PackageReference Include="Lombiq.BaseTheme.Samples" Version="5.0.2-alpha.0.osoe-638" />
-    <PackageReference Include="Lombiq.ChartJs" Version="6.0.2-alpha.0.osoe-638" />
-    <PackageReference Include="Lombiq.ChartJs.Samples" Version="6.0.2-alpha.0.osoe-638" />
-    <PackageReference Include="Lombiq.ContentEditors" Version="2.0.1-alpha.0.osoe-638" />
-    <PackageReference Include="Lombiq.ContentEditors.Samples" Version="2.0.1-alpha.0.osoe-638" />
-    <PackageReference Include="Lombiq.DataTables" Version="7.0.2-alpha.0.osoe-638" />
-    <PackageReference Include="Lombiq.DataTables.Samples" Version="7.0.2-alpha.0.osoe-638" />
-    <PackageReference Include="Lombiq.HelpfulExtensions" Version="7.0.2" />
-    <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="7.0.2-alpha.1.osoe-733" />
-    <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay" Version="4.0.1-alpha.0.osoe-638" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="5.0.1-alpha.1.osoe-775" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="5.0.1-alpha.1.osoe-775" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Targets" Version="5.0.1-alpha.1.osoe-775" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="6.3.0-alpha.2.lmbq-249" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots" Version="6.3.0-alpha.2.lmbq-249" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="6.3.0-alpha.2.lmbq-249" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="6.3.0-alpha.2.lmbq-249" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Maintenance" Version="6.3.0-alpha.2.lmbq-249" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="6.3.0-alpha.2.lmbq-249" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement" Version="6.3.0-alpha.2.lmbq-249" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.EmailQuotaManagement" Version="6.3.0-alpha.2.lmbq-249" />
-    <PackageReference Include="Lombiq.JsonEditor" Version="6.0.1-alpha.0.osoe-638" />
-    <PackageReference Include="Lombiq.JsonEditor.Tests.UI" Version="6.0.1-alpha.0.osoe-638" />
-    <PackageReference Include="Lombiq.LoginAsAnybody" Version="1.0.0" />
-    <PackageReference Include="Lombiq.Privacy" Version="7.0.2-alpha.2.osoe-638" />
-    <PackageReference Include="Lombiq.Privacy.Samples" Version="7.0.2-alpha.2.osoe-638" />
-    <PackageReference Include="Lombiq.SetupExtensions" Version="5.0.0" />
-    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="8.2.1-alpha.21.osoe-817" />
-    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="8.2.1-alpha.21.osoe-817" />
-    <PackageReference Include="Lombiq.UIKit" Version="6.0.1-alpha.0.osoe-638" />
-    <PackageReference Include="Lombiq.VueJs" Version="3.0.1-alpha.0.osoe-638" />
-    <PackageReference Include="Lombiq.VueJs.Samples" Version="3.0.1-alpha.0.osoe-638" />
-    <PackageReference Include="Lombiq.Walkthroughs" Version="1.0.0-alpha.4.osoe-771" />
+    <PackageReference Include="Lombiq.AuditTrailExtensions" Version="6.0.0" />
+    <PackageReference Include="Lombiq.BaseTheme" Version="6.0.0" />
+    <PackageReference Include="Lombiq.BaseTheme.Samples" Version="6.0.0" />
+    <PackageReference Include="Lombiq.ChartJs" Version="7.0.0" />
+    <PackageReference Include="Lombiq.ChartJs.Samples" Version="7.0.0" />
+    <PackageReference Include="Lombiq.ContentEditors" Version="3.0.0" />
+    <PackageReference Include="Lombiq.ContentEditors.Samples" Version="3.0.0" />
+    <PackageReference Include="Lombiq.DataTables" Version="8.0.0" />
+    <PackageReference Include="Lombiq.DataTables.Samples" Version="8.0.0" />
+    <PackageReference Include="Lombiq.HelpfulExtensions" Version="8.0.0" />
+    <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="8.0.0" />
+    <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay" Version="5.0.0" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="6.0.0" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="6.0.0" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Targets" Version="6.0.0" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="7.0.0" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots" Version="7.0.0" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="7.0.0" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="7.0.0" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Maintenance" Version="7.0.0" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="7.0.0" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement" Version="7.0.0" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.EmailQuotaManagement" Version="7.0.0" />
+    <PackageReference Include="Lombiq.JsonEditor" Version="7.0.0" />
+    <PackageReference Include="Lombiq.JsonEditor.Tests.UI" Version="7.0.0" />
+    <PackageReference Include="Lombiq.LoginAsAnybody" Version="2.0.0" />
+    <PackageReference Include="Lombiq.Privacy" Version="8.0.0" />
+    <PackageReference Include="Lombiq.Privacy.Samples" Version="8.0.0" />
+    <PackageReference Include="Lombiq.SetupExtensions" Version="6.0.0" />
+    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="9.0.0" />
+    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="9.0.0" />
+    <PackageReference Include="Lombiq.UIKit" Version="7.0.0" />
+    <PackageReference Include="Lombiq.VueJs" Version="4.0.0" />
+    <PackageReference Include="Lombiq.VueJs.Samples" Version="4.0.0" />
+    <PackageReference Include="Lombiq.Walkthroughs" Version="1.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="1.2.2" Condition="'$(RazorRuntimeCompilation)' == 'true'" />
-    <PackageReference Include="SixLabors.ImageSharp.Web" Version="3.0.1" />
+    <PackageReference Include="SixLabors.ImageSharp.Web" Version="3.1.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OrchardCore.Logging.NLog" Version="1.7.0" />
-    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.7.0" />
+    <PackageReference Include="OrchardCore.Logging.NLog" Version="1.8.2" />
+    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.8.2" />
   </ItemGroup>
 
   <ItemGroup>
