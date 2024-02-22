@@ -28,7 +28,7 @@
     <PackageReference Include="Lombiq.ContentEditors.Samples" Version="3.0.0" />
     <PackageReference Include="Lombiq.DataTables" Version="8.0.0" />
     <PackageReference Include="Lombiq.DataTables.Samples" Version="8.0.0" />
-    <PackageReference Include="Lombiq.HelpfulExtensions" Version="9.1.0" />
+    <PackageReference Include="Lombiq.HelpfulExtensions" Version="8.0.0" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="8.0.0" />
     <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay" Version="5.0.0" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="6.0.0" />
