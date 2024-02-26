@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{11E06A11-1733-408D-BB2F-BFA07075F812}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.TrainingDemo", "src\Modules\Lombiq.TrainingDemo\Lombiq.TrainingDemo.csproj", "{3E5295F8-A196-466B-A857-177AB6EF6E04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.TrainingDemo", "src\Modules\Lombiq.TrainingDemo\Lombiq.TrainingDemo\Lombiq.TrainingDemo.csproj", "{3E5295F8-A196-466B-A857-177AB6EF6E04}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.VueJs", "src\Modules\Lombiq.VueJs\Lombiq.VueJs\Lombiq.VueJs.csproj", "{6AEF3A6E-01EF-4729-8EF1-647A27347B1E}"
 EndProject
@@ -43,7 +43,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.SetupExtensions", "s
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FF48793C-2AC5-4FAA-9BA1-44448E3A7F98}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.TrainingDemo.Tests", "src\Modules\Lombiq.TrainingDemo\Tests\Lombiq.TrainingDemo.Tests\Lombiq.TrainingDemo.Tests.csproj", "{26FCE328-9B37-4A51-9C87-87D6628907E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.TrainingDemo.Tests", "src\Modules\Lombiq.TrainingDemo\Lombiq.TrainingDemo.Tests\Lombiq.TrainingDemo.Tests.csproj", "{26FCE328-9B37-4A51-9C87-87D6628907E0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{6ED7E28F-0556-471C-8AD1-5BB0941411DD}"
 EndProject
