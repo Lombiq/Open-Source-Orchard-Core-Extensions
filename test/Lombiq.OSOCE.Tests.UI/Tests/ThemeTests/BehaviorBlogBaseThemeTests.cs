@@ -4,6 +4,7 @@ using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using OpenQA.Selenium;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -12,11 +13,11 @@ namespace Lombiq.OSOCE.Tests.UI.Tests.ThemeTests;
 
 // Different tests with different setups should not be run at the same time, as it upsets the shape table so shapes
 // would be seen as missing even when their feature is enabled.
-[Collection(nameof(BlogBehaviorBaseThemeTests))]
-[CollectionDefinition(nameof(BlogBehaviorBaseThemeTests), DisableParallelization = true)]
-public class BlogBehaviorBaseThemeTests : UITestBase
+[Collection(nameof(BehaviorBlogBaseThemeTests))]
+[CollectionDefinition(nameof(BehaviorBlogBaseThemeTests), DisableParallelization = true)]
+public class BehaviorBlogBaseThemeTests : UITestBase
 {
-    public BlogBehaviorBaseThemeTests(ITestOutputHelper testOutputHelper)
+    public BehaviorBlogBaseThemeTests(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)
     {
     }
@@ -53,6 +54,7 @@ public class BlogBehaviorBaseThemeTests : UITestBase
                 var homePageUri = await SetupHelpers.RunBlogSetupAsync(context);
 
                 await context.SignInDirectlyAsync();
+
                 await context.GoToAdminRelativeUrlAsync("/Themes");
 
                 await context.ClickReliablyOnAsync(By.CssSelector(
@@ -68,5 +70,16 @@ public class BlogBehaviorBaseThemeTests : UITestBase
                 // Disable HTML validation, because we have no control over the HTML in the Blog and the content added
                 // by the Blog recipe.
                 configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false;
+
+                // This is to not fail on a browser error caused by jQuery missing. Can be removed after this issue is
+                // resolved and released: https://github.com/OrchardCMS/OrchardCore/issues/15181.
+                configuration.AssertBrowserLog = logEntries =>
+                {
+                    var messageWithoutJqueryError = logEntries.Where(logEntry =>
+                        !logEntry.Message.ContainsOrdinalIgnoreCase(
+                            "Uncaught ReferenceError: $ is not defined"));
+
+                    OrchardCoreUITestExecutorConfiguration.AssertBrowserLogIsEmpty(messageWithoutJqueryError);
+                };
             });
 }
