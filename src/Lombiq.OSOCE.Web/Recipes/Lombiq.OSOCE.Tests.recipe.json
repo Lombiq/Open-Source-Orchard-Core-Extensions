@@ -59,6 +59,7 @@
         "Lombiq.Hosting.Tenants.MediaStorageManagement",
         "OrchardCore.Media",
         "OrchardCore.Feature",
+        "OrchardCore.Email.Smtp",
         "TheTheme"
         // Not enabling Lombiq.TrainingDemo.Middlewares because that would write to the error log on every request.
       ]
