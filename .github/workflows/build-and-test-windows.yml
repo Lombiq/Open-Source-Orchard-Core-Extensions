@@ -20,8 +20,7 @@ jobs:
     timeout-minutes: 2
     steps:
     - name: Remove Run Windows Build Label
-      # v2.0.0
-      uses: buildsville/add-remove-label@eeae411a9be2e173f2420e1644514edbecc4e835
+      uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@issue/LMBQ-267
       with:
         # The token is necessary to be able to remove the label even if the workflow is triggered by a pull request
         # coming from a fork.
