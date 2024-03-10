@@ -81,7 +81,7 @@ jobs:
     name: Post Pull Request Checks Automation
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling, powershell-static-code-analysis]
     if: github.event.pull_request != ''
-    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@issue/OSOE-188
     secrets:
       JIRA_BASE_URL: ${{ secrets.DEFAULT_JIRA_BASE_URL }}
       JIRA_USER_EMAIL: ${{ secrets.DEFAULT_JIRA_USER_EMAIL }}
@@ -95,8 +95,7 @@ jobs:
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
     steps:
     - name: Add Windows Build Warning Label
-      # v2.0.0
-      uses: buildsville/add-remove-label@eeae411a9be2e173f2420e1644514edbecc4e835
+      uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@issue/OSOE-188
       with:
         # The token is necessary to be able to add the label even if the workflow is triggered by a pull request coming
         # from a fork.
