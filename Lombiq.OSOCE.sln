@@ -242,8 +242,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Hosting.MediaTheme.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.HelpfulLibraries.SourceGenerators", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.SourceGenerators\Lombiq.HelpfulLibraries.SourceGenerators\Lombiq.HelpfulLibraries.SourceGenerators.csproj", "{497EF903-EE06-443B-9545-266694746A63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.HelpfulLibraries.SourceGenerators.Sample", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.SourceGenerators\Lombiq.HelpfulLibraries.SourceGenerators.Sample\Lombiq.HelpfulLibraries.SourceGenerators.Sample.csproj", "{714FCD3C-9192-4595-8324-87FF21EFB53A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1358,18 +1356,6 @@ Global
 		{497EF903-EE06-443B-9545-266694746A63}.Release|x64.Build.0 = Release|Any CPU
 		{497EF903-EE06-443B-9545-266694746A63}.Release|x86.ActiveCfg = Release|Any CPU
 		{497EF903-EE06-443B-9545-266694746A63}.Release|x86.Build.0 = Release|Any CPU
-		{714FCD3C-9192-4595-8324-87FF21EFB53A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{714FCD3C-9192-4595-8324-87FF21EFB53A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{714FCD3C-9192-4595-8324-87FF21EFB53A}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{714FCD3C-9192-4595-8324-87FF21EFB53A}.Debug|x64.Build.0 = Debug|Any CPU
-		{714FCD3C-9192-4595-8324-87FF21EFB53A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{714FCD3C-9192-4595-8324-87FF21EFB53A}.Debug|x86.Build.0 = Debug|Any CPU
-		{714FCD3C-9192-4595-8324-87FF21EFB53A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{714FCD3C-9192-4595-8324-87FF21EFB53A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{714FCD3C-9192-4595-8324-87FF21EFB53A}.Release|x64.ActiveCfg = Release|Any CPU
-		{714FCD3C-9192-4595-8324-87FF21EFB53A}.Release|x64.Build.0 = Release|Any CPU
-		{714FCD3C-9192-4595-8324-87FF21EFB53A}.Release|x86.ActiveCfg = Release|Any CPU
-		{714FCD3C-9192-4595-8324-87FF21EFB53A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1478,7 +1464,6 @@ Global
 		{AE7DF7DE-0287-44A9-A3B6-9DEFC997D69C} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{CA12F503-6CE8-466C-A390-89AEE982DA64} = {574156BC-2074-47C9-8EA8-70DED6658DD5}
 		{497EF903-EE06-443B-9545-266694746A63} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
-		{714FCD3C-9192-4595-8324-87FF21EFB53A} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
