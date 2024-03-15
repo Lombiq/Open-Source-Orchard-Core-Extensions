@@ -18,7 +18,7 @@ public class BehaviorEmailQuotaTests : UITestBase
         ExecuteTestAfterSetupAsync(
             context => context.TestEmailQuotaManagementBehaviorAsync(
                 maximumEmailQuota: 10,
-                new SmtpSettings { Host = "localhost", IsEnabled = true }),
+                new SmtpSettings()),
             configuration => configuration.SetEmailQuotaManagementOptionsForUITest(10));
 
     [Fact]
@@ -28,7 +28,7 @@ public class BehaviorEmailQuotaTests : UITestBase
         ExecuteTestAfterSetupAsync(
             context => context.TestEmailQuotaManagementBehaviorAsync(
                 maximumEmailQuota: 1,
-                new SmtpSettings { Host = "127.0.0.1", IsEnabled = true },
+                new SmtpSettings { Host = "127.0.0.1" },
                 moduleShouldInterfere: false),
             configuration => configuration.SetEmailQuotaManagementOptionsForUITest(1));
 }
