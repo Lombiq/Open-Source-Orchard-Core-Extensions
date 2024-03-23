@@ -1,6 +1,8 @@
 using Lombiq.ContentEditors.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Helpers;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -9,6 +11,14 @@ namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
 public class BehaviorAsyncEditorTests : UITestBase
 {
+    static BehaviorAsyncEditorTests()
+    {
+        // Temporary bug fix until https://github.com/OrchardCMS/OrchardCore/issues/15533 is resolved. Here we edit
+        // Default but there Base has to be updated.
+        JOptions.Default.PreferredObjectCreationHandling = JsonObjectCreationHandling.Populate;
+        JOptions.Default.ReferenceHandler = null;
+    }
+
     public BehaviorAsyncEditorTests(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)
     {
