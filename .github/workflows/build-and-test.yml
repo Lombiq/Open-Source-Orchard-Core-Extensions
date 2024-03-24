@@ -15,12 +15,12 @@ jobs:
     with:
       parent-job-name: "root-solution-larger-runners"
       machine-types: "['buildjet-4vcpu-ubuntu-2204']"
-      timeout-minutes: 20
+      timeout-minutes: 30
       set-up-sql-server: "true"
       set-up-azurite: "true"
       ui-test-parallelism: 0
       build-create-binary-log: "true"
-      dotnet-test-process-timeout: 360000
+      dotnet-test-process-timeout: 540000
       build-enable-nuget-caching: "true"
       build-enable-npm-caching: "true"
 
@@ -43,8 +43,8 @@ jobs:
     with:
       parent-job-name: nuget-solution
       build-directory: NuGetTest
-      timeout-minutes: 15
-      dotnet-test-process-timeout: 360000
+      timeout-minutes: 20
+      dotnet-test-process-timeout: 420000
 
   spelling:
     name: Spelling
@@ -72,7 +72,7 @@ jobs:
 
   yaml-linting:
     name: YAML Linting
-    uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@issue/OSOE-188
+    uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@dev
     with:
       config-file-path: tools/Lombiq.GitHub.Actions/.trunk/configs/.yamllint.yaml
       search-path: .

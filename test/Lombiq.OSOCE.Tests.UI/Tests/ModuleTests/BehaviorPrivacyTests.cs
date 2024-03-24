@@ -1,5 +1,8 @@
 using Lombiq.Privacy.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Extensions;
+using Shouldly;
+using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -26,16 +29,26 @@ public class BehaviorPrivacyTests : UITestBase
                 await context.TestConsentBannerAsync();
             });
 
-    // This test is for https://github.com/Lombiq/Orchard-Privacy/issues/15
+    // This test is for https://github.com/Lombiq/Orchard-Privacy/issues/15.
     [Fact]
     public async Task ConsentBannerShouldWorkWithRazorAndLiquidBasedThemes()
     {
-        // First should work with Liquid-based theme
+        // First should work with a Liquid-based theme.
         await ExecuteTestAfterSetupAsync(
             context => context.TestConsentBannerWithThemeAsync("TheBlogTheme"));
-        // Then should work with Razor-based theme
+
+        // Then should work with a Razor-based theme.
         await ExecuteTestAfterSetupAsync(
-            context => context.TestConsentBannerWithThemeAsync("TheTheme"));
+            context => context.TestConsentBannerWithThemeAsync("TheTheme"),
+            configuration => configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
+                async validationResult =>
+                {
+                    // Error filtering due to https://github.com/OrchardCMS/OrchardCore/issues/15222,
+                    // can be removed once it is resolved.
+                    var errors = (await validationResult.GetErrorsAsync())
+                        .Where(error => !error.ContainsOrdinalIgnoreCase("Prefer to use the native <button> element"));
+                    errors.ShouldBeEmpty();
+                });
     }
 
     [Fact]

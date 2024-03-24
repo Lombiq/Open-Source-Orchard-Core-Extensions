@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{11E06A11-1733-408D-BB2F-BFA07075F812}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.TrainingDemo", "src\Modules\Lombiq.TrainingDemo\Lombiq.TrainingDemo.csproj", "{3E5295F8-A196-466B-A857-177AB6EF6E04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.TrainingDemo", "src\Modules\Lombiq.TrainingDemo\Lombiq.TrainingDemo\Lombiq.TrainingDemo.csproj", "{3E5295F8-A196-466B-A857-177AB6EF6E04}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.VueJs", "src\Modules\Lombiq.VueJs\Lombiq.VueJs\Lombiq.VueJs.csproj", "{6AEF3A6E-01EF-4729-8EF1-647A27347B1E}"
 EndProject
@@ -43,7 +43,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.SetupExtensions", "s
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FF48793C-2AC5-4FAA-9BA1-44448E3A7F98}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.TrainingDemo.Tests", "src\Modules\Lombiq.TrainingDemo\Tests\Lombiq.TrainingDemo.Tests\Lombiq.TrainingDemo.Tests.csproj", "{26FCE328-9B37-4A51-9C87-87D6628907E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.TrainingDemo.Tests", "src\Modules\Lombiq.TrainingDemo\Lombiq.TrainingDemo.Tests\Lombiq.TrainingDemo.Tests.csproj", "{26FCE328-9B37-4A51-9C87-87D6628907E0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{6ED7E28F-0556-471C-8AD1-5BB0941411DD}"
 EndProject
@@ -237,6 +237,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Walkthroughs.Tests.UI", "src\Modules\Lombiq.Walkthroughs\Lombiq.Walkthroughs.Test.UI\Lombiq.Walkthroughs.Tests.UI.csproj", "{63D47CA9-2693-4648-9E1F-42BCDD7BB663}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Walkthroughs", "src\Modules\Lombiq.Walkthroughs\Lombiq.Walkthroughs\Lombiq.Walkthroughs.csproj", "{AE7DF7DE-0287-44A9-A3B6-9DEFC997D69C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Hosting.MediaTheme.Tests.Theme", "src\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.Tests.Theme\Lombiq.Hosting.MediaTheme.Tests.Theme.csproj", "{CA12F503-6CE8-466C-A390-89AEE982DA64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.HelpfulLibraries.SourceGenerators", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.SourceGenerators\Lombiq.HelpfulLibraries.SourceGenerators\Lombiq.HelpfulLibraries.SourceGenerators.csproj", "{497EF903-EE06-443B-9545-266694746A63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1328,6 +1332,30 @@ Global
 		{AE7DF7DE-0287-44A9-A3B6-9DEFC997D69C}.Release|x64.Build.0 = Release|Any CPU
 		{AE7DF7DE-0287-44A9-A3B6-9DEFC997D69C}.Release|x86.ActiveCfg = Release|Any CPU
 		{AE7DF7DE-0287-44A9-A3B6-9DEFC997D69C}.Release|x86.Build.0 = Release|Any CPU
+		{CA12F503-6CE8-466C-A390-89AEE982DA64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA12F503-6CE8-466C-A390-89AEE982DA64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA12F503-6CE8-466C-A390-89AEE982DA64}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CA12F503-6CE8-466C-A390-89AEE982DA64}.Debug|x64.Build.0 = Debug|Any CPU
+		{CA12F503-6CE8-466C-A390-89AEE982DA64}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CA12F503-6CE8-466C-A390-89AEE982DA64}.Debug|x86.Build.0 = Debug|Any CPU
+		{CA12F503-6CE8-466C-A390-89AEE982DA64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA12F503-6CE8-466C-A390-89AEE982DA64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA12F503-6CE8-466C-A390-89AEE982DA64}.Release|x64.ActiveCfg = Release|Any CPU
+		{CA12F503-6CE8-466C-A390-89AEE982DA64}.Release|x64.Build.0 = Release|Any CPU
+		{CA12F503-6CE8-466C-A390-89AEE982DA64}.Release|x86.ActiveCfg = Release|Any CPU
+		{CA12F503-6CE8-466C-A390-89AEE982DA64}.Release|x86.Build.0 = Release|Any CPU
+		{497EF903-EE06-443B-9545-266694746A63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{497EF903-EE06-443B-9545-266694746A63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{497EF903-EE06-443B-9545-266694746A63}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{497EF903-EE06-443B-9545-266694746A63}.Debug|x64.Build.0 = Debug|Any CPU
+		{497EF903-EE06-443B-9545-266694746A63}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{497EF903-EE06-443B-9545-266694746A63}.Debug|x86.Build.0 = Debug|Any CPU
+		{497EF903-EE06-443B-9545-266694746A63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{497EF903-EE06-443B-9545-266694746A63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{497EF903-EE06-443B-9545-266694746A63}.Release|x64.ActiveCfg = Release|Any CPU
+		{497EF903-EE06-443B-9545-266694746A63}.Release|x64.Build.0 = Release|Any CPU
+		{497EF903-EE06-443B-9545-266694746A63}.Release|x86.ActiveCfg = Release|Any CPU
+		{497EF903-EE06-443B-9545-266694746A63}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1434,6 +1462,8 @@ Global
 		{E0B9B09C-0985-47DB-9F8A-79883547E1A9} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{63D47CA9-2693-4648-9E1F-42BCDD7BB663} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
 		{AE7DF7DE-0287-44A9-A3B6-9DEFC997D69C} = {11E06A11-1733-408D-BB2F-BFA07075F812}
+		{CA12F503-6CE8-466C-A390-89AEE982DA64} = {574156BC-2074-47C9-8EA8-70DED6658DD5}
+		{497EF903-EE06-443B-9545-266694746A63} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
