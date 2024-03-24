@@ -71,7 +71,7 @@ jobs:
     if: github.ref_name == github.event.repository.default_branch ||
         github.event_name == 'workflow_dispatch' ||
         github.event.label.name == 'run-windows-build' ||
-        (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-security-build'))
+        (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build'))
     name: Build and Test Windows - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
@@ -88,7 +88,7 @@ jobs:
     if: github.ref_name == github.event.repository.default_branch ||
         github.event_name == 'workflow_dispatch' ||
         github.event.label.name == 'run-windows-build' ||
-        (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-security-build'))
+        (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build'))
     name: PowerShell Static Code Analysis Windows
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
