@@ -1,4 +1,7 @@
 using Lombiq.Hosting.MediaTheme.Tests.UI.Extensions;
+using Lombiq.Tests.UI.Extensions;
+using Lombiq.Tests.UI.Pages;
+using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -7,6 +10,8 @@ namespace Lombiq.OSOCE.Tests.UI.Tests.ThemeTests;
 
 public class BehaviorMediaThemeTests : UITestBase
 {
+    public const string TestTenantName = "test";
+
     public BehaviorMediaThemeTests(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)
     {
@@ -14,9 +19,31 @@ public class BehaviorMediaThemeTests : UITestBase
 
     [Fact]
     public Task MediaThemeShouldWorkWhenDeployed() =>
-        ExecuteTestAfterSetupAsync(context => context.TestMediaThemeDeployedBehaviorAsync());
+        ExecuteTestAfterSetupAsync(async context =>
+        {
+            await context.TestMediaThemeDeployedBehaviorAsync();
+            await CreateAndSwitchToTenantAsync(context);
+            await context.TestMediaThemeDeployedBehaviorAsync(TestTenantName);
+        });
 
     [Fact]
     public Task MediaThemeShouldWorkLocally() =>
-        ExecuteTestAfterSetupAsync(context => context.TestMediaThemeLocalBehaviorAsync());
+        ExecuteTestAfterSetupAsync(async context =>
+        {
+            await context.TestMediaThemeLocalBehaviorAsync();
+            await CreateAndSwitchToTenantAsync(context);
+            await context.TestMediaThemeLocalBehaviorAsync();
+        });
+
+    private static Task CreateAndSwitchToTenantAsync(UITestContext context) =>
+        context.CreateAndSwitchToTenantAsync(
+            TestTenantName,
+            TestTenantName,
+            new OrchardCoreSetupParameters
+            {
+                SiteName = "Media Theme Test Tenant",
+                RecipeId = "Lombiq.OSOCE.Tests",
+                TablePrefix = TestTenantName,
+                UserName = "admin",
+            });
 }
