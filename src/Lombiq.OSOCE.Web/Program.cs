@@ -12,7 +12,6 @@ builder.Host.UseNLogHost();
 
 var configuration = builder.Configuration;
 
-
 // Here we're adding the configuration to builder services. It will be used for configuring the UI Testing Toolbox
 // (https://github.com/Lombiq/UI-Testing-Toolbox) so UI tests can be executed on the app. For a tutorial on how to
 // create UI tests check out the project.
