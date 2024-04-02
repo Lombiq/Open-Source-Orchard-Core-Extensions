@@ -22,7 +22,7 @@ jobs:
     timeout-minutes: 2
     steps:
     - name: Remove Run Windows Build Label
-      uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@issue/LMBQ-267
+      uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@dev
       with:
         # The token is necessary to be able to remove the label even if the workflow is triggered by a pull request
         # coming from a fork.
@@ -99,7 +99,7 @@ jobs:
     name: Post Pull Request Checks Automation
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
     if: github.event.pull_request != ''
-    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@issue/LMBQ-267
+    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
     secrets:
       JIRA_BASE_URL: ${{ secrets.DEFAULT_JIRA_BASE_URL }}
       JIRA_USER_EMAIL: ${{ secrets.DEFAULT_JIRA_USER_EMAIL }}
@@ -113,7 +113,7 @@ jobs:
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
     steps:
     - name: Remove Windows Build Warning Label
-      uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@issue/LMBQ-267
+      uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@dev
       with:
         # The token is necessary to be able to remove the label even if the workflow is triggered by a pull request
         # coming from a fork.
