@@ -20,22 +20,22 @@ jobs:
       set-up-azurite: "true"
       ui-test-parallelism: 0
       build-create-binary-log: "true"
-      dotnet-test-process-timeout: 540000
+      dotnet-test-process-timeout: 600000
       build-enable-nuget-caching: "true"
       build-enable-npm-caching: "true"
 
   build-and-test-standard-runners:
-    # Since dev builds are not awaited by anyone, they can run on the slower free runners.
     if: github.ref_name == github.event.repository.default_branch
     name: Build and Test - root solution (standard runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
+      # Since dev builds are not awaited by anyone, they can run on the slower free runners.
       parent-job-name: "root-solution-standard-runners"
       timeout-minutes: 50
       set-up-sql-server: "true"
       set-up-azurite: "true"
       build-create-binary-log: "true"
-      dotnet-test-process-timeout: 720000
+      dotnet-test-process-timeout: 780000
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
@@ -44,7 +44,7 @@ jobs:
       parent-job-name: nuget-solution
       build-directory: NuGetTest
       timeout-minutes: 20
-      dotnet-test-process-timeout: 420000
+      dotnet-test-process-timeout: 480000
 
   spelling:
     name: Spelling
@@ -60,9 +60,9 @@ jobs:
         cspell:node/dict/node.txt
         cspell:npm/dict/npm.txt
         lombiq-lgha:dictionaries/Liquid.txt
-        lombiq-lgha:dictionaries/Xml.txt
         lombiq-lgha:dictionaries/Lombiq.people.txt
         lombiq-lgha:dictionaries/Security.txt
+        lombiq-lgha:dictionaries/Xml.txt
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
@@ -95,8 +95,7 @@ jobs:
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
     steps:
     - name: Add Windows Build Warning Label
-      # v2.0.0
-      uses: buildsville/add-remove-label@eeae411a9be2e173f2420e1644514edbecc4e835
+      uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@dev
       with:
         # The token is necessary to be able to add the label even if the workflow is triggered by a pull request coming
         # from a fork.
