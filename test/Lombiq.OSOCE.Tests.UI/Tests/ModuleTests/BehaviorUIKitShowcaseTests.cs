@@ -2,7 +2,6 @@ using Atata.Cli.HtmlValidate;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.UIKit.Tests.UI.Extensions;
 using Shouldly;
-using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
