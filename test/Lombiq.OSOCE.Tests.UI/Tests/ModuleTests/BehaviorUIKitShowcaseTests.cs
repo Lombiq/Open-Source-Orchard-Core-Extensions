@@ -1,3 +1,4 @@
+using Atata.Cli.HtmlValidate;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.UIKit.Tests.UI.Extensions;
 using Shouldly;
@@ -20,16 +21,21 @@ public class BehaviorUIKitShowcaseTests : UITestBase
     public Task UIKitShowcasePageShouldBeCorrect()
         => ExecuteTestAfterSetupAsync(
             context => context.TestUIKitShowcaseBehaviorAsync(),
-            configuration => configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
-                async validationResult =>
-                {
-                    // Error filtering due to https://github.com/OrchardCMS/OrchardCore/issues/15222,
-                    // can be removed once it is resolved.
-                    var errors = (await validationResult.GetErrorsAsync())
-                        .Where(error =>
-                        !error.ContainsOrdinalIgnoreCase("Prefer to use the native <button> element") &&
-                        !error.ContainsOrdinalIgnoreCase("<button> must have accessible text") &&
-                        !error.ContainsOrdinalIgnoreCase("Redundant role \"button\" on <button>"));
-                    errors.ShouldBeEmpty();
-                });
+            configuration =>
+            {
+                configuration.HtmlValidationConfiguration.HtmlValidationOptions.ResultFileFormatter =
+                    HtmlValidateFormatter.Names.Json;
+                configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
+                    async validationResult =>
+                    {
+                        // Error filtering due to https://github.com/OrchardCMS/OrchardCore/issues/15222,
+                        // can be removed once it is resolved.
+                        var errors = (await validationResult.GetParsedErrorsAsync())
+                            .Where(error =>
+                                error.RuleId is not "prefer-native-element" and
+                                not "text-content" and
+                                not "no-redundant-role");
+                        errors.ShouldBeEmpty();
+                    };
+            });
 }
