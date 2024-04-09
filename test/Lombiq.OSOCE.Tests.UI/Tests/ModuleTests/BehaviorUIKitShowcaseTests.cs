@@ -1,4 +1,3 @@
-using Atata.Cli.HtmlValidate;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.UIKit.Tests.UI.Extensions;
 using Shouldly;
