@@ -59,10 +59,10 @@ public class BehaviorVueTests : UITestBase
 
     private static async Task AssertHtmValidationResultAsync(HtmlValidationResult validationResult)
     {
-        var errors = (await validationResult.GetErrorsAsync())
+        var errors = (await validationResult.GetParsedErrorsAsync())
             .Where(error =>
-                !error.ContainsOrdinalIgnoreCase("The autoplay attribute is not allowed on <video>")
-                && !error.ContainsOrdinalIgnoreCase("title text cannot be longer than 70 characters"));
+                error.RuleId is not "no-autoplay" and
+                not "long-title");
         errors.ShouldBeEmpty();
     }
 }

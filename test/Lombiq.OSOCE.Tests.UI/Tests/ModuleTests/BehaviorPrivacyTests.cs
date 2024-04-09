@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
+using YamlDotNet.Core.Tokens;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
@@ -45,8 +46,8 @@ public class BehaviorPrivacyTests : UITestBase
                 {
                     // Error filtering due to https://github.com/OrchardCMS/OrchardCore/issues/15222,
                     // can be removed once it is resolved.
-                    var errors = (await validationResult.GetErrorsAsync())
-                        .Where(error => !error.ContainsOrdinalIgnoreCase("Prefer to use the native <button> element"));
+                    var errors = (await validationResult.GetParsedErrorsAsync())
+                        .Where(error => error.RuleId is not "prefer-native-element");
                     errors.ShouldBeEmpty();
                 });
     }

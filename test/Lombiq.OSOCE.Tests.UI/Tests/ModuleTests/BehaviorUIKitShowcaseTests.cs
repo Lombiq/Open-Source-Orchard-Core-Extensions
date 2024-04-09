@@ -20,11 +20,7 @@ public class BehaviorUIKitShowcaseTests : UITestBase
     public Task UIKitShowcasePageShouldBeCorrect()
         => ExecuteTestAfterSetupAsync(
             context => context.TestUIKitShowcaseBehaviorAsync(),
-            configuration =>
-            {
-                configuration.HtmlValidationConfiguration.HtmlValidationOptions.ResultFileFormatter =
-                    HtmlValidateFormatter.Names.Json;
-                configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
+            configuration => configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
                     async validationResult =>
                     {
                         // Error filtering due to https://github.com/OrchardCMS/OrchardCore/issues/15222,
@@ -35,6 +31,5 @@ public class BehaviorUIKitShowcaseTests : UITestBase
                                 not "text-content" and
                                 not "no-redundant-role");
                         errors.ShouldBeEmpty();
-                    };
-            });
+                    });
 }
