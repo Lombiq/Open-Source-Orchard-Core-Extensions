@@ -59,7 +59,7 @@ public class BehaviorVueTests : UITestBase
 
     private static async Task AssertHtmValidationResultAsync(HtmlValidationResult validationResult)
     {
-        var errors = (await validationResult.GetParsedErrorsAsync())
+        var errors = validationResult.GetParsedErrors()
             .Where(error =>
                 error.RuleId is not "no-autoplay" and
                 not "long-title");

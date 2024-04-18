@@ -44,7 +44,7 @@ public class BehaviorPrivacyTests : UITestBase
                 {
                     // Error filtering due to https://github.com/OrchardCMS/OrchardCore/issues/15222,
                     // can be removed once it is resolved.
-                    var errors = (await validationResult.GetParsedErrorsAsync())
+                    var errors = validationResult.GetParsedErrors()
                         .Where(error => error.RuleId is not "prefer-native-element");
                     errors.ShouldBeEmpty();
                 });
