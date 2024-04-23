@@ -2,6 +2,7 @@ using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using Shouldly;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -28,7 +29,8 @@ public static class AssertAppLogsHelpers
                 !message.Contains("|Lombiq.TrainingDemo.Services.DemoBackgroundTask|ERROR|Expected non-error") &&
                 !message.Contains("OrchardCore.Media.Core.DefaultMediaFileStoreCacheFileProvider|ERROR|Error deleting cache folder"));
 
-            filteredLogOutput.ShouldNotContain(item => item.Contains("|ERROR|") || item.Contains("|FATAL|"));
+            var errors = filteredLogOutput.Where(item => item.Contains("|ERROR|") || item.Contains("|FATAL|"));
+            errors.ShouldBeEmpty();
         }
     }
 }
