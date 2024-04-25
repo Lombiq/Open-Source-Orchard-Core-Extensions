@@ -23,7 +23,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI.AppExtensions\Lombiq.Tests.UI.AppExtensions.csproj" />
     <ProjectReference Include="..\..\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI.Shortcuts\Lombiq.Tests.UI.Shortcuts.csproj" />
-    <ProjectReference Include="..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.SourceGenerators\Lombiq.HelpfulLibraries.SourceGenerators.csproj" />
     <ProjectReference Include="..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Samples\Lombiq.HelpfulLibraries.Samples.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.AuditTrailExtensions\Lombiq.AuditTrailExtensions.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.ChartJs\Lombiq.ChartJs\Lombiq.ChartJs.csproj" />
