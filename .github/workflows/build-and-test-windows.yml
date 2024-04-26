@@ -40,7 +40,7 @@ jobs:
     with:
       parent-job-name: "root-solution-larger-runners"
       machine-types: "['windows-2022-8core']"
-      timeout-minutes: 30
+      timeout-minutes: 120
       set-up-sql-server: "true"
       set-up-azurite: "true"
       ui-test-parallelism: 0
@@ -58,7 +58,7 @@ jobs:
       parent-job-name: "root-solution-standard-runners"
       # Since dev builds are not awaited by anyone, they can run on the slower free runners.
       machine-types: "['windows-2022']"
-      timeout-minutes: 60
+      timeout-minutes: 120
       set-up-sql-server: "true"
       set-up-azurite: "true"
       build-create-binary-log: "true"
