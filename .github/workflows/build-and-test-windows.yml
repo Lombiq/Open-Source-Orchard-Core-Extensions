@@ -78,7 +78,7 @@ jobs:
       parent-job-name: "nuget-solution"
       machine-types: "['windows-2022']"
       build-directory: NuGetTest
-      timeout-minutes: 60
+      timeout-minutes: 30
       dotnet-test-process-timeout: 480000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
