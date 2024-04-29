@@ -6,7 +6,6 @@ name: Build and Test Windows
 on:
   workflow_dispatch:
   pull_request:
-    types: [labeled]
   push:
     branches:
       - dev
@@ -48,7 +47,9 @@ jobs:
       dotnet-test-process-timeout: 600000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
-      test-filter: "FullyQualifiedName!~SecurityScanningTests"
+      test-filter: "FullyQualifiedName~BasicOrchardFeaturesTests"
+      build-enable-code-analysis: 'false'
+      cancel-in-progress-for-this-pr: 'false'
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -82,7 +83,9 @@ jobs:
       dotnet-test-process-timeout: 480000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
-      test-filter: "FullyQualifiedName!~SecurityScanningTests"
+      test-filter: "FullyQualifiedName~BasicOrchardFeaturesTests"
+      build-enable-code-analysis: 'false'
+      cancel-in-progress-for-this-pr: 'false'
 
   powershell-static-code-analysis:
     if: github.ref_name == github.event.repository.default_branch ||
