@@ -18,7 +18,7 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: "root-solution-larger-runners"
-      machine-types: "['windows-latest-64core']"
+      machine-types: "['windows-latest-8core']"
       timeout-minutes: 30
       set-up-sql-server: "true"
       set-up-azurite: "true"
@@ -31,17 +31,3 @@ jobs:
       build-enable-code-analysis: 'false'
       cancel-in-progress-for-this-pr: 'false'
 
-  build-and-test-nuget-test:
-    name: Build and Test Windows - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
-    with:
-      parent-job-name: "nuget-solution"
-      machine-types: "['windows-latest-64core']"
-      build-directory: NuGetTest
-      timeout-minutes: 30
-      dotnet-test-process-timeout: 480000
-      # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
-      # supported by GHA.
-      test-filter: "FullyQualifiedName!~SecurityScanningTests"
-      build-enable-code-analysis: 'false'
-      cancel-in-progress-for-this-pr: 'false'

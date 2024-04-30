@@ -42,7 +42,8 @@ public abstract class UITestBase : OrchardCoreUITestBase<Program>
     {
         configuration.BrowserConfiguration.DefaultBrowserSize = CommonDisplayResolutions.HdPlus;
 
-        configuration.BrowserConfiguration.Headless = false;
+        configuration.BrowserConfiguration.Headless =
+            TestConfigurationManager.GetBoolConfiguration("BrowserConfiguration:Headless", defaultValue: false);
 
         configuration.AssertAppLogsAsync = AssertAppLogsHelpers.AssertOsoceAppLogsAreEmptyAsync;
     }
