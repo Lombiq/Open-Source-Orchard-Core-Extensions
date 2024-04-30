@@ -1,3 +1,4 @@
+using Atata.Cli.HtmlValidate;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.UIKit.Tests.UI.Extensions;
 using Shouldly;
@@ -19,7 +20,11 @@ public class BehaviorUIKitShowcaseTests : UITestBase
     public Task UIKitShowcasePageShouldBeCorrect()
         => ExecuteTestAfterSetupAsync(
             context => context.TestUIKitShowcaseBehaviorAsync(),
-            configuration => configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
+            configuration =>
+            {
+                configuration.HtmlValidationConfiguration.HtmlValidationOptions.OutputFormatter =
+                    HtmlValidateFormatter.Names.Json;
+                configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
                     validationResult =>
                     {
                         // Error filtering due to https://github.com/OrchardCMS/OrchardCore/issues/15222,
@@ -27,9 +32,10 @@ public class BehaviorUIKitShowcaseTests : UITestBase
                         var errors = validationResult.GetParsedErrors()
                             .Where(error =>
                                 error.RuleId is not "prefer-native-element" and
-                                not "text-content" and
-                                not "no-redundant-role");
+                                    not "text-content" and
+                                    not "no-redundant-role");
                         errors.ShouldBeEmpty(string.Join('\n', errors.Select(error => error.Message)));
                         return Task.CompletedTask;
-                    });
+                    };
+            });
 }
