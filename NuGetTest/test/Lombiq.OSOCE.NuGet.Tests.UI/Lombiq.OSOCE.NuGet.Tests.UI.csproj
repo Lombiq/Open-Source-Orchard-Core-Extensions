@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -42,7 +42,7 @@
     <PackageReference Include="Lombiq.OrchardCoreApiClient.Tests.UI" Version="5.0.0" />
     <PackageReference Include="Lombiq.Privacy.Tests.UI" Version="8.0.0" />
     <PackageReference Include="Lombiq.HelpfulExtensions.Tests.UI" Version="8.0.0" />
-    <PackageReference Include="Lombiq.Tests.UI" Version="9.0.0" />
+    <PackageReference Include="Lombiq.Tests.UI" Version="9.0.1-alpha.7.osoe-840" />
     <PackageReference Include="Lombiq.VueJs.Tests.UI" Version="5.0.0" />
     <PackageReference Include="Lombiq.Walkthroughs.Tests.UI" Version="1.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
