@@ -13,6 +13,6 @@ public class TimeoutTests : UITestBase
     }
 
     [Fact]
-    public Task GenerateHttpEventUrlShouldWork() =>
+    public Task TestRunTimoutShouldThrowAsync() =>
         TimeoutTestCases.TestRunTimoutShouldThrowAsync(ExecuteTestAfterSetupAsync);
 }
