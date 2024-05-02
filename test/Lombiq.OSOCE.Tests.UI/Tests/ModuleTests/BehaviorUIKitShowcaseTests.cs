@@ -2,8 +2,10 @@ using Atata.Cli.HtmlValidate;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.UIKit.Tests.UI.Extensions;
 using Shouldly;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
+using Xunit;
 using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
@@ -15,7 +17,11 @@ public class BehaviorUIKitShowcaseTests : UITestBase
     {
     }
 
-    // [Fact]
+    [SuppressMessage(
+        "Usage",
+        "xUnit1004:Test methods should not be skipped",
+        Justification = "Temporarily disabled.")]
+    [Fact(Skip = "temporarily disabled")]
     public Task UIKitShowcasePageShouldBeCorrect()
         => ExecuteTestAfterSetupAsync(
             context => context.TestUIKitShowcaseBehaviorAsync(),
