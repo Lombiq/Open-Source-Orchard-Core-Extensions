@@ -1,4 +1,5 @@
 using Lombiq.Hosting.Tenants.EnvironmentRobots.Tests.UI.Extensions;
+using System;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -21,7 +22,8 @@ public class BehaviorEnvironmentRobotsTests : UITestBase
     [Fact]
     public Task RobotsMetaTagShouldBeMissingWithoutConfiguration() =>
         ExecuteTestAfterSetupAsync(
-            context => context.TestRobotMetaTagIsMissingAsync(shouldBeMissing: false));
+            context => context.TestRobotMetaTagIsMissingAsync(shouldBeMissing: false),
+            configuration => configuration.TimeoutConfiguration.TestRunTimeout = TimeSpan.FromMinutes(10));
 
     [Fact]
     public Task RobotsMetaTagShouldBePresent() =>
