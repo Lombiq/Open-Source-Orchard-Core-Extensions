@@ -17,11 +17,7 @@ public class BehaviorUIKitShowcaseTests : UITestBase
     {
     }
 
-    [SuppressMessage(
-        "Usage",
-        "xUnit1004:Test methods should not be skipped",
-        Justification = "Temporarily disabled.")]
-    [Fact(Skip = "temporarily disabled")]
+    [Fact]
     public Task UIKitShowcasePageShouldBeCorrect()
         => ExecuteTestAfterSetupAsync(
             context => context.TestUIKitShowcaseBehaviorAsync(),
