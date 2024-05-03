@@ -5,7 +5,7 @@ name: Build and Test Windows
 # under Ubuntu is rare (but does happen). So, not running them for every push of every PR.
 on:
   workflow_dispatch:
-  pull_request:
+  # pull_request:
   push:
     branches:
       - dev
