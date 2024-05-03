@@ -15,14 +15,15 @@ jobs:
     with:
       parent-job-name: "root-solution-larger-runners"
       machine-types: "['buildjet-4vcpu-ubuntu-2204']"
-      timeout-minutes: 30
+      timeout-minutes: 60
       set-up-sql-server: "true"
       set-up-azurite: "true"
       ui-test-parallelism: 0
       build-create-binary-log: "true"
-      dotnet-test-process-timeout: 600000
+      dotnet-test-process-timeout: 6000000
       build-enable-nuget-caching: "true"
       build-enable-npm-caching: "true"
+      cancel-in-progress-for-this-pr: 'false'
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -44,7 +45,8 @@ jobs:
       parent-job-name: nuget-solution
       build-directory: NuGetTest
       timeout-minutes: 20
-      dotnet-test-process-timeout: 480000
+      dotnet-test-process-timeout: 4800000
+      cancel-in-progress-for-this-pr: 'false'
 
   spelling:
     name: Spelling
