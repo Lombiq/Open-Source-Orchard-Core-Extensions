@@ -41,13 +41,14 @@ public class BehaviorPrivacyTests : UITestBase
         await ExecuteTestAfterSetupAsync(
             context => context.TestConsentBannerWithThemeAsync("TheTheme"),
             configuration => configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
-                async validationResult =>
+                validationResult =>
                 {
                     // Error filtering due to https://github.com/OrchardCMS/OrchardCore/issues/15222,
                     // can be removed once it is resolved.
-                    var errors = (await validationResult.GetErrorsAsync())
-                        .Where(error => !error.ContainsOrdinalIgnoreCase("Prefer to use the native <button> element"));
-                    errors.ShouldBeEmpty();
+                    var errors = validationResult.GetParsedErrors()
+                        .Where(error => error.RuleId is not "prefer-native-element");
+                    errors.ShouldBeEmpty(string.Join('\n', errors.Select(error => error.Message)));
+                    return Task.CompletedTask;
                 });
     }
 

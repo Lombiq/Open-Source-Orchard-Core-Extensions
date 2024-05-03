@@ -18,13 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="BehaviorWalkthroughsTests.htmlvalidate.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <PackageCopyToOutput>true</PackageCopyToOutput>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\src\Libraries\Lombiq.OrchardCoreApiClient\Lombiq.OrchardCoreApiClient.Tests.UI\Lombiq.OrchardCoreApiClient.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Lombiq.OSOCE.Web\Lombiq.OSOCE.Web.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.ChartJs\Lombiq.ChartJs.Tests.UI\Lombiq.ChartJs.Tests.UI.csproj" />

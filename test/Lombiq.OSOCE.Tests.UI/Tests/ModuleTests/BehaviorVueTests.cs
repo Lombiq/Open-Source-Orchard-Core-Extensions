@@ -57,12 +57,13 @@ public class BehaviorVueTests : UITestBase
                                     "Failed to load resource: the server responded with a status of 404"))));
             });
 
-    private static async Task AssertHtmValidationResultAsync(HtmlValidationResult validationResult)
+    private static Task AssertHtmValidationResultAsync(HtmlValidationResult validationResult)
     {
-        var errors = (await validationResult.GetErrorsAsync())
+        var errors = validationResult.GetParsedErrors()
             .Where(error =>
-                !error.ContainsOrdinalIgnoreCase("The autoplay attribute is not allowed on <video>")
-                && !error.ContainsOrdinalIgnoreCase("title text cannot be longer than 70 characters"));
+                error.RuleId is not "no-autoplay" and
+                    not "long-title");
         errors.ShouldBeEmpty();
+        return Task.CompletedTask;
     }
 }
