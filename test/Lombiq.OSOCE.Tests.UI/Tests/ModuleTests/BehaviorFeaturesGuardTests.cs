@@ -1,7 +1,6 @@
 using Lombiq.Hosting.Tenants.FeaturesGuard.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Helpers;
 using Lombiq.Tests.UI.Samples.Helpers;
-using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
