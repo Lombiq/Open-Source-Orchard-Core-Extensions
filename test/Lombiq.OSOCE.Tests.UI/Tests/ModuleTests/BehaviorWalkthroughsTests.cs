@@ -1,4 +1,3 @@
-using Atata.HtmlValidation;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using Lombiq.Walkthroughs.Tests.UI.Extensions;
