@@ -24,7 +24,6 @@ jobs:
       build-enable-nuget-caching: "true"
       build-enable-npm-caching: "true"
       cancel-in-progress-for-this-pr: 'false'
-      test-filter: "FullyQualifiedName!~BehaviorWalkthroughsTests"
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -48,7 +47,6 @@ jobs:
       timeout-minutes: 20
       dotnet-test-process-timeout: 4800000
       cancel-in-progress-for-this-pr: 'false'
-      test-filter: "FullyQualifiedName!~BehaviorWalkthroughsTests"
 
   spelling:
     name: Spelling
