@@ -1,4 +1,3 @@
-using Atata.HtmlValidation;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using Lombiq.Walkthroughs.Tests.UI.Extensions;
@@ -26,7 +25,8 @@ public class BehaviorWalkthroughsTests : UITestBase
             // Could be removed if https://github.com/shepherd-pro/shepherd/issues/2555 is fixed.
             changeConfiguration: configuration =>
             {
-                configuration.HtmlValidationConfiguration.HtmlValidationOptions.SetLocalConfigFile("BehaviorWalkthroughsTests.htmlvalidate.json");
+                configuration.HtmlValidationConfiguration
+                    .WithRelativeConfigPath("BehaviorWalkthroughsTests.htmlvalidate.json");
 
                 configuration.AssertBrowserLog = logEntries => logEntries.ShouldNotContain(
                     logEntry => IsValidLogEntry(logEntry),
