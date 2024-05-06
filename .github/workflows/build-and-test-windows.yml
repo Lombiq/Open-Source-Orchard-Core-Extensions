@@ -29,6 +29,7 @@ jobs:
         labels: run-windows-build
         type: remove
 
+
   build-and-test-larger-runners:
     name: Build and Test Windows - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
