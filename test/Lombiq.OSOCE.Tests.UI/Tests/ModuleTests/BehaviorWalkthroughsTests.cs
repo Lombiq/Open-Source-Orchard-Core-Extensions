@@ -27,14 +27,13 @@ public class BehaviorWalkthroughsTests : UITestBase
             {
                 // Could be removed if https://github.com/shepherd-pro/shepherd/issues/2555 is fixed.
                 configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
-                    validationResult =>
+                    async validationResult =>
                     {
                         // Error filtering due to https://github.com/OrchardCMS/OrchardCore/issues/15222,
                         // can be removed once it is resolved.
-                        var errors = validationResult.GetParsedErrors()
+                        var errors = (await validationResult.GetParsedErrorsAsync())
                             .Where(error => error.RuleId is not "no-implicit-button-type");
                         errors.ShouldBeEmpty(string.Join('\n', errors.Select(error => error.Message)));
-                        return Task.CompletedTask;
                     };
 
                 // Once the linked issues are fixed, the custom browser log assertion can be removed completely.
