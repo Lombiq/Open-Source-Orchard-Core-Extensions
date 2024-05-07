@@ -18,6 +18,7 @@ var configuration = builder.Configuration;
 builder.Services
     .AddSingleton(configuration)
     .AddOrchardCms(orchardCoreBuilder => orchardCoreBuilder
+        .AddOrchardCoreApplicationInsightsTelemetry(configuration)
         .ConfigureFeaturesGuard(
             new Dictionary<string, IEnumerable<string>>
             {

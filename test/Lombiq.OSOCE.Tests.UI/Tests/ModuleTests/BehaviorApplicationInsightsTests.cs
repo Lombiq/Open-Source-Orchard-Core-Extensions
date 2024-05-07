@@ -12,9 +12,7 @@ public class BehaviorApplicationInsightsTests : UITestBase
     {
     }
 
-#pragma warning disable xUnit1004 // Test methods should not be skipped
-    [Fact(Skip = "Debugging test hangs.")]
-#pragma warning restore xUnit1004 // Test methods should not be skipped
+    [Fact]
     public Task ApplicationInsightsTrackingInOfflineOperationShouldWork() =>
         ApplicationInsightsTestCases.ApplicationInsightsTrackingInOfflineOperationShouldWorkAsync(ExecuteTestAfterSetupAsync);
 }
