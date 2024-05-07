@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "./default.htmlvalidate.json"
+  ],
+
+  "rules": {
+    "element-required-attributes": "off",
+    "no-implicit-button-type": "off"
+  },
+
+  "root": true
+}
