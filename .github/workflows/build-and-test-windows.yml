@@ -31,7 +31,7 @@ jobs:
 
   build-and-test-larger-runners:
     name: Build and Test Windows - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-838
     with:
       parent-job-name: "root-solution-larger-runners"
       machine-types: "['windows-2022-8core']"
@@ -51,7 +51,7 @@ jobs:
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
     name: Build and Test Windows - root solution (standard runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-838
     with:
       parent-job-name: "root-solution-standard-runners"
       # Since dev builds are not awaited by anyone, they can run on the slower free runners.
