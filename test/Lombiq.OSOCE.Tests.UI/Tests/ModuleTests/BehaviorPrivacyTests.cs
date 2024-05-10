@@ -46,7 +46,7 @@ public class BehaviorPrivacyTests : UITestBase
                     // can be removed once it is resolved.
                     var errors = validationResult.GetParsedErrors()
                         .Where(error => error.RuleId is not "prefer-native-element");
-                    errors.ShouldBeEmpty(string.Join('\n', errors.Select(error => error.Message)));
+                    errors.ShouldBeEmpty(HtmlValidationResultExtensions.GetParsedErrorMessageString(errors));
                     return Task.CompletedTask;
                 });
     }

@@ -63,7 +63,7 @@ public class BehaviorVueTests : UITestBase
             .Where(error =>
                 error.RuleId is not "no-autoplay" and
                     not "long-title");
-        errors.ShouldBeEmpty();
+        errors.ShouldBeEmpty(HtmlValidationResultExtensions.GetParsedErrorMessageString(errors));
         return Task.CompletedTask;
     }
 }

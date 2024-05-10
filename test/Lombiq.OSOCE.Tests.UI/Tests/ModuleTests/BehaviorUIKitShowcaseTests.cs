@@ -29,7 +29,7 @@ public class BehaviorUIKitShowcaseTests : UITestBase
                                 error.RuleId is not "prefer-native-element" and
                                     not "text-content" and
                                     not "no-redundant-role");
-                        errors.ShouldBeEmpty(string.Join('\n', errors.Select(error => error.Message)));
+                        errors.ShouldBeEmpty(HtmlValidationResultExtensions.GetParsedErrorMessageString(errors));
                         return Task.CompletedTask;
                     });
 }
