@@ -31,9 +31,13 @@ public class BehaviorChartJsTests : UITestBase
         };
 
         var json = JsonSerializer.Serialize(data);
-        json.ShouldBe("{\"align\":\"start\",\"anchor\":\"center\",\"offset\":3.14,\"font\":{\"size\":16.5}}");
+        json.ShouldBe("{\"align\":\"start\",\"anchor\":\"center\",\"offset\":3.14,\"font\":{\"size\":16.5,\"weight\":\"bold\"}}");
 
         var deserialized = JsonSerializer.Deserialize<DataLabelAlignmentConfiguration>(json);
-        deserialized.ShouldBe(data);
+        deserialized.Align.ShouldBe(data.Align);
+        deserialized.Anchor.ShouldBe(data.Anchor);
+        deserialized.Font.IsBold.ShouldBe(data.Font.IsBold);
+        deserialized.Font.Size.ShouldBe(data.Font.Size);
+        deserialized.Offset.ShouldBe(data.Offset);
     }
 }
