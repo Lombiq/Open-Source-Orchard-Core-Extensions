@@ -9,6 +9,7 @@ hashable
 idletenantprefix
 idletenantshutdown
 mjpeg
+netstandard
 Overconstrained
 parallelizable
 qrcode
