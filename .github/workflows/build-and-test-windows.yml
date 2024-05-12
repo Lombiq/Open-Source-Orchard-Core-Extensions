@@ -43,7 +43,7 @@ jobs:
       dotnet-test-process-timeout: 600000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
-      test-filter: "FullyQualifiedName~Lombiq.OSOCE.Tests.UI"
+      test-filter: "FullyQualifiedName!~SecurityScanningTests"
       cancel-in-progress-for-this-pr: 'false'
       build-enable-code-analysis: 'false'
       verify-dotnet-consolidation: false
