@@ -26,9 +26,8 @@ public class VisualVerificationTests : UITestBase
         // The threshold is necessary so the year changing in the footer doesn't cause the test to crash (or other tiny
         // changes in font rendering).
         ExecuteTestAfterSetupAsync(
-            context => context.AssertVisualVerificationOnAllResolutions(
+            context => context.AssertVisualVerificationApprovedOnAllResolutionsWithPlatformSuffix(
                 _visualVerificationSizes,
                 _ => By.TagName("body"),
-                pixelErrorPercentageThreshold: 0.005,
-                checkOS: true));
+                pixelErrorPercentageThreshold: 0.005));
 }
