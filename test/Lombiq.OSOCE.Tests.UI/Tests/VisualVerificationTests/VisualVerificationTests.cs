@@ -2,7 +2,6 @@ using Lombiq.Tests.UI.Constants;
 using Lombiq.Tests.UI.Extensions;
 using OpenQA.Selenium;
 using SixLabors.ImageSharp;
-using System;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -31,6 +30,5 @@ public class VisualVerificationTests : UITestBase
                 _visualVerificationSizes,
                 _ => By.TagName("body"),
                 pixelErrorPercentageThreshold: 0.005,
-                configurator: configuration => configuration.WithFileNameSuffix(
-                    OperatingSystem.IsWindows() ? "Windows" : "Unix")));
+                checkOS: true));
 }
