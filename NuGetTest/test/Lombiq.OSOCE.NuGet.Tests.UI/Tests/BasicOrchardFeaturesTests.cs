@@ -1,4 +1,4 @@
-using Lombiq.Tests.UI.Extensions;
+using Lombiq.Tests.UI.BasicOrchardFeaturesTesting;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
