@@ -2,7 +2,6 @@ using Lombiq.Tests.UI.Constants;
 using Lombiq.Tests.UI.Extensions;
 using OpenQA.Selenium;
 using SixLabors.ImageSharp;
-using System;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -27,10 +26,8 @@ public class VisualVerificationTests : UITestBase
         // The threshold is necessary so the year changing in the footer doesn't cause the test to crash (or other tiny
         // changes in font rendering).
         ExecuteTestAfterSetupAsync(
-            context => context.AssertVisualVerificationOnAllResolutions(
+            context => context.AssertVisualVerificationApprovedOnAllResolutionsWithPlatformSuffix(
                 _visualVerificationSizes,
                 _ => By.TagName("body"),
-                pixelErrorPercentageThreshold: 0.005,
-                configurator: configuration => configuration.WithFileNameSuffix(
-                    OperatingSystem.IsWindows() ? "Windows" : "Unix")));
+                pixelErrorPercentageThreshold: 0.005));
 }
