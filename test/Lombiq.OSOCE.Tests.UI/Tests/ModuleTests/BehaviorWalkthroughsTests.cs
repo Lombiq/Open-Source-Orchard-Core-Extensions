@@ -25,11 +25,9 @@ public class BehaviorWalkthroughsTests : UITestBase
             // Could be removed if https://github.com/shepherd-pro/shepherd/issues/2555 is fixed.
             changeConfiguration: configuration =>
             {
-                // Could be removed if https://github.com/shepherd-pro/shepherd/issues/2555 is fixed.
                 configuration.HtmlValidationConfiguration
                     .WithRelativeConfigPath("BehaviorWalkthroughsTests.htmlvalidate.json");
 
-                // Once the linked issues are fixed, the custom browser log assertion can be removed completely.
                 configuration.AssertBrowserLog = logEntries => logEntries.ShouldNotContain(
                     logEntry => IsValidLogEntry(logEntry),
                     logEntries.Where(IsValidLogEntry).ToFormattedString());
