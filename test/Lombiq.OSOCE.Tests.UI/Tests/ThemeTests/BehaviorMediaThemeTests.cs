@@ -11,7 +11,7 @@ namespace Lombiq.OSOCE.Tests.UI.Tests.ThemeTests;
 
 public class BehaviorMediaThemeTests : UITestBase
 {
-    public const string TestTenantName = "test";
+    private const string TestTenantName = "test";
 
     public BehaviorMediaThemeTests(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)
