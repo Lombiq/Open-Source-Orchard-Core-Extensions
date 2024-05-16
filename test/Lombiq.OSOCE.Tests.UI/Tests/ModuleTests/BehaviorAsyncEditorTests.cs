@@ -11,14 +11,6 @@ namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
 public class BehaviorAsyncEditorTests : UITestBase
 {
-    static BehaviorAsyncEditorTests()
-    {
-        // Temporary bug fix until https://github.com/OrchardCMS/OrchardCore/issues/15533 is resolved. Here we edit
-        // Default but there Base has to be updated.
-        JOptions.Default.PreferredObjectCreationHandling = JsonObjectCreationHandling.Populate;
-        JOptions.Default.ReferenceHandler = null;
-    }
-
     public BehaviorAsyncEditorTests(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)
     {
