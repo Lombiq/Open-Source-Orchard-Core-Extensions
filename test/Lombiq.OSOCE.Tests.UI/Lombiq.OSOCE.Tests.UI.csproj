@@ -41,6 +41,7 @@
     <ProjectReference Include="..\..\src\Modules\Lombiq.VueJs\Lombiq.VueJs.Tests.UI\Lombiq.VueJs.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.Walkthroughs\Lombiq.Walkthroughs.Test.UI\Lombiq.Walkthroughs.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Themes\Lombiq.BaseTheme\Lombiq.BaseTheme.Tests.UI\Lombiq.BaseTheme.Tests.UI.csproj" />
+    <ProjectReference Include="..\..\src\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.Bridge.Tests.UI\Lombiq.Hosting.MediaTheme.Bridge.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.Tests.UI\Lombiq.Hosting.MediaTheme.Tests.UI.csproj" />
     <ProjectReference Include="..\Lombiq.UITestingToolbox\Lombiq.Tests.UI.Samples\Lombiq.Tests.UI.Samples.csproj" />
     <ProjectReference Include="..\Lombiq.UITestingToolbox\Lombiq.Tests.UI.Tests.UI\Lombiq.Tests.UI.Tests.UI.csproj" />
