@@ -38,11 +38,7 @@ public class BehaviorMediaThemeTests : UITestBase
 
     [Fact]
     public Task MediaThemeTemplateAccessShouldBeBlocked() =>
-        ExecuteTestAfterSetupAsync(async context =>
-        {
-            await CreateAndSwitchToTenantAsync(context);
-            await context.TestMediaThemeTemplatePageAsync();
-        });
+        ExecuteTestAfterSetupAsync(async context => await context.TestMediaThemeTemplatePageAsync());
 
     private static Task CreateAndSwitchToTenantAsync(UITestContext context) =>
         context.CreateAndSwitchToTenantAsync(
