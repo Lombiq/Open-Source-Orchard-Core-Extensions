@@ -20,9 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.BaseTheme.Tests.UI" Version="6.0.1" />
+    <PackageReference Include="Lombiq.BaseTheme.Tests.UI" Version="7.0.0" />
     <PackageReference Include="Lombiq.ChartJs.Tests.UI" Version="7.0.1" />
-    <PackageReference Include="Lombiq.ContentEditors.Tests.UI" Version="3.0.0" />
+    <PackageReference Include="Lombiq.ContentEditors.Tests.UI" Version="3.0.1" />
     <PackageReference Include="Lombiq.DataTables.Tests.UI" Version="8.0.0" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI" Version="8.0.1" />
     <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay.Tests.UI" Version="5.0.0" />
