@@ -34,14 +34,14 @@
     <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="6.0.1" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="6.0.1" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme.Targets" Version="6.0.1" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="7.0.0" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots" Version="7.0.0" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="7.0.0" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="7.0.0" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Maintenance" Version="7.0.0" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="7.0.0" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement" Version="7.0.0" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.EmailQuotaManagement" Version="7.0.0" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="7.0.1" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots" Version="7.0.1" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="7.0.1" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="7.0.1" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Maintenance" Version="7.0.1" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="7.0.1" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement" Version="7.0.1" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.EmailQuotaManagement" Version="7.0.1" />
     <PackageReference Include="Lombiq.JsonEditor" Version="7.0.1" />
     <PackageReference Include="Lombiq.JsonEditor.Tests.UI" Version="7.0.1" />
     <PackageReference Include="Lombiq.LoginAsAnybody" Version="2.0.0" />
