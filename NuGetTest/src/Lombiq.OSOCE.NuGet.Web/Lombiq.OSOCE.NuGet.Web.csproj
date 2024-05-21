@@ -45,8 +45,8 @@
     <PackageReference Include="Lombiq.JsonEditor" Version="7.0.1" />
     <PackageReference Include="Lombiq.JsonEditor.Tests.UI" Version="7.0.1" />
     <PackageReference Include="Lombiq.LoginAsAnybody" Version="2.0.0" />
-    <PackageReference Include="Lombiq.Privacy" Version="8.0.0" />
-    <PackageReference Include="Lombiq.Privacy.Samples" Version="8.0.0" />
+    <PackageReference Include="Lombiq.Privacy" Version="8.0.1" />
+    <PackageReference Include="Lombiq.Privacy.Samples" Version="8.0.1" />
     <PackageReference Include="Lombiq.SetupExtensions" Version="6.0.0" />
     <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="10.0.1" />
     <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="10.0.1" />
