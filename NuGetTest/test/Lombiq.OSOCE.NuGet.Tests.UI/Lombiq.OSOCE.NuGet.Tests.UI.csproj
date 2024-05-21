@@ -42,7 +42,7 @@
     <PackageReference Include="Lombiq.HelpfulExtensions.Tests.UI" Version="8.0.1" />
     <PackageReference Include="Lombiq.Tests.UI" Version="10.0.1" />
     <PackageReference Include="Lombiq.VueJs.Tests.UI" Version="6.0.0" />
-    <PackageReference Include="Lombiq.Walkthroughs.Tests.UI" Version="1.0.0" />
+    <PackageReference Include="Lombiq.Walkthroughs.Tests.UI" Version="1.0.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.8.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
