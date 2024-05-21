@@ -26,8 +26,8 @@
     <PackageReference Include="Lombiq.ChartJs.Samples" Version="7.0.1" />
     <PackageReference Include="Lombiq.ContentEditors" Version="3.0.1" />
     <PackageReference Include="Lombiq.ContentEditors.Samples" Version="3.0.1" />
-    <PackageReference Include="Lombiq.DataTables" Version="8.0.0" />
-    <PackageReference Include="Lombiq.DataTables.Samples" Version="8.0.0" />
+    <PackageReference Include="Lombiq.DataTables" Version="8.0.1" />
+    <PackageReference Include="Lombiq.DataTables.Samples" Version="8.0.1" />
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="8.0.1" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="8.0.1" />
     <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay" Version="5.0.0" />
