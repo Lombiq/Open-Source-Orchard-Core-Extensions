@@ -19,9 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.AuditTrailExtensions" Version="6.0.0" />
-    <PackageReference Include="Lombiq.BaseTheme" Version="6.0.1-alpha.0.osoe-838" />
-    <PackageReference Include="Lombiq.BaseTheme.Samples" Version="6.0.1-alpha.0.osoe-838" />
+    <PackageReference Include="Lombiq.AuditTrailExtensions" Version="6.0.1" />
+    <PackageReference Include="Lombiq.BaseTheme" Version="6.0.1" />
+    <PackageReference Include="Lombiq.BaseTheme.Samples" Version="6.0.1" />
     <PackageReference Include="Lombiq.ChartJs" Version="7.0.1-alpha.1.osoe-838" />
     <PackageReference Include="Lombiq.ChartJs.Samples" Version="7.0.1-alpha.1.osoe-838" />
     <PackageReference Include="Lombiq.ContentEditors" Version="3.0.0" />
