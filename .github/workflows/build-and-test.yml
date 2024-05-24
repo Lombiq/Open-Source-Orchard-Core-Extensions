@@ -12,8 +12,11 @@ jobs:
     if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    strategy:
+      matrix:
+        iteration: [1, 2, 3, 4, 5]
     with:
-      parent-job-name: "root-solution-larger-runners"
+      parent-job-name: root-solution-larger-runners-${{ matrix.iteration }}
       machine-types: "['buildjet-4vcpu-ubuntu-2204', 'warp-ubuntu-2204-x64-4x', 'ubuntu-22.04']"
       timeout-minutes: 30
       set-up-sql-server: "true"
@@ -30,7 +33,7 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       # Since dev builds are not awaited by anyone, they can run on the slower free runners.
-      parent-job-name: "root-solution-standard-runners"
+      parent-job-name: root-solution-standard-runners
       timeout-minutes: 50
       set-up-sql-server: "true"
       set-up-azurite: "true"
@@ -40,8 +43,11 @@ jobs:
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    strategy:
+      matrix:
+        iteration: [1, 2, 3, 4, 5]
     with:
-      parent-job-name: nuget-solution
+      parent-job-name: nuget-solution-${{ matrix.iteration }}
       machine-types: "['buildjet-4vcpu-ubuntu-2204', 'warp-ubuntu-2204-x64-4x', 'ubuntu-22.04']"
       build-directory: NuGetTest
       timeout-minutes: 20
@@ -49,6 +55,7 @@ jobs:
 
   spelling:
     name: Spelling
+    if: false
     uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
     with:
       additional-dictionaries: |
@@ -67,12 +74,14 @@ jobs:
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
+    if: false
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
       machine-types: "['buildjet-2vcpu-ubuntu-2204', 'warp-ubuntu-2204-x64-2x', 'ubuntu-22.04']"
 
   yaml-linting:
     name: YAML Linting
+    if: false
     uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@dev
     with:
       config-file-path: tools/Lombiq.GitHub.Actions/.trunk/configs/.yamllint.yaml
@@ -81,7 +90,8 @@ jobs:
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling, powershell-static-code-analysis]
-    if: github.event.pull_request != ''
+    # if: github.event.pull_request != ''
+    if: false
     uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
     secrets:
       JIRA_BASE_URL: ${{ secrets.DEFAULT_JIRA_BASE_URL }}
@@ -91,6 +101,7 @@ jobs:
 
   add-windows-build-warning-label:
     name: Add Windows Build Warning Label
+    if: false
     runs-on: ubuntu-22.04
     timeout-minutes: 2
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
