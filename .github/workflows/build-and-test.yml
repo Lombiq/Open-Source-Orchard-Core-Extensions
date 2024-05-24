@@ -14,7 +14,7 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: "root-solution-larger-runners"
-      machine-types: "['buildjet-4vcpu-ubuntu-2204']"
+      machine-types: "['buildjet-4vcpu-ubuntu-2204', 'warp-ubuntu-2204-x64-4x']"
       timeout-minutes: 30
       set-up-sql-server: "true"
       set-up-azurite: "true"
@@ -42,6 +42,7 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: nuget-solution
+      machine-types: "['buildjet-4vcpu-ubuntu-2204', 'warp-ubuntu-2204-x64-4x']"
       build-directory: NuGetTest
       timeout-minutes: 20
       dotnet-test-process-timeout: 480000
@@ -68,7 +69,7 @@ jobs:
     name: PowerShell Static Code Analysis
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
-      machine-types: '["ubuntu-22.04"]'
+      machine-types: "['buildjet-2vcpu-ubuntu-2204', 'warp-ubuntu-2204-x64-2x']"
 
   yaml-linting:
     name: YAML Linting
