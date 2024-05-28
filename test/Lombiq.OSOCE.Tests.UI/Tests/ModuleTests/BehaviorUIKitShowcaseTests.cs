@@ -1,7 +1,6 @@
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.UIKit.Tests.UI.Extensions;
 using Shouldly;
-using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
@@ -21,15 +20,18 @@ public class BehaviorUIKitShowcaseTests : UITestBase
         => ExecuteTestAfterSetupAsync(
             context => context.TestUIKitShowcaseBehaviorAsync(),
             configuration => configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
-                async validationResult =>
+                validationResult =>
                 {
-                    // Error filtering due to https://github.com/OrchardCMS/OrchardCore/issues/15222,
-                    // can be removed once it is resolved.
-                    var errors = (await validationResult.GetErrorsAsync())
+                    configuration.HtmlValidationConfiguration.WithRelativeConfigPath("NoUniqueLandmark.htmlvalidate.json");
+
+                    // Error filtering due to https://github.com/OrchardCMS/OrchardCore/issues/15222, can be removed
+                    // once it is resolved.
+                    var errors = validationResult.GetParsedErrors()
                         .Where(error =>
-                        !error.ContainsOrdinalIgnoreCase("Prefer to use the native <button> element") &&
-                        !error.ContainsOrdinalIgnoreCase("<button> must have accessible text") &&
-                        !error.ContainsOrdinalIgnoreCase("Redundant role \"button\" on <button>"));
-                    errors.ShouldBeEmpty();
+                            error.RuleId is not "prefer-native-element" and
+                                not "text-content" and
+                                not "no-redundant-role");
+                    errors.ShouldBeEmpty(HtmlValidationResultExtensions.GetParsedErrorMessageString(errors));
+                    return Task.CompletedTask;
                 });
 }
