@@ -168,7 +168,11 @@ log.xml
 profiling/
 *.orig
 .vs/
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 .idea/
 .build/
 .testPublish/
