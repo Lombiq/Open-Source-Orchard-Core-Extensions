@@ -1,3 +1,4 @@
+using Lombiq.Hosting.MediaTheme.Bridge.Tests.UI.Extensions;
 using Lombiq.Hosting.MediaTheme.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Pages;
@@ -10,7 +11,7 @@ namespace Lombiq.OSOCE.Tests.UI.Tests.ThemeTests;
 
 public class BehaviorMediaThemeTests : UITestBase
 {
-    public const string TestTenantName = "test";
+    private const string TestTenantName = "test";
 
     public BehaviorMediaThemeTests(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)
@@ -34,6 +35,10 @@ public class BehaviorMediaThemeTests : UITestBase
             await CreateAndSwitchToTenantAsync(context);
             await context.TestMediaThemeLocalBehaviorAsync();
         });
+
+    [Fact]
+    public Task MediaThemeTemplateAccessShouldBeBlocked() =>
+        ExecuteTestAfterSetupAsync(async context => await context.TestMediaThemeTemplatePageAsync());
 
     private static Task CreateAndSwitchToTenantAsync(UITestContext context) =>
         context.CreateAndSwitchToTenantAsync(
