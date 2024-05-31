@@ -1,0 +1,30 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Lombiq.OSOCE.NuGet.Web .NET Core Launch (web)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/src/Lombiq.OSOCE.NuGet.Web/bin/Debug/net8.0/Lombiq.OSOCE.NuGet.Web.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/Lombiq.OSOCE.NuGet.Web",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            },
+            "launchSettingsFilePath": "${workspaceFolder}/src/Lombiq.OSOCE.NuGet.Web/Properties/launchSettings.json",
+            "launchSettingsProfile": "Lombiq.OSOCE.NuGet.Web"
+        }
+    ]
+}
