@@ -14,10 +14,10 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-790
     strategy:
       matrix:
-        iteration: [1]
+        iteration: [1, 2, 3, 4, 5]
     with:
       parent-job-name: root-solution-larger-runners-${{ matrix.iteration }}
-      machine-types: "['buildjet-4vcpu-ubuntu-2204', 'warp-ubuntu-2204-x64-4x', 'ubuntu-22.04']"
+      machine-types: "['buildjet-4vcpu-ubuntu-2204', 'warp-ubuntu-2204-x64-4x']"
       timeout-minutes: 30
       set-up-sql-server: "true"
       set-up-azurite: "true"
@@ -45,10 +45,10 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-790
     strategy:
       matrix:
-        iteration: [1]
+        iteration: [1, 2, 3, 4, 5]
     with:
       parent-job-name: nuget-solution-${{ matrix.iteration }}
-      machine-types: "['buildjet-4vcpu-ubuntu-2204', 'warp-ubuntu-2204-x64-4x', 'ubuntu-22.04']"
+      machine-types: "['buildjet-4vcpu-ubuntu-2204', 'warp-ubuntu-2204-x64-4x']"
       build-directory: NuGetTest
       timeout-minutes: 20
       dotnet-test-process-timeout: 480000
