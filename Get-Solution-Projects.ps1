@@ -1,16 +1,18 @@
 param(
-    [string]$solutionFilePath,
-    [string]$newVersion
+    [string]$SolutionFilePath,
+    [string]$NewVersion
 )
 
-$solutionFile = Get-ChildItem -Path $solutionFilePath -Filter *.sln | Select-Object -First 1
+$solutionFile = Get-ChildItem -Path $SolutionFilePath -Filter *.sln | Select-Object -First 1
 
-if(!$solutionFile){
-    throw "No solution file found in the specified path."
+if (-not $solutionFile)
+{
+    throw 'No solution file found in the specified path.'
 }
 
-if(!$newVersion){
-    throw "No new version specified."
+if (-not $NewVersion)
+{
+    throw 'No new version specified.'
 }
 
 # Read the .sln file line by line
@@ -20,9 +22,11 @@ $solutionFileLines = Get-Content $solutionFile
 $projectNames = @()
 
 # Loop through each line in the .sln file
-foreach ($line in $solutionFileLines) {
+foreach ($line in $solutionFileLines)
+{
     # Check if the line starts with "Project"
-    if ($line -match '^Project\("' -and $line -like '*.csproj*') {
+    if ($line -match '^Project\("' -and $line -like '*.csproj*')
+    {
         # Extract the project name from the line
         $projectName = ($line -split ',')[0].Trim('"').Split('=')[1].Trim(' "')
 
@@ -32,6 +36,7 @@ foreach ($line in $solutionFileLines) {
 }
 
 # Loop through each project name and call the Update-References.ps1 script to update the version number
-foreach ($projectName in $projectNames) {
-    .\Update-References.ps1 -projectToFind $projectName -newVersion $newVersion
+foreach ($projectName in $projectNames)
+{
+    .\Update-References.ps1 -ProjectToFind $projectName -NewVersion $NewVersion
 }
