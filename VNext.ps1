@@ -86,7 +86,7 @@ try
         Write-Output "New version: $newVersion"
 
         git tag $newVersion
-        #git push origin tag $newVersion
+        git push origin tag $newVersion
     }
     else
     {
