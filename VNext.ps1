@@ -63,7 +63,7 @@ try
             }
         }
 
-        $newVersion = 'v$major.$minor.$patch'
+        $newVersion = "v$major.$minor.$patch"
 
         if ($PreRelease -eq $true)
         {
@@ -75,18 +75,18 @@ try
                 $preReleaseVersion = $latestPreRelease -split '\.'
                 $preReleaseVersionNr = [int]$preReleaseVersion[3]
                 $preReleaseVersionNr++
-                $newVersion += '-alpha.$preReleaseVersionNr.$Issue'
+                $newVersion += "-alpha.$preReleaseVersionNr.$Issue"
             }
             else
             {
-                $newVersion += '-alpha.1.$Issue'
+                $newVersion += "-alpha.1.$Issue"
             }
         }
 
-        Write-Output 'New version: $newVersion'
+        Write-Output "New version: $newVersion"
 
         git tag $newVersion
-        git push origin tag $newVersion
+        #git push origin tag $newVersion
     }
     else
     {
