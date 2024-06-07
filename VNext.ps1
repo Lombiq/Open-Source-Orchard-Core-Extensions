@@ -103,7 +103,7 @@ finally
 
     if ($UpdateReferences -eq $true)
     {
-        #remove the v at the beginnging of the version number
+        #remove the v at the beginning of the version number
         $newVersion = $newVersion.Substring(1)
 
         # Call the Get-Solution-Projects.ps1 script to update the version number in all projects
