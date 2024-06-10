@@ -26,7 +26,7 @@ var app = builder.Build();
 
 app.UseStaticFiles();
 app.UseOrchardCore();
-app.Run();
+await app.RunAsync();
 
 [SuppressMessage(
     "Design",
