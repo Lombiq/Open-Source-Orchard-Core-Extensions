@@ -48,7 +48,7 @@ The main script to use is `VNext.ps1`. It's a PowerShell script that you can run
 3. Run the script with the necessary parameters. For example to release a new major version of the `Lombiq.HelpfulLibraries` project and update the references in other projects, run the following command
 
     ```shell
-    .\VNext.ps1 -path .\src\Libraries\Lombiq.HelpfulLibraries\ -prerelease $True -issue "OSOE-1234"
+    .\VNext.ps1 -path .\src\Libraries\Lombiq.HelpfulLibraries\ -prerelease $True -issue "OC-123"
     ```
 
 ## Update-References
