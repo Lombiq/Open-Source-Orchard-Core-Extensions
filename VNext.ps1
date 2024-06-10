@@ -5,7 +5,8 @@ param(
     [string]$Type,
     [string]$Issue,
     [bool]$PreRelease = $false,
-    [bool]$UpdateReferences = $false
+    [bool]$UpdateReferences = $false,
+    [bool]$Interactive = $true
 )
 
 $origin = Get-Location
@@ -83,7 +84,18 @@ try
             }
         }
 
-        Write-Output "New version: $newVersion"
+        if($Interactive -eq $true)
+        {
+            # Prompt the user for confirmation
+            $confirmation = Read-Host "This action will create and push the following tag to git $newVersion, Are you sure you want to continue? ([Y]es / [N]o)"
+
+            # Check the user's response
+            if ($confirmation -ne "Y")
+            {
+                Write-Output "Operation cancelled by the user."
+                exit
+            }
+        }
 
         git tag $newVersion
         git push origin tag $newVersion
