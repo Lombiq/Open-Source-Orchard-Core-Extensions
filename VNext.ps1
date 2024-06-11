@@ -31,10 +31,10 @@ if ($PSBoundParameters.ContainsKey('Path'))
     Set-Location $Path
 }
 
-#Get the latest release tags, we get the last 20 tags so we can determine the next version or pre-release version
+# Get the latest release tags, we get the last 20 tags so we can determine the next version or pre-release version
 $latestTags = git for-each-ref --sort=-creatordate --count=20 --format '%(refname:short)' refs/tags
 
-#Check tags for a valid version number and try to determine the next version
+# Check tags for a valid version number and try to determine the next version
 try
 {
     if ($latestTags[0] -match 'v\d+\.\d+\.\d+')
@@ -68,7 +68,7 @@ try
 
         if ($PreRelease -eq $true)
         {
-            #Check if there were any pre-release tags for this Issue already in latestTags array
+            # Check if there were any pre-release tags for this Issue already in latestTags array
             $preReleaseTags = $latestTags | Where-Object { $PSItem -match ([regex]::escape($Issue)) }
             if ($preReleaseTags.Count -gt 0)
             {
@@ -115,7 +115,7 @@ finally
 
     if ($UpdateReferences -eq $true)
     {
-        #remove the v at the beginning of the version number
+        # Remove the "v" at the beginning of the version number
         $newVersion = $newVersion.Substring(1)
 
         # Call the Get-Solution-Projects.ps1 script to update the version number in all projects
