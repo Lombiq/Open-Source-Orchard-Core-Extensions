@@ -12,17 +12,17 @@ The main script to use is `Publish-VNext.ps1`. It's a PowerShell script that you
 
 - `Path`: The path to the project you are releasing e.g. `.\src\Libraries\Lombiq.HelpfulLibraries\`.
 - `Type`: The type of the release. Can be `major`, `minor`, or `patch` (or can be omitted if doing a pre-release).
-- `PreRelease`: Boolean flag to indicate if this is a pre-release.
+- `PreRelease`: The flag to indicate if this is a pre-release.
 - `Issue`: The issue number that this release is related to, is only used if it is a pre-release.
-- `UpdateReferences`: Boolean flag to indicate if the references should be updated to this new version in the other projects in the repository.
-- `Interactive`: Boolean flag to indicate if the script should ask for confirmation before pushing changes to git - defaults to true.
+- `UpdateReferences`: The flag to indicate if the references should be updated to this new version in the other projects in the repository.
+- `NonInteractive`: The flag to indicate if the script should skip asking for confirmation before pushing changes to git.
 
 ## Publish-VNext - Usage and examples
 
 ### Releasing a new major version
 
 ```pwsh
-.\Publish-VNext.ps1 -Path \path\to\project\ -Type "major" -UpdateReferences $true
+.\Publish-VNext.ps1 -Path \path\to\project\ -Type "major" -UpdateReferences
 ```
 
 ### Example release of a new major version
@@ -32,7 +32,7 @@ The main script to use is `Publish-VNext.ps1`. It's a PowerShell script that you
 3. Run the script with the necessary parameters. For example to release a new major version of the `Lombiq.HelpfulLibraries` project and update the references in other projects, run the following command
 
     ```pwsh
-    .\Publish-VNext.ps1 -Path .\src\Libraries\Lombiq.HelpfulLibraries\ -Type "major" -UpdateReferences $true
+    .\Publish-VNext.ps1 -Path .\src\Libraries\Lombiq.HelpfulLibraries\ -Type "major" -UpdateReferences
     ```
 
 4. Review the changes made by the script while waiting for the NuGet build to finish.
@@ -46,7 +46,7 @@ The main script to use is `Publish-VNext.ps1`. It's a PowerShell script that you
 3. Run the script with the necessary parameters. For example to release a new major version of the `Lombiq.HelpfulLibraries` project and update the references in other projects, run the following command
 
     ```pwsh
-    .\Publish-VNext.ps1 -Path .\src\Libraries\Lombiq.HelpfulLibraries\ -Prerelease $True -Issue "OC-123"
+    .\Publish-VNext.ps1 -Path .\src\Libraries\Lombiq.HelpfulLibraries\ -Prerelease -Issue "OC-123"
     ```
 
 ## Update-References

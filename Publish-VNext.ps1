@@ -19,21 +19,20 @@
     The issue number. This is required for pre-releases.
 
 .PARAMETER PreRelease
-    A flag indicating whether the release is a pre-release. The default is $false.
+    A flag indicating whether the release is a pre-release.
 
 .PARAMETER UpdateReferences
-    A flag indicating whether to update the references in other projects. The default is $false.
+    A flag indicating whether to update the references in other projects.
 
-.PARAMETER Interactive
-    A flag indicating whether to prompt the user for confirmation before creating and pushing the new tag. The default
-    is $true.
-
-.EXAMPLE
-    .\Publish-VNext.ps1 -Path .\src\Libraries\Lombiq.HelpfulLibraries\ -PreRelease $True -Issue "OC-123"
-    -UpdateReferences $true
+.PARAMETER NonInteractive
+    A flag indicating whether to omit prompting the user for confirmation before creating and pushing the new tag.
 
 .EXAMPLE
-    .\Publish-VNext.ps1 -Path .\src\Libraries\Lombiq.HelpfulLibraries\ -Type 'major' -UpdateReferences $true
+    .\Publish-VNext.ps1 -Path .\src\Libraries\Lombiq.HelpfulLibraries\ -PreRelease -Issue "OC-123"
+    -UpdateReferences
+
+.EXAMPLE
+    .\Publish-VNext.ps1 -Path .\src\Libraries\Lombiq.HelpfulLibraries\ -Type 'major' -UpdateReferences
 
 .NOTES
     The script throws an exception if the necessary parameters are not provided or if there is a problem determining
@@ -43,24 +42,24 @@ param(
     [string]$Path,
     [string]$Type,
     [string]$Issue,
-    [bool]$PreRelease = $false,
-    [bool]$UpdateReferences = $false,
-    [bool]$Interactive = $true
+    [switch]$PreRelease,
+    [switch]$UpdateReferences,
+    [switch]$NonInteractive
 )
 
 $origin = Get-Location
 $newVersion = ''
 
-if ($PreRelease -eq $false -and -not $PSBoundParameters.ContainsKey('Type'))
+if (-not $PreRelease -and -not $PSBoundParameters.ContainsKey('Type'))
 {
-    throw 'Must set a version Type (major, minor, patch)'
+    throw 'Must set a version Type ("major", "minor", "patch")'
     if ($Type -ne 'major' -and $Type -ne 'minor' -and $Type -ne 'patch')
     {
-        throw 'Invalid version Type must be major, minor, or patch'
+        throw 'Invalid version Type must be "major", "minor", or "patch"'
     }
 }
 
-if ($PreRelease -eq $true -and -not $PSBoundParameters.ContainsKey('Issue'))
+if ($PreRelease -and -not $PSBoundParameters.ContainsKey('Issue'))
 {
     throw 'Pre-releases must have an Issue number'
 }
@@ -76,13 +75,13 @@ $latestTags = git for-each-ref --sort=-creatordate --count=20 --format '%(refnam
 # Check tags for a valid version number and try to determine the next version
 try
 {
-    if ($latestTags[0] -match 'v\d+\.\d+\.\d+')
+    if ($latestTags[0] -match '^v\d+\.\d+\.\d+')
     {
         $latestVersion = $matches[0]
-        $version = $latestVersion -split '\.'
-        $major = [int]$version[0].Substring(1)
-        $minor = [int]$version[1]
-        $patch = [int]$version[2].Substring(0, 1)
+        $version = [Version]$matches[0].Substring(1)
+        $major = $version.Major
+        $minor = $version.Minor
+        $patch = $version.Build
 
         switch ($Type)
         {
@@ -105,10 +104,10 @@ try
 
         $newVersion = "v$major.$minor.$patch"
 
-        if ($PreRelease -eq $true)
+        if ($PreRelease)
         {
             # Check if there were any pre-release tags for this Issue already in latestTags array
-            $preReleaseTags = $latestTags | Where-Object { $PSItem -match ([regex]::escape($Issue)) }
+            $preReleaseTags = $latestTags | Where-Object { $PSItem -match ([regex]::Escape($Issue)) }
             if ($preReleaseTags.Count -gt 0)
             {
                 $latestPreRelease = $preReleaseTags[0]
@@ -123,7 +122,7 @@ try
             }
         }
 
-        if ($Interactive -eq $true)
+        if (-not $NonInteractive)
         {
             # Prompt the user for confirmation
             $prompt = "This action will create and push the following tag to git $newVersion," +
@@ -154,7 +153,7 @@ finally
 {
     Set-Location $origin
 
-    if ($UpdateReferences -eq $true)
+    if ($UpdateReferences)
     {
         # Remove the "v" at the beginning of the version number
         $newVersion = $newVersion.Substring(1)

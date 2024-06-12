@@ -24,7 +24,7 @@ param(
 )
 
 # Get all .csproj files recursively
-$projectFiles = Get-ChildItem -Path .\ -Recurse -Filter '*.csproj'
+$projectFiles = Get-ChildItem -Recurse -Filter '*.csproj'
 
 # Loop through each project file to see if it has a reference to the project we are looking for
 forEach ($projectFile in $projectFiles)
@@ -38,21 +38,18 @@ forEach ($projectFile in $projectFiles)
     # Load the XML file
     $projectXml.Load($projectFile)
 
-    # Find the ProjectReference nodes
-    $projectReferences = $projectXml.Project.ItemGroup.PackageReference
+    # Find the PackageReference nodes
+    $packageReferences = $projectXml.Project.ItemGroup.PackageReference
 
-    foreach ($projectReference in $projectReferences)
+    foreach ($packageReference in $packageReferences)
     {
         # Check if the Include attribute contains the project name
-        if ($projectReference.Include -like "*$ProjectToFind*")
+        if ($packageReference.Include -like "*$ProjectToFind*" -and $packageReference.Version)
         {
-            if ($projectReference.Version)
-            {
-                # Change the version if it has a version (is a nuget reference)
-                $projectReference.Version = $NewVersion
-                # Save the modified .csproj file
-                $projectXml.Save($projectFile)
-            }
+            # Change the version if it has a version (is a nuget reference)
+            $packageReference.Version = $NewVersion
+            # Save the modified .csproj file
+            $projectXml.Save($projectFile)
         }
     }
 }
