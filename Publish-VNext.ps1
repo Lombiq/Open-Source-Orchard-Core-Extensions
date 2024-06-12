@@ -1,5 +1,44 @@
-# Call like this: .\VNext.ps1 -Path '\Path\to\project' -PreRelease $True -Issue '1234' -UpdateReferences $true
-# or like this: .\VNext.ps1 -Path '\Path\to\project' -Type 'major' -UpdateReferences $true
+<#
+.SYNOPSIS
+    This script publishes a new version or pre-release version of a specified project.
+
+.DESCRIPTION
+    The script gets the latest release tags, checks them for a valid version number, and determines the next version or
+    pre-release version.
+    It then (optionally) prompts the user for confirmation before creating and pushing the new tag to git.
+    If the UpdateReferences flag is provided, it calls the Update-References.ps1 script to update the version number in
+    all projects.
+
+.PARAMETER Path
+    The path to the project to be released.
+
+.PARAMETER Type
+    The type of the release. It can be 'major', 'minor', or 'patch'.
+
+.PARAMETER Issue
+    The issue number. This is required for pre-releases.
+
+.PARAMETER PreRelease
+    A flag indicating whether the release is a pre-release. The default is $false.
+
+.PARAMETER UpdateReferences
+    A flag indicating whether to update the references in other projects. The default is $false.
+
+.PARAMETER Interactive
+    A flag indicating whether to prompt the user for confirmation before creating and pushing the new tag. The default
+    is $true.
+
+.EXAMPLE
+    .\Publish-VNext.ps1 -Path .\src\Libraries\Lombiq.HelpfulLibraries\ -PreRelease $True -Issue "OC-123"
+    -UpdateReferences $true
+
+.EXAMPLE
+    .\Publish-VNext.ps1 -Path .\src\Libraries\Lombiq.HelpfulLibraries\ -Type 'major' -UpdateReferences $true
+
+.NOTES
+    The script throws an exception if the necessary parameters are not provided or if there is a problem determining
+    the next version number.
+#>
 param(
     [string]$Path,
     [string]$Type,
@@ -87,7 +126,9 @@ try
         if ($Interactive -eq $true)
         {
             # Prompt the user for confirmation
-            $confirmation = Read-Host "This action will create and push the following tag to git $newVersion, Are you sure you want to continue? ([Y]es / [N]o)"
+            $prompt = "This action will create and push the following tag to git $newVersion," +
+            " Are you sure you want to continue? ([Y]es / [N]o)"
+            $confirmation = Read-Host $prompt
 
             # Check the user's response
             if ($confirmation -ne 'Y')
@@ -102,7 +143,7 @@ try
     }
     else
     {
-        Write-Output 'No valid tags found'
+        Write-Output 'No valid tags were found'
     }
 }
 catch
@@ -118,7 +159,14 @@ finally
         # Remove the "v" at the beginning of the version number
         $newVersion = $newVersion.Substring(1)
 
-        # Call the Get-Solution-Projects.ps1 script to update the version number in all projects
-        .\Get-Solution-Projects.ps1 -SolutionFilePath $Path -NewVersion $newVersion
+        # Update the version number in all projects
+        $solutionProjects = dotnet sln list
+        foreach ($projectName in $solutionProjects)
+        {
+            if ($projectName -like '*.csproj*')
+            {
+                .\Update-References.ps1 -ProjectToFind $projectName -NewVersion $NewVersion
+            }
+        }
     }
 }

@@ -1,14 +1,33 @@
-# Call like this: .\Update-References.ps1 -ProjectToFind "ProjectName" -NewVersion "1.0.0"
+<#
+.SYNOPSIS
+    This script updates the version number of a specified project in all referencing .csproj files.
+
+.DESCRIPTION
+    The script recursively searches for all .csproj files and checks if they have a reference to the specified project.
+    If a reference is found, the version number of the reference is updated to the new version number.
+
+.PARAMETER ProjectToFind
+    The name of the project to check references for.
+
+.PARAMETER NewVersion
+    The new version number to set for the project references.
+
+.EXAMPLE
+    .\Update-References.ps1 -ProjectToFind "ProjectName" -NewVersion "1.0.0"
+#>
 param(
-    [string]$ProjectToFind, # Name of the project to check reference for
-    [string]$NewVersion # New version number to set
+    [Parameter(Mandatory=$true)]
+    [string]$ProjectToFind,
+
+    [Parameter(Mandatory=$true)]
+    [string]$NewVersion
 )
 
 # Get all .csproj files recursively
 $projectFiles = Get-ChildItem -Path .\ -Recurse -Filter '*.csproj'
 
 # Loop through each project file to see if it has a reference to the project we are looking for
-ForEach ($projectFile in $projectFiles)
+forEach ($projectFile in $projectFiles)
 {
     # Create an XmlDocument object
     $projectXml = New-Object System.Xml.XmlDocument
