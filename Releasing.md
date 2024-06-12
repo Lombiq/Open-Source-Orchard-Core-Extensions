@@ -46,7 +46,7 @@ The main script to use is `Publish-VNext.ps1`. It's a PowerShell script that you
 3. Run the script with the necessary parameters. For example to release a new major version of the `Lombiq.HelpfulLibraries` project and update the references in other projects, run the following command
 
     ```pwsh
-    .\Publish-VNext.ps1 -Path .\src\Libraries\Lombiq.HelpfulLibraries\ -Prerelease -Issue "OC-123"
+    .\Publish-VNext.ps1 -Path .\src\Libraries\Lombiq.HelpfulLibraries\ -PreRelease -Issue "OC-123"
     ```
 
 ## Update-References
@@ -67,5 +67,5 @@ Should you want to update the references manually you can use the `Update-Refere
 ### Updating references to a new version
 
 ```pwsh
-.\Update-References.ps1 -ProjectToFind "Lombiq.HelpfulLibraries" -NewVersion "1.2.3"
+.\Update-References.ps1 -ProjectToFind "Lombiq.HelpfulLibraries" -NewVersion "v1.2.3"
 ```
