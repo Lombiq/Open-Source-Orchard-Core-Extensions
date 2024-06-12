@@ -107,8 +107,13 @@ try
         {
             # Check if there were any pre-release tags for this Issue already in latestTags array
             $preReleaseTags = $latestTags | Where-Object { $PSItem -match ([regex]::Escape($Issue)) }
-            if ($preReleaseTags.Count -gt 0)
+            if ($preReleaseTags)
             {
+                # Cast to array if it's a single string
+                if($preReleaseTags -is [string])
+                {
+                    $preReleaseTags = @($preReleaseTags)
+                }
                 $latestPreRelease = $preReleaseTags[0]
                 $preReleaseVersion = $latestPreRelease -split '\.'
                 $preReleaseVersionNr = [int]$preReleaseVersion[3]
