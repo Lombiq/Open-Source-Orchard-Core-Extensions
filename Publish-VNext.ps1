@@ -77,7 +77,6 @@ try
 {
     if ($latestTags[0] -match '^v\d+\.\d+\.\d+')
     {
-        $latestVersion = $matches[0]
         $version = [Version]$matches[0].Substring(1)
         $major = $version.Major
         $minor = $version.Minor
