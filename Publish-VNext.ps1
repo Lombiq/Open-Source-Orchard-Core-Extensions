@@ -69,13 +69,13 @@ if ($PSBoundParameters.ContainsKey('Path'))
     Set-Location $Path
 }
 
-# Get the latest release tags, we get the last 20 tags so we can determine the next version or pre-release version
-$latestTags = git for-each-ref --sort=-creatordate --count=20 --format '%(refname:short)' refs/tags
+# Get the release tags so we can determine the next version or pre-release version
+$releaseTags = git for-each-ref --sort=-creatordate --format '%(refname:short)' refs/tags
 
 # Check tags for a valid version number and try to determine the next version
 try
 {
-    if ($latestTags[0] -match '^v\d+\.\d+\.\d+')
+    if ($releaseTags[0] -match '^v\d+\.\d+\.\d+')
     {
         $version = [Version]$matches[0].Substring(1)
         $major = $version.Major
@@ -105,8 +105,8 @@ try
 
         if ($PreRelease)
         {
-            # Check if there were any pre-release tags for this Issue already in latestTags array
-            $preReleaseTags = $latestTags | Where-Object { $PSItem -match ([regex]::Escape($Issue)) }
+            # Check if there were any pre-release tags for this Issue already in releaseTags array
+            $preReleaseTags = $releaseTags | Where-Object { $PSItem -match ([regex]::Escape($Issue)) }
             if ($preReleaseTags)
             {
                 # Cast to array if it's a single string
