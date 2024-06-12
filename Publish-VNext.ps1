@@ -127,7 +127,7 @@ try
         {
             # Prompt the user for confirmation
             $prompt = "This action will create and push the following tag to git $newVersion," +
-            " Are you sure you want to continue? ([Y]es / [N]o)"
+            ' Are you sure you want to continue? ([Y]es / [N]o)'
             $confirmation = Read-Host $prompt
 
             # Check the user's response

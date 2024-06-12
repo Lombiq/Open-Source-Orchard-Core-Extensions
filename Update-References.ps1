@@ -16,10 +16,10 @@
     .\Update-References.ps1 -ProjectToFind "ProjectName" -NewVersion "1.0.0"
 #>
 param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [string]$ProjectToFind,
 
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [string]$NewVersion
 )
 
