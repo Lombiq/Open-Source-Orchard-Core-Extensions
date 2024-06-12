@@ -110,7 +110,7 @@ try
             if ($preReleaseTags)
             {
                 # Cast to array if it's a single string
-                if($preReleaseTags -is [string])
+                if ($preReleaseTags -is [string])
                 {
                     $preReleaseTags = @($preReleaseTags)
                 }
