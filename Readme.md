@@ -58,7 +58,6 @@ Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source
 - [`Lombiq.VueJs`](https://github.com/Lombiq/Orchard-Vue.js): [Orchard Core](https://orchardproject.net/) module that contains [Vue.js](https://vuejs.org/) and commonly used Vue.js components to be used in other Vue.js apps as dependencies. Provides extensibility to create Vue.js component templates as Orchard Core shapes making them able to override in themes or modules.
 - [`Lombiq.Walkthroughs`](https://github.com/Lombiq/Orchard-Walkthroughs): Do you want to learn about the most important Orchard Core features with a hands-on tutorial that guides you with interactive tooltips, right there in Orchard Core? This module is for you! Check out a demo video of it [here](https://www.youtube.com/watch?v=mWfngBADvX0).
 
-
 ### Themes
 
 - [`Lombiq.BaseTheme`](https://github.com/Lombiq/Orchard-Base-Theme): This theme contains infrastructure for custom Bootstrap 5 themes with standardized zones and built-in front end menu display.
