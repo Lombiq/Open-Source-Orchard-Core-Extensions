@@ -22,11 +22,11 @@ builder.Services
         .ConfigureFeaturesGuard(
             new Dictionary<string, IEnumerable<string>>
             {
-                ["OrchardCore.Twitter"] = new[]
-                {
+                ["OrchardCore.Twitter"] =
+                [
                     UIKitFeatureIds.Base,
                     FeatureIds.Default,
-                },
+                ],
             })
         .EnableAutoSetupIfNotUITesting(configuration)
         // allowInlineStyle is necessary because style attributes are used in the Blog theme.
@@ -34,7 +34,7 @@ builder.Services
 
 var app = builder.Build();
 app.UseOrchardCore();
-app.Run();
+await app.RunAsync();
 
 [SuppressMessage(
     "Design",
