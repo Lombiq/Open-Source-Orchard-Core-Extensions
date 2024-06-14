@@ -23,6 +23,7 @@ jobs:
       dotnet-test-process-timeout: 600000
       build-enable-nuget-caching: "true"
       build-enable-npm-caching: "true"
+      dotnet-version: '8.0.x'
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
