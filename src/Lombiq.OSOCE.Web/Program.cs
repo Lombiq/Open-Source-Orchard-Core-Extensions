@@ -20,14 +20,14 @@ builder.Services
     .AddOrchardCms(orchardCoreBuilder => orchardCoreBuilder
         .AddOrchardCoreApplicationInsightsTelemetry(configuration)
         .ConfigureFeaturesGuard(
-            new Dictionary<string, IEnumerable<string>> { ["OrchardCore.Twitter"] = new[] { UIKitFeatureIds.Base, FeatureIds.Default, }, })
+            new Dictionary<string, IEnumerable<string>> { ["OrchardCore.Twitter"] = [UIKitFeatureIds.Base, FeatureIds.Default] })
         .EnableAutoSetupIfNotUITesting(configuration)
         // allowInlineStyle is necessary because style attributes are used in the Blog theme.
         .ConfigureSecurityDefaultsWithStaticFiles(allowInlineStyle: true));
 
 var app = builder.Build();
 app.UseOrchardCore();
-app.Run();
+await app.RunAsync();
 
 [SuppressMessage(
     "Design",
