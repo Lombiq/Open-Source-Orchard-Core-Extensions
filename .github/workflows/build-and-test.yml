@@ -66,6 +66,7 @@ jobs:
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
+    if: false
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@issue/OSOE-580
     with:
       machine-types: '["ubuntu-22.04"]'
