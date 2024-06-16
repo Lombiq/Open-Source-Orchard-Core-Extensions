@@ -5,7 +5,6 @@
 
   "rules": {
     "element-required-attributes": "off",
-    "no-implicit-button-type": "off",
     "unique-landmark": "off"
   },
 
