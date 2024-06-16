@@ -26,7 +26,7 @@ public class BehaviorWalkthroughsTests : UITestBase
             changeConfiguration: configuration =>
             {
                 configuration.HtmlValidationConfiguration
-                    .WithRelativeConfigPath("BehaviorWalkthroughsTests.htmlvalidate.json");
+                    .WithRelativeConfigPath("NoUniqueLandmark.htmlvalidate.json");
 
                 configuration.AssertBrowserLog = logEntries => logEntries.ShouldNotContain(
                     logEntry => IsValidLogEntry(logEntry),
