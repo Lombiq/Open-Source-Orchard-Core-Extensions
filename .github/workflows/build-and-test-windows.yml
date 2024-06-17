@@ -98,7 +98,7 @@ jobs:
 
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
-    needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
+    needs: [build-and-test-larger-runners, powershell-static-code-analysis]
     if: github.event.pull_request != ''
     uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
     secrets:
@@ -111,7 +111,7 @@ jobs:
     name: Remove Windows Build Warning Label
     runs-on: ubuntu-22.04
     timeout-minutes: 2
-    needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
+    needs: [build-and-test-larger-runners, powershell-static-code-analysis]
     steps:
     - name: Remove Windows Build Warning Label
       uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@dev
