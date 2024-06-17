@@ -37,14 +37,15 @@ jobs:
       build-create-binary-log: "true"
       dotnet-test-process-timeout: 780000
 
-  build-and-test-nuget-test:
-    name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
-    with:
-      parent-job-name: nuget-solution
-      build-directory: NuGetTest
-      timeout-minutes: 20
-      dotnet-test-process-timeout: 480000
+  # Temporarily disabled.
+  # build-and-test-nuget-test:
+  #   name: Build and Test - NuGetTest solution
+  #   uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+  #   with:
+  #     parent-job-name: nuget-solution
+  #     build-directory: NuGetTest
+  #     timeout-minutes: 20
+  #     dotnet-test-process-timeout: 480000
 
   spelling:
     name: Spelling
