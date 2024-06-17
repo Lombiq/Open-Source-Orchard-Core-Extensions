@@ -26,7 +26,7 @@ public class BehaviorWalkthroughsTests : UITestBase
             changeConfiguration: configuration =>
             {
                 configuration.HtmlValidationConfiguration
-                    .WithRelativeConfigPath("BehaviorWalkthroughsTests.htmlvalidate.json");
+                    .WithRelativeConfigPath("NoUniqueLandmark.htmlvalidate.json");
 
                 configuration.AssertBrowserLog = logEntries => logEntries.ShouldNotContain(
                     logEntry => IsValidLogEntry(logEntry),
@@ -37,8 +37,5 @@ public class BehaviorWalkthroughsTests : UITestBase
         OrchardCoreUITestExecutorConfiguration.IsValidBrowserLogEntry(logEntry) &&
         // See https://github.com/OrchardCMS/OrchardCore/issues/15301.
         !(logEntry.Message.ContainsOrdinalIgnoreCase("/OrchardCore.Resources/Scripts/jquery.js?v=") &&
-            logEntry.Message.ContainsOrdinalIgnoreCase("Uncaught")) &&
-        // See https://github.com/OrchardCMS/OrchardCore/issues/14598. This error has multiple variations, so targeting
-        // the lowest common denominator with the file name.
-        !logEntry.Message.ContainsOrdinalIgnoreCase("/monaco/IStandaloneEditorConstructionOptions.json");
+            logEntry.Message.ContainsOrdinalIgnoreCase("Uncaught"));
 }
