@@ -13,6 +13,7 @@ colorpicker
 contentitemid
 copyfiles
 createstate
+creatordate
 datalabels
 datatables
 dddd
@@ -68,6 +69,7 @@ Tful
 trainingdemo
 tundora
 visualstudioextension
+VNext
 vuejs
 XDG
 xsessionrc
