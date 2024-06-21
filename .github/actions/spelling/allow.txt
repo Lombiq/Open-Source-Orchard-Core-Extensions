@@ -3,7 +3,6 @@ autorun
 barcode
 chainable
 clickable
-Deque
 entra
 flyout
 hackish
