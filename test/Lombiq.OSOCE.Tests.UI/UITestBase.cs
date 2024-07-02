@@ -17,6 +17,7 @@ public abstract class UITestBase : OrchardCoreUITestBase<Program>
     {
     }
 
+
     protected override Task ExecuteTestAfterSetupAsync(
         Func<UITestContext, Task> testAsync,
         Browser browser,
