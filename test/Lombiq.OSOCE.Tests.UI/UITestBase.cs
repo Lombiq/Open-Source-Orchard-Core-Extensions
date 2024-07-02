@@ -49,7 +49,6 @@ public abstract class UITestBase : OrchardCoreUITestBase<Program>
         configuration.AssertAppLogsAsync = AssertAppLogsHelpers.AssertOsoceAppLogsAreEmptyAsync;
     }
 
-
     public static readonly Func<IWebApplicationInstance, Task> AssertAppLogsDefaultOSOCEAsync =
         async webApplicationInstance =>
             (await webApplicationInstance.GetLogOutputAsync())
