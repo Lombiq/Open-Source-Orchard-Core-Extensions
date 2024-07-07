@@ -11,7 +11,7 @@ jobs:
   build-and-test-larger-runners:
     if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-759
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: root-solution-larger-runners
       machine-types: "['warp-ubuntu-2204-x64-4x']"
@@ -27,7 +27,7 @@ jobs:
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
     name: Build and Test - root solution (standard runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-759
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       # Since dev builds are not awaited by anyone, they can run on the slower free runners.
       parent-job-name: root-solution-standard-runners
@@ -39,7 +39,7 @@ jobs:
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-759
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: nuget-solution
       build-directory: NuGetTest
@@ -48,7 +48,7 @@ jobs:
 
   spelling:
     name: Spelling
-    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@issue/OSOE-759
+    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
     with:
       additional-dictionaries: |
         cspell:csharp/csharp.txt
@@ -66,13 +66,13 @@ jobs:
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
-    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@issue/OSOE-759
+    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
       machine-types: '["ubuntu-22.04"]'
 
   yaml-linting:
     name: YAML Linting
-    uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@issue/OSOE-759
+    uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@dev
     with:
       config-file-path: tools/Lombiq.GitHub.Actions/.trunk/configs/.yamllint.yaml
       search-path: .
@@ -81,7 +81,7 @@ jobs:
     name: Post Pull Request Checks Automation
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling, powershell-static-code-analysis]
     if: github.event.pull_request != ''
-    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@issue/OSOE-759
+    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
     secrets:
       JIRA_BASE_URL: ${{ secrets.DEFAULT_JIRA_BASE_URL }}
       JIRA_USER_EMAIL: ${{ secrets.DEFAULT_JIRA_USER_EMAIL }}
@@ -95,7 +95,7 @@ jobs:
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
     steps:
       - name: Add Windows Build Warning Label
-        uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@issue/OSOE-759
+        uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@dev
         with:
           # The token is necessary to be able to add the label even if the workflow is triggered by a pull request coming
           # from a fork.
