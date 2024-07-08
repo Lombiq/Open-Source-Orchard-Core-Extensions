@@ -29,5 +29,6 @@ unclickable
 VSTHRD
 WTW
 Wxga
+XWidgets
 yuv
 ZXing
