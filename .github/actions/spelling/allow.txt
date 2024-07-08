@@ -15,8 +15,8 @@ Overconstrained
 parallelizable
 qrcode
 retriable
-Runtimes
 runtimes
+Runtimes
 sanitizers
 scrollbars
 shortcutting
@@ -27,7 +27,7 @@ Toolset
 uncached
 unclickable
 VSTHRD
+WTW
 Wxga
 yuv
 ZXing
-WTW
