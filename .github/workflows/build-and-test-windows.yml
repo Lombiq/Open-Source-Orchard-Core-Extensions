@@ -57,8 +57,8 @@ jobs:
       # Since dev builds are not awaited by anyone, they can run on the slower free runners.
       machine-types: "['windows-2022']"
       timeout-minutes: 70
-      set-up-sql-server: "true"
-      set-up-azurite: "true"
+      set-up-sql-server: 'true'
+      set-up-azurite: 'true'
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
       test-filter: FullyQualifiedName!~SecurityScanningTests

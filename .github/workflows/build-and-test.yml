@@ -30,8 +30,8 @@ jobs:
       # Since dev builds are not awaited by anyone, they can run on the slower free runners.
       parent-job-name: root-solution-standard-runners
       timeout-minutes: 50
-      set-up-sql-server: "true"
-      set-up-azurite: "true"
+      set-up-sql-server: 'true'
+      set-up-azurite: 'true'
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
