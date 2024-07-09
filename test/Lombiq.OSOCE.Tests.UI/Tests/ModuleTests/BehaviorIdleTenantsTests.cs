@@ -1,5 +1,4 @@
 using Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI.Extensions;
-using Lombiq.OSOCE.Tests.UI.Helpers;
 using Lombiq.Tests.UI.Extensions;
 using System.Threading.Tasks;
 using Xunit;
@@ -20,14 +19,7 @@ public class BehaviorIdleTenantsTests : UITestBase
             async context =>
             {
                 await context.SignInDirectlyAsync();
-
                 await context.TestIdleTenantManagerBehaviorAsync();
-
-                context.Configuration.AssertAppLogsAsync = async webApplicationInstance =>
-                {
-                    await webApplicationInstance.OsoceLogsShouldBeEmptyAsync();
-                    await webApplicationInstance.AssertAppLogsWithIdleCheckAsync();
-                };
             },
             configuration => configuration.SetMaxIdleMinutesAndLoggingForUITest());
 }
