@@ -24,9 +24,7 @@
         "Lombiq.HelpfulExtensions.CodeGeneration",
         "Lombiq.HelpfulExtensions.ContentTypes",
         "Lombiq.HelpfulExtensions.Flows",
-        // Shape Tracing messes with the title and thus can break other things, see:
-        // https://github.com/Lombiq/Helpful-Extensions/issues/120.
-        // "Lombiq.HelpfulExtensions.ShapeTracing",
+        "Lombiq.HelpfulExtensions.ShapeTracing",
         "Lombiq.HelpfulExtensions.Widgets",
         "Lombiq.HelpfulLibraries.Samples",
         "Lombiq.Hosting.BuildVersionDisplay",
