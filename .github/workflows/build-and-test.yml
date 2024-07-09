@@ -13,14 +13,14 @@ jobs:
     name: Build and Test - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      parent-job-name: "root-solution-larger-runners"
+      parent-job-name: root-solution-larger-runners
       machine-types: "['warp-ubuntu-2204-x64-4x']"
       timeout-minutes: 60
-      set-up-sql-server: "true"
-      set-up-azurite: "true"
+      set-up-sql-server: 'true'
+      set-up-azurite: 'true'
       ui-test-parallelism: 0
-      build-enable-nuget-caching: "true"
-      build-enable-npm-caching: "true"
+      build-enable-nuget-caching: 'true'
+      build-enable-npm-caching: 'true'
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -28,7 +28,7 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       # Since dev builds are not awaited by anyone, they can run on the slower free runners.
-      parent-job-name: "root-solution-standard-runners"
+      parent-job-name: root-solution-standard-runners
       timeout-minutes: 50
       set-up-sql-server: "true"
       set-up-azurite: "true"
@@ -89,11 +89,11 @@ jobs:
     timeout-minutes: 2
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
     steps:
-    - name: Add Windows Build Warning Label
-      uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@dev
-      with:
-        # The token is necessary to be able to add the label even if the workflow is triggered by a pull request coming
-        # from a fork.
-        token: ${{ secrets.LOMBIQBOT_GITHUB_PERSONAL_ACCESS_TOKEN }}
-        labels: requires-windows-build
-        type: add
+      - name: Add Windows Build Warning Label
+        uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@dev
+        with:
+          # The token is necessary to be able to add the label even if the workflow is triggered by a pull request coming
+          # from a fork.
+          token: ${{ secrets.LOMBIQBOT_GITHUB_PERSONAL_ACCESS_TOKEN }}
+          labels: requires-windows-build
+          type: add
