@@ -23,12 +23,13 @@ public static class AssertAppLogsHelpers
         {
             var messages = logOutput.SplitByNewLines().ToList();
 
-            // Temporarily filtering out irrelevant cache errors from logs.
+            // Filtering out irrelevant cache errors from logs.
             var filteredLogOutput = messages.Where(message =>
                 !message.Contains("|Lombiq.TrainingDemo.Services.DemoBackgroundTask|ERROR|Expected non-error") &&
                 !message.Contains("OrchardCore.Media.Core.DefaultMediaFileStoreCacheFileProvider|ERROR|Error deleting cache folder"));
 
-            filteredLogOutput.ShouldNotContain(item => item.Contains("|ERROR|") || item.Contains("|FATAL|"));
+            filteredLogOutput.ShouldNotContain("|ERROR|");
+            filteredLogOutput.ShouldNotContain("|FATAL|");
         }
     }
 }
