@@ -14,7 +14,7 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: root-solution-larger-runners
-      machine-types: "['warp-ubuntu-2204-x64-4x']"
+      machine-types: '["warp-ubuntu-2204-x64-4x"]'
       timeout-minutes: 30
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
@@ -70,7 +70,7 @@ jobs:
     name: PowerShell Static Code Analysis
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
-      machine-types: '["ubuntu-22.04"]'
+      machine-types: "['ubuntu-22.04']"
 
   yaml-linting:
     name: YAML Linting

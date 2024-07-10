@@ -39,7 +39,7 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: root-solution-larger-runners
-      machine-types: "['windows-2022-8core']"
+      machine-types: '["windows-2022-8core"]'
       timeout-minutes: 50
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
@@ -57,7 +57,7 @@ jobs:
     with:
       parent-job-name: root-solution-standard-runners
       # Since dev builds are not awaited by anyone, they can run on the slower free runners.
-      machine-types: "['windows-2022']"
+      machine-types: '["windows-2022"]'
       timeout-minutes: 70
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
@@ -76,7 +76,7 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: nuget-solution
-      machine-types: "['windows-2022']"
+      machine-types: '["windows-2022"]'
       build-directory: NuGetTest
       timeout-minutes: 30
       dotnet-test-process-timeout: 540000
@@ -92,7 +92,7 @@ jobs:
     name: PowerShell Static Code Analysis Windows
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
-      machine-types: "['windows-2022']"
+      machine-types: '["windows-2022"]'
       run-windows-powershell: 'false'
 
   post-pull-request-checks-automation:
