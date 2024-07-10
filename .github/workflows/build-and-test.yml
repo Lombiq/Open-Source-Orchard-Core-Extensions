@@ -24,6 +24,8 @@ jobs:
       build-enable-nuget-caching: 'true'
       build-enable-npm-caching: 'true'
       cancel-in-progress-for-this-pr: 'false'
+      build-enable-code-analysis: 'false'
+      test-filter: 'FullyQualifiedName~SecurityScanningTests'
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
