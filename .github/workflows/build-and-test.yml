@@ -99,8 +99,8 @@ jobs:
       - name: Add Windows Build Warning Label
         uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@dev
         with:
-          # The token is necessary to be able to add the label even if the workflow is triggered by a pull request coming
-          # from a fork.
+          # The token is necessary to be able to add the label even if the workflow is triggered by a pull request
+          # coming from a fork.
           token: ${{ secrets.LOMBIQBOT_GITHUB_PERSONAL_ACCESS_TOKEN }}
           labels: requires-windows-build
           type: add
