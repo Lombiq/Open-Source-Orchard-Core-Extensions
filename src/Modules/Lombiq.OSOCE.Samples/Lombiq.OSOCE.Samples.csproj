@@ -11,10 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OrchardCore.Module.Targets" Version="2.0.0-preview-18248" />
-    <PackageReference Include="OrchardCore.ContentManagement" Version="2.0.0-preview-18248" />
-    <PackageReference Include="OrchardCore.ContentTypes.Abstractions" Version="2.0.0-preview-18248" />
-    <PackageReference Include="OrchardCore.DisplayManagement" Version="2.0.0-preview-18248" />
+    <PackageReference Include="OrchardCore.Module.Targets" Version="2.0.0-preview-18268" />
+    <PackageReference Include="OrchardCore.ContentManagement" Version="2.0.0-preview-18268" />
+    <PackageReference Include="OrchardCore.ContentTypes.Abstractions" Version="2.0.0-preview-18268" />
+    <PackageReference Include="OrchardCore.DisplayManagement" Version="2.0.0-preview-18268" />
   </ItemGroup>
 
   <ItemGroup>
