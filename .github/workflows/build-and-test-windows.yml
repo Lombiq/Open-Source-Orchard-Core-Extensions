@@ -48,7 +48,10 @@ jobs:
       dotnet-test-process-timeout: 720000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
-      test-filter: FullyQualifiedName!~SecurityScanningTests
+      # Without quotes, somehow the value won't be passed properly and the test execution will hang, despite seemingly
+      # every value being the same as with quotes.
+      # yamllint disable-line rule:quoted-strings
+      test-filter: 'FullyQualifiedName!~SecurityScanningTests'
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -65,7 +68,10 @@ jobs:
       dotnet-test-process-timeout: 840000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
-      test-filter: FullyQualifiedName!~SecurityScanningTests
+      # Without quotes, somehow the value won't be passed properly and the test execution will hang, despite seemingly
+      # every value being the same as with quotes.
+      # yamllint disable-line rule:quoted-strings
+      test-filter: 'FullyQualifiedName!~SecurityScanningTests'
 
   build-and-test-nuget-test:
     if: github.ref_name == github.event.repository.default_branch ||
@@ -82,7 +88,10 @@ jobs:
       dotnet-test-process-timeout: 540000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
-      test-filter: FullyQualifiedName!~SecurityScanningTests
+      # Without quotes, somehow the value won't be passed properly and the test execution will hang, despite seemingly
+      # every value being the same as with quotes.
+      # yamllint disable-line rule:quoted-strings
+      test-filter: 'FullyQualifiedName!~SecurityScanningTests'
 
   powershell-static-code-analysis:
     if: github.ref_name == github.event.repository.default_branch ||
