@@ -77,7 +77,7 @@ try
 {
     if ($releaseTags[0] -match '^v\d+\.\d+\.\d+')
     {
-        $version = [Version]$matches[0].Substring(1)
+        $version = [Version]$Matches[0].Substring(1)
         $major = $version.Major
         $minor = $version.Minor
         $patch = $version.Build
@@ -168,7 +168,7 @@ finally
         {
             if ($projectName -like '*.csproj*')
             {
-                .\Update-References.ps1 -ProjectToFind $projectName -NewVersion $NewVersion
+                .\Update-References.ps1 -ProjectToFind $projectName -NewVersion $newVersion
             }
         }
     }
