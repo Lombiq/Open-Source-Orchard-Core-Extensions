@@ -43,7 +43,6 @@ jobs:
       timeout-minutes: 50
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
-      ui-test-parallelism: 0
       build-create-binary-log: 'true'
       dotnet-test-process-timeout: 720000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
