@@ -36,7 +36,7 @@ jobs:
             github.event.label.name == 'run-windows-build' ||
             (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build')))
     name: Build and Test Windows - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/NEST-501
     with:
       parent-job-name: root-solution-larger-runners
       machine-types: '["windows-2022-8core"]'
