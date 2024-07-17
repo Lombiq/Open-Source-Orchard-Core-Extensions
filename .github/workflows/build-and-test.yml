@@ -23,6 +23,7 @@ jobs:
       build-enable-nuget-caching: 'true'
       build-enable-npm-caching: 'true'
       enable-test-diagnostic-mode: 'true'
+      cancel-in-progress-for-this-pr: 'false'
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -46,6 +47,7 @@ jobs:
       timeout-minutes: 20
       dotnet-test-process-timeout: 480000
       enable-test-diagnostic-mode: 'true'
+      cancel-in-progress-for-this-pr: 'false'
 
   spelling:
     name: Spelling
@@ -64,12 +66,14 @@ jobs:
         lombiq-lgha:dictionaries/Lombiq.people.txt
         lombiq-lgha:dictionaries/Security.txt
         lombiq-lgha:dictionaries/Xml.txt
+      cancel-in-progress-for-this-pr: 'false'
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
       machine-types: "['ubuntu-22.04']"
+      cancel-in-progress-for-this-pr: 'false'
 
   yaml-linting:
     name: YAML Linting
@@ -77,6 +81,7 @@ jobs:
     with:
       config-file-path: tools/Lombiq.GitHub.Actions/.trunk/configs/.yamllint.yaml
       search-path: .
+      cancel-in-progress-for-this-pr: 'false'
 
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
