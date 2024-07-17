@@ -37,7 +37,7 @@
     <PackageReference Include="Lombiq.Hosting.Tenants.Management.Tests.UI" Version="7.0.2-alpha.1.nest-501" />
     <PackageReference Include="Lombiq.JsonEditor.Tests.UI" Version="7.0.2" />
     <PackageReference Include="Lombiq.LoginAsAnybody.Tests.UI" Version="3.0.1-alpha.1.nest-501" />
-    <PackageReference Include="Lombiq.OrchardCoreApiClient.Tests.UI" Version="5.0.1-alpha.1.osoe-838" />
+    <PackageReference Include="Lombiq.OrchardCoreApiClient.Tests.UI" Version="5.0.1-alpha.2.osoe-617" />
     <PackageReference Include="Lombiq.Privacy.Tests.UI" Version="8.0.1" />
     <PackageReference Include="Lombiq.HelpfulExtensions.Tests.UI" Version="8.0.1" />
     <PackageReference Include="Lombiq.Tests.UI" Version="10.0.2-alpha.0.nest-501" />
