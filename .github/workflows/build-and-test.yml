@@ -37,7 +37,7 @@ jobs:
       build-create-binary-log: 'true'
       dotnet-test-process-timeout: 780000
 
-  # Temporarily disabled.
+  # Temporarily disabled, until all projects get their OC 2.0 releases.
   # build-and-test-nuget-test:
   #   name: Build and Test - NuGetTest solution
   #   uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
