@@ -22,6 +22,7 @@ jobs:
       dotnet-test-process-timeout: 600000
       build-enable-nuget-caching: 'true'
       build-enable-npm-caching: 'true'
+      enable-test-diagnostic-mode: 'true'
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -44,6 +45,7 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 20
       dotnet-test-process-timeout: 480000
+      enable-test-diagnostic-mode: 'true'
 
   spelling:
     name: Spelling
