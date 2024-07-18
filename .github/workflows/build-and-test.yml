@@ -18,10 +18,10 @@ jobs:
       timeout-minutes: 30
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
+      build-create-binary-log: 'true'
+      dotnet-test-process-timeout: 600000
       build-enable-nuget-caching: 'true'
       build-enable-npm-caching: 'true'
-      enable-test-diagnostic-mode: 'true'
-      cancel-in-progress-for-this-pr: 'false'
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -33,6 +33,8 @@ jobs:
       timeout-minutes: 50
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
+      build-create-binary-log: 'true'
+      dotnet-test-process-timeout: 780000
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
@@ -42,8 +44,6 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 20
       dotnet-test-process-timeout: 480000
-      enable-test-diagnostic-mode: 'true'
-      cancel-in-progress-for-this-pr: 'false'
 
   spelling:
     name: Spelling
@@ -62,14 +62,12 @@ jobs:
         lombiq-lgha:dictionaries/Lombiq.people.txt
         lombiq-lgha:dictionaries/Security.txt
         lombiq-lgha:dictionaries/Xml.txt
-      cancel-in-progress-for-this-pr: 'false'
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
       machine-types: "['ubuntu-22.04']"
-      cancel-in-progress-for-this-pr: 'false'
 
   yaml-linting:
     name: YAML Linting

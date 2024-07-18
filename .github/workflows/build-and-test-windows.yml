@@ -51,8 +51,6 @@ jobs:
       # every value being the same as with quotes.
       # yamllint disable-line rule:quoted-strings
       test-filter: 'FullyQualifiedName!~SecurityScanningTests'
-      enable-test-diagnostic-mode: 'true'
-      cancel-in-progress-for-this-pr: 'false'
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -93,8 +91,6 @@ jobs:
       # every value being the same as with quotes.
       # yamllint disable-line rule:quoted-strings
       test-filter: 'FullyQualifiedName!~SecurityScanningTests'
-      enable-test-diagnostic-mode: 'true'
-      cancel-in-progress-for-this-pr: 'false'
 
   powershell-static-code-analysis:
     if: github.ref_name == github.event.repository.default_branch ||
@@ -106,7 +102,6 @@ jobs:
     with:
       machine-types: '["windows-2022"]'
       run-windows-powershell: 'false'
-      cancel-in-progress-for-this-pr: 'false'
 
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
