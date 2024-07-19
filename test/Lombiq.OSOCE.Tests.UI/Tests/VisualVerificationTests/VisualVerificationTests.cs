@@ -30,6 +30,5 @@ public class VisualVerificationTests : UITestBase
             context => context.AssertVisualVerificationApprovedOnAllResolutionsWithPlatformSuffix(
                 _visualVerificationSizes,
                 _ => By.TagName("body"),
-                pixelErrorPercentageThreshold: 0.005),
-            browser: Browser.Firefox);
+                pixelErrorPercentageThreshold: 0.005));
 }
