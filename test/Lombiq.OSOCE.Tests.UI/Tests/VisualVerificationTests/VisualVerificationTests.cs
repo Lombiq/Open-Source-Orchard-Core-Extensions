@@ -1,6 +1,5 @@
 using Lombiq.Tests.UI.Constants;
 using Lombiq.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Services;
 using OpenQA.Selenium;
 using SixLabors.ImageSharp;
 using System.Threading.Tasks;
