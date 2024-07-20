@@ -23,5 +23,6 @@ public class SecurityScanningTests : UITestBase
                 // inconsistent, which it can be (see https://www.zaproxy.org/faq/why-can-zap-scans-be-inconsistent/).
                 // If this starts failing after some update, then inspect the scan report in the failure dump to see if
                 // the alerts can be simply expected and this number should be increased.
-                sarifLog => sarifLog.Runs[0].Results.Count.ShouldBeLessThan(3)));
+                sarifLog => sarifLog.Runs[0].Results.Count.ShouldBeLessThan(3)),
+            changeConfiguration: configuration => configuration.UseAssertAppLogsForSecurityScan());
 }
