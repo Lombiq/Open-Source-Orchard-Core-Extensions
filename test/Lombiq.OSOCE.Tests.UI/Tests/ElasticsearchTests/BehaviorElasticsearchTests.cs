@@ -25,7 +25,6 @@ public class BehaviorElasticsearchTests : UITestBase
                 await context.ClickAndFillInWithRetriesAsync(By.Name("Terms"), "man");
                 await context.ClickReliablyOnAsync(By.XPath("//button[@class='btn btn-primary btn-sm']"));
 
-                await context.SwitchToInteractiveAsync();
                 context.Exists(By.XPath("//h2[contains(., 'Man must explore, and this is exploration at its greatest')]"));
             },
             ConfigurationHelper.DisableHtmlValidation);
