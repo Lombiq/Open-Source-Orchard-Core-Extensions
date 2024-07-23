@@ -59,7 +59,6 @@
         "OrchardCore.Search.Elasticsearch",
         "OrchardCore.Search",
         "OrchardCore.Feature",
-        "OrchardCore.BackgroundTasks",
         "TheTheme"
         // Not enabling Lombiq.TrainingDemo.Middlewares because that would write to the error log on every request.
       ]
