@@ -14,5 +14,9 @@ public class BehaviorWalkthroughsTests : UITestBase
 
     [Fact]
     public Task WalkthroughsShouldWorkCorrectly() =>
-        ExecuteTestAsync(context => context.RunSetupAndTestWalkthroughsBehaviorAsync());
+        ExecuteTestAsync(
+            context => context.RunSetupAndTestWalkthroughsBehaviorAsync(),
+            changeConfiguration: configuration => configuration
+                .HtmlValidationConfiguration
+                .WithRelativeConfigPath("NoUniqueLandmark.htmlvalidate.json"));
 }
