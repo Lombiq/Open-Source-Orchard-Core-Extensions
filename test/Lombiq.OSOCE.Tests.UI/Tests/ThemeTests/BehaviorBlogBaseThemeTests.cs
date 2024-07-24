@@ -70,16 +70,5 @@ public class BehaviorBlogBaseThemeTests : UITestBase
                 // Disable HTML validation, because we have no control over the HTML in the Blog and the content added
                 // by the Blog recipe.
                 configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false;
-
-                // This is to not fail on a browser error caused by jQuery missing. Can be removed after this issue is
-                // resolved and released: https://github.com/OrchardCMS/OrchardCore/issues/15181.
-                configuration.AssertBrowserLog = logEntries =>
-                {
-                    var messageWithoutJqueryError = logEntries.Where(logEntry =>
-                        !logEntry.Message.ContainsOrdinalIgnoreCase(
-                            "Uncaught ReferenceError: $ is not defined"));
-
-                    OrchardCoreUITestExecutorConfiguration.AssertBrowserLogIsEmpty(messageWithoutJqueryError);
-                };
             });
 }
