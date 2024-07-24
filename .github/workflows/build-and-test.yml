@@ -37,9 +37,7 @@ jobs:
       dotnet-test-process-timeout: 780000
       # Temporarily not running Edge tests on the GitHub-hosted Ubuntu runners until
       # https://github.com/atata-framework/atata-webdriversetup/issues/16 is fixed.
-      # This must be quoted for dotnet test to understand it.
-      # yamllint disable-line rule:quoted-strings
-      test-filter: 'FullyQualifiedName!~Lombiq.Tests.UI.Samples.Tests.BasicVisualVerificationTests.VerifyNavbar|FullyQualifiedName!~Lombiq.Tests.UI.Samples.Tests.MultiBrowserTests'
+      test-filter: FullyQualifiedName!~Lombiq.Tests.UI.Samples.Tests.BasicVisualVerificationTests.VerifyNavbar|FullyQualifiedName!~Lombiq.Tests.UI.Samples.Tests.MultiBrowserTests
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
