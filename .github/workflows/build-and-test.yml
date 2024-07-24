@@ -26,7 +26,7 @@ jobs:
   build-and-test-standard-runners:
     if: true
     name: Build and Test - root solution (standard runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@bug/no-edge-tests
     with:
       # Since dev builds are not awaited by anyone, they can run on the slower free runners.
       parent-job-name: root-solution-standard-runners
