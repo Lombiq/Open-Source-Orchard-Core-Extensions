@@ -1,5 +1,4 @@
 using Lombiq.Walkthroughs.Tests.UI.Extensions;
-using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -13,8 +12,7 @@ public class BehaviorWalkthroughsTests : UITestBase
     {
     }
 
-    [Fact(Skip = "Temporarily disabled.")]
-    [SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "See above.")]
+    [Fact]
     public Task WalkthroughsShouldWorkCorrectly() =>
         ExecuteTestAsync(context => context.RunSetupAndTestWalkthroughsBehaviorAsync());
 }
