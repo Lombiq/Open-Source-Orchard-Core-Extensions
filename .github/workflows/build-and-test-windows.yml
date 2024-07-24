@@ -31,10 +31,7 @@ jobs:
           type: remove
 
   build-and-test-larger-runners:
-    if: github.ref_name != github.event.repository.default_branch &&
-        (github.event_name == 'workflow_dispatch' ||
-            github.event.label.name == 'run-windows-build' ||
-            (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build')))
+    if: false
     name: Build and Test Windows - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@bug/no-edge-tests
     with:
@@ -50,9 +47,9 @@ jobs:
       test-filter: FullyQualifiedName!~SecurityScanningTests
 
   build-and-test-standard-runners:
-    if: github.ref_name == github.event.repository.default_branch
+    if: true
     name: Build and Test Windows - root solution (standard runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@bug/no-edge-tests
     with:
       parent-job-name: root-solution-standard-runners
       # Since dev builds are not awaited by anyone, they can run on the slower free runners.
@@ -72,7 +69,7 @@ jobs:
         github.event.label.name == 'run-windows-build' ||
         (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build'))
     name: Build and Test Windows - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@bug/no-edge-tests
     with:
       parent-job-name: nuget-solution
       machine-types: '["windows-2022"]'
