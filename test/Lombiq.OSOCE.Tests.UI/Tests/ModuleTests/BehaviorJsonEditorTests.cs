@@ -1,7 +1,4 @@
 using Lombiq.JsonEditor.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Services;
-using System;
-using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
