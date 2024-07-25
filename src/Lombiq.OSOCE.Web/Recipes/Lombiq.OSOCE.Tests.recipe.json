@@ -56,8 +56,6 @@
         "Lombiq.Hosting.Tenants.FeaturesGuard",
         "Lombiq.Hosting.Tenants.MediaStorageManagement",
         "OrchardCore.Media",
-        "OrchardCore.Search.Elasticsearch",
-        "OrchardCore.Search",
         "OrchardCore.Feature",
         "TheTheme"
         // Not enabling Lombiq.TrainingDemo.Middlewares because that would write to the error log on every request.
@@ -215,7 +213,7 @@
     {
       "name": "themes",
       "admin": "TheAdmin",
-      "site": "SafeMode"
+      "site":  "SafeMode"
     },
     {
       "name": "FeatureProfiles",
@@ -241,49 +239,6 @@
           ]
         }
       }
-    },
-    {
-      "name": "ElasticIndexSettings",
-      "Indices": [
-        {
-          "blogposts": {
-            "AnalyzerName": "standardanalyzer",
-            "IndexLatest": false,
-            "IndexedContentTypes": [
-              "BlogPost"
-            ],
-            "Culture": "any",
-            "StoreSourceData": true
-          }
-        }
-      ]
-    },
-    {
-      "name": "elastic-index-rebuild",
-      "includeAll": true
-    },
-    {
-      "name": "Settings",
-      "ElasticSettings": {
-        "SearchIndex": "blogposts",
-        "DefaultSearchFields": [
-          "Content.ContentItem.FullText"
-        ],
-        "AllowElasticQueryStringQueryInSearch": false
-      }
-    },
-    {
-      "name": "Queries",
-      "Queries": [
-        {
-          "Index": "blogposts",
-          "Template": "{\r\n  \"size\": 1000,\r\n  \"query\":{\r\n    \"term\":{\r\n      \"Content.ContentItem.ContentType\":\"BlogPost\"\r\n    }\r\n  },\r\n  \"fields\": [\r\n    \"ContentItemId\", \"ContentItemVersionId\"\r\n  ],\r\n  \"sort\": [\r\n\t{\"Content.ContentItem.DisplayText.keyword\": {\"order\": \"asc\"}}\r\n  ],\r\n  \"_source\": true\r\n}",
-          "ReturnContentItems": false,
-          "Name": "Blog Posts",
-          "Source": "Elasticsearch",
-          "Schema": "{ \"type\": \"ContentItem/BlogPost\" }"
-        }
-      ]
     },
     {
       "name": "recipes",
