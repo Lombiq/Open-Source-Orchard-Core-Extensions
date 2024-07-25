@@ -18,6 +18,7 @@ jobs:
       timeout-minutes: 30
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
+      set-up-elasticsearch: 'true'
       build-create-binary-log: 'true'
       dotnet-test-process-timeout: 600000
       build-enable-nuget-caching: 'true'
@@ -33,6 +34,7 @@ jobs:
       timeout-minutes: 50
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
+      set-up-elasticsearch: 'true'
       build-create-binary-log: 'true'
       dotnet-test-process-timeout: 780000
       # Temporarily not running Edge tests on the GitHub-hosted Ubuntu runners until
