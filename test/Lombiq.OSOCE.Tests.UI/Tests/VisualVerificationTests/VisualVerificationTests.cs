@@ -1,6 +1,5 @@
 using Lombiq.Tests.UI.Constants;
 using Lombiq.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Services;
 using OpenQA.Selenium;
 using SixLabors.ImageSharp;
 using System.Threading.Tasks;
@@ -30,6 +29,5 @@ public class VisualVerificationTests : UITestBase
             context => context.AssertVisualVerificationApprovedOnAllResolutionsWithPlatformSuffix(
                 _visualVerificationSizes,
                 _ => By.TagName("body"),
-                pixelErrorPercentageThreshold: 0.005),
-            browser: Browser.Firefox);
+                pixelErrorPercentageThreshold: 0.005));
 }
