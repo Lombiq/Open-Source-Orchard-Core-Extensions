@@ -43,11 +43,12 @@ jobs:
       timeout-minutes: 50
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
+      set-up-elasticsearch: 'true'
       build-create-binary-log: 'true'
       dotnet-test-process-timeout: 720000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
-      test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests
+      test-filter: FullyQualifiedName!~SecurityScanningTests
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -60,11 +61,12 @@ jobs:
       timeout-minutes: 70
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
+      set-up-elasticsearch: 'true'
       build-create-binary-log: 'true'
       dotnet-test-process-timeout: 840000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
-      test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests
+      test-filter: FullyQualifiedName!~SecurityScanningTests
 
   build-and-test-nuget-test:
     if: github.ref_name == github.event.repository.default_branch ||
@@ -84,7 +86,7 @@ jobs:
       # Without quotes, somehow the value won't be passed properly and the test execution will hang, despite seemingly
       # every value being the same as with quotes.
       # yamllint disable-line rule:quoted-strings
-      test-filter: 'FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests'
+      test-filter: 'FullyQualifiedName!~SecurityScanningTests
 
   powershell-static-code-analysis:
     if: github.ref_name == github.event.repository.default_branch ||
