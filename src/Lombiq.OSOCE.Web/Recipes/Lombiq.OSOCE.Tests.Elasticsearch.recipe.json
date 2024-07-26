@@ -16,15 +16,6 @@
   ],
   "steps": [
     {
-      "name": "recipes",
-      "Values": [
-        {
-          "executionid": "Lombiq.OSOCE.Web",
-          "name": "Lombiq.OSOCE.Tests"
-        }
-      ]
-    },
-    {
       "name": "feature",
       "disable": [],
       "enable": [
@@ -68,6 +59,15 @@
           "Name": "Blog Posts",
           "Source": "Elasticsearch",
           "Schema": "{ \"type\": \"ContentItem/BlogPost\" }"
+        }
+      ]
+    },
+    {
+      "name": "recipes",
+      "Values": [
+        {
+          "executionid": "Lombiq.OSOCE.Web",
+          "name": "Lombiq.OSOCE.Tests"
         }
       ]
     }
