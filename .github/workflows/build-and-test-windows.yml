@@ -86,7 +86,7 @@ jobs:
       # Without quotes, somehow the value won't be passed properly and the test execution will hang, despite seemingly
       # every value being the same as with quotes.
       # yamllint disable-line rule:quoted-strings
-      test-filter: 'FullyQualifiedName!~SecurityScanningTests
+      test-filter: 'FullyQualifiedName!~SecurityScanningTests'
 
   powershell-static-code-analysis:
     if: github.ref_name == github.event.repository.default_branch ||
