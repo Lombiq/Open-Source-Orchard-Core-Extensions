@@ -48,8 +48,8 @@
     <PackageReference Include="Lombiq.Privacy" Version="8.0.1" />
     <PackageReference Include="Lombiq.Privacy.Samples" Version="8.0.1" />
     <PackageReference Include="Lombiq.SetupExtensions" Version="6.0.1" />
-    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="10.0.2-alpha.0.nest-501" />
-    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="10.0.2-alpha.0.nest-501" />
+    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="10.0.2-alpha.1.occ-245" />
+    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="10.0.2-alpha.1.occ-245" />
     <PackageReference Include="Lombiq.UIKit" Version="7.0.1" />
     <PackageReference Include="Lombiq.VueJs" Version="6.0.0" />
     <PackageReference Include="Lombiq.VueJs.Samples" Version="6.0.0" />
