@@ -51,8 +51,8 @@
     <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="10.0.2-alpha.1.occ-245" />
     <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="10.0.2-alpha.1.occ-245" />
     <PackageReference Include="Lombiq.UIKit" Version="7.0.2-alpha.0.occ-245" />
-    <PackageReference Include="Lombiq.VueJs" Version="6.0.2-alpha.0.occ-245" />
-    <PackageReference Include="Lombiq.VueJs.Samples" Version="6.0.2-alpha.0.occ-245" />
+    <PackageReference Include="Lombiq.VueJs" Version="6.0.1-alpha.0.occ-245" />
+    <PackageReference Include="Lombiq.VueJs.Samples" Version="6.0.1-alpha.0.occ-245" />
     <PackageReference Include="Lombiq.Walkthroughs" Version="1.0.2-alpha.0.occ-245" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="1.2.2" Condition="'$(RazorRuntimeCompilation)' == 'true'" />
     <PackageReference Include="SixLabors.ImageSharp.Web" Version="3.1.2" />
