@@ -26,8 +26,8 @@
     <PackageReference Include="Lombiq.DataTables.Tests.UI" Version="8.0.2-alpha.0.occ-245" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI" Version="8.1.0" />
     <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay.Tests.UI" Version="5.0.1" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge.Tests.UI" Version="6.0.1" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Tests.UI" Version="6.0.1" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge.Tests.UI" Version="6.0.2-alpha.0.occ-245" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Tests.UI" Version="6.0.2-alpha.0.occ-245" />
     <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots.Tests.UI" Version="7.0.2-alpha.1.nest-501" />
     <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard.Tests.UI" Version="7.0.2-alpha.1.nest-501" />
     <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI" Version="7.0.2-alpha.1.nest-501" />

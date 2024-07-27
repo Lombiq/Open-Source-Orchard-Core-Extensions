@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.HelpfulLibraries" Version="10.0.0" />
+    <PackageReference Include="Lombiq.HelpfulLibraries" Version="10.0.1-alpha.0.occ-245" />
     <PackageReference Include="OrchardCore.Module.Targets" Version="2.0.0-preview-18282" />
     <PackageReference Include="OrchardCore.ContentManagement" Version="2.0.0-preview-18282" />
     <PackageReference Include="OrchardCore.ContentTypes.Abstractions" Version="2.0.0-preview-18282" />

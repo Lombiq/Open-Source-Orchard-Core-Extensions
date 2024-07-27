@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.AuditTrailExtensions" Version="6.0.1" />
+    <PackageReference Include="Lombiq.AuditTrailExtensions" Version="6.0.2-alpha.0.occ-245" />
     <PackageReference Include="Lombiq.BaseTheme" Version="7.0.0" />
     <PackageReference Include="Lombiq.BaseTheme.Samples" Version="7.0.0" />
     <PackageReference Include="Lombiq.ChartJs" Version="7.0.1" />
@@ -31,9 +31,9 @@
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="8.0.2-alpha.0.occ-245" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="8.1.0" />
     <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay" Version="5.0.1" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="6.0.1" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="6.0.1" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Targets" Version="6.0.1" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="6.0.2-alpha.0.occ-245" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="6.0.2-alpha.0.occ-245" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Targets" Version="6.0.2-alpha.0.occ-245" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="7.0.2-alpha.1.nest-501" />
     <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots" Version="7.0.2-alpha.1.nest-501" />
     <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="7.0.2-alpha.1.nest-501" />
