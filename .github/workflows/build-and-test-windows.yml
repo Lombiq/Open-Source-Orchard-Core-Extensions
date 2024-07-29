@@ -47,6 +47,8 @@ jobs:
       dotnet-test-process-timeout: 720000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
+      # The currently used Elasticsearch setup action (https://github.com/elastic/elastic-github-actions/tree/master/elasticsearch)
+      # can only be used on Linux.
       test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests
 
   build-and-test-standard-runners:
@@ -64,6 +66,8 @@ jobs:
       dotnet-test-process-timeout: 840000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
+      # The currently used Elasticsearch setup action (https://github.com/elastic/elastic-github-actions/tree/master/elasticsearch)
+      # can only be used on Linux.
       test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests
 
   build-and-test-nuget-test:
@@ -81,6 +85,8 @@ jobs:
       dotnet-test-process-timeout: 540000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
+      # The currently used Elasticsearch setup action (https://github.com/elastic/elastic-github-actions/tree/master/elasticsearch)
+      # can only be used on Linux.
       # Without quotes, somehow the value won't be passed properly and the test execution will hang, despite seemingly
       # every value being the same as with quotes.
       # yamllint disable-line rule:quoted-strings
