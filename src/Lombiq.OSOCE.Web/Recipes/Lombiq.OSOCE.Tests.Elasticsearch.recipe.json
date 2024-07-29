@@ -40,6 +40,10 @@
       ]
     },
     {
+      "name": "elastic-index-rebuild",
+      "includeAll": true
+    },
+    {
       "name": "Settings",
       "ElasticSettings": {
         "SearchIndex": "blogposts",
