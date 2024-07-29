@@ -28,7 +28,7 @@
       "Indices": [
         {
           "blogposts": {
-            "AnalyzerName": "standardanalyzer",
+            "AnalyzerName": "standard",
             "IndexLatest": false,
             "IndexedContentTypes": [
               "BlogPost"
@@ -38,10 +38,6 @@
           }
         }
       ]
-    },
-    {
-      "name": "elastic-index-rebuild",
-      "includeAll": true
     },
     {
       "name": "Settings",
