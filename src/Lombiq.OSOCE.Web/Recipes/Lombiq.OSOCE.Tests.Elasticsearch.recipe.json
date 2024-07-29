@@ -28,7 +28,7 @@
       "Indices": [
         {
           "blogposts": {
-            "AnalyzerName": "standard",
+            "AnalyzerName": "standardanalyzer",
             "IndexLatest": false,
             "IndexedContentTypes": [
               "BlogPost"
