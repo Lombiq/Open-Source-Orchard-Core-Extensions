@@ -28,7 +28,7 @@ builder.Services
                     FeatureIds.Default,
                 ],
             })
-        .EnableAutoSetupIfNotUITesting(configuration);
+        .EnableAutoSetupIfNotUITesting(configuration));
 
 var app = builder.Build();
 app.UseOrchardCore();
