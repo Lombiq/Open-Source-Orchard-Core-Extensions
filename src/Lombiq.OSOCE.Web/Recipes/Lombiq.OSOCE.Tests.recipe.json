@@ -213,7 +213,7 @@
     {
       "name": "themes",
       "admin": "TheAdmin",
-      "site":  "SafeMode"
+      "site": "SafeMode"
     },
     {
       "name": "FeatureProfiles",
