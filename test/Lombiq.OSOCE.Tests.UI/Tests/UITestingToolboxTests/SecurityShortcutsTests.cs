@@ -18,9 +18,11 @@ public class SecurityShortcutsTests : UITestBase
 
     [Fact]
     public Task AddUserToFakeRoleShouldThrow() =>
-        SecurityShortcutsTestCases.AddUserToFakeRoleShouldThrowAsync(ExecuteTestAfterSetupAsync);
+        SecurityShortcutsTestCases.AddUserToFakeRoleShouldThrowAsync(
+            (testAsync, _, changeConfigurationAsync) => ExecuteTestAfterBrowserSetupWithoutBrowserAsync(testAsync, changeConfigurationAsync));
 
     [Fact]
     public Task AllowFakePermissionToRoleShouldThrow() =>
-        SecurityShortcutsTestCases.AllowFakePermissionToRoleShouldThrowAsync(ExecuteTestAfterSetupAsync);
+        SecurityShortcutsTestCases.AllowFakePermissionToRoleShouldThrowAsync(
+            (testAsync, _, changeConfigurationAsync) => ExecuteTestAfterBrowserSetupWithoutBrowserAsync(testAsync, changeConfigurationAsync));
 }
