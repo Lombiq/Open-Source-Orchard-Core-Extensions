@@ -23,9 +23,6 @@ jobs:
       dotnet-test-process-timeout: 600000
       build-enable-nuget-caching: 'true'
       build-enable-npm-caching: 'true'
-      # Temporarily not running Edge tests on the Linux runners until
-      # https://github.com/atata-framework/atata-webdriversetup/issues/16 is fixed.
-      test-filter: FullyQualifiedName!~Lombiq.Tests.UI.Samples.Tests.BasicVisualVerificationTests.VerifyNavbar&FullyQualifiedName!~Lombiq.Tests.UI.Samples.Tests.MultiBrowserTests
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -40,9 +37,6 @@ jobs:
       set-up-elasticsearch: 'true'
       build-create-binary-log: 'true'
       dotnet-test-process-timeout: 780000
-      # Temporarily not running Edge tests on the Linux runners until
-      # https://github.com/atata-framework/atata-webdriversetup/issues/16 is fixed.
-      test-filter: FullyQualifiedName!~Lombiq.Tests.UI.Samples.Tests.BasicVisualVerificationTests.VerifyNavbar&FullyQualifiedName!~Lombiq.Tests.UI.Samples.Tests.MultiBrowserTests
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
