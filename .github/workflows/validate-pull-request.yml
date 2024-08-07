@@ -8,4 +8,4 @@ on:
 jobs:
   validate-pull-request:
     name: Validate Pull Request
-    uses: Lombiq/GitHub-Actions/.github/workflows/validate-pull-request.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/validate-pull-request.yml@issue/OSOE-888
