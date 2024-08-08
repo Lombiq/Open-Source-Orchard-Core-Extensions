@@ -95,6 +95,7 @@
       // Also host is null by default, so has to be explicitly specified.
       "SmtpSettings": {
         "IsEnabled": true,
+        "DefaultSender": "sender@example.com",
         "Host": "localhost"
       },
       "EmailSettings": {
