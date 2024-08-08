@@ -94,7 +94,8 @@
       // A breaking change as of OC 2.0, the SMTP e-mail provider is not turned on by default and has to be enabled.
       // Also host is null by default, so has to be explicitly specified.
       "SmtpSettings": {
-        "IsEnabled": true
+        "IsEnabled": true,
+        "Host": "localhost"
       },
       "EmailSettings": {
         "DefaultProviderName": "SMTP"
