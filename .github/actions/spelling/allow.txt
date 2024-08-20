@@ -3,6 +3,7 @@ autorun
 barcode
 chainable
 clickable
+cloudflare
 entra
 flyout
 hackish
