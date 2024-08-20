@@ -58,9 +58,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OrchardCore.Admin.Abstractions" Version="2.0.0-preview-18288" />
-    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="2.0.0-preview-18288" />
-    <PackageReference Include="OrchardCore.Logging.NLog" Version="2.0.0-preview-18288" />
+    <PackageReference Include="OrchardCore.Admin.Abstractions" Version="2.0.0-preview-18300" />
+    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="2.0.0-preview-18300" />
+    <PackageReference Include="OrchardCore.Logging.NLog" Version="2.0.0-preview-18300" />
     <PackageReference Include="SixLabors.ImageSharp.Web" Version="3.1.3" />
   </ItemGroup>
 
