@@ -60,8 +60,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OrchardCore.Logging.NLog" Version="2.0.0-preview-18300" />
-    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="2.0.0-preview-18300" />
+    <PackageReference Include="OrchardCore.Logging.NLog" Version="2.0.0-preview-18312" />
+    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="2.0.0-preview-18312" />
   </ItemGroup>
 
   <ItemGroup>
