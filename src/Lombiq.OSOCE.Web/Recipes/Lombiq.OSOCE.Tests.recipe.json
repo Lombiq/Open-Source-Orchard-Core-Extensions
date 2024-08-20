@@ -55,8 +55,9 @@
         "OrchardCore.Tenants.FeatureProfiles",
         "Lombiq.Hosting.Tenants.FeaturesGuard",
         "Lombiq.Hosting.Tenants.MediaStorageManagement",
+        "OrchardCore.Localization",
+        "OrchardCore.Features",
         "OrchardCore.Media",
-        "OrchardCore.Feature",
         "OrchardCore.Email.Smtp",
         "TheTheme"
         // Not enabling Lombiq.TrainingDemo.Middlewares because that would write to the error log on every request.
@@ -88,15 +89,6 @@
     },
     {
       "name": "settings",
-      // CDN should be turned off for tests, just as no other external resource should be used.
-      "UseCdn": false,
-      // A breaking change as of OC 1.9, the SMTP e-mail provider is not turned on by default and has to be enabled.
-      // Also host is null by default, so has to be explicitly specified.
-      "SmtpSettings": {
-        "IsEnabled": true,
-        "DefaultSender": "sender@example.com",
-        "Host": "localhost"
-      },
       // To make sure that e.g. numbers and dates are formatted the same way on all machines we have to specify the
       // culture too.
       "LocalizationSettings": {
@@ -218,7 +210,7 @@
     {
       "name": "themes",
       "admin": "TheAdmin",
-      "site":  "SafeMode"
+      "site": "SafeMode"
     },
     {
       "name": "FeatureProfiles",
