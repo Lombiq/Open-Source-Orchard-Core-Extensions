@@ -32,9 +32,9 @@
         <label asp-for="ResourceDebugMode" class="form-label">@T["Resource Debug Mode"]</label>
         <select asp-for="ResourceDebugMode" class="form-select">
             <option value="@ResourceDebugMode.FromConfiguration.ToString()">@T["From environment — disabled in Production, enabled otherwise"]</option>
-            <option value="@ResourceDebugMode.Enabled.ToString()">@T["Enabled — use debuggable version of resources"]</option>
+            <option value="@ResourceDebugMode.Enabled.ToString()">@T["Enabled — use debuggable version of resources"]</option> @* #spell-check-ignore-line *@
             <option value="@ResourceDebugMode.Disabled.ToString()">@T["Disabled — use minified version of resources"]</option>
         </select>
-        <span class="hint">@T["Determines whether scripts and stylesheets load in their debuggable or minified form."]</span>
+        <span class="hint">@T["Determines whether scripts and stylesheets load in their debuggable or minified form."]</span> @* #spell-check-ignore-line *@
     </div>
 </div>
