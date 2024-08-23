@@ -21,10 +21,10 @@
 
   <ItemGroup>
     <PackageReference Include="Lombiq.Npm.Targets" Version="1.4.0" />
-    <PackageReference Include="OrchardCore.Theme.Targets" Version="2.0.0-preview-18300" />
-    <PackageReference Include="OrchardCore.ContentManagement" Version="2.0.0-preview-18300" />
-    <PackageReference Include="OrchardCore.DisplayManagement" Version="2.0.0-preview-18300" />
-    <PackageReference Include="OrchardCore.ResourceManagement" Version="2.0.0-preview-18300" />
+    <PackageReference Include="OrchardCore.Theme.Targets" Version="2.0.0-preview-18315" />
+    <PackageReference Include="OrchardCore.ContentManagement" Version="2.0.0-preview-18315" />
+    <PackageReference Include="OrchardCore.DisplayManagement" Version="2.0.0-preview-18315" />
+    <PackageReference Include="OrchardCore.ResourceManagement" Version="2.0.0-preview-18315" />
   </ItemGroup>
 
 </Project>
