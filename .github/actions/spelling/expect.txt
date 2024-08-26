@@ -5,6 +5,7 @@ Bubl
 chartjs
 Chro
 chromedriver
+cloudflare
 clike
 codeanalysis
 codestyle
