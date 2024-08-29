@@ -49,7 +49,7 @@ jobs:
 
   spelling:
     name: Spelling
-    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@issue/OSOE-861
     with:
       additional-dictionaries: |
         cspell:csharp/csharp.txt
@@ -73,7 +73,7 @@ jobs:
 
   yaml-linting:
     name: YAML Linting
-    uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@issue/OSOE-861
     with:
       config-file-path: tools/Lombiq.GitHub.Actions/.trunk/configs/.yamllint.yaml
       search-path: .
