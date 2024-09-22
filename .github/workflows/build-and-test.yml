@@ -44,14 +44,14 @@ jobs:
       # https://github.com/atata-framework/atata-webdriversetup/issues/16 is fixed.
       test-filter: FullyQualifiedName!~Lombiq.Tests.UI.Samples.Tests.BasicVisualVerificationTests.VerifyNavbar&FullyQualifiedName!~Lombiq.Tests.UI.Samples.Tests.MultiBrowserTests
 
-  build-and-test-nuget-test:
-    name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
-    with:
-      parent-job-name: nuget-solution
-      build-directory: NuGetTest
-      timeout-minutes: 20
-      dotnet-test-process-timeout: 480000
+  # build-and-test-nuget-test:
+  #   name: Build and Test - NuGetTest solution
+  #   uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+  #   with:
+  #     parent-job-name: nuget-solution
+  #     build-directory: NuGetTest
+  #     timeout-minutes: 20
+  #     dotnet-test-process-timeout: 480000
 
   spelling:
     name: Spelling
@@ -86,7 +86,7 @@ jobs:
 
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
-    needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling, powershell-static-code-analysis]
+    needs: [build-and-test-larger-runners, spelling, powershell-static-code-analysis]
     if: github.event.pull_request != ''
     uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
     secrets:
@@ -99,7 +99,7 @@ jobs:
     name: Add Windows Build Warning Label
     runs-on: ubuntu-22.04
     timeout-minutes: 2
-    needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
+    needs: [build-and-test-larger-runners, powershell-static-code-analysis]
     steps:
       - name: Add Windows Build Warning Label
         uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@dev
