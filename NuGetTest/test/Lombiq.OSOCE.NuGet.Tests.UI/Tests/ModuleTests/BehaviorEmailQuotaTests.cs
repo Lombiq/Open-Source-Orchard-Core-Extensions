@@ -24,5 +24,5 @@ public class BehaviorEmailQuotaTests : UITestBase
             context => context.TestEmailQuotaManagementBehaviorAsync(1, moduleShouldInterfere: false),
             // The default SMTP host is localhost during UI tests, we set it to 127.0.0.1 to be able to send emails,
             // but the Email Quota module shouldn't interfere.
-            configuration => configuration.SetEmailQuotaManagementOptionsForUITest(1, "127.0.0.1"));
+            configuration => configuration.SetEmailQuotaManagementOptionsForUITest(1));
 }
