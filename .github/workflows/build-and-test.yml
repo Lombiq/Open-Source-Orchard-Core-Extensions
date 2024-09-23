@@ -99,7 +99,7 @@ jobs:
     name: Add Windows Build Warning Label
     runs-on: ubuntu-22.04
     timeout-minutes: 2
-    needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling, powershell-static-code-analysis]
+    needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
     steps:
       - name: Add Windows Build Warning Label
         uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@dev
