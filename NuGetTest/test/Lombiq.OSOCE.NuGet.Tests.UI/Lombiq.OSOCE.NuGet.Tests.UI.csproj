@@ -40,7 +40,7 @@
     <PackageReference Include="Lombiq.JsonEditor.Tests.UI" Version="7.0.3-alpha.2.osoe-818" />
     <PackageReference Include="Lombiq.LoginAsAnybody.Tests.UI" Version="3.0.1-alpha.4.osoe-818" />
     <PackageReference Include="Lombiq.OrchardCoreApiClient.Tests.UI" Version="5.0.1-alpha.5.osoe-893" />
-    <PackageReference Include="Lombiq.Privacy.Tests.UI" Version="8.0.2-alpha.3.osoe-818" />
+    <PackageReference Include="Lombiq.Privacy.Tests.UI" Version="9.0.0" />
     <PackageReference Include="Lombiq.HelpfulExtensions.Tests.UI" Version="9.0.0" />
     <PackageReference Include="Lombiq.Tests.UI" Version="11.0.0" />
     <PackageReference Include="Lombiq.VueJs.Tests.UI" Version="6.0.1-alpha.5.osoe-818" />
