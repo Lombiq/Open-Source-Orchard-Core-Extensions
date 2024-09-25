@@ -29,7 +29,7 @@
     <PackageReference Include="Lombiq.DataTables" Version="8.0.2-alpha.2.osoe-818" />
     <PackageReference Include="Lombiq.DataTables.Samples" Version="8.0.2-alpha.2.osoe-818" />
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="8.0.2-alpha.2.osoe-818" />
-    <PackageReference Include="Lombiq.HelpfulLibraries" Version="10.0.1-alpha.8.osoe-818" />
+    <PackageReference Include="Lombiq.HelpfulLibraries" Version="11.0.0" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="8.1.1-alpha.2.osoe-818" />
     <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay" Version="5.0.2-alpha.2.osoe-818" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="6.0.2-alpha.2.osoe-818" />
@@ -49,8 +49,8 @@
     <PackageReference Include="Lombiq.Privacy" Version="8.0.2-alpha.3.osoe-818" />
     <PackageReference Include="Lombiq.Privacy.Samples" Version="8.0.2-alpha.3.osoe-818" />
     <PackageReference Include="Lombiq.SetupExtensions" Version="6.0.2-alpha.2.osoe-818" />
-    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="10.0.2-alpha.5.osoe-818" />
-    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="10.0.2-alpha.5.osoe-818" />
+    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="11.0.0" />
+    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="11.0.0" />
     <PackageReference Include="Lombiq.UIKit" Version="7.0.2-alpha.3.osoe-818" />
     <PackageReference Include="Lombiq.VueJs" Version="6.0.1-alpha.5.osoe-818" />
     <PackageReference Include="Lombiq.VueJs.Samples" Version="6.0.1-alpha.5.osoe-818" />
