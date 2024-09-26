@@ -1,4 +1,5 @@
 using Lombiq.Hosting.Tenants.EmailQuotaManagement.Tests.UI.Extensions;
+using Lombiq.Tests.UI.Extensions;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -21,8 +22,14 @@ public class BehaviorEmailQuotaTests : UITestBase
     [Fact]
     public Task EmailQuotaShouldNotBlockEmailsWhenDifferentHostIsUsedThanOriginalFromConfig() =>
         ExecuteTestAfterSetupAsync(
-            context => context.TestEmailQuotaManagementBehaviorAsync(1, moduleShouldInterfere: false),
-            // The default SMTP host is localhost during UI tests, we set it to 127.0.0.1 to be able to send emails,
-            // but the Email Quota module shouldn't interfere.
-            configuration => configuration.SetEmailQuotaManagementOptionsForUITest(1, "127.0.0.1"));
+            async context =>
+            {
+                // The default SMTP host is localhost during UI tests. We set it to 127.0.0.1 to still be able to send
+                // emails (since localhost and 127.0.0.1 is the same), but the Email Quota module shouldn't interfere,
+                // thinking it's a non-default host.
+                await context.SignInDirectlyAndGoToDashboardAsync();
+                await context.ConfigureSmtpSettingsAsync("sender@example.com", "127.0.0.1");
+                await context.TestEmailQuotaManagementBehaviorAsync(1, moduleShouldInterfere: false);
+            },
+            configuration => configuration.SetEmailQuotaManagementOptionsForUITest(1));
 }
