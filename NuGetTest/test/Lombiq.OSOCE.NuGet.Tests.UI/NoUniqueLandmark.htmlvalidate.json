@@ -1,0 +1,11 @@
+{
+  "extends": [
+    "./default.htmlvalidate.json"
+  ],
+
+  "rules": {
+    "unique-landmark": "off"
+  },
+
+  "root": true
+}

@@ -199,3 +199,4 @@ src/*.Web/Localization
 /test.out
 .ps1-analyzer-stamp
 /NDependOut/
+/build.binlog
