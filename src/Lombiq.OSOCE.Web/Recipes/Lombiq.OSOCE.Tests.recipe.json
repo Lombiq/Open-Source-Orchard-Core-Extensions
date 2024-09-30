@@ -58,6 +58,7 @@
         "OrchardCore.Localization",
         "OrchardCore.Features",
         "OrchardCore.Media",
+        "OrchardCore.Email.Smtp",
         "TheTheme"
         // Not enabling Lombiq.TrainingDemo.Middlewares because that would write to the error log on every request.
       ]
