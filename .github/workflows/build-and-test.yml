@@ -69,7 +69,7 @@ jobs:
     name: PowerShell Static Code Analysis
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
-      machine-types: "['ubuntu-22.04']"
+      machine-types: "['ubuntu-24.04']"
 
   yaml-linting:
     name: YAML Linting
@@ -91,7 +91,7 @@ jobs:
 
   add-windows-build-warning-label:
     name: Add Windows Build Warning Label
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     timeout-minutes: 2
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
     steps:
