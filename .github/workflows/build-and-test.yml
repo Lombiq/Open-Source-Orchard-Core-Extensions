@@ -14,7 +14,7 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/INFRA-164
     with:
       parent-job-name: root-solution-larger-runners
-      machine-types: '["ubuntu-24.04"]'
+      machine-types: '["ubuntu-22.04", "ubuntu-24.04", "warp-ubuntu-2204-x64-4x", "warp-ubuntu-2404-x64-4x"]'
       timeout-minutes: 30
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
