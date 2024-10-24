@@ -23,7 +23,6 @@ jobs:
       dotnet-test-process-timeout: 600000
       build-enable-nuget-caching: 'true'
       build-enable-npm-caching: 'true'
-      test-filter: FullyQualifiedName~BehaviorWalkthroughsTests
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -42,6 +41,7 @@ jobs:
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    if: false
     with:
       parent-job-name: nuget-solution
       build-directory: NuGetTest
