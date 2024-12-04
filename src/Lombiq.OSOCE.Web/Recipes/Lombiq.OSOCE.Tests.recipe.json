@@ -50,6 +50,7 @@
         "Lombiq.TrainingDemo",
         "Lombiq.UIKit",
         "Lombiq.UIKit.Showcase",
+        "Lombiq.UIKit.Widgets",
         "Lombiq.VueJs",
         "Lombiq.VueJs.Samples",
         "OrchardCore.Tenants.FeatureProfiles",
