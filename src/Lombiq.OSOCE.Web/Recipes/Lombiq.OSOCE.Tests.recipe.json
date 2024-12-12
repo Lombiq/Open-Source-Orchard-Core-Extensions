@@ -248,6 +248,10 @@
         {
           "executionid": "Lombiq.OSOCE.Web",
           "name": "Lombiq.HelpfulExtensions.ContentSets.Samples"
+        },
+        {
+          "executionid": "Lombiq.OSOCE.Web",
+          "name": "Lombiq.UIKit.Widgets.Content"
         }
       ]
     }
