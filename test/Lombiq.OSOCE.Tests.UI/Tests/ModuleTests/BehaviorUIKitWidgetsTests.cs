@@ -31,7 +31,7 @@ public class BehaviorUIKitWidgetsTests : UITestBase
                             error.RuleId is not "prefer-native-element" and
                                 not "text-content" and
                                 not "no-redundant-role");
-                    //errors.ShouldBeEmpty(HtmlValidationResultExtensions.GetParsedErrorMessageString(errors));
+                    errors.ShouldBeEmpty(HtmlValidationResultExtensions.GetParsedErrorMessageString(errors));
                     return Task.CompletedTask;
                 });
 }
