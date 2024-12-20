@@ -34,4 +34,5 @@ public class BehaviorUIKitWidgetsTests : UITestBase
                     errors.ShouldBeEmpty(HtmlValidationResultExtensions.GetParsedErrorMessageString(errors));
                     return Task.CompletedTask;
                 });
+
 }
