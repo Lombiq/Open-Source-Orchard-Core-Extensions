@@ -14,11 +14,11 @@ public class BehaviorLoginAsAnybodyTests : UITestBase
 
     [Fact]
     public Task SwitchingUserShouldWorkCorrectly() =>
-        ExecuteTestAfterSetupAsync(context => context.TestLoginAsAnybodyAsync());
+        ExecuteTestAfterSetupAsync(context => context.SwitchingUserShouldWorkCorrectlyAsync());
 
     [Fact]
     public Task PermissionCheckShouldWorkCorrectly() =>
         ExecuteTestAfterSetupAsync(
-            context => context.TestLoginAsAnybodyAuthorizationAsync(),
+            context => context.PermissionCheckShouldWorkCorrectlyAsync(),
             changeConfiguration: Configurations.IgnoreUnauthorizedBrowserLogEntries);
 }

@@ -35,7 +35,7 @@
         "Lombiq.Hosting.Tenants.Management.ShellSettingsEditor",
         "Lombiq.Hosting.Tenants.Maintenance",
         "Lombiq.Hosting.Tenants.Maintenance.UpdateSiteUrl",
-        "Lombiq.Hosting.Tenants.Maintenance.AddSiteOwnerPermissionToRole",
+        "Lombiq.Hosting.Tenants.Maintenance.AddAdministratorRoleToUsersWithRole",
         "Lombiq.Hosting.Tenants.Maintenance.ChangeUserSensitiveContent",
         "Lombiq.Hosting.Tenants.IdleTenantManagement.ShutDownIdleTenants",
         "Lombiq.Hosting.Tenants.EmailQuotaManagement",
@@ -166,44 +166,6 @@
             "ManageMediaContent",
             "ManageWorkflows",
             "ExecuteWorkflows"
-          ]
-        },
-        {
-          "Name": "Administrator",
-          "Description": "Administrator role",
-          "Permissions": [
-            "ManageSettings",
-            "AccessAdminPanel",
-            "ManageAdminSettings",
-            "ManageUsers",
-            "ManageRoles",
-            "SiteOwner",
-            "ManageTenants",
-            "ApplyTheme",
-            "PublishContent",
-            "EditContent",
-            "DeleteContent",
-            "PreviewContent",
-            "CloneContent",
-            "AccessContentApi",
-            "ListContent",
-            "ViewContentTypes",
-            "EditContentTypes",
-            "ManageMediaContent",
-            "ManageAttachedMediaFieldsFolder",
-            "ManageMediaProfiles",
-            "ViewMediaOptions",
-            "ManageAssetCache",
-            "ViewAzureMediaOptions",
-            "ManageBackgroundTasks",
-            "ManageEmailSettings",
-            "ManageWorkflows",
-            "ExecuteWorkflows",
-            "SetHomepage",
-            "Import",
-            "Export",
-            "ViewAuditTrail",
-            "ManageAuditTrailSettings"
           ]
         }
       ]
