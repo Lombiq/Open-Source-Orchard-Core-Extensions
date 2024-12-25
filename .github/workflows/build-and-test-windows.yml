@@ -50,6 +50,7 @@ jobs:
       # The currently used Elasticsearch setup action (https://github.com/elastic/elastic-github-actions/tree/master/elasticsearch)
       # can only be used on Linux.
       test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests
+      cancel-in-progress-for-this-pr: 'false'
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -91,6 +92,7 @@ jobs:
       # every value being the same as with quotes.
       # yamllint disable-line rule:quoted-strings
       test-filter: 'FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests'
+      cancel-in-progress-for-this-pr: 'false'
 
   powershell-static-code-analysis:
     if: github.ref_name == github.event.repository.default_branch ||
