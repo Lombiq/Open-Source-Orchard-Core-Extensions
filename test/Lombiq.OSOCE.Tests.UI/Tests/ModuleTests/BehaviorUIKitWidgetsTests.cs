@@ -18,7 +18,7 @@ public class BehaviorUIKitWidgetsTests : UITestBase
     [Fact]
     public Task UIKitCarouselWidgetShouldHaveSlickContainer()
         => ExecuteTestAfterSetupAsync(
-            context => context.TestCarouselWidgetBehavior(),
+            context => context.TestCarouselWidgetBehaviorAsync(),
             configuration => configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
                 validationResult =>
                 {
