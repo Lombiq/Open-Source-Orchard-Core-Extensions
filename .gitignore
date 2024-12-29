@@ -152,8 +152,7 @@ $RECYCLE.BIN/
 .DS_Store
 
 
-## ASP.NET Core and Orchard Core specifics
-
+# ASP.NET Core and Orchard Core specifics
 App_Data/
 glob:*.user
 *.patch
@@ -192,7 +191,6 @@ node_modules/
 !**/wwwroot/.placeholder
 
 src/*.Web/Localization
-/src/package.json
 /.editorconfig
 /FailureDumps/
 /TestDumps/
@@ -200,3 +198,7 @@ src/*.Web/Localization
 .ps1-analyzer-stamp
 /NDependOut/
 /build.binlog
+
+# Node.js Extensions automatically created files
+/pnpm-lock.yaml
+/package.json
