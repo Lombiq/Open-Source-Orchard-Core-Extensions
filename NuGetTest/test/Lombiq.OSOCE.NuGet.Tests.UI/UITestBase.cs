@@ -1,7 +1,10 @@
 using Lombiq.OSOCE.NuGet.Tests.UI.Helpers;
 using Lombiq.Tests.UI;
+using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
+using Shouldly;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Xunit.Abstractions;
 
@@ -34,10 +37,14 @@ public class UITestBase : OrchardCoreUITestBase<Program>
                 configuration.AssertAppLogsAsync =
                     OrchardCoreUITestExecutorConfiguration.AssertAppLogsCanContainCacheFolderErrorsAsync;
 
-                // These two can be removed once  https://github.com/OrchardCMS/OrchardCore/issues/15222 is done.
-                configuration.AssertBrowserLog = AssertHtmlAndBrowserErrorsHelper.AssertNoNativeButtonUsageInBrowserLog;
-                configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
-                    AssertHtmlAndBrowserErrorsHelper.AssertNoNativeButtonUsageInHtmlValidation;
+                // This can be removed once  https://github.com/OrchardCMS/OrchardCore/issues/15222 is done.
+                configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync = async errors =>
+                {
+                    var errorResult = (await errors.GetErrorsAsync())
+                        .Where(error => !error.ContainsOrdinalIgnoreCase("Prefer to use the native <button> element"));
+
+                    errorResult.ShouldBeEmpty();
+                };
 
                 if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
             });
