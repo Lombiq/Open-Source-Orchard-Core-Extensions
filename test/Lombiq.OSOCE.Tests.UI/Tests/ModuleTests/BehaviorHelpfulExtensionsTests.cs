@@ -19,8 +19,8 @@ public class BehaviorHelpfulExtensionsTests : UITestBase
     public Task ContentSetsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestContentSetsFeatureAsync());
 
     [Fact]
-    public Task WidgetsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestWidgetsFeatureAsync());
+    public Task FlowsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestFlowsFeatureAsync());
 
     [Fact]
-    public Task FlowFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestFlowsFeatureAsync());
+    public Task WidgetsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestWidgetsFeatureAsync());
 }
