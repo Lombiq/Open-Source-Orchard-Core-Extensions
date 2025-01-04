@@ -22,5 +22,8 @@ public class BehaviorHelpfulExtensionsTests : UITestBase
     public Task FlowsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestFlowsFeatureAsync());
 
     [Fact]
+    public Task TrumbowygBlogPostsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestTrumbowygBlogPostsFeatureAsync());
+
+    [Fact]
     public Task WidgetsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestWidgetsFeatureAsync());
 }
