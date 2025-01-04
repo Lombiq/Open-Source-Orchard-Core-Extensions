@@ -13,14 +13,14 @@ public class BehaviorHelpfulExtensionsTests : UITestBase
     }
 
     [Fact]
-    public Task FeatureFlow() => ExecuteTestAfterSetupAsync(context => context.TestFlowsFeatureAsync());
+    public Task CodeGenerationFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestCodeGenerationFeatureAsync());
 
     [Fact]
-    public Task FeatureWidgets() => ExecuteTestAfterSetupAsync(context => context.TestWidgetsFeatureAsync());
+    public Task ContentSetsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestContentSetsFeatureAsync());
 
     [Fact]
-    public Task FeatureCodeGeneration() => ExecuteTestAfterSetupAsync(context => context.TestCodeGenerationFeatureAsync());
+    public Task WidgetsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestWidgetsFeatureAsync());
 
     [Fact]
-    public Task FeatureContentSets() => ExecuteTestAfterSetupAsync(context => context.TestContentSetsFeatureAsync());
+    public Task FlowFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestFlowsFeatureAsync());
 }
