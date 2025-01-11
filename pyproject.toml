@@ -1,11 +1,1 @@
 [tool.codespell]
-# In builtin the commas mustn't be followed by spaces.
-builtin = 'clear,code,en-GB_to_en-US,informal,names,rare'
-check-filenames = true
-count = true
-# The <thead> tag is recognized as a misspelling of "thread". codespell:ignore
-# This needs to be in a pyproject.toml file, hence why we use this format for the default config. In a setup.cfg file
-# the ignore comment doesn't work for this config.
-ignore-regex = '(<thead|<\/thead>)' # codespell:ignore
-ignore-words-list = 'ShouldBe, uint'
-skip = '*.min.*, *.ndproj, *.po, */bin/*, */node_modules/*, */obj/*, pnpm-lock.yaml, */vendors/*, */wwwroot/*'
