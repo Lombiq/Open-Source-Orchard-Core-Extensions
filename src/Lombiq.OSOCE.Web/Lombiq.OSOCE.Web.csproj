@@ -14,6 +14,7 @@
     <Content Include="Recipes\Media\meadow-orchard.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    
   </ItemGroup>
 
   <ItemGroup>
