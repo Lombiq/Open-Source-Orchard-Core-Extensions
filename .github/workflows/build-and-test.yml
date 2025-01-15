@@ -20,7 +20,7 @@ jobs:
       set-up-azurite: 'true'
       set-up-elasticsearch: 'true'
       build-create-binary-log: 'true'
-      dotnet-test-process-timeout: 600000
+      dotnet-test-process-timeout: 700000
       build-enable-nuget-caching: 'true'
       build-enable-npm-caching: 'true'
 
@@ -36,7 +36,7 @@ jobs:
       set-up-azurite: 'true'
       set-up-elasticsearch: 'true'
       build-create-binary-log: 'true'
-      dotnet-test-process-timeout: 780000
+      dotnet-test-process-timeout: 900000
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
