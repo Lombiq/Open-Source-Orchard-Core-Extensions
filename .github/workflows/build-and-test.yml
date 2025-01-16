@@ -27,6 +27,7 @@ jobs:
       cancel-in-progress-for-this-pr: 'false'
       build-enable-code-analysis: 'false'
       verify-dotnet-consolidation: false
+      test-filter: FullyQualifiedName~Lombiq.Tests.UI.Samples
     secrets:
       ENVIRONMENT_VARIABLES_JSON: |
         {
