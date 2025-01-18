@@ -5,6 +5,5 @@ Assets/Vendors/
 ^\Qtest/Lombiq.UITestingToolbox/Lombiq.Tests.UI/SecurityScanning/AutomationFrameworkPlans/\E.*.yml$
 ^\Qtest/Lombiq.UITestingToolbox/Lombiq.Tests.UI.Samples/Tests/CustomZapAutomationFrameworkPlan.yml\E$
 ^\Qtools/Lombiq.GitHub.Actions/\E
-\QUnmanagedNodeModules/\E
 \QUploadingTestFileDOCX.docx\E$
 \QUploadingTestFileXLSX.xlsx\E$
