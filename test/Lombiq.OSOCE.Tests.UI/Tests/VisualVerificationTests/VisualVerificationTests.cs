@@ -32,5 +32,5 @@ public class VisualVerificationTests : UITestBase
                 // Chrome can have rendering differences among GitHub Actions runner types, so to not break CI builds,
                 // allowing a larger threshold. Also, Chrome updates can bring font rendering changes, trying to avoid
                 // failing on those too.
-                pixelErrorPercentageThreshold: 0.8));
+                pixelErrorPercentageThreshold: 1));
 }
