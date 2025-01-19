@@ -49,7 +49,7 @@ jobs:
 
   spelling:
     name: Spelling
-    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@issue/OSOE-960
+    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
     with:
       additional-dictionaries: |
         cspell:csharp/csharp.txt
@@ -67,11 +67,11 @@ jobs:
 
   codespell:
     name: Codespell
-    uses: Lombiq/GitHub-Actions/.github/workflows/codespell.yml@issue/OSOE-960
+    uses: Lombiq/GitHub-Actions/.github/workflows/codespell.yml@dev
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
-    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@issue/OSOE-960
+    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
     with:
       machine-types: "['ubuntu-24.04']"
 
