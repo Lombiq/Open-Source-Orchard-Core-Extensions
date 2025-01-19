@@ -136,7 +136,7 @@ try
             # Check the user's response
             if ($confirmation -ne 'Y')
             {
-                Write-Output 'Operation cancelled by the user.'
+                Write-Output 'Operation canceled by the user.'
                 exit
             }
         }
