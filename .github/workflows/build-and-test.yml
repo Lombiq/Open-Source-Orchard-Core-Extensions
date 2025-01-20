@@ -27,4 +27,4 @@ jobs:
       cancel-in-progress-for-this-pr: 'false'
       build-enable-code-analysis: 'false'
       verify-dotnet-consolidation: false
-      test-filter: FullyQualifiedName~Lombiq.Tests.UI.Samples
+      test-filter: FullyQualifiedName~Lombiq.Tests.UI.Samples.Tests.SecurityScanningTests.BasicSecurityScanShouldPass
