@@ -37,7 +37,7 @@ public class UITestBase : OrchardCoreUITestBase<Program>
                 configuration.AssertAppLogsAsync =
                     OrchardCoreUITestExecutorConfiguration.AssertAppLogsCanContainCacheFolderErrorsAsync;
 
-                // This can be removed once  https://github.com/OrchardCMS/OrchardCore/issues/15222 is done.
+                // This can be removed once https://github.com/OrchardCMS/OrchardCore/issues/15222 is done.
                 configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync = async errors =>
                 {
                     var errorResult = (await errors.GetErrorsAsync())
