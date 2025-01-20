@@ -12,14 +12,17 @@ public class BehaviorHelpfulExtensionsTests : UITestBase
     }
 
     [Fact]
-    public Task FeatureFlow() => ExecuteTestAfterSetupAsync(context => context.TestFlowAdditionalStylingPartAsync());
+    public Task CodeGenerationFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestCodeGenerationFeatureAsync());
 
     [Fact]
-    public Task FeatureWidgets() => ExecuteTestAfterSetupAsync(context => context.TestFeatureWidgetsAsync());
+    public Task ContentSetsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestContentSetsFeatureAsync());
 
     [Fact]
-    public Task FeatureCodeGeneration() => ExecuteTestAfterSetupAsync(context => context.TestFeatureCodeGenerationsAsync());
+    public Task FlowsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestFlowsFeatureAsync());
 
     [Fact]
-    public Task FeatureContentSets() => ExecuteTestAfterSetupAsync(context => context.TestFeatureContentSetsAsync());
+    public Task TrumbowygBlogPostsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestTrumbowygBlogPostsFeatureAsync());
+
+    [Fact]
+    public Task WidgetsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestWidgetsFeatureAsync());
 }
