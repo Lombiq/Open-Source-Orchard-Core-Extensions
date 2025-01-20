@@ -20,6 +20,7 @@ jobs:
       set-up-azurite: 'true'
       set-up-elasticsearch: 'true'
       build-create-binary-log: 'true'
+      blame-hang-timeout: 600000
       dotnet-test-process-timeout: 600000
       build-enable-nuget-caching: 'true'
       build-enable-npm-caching: 'true'
