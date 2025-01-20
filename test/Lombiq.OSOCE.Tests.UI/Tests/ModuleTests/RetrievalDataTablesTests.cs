@@ -17,6 +17,7 @@ public class BehaviorDataTablesTests : UITestBase
     [InlineData(TestDataTableRecipeDataSections.MainMenu)]
     [InlineData(TestDataTableRecipeDataSections.TagHelper)]
     [InlineData(TestDataTableRecipeDataSections.ProviderWithShape)]
+    [InlineData(TestDataTableRecipeDataSections.JsonBasedProvider)]
     [InlineData(TestDataTableRecipeDataSections.IndexBasedProvider)]
     public Task RecipeDataShouldBeDisplayedCorrectly(TestDataTableRecipeDataSections sections) =>
         ExecuteTestAfterSetupAsync(context => context.TestDataTableRecipeDataAsync(sections));
