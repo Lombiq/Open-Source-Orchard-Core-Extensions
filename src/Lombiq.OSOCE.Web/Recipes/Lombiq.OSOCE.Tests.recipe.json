@@ -50,6 +50,7 @@
         "Lombiq.TrainingDemo",
         "Lombiq.UIKit",
         "Lombiq.UIKit.Showcase",
+        "Lombiq.UIKit.Widgets",
         "Lombiq.VueJs",
         "Lombiq.VueJs.Samples",
         "OrchardCore.Tenants.FeatureProfiles",
@@ -209,6 +210,10 @@
         {
           "executionid": "Lombiq.OSOCE.Web",
           "name": "Lombiq.HelpfulExtensions.ContentSets.Samples"
+        },
+        {
+          "executionid": "Lombiq.OSOCE.Web",
+          "name": "Lombiq.UIKit.Widgets.Content"
         }
       ]
     }
