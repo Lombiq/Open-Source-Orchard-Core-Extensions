@@ -48,7 +48,7 @@ jobs:
       blame-hang-timeout: 480000
 
   spelling:
-    name: Spelling cancelled
+    name: Spelling
     uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
     with:
       additional-dictionaries: |
