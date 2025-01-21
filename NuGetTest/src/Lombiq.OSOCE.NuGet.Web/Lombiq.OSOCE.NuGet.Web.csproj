@@ -11,6 +11,7 @@
     <MarkdownAnalysis>solution</MarkdownAnalysis>
     <ExecDotnetPostcleanCommand>false</ExecDotnetPostcleanCommand>
     <ExecDotnetPrebuildCommand>false</ExecDotnetPrebuildCommand>
+    <OrchardCoreVersion>2.1.4</OrchardCoreVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -60,8 +61,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OrchardCore.Logging.NLog" Version="2.1.2" />
-    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="2.1.2" />
+    <PackageReference Include="OrchardCore.Logging.NLog" Version="$(OrchardCoreVersion)" />
+    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="$(OrchardCoreVersion)" />
   </ItemGroup>
 
   <ItemGroup>
