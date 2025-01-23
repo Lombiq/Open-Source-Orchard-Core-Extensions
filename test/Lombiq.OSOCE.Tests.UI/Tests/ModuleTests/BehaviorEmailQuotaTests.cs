@@ -11,7 +11,10 @@ public class BehaviorEmailQuotaTests : UITestBase
     {
     }
 
-    [Fact]
+    // Will be re-enabled as part of https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/issues/703.
+#pragma warning disable xUnit1004 // Test methods should not be skipped
+    [Fact(Skip = "Fails with smtp4dev JS exceptions, but works under https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/issues/703.")]
+#pragma warning restore xUnit1004 // Test methods should not be skipped
     public Task EmailQuotaShouldBlockEmailsOverLimitAndWarn() =>
         ExecuteTestAfterSetupAsync(
             context => context.TestEmailQuotaManagementBehaviorAsync(10),
