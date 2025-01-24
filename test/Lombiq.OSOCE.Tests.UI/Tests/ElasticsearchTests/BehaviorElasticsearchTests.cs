@@ -18,7 +18,7 @@ public class BehaviorElasticsearchTests : UITestBase
     }
 
     [Fact]
-    public Task ElasticsearchSearchingShouldWork() =>
+    public Task ElasticsearchShouldWork() =>
         ExecuteTestAsync(
             async context =>
             {
