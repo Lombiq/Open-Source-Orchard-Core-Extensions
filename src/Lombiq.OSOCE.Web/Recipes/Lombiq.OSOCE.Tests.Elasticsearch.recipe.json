@@ -27,7 +27,7 @@
       "name": "ElasticIndexSettings",
       "Indices": [
         {
-          "blogposts": {
+          "elasticsearchshouldwork": {
             "AnalyzerName": "standard",
             "IndexLatest": false,
             "IndexedContentTypes": [
@@ -42,7 +42,7 @@
     {
       "name": "Settings",
       "ElasticSettings": {
-        "SearchIndex": "blogposts",
+        "SearchIndex": "elasticsearchshouldwork",
         "DefaultSearchFields": [
           "Content.ContentItem.FullText"
         ],
