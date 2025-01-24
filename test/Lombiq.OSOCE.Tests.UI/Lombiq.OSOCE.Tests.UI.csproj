@@ -17,7 +17,6 @@
     </PackageReference>
     <Content Include="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="NoUniqueLandmark.htmlvalidate.json" CopyToOutputDirectory="PreserveNewest" />
-    <PackageReference Include="OrchardCore.Search.Elasticsearch.Core" Version="2.1.0" />
   </ItemGroup>
 
   <ItemGroup>
