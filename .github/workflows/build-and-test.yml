@@ -2,7 +2,7 @@ name: Build and Test
 
 # Runs for PRs opened for any branch, and pushes to the dev branch.
 on:
-  #pull_request:
+  pull_request:
   push:
     branches:
       - dev
@@ -20,9 +20,11 @@ jobs:
       set-up-azurite: 'true'
       set-up-elasticsearch: 'true'
       build-create-binary-log: 'true'
-      dotnet-test-process-timeout: 600000
       build-enable-nuget-caching: 'true'
       build-enable-npm-caching: 'true'
+      # This way, we can see Node.js build issues in the build log.
+      build-verbosity: minimal
+      dotnet-test-process-timeout: 600000
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -36,6 +38,8 @@ jobs:
       set-up-azurite: 'true'
       set-up-elasticsearch: 'true'
       build-create-binary-log: 'true'
+      # This way, we can see Node.js build issues in the build log.
+      build-verbosity: minimal
       dotnet-test-process-timeout: 780000
 
   build-and-test-nuget-test:
@@ -45,6 +49,8 @@ jobs:
       parent-job-name: nuget-solution
       build-directory: NuGetTest
       timeout-minutes: 20
+      # This way, we can see Node.js build issues in the build log.
+      build-verbosity: minimal
       dotnet-test-process-timeout: 480000
 
   spelling:
