@@ -131,7 +131,7 @@ When adding a new extension, or significant new features to existing extensions,
 - If you introduce .NET breaking changes, the Validate NuGet Publish workflow will fail due to [baseline package validation](https://learn.microsoft.com/en-us/dotnet/fundamentals/apicompat/package-validation/baseline-version-validator). Preferably, adjust the change to not be breaking if possible; if it has to be a breaking change, then you’ll need to create a _CompatibilitySuppressions.xml_ file to mark it as deliberate, what you can do with the following command:
 
 ```powershell
-dotnet pack /p:EnablePackageValidation=true /p:PackageValidationBaselineVersion=<current version, like 1.2.3> /p:Version=<the next patch version> /p:NuGetBuild=true /p:GenerateCompatibilitySuppressionFile=true
+dotnet pack /p:EnablePackageValidation=true /p:PackageValidationBaselineVersion=<current version, like 1.2.3> /p:Version=<the next patch version, like 1.2.4> /p:NuGetBuild=true /p:GenerateCompatibilitySuppressionFile=true
 ```
 
 ### Dependencies between Lombiq projects
