@@ -33,7 +33,7 @@ jobs:
       set-up-sql-server: 'false'
       set-up-azurite: 'false'
       build-create-binary-log: 'true'
-      build-verbosity: normal
+      build-verbosity: minimal
       dotnet-test-process-timeout: 720000
       test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests
       cancel-in-progress-for-this-pr: 'false'
@@ -49,7 +49,7 @@ jobs:
       set-up-sql-server: 'false'
       set-up-azurite: 'false'
       build-create-binary-log: 'true'
-      build-verbosity: normal
+      build-verbosity: minimal
       dotnet-test-process-timeout: 720000
       test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests
       cancel-in-progress-for-this-pr: 'false'
@@ -65,7 +65,7 @@ jobs:
       set-up-sql-server: 'false'
       set-up-azurite: 'false'
       build-create-binary-log: 'true'
-      build-verbosity: normal
+      build-verbosity: minimal
       dotnet-test-process-timeout: 720000
       test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests
       cancel-in-progress-for-this-pr: 'false'
@@ -81,7 +81,7 @@ jobs:
       set-up-sql-server: 'false'
       set-up-azurite: 'false'
       build-create-binary-log: 'true'
-      build-verbosity: normal
+      build-verbosity: minimal
       dotnet-test-process-timeout: 720000
       test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests
       cancel-in-progress-for-this-pr: 'false'
@@ -97,7 +97,7 @@ jobs:
       set-up-sql-server: 'false'
       set-up-azurite: 'false'
       build-create-binary-log: 'true'
-      build-verbosity: normal
+      build-verbosity: minimal
       dotnet-test-process-timeout: 720000
       test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests
       cancel-in-progress-for-this-pr: 'false'
