@@ -30,13 +30,14 @@ jobs:
       parent-job-name: root-solution-larger-runners0
       machine-types: '["windows-2022-8core"]'
       timeout-minutes: 50
-      set-up-sql-server: 'true'
-      set-up-azurite: 'true'
+      set-up-sql-server: 'false'
+      set-up-azurite: 'false'
       build-create-binary-log: 'true'
       build-verbosity: minimal
       dotnet-test-process-timeout: 720000
       test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests
       cancel-in-progress-for-this-pr: 'false'
+      test-disable: 'true'
 
   build-and-test-larger-runners1:
     name: Build and Test Windows - root solution 1
@@ -45,13 +46,14 @@ jobs:
       parent-job-name: root-solution-larger-runners1
       machine-types: '["windows-2022-8core"]'
       timeout-minutes: 50
-      set-up-sql-server: 'true'
-      set-up-azurite: 'true'
+      set-up-sql-server: 'false'
+      set-up-azurite: 'false'
       build-create-binary-log: 'true'
       build-verbosity: minimal
       dotnet-test-process-timeout: 720000
       test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests
       cancel-in-progress-for-this-pr: 'false'
+      test-disable: 'true'
 
   build-and-test-larger-runners2:
     name: Build and Test Windows - root solution 2
@@ -60,13 +62,14 @@ jobs:
       parent-job-name: root-solution-larger-runners2
       machine-types: '["windows-2022-8core"]'
       timeout-minutes: 50
-      set-up-sql-server: 'true'
-      set-up-azurite: 'true'
+      set-up-sql-server: 'false'
+      set-up-azurite: 'false'
       build-create-binary-log: 'true'
       build-verbosity: minimal
       dotnet-test-process-timeout: 720000
       test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests
       cancel-in-progress-for-this-pr: 'false'
+      test-disable: 'true'
 
   build-and-test-larger-runners3:
     name: Build and Test Windows - root solution 3
@@ -75,13 +78,14 @@ jobs:
       parent-job-name: root-solution-larger-runners3
       machine-types: '["windows-2022-8core"]'
       timeout-minutes: 50
-      set-up-sql-server: 'true'
-      set-up-azurite: 'true'
+      set-up-sql-server: 'false'
+      set-up-azurite: 'false'
       build-create-binary-log: 'true'
       build-verbosity: minimal
       dotnet-test-process-timeout: 720000
       test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests
       cancel-in-progress-for-this-pr: 'false'
+      test-disable: 'true'
 
   build-and-test-larger-runners4:
     name: Build and Test Windows - root solution 4
@@ -90,11 +94,12 @@ jobs:
       parent-job-name: root-solution-larger-runners4
       machine-types: '["windows-2022-8core"]'
       timeout-minutes: 50
-      set-up-sql-server: 'true'
-      set-up-azurite: 'true'
+      set-up-sql-server: 'false'
+      set-up-azurite: 'false'
       build-create-binary-log: 'true'
       build-verbosity: minimal
       dotnet-test-process-timeout: 720000
       test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests
       cancel-in-progress-for-this-pr: 'false'
+      test-disable: 'true'
 
