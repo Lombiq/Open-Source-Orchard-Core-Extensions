@@ -1,10 +1,9 @@
 using Atata;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Helpers;
-using Lombiq.Tests.UI.Pages;
+using Microsoft.Extensions.DependencyInjection;
 using OpenQA.Selenium;
-using System.Collections.Generic;
-using System.Linq;
+using OrchardCore.Search.Elasticsearch.Core.Services;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -22,39 +21,28 @@ public class BehaviorElasticsearchTests : UITestBase
         ExecuteTestAsync(
             async context =>
             {
-                await context.SignInDirectlyAndGoToRelativeUrlAsync("/search");
-
-                await context.ClickAndFillInWithRetriesAsync(By.Name("Terms"), "man");
-                await context.ClickReliablyOnAsync(By.XPath("//button[@class='btn btn-primary btn-sm']"));
-
-                context.Exists(By.XPath("//h2[contains(., 'Man must explore, and this is exploration at its greatest')]"));
-            },
-            setupOperation: async context =>
-            {
-                var homepageUri = await context.GoToSetupPageAndSetupOrchardCoreAsync(
-                    new OrchardCoreSetupParameters(context)
-                    {
-                        SiteName = "Lombiq's OSOCE - UI Testing - Elasticsearch",
-                        RecipeId = "Lombiq.OSOCE.Tests.Elasticsearch",
-                        TablePrefix = "OSOCE",
-                        SiteTimeZoneValue = "Europe/Budapest",
-                    });
+                await context.GoToSetupPageAndSetupOrchardCoreAsync("Lombiq.OSOCE.Tests.Elasticsearch");
 
                 try
                 {
-                    context.Exists(By.Id("navbar"));
+                    await context.SignInDirectlyAndGoToRelativeUrlAsync("/search");
+
+                    await context.ClickAndFillInWithRetriesAsync(By.Name("Terms"), "man");
+                    await context.ClickReliablyOnAsync(By.XPath("//button[@class='btn btn-primary btn-sm']"));
+
+                    context.Exists(By.XPath("//h2[contains(., 'Man must explore, and this is exploration at its greatest')]"));
                 }
-                catch (NoSuchElementException)
+                finally
                 {
-                    var validationErrors = context.GetAll(By.ClassName("field-validation-error"));
+                    await context.Application.UsingScopeAsync(async shellScope =>
+                    {
+                        var elasticsearchIndexManager = shellScope.ServiceProvider.GetRequiredService<ElasticIndexManager>();
 
-                    if (validationErrors.Count == 0) throw;
+                        if (!await elasticsearchIndexManager.ExistsAsync("elasticsearchshouldwork")) return; // #spell-check-ignore-line
 
-                    var errors = "\n- " + validationErrors.Select(element => element.Text.Trim()).Join("\n- ");
-                    throw new AssertionException($"Setup has failed with the following validation errors:{errors}");
+                        await elasticsearchIndexManager.DeleteIndex("elasticsearchshouldwork"); // #spell-check-ignore-line
+                    });
                 }
-
-                return homepageUri;
             },
             changeConfigurationAsync: ConfigurationHelper.DisableHtmlValidation);
 }

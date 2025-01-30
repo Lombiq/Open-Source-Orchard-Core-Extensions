@@ -27,7 +27,7 @@
       "name": "ElasticIndexSettings",
       "Indices": [
         {
-          "blogposts": {
+          "elasticsearchshouldwork": {
             "AnalyzerName": "standard",
             "IndexLatest": false,
             "IndexedContentTypes": [
@@ -42,25 +42,12 @@
     {
       "name": "Settings",
       "ElasticSettings": {
-        "SearchIndex": "blogposts",
+        "SearchIndex": "elasticsearchshouldwork",
         "DefaultSearchFields": [
           "Content.ContentItem.FullText"
         ],
         "AllowElasticQueryStringQueryInSearch": false
       }
-    },
-    {
-      "name": "Queries",
-      "Queries": [
-        {
-          "Index": "blogposts",
-          "Template": "{\r\n  \"size\": 1000,\r\n  \"query\":{\r\n    \"term\":{\r\n      \"Content.ContentItem.ContentType\":\"BlogPost\"\r\n    }\r\n  },\r\n  \"fields\": [\r\n    \"ContentItemId\", \"ContentItemVersionId\"\r\n  ],\r\n  \"sort\": [\r\n\t{\"Content.ContentItem.DisplayText.keyword\": {\"order\": \"asc\"}}\r\n  ],\r\n  \"_source\": true\r\n}",
-          "ReturnContentItems": false,
-          "Name": "Blog Posts",
-          "Source": "Elasticsearch",
-          "Schema": "{ \"type\": \"ContentItem/BlogPost\" }"
-        }
-      ]
     },
     {
       "name": "recipes",

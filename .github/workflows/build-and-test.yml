@@ -23,6 +23,8 @@ jobs:
       blame-hang-timeout: 600000
       build-enable-nuget-caching: 'true'
       build-enable-npm-caching: 'true'
+      # This way, we can see Node.js build issues in the build log.
+      build-verbosity: minimal
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -37,6 +39,8 @@ jobs:
       set-up-elasticsearch: 'true'
       build-create-binary-log: 'true'
       blame-hang-timeout: 780000
+      # This way, we can see Node.js build issues in the build log.
+      build-verbosity: minimal
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
@@ -46,6 +50,8 @@ jobs:
       build-directory: NuGetTest
       timeout-minutes: 20
       blame-hang-timeout: 480000
+      # This way, we can see Node.js build issues in the build log.
+      build-verbosity: minimal
 
   spelling:
     name: Spelling

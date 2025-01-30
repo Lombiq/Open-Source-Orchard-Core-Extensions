@@ -17,7 +17,5 @@ public class BehaviorLoginAsAnybodyTests : UITestBase
 
     [Fact]
     public Task PermissionCheckShouldWorkCorrectly() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.PermissionCheckShouldWorkCorrectlyAsync(),
-            changeConfiguration: Configurations.IgnoreUnauthorizedBrowserLogEntries);
+        ExecuteTestAfterSetupAsync(context => context.PermissionCheckShouldWorkCorrectlyAsync());
 }
