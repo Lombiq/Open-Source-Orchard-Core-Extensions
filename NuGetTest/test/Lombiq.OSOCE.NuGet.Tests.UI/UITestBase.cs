@@ -38,12 +38,12 @@ public class UITestBase : OrchardCoreUITestBase<Program>
                     OrchardCoreUITestExecutorConfiguration.AssertAppLogsCanContainCacheFolderErrorsAsync;
 
                 // This can be removed once https://github.com/OrchardCMS/OrchardCore/issues/15222 is done.
-                configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync = async errors =>
+                configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync = validationResult =>
                 {
-                    var errorResult = (await errors.GetErrorsAsync())
-                        .Where(error => !error.ContainsOrdinalIgnoreCase("Prefer to use the native <button> element"));
-
-                    errorResult.ShouldBeEmpty();
+                    var errors = validationResult.GetParsedErrors()
+                        .Where(error => error.RuleId is not "prefer-native-element");
+                    errors.ShouldBeEmpty(HtmlValidationResultExtensions.GetParsedErrorMessageString(errors));
+                    return Task.CompletedTask;
                 };
 
                 if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
