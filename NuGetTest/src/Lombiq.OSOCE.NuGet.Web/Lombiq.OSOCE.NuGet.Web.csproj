@@ -35,21 +35,21 @@
     <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="8.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="8.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme.Targets" Version="8.0.1-alpha.0.osoe-935" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="9.0.1-alpha.0.osoe-935" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots" Version="9.0.1-alpha.0.osoe-935" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="9.0.1-alpha.0.osoe-935" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="9.0.1-alpha.0.osoe-935" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Maintenance" Version="9.0.1-alpha.0.osoe-935" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="9.0.1-alpha.0.osoe-935" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement" Version="9.0.1-alpha.0.osoe-935" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.EmailQuotaManagement" Version="9.0.1-alpha.0.osoe-935" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="9.0.1-alpha.2.osoe-935" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots" Version="9.0.1-alpha.2.osoe-935" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="9.0.1-alpha.2.osoe-935" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="9.0.1-alpha.2.osoe-935" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Maintenance" Version="9.0.1-alpha.2.osoe-935" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="9.0.1-alpha.2.osoe-935" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement" Version="9.0.1-alpha.2.osoe-935" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.EmailQuotaManagement" Version="9.0.1-alpha.2.osoe-935" />
     <PackageReference Include="Lombiq.JsonEditor" Version="9.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.LoginAsAnybody" Version="5.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.Privacy" Version="10.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.Privacy.Samples" Version="10.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.SetupExtensions" Version="7.0.0" />
-    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="12.0.1-alpha.5.osoe-935" />
-    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="12.0.1-alpha.5.osoe-935" />
+    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="12.1.1-alpha.3.osoe-935" />
+    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="12.1.1-alpha.3.osoe-935" />
     <PackageReference Include="Lombiq.UIKit" Version="9.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.VueJs" Version="8.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.VueJs.Samples" Version="8.0.1-alpha.0.osoe-935" />
