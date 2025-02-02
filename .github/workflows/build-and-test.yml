@@ -52,6 +52,10 @@ jobs:
       # This way, we can see Node.js build issues in the build log.
       build-verbosity: minimal
       dotnet-test-process-timeout: 480000
+      # Corepack is enabled by Node.js Extensions anyway. For some reason, when NE is used from NuGet, its workaround
+      # for https://github.com/nodejs/corepack/issues/612 doesn't get applied.
+      enable-corepack: 'false'
+
 
   spelling:
     name: Spelling
