@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Lombiq.NodeJs.Extensions" Version="2.1.2-alpha.1.osoe-1001" />
     <PackageReference Include="Lombiq.AuditTrailExtensions" Version="8.0.0" />
     <PackageReference Include="Lombiq.BaseTheme" Version="9.0.0" />
     <PackageReference Include="Lombiq.BaseTheme.Samples" Version="9.0.0" />
