@@ -52,14 +52,11 @@ jobs:
       blame-hang-timeout: 480000
       # This way, we can see Node.js build issues in the build log.
       build-verbosity: minimal
-      # Corepack is enabled by Node.js Extensions anyway. For some reason, when NE is used from NuGet, its workaround
-      # for https://github.com/nodejs/corepack/issues/612 doesn't get applied.
-      enable-corepack: 'false'
 
 
   spelling:
     name: Spelling
-    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@issue/OSOE-999
     with:
       additional-dictionaries: |
         cspell:csharp/csharp.txt
@@ -87,7 +84,7 @@ jobs:
 
   yaml-linting:
     name: YAML Linting
-    uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@issue/OSOE-999
     with:
       config-file-path: tools/Lombiq.GitHub.Actions/.trunk/configs/.yamllint.yaml
       search-path: .
@@ -96,7 +93,7 @@ jobs:
     name: Post Pull Request Checks Automation
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling, codespell, powershell-static-code-analysis]
     if: github.event.pull_request != ''
-    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@issue/OSOE-999
     secrets:
       JIRA_BASE_URL: ${{ secrets.DEFAULT_JIRA_BASE_URL }}
       JIRA_USER_EMAIL: ${{ secrets.DEFAULT_JIRA_USER_EMAIL }}
@@ -110,7 +107,7 @@ jobs:
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
     steps:
       - name: Add Windows Build Warning Label
-        uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@dev
+        uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@issue/OSOE-999
         with:
           # The token is necessary to be able to add the label even if the workflow is triggered by a pull request
           # coming from a fork.
