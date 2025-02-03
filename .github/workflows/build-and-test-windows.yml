@@ -97,9 +97,6 @@ jobs:
       # every value being the same as with quotes.
       # yamllint disable-line rule:quoted-strings
       test-filter: 'FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests'
-      # Corepack is enabled by Node.js Extensions anyway. For some reason, when NE is used from NuGet, its workaround
-      # for https://github.com/nodejs/corepack/issues/612 doesn't get applied.
-      enable-corepack: 'false'
 
   powershell-static-code-analysis:
     if: github.ref_name == github.event.repository.default_branch ||
