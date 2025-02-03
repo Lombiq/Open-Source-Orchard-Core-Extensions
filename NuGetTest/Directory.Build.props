@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.Analyzers.OrchardCore" Version="5.1.1-alpha.1.osoe-815"><!-- #spell-check-ignore-line -->
+    <PackageReference Include="Lombiq.Analyzers.OrchardCore" Version="5.1.1-alpha.2.osoe-984"><!-- #spell-check-ignore-line -->
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
