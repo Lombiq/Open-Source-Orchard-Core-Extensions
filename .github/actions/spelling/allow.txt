@@ -33,3 +33,5 @@ Wxga
 XWidgets
 yuv
 ZXing
+imapport
+Ssl
