@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <TieredCompilation>true</TieredCompilation>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <OrchardCoreVersion>2.1.4</OrchardCoreVersion>
+    <OrchardCoreVersion>2.1.5</OrchardCoreVersion>
   </PropertyGroup>
 
   <ItemGroup>
