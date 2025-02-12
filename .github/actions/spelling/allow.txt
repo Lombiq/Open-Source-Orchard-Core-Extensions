@@ -34,4 +34,4 @@ XWidgets
 yuv
 ZXing
 imapport
-Ssl
+ssl
