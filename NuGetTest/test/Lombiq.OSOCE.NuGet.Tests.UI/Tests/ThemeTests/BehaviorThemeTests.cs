@@ -2,7 +2,6 @@ using Lombiq.BaseTheme.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Extensions;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests.ThemeTests;
 
