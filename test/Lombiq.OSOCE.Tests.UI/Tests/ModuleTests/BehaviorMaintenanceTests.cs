@@ -2,7 +2,6 @@ using Lombiq.Hosting.Tenants.Maintenance.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Samples.Helpers;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 

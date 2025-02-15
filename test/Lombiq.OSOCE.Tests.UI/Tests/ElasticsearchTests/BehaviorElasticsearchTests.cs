@@ -6,7 +6,6 @@ using OpenQA.Selenium;
 using OrchardCore.Search.Elasticsearch.Core.Services;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
