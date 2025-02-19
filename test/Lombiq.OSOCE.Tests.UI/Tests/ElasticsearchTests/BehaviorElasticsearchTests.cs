@@ -38,9 +38,9 @@ public class BehaviorElasticsearchTests : UITestBase
                     {
                         var elasticsearchIndexManager = shellScope.ServiceProvider.GetRequiredService<ElasticIndexManager>();
 
-                        if (!await elasticsearchIndexManager.ExistsAsync("elasticsearchshouldwork")) return; // #spell-check-ignore-line
+                        if (!await elasticsearchIndexManager.ExistsAsync("elasticsearchshouldwork")) return;
 
-                        await elasticsearchIndexManager.DeleteIndex("elasticsearchshouldwork"); // #spell-check-ignore-line
+                        await elasticsearchIndexManager.DeleteIndex("elasticsearchshouldwork");
                     });
                 }
             },
