@@ -6,7 +6,6 @@ using OpenQA.Selenium;
 using OrchardCore.Search.Elasticsearch.Core.Services;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
@@ -39,9 +38,9 @@ public class BehaviorElasticsearchTests : UITestBase
                     {
                         var elasticsearchIndexManager = shellScope.ServiceProvider.GetRequiredService<ElasticIndexManager>();
 
-                        if (!await elasticsearchIndexManager.ExistsAsync("elasticsearchshouldwork")) return; // #spell-check-ignore-line
+                        if (!await elasticsearchIndexManager.ExistsAsync("elasticsearchshouldwork")) return;
 
-                        await elasticsearchIndexManager.DeleteIndex("elasticsearchshouldwork"); // #spell-check-ignore-line
+                        await elasticsearchIndexManager.DeleteIndex("elasticsearchshouldwork");
                     });
                 }
             },
