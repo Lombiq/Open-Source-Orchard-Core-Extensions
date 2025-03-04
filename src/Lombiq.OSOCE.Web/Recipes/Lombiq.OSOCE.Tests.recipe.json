@@ -21,6 +21,7 @@
         "Lombiq.ChartJs",
         "Lombiq.ContentEditors.Samples",
         "Lombiq.DataTables.Samples",
+        "Lombiq.EmailClient.Samples",
         "Lombiq.HelpfulExtensions.CodeGeneration",
         "Lombiq.HelpfulExtensions.ContentTypes",
         "Lombiq.HelpfulExtensions.Flows",

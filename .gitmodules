@@ -104,3 +104,6 @@
 	path = src/Modules/Lombiq.Walkthroughs
 	url = https://github.com/Lombiq/Orchard-Walkthroughs
 	branch = dev
+[submodule "src/Modules/Lombiq.EmailClient"]
+	path = src/Modules/Lombiq.EmailClient
+	url = https://github.com/Lombiq/Orchard-Email-Client
