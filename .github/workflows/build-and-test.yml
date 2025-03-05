@@ -20,9 +20,11 @@ jobs:
       set-up-azurite: 'true'
       set-up-elasticsearch: 'true'
       build-create-binary-log: 'true'
-      dotnet-test-process-timeout: 600000
+      blame-hang-timeout: 600000
       build-enable-nuget-caching: 'true'
       build-enable-npm-caching: 'true'
+      # This way, we can see Node.js build issues in the build log.
+      build-verbosity: minimal
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -36,7 +38,9 @@ jobs:
       set-up-azurite: 'true'
       set-up-elasticsearch: 'true'
       build-create-binary-log: 'true'
-      dotnet-test-process-timeout: 780000
+      blame-hang-timeout: 780000
+      # This way, we can see Node.js build issues in the build log.
+      build-verbosity: minimal
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
@@ -45,25 +49,9 @@ jobs:
       parent-job-name: nuget-solution
       build-directory: NuGetTest
       timeout-minutes: 20
-      dotnet-test-process-timeout: 480000
-
-  spelling:
-    name: Spelling
-    uses: Lombiq/GitHub-Actions/.github/workflows/spelling.yml@dev
-    with:
-      additional-dictionaries: |
-        cspell:csharp/csharp.txt
-        cspell:css/dict/css.txt
-        cspell:fullstack/dict/fullstack.txt
-        cspell:html-symbol-entities/entities.txt
-        cspell:html/dict/html.txt
-        cspell:html/src/svg.txt
-        cspell:node/dict/node.txt
-        cspell:npm/dict/npm.txt
-        lombiq-lgha:dictionaries/Liquid.txt
-        lombiq-lgha:dictionaries/Lombiq.people.txt
-        lombiq-lgha:dictionaries/Security.txt
-        lombiq-lgha:dictionaries/Xml.txt
+      blame-hang-timeout: 480000
+      # This way, we can see Node.js build issues in the build log.
+      build-verbosity: minimal
 
   codespell:
     name: Codespell
@@ -84,7 +72,7 @@ jobs:
 
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
-    needs: [build-and-test-larger-runners, build-and-test-nuget-test, spelling, codespell, powershell-static-code-analysis]
+    needs: [build-and-test-larger-runners, build-and-test-nuget-test, codespell, powershell-static-code-analysis]
     if: github.event.pull_request != ''
     uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
     secrets:

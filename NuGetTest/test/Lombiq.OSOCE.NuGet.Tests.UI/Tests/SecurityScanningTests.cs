@@ -2,7 +2,6 @@ using Lombiq.Tests.UI.SecurityScanning;
 using Shouldly;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests;
 

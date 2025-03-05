@@ -1,7 +1,6 @@
 using Lombiq.LoginAsAnybody.Tests.UI.Extensions;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
@@ -19,6 +18,5 @@ public class BehaviorLoginAsAnybodyTests : UITestBase
     [Fact]
     public Task PermissionCheckShouldWorkCorrectly() =>
         ExecuteTestAfterSetupAsync(
-            context => context.PermissionCheckShouldWorkCorrectlyAsync(),
-            changeConfiguration: Configurations.IgnoreUnauthorizedBrowserLogEntries);
+            context => context.PermissionCheckShouldWorkCorrectlyAsync());
 }

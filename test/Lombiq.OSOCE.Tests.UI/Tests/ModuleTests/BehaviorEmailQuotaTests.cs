@@ -2,7 +2,6 @@ using Lombiq.Hosting.Tenants.EmailQuotaManagement.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Extensions;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
 public class BehaviorEmailQuotaTests : UITestBase
@@ -12,19 +11,13 @@ public class BehaviorEmailQuotaTests : UITestBase
     {
     }
 
-    // Will be re-enabled as part of https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/issues/703.
-#pragma warning disable xUnit1004 // Test methods should not be skipped
-    [Fact(Skip = "Fails with smtp4dev JS exceptions, but works under https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/issues/703.")]
-#pragma warning restore xUnit1004 // Test methods should not be skipped
+    [Fact]
     public Task EmailQuotaShouldBlockEmailsOverLimitAndWarn() =>
         ExecuteTestAfterSetupAsync(
             context => context.TestEmailQuotaManagementBehaviorAsync(10),
             configuration => configuration.SetEmailQuotaManagementOptionsForUITest(10));
 
-    // Will be re-enabled as part of https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/issues/703.
-#pragma warning disable xUnit1004 // Test methods should not be skipped
-    [Fact(Skip = "Fails with smtp4dev JS exceptions, but works under https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/issues/703.")]
-#pragma warning restore xUnit1004 // Test methods should not be skipped
+    [Fact]
     public Task EmailQuotaShouldNotBlockEmailsWhenDifferentHostIsUsedThanOriginalFromConfig() =>
         ExecuteTestAfterSetupAsync(
             async context =>

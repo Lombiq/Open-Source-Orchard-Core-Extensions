@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <TieredCompilation>true</TieredCompilation>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <OrchardCoreVersion>2.1.6</OrchardCoreVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,6 +31,8 @@
     <ProjectReference Include="..\Modules\Lombiq.ContentEditors\Lombiq.ContentEditors\Lombiq.ContentEditors.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.ContentEditors\Lombiq.ContentEditors.Samples\Lombiq.ContentEditors.Samples.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.DataTables\Lombiq.DataTables.Samples\Lombiq.DataTables.Samples.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.EmailClient\Lombiq.EmailClient.Samples\Lombiq.EmailClient.Samples.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.EmailClient\Lombiq.EmailClient\Lombiq.EmailClient.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Azure.ApplicationInsights\Lombiq.Hosting.Azure.ApplicationInsights\Lombiq.Hosting.Azure.ApplicationInsights.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.BuildVersionDisplay\Lombiq.Hosting.BuildVersionDisplay\Lombiq.Hosting.BuildVersionDisplay.csproj" />
@@ -59,9 +62,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OrchardCore.Admin.Abstractions" Version="2.1.2" />
-    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="2.1.2" />
-    <PackageReference Include="OrchardCore.Logging.NLog" Version="2.1.2" />
+    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="$(OrchardCoreVersion)" />
+    <PackageReference Include="OrchardCore.Logging.NLog" Version="$(OrchardCoreVersion)" />
   </ItemGroup>
 
 </Project>

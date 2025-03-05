@@ -38,6 +38,7 @@ Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source
 - [`Lombiq.ContentEditors.Samples`](https://github.com/Lombiq/Orchard-Content-Editors/tree/dev/Lombiq.ContentEditors.Samples): Example Orchard Core module that makes use of Lombiq Content Editors.
 - [`Lombiq.DataTables`](https://github.com/Lombiq/Orchard-Data-Tables): An Orchard Core wrapper around the [DataTables](https://datatables.net/) library for displaying tabular data from custom data sources.
 - [`Lombiq.DataTables.Samples`](https://github.com/Lombiq/Orchard-Data-Tables/tree/dev/Lombiq.DataTables.Samples): Example Orchard Core module that makes use of Lombiq Data Tables for Orchard Core.
+- [`Lombiq.EmailClient`](https://github.com/Lombiq/Orchard-Email-Client): An Orchard Core module that fetches emails from an IMAP server either periodically from a background task or on-demand.
 - [`Lombiq.HelpfulExtensions`](https://github.com/Lombiq/Helpful-Extensions): Orchard Core module containing some handy extensions (e.g. useful content types and widgets). This module is also available on all sites of [DotNest, the Orchard Core SaaS](https://dotnest.com/).
 - [`Lombiq.HelpfulLibraries.Samples`](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.Samples): Example Orchard Core module that makes use of Lombiq Helpful Libraries.
 - [`Lombiq.Hosting.Azure.ApplicationInsights`](https://github.com/Lombiq/Orchard-Azure-Application-Insights): This [Orchard Core](https://orchardcore.net/) module enables easy integration of [Azure Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview) telemetry into Orchard. Just install the module, configure the instrumentation key from a configuration source (like the _appsettings.json_ file) as normally for AI, and collected data will start appearing in the Azure Portal. As seen on [the Orchard community meeting](https://www.youtube.com/watch?v=NKKR4R3UPog). Note that this module has an Orchard 1 version in the [`dev-orchard-1` branch](https://github.com/Lombiq/Orchard-Azure-Application-Insights/tree/dev-orchard-1). Note that the module depends on [Helpful Libraries](https://github.com/Lombiq/Helpful-Libraries/).
@@ -131,7 +132,7 @@ When adding a new extension, or significant new features to existing extensions,
 - If you introduce .NET breaking changes, the Validate NuGet Publish workflow will fail due to [baseline package validation](https://learn.microsoft.com/en-us/dotnet/fundamentals/apicompat/package-validation/baseline-version-validator). Preferably, adjust the change to not be breaking if possible; if it has to be a breaking change, then you’ll need to create a _CompatibilitySuppressions.xml_ file to mark it as deliberate, what you can do with the following command:
 
 ```powershell
-dotnet pack /p:EnablePackageValidation=true /p:PackageValidationBaselineVersion=<current version, like 1.2.3> /p:Version=<the next patch version> /p:NuGetBuild=true /p:GenerateCompatibilitySuppressionFile=true
+dotnet pack /p:EnablePackageValidation=true /p:PackageValidationBaselineVersion=<current version, like 1.2.3> /p:Version=<the next patch version, like 1.2.4> /p:NuGetBuild=true /p:GenerateCompatibilitySuppressionFile=true
 ```
 
 ### Dependencies between Lombiq projects
