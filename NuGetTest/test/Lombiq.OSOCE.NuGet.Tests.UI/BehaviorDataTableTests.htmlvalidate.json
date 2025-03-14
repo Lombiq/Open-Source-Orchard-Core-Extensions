@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "./default.htmlvalidate.json"
+  ],
+
+  "rules": {
+    "no-unused-disable": "off",
+    "unique-landmark": "off",
+    "prefer-native-element": "off"
+  },
+
+  "root": true
+}

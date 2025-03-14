@@ -12,6 +12,10 @@ public class BehaviorDataTableTests : UITestBase
     }
 
     [Fact]
-    public Task DataTableShouldWork() => ExecuteTestAfterSetupAsync(
-        context => context.TestDataTableRecipeDataAsync(checkMainMenu: false));
+    public Task DataTableShouldWork() =>
+        ExecuteTestAfterSetupAsync(
+            context => context.TestDataTableRecipeDataAsync(checkMainMenu: false),
+            changeConfiguration: configuration => configuration
+                .HtmlValidationConfiguration
+                .WithRelativeConfigPath("BehaviorDataTableTests.htmlvalidate.json"));
 }
