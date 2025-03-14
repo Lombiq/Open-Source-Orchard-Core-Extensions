@@ -45,3 +45,18 @@ jobs:
       blame-hang-timeout: 780000
       # This way, we can see Node.js build issues in the build log.
       build-verbosity: minimal
+
+  build-and-test-nuget-test:
+    name: Build and Test - NuGetTest solution
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1057
+    with:
+      parent-job-name: nuget-solution
+      build-directory: NuGetTest
+      timeout-minutes: 20
+      blame-hang-timeout: 480000
+      # This way, we can see Node.js build issues in the build log.
+      build-verbosity: minimal
+      cancel-in-progress-for-this-pr: 'false'
+      cancel-workflow-on-failure: 'false'
+      build-enable-code-analysis: 'false'
+      verify-dotnet-consolidation: false
