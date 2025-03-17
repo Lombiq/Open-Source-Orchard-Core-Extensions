@@ -1,7 +1,6 @@
 using Lombiq.HelpfulExtensions.Tests.UI.Extensions;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests.ModuleTests;
 
@@ -13,14 +12,17 @@ public class BehaviorHelpfulExtensionsTests : UITestBase
     }
 
     [Fact]
-    public Task FeatureFlow() =>
-        ExecuteTestAfterSetupAsync(context => context.TestFlowAdditionalStylingPartAsync());
+    public Task CodeGenerationFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestCodeGenerationFeatureAsync());
 
     [Fact]
-    public Task FeatureWidgets() =>
-        ExecuteTestAfterSetupAsync(context => context.TestFeatureWidgetsAsync());
+    public Task ContentSetsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestContentSetsFeatureAsync());
 
     [Fact]
-    public Task FeatureCodeGeneration() =>
-        ExecuteTestAfterSetupAsync(context => context.TestFeatureCodeGenerationsAsync());
+    public Task FlowsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestFlowsFeatureAsync());
+
+    [Fact]
+    public Task TrumbowygBlogPostsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestTrumbowygBlogPostsFeatureAsync());
+
+    [Fact]
+    public Task WidgetsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestWidgetsFeatureAsync());
 }

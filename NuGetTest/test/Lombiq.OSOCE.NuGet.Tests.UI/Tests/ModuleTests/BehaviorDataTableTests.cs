@@ -1,7 +1,6 @@
 using Lombiq.DataTables.Tests.UI.Extensions;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests.ModuleTests;
 
@@ -13,6 +12,10 @@ public class BehaviorDataTableTests : UITestBase
     }
 
     [Fact]
-    public Task DataTableShouldWork() => ExecuteTestAfterSetupAsync(
-        context => context.TestDataTableRecipeDataAsync(checkMainMenu: false));
+    public Task DataTableShouldWork() =>
+        ExecuteTestAfterSetupAsync(
+            context => context.TestDataTableRecipeDataAsync(checkMainMenu: false),
+            changeConfiguration: configuration => configuration
+                .HtmlValidationConfiguration
+                .WithRelativeConfigPath("BehaviorDataTableTests.htmlvalidate.json"));
 }

@@ -2,6 +2,6 @@ using OrchardCore.Modules;
 
 namespace Lombiq.OSOCE.Samples;
 
-public class Startup : StartupBase
+public sealed class Startup : StartupBase
 {
 }

@@ -21,10 +21,12 @@
         "Lombiq.ChartJs",
         "Lombiq.ContentEditors.Samples",
         "Lombiq.DataTables.Samples",
+        "Lombiq.EmailClient.Samples",
         "Lombiq.HelpfulExtensions.CodeGeneration",
         "Lombiq.HelpfulExtensions.ContentTypes",
         "Lombiq.HelpfulExtensions.Flows",
         "Lombiq.HelpfulExtensions.ShapeTracing",
+        "Lombiq.HelpfulExtensions.TrumbowygBlogPosts",
         "Lombiq.HelpfulExtensions.Widgets",
         "Lombiq.HelpfulLibraries.Samples",
         "Lombiq.Hosting.BuildVersionDisplay",
@@ -35,7 +37,7 @@
         "Lombiq.Hosting.Tenants.Management.ShellSettingsEditor",
         "Lombiq.Hosting.Tenants.Maintenance",
         "Lombiq.Hosting.Tenants.Maintenance.UpdateSiteUrl",
-        "Lombiq.Hosting.Tenants.Maintenance.AddSiteOwnerPermissionToRole",
+        "Lombiq.Hosting.Tenants.Maintenance.AddAdministratorRoleToUsersWithRole",
         "Lombiq.Hosting.Tenants.Maintenance.ChangeUserSensitiveContent",
         "Lombiq.Hosting.Tenants.IdleTenantManagement.ShutDownIdleTenants",
         "Lombiq.Hosting.Tenants.EmailQuotaManagement",
@@ -50,13 +52,16 @@
         "Lombiq.TrainingDemo",
         "Lombiq.UIKit",
         "Lombiq.UIKit.Showcase",
+        "Lombiq.UIKit.Widgets",
         "Lombiq.VueJs",
         "Lombiq.VueJs.Samples",
         "OrchardCore.Tenants.FeatureProfiles",
         "Lombiq.Hosting.Tenants.FeaturesGuard",
         "Lombiq.Hosting.Tenants.MediaStorageManagement",
+        "OrchardCore.Localization",
+        "OrchardCore.Features",
         "OrchardCore.Media",
-        "OrchardCore.Feature",
+        "OrchardCore.Email.Smtp",
         "TheTheme"
         // Not enabling Lombiq.TrainingDemo.Middlewares because that would write to the error log on every request.
       ]
@@ -87,11 +92,6 @@
     },
     {
       "name": "settings",
-      // CDN should be turned off for tests, just as no other external resource should be used.
-      "UseCdn": false,
-      "SmtpSettings": {
-        "DefaultSender": "sender@example.com"
-      },
       // To make sure that e.g. numbers and dates are formatted the same way on all machines we have to specify the
       // culture too.
       "LocalizationSettings": {
@@ -169,51 +169,13 @@
             "ManageWorkflows",
             "ExecuteWorkflows"
           ]
-        },
-        {
-          "Name": "Administrator",
-          "Description": "Administrator role",
-          "Permissions": [
-            "ManageSettings",
-            "AccessAdminPanel",
-            "ManageAdminSettings",
-            "ManageUsers",
-            "ManageRoles",
-            "SiteOwner",
-            "ManageTenants",
-            "ApplyTheme",
-            "PublishContent",
-            "EditContent",
-            "DeleteContent",
-            "PreviewContent",
-            "CloneContent",
-            "AccessContentApi",
-            "ListContent",
-            "ViewContentTypes",
-            "EditContentTypes",
-            "ManageMediaContent",
-            "ManageAttachedMediaFieldsFolder",
-            "ManageMediaProfiles",
-            "ViewMediaOptions",
-            "ManageAssetCache",
-            "ViewAzureMediaOptions",
-            "ManageBackgroundTasks",
-            "ManageEmailSettings",
-            "ManageWorkflows",
-            "ExecuteWorkflows",
-            "SetHomepage",
-            "Import",
-            "Export",
-            "ViewAuditTrail",
-            "ManageAuditTrailSettings"
-          ]
         }
       ]
     },
     {
       "name": "themes",
       "admin": "TheAdmin",
-      "site":  "SafeMode"
+      "site": "SafeMode"
     },
     {
       "name": "FeatureProfiles",
@@ -250,6 +212,10 @@
         {
           "executionid": "Lombiq.OSOCE.Web",
           "name": "Lombiq.HelpfulExtensions.ContentSets.Samples"
+        },
+        {
+          "executionid": "Lombiq.OSOCE.Web",
+          "name": "Lombiq.UIKit.Widgets.Content"
         }
       ]
     }

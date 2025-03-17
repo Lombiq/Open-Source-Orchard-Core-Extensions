@@ -1,16 +1,12 @@
 <Project>
   <PropertyGroup>
     <NuGetTestbed>true</NuGetTestbed>
-    <UseGlobalNodeJsExtensionsNpmPackage>false</UseGlobalNodeJsExtensionsNpmPackage>
-    <NodeJsExtensionsNpmPackageSourcePath></NodeJsExtensionsNpmPackageSourcePath>
-    <!-- Instruct Node.js Extensions to create .eslintrc and .stylelintrc files in the parent directory, which is the
-         OSOCE root directory. -->
-    <NodeJsExtensionsGlobalESLintConfigurationDirectory>$(MSBuildThisFileDirectory)..</NodeJsExtensionsGlobalESLintConfigurationDirectory>
-    <NodeJsExtensionsGlobalStylelintConfigurationDirectory>$(MSBuildThisFileDirectory)..</NodeJsExtensionsGlobalStylelintConfigurationDirectory>
+    <UseGlobalNodeJsExtensionsNpmPackage>true</UseGlobalNodeJsExtensionsNpmPackage>
+    <NodeJsExtensionsNpmPackageSourcePath>$(MSBuildThisFileDirectory)node_modules/.nx</NodeJsExtensionsNpmPackageSourcePath>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.Analyzers.OrchardCore" Version="5.0.1-alpha.1.osoe-867"><!-- #spell-check-ignore-line -->
+    <PackageReference Include="Lombiq.Analyzers.OrchardCore" Version="5.2.0"><!-- #spell-check-ignore-line -->
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>

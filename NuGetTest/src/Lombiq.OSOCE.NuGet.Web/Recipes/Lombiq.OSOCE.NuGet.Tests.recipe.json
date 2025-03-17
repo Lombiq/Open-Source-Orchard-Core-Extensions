@@ -17,6 +17,7 @@
       "name": "feature",
       "disable": [],
       "enable": [
+        "OrchardCore.Email.Smtp",
         "OrchardCore.Localization",
         "Lombiq.AuditTrailExtensions",
         "Lombiq.ChartJs",
@@ -218,6 +219,15 @@
       "name": "themes",
       "admin": "TheAdmin",
       "site": "Lombiq.OSOCE.NuGet.TestTheme"
+    },
+    {
+      "name": "recipes",
+      "Values": [
+        {
+          "executionid": "Lombiq.OSOCE.Web",
+          "name": "Lombiq.HelpfulExtensions.ContentSets.Samples"
+        }
+      ]
     }
   ]
 }

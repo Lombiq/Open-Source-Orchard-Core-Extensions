@@ -1,7 +1,6 @@
 using Lombiq.Tests.UI.Tests.UI.TestCases;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.UITestingToolboxTests;
 
@@ -18,9 +17,11 @@ public class SecurityShortcutsTests : UITestBase
 
     [Fact]
     public Task AddUserToFakeRoleShouldThrow() =>
-        SecurityShortcutsTestCases.AddUserToFakeRoleShouldThrowAsync(ExecuteTestAfterSetupAsync);
+        SecurityShortcutsTestCases.AddUserToFakeRoleShouldThrowAsync(
+            (testAsync, _, changeConfigurationAsync) => ExecuteTestAfterBrowserSetupWithoutBrowserAsync(testAsync, changeConfigurationAsync));
 
     [Fact]
     public Task AllowFakePermissionToRoleShouldThrow() =>
-        SecurityShortcutsTestCases.AllowFakePermissionToRoleShouldThrowAsync(ExecuteTestAfterSetupAsync);
+        SecurityShortcutsTestCases.AllowFakePermissionToRoleShouldThrowAsync(
+            (testAsync, _, changeConfigurationAsync) => ExecuteTestAfterBrowserSetupWithoutBrowserAsync(testAsync, changeConfigurationAsync));
 }

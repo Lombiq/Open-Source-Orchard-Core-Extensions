@@ -1,15 +1,14 @@
 using Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI.Extensions;
+using Lombiq.OSOCE.NuGet.Tests.UI.Constants;
 using Lombiq.Tests.UI.Extensions;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
-using static Lombiq.OSOCE.NuGet.Tests.UI.Constants.RecipeIds;
 
 namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests.ModuleTests;
 
-public class IdleTenantTests : UITestBase
+public class BehaviorIdleTenantsTests : UITestBase
 {
-    public IdleTenantTests(ITestOutputHelper testOutputHelper)
+    public BehaviorIdleTenantsTests(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper)
     {
     }
@@ -20,11 +19,7 @@ public class IdleTenantTests : UITestBase
             async context =>
             {
                 await context.SignInDirectlyAsync();
-
-                await context.TestIdleTenantManagerBehaviorAsync(TestsSetupRecipeId);
-
-                context.Configuration.AssertAppLogsAsync = webApplicationInstance =>
-                    IdleTenantManagementExtensions.AssertAppLogsWithIdleCheckAsync(webApplicationInstance);
+                await context.TestIdleTenantManagerBehaviorAsync(RecipeIds.TestsSetupRecipeId);
             },
-            configuration => configuration.SetMaxIdleMinutesAndLoggingForUITest());
+            configuration => configuration.ConfigureIdleTenantManagementTestSettings());
 }

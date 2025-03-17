@@ -2,7 +2,6 @@ using Lombiq.Hosting.Tenants.Maintenance.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Samples.Helpers;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
@@ -14,16 +13,16 @@ public class BehaviorMaintenanceTests : UITestBase
     }
 
     [Fact]
-    public Task MaintenanceTaskShouldBeExecutedSuccessfully() =>
+    public Task UpdateSiteUrlMaintenanceTaskShouldBeExecutedSuccessfully() =>
         ExecuteTestAfterSetupAsync(
             context => context.TestSiteUrlMaintenanceExecutionAsync(),
             configuration => configuration.SetUpdateSiteUrlMaintenanceConfiguration());
 
     [Fact]
-    public Task AddSiteOwnerPermissionToRoleMaintenanceTaskShouldBeExecutedSuccessfully() =>
+    public Task AddAdministratorRoleToUsersWithRoleMaintenanceTaskShouldBeExecutedSuccessfully() =>
         ExecuteTestAfterSetupAsync(
-            context => context.TestSiteOwnerPermissionToRoleMaintenanceExecutionAsync(),
-            configuration => configuration.SetAddSiteOwnerPermissionToRoleMaintenanceConfiguration());
+            context => context.TestAdministratorRoleToUsersWithRoleMaintenanceExecutionAsync(),
+            configuration => configuration.SetAddAdministratorRoleToUsersWithRoleConfiguration());
 
     // This test uses ExecuteTestAsync with a different setup delegate instead of ExecuteTestAfterSetupAsync because the
     // maintenance does changes to the DB on startup only necessary for this test (like depersonalizing user accounts).

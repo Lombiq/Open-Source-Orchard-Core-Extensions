@@ -18,7 +18,7 @@ var configuration = builder.Configuration;
 builder.Services
     .AddSingleton(configuration)
     .AddOrchardCms(orchardCoreBuilder => orchardCoreBuilder
-        .AddOrchardCoreApplicationInsightsTelemetry(configuration)
+        .ConfigureAzureHostingDefaultsWithApplicationInsightsTelemetry(builder)
         .ConfigureFeaturesGuard(
             new Dictionary<string, IEnumerable<string>>
             {
@@ -28,9 +28,7 @@ builder.Services
                     FeatureIds.Default,
                 ],
             })
-        .EnableAutoSetupIfNotUITesting(configuration)
-        // allowInlineStyle is necessary because style attributes are used in the Blog theme.
-        .ConfigureSecurityDefaultsWithStaticFiles(allowInlineStyle: true));
+        .EnableAutoSetupIfNotUITesting(configuration));
 
 var app = builder.Build();
 app.UseOrchardCore();

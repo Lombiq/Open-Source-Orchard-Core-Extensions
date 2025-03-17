@@ -1,10 +1,6 @@
 using Lombiq.HelpfulExtensions.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Services;
-using System;
-using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
@@ -16,26 +12,18 @@ public class BehaviorHelpfulExtensionsTests : UITestBase
     }
 
     [Fact]
-    public Task FeatureFlow() => ExecuteTestAfterSetupAsync(context => context.TestFlowAdditionalStylingPartAsync());
+    public Task CodeGenerationFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestCodeGenerationFeatureAsync());
 
     [Fact]
-    public Task FeatureWidgets() => ExecuteTestAfterSetupAsync(context => context.TestFeatureWidgetsAsync());
+    public Task ContentSetsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestContentSetsFeatureAsync());
 
     [Fact]
-    public Task FeatureCodeGeneration() => ExecuteTestAfterSetupAsync(context => context.TestFeatureCodeGenerationsAsync());
+    public Task FlowsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestFlowsFeatureAsync());
 
     [Fact]
-    public Task FeatureContentSets() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestFeatureContentSetsAsync(),
-            configuration => configuration.AssertBrowserLog = logEntries =>
-            {
-                // This is to not fail on a browser error caused by jQuery missing. Can be removed after this issue is
-                // resolved and released: https://github.com/OrchardCMS/OrchardCore/issues/15181.
-                var messageWithoutJqueryError = logEntries.Where(logEntry =>
-                    !logEntry.Message.ContainsOrdinalIgnoreCase(
-                        "Uncaught ReferenceError: $ is not defined"));
+    public Task TrumbowygBlogPostsFeatureShouldWork() =>
+        ExecuteTestAfterSetupAsync(context => context.TestTrumbowygBlogPostsFeatureAsync());
 
-                OrchardCoreUITestExecutorConfiguration.AssertBrowserLogIsEmpty(messageWithoutJqueryError);
-            });
+    [Fact]
+    public Task WidgetsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestWidgetsFeatureAsync());
 }

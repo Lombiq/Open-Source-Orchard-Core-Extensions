@@ -1,9 +1,12 @@
 using Lombiq.OSOCE.NuGet.Tests.UI.Helpers;
 using Lombiq.Tests.UI;
+using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
+using Shouldly;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
-using Xunit.Abstractions;
+using Xunit;
 
 namespace Lombiq.OSOCE.NuGet.Tests.UI;
 
@@ -31,12 +34,17 @@ public class UITestBase : OrchardCoreUITestBase<Program>
             setupOperation,
             async configuration =>
             {
-                configuration.AssertAppLogsAsync = AssertAppLogsHelpers.AssertOsoceAppLogsAreEmptyAsync;
+                configuration.AssertAppLogsAsync =
+                    OrchardCoreUITestExecutorConfiguration.AssertAppLogsCanContainCacheFolderErrorsAsync;
 
-                // These two can be removed once  https://github.com/OrchardCMS/OrchardCore/issues/15222 is done.
-                configuration.AssertBrowserLog = AssertHtmlAndBrowserErrorsHelper.AssertNoNativeButtonUsageInBrowserLog;
-                configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
-                    AssertHtmlAndBrowserErrorsHelper.AssertNoNativeButtonUsageInHtmlValidation;
+                // This can be removed once https://github.com/OrchardCMS/OrchardCore/issues/15222 is done.
+                configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync = validationResult =>
+                {
+                    var errors = validationResult.GetParsedErrors()
+                        .Where(error => error.RuleId is not "prefer-native-element");
+                    errors.ShouldBeEmpty(HtmlValidationResultExtensions.GetParsedErrorMessageString(errors));
+                    return Task.CompletedTask;
+                };
 
                 if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
             });
