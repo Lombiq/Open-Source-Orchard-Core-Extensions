@@ -27,7 +27,6 @@ jobs:
       build-verbosity: minimal
       build-enable-code-analysis: 'false'
       verify-dotnet-consolidation: false
-      test-filter: FullyQualifiedName!~BehaviorWalkthroughsTests
       cancel-in-progress-for-this-pr: 'false'
 
   build-and-test-standard-runners:
