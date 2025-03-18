@@ -28,6 +28,7 @@ jobs:
       build-enable-code-analysis: 'false'
       verify-dotnet-consolidation: false
       test-filter: FullyQualifiedName!~BehaviorWalkthroughsTests
+      cancel-in-progress-for-this-pr: 'false'
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
