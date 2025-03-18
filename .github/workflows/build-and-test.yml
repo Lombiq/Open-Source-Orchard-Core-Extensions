@@ -55,6 +55,7 @@ jobs:
       blame-hang-timeout: 480000
       # This way, we can see Node.js build issues in the build log.
       build-verbosity: minimal
+      cancel-in-progress-for-this-pr: 'false'
 
   codespell:
     name: Codespell
