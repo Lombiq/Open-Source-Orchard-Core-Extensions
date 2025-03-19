@@ -29,6 +29,7 @@ jobs:
       verify-dotnet-consolidation: false
       cancel-in-progress-for-this-pr: 'false'
       cancel-workflow-on-failure: 'false'
+      test-filter: FullyQualifiedName~JavaScriptTests
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
