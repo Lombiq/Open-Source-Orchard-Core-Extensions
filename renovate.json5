@@ -1,4 +1,4 @@
 {
     '$schema': 'https://docs.renovatebot.com/renovate-schema.json',
-    'extends': ['github>Lombiq/renovate-config:default-orchard-core-superproject.json5'],
+    'extends': ['github>Lombiq/renovate-config:default-orchard-core-superproject.json5#issue/NEST-556'],
 }
