@@ -3,7 +3,7 @@
     packageRules: [
         {
             groupName: 'Non-Breaking Dependency Versions',
-            matchUpdateTypes: ['major', 'patch', 'pin', 'pinDigest'],
+            matchUpdateTypes: ['minor', 'patch', 'pin', 'pinDigest'],
         },
     ]
 }
