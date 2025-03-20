@@ -1,7 +1,7 @@
 [submodule "src/Modules/Lombiq.TrainingDemo"]
 	path = src/Modules/Lombiq.TrainingDemo
 	url = https://github.com/Lombiq/Orchard-Training-Demo-Module.git
-	branch = orchard-core
+	branch = dev
 [submodule "src/Modules/Lombiq.VueJs"]
 	path = src/Modules/Lombiq.VueJs
 	url = https://github.com/Lombiq/Orchard-Vue.js.git
@@ -13,11 +13,11 @@
 [submodule "src/Modules/Lombiq.HelpfulExtensions"]
 	path = src/Modules/Lombiq.HelpfulExtensions
 	url = https://github.com/Lombiq/Helpful-Extensions.git
-	branch = orchard-core-preview
+	branch = dev
 [submodule "src/Libraries/Lombiq.HelpfulLibraries"]
 	path = src/Libraries/Lombiq.HelpfulLibraries
 	url = https://github.com/Lombiq/Helpful-Libraries.git
-	branch = orchard-core-preview
+	branch = dev
 [submodule "src/Utilities/Lombiq.SetupExtensions"]
 	path = src/Utilities/Lombiq.SetupExtensions
 	url = https://github.com/Lombiq/Setup-Extensions.git
@@ -107,3 +107,4 @@
 [submodule "src/Modules/Lombiq.EmailClient"]
 	path = src/Modules/Lombiq.EmailClient
 	url = https://github.com/Lombiq/Orchard-Email-Client
+  branch = dev
