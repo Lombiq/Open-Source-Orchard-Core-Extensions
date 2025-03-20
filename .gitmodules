@@ -65,7 +65,7 @@
 [submodule "src/Utilities/Lombiq.NodeJs.Extensions"]
 	path = src/Utilities/Lombiq.NodeJs.Extensions
 	url = https://github.com/Lombiq/NodeJs-Extensions.git
-	branch = issue/OSOE-69
+	branch = dev
 [submodule "src/Modules/Lombiq.DataTables"]
 	path = src/Modules/Lombiq.DataTables
 	url = https://github.com/Lombiq/Orchard-Data-Tables.git
@@ -88,7 +88,7 @@
 [submodule "src/Libraries/Lombiq.OrchardCoreApiClient"]
 	path = src/Libraries/Lombiq.OrchardCoreApiClient
 	url = https://github.com/Lombiq/Orchard-Core-API-Client.git
-	branch = issue/NEST-295
+	branch = dev
 [submodule "src/Modules/Lombiq.Hosting.BuildVersionDisplay"]
 	path = src/Modules/Lombiq.Hosting.BuildVersionDisplay
 	url = https://github.com/Lombiq/Hosting-Build-Version-Display.git
