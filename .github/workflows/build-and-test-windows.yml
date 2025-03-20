@@ -36,7 +36,7 @@ jobs:
             github.event.label.name == 'run-windows-build' ||
             (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build')))
     name: Build and Test Windows - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@renovate/all-dependencies
     with:
       parent-job-name: root-solution-larger-runners
       machine-types: '["windows-2022-8core"]'
@@ -80,7 +80,7 @@ jobs:
         github.event.label.name == 'run-windows-build' ||
         (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build'))
     name: Build and Test Windows - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@renovate/all-dependencies
     with:
       parent-job-name: nuget-solution
       machine-types: '["windows-2022"]'
@@ -113,7 +113,7 @@ jobs:
     name: Post Pull Request Checks Automation
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
     if: github.event.pull_request != ''
-    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@renovate/all-dependencies
     secrets:
       JIRA_BASE_URL: ${{ secrets.DEFAULT_JIRA_BASE_URL }}
       JIRA_USER_EMAIL: ${{ secrets.DEFAULT_JIRA_USER_EMAIL }}
@@ -127,7 +127,7 @@ jobs:
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
     steps:
       - name: Remove Windows Build Warning Label
-        uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@dev
+        uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@renovate/all-dependencies
         with:
           # The token is necessary to be able to remove the label even if the workflow is triggered by a pull request
           # coming from a fork.
