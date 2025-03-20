@@ -2,8 +2,8 @@
     '$schema': 'https://docs.renovatebot.com/renovate-schema.json',
     packageRules: [
         {
-            groupName: 'Safe dependency versions',
-            matchUpdateTypes: ['patch', 'pin', 'pinDigest', 'digest'],
+            groupName: 'Non-Breaking Dependency Versions',
+            matchUpdateTypes: ['major', 'patch', 'pin', 'pinDigest'],
         },
     ]
 }
