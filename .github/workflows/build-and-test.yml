@@ -14,7 +14,29 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: root-solution-larger-runners
-      machine-types: '["warp-ubuntu-2404-x64-4x", "ubuntu-24.04-4core"]'
+      machine-types: '["warp-ubuntu-2404-x64-4x"]'
+      timeout-minutes: 30
+      set-up-sql-server: 'true'
+      set-up-azurite: 'true'
+      set-up-elasticsearch: 'true'
+      build-create-binary-log: 'true'
+      blame-hang-timeout: 600000
+      build-enable-nuget-caching: 'true'
+      build-enable-npm-caching: 'true'
+      # This way, we can see Node.js build issues in the build log.
+      build-verbosity: minimal
+      build-enable-code-analysis: 'false'
+      verify-dotnet-consolidation: false
+      cancel-in-progress-for-this-pr: 'false'
+      cancel-workflow-on-failure: 'false'
+
+  build-and-test-larger-runners-github-hosted:
+    if: github.ref_name != github.event.repository.default_branch
+    name: Build and Test - root solution (larger runners)
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    with:
+      parent-job-name: root-solution-larger-runners
+      machine-types: '["ubuntu-24.04-4core"]'
       timeout-minutes: 30
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
