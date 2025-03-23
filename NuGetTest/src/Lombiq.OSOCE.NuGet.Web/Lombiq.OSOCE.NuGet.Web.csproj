@@ -56,7 +56,7 @@
     <PackageReference Include="Lombiq.UIKit" Version="9.0.1-alpha.1.osoe-1064" />
     <PackageReference Include="Lombiq.VueJs" Version="8.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.VueJs.Samples" Version="8.0.1-alpha.0.osoe-935" />
-    <PackageReference Include="Lombiq.Walkthroughs" Version="3.0.1-alpha.5.osoe-1064" />
+    <PackageReference Include="Lombiq.Walkthroughs" Version="3.0.1-alpha.6.osoe-1064" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="1.2.2" Condition="'$(RazorRuntimeCompilation)' == 'true'" />
   </ItemGroup>
 
