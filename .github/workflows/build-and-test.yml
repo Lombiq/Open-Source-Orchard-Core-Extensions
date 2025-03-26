@@ -30,7 +30,6 @@ jobs:
       verify-dotnet-consolidation: false
       cancel-in-progress-for-this-pr: 'false'
       cancel-workflow-on-failure: 'false'
-      test-filter: FullyQualifiedName~LoginShouldWork|FullyQualifiedName~WalkthroughsShouldWorkCorrectly
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
