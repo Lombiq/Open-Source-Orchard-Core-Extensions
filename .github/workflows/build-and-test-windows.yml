@@ -29,4 +29,3 @@ jobs:
       verify-dotnet-consolidation: false
       cancel-in-progress-for-this-pr: 'false'
       cancel-workflow-on-failure: 'false'
-
