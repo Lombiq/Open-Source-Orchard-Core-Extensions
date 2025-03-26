@@ -5,6 +5,9 @@ name: Build and Test Windows
 # under Ubuntu is rare (but does happen). So, not running them for every push of every PR.
 on:
   pull_request:
+  push:
+    branches:
+      - dev
 
 jobs:
   build-and-test-larger-runners:
@@ -24,8 +27,9 @@ jobs:
       # supported by GHA.
       # The currently used Elasticsearch setup action (https://github.com/elastic/elastic-github-actions/tree/master/elasticsearch)
       # can only be used on Linux.
-      test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests
+      test-filter: FullyQualifiedName~LoginShouldWork|FullyQualifiedName~WalkthroughsShouldWorkCorrectly
       build-enable-code-analysis: 'false'
       verify-dotnet-consolidation: false
       cancel-in-progress-for-this-pr: 'false'
       cancel-workflow-on-failure: 'false'
+

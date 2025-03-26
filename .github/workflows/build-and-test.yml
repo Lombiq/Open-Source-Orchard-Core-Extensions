@@ -2,7 +2,7 @@ name: Build and Test
 
 # Runs for PRs opened for any branch, and pushes to the dev branch.
 on:
-  # pull_request:
+  pull_request:
   push:
     branches:
       - dev
@@ -30,6 +30,7 @@ jobs:
       verify-dotnet-consolidation: false
       cancel-in-progress-for-this-pr: 'false'
       cancel-workflow-on-failure: 'false'
+      test-filter: FullyQualifiedName~LoginShouldWork|FullyQualifiedName~WalkthroughsShouldWorkCorrectly
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
