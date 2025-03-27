@@ -1,5 +1,11 @@
 {
     '$schema': 'https://docs.renovatebot.com/renovate-schema.json',
+    prBodyNotes: [
+        '@Lombiq/open-source-orchard-extensions-renovate-notification-recipients',
+    ],
+    addLabels: [
+        'no-jira-community-activity-issue',
+    ],
     packageRules: [
         {
             groupName: 'Non-Breaking Dependency Versions',
