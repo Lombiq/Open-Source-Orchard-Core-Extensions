@@ -18,7 +18,7 @@ jobs:
       timeout-minutes: 30
       set-up-sql-server: 'false'
       set-up-azurite: 'false'
-      set-up-elasticsearch: 'false'
+      set-up-elasticsearch: 'true'
       build-create-binary-log: 'true'
       blame-hang-timeout: 600000
       build-enable-nuget-caching: 'true'
@@ -41,7 +41,7 @@ jobs:
       timeout-minutes: 50
       set-up-sql-server: 'false'
       set-up-azurite: 'false'
-      set-up-elasticsearch: 'false'
+      set-up-elasticsearch: 'true'
       build-create-binary-log: 'true'
       blame-hang-timeout: 780000
       # This way, we can see Node.js build issues in the build log.
