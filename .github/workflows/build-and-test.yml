@@ -16,8 +16,8 @@ jobs:
       parent-job-name: root-solution-larger-runners
       machine-types: '["warp-ubuntu-2404-x64-4x"]'
       timeout-minutes: 30
-      set-up-sql-server: 'false'
-      set-up-azurite: 'false'
+      set-up-sql-server: 'true'
+      set-up-azurite: 'true'
       set-up-elasticsearch: 'true'
       build-create-binary-log: 'true'
       blame-hang-timeout: 600000
@@ -38,8 +38,8 @@ jobs:
       # Since dev builds are not awaited by anyone, they can run on the slower free runners.
       parent-job-name: root-solution-standard-runners
       timeout-minutes: 50
-      set-up-sql-server: 'false'
-      set-up-azurite: 'false'
+      set-up-sql-server: 'true'
+      set-up-azurite: 'true'
       set-up-elasticsearch: 'true'
       build-create-binary-log: 'true'
       blame-hang-timeout: 780000
