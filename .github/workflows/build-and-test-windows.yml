@@ -13,11 +13,11 @@ on:
     types: [submitted]
 
 jobs:
-  build-and-test-larger-runners:
-    name: Build and Test Windows - root solution (larger runners)
+  build-and-test-larger-runners0:
+    name: 0 Build and Test Windows - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
-      parent-job-name: root-solution-larger-runners
+      parent-job-name: root-solution-larger-runners0
       machine-types: '["windows-2022-8core"]'
       timeout-minutes: 50
       set-up-sql-server: 'true'
