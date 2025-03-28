@@ -18,7 +18,7 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: root-solution-larger-runners0
-      machine-types: '["windows-2022-8core"]'
+      machine-types: '["warp-windows-latest-x64-8x"]'
       timeout-minutes: 50
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
@@ -34,7 +34,7 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: root-solution-larger-runners1
-      machine-types: '["windows-2022-8core"]'
+      machine-types: '["warp-windows-latest-x64-8x"]'
       timeout-minutes: 50
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
@@ -50,7 +50,7 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: root-solution-larger-runners2
-      machine-types: '["windows-2022-8core"]'
+      machine-types: '["warp-windows-latest-x64-8x"]'
       timeout-minutes: 50
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
@@ -66,7 +66,7 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: root-solution-larger-runners3
-      machine-types: '["windows-2022-8core"]'
+      machine-types: '["warp-windows-latest-x64-8x"]'
       timeout-minutes: 50
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
@@ -82,7 +82,7 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: root-solution-larger-runners4
-      machine-types: '["windows-2022-8core"]'
+      machine-types: '["warp-windows-latest-x64-8x"]'
       timeout-minutes: 50
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
