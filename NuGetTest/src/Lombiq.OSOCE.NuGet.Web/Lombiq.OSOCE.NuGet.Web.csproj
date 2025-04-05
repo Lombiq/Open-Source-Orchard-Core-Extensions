@@ -53,9 +53,9 @@
     <PackageReference Include="Lombiq.SetupExtensions" Version="7.0.0" />
     <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="12.1.1-alpha.32.osoe-1064" />
     <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="12.1.1-alpha.32.osoe-1064" />
-    <PackageReference Include="Lombiq.UIKit" Version="9.0.1-alpha.3.osoe-1087" />
-    <PackageReference Include="Lombiq.UIKit.Widgets" Version="9.0.1-alpha.3.osoe-1087" />
-    <PackageReference Include="Lombiq.UIKit.Widgets.Tests.UI" Version="9.0.1-alpha.3.osoe-1087" />
+    <PackageReference Include="Lombiq.UIKit" Version="9.1.0" />
+    <PackageReference Include="Lombiq.UIKit.Widgets" Version="9.1.0" />
+    <PackageReference Include="Lombiq.UIKit.Widgets.Tests.UI" Version="9.1.0" />
     <PackageReference Include="Lombiq.VueJs" Version="8.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.VueJs.Samples" Version="8.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.Walkthroughs" Version="3.0.1-alpha.13.osoe-1064" />
