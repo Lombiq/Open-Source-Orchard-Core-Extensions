@@ -13,9 +13,7 @@ public class BehaviorUIKitWidgetsTests : UITestBase
 
     [Fact]
     public Task CarouselWidgetDisplaySlidesCorrectly() =>
-        ExecuteTestAfterSetupAsync(async context =>
-            await context.TestCarouselWidgetBehaviorAsync()
-        );
+        ExecuteTestAfterSetupAsync(async context => await context.TestCarouselWidgetBehaviorAsync());
 
     [Fact]
     public Task JsonOptionsForCarouselWidgetWork() =>
