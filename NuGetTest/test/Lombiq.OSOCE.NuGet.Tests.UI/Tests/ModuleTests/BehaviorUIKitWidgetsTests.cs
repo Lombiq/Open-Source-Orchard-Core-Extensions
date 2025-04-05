@@ -19,7 +19,5 @@ public class BehaviorUIKitWidgetsTests : UITestBase
 
     [Fact]
     public Task JsonOptionsForCarouselWidgetWork() =>
-        ExecuteTestAfterSetupAsync(async context =>
-            await context.TestCarouselWidgetOptionsAsync()
-        );
+        ExecuteTestAfterSetupAsync(async context => await context.TestCarouselWidgetOptionsAsync());
 }
