@@ -6,6 +6,9 @@
     addLabels: [
         'no-jira-community-activity-issue',
     ],
+    schedule: [
+        'before 1am on Thursday',
+    ],
     packageRules: [
         {
             groupName: 'Non-Breaking Dependency Versions',
