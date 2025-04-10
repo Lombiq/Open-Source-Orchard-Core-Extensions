@@ -7,7 +7,7 @@
         'no-jira-community-activity-issue',
     ],
     schedule: [
-        'before 1am on Thursday',
+        '* 17-22 * * 4',
     ],
     packageRules: [
         {
