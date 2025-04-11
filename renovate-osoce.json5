@@ -7,7 +7,9 @@
         'no-jira-community-activity-issue',
     ],
     schedule: [
-        '* 17-22 * * 4',
+        // Between 0:00 and 6:59 UTC on Thursdays. Large time window to ensure that Renovate runs at least once then:
+        // https://docs.renovatebot.com/configuration-options/#schedule.
+        '* 0-6 * * 4',
     ],
     packageRules: [
         {
