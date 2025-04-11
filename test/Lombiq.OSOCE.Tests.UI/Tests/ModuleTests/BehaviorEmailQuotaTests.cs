@@ -18,7 +18,7 @@ public class BehaviorEmailQuotaTests : UITestBase
             configuration => configuration.SetEmailQuotaManagementOptionsForUITest(10));
 
     [Fact]
-    public Task EmailQuotaShouldNotBlockEmailsWhenDifferentHostIsUsedThanOriginalFromConfig() =>
+    public Task EmailQuotaShouldNotBeEnforcedWhenUsingCustomSmtpConfiguration() =>
         ExecuteTestAfterSetupAsync(
             async context =>
             {
@@ -27,7 +27,7 @@ public class BehaviorEmailQuotaTests : UITestBase
                 // thinking it's a non-default host.
                 await context.SignInDirectlyAndGoToDashboardAsync();
                 await context.ConfigureSmtpSettingsAsync("sender@example.com", "127.0.0.1");
-                await context.TestEmailQuotaManagementBehaviorAsync(1, moduleShouldInterfere: false);
+                await context.TestEmailQuotaManagementBehaviorAsync(1, quotaShouldBeEnforced: false);
             },
             configuration => configuration.SetEmailQuotaManagementOptionsForUITest(1));
 }
