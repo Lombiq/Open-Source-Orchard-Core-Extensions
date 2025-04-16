@@ -19,12 +19,17 @@ public class BehaviorElasticsearchTests : UITestBase
         Func<UITestContext, Task> testAsync,
         Browser browser,
         Func<OrchardCoreUITestExecutorConfiguration, Task> changeConfigurationAsync) =>
-        ExecuteTestAsync(testAsync, browser, SetupHelpers.RunElasticsearchSetupAsync, configuration =>
-        {
-            configuration.UseElasticsearch = true;
-            configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false;
-            return changeConfigurationAsync(configuration);
-        });
+        ExecuteTestAsync(
+            testAsync,
+            browser,
+            configuration => SetupHelpers.RunSetupAsync(configuration, "Lombiq.OSOCE.Tests.Elasticsearch"),
+            configuration =>
+            {
+                configuration.SetupConfiguration.SetupOperationIdentifierCalculator = _ => nameof(BehaviorElasticsearchTests);
+                configuration.UseElasticsearch = true;
+                configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false;
+                return changeConfigurationAsync(configuration);
+            });
 
     [Fact]
     public Task ElasticsearchShouldWork() =>
