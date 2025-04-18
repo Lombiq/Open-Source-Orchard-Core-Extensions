@@ -135,6 +135,14 @@ When adding a new extension, or significant new features to existing extensions,
 dotnet pack /p:EnablePackageValidation=true /p:PackageValidationBaselineVersion=<current version, like 1.2.3> /p:Version=<the next patch version, like 1.2.4> /p:NuGetBuild=true /p:GenerateCompatibilitySuppressionFile=true
 ```
 
+### .NET and Orchard Core version support policy
+
+We try to balance allowing everyone to use the most recent .NET and Orchard Core versions they're comfortable with, while not forcing everyone to stay on the bleeding edge. To achieve this, we do the following:
+
+- All of our projects target the latest Long-Term Support (LTS) version of .NET (the even-numbered ones, like .NET 8). While this means that those projects can't use the latest .NET APIs if a non-LTS version is the current one (the odd-numbered ones, like .NET 9), it also allows consumer projects to stay on the LTS version until the next LTS version is released (every two years). At the same time, consumer projects can always use a more recent version of .NET if they want to.
+- The .NET build workflows of Lombiq GitHub Actions [always default to a specific version under the latest major version of the .NET SDK](https://github.com/Lombiq/GitHub-Actions?tab=readme-ov-file#default-net-version) to allow builds to benefit from updates to Roslyn and MSBuild. However, the projects being built still can target older .NET versions, and the SDK version can be configured as well.
+- All of our shared Orchard Core-using projects (i.e. the ones that are published to NuGet too) target the latest `.0.0` major version of Orchard Core (barring any incompatibilities requiring us to deviate from this), e.g. `2.0.0`. This allows consumer projects to use them with any later version of Orchard Core under the same major version (like `2.0.1` or `2.1.5`), and we don't force an update beyond that. "Root" web projects, like `Lombiq.OSOCE.Web` in this solution, always target the very latest Orchard Core version (like `2.1.7`) to make the app benefit from the latest improvements.
+
 ### Dependencies between Lombiq projects
 
 When making a Lombiq project depend on another one from this solution, apart from adding a project reference and dependency in the extension manifest for Orchard Core extensions, also add a conditional package reference. This way, when published to NuGet, dependencies will still work. See the project file of `Lombiq.HelpfulExtensions` for an example.
