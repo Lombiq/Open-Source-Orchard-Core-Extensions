@@ -3,4 +3,14 @@
     extends: [
         'github>Lombiq/Open-Source-Orchard-Core-Extensions:renovate-osoce.json5',
     ],
+    packageRules: [
+        // In submodules, Lombiq packages only need to be updated during a new release of the submodule's project.
+        {
+            groupName: 'Lombiq packages',
+            matchPackageNames: [
+                'Lombiq.*',
+            ],
+            enabled: false,
+        },
+    ],
 }
