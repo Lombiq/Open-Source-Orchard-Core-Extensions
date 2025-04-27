@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="12.1.1-alpha.0.osoe-815" />
+    <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="12.2.0" />
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="10.0.1-alpha.7.osoe-1057" />
     <PackageReference Include="Lombiq.BaseTheme.Tests.UI" Version="9.0.1-alpha.1.osoe-1064" />
     <PackageReference Include="Lombiq.ChartJs.Tests.UI" Version="9.0.1-alpha.0.osoe-935" />
@@ -44,7 +44,7 @@
     <PackageReference Include="Lombiq.OrchardCoreApiClient.Tests.UI" Version="7.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.Privacy.Tests.UI" Version="10.0.1-alpha.2.osoe-1064" />
     <PackageReference Include="Lombiq.HelpfulExtensions.Tests.UI" Version="10.0.1-alpha.7.osoe-1057" />
-    <PackageReference Include="Lombiq.Tests.UI" Version="12.1.1-alpha.32.osoe-1064" />
+    <PackageReference Include="Lombiq.Tests.UI" Version="13.0.0" />
     <PackageReference Include="Lombiq.VueJs.Tests.UI" Version="8.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.UIKit.Widgets.Tests.UI" Version="9.1.0" />
     <PackageReference Include="Lombiq.Walkthroughs.Tests.UI" Version="3.0.1-alpha.13.osoe-1064" />

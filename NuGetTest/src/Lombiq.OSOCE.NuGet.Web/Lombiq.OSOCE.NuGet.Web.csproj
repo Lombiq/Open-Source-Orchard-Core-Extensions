@@ -32,7 +32,7 @@
     <PackageReference Include="Lombiq.EmailClient" Version="1.0.0-alpha.8.osoe-1064" />
     <PackageReference Include="Lombiq.EmailClient.Samples" Version="1.0.0-alpha.8.osoe-1064" />
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="10.0.1-alpha.7.osoe-1057" />
-    <PackageReference Include="Lombiq.HelpfulLibraries" Version="12.1.1-alpha.0.osoe-815" />
+    <PackageReference Include="Lombiq.HelpfulLibraries" Version="12.2.0" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="10.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay" Version="7.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="8.0.1-alpha.0.osoe-935" />
@@ -51,8 +51,8 @@
     <PackageReference Include="Lombiq.Privacy" Version="10.0.1-alpha.2.osoe-1064" />
     <PackageReference Include="Lombiq.Privacy.Samples" Version="10.0.1-alpha.2.osoe-1064" />
     <PackageReference Include="Lombiq.SetupExtensions" Version="7.0.0" />
-    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="12.1.1-alpha.32.osoe-1064" />
-    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="12.1.1-alpha.32.osoe-1064" />
+    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="13.0.0" />
+    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="13.0.0" />
     <PackageReference Include="Lombiq.UIKit" Version="9.1.0" />
     <PackageReference Include="Lombiq.UIKit.Widgets" Version="9.1.0" />
     <PackageReference Include="Lombiq.UIKit.Widgets.Tests.UI" Version="9.1.0" />
