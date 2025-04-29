@@ -48,6 +48,7 @@
         // "Lombiq.Privacy.RegistrationConsent",
         "Lombiq.TrainingDemo",
         "Lombiq.UIKit",
+        "Lombiq.UIKit.Widgets",
         "Lombiq.OSOCE.NuGet.TestTheme",
         "Lombiq.HelpfulExtensions.Widgets",
         "Lombiq.VueJs",
@@ -226,6 +227,10 @@
         {
           "executionid": "Lombiq.OSOCE.Web",
           "name": "Lombiq.HelpfulExtensions.ContentSets.Samples"
+        },
+        {
+          "executionid": "Lombiq.OSOCE.Web",
+          "name": "Lombiq.UIKit.Widgets.Content"
         }
       ]
     }

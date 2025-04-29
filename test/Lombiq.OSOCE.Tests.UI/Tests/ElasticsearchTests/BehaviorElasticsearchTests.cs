@@ -1,9 +1,8 @@
-using Atata;
 using Lombiq.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Helpers;
-using Microsoft.Extensions.DependencyInjection;
+using Lombiq.Tests.UI.Samples.Helpers;
+using Lombiq.Tests.UI.Services;
 using OpenQA.Selenium;
-using OrchardCore.Search.Elasticsearch.Core.Services;
+using System;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -16,33 +15,32 @@ public class BehaviorElasticsearchTests : UITestBase
     {
     }
 
+    protected override Task ExecuteTestAfterSetupAsync(
+        Func<UITestContext, Task> testAsync,
+        Browser browser,
+        Func<OrchardCoreUITestExecutorConfiguration, Task> changeConfigurationAsync) =>
+        ExecuteTestAsync(
+            testAsync,
+            browser,
+            configuration => SetupHelpers.RunSetupAsync(configuration, "Lombiq.OSOCE.Tests.Elasticsearch"),
+            configuration =>
+            {
+                configuration.SetupConfiguration.SetupOperationIdentifierCalculator = _ => nameof(BehaviorElasticsearchTests);
+                configuration.UseElasticsearch = true;
+                configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false;
+                return changeConfigurationAsync(configuration);
+            });
+
     [Fact]
     public Task ElasticsearchShouldWork() =>
-        ExecuteTestAsync(
+        ExecuteTestAfterSetupAsync(
             async context =>
             {
-                await context.GoToSetupPageAndSetupOrchardCoreAsync("Lombiq.OSOCE.Tests.Elasticsearch");
+                await context.SignInDirectlyAndGoToRelativeUrlAsync("/search");
 
-                try
-                {
-                    await context.SignInDirectlyAndGoToRelativeUrlAsync("/search");
+                await context.ClickAndFillInWithRetriesAsync(By.Name("Terms"), "man");
+                await context.ClickReliablyOnAsync(By.XPath("//button[@class='btn btn-primary btn-sm']"));
 
-                    await context.ClickAndFillInWithRetriesAsync(By.Name("Terms"), "man");
-                    await context.ClickReliablyOnAsync(By.XPath("//button[@class='btn btn-primary btn-sm']"));
-
-                    context.Exists(By.XPath("//h2[contains(., 'Man must explore, and this is exploration at its greatest')]"));
-                }
-                finally
-                {
-                    await context.Application.UsingScopeAsync(async shellScope =>
-                    {
-                        var elasticsearchIndexManager = shellScope.ServiceProvider.GetRequiredService<ElasticIndexManager>();
-
-                        if (!await elasticsearchIndexManager.ExistsAsync("elasticsearchshouldwork")) return;
-
-                        await elasticsearchIndexManager.DeleteIndex("elasticsearchshouldwork");
-                    });
-                }
-            },
-            changeConfigurationAsync: ConfigurationHelper.DisableHtmlValidation);
+                context.Exists(By.XPath("//h2[contains(., 'Man must explore, and this is exploration at its greatest')]"));
+            });
 }
