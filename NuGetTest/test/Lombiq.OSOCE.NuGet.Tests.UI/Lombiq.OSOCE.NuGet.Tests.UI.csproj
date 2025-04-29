@@ -30,8 +30,8 @@
     <PackageReference Include="Lombiq.EmailClient.Tests.UI" Version="1.0.0-alpha.8.osoe-1064" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI" Version="10.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay.Tests.UI" Version="7.0.1-alpha.2.nest-561" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge.Tests.UI" Version="9.0.1-alpha.11.nest-561" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Tests.UI" Version="9.0.1-alpha.11.nest-561" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge.Tests.UI" Version="8.0.1-alpha.1.nest-562" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Tests.UI" Version="8.0.1-alpha.1.nest-562" />
     <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots.Tests.UI" Version="9.0.1-alpha.10.nest-561" />
     <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard.Tests.UI" Version="9.0.1-alpha.10.nest-561" />
     <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI" Version="9.0.1-alpha.10.nest-561" />
