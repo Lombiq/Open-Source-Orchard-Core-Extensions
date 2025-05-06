@@ -62,7 +62,7 @@ jobs:
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
-    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
+    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@issue/INFRA-167
     with:
       machine-types: '["ubuntu-24.04"]'
 
