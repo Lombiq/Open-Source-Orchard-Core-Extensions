@@ -27,7 +27,7 @@ param(
 $projectFiles = Get-ChildItem -Recurse -Filter '*.csproj'
 
 # Loop through each project file to see if it has a reference to the project we are looking for
-forEach ($projectFile in $projectFiles)
+foreach ($projectFile in $projectFiles)
 {
     # Create an XmlDocument object
     $projectXml = New-Object System.Xml.XmlDocument
