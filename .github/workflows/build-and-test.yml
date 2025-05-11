@@ -60,6 +60,13 @@ jobs:
     name: Codespell
     uses: Lombiq/GitHub-Actions/.github/workflows/codespell.yml@dev
 
+  lint:
+      name: Lint Scripts, Styles, and Texts
+      uses: Lombiq/NodeJs-Extensions/.github/workflows/lint.yml@dev
+      with:
+          scripts: 'src/Modules/Lombiq.DataTables/Lombiq.DataTables, src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions, src/Modules/Lombiq.UIKit/Lombiq.UIKit, src/Modules/Lombiq.Walkthroughs/Lombiq.Walkthroughs'
+          styles-css: 'src/Modules/Lombiq.Privacy/Lombiq.Privacy, src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions, src/Modules/Lombiq.UIKit/Lombiq.UIKit, src/Modules/Lombiq.JsonEditor/Lombiq.JsonEditor, src/Modules/Lombiq.ChartJs/Lombiq.ChartJs.Samples'
+
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
