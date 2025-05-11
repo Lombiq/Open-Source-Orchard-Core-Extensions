@@ -26,7 +26,7 @@
     <PackageReference Include="Lombiq.BaseTheme.Tests.UI" Version="9.0.1-alpha.1.osoe-1064" />
     <PackageReference Include="Lombiq.ChartJs.Tests.UI" Version="9.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.ContentEditors.Tests.UI" Version="6.0.0-alpha.2.osoe-945" />
-    <PackageReference Include="Lombiq.DataTables.Tests.UI" Version="10.0.2-alpha.2.osoe-1057" />
+    <PackageReference Include="Lombiq.DataTables.Tests.UI" Version="10.0.2-alpha.3.osoe-1107" />
     <PackageReference Include="Lombiq.EmailClient.Tests.UI" Version="1.0.0-alpha.8.osoe-1064" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI" Version="10.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay.Tests.UI" Version="7.0.1-alpha.0.osoe-935" />
