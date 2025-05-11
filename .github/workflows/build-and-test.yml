@@ -61,7 +61,7 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/codespell.yml@dev
 
   asset-lint:
-    name: Lint Scripts, Styles, and Texts
+    name: Lint Assets
     uses: Lombiq/NodeJs-Extensions/.github/workflows/lint.yml@dev
     with:
       scripts: >-
