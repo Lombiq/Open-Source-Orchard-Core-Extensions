@@ -35,9 +35,10 @@
     <PackageReference Include="Lombiq.HelpfulLibraries" Version="12.2.0" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="10.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay" Version="7.0.1-alpha.0.osoe-935" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="8.0.1-alpha.3.nest-562" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="8.0.1-alpha.3.nest-562" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Targets" Version="8.0.1-alpha.3.nest-562" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="8.0.1-alpha.6.nest-562" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Tests.Theme" Version="8.0.1-alpha.6.nest-562" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="8.0.1-alpha.6.nest-562" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Targets" Version="8.0.1-alpha.6.nest-562" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="9.0.1-alpha.7.osoe-1105" />
     <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots" Version="9.0.1-alpha.7.osoe-1105" />
     <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="9.0.1-alpha.7.osoe-1105" />
