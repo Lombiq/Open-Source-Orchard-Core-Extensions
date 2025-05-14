@@ -19,7 +19,7 @@ public class BehaviorEmailQuotaTests : UITestBase
             configuration => configuration.SetEmailQuotaManagementOptionsForUITest(10));
 
     [Fact]
-    public Task EmailQuotaShouldNotBlockEmailsWhenDifferentHostIsUsedThanOriginalFromConfig() =>
+    public Task EmailQuotaShouldNotBeEnforcedWhenUsingCustomSmtpConfiguration() =>
         ExecuteTestAfterSetupAsync(
             async context =>
             {
