@@ -66,11 +66,4 @@
     <PackageReference Include="OrchardCore.Logging.NLog" Version="$(OrchardCoreVersion)" />
   </ItemGroup>
 
-  <!-- Necessary to prevent package downgrade. -->
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Build.Framework" Version="17.14.7" />
-    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="17.14.7" />
-    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.14.7" />
-  </ItemGroup>
-
 </Project>
