@@ -15,9 +15,9 @@ public class BasicOrchardFeaturesTests : UITestBase
     [Fact]
     public Task BasicOrchardFeaturesShouldWork() =>
         ExecuteTestAsync(
-            context => context.TestBasicOrchardFeaturesAsync(new OrchardCoreSetupParameters
-            {
-                RecipeId = "Lombiq.OSOCE.NuGet.BasicOrchardFeaturesTests",
-                SkipRegistration = true,
-            }));
+            context => context.TestBasicOrchardFeaturesAsync(
+                new OrchardCoreSetupParameters(context, "Lombiq.OSOCE.NuGet.BasicOrchardFeaturesTests")
+                {
+                    SkipRegistration = true,
+                }));
 }
