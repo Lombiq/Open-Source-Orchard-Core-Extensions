@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.Npm.Targets" Version="1.4.1-alpha.2.osoe-1107" />
+    <PackageReference Include="Lombiq.Npm.Targets" Version="1.5.0" />
     <PackageReference Include="OrchardCore.Theme.Targets" Version="2.1.0" />
     <PackageReference Include="OrchardCore.ContentManagement" Version="2.1.0" />
     <PackageReference Include="OrchardCore.DisplayManagement" Version="2.1.0" />
