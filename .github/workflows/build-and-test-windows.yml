@@ -101,6 +101,10 @@ jobs:
       test-filter: 'FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~ElasticsearchTests'
 
   asset-lint:
+    if: github.ref_name == github.event.repository.default_branch ||
+        github.event_name == 'workflow_dispatch' ||
+        github.event.label.name == 'run-windows-build' ||
+        (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build'))
     name: Lint Assets
     uses: Lombiq/NodeJs-Extensions/.github/workflows/lint.yml@dev
     with:
