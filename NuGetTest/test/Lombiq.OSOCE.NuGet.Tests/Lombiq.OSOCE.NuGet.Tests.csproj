@@ -16,4 +16,12 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Lombiq.OSOCE.NuGet.Web\Lombiq.OSOCE.NuGet.Web.csproj" />
+
+    <None Include="SampleInvoices\**\*.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
