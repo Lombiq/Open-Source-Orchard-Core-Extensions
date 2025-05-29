@@ -68,7 +68,7 @@ jobs:
         src/Modules/Lombiq.DataTables/Lombiq.DataTables,
         src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions,
         src/Modules/Lombiq.UIKit/Lombiq.UIKit,
-        src/Modules/Lombiq.Walkthroughs/Lombiq.Walkthroughs
+        src/Modules/Lombiq.Walkthroughs/Lombiq.Walkthroughs,
         src/Libraries/Lombiq.EInvoiceValidator/Lombiq.EInvoiceValidator
       styles-css: >-
         src/Modules/Lombiq.Privacy/Lombiq.Privacy,
