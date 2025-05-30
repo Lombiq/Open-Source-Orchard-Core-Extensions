@@ -8,8 +8,8 @@
   <ItemGroup>
     <PackageReference Include="Lombiq.HelpfulLibraries" Version="12.2.1-alpha.0.nest-561" />
     <PackageReference Include="Lombiq.Tests" Version="5.0.0" />
-    <PackageReference Include="Lombiq.EInvoiceValidator" Version="0.1.0-alpha.2.osoe-1109"/>
-    <PackageReference Include="Lombiq.EInvoiceValidator.Sample" Version="0.1.0-alpha.2.osoe-1109"/>
+    <PackageReference Include="Lombiq.EInvoiceValidator" Version="1.0.0" />
+    <PackageReference Include="Lombiq.EInvoiceValidator.Sample" Version="1.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.0" />
     <PackageReference Include="xunit.v3" Version="2.0.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="3.1.0">
