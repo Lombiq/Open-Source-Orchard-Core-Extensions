@@ -64,11 +64,14 @@ jobs:
     name: Lint Assets
     uses: Lombiq/NodeJs-Extensions/.github/workflows/lint.yml@dev
     with:
-      scripts: >-
-        src/Modules/Lombiq.DataTables/Lombiq.DataTables,
-        src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions,
-        src/Modules/Lombiq.UIKit/Lombiq.UIKit,
-        src/Modules/Lombiq.Walkthroughs/Lombiq.Walkthroughs
+      scripts: '
+        {
+          "src/Modules/Lombiq.DataTables/Lombiq.DataTables": { "scripts": { "source": "wwwroot/js" } },
+          "src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions": { "scripts": { "source": "wwwroot/js" } },
+          "src/Modules/Lombiq.UIKit/Lombiq.UIKit": { "scripts": { "source": "wwwroot/js" } },
+          "src/Modules/Lombiq.Walkthroughs/Lombiq.Walkthroughs": { "scripts": { "source": "wwwroot/js" } },
+          "src/Libraries/Lombiq.EInvoiceValidator/Lombiq.EInvoiceValidator": { "scripts": { "source": "." } }
+        }'
       styles-css: >-
         src/Modules/Lombiq.Privacy/Lombiq.Privacy,
         src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions,
