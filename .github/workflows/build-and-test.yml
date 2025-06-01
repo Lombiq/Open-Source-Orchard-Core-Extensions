@@ -74,14 +74,14 @@ jobs:
           "src/Modules/Lombiq.Walkthroughs/Lombiq.Walkthroughs": { "scripts": { "source": "wwwroot/js" } },
         }'
       styles-css: >-
-        src/Modules/Lombiq.ChartJs/Lombiq.ChartJs.Samples
+        src/Modules/Lombiq.ChartJs/Lombiq.ChartJs.Samples,
         src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions,
         src/Modules/Lombiq.JsonEditor/Lombiq.JsonEditor,
         src/Modules/Lombiq.Privacy/Lombiq.Privacy,
         src/Modules/Lombiq.UIKit/Lombiq.UIKit,
         src/Themes/Lombiq.BaseTheme.Core,
         src/Themes/Lombiq.BaseTheme.Native,
-        src/Themes/Lombiq.BaseTheme.Native.Samples
+        src/Themes/Lombiq.BaseTheme.Native.Samples,
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
