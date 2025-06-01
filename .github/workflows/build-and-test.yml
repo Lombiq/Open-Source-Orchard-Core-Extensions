@@ -81,7 +81,7 @@ jobs:
         src/Modules/Lombiq.UIKit/Lombiq.UIKit,
         src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Core,
         src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Native,
-        src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Native.Samples,
+        src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Native.Samples
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
