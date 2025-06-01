@@ -62,7 +62,7 @@ jobs:
 
   asset-lint:
     name: Lint Assets
-    uses: Lombiq/NodeJs-Extensions/.github/workflows/lint.yml@dev
+    uses: Lombiq/NodeJs-Extensions/.github/workflows/lint.yml@issue/OSOE-1120
     # Be sure to keep the configs in sync with the build-and-test-windows workflow.
     with:
       scripts: '
@@ -81,7 +81,7 @@ jobs:
         src/Modules/Lombiq.UIKit/Lombiq.UIKit,
         src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Core,
         src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Native,
-        src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Native.Samples
+        src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Native.Samples,
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
