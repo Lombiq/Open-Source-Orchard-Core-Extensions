@@ -62,7 +62,7 @@ jobs:
 
   asset-lint:
     name: Lint Assets
-    uses: Lombiq/NodeJs-Extensions/.github/workflows/lint.yml@issue/OSOE-1120
+    uses: Lombiq/NodeJs-Extensions/.github/workflows/lint.yml@dev
     # Be sure to keep the configs in sync with the build-and-test-windows workflow.
     with:
       scripts: '

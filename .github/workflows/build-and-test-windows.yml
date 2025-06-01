@@ -106,7 +106,7 @@ jobs:
         github.event.label.name == 'run-windows-build' ||
         (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build'))
     name: Lint Assets
-    uses: Lombiq/NodeJs-Extensions/.github/workflows/lint.yml@issue/OSOE-1120
+    uses: Lombiq/NodeJs-Extensions/.github/workflows/lint.yml@dev
     # Be sure to keep the configs in sync with the build-and-test workflow.
     with:
       scripts: '
