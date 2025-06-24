@@ -6,7 +6,6 @@ name: Build and Test Windows
 on:
   workflow_dispatch:
   pull_request:
-    types: [labeled]
   push:
     branches:
       - dev
