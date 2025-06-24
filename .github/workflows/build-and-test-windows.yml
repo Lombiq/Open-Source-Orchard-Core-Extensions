@@ -53,7 +53,6 @@ jobs:
       verify-dotnet-consolidation: false
       cancel-in-progress-for-this-pr: 'false'
       cancel-workflow-on-failure: 'false'
-      node-version: '22.16.0'
 
   build-and-test-standard-runners:
     name: Build and Test Windows - root solution (standard runners)
@@ -78,7 +77,6 @@ jobs:
       verify-dotnet-consolidation: false
       cancel-in-progress-for-this-pr: 'false'
       cancel-workflow-on-failure: 'false'
-      node-version: '22.16.0'
 
   build-and-test-nuget-test-larger-runners:
     name: Build and Test Windows - NuGetTest solution
@@ -103,7 +101,6 @@ jobs:
       verify-dotnet-consolidation: false
       cancel-in-progress-for-this-pr: 'false'
       cancel-workflow-on-failure: 'false'
-      node-version: '22.16.0'
 
   build-and-test-nuget-test:
     name: Build and Test Windows - NuGetTest solution
@@ -128,4 +125,3 @@ jobs:
       verify-dotnet-consolidation: false
       cancel-in-progress-for-this-pr: 'false'
       cancel-workflow-on-failure: 'false'
-      node-version: '22.16.0'

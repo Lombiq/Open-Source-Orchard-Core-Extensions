@@ -27,97 +27,97 @@ jobs:
       build-verbosity: minimal
       ui-test-retry-interval-seconds: '60'
 
-  # build-and-test-standard-runners:
-  #   if: github.ref_name == github.event.repository.default_branch
-  #   name: Build and Test - root solution (standard runners)
-  #   uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1124
-  #   with:
-  #     # Since dev builds are not awaited by anyone, they can run on the slower free runners.
-  #     parent-job-name: root-solution-standard-runners
-  #     timeout-minutes: 50
-  #     set-up-sql-server: 'true'
-  #     set-up-azurite: 'true'
-  #     set-up-elasticsearch: 'true'
-  #     build-create-binary-log: 'true'
-  #     blame-hang-timeout: 780000
-  #     # This way, we can see Node.js build issues in the build log.
-  #     build-verbosity: minimal
-  #     ui-test-retry-interval-seconds: '60'
+  build-and-test-standard-runners:
+    # if: github.ref_name == github.event.repository.default_branch
+    name: Build and Test - root solution (standard runners)
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1124
+    with:
+      # Since dev builds are not awaited by anyone, they can run on the slower free runners.
+      parent-job-name: root-solution-standard-runners
+      timeout-minutes: 50
+      set-up-sql-server: 'true'
+      set-up-azurite: 'true'
+      set-up-elasticsearch: 'true'
+      build-create-binary-log: 'true'
+      blame-hang-timeout: 780000
+      # This way, we can see Node.js build issues in the build log.
+      build-verbosity: minimal
+      ui-test-retry-interval-seconds: '60'
 
-  # build-and-test-nuget-test:
-  #   name: Build and Test - NuGetTest solution
-  #   uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1124
-  #   with:
-  #     parent-job-name: nuget-solution
-  #     build-directory: NuGetTest
-  #     timeout-minutes: 20
-  #     blame-hang-timeout: 480000
-  #     # This way, we can see Node.js build issues in the build log.
-  #     build-verbosity: minimal
-  #     ui-test-retry-interval-seconds: '60'
+  build-and-test-nuget-test:
+    name: Build and Test - NuGetTest solution
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1124
+    with:
+      parent-job-name: nuget-solution
+      build-directory: NuGetTest
+      timeout-minutes: 20
+      blame-hang-timeout: 480000
+      # This way, we can see Node.js build issues in the build log.
+      build-verbosity: minimal
+      ui-test-retry-interval-seconds: '60'
 
-  # codespell:
-  #   name: Codespell
-  #   uses: Lombiq/GitHub-Actions/.github/workflows/codespell.yml@dev
+  codespell:
+    name: Codespell
+    uses: Lombiq/GitHub-Actions/.github/workflows/codespell.yml@dev
 
-  # asset-lint:
-  #   name: Lint Assets
-  #   uses: Lombiq/NodeJs-Extensions/.github/workflows/lint.yml@dev
-  #   # Be sure to keep the configs in sync with the build-and-test-windows workflow.
-  #   with:
-  #     scripts: '
-  #       {
-  #         "src/Libraries/Lombiq.EInvoiceValidator/Lombiq.EInvoiceValidator": { "scripts": { "source": "." } },
-  #         "src/Modules/Lombiq.DataTables/Lombiq.DataTables": { "scripts": { "source": "wwwroot/js" } },
-  #         "src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions": { "scripts": { "source": "wwwroot/js" } },
-  #         "src/Modules/Lombiq.UIKit/Lombiq.UIKit": { "scripts": { "source": "wwwroot/js" } },
-  #         "src/Modules/Lombiq.Walkthroughs/Lombiq.Walkthroughs": { "scripts": { "source": "wwwroot/js" } },
-  #       }'
-  #     styles-css: >-
-  #       src/Modules/Lombiq.ChartJs/Lombiq.ChartJs.Samples,
-  #       src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions,
-  #       src/Modules/Lombiq.JsonEditor/Lombiq.JsonEditor,
-  #       src/Modules/Lombiq.Privacy/Lombiq.Privacy,
-  #       src/Modules/Lombiq.UIKit/Lombiq.UIKit,
-  #       src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Core,
-  #       src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Native,
-  #       src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Native.Samples,
+  asset-lint:
+    name: Lint Assets
+    uses: Lombiq/NodeJs-Extensions/.github/workflows/lint.yml@dev
+    # Be sure to keep the configs in sync with the build-and-test-windows workflow.
+    with:
+      scripts: '
+        {
+          "src/Libraries/Lombiq.EInvoiceValidator/Lombiq.EInvoiceValidator": { "scripts": { "source": "." } },
+          "src/Modules/Lombiq.DataTables/Lombiq.DataTables": { "scripts": { "source": "wwwroot/js" } },
+          "src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions": { "scripts": { "source": "wwwroot/js" } },
+          "src/Modules/Lombiq.UIKit/Lombiq.UIKit": { "scripts": { "source": "wwwroot/js" } },
+          "src/Modules/Lombiq.Walkthroughs/Lombiq.Walkthroughs": { "scripts": { "source": "wwwroot/js" } },
+        }'
+      styles-css: >-
+        src/Modules/Lombiq.ChartJs/Lombiq.ChartJs.Samples,
+        src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions,
+        src/Modules/Lombiq.JsonEditor/Lombiq.JsonEditor,
+        src/Modules/Lombiq.Privacy/Lombiq.Privacy,
+        src/Modules/Lombiq.UIKit/Lombiq.UIKit,
+        src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Core,
+        src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Native,
+        src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Native.Samples,
 
-  # powershell-static-code-analysis:
-  #   name: PowerShell Static Code Analysis
-  #   uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
-  #   with:
-  #     machine-types: '["ubuntu-24.04"]'
+  powershell-static-code-analysis:
+    name: PowerShell Static Code Analysis
+    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
+    with:
+      machine-types: '["ubuntu-24.04"]'
 
-  # yaml-linting:
-  #   name: YAML Linting
-  #   uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@dev
-  #   with:
-  #     config-file-path: tools/Lombiq.GitHub.Actions/.trunk/configs/.yamllint.yaml
-  #     search-path: .
+  yaml-linting:
+    name: YAML Linting
+    uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@dev
+    with:
+      config-file-path: tools/Lombiq.GitHub.Actions/.trunk/configs/.yamllint.yaml
+      search-path: .
 
-  # post-pull-request-checks-automation:
-  #   name: Post Pull Request Checks Automation
-  #   needs: [build-and-test-larger-runners, build-and-test-nuget-test, codespell, asset-lint, powershell-static-code-analysis]
-  #   if: github.event.pull_request != ''
-  #   uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
-  #   secrets:
-  #     JIRA_BASE_URL: ${{ secrets.DEFAULT_JIRA_BASE_URL }}
-  #     JIRA_USER_EMAIL: ${{ secrets.DEFAULT_JIRA_USER_EMAIL }}
-  #     JIRA_API_TOKEN: ${{ secrets.DEFAULT_JIRA_API_TOKEN }}
-  #     MERGE_TOKEN: ${{ secrets.LOMBIQBOT_GITHUB_PERSONAL_ACCESS_TOKEN }}
+  post-pull-request-checks-automation:
+    name: Post Pull Request Checks Automation
+    needs: [build-and-test-larger-runners, build-and-test-nuget-test, codespell, asset-lint, powershell-static-code-analysis]
+    if: github.event.pull_request != ''
+    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
+    secrets:
+      JIRA_BASE_URL: ${{ secrets.DEFAULT_JIRA_BASE_URL }}
+      JIRA_USER_EMAIL: ${{ secrets.DEFAULT_JIRA_USER_EMAIL }}
+      JIRA_API_TOKEN: ${{ secrets.DEFAULT_JIRA_API_TOKEN }}
+      MERGE_TOKEN: ${{ secrets.LOMBIQBOT_GITHUB_PERSONAL_ACCESS_TOKEN }}
 
-  # add-windows-build-warning-label:
-  #   name: Add Windows Build Warning Label
-  #   runs-on: ubuntu-24.04
-  #   timeout-minutes: 2
-  #   needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
-  #   steps:
-  #     - name: Add Windows Build Warning Label
-  #       uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@dev
-  #       with:
-  #         # The token is necessary to be able to add the label even if the workflow is triggered by a pull request
-  #         # coming from a fork.
-  #         token: ${{ secrets.LOMBIQBOT_GITHUB_PERSONAL_ACCESS_TOKEN }}
-  #         labels: requires-windows-build
-  #         type: add
+  add-windows-build-warning-label:
+    name: Add Windows Build Warning Label
+    runs-on: ubuntu-24.04
+    timeout-minutes: 2
+    needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
+    steps:
+      - name: Add Windows Build Warning Label
+        uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@dev
+        with:
+          # The token is necessary to be able to add the label even if the workflow is triggered by a pull request
+          # coming from a fork.
+          token: ${{ secrets.LOMBIQBOT_GITHUB_PERSONAL_ACCESS_TOKEN }}
+          labels: requires-windows-build
+          type: add
