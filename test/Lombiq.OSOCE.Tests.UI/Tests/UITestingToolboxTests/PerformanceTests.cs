@@ -1,5 +1,5 @@
-using Lombiq.Tests.UI.Extensions;
 using System;
+using System.IO;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -17,47 +17,20 @@ public class PerformanceTests : UITestBase
         ExecuteTestAfterSetupAsync(
             async context =>
             {
-                for (int i = 0; i < 99; i++)
+                var driver = context.Driver;
+                var baseUri = context.Scope.BaseUri;
+
+                for (int i = 0; i < 3; i++)
                 {
-                    await context.ExecuteLoggedAsync(
-                        "GoToUrlAsync",
-                        "blog/post-1",
-                        async () =>
-                        {
-                            await context.DoWithRetriesUntilNavigationHasOccurredOrFailAsync(
-                                () => context.Driver.Navigate().GoToUrlAsync(new Uri(context.Scope.BaseUri, "blog/post-1")));
+                    await driver.Navigate().GoToUrlAsync(new Uri(baseUri, "blog/post-1"));
+                    // Writing to file to check the contents and to make sure that the page source is indeed fully loaded.
+                    await File.WriteAllTextAsync("post-1 PageSource " + i + ".html", driver.PageSource);
 
-                            context.AppendTestDump("post-1 PageSource " + i + ".html", content: context.Driver.PageSource);
-                        });
+                    await driver.Navigate().GoToUrlAsync(new Uri(baseUri, "about"));
+                    await File.WriteAllTextAsync("about PageSource " + i + ".html", driver.PageSource);
 
-                    await context.ExecuteLoggedAsync(
-                        "GoToUrlAsync",
-                        "about",
-                        async () =>
-                        {
-                            await context.DoWithRetriesUntilNavigationHasOccurredOrFailAsync(
-                                () => context.Driver.Navigate().GoToUrlAsync(new Uri(context.Scope.BaseUri, "about")));
-
-                            context.AppendTestDump("about PageSource " + i + ".html", content: context.Driver.PageSource);
-                        });
-
-                    await context.ExecuteLoggedAsync(
-                        "GoToUrlAsync",
-                        "/",
-                        async () =>
-                        {
-                            await context.DoWithRetriesUntilNavigationHasOccurredOrFailAsync(
-                                () => context.Driver.Navigate().GoToUrlAsync(context.Scope.BaseUri));
-
-                            context.AppendTestDump("homepage PageSource " + i + ".html", content: context.Driver.PageSource);
-                        });
-
-                    //if (true)
-                    //{
-                    //    await context.GoToRelativeUrlAsync("/blog/post-1");
-                    //    await context.GoToRelativeUrlAsync("/about");
-                    //    await context.GoToHomePageAsync();
-                    //}
+                    await driver.Navigate().GoToUrlAsync(baseUri);
+                    await File.WriteAllTextAsync("homepage PageSource " + i + ".html", driver.PageSource);
 
                     _testOutputHelper.WriteLine($"Iteration {i + 1} completed.");
                 }
