@@ -27,7 +27,7 @@ public class PerformanceTests : UITestBase
                             await context.DoWithRetriesUntilNavigationHasOccurredOrFailAsync(
                                 () => context.Driver.Navigate().GoToUrlAsync(new Uri(context.Scope.BaseUri, "blog/post-1")));
 
-                            context.AppendTestDump("post-1 PageSource " + i, context.Driver.PageSource);
+                            context.AppendTestDump("post-1 PageSource " + i + ".html", content: context.Driver.PageSource);
                         });
 
                     await context.ExecuteLoggedAsync(
@@ -38,7 +38,7 @@ public class PerformanceTests : UITestBase
                             await context.DoWithRetriesUntilNavigationHasOccurredOrFailAsync(
                                 () => context.Driver.Navigate().GoToUrlAsync(new Uri(context.Scope.BaseUri, "about")));
 
-                            context.AppendTestDump("about PageSource " + i, context.Driver.PageSource);
+                            context.AppendTestDump("about PageSource " + i + ".html", content: context.Driver.PageSource);
                         });
 
                     await context.ExecuteLoggedAsync(
@@ -49,7 +49,7 @@ public class PerformanceTests : UITestBase
                             await context.DoWithRetriesUntilNavigationHasOccurredOrFailAsync(
                                 () => context.Driver.Navigate().GoToUrlAsync(context.Scope.BaseUri));
 
-                            context.AppendTestDump("homepage PageSource " + i, context.Driver.PageSource);
+                            context.AppendTestDump("homepage PageSource " + i + ".html", content: context.Driver.PageSource);
                         });
 
                     //if (true)

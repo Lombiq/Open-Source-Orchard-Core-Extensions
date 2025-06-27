@@ -11,7 +11,7 @@ jobs:
   build-and-test-larger-runners0:
     if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners) 0
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1131
     with:
       parent-job-name: root-solution-larger-runners0
       machine-types: '["warp-ubuntu-2404-x64-4x"]'
@@ -35,7 +35,7 @@ jobs:
   build-and-test-larger-runners1:
     if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners) 1
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1131
     with:
       parent-job-name: root-solution-larger-runners1
       machine-types: '["warp-ubuntu-2404-x64-4x"]'
@@ -59,7 +59,7 @@ jobs:
   build-and-test-larger-runners2:
     if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners) 2
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1131
     with:
       parent-job-name: root-solution-larger-runners2
       machine-types: '["warp-ubuntu-2404-x64-4x"]'
