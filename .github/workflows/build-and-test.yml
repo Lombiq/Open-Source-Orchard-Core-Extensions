@@ -80,7 +80,7 @@ jobs:
       cancel-workflow-on-failure: 'false'
       test-filter: FullyQualifiedName~TestSeleniumPerformance
 
-build-and-test-larger-runners3:
+  build-and-test-larger-runners3:
     if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners) 3
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1131
@@ -104,7 +104,7 @@ build-and-test-larger-runners3:
       cancel-workflow-on-failure: 'false'
       test-filter: FullyQualifiedName~TestSeleniumPerformance
 
-build-and-test-larger-runners4:
+  build-and-test-larger-runners4:
     if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners) 4
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1131
@@ -128,7 +128,7 @@ build-and-test-larger-runners4:
       cancel-workflow-on-failure: 'false'
       test-filter: FullyQualifiedName~TestSeleniumPerformance
 
-build-and-test-larger-runners5:
+  build-and-test-larger-runners5:
     if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners) 5
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1131
