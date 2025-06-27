@@ -1,4 +1,6 @@
+using Atata.HtmlValidation;
 using Lombiq.Tests.UI.Extensions;
+using System;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -18,9 +20,69 @@ public class PerformanceTests : UITestBase
             {
                 for (int i = 0; i < 99; i++)
                 {
-                    await context.GoToRelativeUrlAsync("/blog/post-1");
-                    await context.GoToRelativeUrlAsync("/about");
-                    await context.GoToHomePageAsync();
+                    await context.ExecuteLoggedAsync(
+                        "GoToUrlAsync",
+                        "blog/post-1",
+                        async () =>
+                        {
+                            await context.DoWithRetriesUntilNavigationHasOccurredOrFailAsync(
+                                () => context.Driver.Navigate().GoToUrlAsync(new Uri(context.Scope.BaseUri, "blog/post-1")));
+
+                            try
+                            {
+                                new HtmlValidator(context.Configuration.HtmlValidationConfiguration.HtmlValidationOptions)
+                                    .Validate(context.Driver.PageSource);
+                            }
+                            catch (Exception ex)
+                            {
+                                _testOutputHelper.WriteLine(ex.ToString());
+                            }
+                        });
+
+                    await context.ExecuteLoggedAsync(
+                        "GoToUrlAsync",
+                        "about",
+                        async () =>
+                        {
+                            await context.DoWithRetriesUntilNavigationHasOccurredOrFailAsync(
+                                () => context.Driver.Navigate().GoToUrlAsync(new Uri(context.Scope.BaseUri, "about")));
+
+                            try
+                            {
+                                new HtmlValidator(context.Configuration.HtmlValidationConfiguration.HtmlValidationOptions)
+                                    .Validate(context.Driver.PageSource);
+                            }
+                            catch (Exception ex)
+                            {
+                                _testOutputHelper.WriteLine(ex.ToString());
+                            }
+                        });
+
+                    await context.ExecuteLoggedAsync(
+                        "GoToUrlAsync",
+                        "/",
+                        async () =>
+                        {
+                            await context.DoWithRetriesUntilNavigationHasOccurredOrFailAsync(
+                                () => context.Driver.Navigate().GoToUrlAsync(context.Scope.BaseUri));
+
+                            try
+                            {
+                                new HtmlValidator(context.Configuration.HtmlValidationConfiguration.HtmlValidationOptions)
+                                    .Validate(context.Driver.PageSource);
+                            }
+                            catch (Exception ex)
+                            {
+                                _testOutputHelper.WriteLine(ex.ToString());
+                            }
+                        });
+
+                    //if (true)
+                    //{
+                    //    await context.GoToRelativeUrlAsync("/blog/post-1");
+                    //    await context.GoToRelativeUrlAsync("/about");
+                    //    await context.GoToHomePageAsync();
+                    //}
 
                     _testOutputHelper.WriteLine($"Iteration {i + 1} completed.");
                 }
