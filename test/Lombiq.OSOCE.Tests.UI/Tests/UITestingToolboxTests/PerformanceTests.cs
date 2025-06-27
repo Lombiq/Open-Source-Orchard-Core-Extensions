@@ -1,4 +1,3 @@
-using Atata.HtmlValidation;
 using Lombiq.Tests.UI.Extensions;
 using System;
 using System.Threading.Tasks;
@@ -28,15 +27,7 @@ public class PerformanceTests : UITestBase
                             await context.DoWithRetriesUntilNavigationHasOccurredOrFailAsync(
                                 () => context.Driver.Navigate().GoToUrlAsync(new Uri(context.Scope.BaseUri, "blog/post-1")));
 
-                            try
-                            {
-                                new HtmlValidator(context.Configuration.HtmlValidationConfiguration.HtmlValidationOptions)
-                                    .Validate(context.Driver.PageSource);
-                            }
-                            catch (Exception ex)
-                            {
-                                _testOutputHelper.WriteLine(ex.ToString());
-                            }
+                            _testOutputHelper.WriteLine(context.Driver.PageSource.GetHashCode().ToString());
                         });
 
                     await context.ExecuteLoggedAsync(
@@ -47,15 +38,7 @@ public class PerformanceTests : UITestBase
                             await context.DoWithRetriesUntilNavigationHasOccurredOrFailAsync(
                                 () => context.Driver.Navigate().GoToUrlAsync(new Uri(context.Scope.BaseUri, "about")));
 
-                            try
-                            {
-                                new HtmlValidator(context.Configuration.HtmlValidationConfiguration.HtmlValidationOptions)
-                                    .Validate(context.Driver.PageSource);
-                            }
-                            catch (Exception ex)
-                            {
-                                _testOutputHelper.WriteLine(ex.ToString());
-                            }
+                            _testOutputHelper.WriteLine(context.Driver.PageSource.GetHashCode().ToString());
                         });
 
                     await context.ExecuteLoggedAsync(
@@ -66,15 +49,7 @@ public class PerformanceTests : UITestBase
                             await context.DoWithRetriesUntilNavigationHasOccurredOrFailAsync(
                                 () => context.Driver.Navigate().GoToUrlAsync(context.Scope.BaseUri));
 
-                            try
-                            {
-                                new HtmlValidator(context.Configuration.HtmlValidationConfiguration.HtmlValidationOptions)
-                                    .Validate(context.Driver.PageSource);
-                            }
-                            catch (Exception ex)
-                            {
-                                _testOutputHelper.WriteLine(ex.ToString());
-                            }
+                            _testOutputHelper.WriteLine(context.Driver.PageSource.GetHashCode().ToString());
                         });
 
                     //if (true)
