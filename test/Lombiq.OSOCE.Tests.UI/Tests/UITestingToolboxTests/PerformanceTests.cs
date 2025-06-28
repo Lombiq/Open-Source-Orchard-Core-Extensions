@@ -1,5 +1,3 @@
-using Lombiq.Tests.UI.Extensions;
-using OpenQA.Selenium.Internal.Logging;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,14 +19,27 @@ public class PerformanceTests : UITestBase
             {
                 var driver = context.Driver;
                 var baseUri = context.Scope.BaseUri;
+                var contextId = context.Id;
 
-                Log.SetLevel(LogEventLevel.Trace);
-                Log.Handlers.Add(new FileLogHandler(context.Id + ".log"));
+                //Log.SetLevel(LogEventLevel.Trace);
+                //Log.Handlers.Add(new FileLogHandler(contextId + ".log"));
 
-                // driver is an IWebDriver instance, baseUri is the base URL of the app being tested.
+                // driver is an IWebDriver instance.
+                //var biDi = await driver.AsBiDiAsync();
 
-                for (int i = 0; i < 99; i++)
+                //await biDi.Log.OnEntryAddedAsync(entry =>
+                //{
+                //    var z = entry;
+                //});
+
+                //await biDi.Network.OnResponseCompletedAsync(responseCompleted =>
+                //{
+                //    var z = responseCompleted;
+                //});
+
+                for (int i = 0; i < 1; i++)
                 {
+                    // baseUri is the base URL of the app being tested.
                     await driver.Navigate().GoToUrlAsync(new Uri(baseUri, "blog/post-1"));
                     // Writing to file to check the contents and to make sure that the page source is indeed fully loaded.
                     await File.WriteAllTextAsync("post-1 PageSource " + i + ".html", driver.PageSource);
@@ -42,8 +53,8 @@ public class PerformanceTests : UITestBase
                     _testOutputHelper.WriteLine($"Iteration {i + 1} completed.");
                 }
 
-                File.Copy(context.Id + ".log", context.Id + "2.log");
-                context.AppendTestDump(context.Id + "2.log");
+                //File.Copy(contextId + ".log", contextId + "2.log");
+                //context.AppendTestDump(contextId + "2.log");
             },
             configuration =>
             {
