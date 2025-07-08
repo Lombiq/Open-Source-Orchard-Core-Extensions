@@ -60,6 +60,29 @@ jobs:
     name: Codespell
     uses: Lombiq/GitHub-Actions/.github/workflows/codespell.yml@dev
 
+  asset-lint:
+    name: Lint Assets
+    uses: Lombiq/NodeJs-Extensions/.github/workflows/lint.yml@dev
+    # Be sure to keep the configs in sync with the build-and-test-windows workflow.
+    with:
+      scripts: '
+        {
+          "src/Libraries/Lombiq.EInvoiceValidator/Lombiq.EInvoiceValidator": { "scripts": { "source": "." } },
+          "src/Modules/Lombiq.DataTables/Lombiq.DataTables": { "scripts": { "source": "wwwroot/js" } },
+          "src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions": { "scripts": { "source": "wwwroot/js" } },
+          "src/Modules/Lombiq.UIKit/Lombiq.UIKit": { "scripts": { "source": "wwwroot/js" } },
+          "src/Modules/Lombiq.Walkthroughs/Lombiq.Walkthroughs": { "scripts": { "source": "wwwroot/js" } },
+        }'
+      styles-css: >-
+        src/Modules/Lombiq.ChartJs/Lombiq.ChartJs.Samples,
+        src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions,
+        src/Modules/Lombiq.JsonEditor/Lombiq.JsonEditor,
+        src/Modules/Lombiq.Privacy/Lombiq.Privacy,
+        src/Modules/Lombiq.UIKit/Lombiq.UIKit,
+        src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Core,
+        src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Native,
+        src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Native.Samples,
+
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
     uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
@@ -75,7 +98,7 @@ jobs:
 
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
-    needs: [build-and-test-larger-runners, build-and-test-nuget-test, codespell, powershell-static-code-analysis]
+    needs: [build-and-test-larger-runners, build-and-test-nuget-test, codespell, asset-lint, powershell-static-code-analysis]
     if: github.event.pull_request != ''
     uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
     secrets:

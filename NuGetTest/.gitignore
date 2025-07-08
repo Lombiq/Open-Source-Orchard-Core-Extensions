@@ -194,3 +194,7 @@ node_modules/
 src/*.Web/Localization
 /src/package.json
 /.editorconfig
+
+# Exclude generated MediaTheme files.
+*.MediaTheme.recipe.json
+_MediaTheme/

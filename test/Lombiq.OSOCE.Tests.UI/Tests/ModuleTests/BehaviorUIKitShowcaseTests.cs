@@ -29,7 +29,8 @@ public class BehaviorUIKitShowcaseTests : UITestBase
                         .Where(error =>
                             error.RuleId is not "prefer-native-element" and
                                 not "text-content" and
-                                not "no-redundant-role");
+                                not "no-redundant-role")
+                        .ToList();
                     errors.ShouldBeEmpty(HtmlValidationResultExtensions.GetParsedErrorMessageString(errors));
                     return Task.CompletedTask;
                 });

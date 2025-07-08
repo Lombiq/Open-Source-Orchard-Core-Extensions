@@ -6,6 +6,11 @@
     addLabels: [
         'no-jira-community-activity-issue',
     ],
+    schedule: [
+        // Between 0:00 and 6:59 UTC on Thursdays. Large time window to ensure that Renovate runs at least once then:
+        // https://docs.renovatebot.com/configuration-options/#schedule.
+        '* 0-6 * * 4',
+    ],
     packageRules: [
         {
             groupName: 'Non-Breaking Dependency Versions',

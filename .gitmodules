@@ -109,3 +109,6 @@
 	path = src/Modules/Lombiq.EmailClient
 	url = https://github.com/Lombiq/Orchard-Email-Client
 	branch = dev
+[submodule "src/Libraries/Lombiq.EInvoiceValidator"]
+	path = src/Libraries/Lombiq.EInvoiceValidator
+	url = https://github.com/Lombiq/eInvoice-Validator.git

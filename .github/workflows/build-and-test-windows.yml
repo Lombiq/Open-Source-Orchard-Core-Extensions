@@ -39,19 +39,21 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: root-solution-larger-runners
-      machine-types: '["windows-2022-8core"]'
+      machine-types: '["warp-windows-2022-x64-8x"]'
       timeout-minutes: 50
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
       build-create-binary-log: 'true'
       blame-hang-timeout: 720000
+      build-enable-nuget-caching: 'true'
+      build-enable-npm-caching: 'true'
       # This way, we can see Node.js build issues in the build log.
       build-verbosity: minimal
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
       # The currently used Elasticsearch setup action (https://github.com/elastic/elastic-github-actions/tree/master/elasticsearch)
       # can only be used on Linux.
-      test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests
+      test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~ElasticsearchTests
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -72,7 +74,7 @@ jobs:
       # supported by GHA.
       # The currently used Elasticsearch setup action (https://github.com/elastic/elastic-github-actions/tree/master/elasticsearch)
       # can only be used on Linux.
-      test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests
+      test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~ElasticsearchTests
 
   build-and-test-nuget-test:
     if: github.ref_name == github.event.repository.default_branch ||
@@ -96,7 +98,34 @@ jobs:
       # Without quotes, somehow the value won't be passed properly and the test execution will hang, despite seemingly
       # every value being the same as with quotes.
       # yamllint disable-line rule:quoted-strings
-      test-filter: 'FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~BehaviorElasticsearchTests'
+      test-filter: 'FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~ElasticsearchTests'
+
+  asset-lint:
+    if: github.ref_name == github.event.repository.default_branch ||
+        github.event_name == 'workflow_dispatch' ||
+        github.event.label.name == 'run-windows-build' ||
+        (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build'))
+    name: Lint Assets
+    uses: Lombiq/NodeJs-Extensions/.github/workflows/lint.yml@dev
+    # Be sure to keep the configs in sync with the build-and-test workflow.
+    with:
+      scripts: '
+        {
+          "src/Libraries/Lombiq.EInvoiceValidator/Lombiq.EInvoiceValidator": { "scripts": { "source": "." } },
+          "src/Modules/Lombiq.DataTables/Lombiq.DataTables": { "scripts": { "source": "wwwroot/js" } },
+          "src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions": { "scripts": { "source": "wwwroot/js" } },
+          "src/Modules/Lombiq.UIKit/Lombiq.UIKit": { "scripts": { "source": "wwwroot/js" } },
+          "src/Modules/Lombiq.Walkthroughs/Lombiq.Walkthroughs": { "scripts": { "source": "wwwroot/js" } },
+        }'
+      styles-css: >-
+        src/Modules/Lombiq.ChartJs/Lombiq.ChartJs.Samples,
+        src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions,
+        src/Modules/Lombiq.JsonEditor/Lombiq.JsonEditor,
+        src/Modules/Lombiq.Privacy/Lombiq.Privacy,
+        src/Modules/Lombiq.UIKit/Lombiq.UIKit,
+        src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Core,
+        src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Native,
+        src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Native.Samples,
 
   powershell-static-code-analysis:
     if: github.ref_name == github.event.repository.default_branch ||
@@ -124,7 +153,7 @@ jobs:
     name: Remove Windows Build Warning Label
     runs-on: ubuntu-24.04
     timeout-minutes: 2
-    needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
+    needs: [build-and-test-larger-runners, build-and-test-nuget-test, asset-lint, powershell-static-code-analysis]
     steps:
       - name: Remove Windows Build Warning Label
         uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@dev
