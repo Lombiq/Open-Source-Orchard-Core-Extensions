@@ -11,9 +11,6 @@
     <NodeJsExtensionsGlobalESLintConfigurationDirectory>$(MSBuildThisFileDirectory)</NodeJsExtensionsGlobalESLintConfigurationDirectory>
     <NodeJsExtensionsGlobalStylelintConfigurationDirectory>$(MSBuildThisFileDirectory)</NodeJsExtensionsGlobalStylelintConfigurationDirectory>
     <NodeJsExtensionsGlobalPrettierStyleConfigurationDirectory>$(MSBuildThisFileDirectory)</NodeJsExtensionsGlobalPrettierStyleConfigurationDirectory>
-
-    <!-- Specify the project directory path of Node.js Extensions for projects that detect it based on location. -->
-    <LombiqNodeJsExtensionsPath>$(MSBuildThisFileDirectory)src/Utilities/Lombiq.NodeJs.Extensions/Lombiq.NodeJs.Extensions</LombiqNodeJsExtensionsPath>
   </PropertyGroup>
 
   <!-- Copying the Lombiq logo as an icon to all NuGet-published projects. -->
