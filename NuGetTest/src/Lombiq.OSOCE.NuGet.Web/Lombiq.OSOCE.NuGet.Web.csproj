@@ -11,7 +11,7 @@
     <MarkdownAnalysis>solution</MarkdownAnalysis>
     <ExecDotnetPostcleanCommand>false</ExecDotnetPostcleanCommand>
     <ExecDotnetPrebuildCommand>false</ExecDotnetPrebuildCommand>
-    <OrchardCoreVersion>2.1.7</OrchardCoreVersion>
+    <OrchardCoreVersion>2.1.6</OrchardCoreVersion>
   </PropertyGroup>
 
   <ItemGroup>
