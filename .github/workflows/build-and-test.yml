@@ -26,7 +26,7 @@ jobs:
       # This way, we can see Node.js build issues in the build log.
       build-verbosity: minimal
       ui-test-retry-interval-seconds: '60'
-      dotnet-consolidation-exclude-project-path: 'src/*.Web/*.csproj,test/Lombiq.UITestingToolbox/Lombiq.Tests.UI/Lombiq.Tests.UI.csproj,src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions.Tests.UI/Lombiq.HelpfulExtensions.Tests.UI.csproj'
+      dotnet-consolidation-exclude-project-path: src/*.Web/*.csproj,test/Lombiq.UITestingToolbox/Lombiq.Tests.UI/Lombiq.Tests.UI.csproj,src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions.Tests.UI/Lombiq.HelpfulExtensions.Tests.UI.csproj
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
