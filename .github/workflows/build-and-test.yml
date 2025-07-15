@@ -26,8 +26,8 @@ jobs:
       # This way, we can see Node.js build issues in the build log.
       build-verbosity: minimal
       ui-test-retry-interval-seconds: '60'
-      # UITT and HE UI test project needs to be excluded because of a change in ISession in OC 2.1.7. This can be removed
-      # after Orchard Core upgrade in all subprojects.
+      # UITT and HE UI test project needs to be excluded because of a change in ISession in OC 2.1.7. This can be
+      # removed after an Orchard Core upgrade in all submodules.
       dotnet-consolidation-exclude-project-path: src/*.Web/*.csproj,test/Lombiq.UITestingToolbox/Lombiq.Tests.UI/Lombiq.Tests.UI.csproj,src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions.Tests.UI/Lombiq.HelpfulExtensions.Tests.UI.csproj
 
   build-and-test-standard-runners:
