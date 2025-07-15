@@ -48,9 +48,9 @@
     <PackageReference Include="Lombiq.VueJs.Tests.UI" Version="8.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.UIKit.Widgets.Tests.UI" Version="9.1.0" />
     <PackageReference Include="Lombiq.Walkthroughs.Tests.UI" Version="3.0.1-alpha.13.osoe-1064" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.0" />
-    <PackageReference Include="xunit.v3" Version="2.0.2" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.0">
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="xunit.v3" Version="2.0.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.1">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
