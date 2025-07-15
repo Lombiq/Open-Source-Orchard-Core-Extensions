@@ -103,6 +103,8 @@ jobs:
       # every value being the same as with quotes.
       # yamllint disable-line rule:quoted-strings
       test-filter: 'FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~ElasticsearchTests'
+      # It's enough to check consolidation only in the Linux workflow.
+      verify-dotnet-consolidation: false
 
   asset-lint:
     if: github.ref_name == github.event.repository.default_branch ||
