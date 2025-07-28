@@ -10,10 +10,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8B131E3B-202B-486D-A3A4-CB84AC4C3370}"
 	ProjectSection(SolutionItems) = preProject
 		.codespellrc = .codespellrc
-		.eslintrc.js = .eslintrc.js
 		.gitignore = .gitignore
 		.prettierrc.js = .prettierrc.js
-		.stylelintrc.js = .stylelintrc.js
+		stylelint.config.mjs = stylelint.config.mjs
 		Directory.Build.props = Directory.Build.props
 		License.md = License.md
 		NuGet.config = NuGet.config
@@ -24,6 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		renovate-osoce.json5 = renovate-osoce.json5
 		renovate.json5 = renovate.json5
 		Reset-Local.ps1 = Reset-Local.ps1
+		eslint.config.mjs = eslint.config.mjs
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{11E06A11-1733-408D-BB2F-BFA07075F812}"
