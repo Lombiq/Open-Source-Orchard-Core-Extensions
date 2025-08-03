@@ -23,7 +23,7 @@
   <ItemGroup>
     <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="12.2.1-alpha.10.osoe-1069" />
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="10.0.1-alpha.10.nest-561" />
-    <PackageReference Include="Lombiq.BaseTheme.Tests.UI" Version="9.0.1-alpha.2.osoe-1069" />
+    <PackageReference Include="Lombiq.BaseTheme.Tests.UI" Version="9.0.1-alpha.3.osoe-1069" />
     <PackageReference Include="Lombiq.ChartJs.Tests.UI" Version="9.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.ContentEditors.Tests.UI" Version="6.0.0-alpha.2.osoe-945" />
     <PackageReference Include="Lombiq.DataTables.Tests.UI" Version="10.0.2-alpha.3.osoe-1107" />
