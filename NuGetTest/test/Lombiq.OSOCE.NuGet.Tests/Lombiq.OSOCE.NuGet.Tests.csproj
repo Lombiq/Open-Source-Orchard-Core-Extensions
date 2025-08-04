@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.HelpfulLibraries" Version="12.2.1-alpha.0.nest-561" />
+    <PackageReference Include="Lombiq.HelpfulLibraries" Version="12.2.1-alpha.10.osoe-1069" />
     <PackageReference Include="Lombiq.Tests" Version="5.0.0" />
     <PackageReference Include="Lombiq.EInvoiceValidator" Version="1.0.0" />
     <PackageReference Include="Lombiq.EInvoiceValidator.Sample" Version="1.0.0" />

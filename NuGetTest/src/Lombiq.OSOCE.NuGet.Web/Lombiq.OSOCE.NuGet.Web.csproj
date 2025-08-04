@@ -21,8 +21,9 @@
 
   <ItemGroup>
     <PackageReference Include="Lombiq.AuditTrailExtensions" Version="8.0.0" />
-    <PackageReference Include="Lombiq.BaseTheme" Version="9.0.1-alpha.1.osoe-1064" />
-    <PackageReference Include="Lombiq.BaseTheme.Samples" Version="9.0.1-alpha.1.osoe-1064" />
+    <PackageReference Include="Lombiq.BaseTheme" Version="9.0.1-alpha.4.osoe-1069" />
+    <PackageReference Include="Lombiq.BaseTheme.Core" Version="9.0.1-alpha.4.osoe-1069" />
+    <PackageReference Include="Lombiq.BaseTheme.Samples" Version="9.0.1-alpha.4.osoe-1069" />
     <PackageReference Include="Lombiq.ChartJs" Version="9.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.ChartJs.Samples" Version="9.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.ContentEditors" Version="6.0.0-alpha.2.osoe-945" />
@@ -31,35 +32,35 @@
     <PackageReference Include="Lombiq.DataTables.Samples" Version="10.0.2-alpha.3.osoe-1107" />
     <PackageReference Include="Lombiq.EmailClient" Version="1.0.0-alpha.8.osoe-1064" />
     <PackageReference Include="Lombiq.EmailClient.Samples" Version="1.0.0-alpha.8.osoe-1064" />
-    <PackageReference Include="Lombiq.HelpfulExtensions" Version="10.0.1-alpha.10.nest-561" />
-    <PackageReference Include="Lombiq.HelpfulLibraries" Version="12.2.1-alpha.0.nest-561" />
+    <PackageReference Include="Lombiq.HelpfulExtensions" Version="10.0.1-alpha.11.osoe-1069" />
+    <PackageReference Include="Lombiq.HelpfulLibraries" Version="12.2.1-alpha.10.osoe-1069" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="10.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay" Version="7.0.1-alpha.2.nest-561" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="8.0.1-alpha.6.nest-562" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme.Tests.Theme" Version="8.0.1-alpha.6.nest-562" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="8.0.1-alpha.6.nest-562" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme.Targets" Version="8.0.1-alpha.6.nest-562" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="9.0.1-alpha.12.nest-561" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots" Version="9.0.1-alpha.12.nest-561" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="9.0.1-alpha.12.nest-561" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="9.0.1-alpha.12.nest-561" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Maintenance" Version="9.0.1-alpha.12.nest-561" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="9.0.1-alpha.12.nest-561" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement" Version="9.0.1-alpha.12.nest-561" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.EmailQuotaManagement" Version="9.0.1-alpha.12.nest-561" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="9.0.1-alpha.15.osoe-1069" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots" Version="9.0.1-alpha.15.osoe-1069" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="9.0.1-alpha.15.osoe-1069" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="9.0.1-alpha.15.osoe-1069" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Maintenance" Version="9.0.1-alpha.15.osoe-1069" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="9.0.1-alpha.15.osoe-1069" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement" Version="9.0.1-alpha.15.osoe-1069" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.EmailQuotaManagement" Version="9.0.1-alpha.15.osoe-1069" />
     <PackageReference Include="Lombiq.JsonEditor" Version="9.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.LoginAsAnybody" Version="5.0.1-alpha.0.osoe-935" />
-    <PackageReference Include="Lombiq.Privacy" Version="10.0.1-alpha.2.osoe-1064" />
-    <PackageReference Include="Lombiq.Privacy.Samples" Version="10.0.1-alpha.2.osoe-1064" />
+    <PackageReference Include="Lombiq.Privacy" Version="10.0.1-alpha.4.osoe-1069" />
+    <PackageReference Include="Lombiq.Privacy.Samples" Version="10.0.1-alpha.4.osoe-1069" />
     <PackageReference Include="Lombiq.SetupExtensions" Version="7.0.0" />
-    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="13.0.0" />
-    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="13.0.0" />
+    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="13.0.1-alpha.7.osoe-1069" />
+    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="13.0.1-alpha.7.osoe-1069" />
     <PackageReference Include="Lombiq.UIKit" Version="9.1.0" />
     <PackageReference Include="Lombiq.UIKit.Widgets" Version="9.1.0" />
     <PackageReference Include="Lombiq.UIKit.Widgets.Tests.UI" Version="9.1.0" />
     <PackageReference Include="Lombiq.VueJs" Version="8.0.2-alpha.1.osoe-945" />
     <PackageReference Include="Lombiq.VueJs.Samples" Version="8.0.2-alpha.1.osoe-945" />
-    <PackageReference Include="Lombiq.Walkthroughs" Version="3.0.1-alpha.13.osoe-1064" />
+    <PackageReference Include="Lombiq.Walkthroughs" Version="3.0.1-alpha.15.osoe-1069" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="1.2.2" Condition="'$(RazorRuntimeCompilation)' == 'true'" />
   </ItemGroup>
 
