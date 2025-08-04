@@ -1,7 +1,7 @@
 using Lombiq.Hosting.MediaTheme.Bridge.Tests.UI.Extensions;
 using Lombiq.Hosting.MediaTheme.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Pages;
+using Lombiq.Tests.UI.Models;
 using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
