@@ -22,6 +22,7 @@
   <ItemGroup>
     <PackageReference Include="Lombiq.AuditTrailExtensions" Version="8.0.0" />
     <PackageReference Include="Lombiq.BaseTheme" Version="9.0.1-alpha.4.osoe-1069" />
+    <PackageReference Include="Lombiq.BaseTheme.Core" Version="9.0.1-alpha.4.osoe-1069" />
     <PackageReference Include="Lombiq.BaseTheme.Samples" Version="9.0.1-alpha.4.osoe-1069" />
     <PackageReference Include="Lombiq.ChartJs" Version="9.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.ChartJs.Samples" Version="9.0.1-alpha.0.osoe-935" />
