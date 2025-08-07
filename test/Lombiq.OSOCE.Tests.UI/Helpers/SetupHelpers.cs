@@ -1,5 +1,5 @@
 ﻿using Lombiq.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Pages;
+using Lombiq.Tests.UI.Models;
 using Lombiq.Tests.UI.Services;
 using System;
 using System.Threading.Tasks;
@@ -12,7 +12,7 @@ public static class SetupHelpers
     {
         // We must use a custom configuration with the "Blog" setup to test if the feature works when enabled on
         // an existing stock site without setup pre-configuration.
-        var homepageUri = await context.GoToSetupPageAndSetupOrchardCoreAsync(
+        var homepageUri = await context.GoToSetupAndSetupOrchardCoreAsync(
             new OrchardCoreSetupParameters(context)
             {
                 SiteName = "Lombiq's OSOCE - UI Testing - With Blog Setup",
