@@ -33,13 +33,13 @@
     <PackageReference Include="Lombiq.EmailClient" Version="1.0.0-alpha.8.osoe-1064" />
     <PackageReference Include="Lombiq.EmailClient.Samples" Version="1.0.0-alpha.8.osoe-1064" />
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="10.0.1-alpha.11.osoe-1069" />
-    <PackageReference Include="Lombiq.HelpfulLibraries" Version="12.2.1-alpha.10.osoe-1069" />
+    <PackageReference Include="Lombiq.HelpfulLibraries" Version="12.3.0" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="10.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay" Version="7.0.1-alpha.2.nest-561" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="8.0.1-alpha.6.nest-562" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Tests.Theme" Version="8.0.1-alpha.6.nest-562" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="8.0.1-alpha.6.nest-562" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Targets" Version="8.0.1-alpha.6.nest-562" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="8.0.1-alpha.7.olys-29" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Tests.Theme" Version="8.0.1-alpha.7.olys-29" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="8.0.1-alpha.7.olys-29" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Targets" Version="8.0.1-alpha.7.olys-29" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="9.0.1-alpha.15.osoe-1069" />
     <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots" Version="9.0.1-alpha.15.osoe-1069" />
     <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="9.0.1-alpha.15.osoe-1069" />
@@ -53,11 +53,11 @@
     <PackageReference Include="Lombiq.Privacy" Version="10.0.1-alpha.4.osoe-1069" />
     <PackageReference Include="Lombiq.Privacy.Samples" Version="10.0.1-alpha.4.osoe-1069" />
     <PackageReference Include="Lombiq.SetupExtensions" Version="7.0.0" />
-    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="13.0.1-alpha.7.osoe-1069" />
-    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="13.0.1-alpha.7.osoe-1069" />
-    <PackageReference Include="Lombiq.UIKit" Version="9.1.0" />
-    <PackageReference Include="Lombiq.UIKit.Widgets" Version="9.1.0" />
-    <PackageReference Include="Lombiq.UIKit.Widgets.Tests.UI" Version="9.1.0" />
+    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="14.0.0" />
+    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="14.0.0" />
+    <PackageReference Include="Lombiq.UIKit" Version="10.0.0" />
+    <PackageReference Include="Lombiq.UIKit.Widgets" Version="10.0.0" />
+    <PackageReference Include="Lombiq.UIKit.Widgets.Tests.UI" Version="10.0.0" />
     <PackageReference Include="Lombiq.VueJs" Version="8.0.2-alpha.1.osoe-945" />
     <PackageReference Include="Lombiq.VueJs.Samples" Version="8.0.2-alpha.1.osoe-945" />
     <PackageReference Include="Lombiq.Walkthroughs" Version="3.0.1-alpha.15.osoe-1069" />
