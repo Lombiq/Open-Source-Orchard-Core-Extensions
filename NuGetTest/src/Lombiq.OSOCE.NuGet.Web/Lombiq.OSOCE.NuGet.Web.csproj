@@ -53,8 +53,8 @@
     <PackageReference Include="Lombiq.Privacy" Version="10.0.1-alpha.4.osoe-1069" />
     <PackageReference Include="Lombiq.Privacy.Samples" Version="10.0.1-alpha.4.osoe-1069" />
     <PackageReference Include="Lombiq.SetupExtensions" Version="7.0.0" />
-    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="14.0.0" />
-    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="14.0.0" />
+    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="14.0.1-alpha.0.osoe-1150" />
+    <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="14.0.1-alpha.0.osoe-1150" />
     <PackageReference Include="Lombiq.UIKit" Version="10.0.0" />
     <PackageReference Include="Lombiq.UIKit.Widgets" Version="10.0.0" />
     <PackageReference Include="Lombiq.UIKit.Widgets.Tests.UI" Version="10.0.0" />
