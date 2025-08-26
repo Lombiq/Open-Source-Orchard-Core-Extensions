@@ -22,7 +22,7 @@
 
   <ItemGroup>
     <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="12.3.0" />
-    <PackageReference Include="Lombiq.BaseTheme.Tests.UI" Version="10.0.1-alpha.0.osoe-1150" />
+    <PackageReference Include="Lombiq.BaseTheme.Tests.UI" Version="10.0.1" />
     <PackageReference Include="Lombiq.ChartJs.Tests.UI" Version="9.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.ContentEditors.Tests.UI" Version="6.0.0-alpha.2.osoe-945" />
     <PackageReference Include="Lombiq.DataTables.Tests.UI" Version="10.0.2-alpha.3.osoe-1107" />
@@ -43,7 +43,7 @@
     <PackageReference Include="Lombiq.OrchardCoreApiClient.Tests.UI" Version="7.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.Privacy.Tests.UI" Version="10.0.1-alpha.4.osoe-1069" />
     <PackageReference Include="Lombiq.HelpfulExtensions.Tests.UI" Version="11.0.0" />
-    <PackageReference Include="Lombiq.Tests.UI" Version="14.0.1-alpha.1.osoe-1150" />
+    <PackageReference Include="Lombiq.Tests.UI" Version="14.1.0" />
     <PackageReference Include="Lombiq.VueJs.Tests.UI" Version="8.0.2-alpha.1.osoe-945" />
     <PackageReference Include="Lombiq.UIKit.Widgets.Tests.UI" Version="10.0.0" />
     <PackageReference Include="Lombiq.Walkthroughs.Tests.UI" Version="3.0.1-alpha.15.osoe-1069" />
