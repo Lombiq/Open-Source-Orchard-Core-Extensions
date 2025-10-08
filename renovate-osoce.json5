@@ -14,6 +14,12 @@
     packageRules: [
         {
             groupName: 'Non-Breaking Dependency Versions',
+            // For Orchard Core packages, only patch versions should be updated automatically, and only in web projects.
+            // That's handled in default-orchard-core in the common Renovate config. So, preventing an override of that
+            // here.
+            matchPackageNames: [
+                '!OrchardCore*',
+            ],
             matchUpdateTypes: ['minor', 'patch', 'pin', 'pinDigest'],
         },
     ]
