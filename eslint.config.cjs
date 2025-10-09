@@ -1,12 +1,13 @@
-const { defineConfig } = require('eslint/config');
+const { FlatCompat } = require('@eslint/eslintrc');
+const compat = new FlatCompat({ baseDirectory: __dirname });
 
-// The following path may have to be adjusted to your directory structure.
-const { baseConfigs } = require('./src/Utilities/Lombiq.NodeJs.Extensions/Lombiq.NodeJs.Extensions/config/.eslintrc.lombiq-base.js');
-
-module.exports = defineConfig([{
-    extends: baseConfigs,
+const eslintrc = compat.config({
+    // The following path may have to be adjusted to your directory structure.
+    extends: './src/Utilities/Lombiq.NodeJs.Extensions/Lombiq.NodeJs.Extensions/config/.eslintrc.lombiq-base.js',
 
     // Add custom rules and overrides here.
     rules: {
     },
-}]);
+});
+
+module.exports = [ ...eslintrc ]
