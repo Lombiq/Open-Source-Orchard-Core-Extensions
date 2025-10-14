@@ -4,4 +4,4 @@ const lombiqConfig = require('./src/Utilities/Lombiq.NodeJs.Extensions/Lombiq.No
 module.exports = {
     ...lombiqConfig,
     // Add custom rules and overrides here.
-}
+};
