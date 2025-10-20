@@ -22,7 +22,7 @@ jobs:
     timeout-minutes: 2
     steps:
       - name: Remove Run Windows Build Label
-        uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@issue/OSOE-1169
+        uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@issue/OSOE-1010
         with:
           # The token is necessary to be able to remove the label even if the workflow is triggered by a pull request
           # coming from a fork.
@@ -36,7 +36,7 @@ jobs:
             github.event.label.name == 'run-windows-build' ||
             (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build')))
     name: Build and Test Windows - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1169
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1010
     with:
       parent-job-name: root-solution-larger-runners
       machine-types: '["warp-windows-2025-x64-8x"]'
@@ -60,7 +60,7 @@ jobs:
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
     name: Build and Test Windows - root solution (standard runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1169
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1010
     with:
       parent-job-name: root-solution-standard-runners
       # Since dev builds are not awaited by anyone, they can run on the slower free runners.
@@ -86,7 +86,7 @@ jobs:
         github.event.label.name == 'run-windows-build' ||
         (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build'))
     name: Build and Test Windows - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1169
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1010
     with:
       parent-job-name: nuget-solution
       machine-types: '["windows-2025"]'
@@ -112,7 +112,7 @@ jobs:
         github.event.label.name == 'run-windows-build' ||
         (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build'))
     name: Lint Assets
-    uses: Lombiq/NodeJs-Extensions/.github/workflows/lint.yml@issue/OSOE-1169
+    uses: Lombiq/NodeJs-Extensions/.github/workflows/lint.yml@issue/OSOE-1010
     # Be sure to keep the configs in sync with the build-and-test workflow.
     with:
       scripts: '
@@ -148,7 +148,7 @@ jobs:
     name: Post Pull Request Checks Automation
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
     if: github.event.pull_request != ''
-    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@issue/OSOE-1169
+    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@issue/OSOE-1010
     secrets:
       JIRA_BASE_URL: ${{ secrets.DEFAULT_JIRA_BASE_URL }}
       JIRA_USER_EMAIL: ${{ secrets.DEFAULT_JIRA_USER_EMAIL }}
@@ -162,7 +162,7 @@ jobs:
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, asset-lint, powershell-static-code-analysis]
     steps:
       - name: Remove Windows Build Warning Label
-        uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@issue/OSOE-1169
+        uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@issue/OSOE-1010
         with:
           # The token is necessary to be able to remove the label even if the workflow is triggered by a pull request
           # coming from a fork.
