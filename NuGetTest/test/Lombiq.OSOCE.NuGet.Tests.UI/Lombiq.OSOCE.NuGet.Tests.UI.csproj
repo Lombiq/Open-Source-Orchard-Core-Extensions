@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="12.3.1-alpha.1.osoe-1171" />
+    <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="12.3.1-alpha.2.osoe-1171" />
     <PackageReference Include="Lombiq.BaseTheme.Tests.UI" Version="10.0.1" />
     <PackageReference Include="Lombiq.ChartJs.Tests.UI" Version="9.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.ContentEditors.Tests.UI" Version="6.0.0-alpha.4.osoe-1171" />
