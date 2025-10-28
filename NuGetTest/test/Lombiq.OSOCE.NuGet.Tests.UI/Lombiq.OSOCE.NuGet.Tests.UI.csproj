@@ -44,7 +44,6 @@
     <PackageReference Include="Lombiq.Privacy.Tests.UI" Version="10.0.1-alpha.4.osoe-1069" />
     <PackageReference Include="Lombiq.HelpfulExtensions.Tests.UI" Version="11.0.1-alpha.1.olys-35" />
     <PackageReference Include="Lombiq.Tests.UI" Version="14.1.0" />
-    <PackageReference Include="Lombiq.VueJs.Tests.UI" Version="8.0.1-alpha.4.osoe-1171" />
     <PackageReference Include="Lombiq.UIKit.Widgets.Tests.UI" Version="10.0.0" />
     <PackageReference Include="Lombiq.Walkthroughs.Tests.UI" Version="3.0.1-alpha.15.osoe-1069" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.0" />

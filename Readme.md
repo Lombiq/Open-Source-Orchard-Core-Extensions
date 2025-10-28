@@ -61,8 +61,8 @@ Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source
 
 ### Themes
 
-- [`Lombiq.BaseTheme`](https://github.com/Lombiq/Orchard-Base-Theme): This theme contains infrastructure for custom Bootstrap 5 themes with standardized zones and built-in front end menu display.
-- [`Lombiq.BaseTheme.Samples`](https://github.com/Lombiq/Orchard-Base-Theme/tree/dev/Lombiq.BaseTheme.Samples): A sample theme that demonstrates the features of the [`Lombiq.BaseTheme`](https://github.com/Lombiq/Orchard-Base-Theme).
+- [`Lombiq.BaseTheme.Native`](https://github.com/Lombiq/Orchard-Base-Theme): This theme contains infrastructure for custom native CSS Bootstrap 5 themes (using Orchard Core's built-in resource for BS5) with standardized zones and built-in front end menu display.
+- [`Lombiq.BaseTheme.Native.Samples`](https://github.com/Lombiq/Orchard-Base-Theme/tree/dev/Lombiq.BaseTheme.Native.Samples): A sample theme that demonstrates the features of the [`Lombiq.BaseTheme.Native`](https://github.com/Lombiq/Orchard-Base-Theme).
 - [`Lombiq.Hosting.MediaTheme`](https://github.com/Lombiq/Hosting-Media-Theme): With the help of this theme and its dependency, the [`Lombiq.Hosting.MediaTheme.Bridge`](https://github.com/Lombiq/Hosting-Media-Theme), you'll be able to host your theme assets and templates from Media Library.
 - [`Lombiq.Hosting.MediaTheme.Tests.Theme`](https://github.com/Lombiq/Hosting-Media-Theme): A theme only used for testing that demonstrates the local development version of a Media Theme.
 
@@ -99,7 +99,7 @@ You can activate various sample content in the site:
 - [`Lombiq.DataTables`](https://github.com/Lombiq/Orchard-Data-Tables):
   - Go to Features in the admin dashboard and select "Lombiq Data Tables - Samples".
   - Go to Recipes in the admin dashboard and select "Lombiq Data Tables - Sample Content - Employee".
-- [`Lombiq.BaseTheme`](https://github.com/Lombiq/Orchard-Base-Theme):
+- [`Lombiq.BaseTheme.Native`](https://github.com/Lombiq/Orchard-Base-Theme):
   - The "TEST: Basic Orchard Features" setup recipe automatically sets it up. If not using it, run the "Lombiq Orchard Core Base Theme - Layers and Zones" recipe, and then enable the theme in Admin → Design → Themes.
   - In case of theme development you can use the "Lombiq Orchard Core Base Theme - Styling Demo" theme to test against some common HTML elements.
 - [`Lombiq.ChartJs`](https://github.com/Lombiq/Orchard-Chart.js): Go to Recipes in the admin dashboard and select "Lombiq Chart.js - Sample Content - Income/Expense".
