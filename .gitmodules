@@ -6,6 +6,10 @@
 	path = src/Modules/Lombiq.VueJs
 	url = https://github.com/Lombiq/Orchard-Vue.js.git
 	branch = dev
+[submodule "src/Utilities/Lombiq.Npm.Targets"]
+	path = src/Utilities/Lombiq.Npm.Targets
+	url = https://github.com/Lombiq/NPM-Targets.git
+	branch = dev
 [submodule "src/Modules/Lombiq.HelpfulExtensions"]
 	path = src/Modules/Lombiq.HelpfulExtensions
 	url = https://github.com/Lombiq/Helpful-Extensions.git
@@ -57,6 +61,10 @@
 [submodule "src/Modules/Lombiq.Privacy"]
 	path = src/Modules/Lombiq.Privacy
 	url = https://github.com/Lombiq/Orchard-Privacy.git
+	branch = dev
+[submodule "src/Utilities/Lombiq.NodeJs.Extensions"]
+	path = src/Utilities/Lombiq.NodeJs.Extensions
+	url = https://github.com/Lombiq/NodeJs-Extensions.git
 	branch = dev
 [submodule "src/Modules/Lombiq.DataTables"]
 	path = src/Modules/Lombiq.DataTables
