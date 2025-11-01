@@ -1,7 +1,0 @@
-{
-  "private": true,
-  "scripts": {
-    "dotnet-prebuild": "whoami",
-    "dotnet-postclean": ""
-  }
-}
