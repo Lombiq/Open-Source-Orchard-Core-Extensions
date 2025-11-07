@@ -76,7 +76,7 @@ jobs:
           "src/Modules/Lombiq.Walkthroughs/Lombiq.Walkthroughs": { "scripts": { "source": "wwwroot/js" } },
           "src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.Maintenance": { "scripts": { "source": "wwwroot/js" } },
         }'
-      styles-css: >-
+      styles: >-
         src/Modules/Lombiq.ChartJs/Lombiq.ChartJs.Samples,
         src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions,
         src/Modules/Lombiq.JsonEditor/Lombiq.JsonEditor,
