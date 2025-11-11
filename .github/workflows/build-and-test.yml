@@ -66,7 +66,7 @@ jobs:
     # Be sure to keep the configs in sync with the build-and-test-windows workflow.
     with:
       scripts: >
-          src/Libraries/Lombiq.EInvoiceValidator/Lombiq.EInvoiceValidator,
+          src/Libraries/Lombiq.EInvoiceValidator/Lombiq.EInvoiceValidator : .,
           src/Modules/Lombiq.ContentEditors/Lombiq.ContentEditors,
           src/Modules/Lombiq.ContentEditors/Lombiq.ContentEditors.Samples,
           src/Modules/Lombiq.DataTables/Lombiq.DataTables,
