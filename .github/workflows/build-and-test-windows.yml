@@ -112,20 +112,19 @@ jobs:
         github.event.label.name == 'run-windows-build' ||
         (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build'))
     name: Lint Assets
-    uses: Lombiq/NodeJs-Extensions/.github/workflows/lint.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/asset-lint.yml@issue/OSOE-1185
     # Be sure to keep the configs in sync with the build-and-test workflow.
     with:
-      scripts: '
-        {
-          "src/Libraries/Lombiq.EInvoiceValidator/Lombiq.EInvoiceValidator": { "scripts": { "source": "." } },
-          "src/Modules/Lombiq.ContentEditors/Lombiq.ContentEditors": { "scripts": { "source": "wwwroot/js" } },
-          "src/Modules/Lombiq.ContentEditors/Lombiq.ContentEditors.Samples": { "scripts": { "source": "wwwroot/js" } },
-          "src/Modules/Lombiq.DataTables/Lombiq.DataTables": { "scripts": { "source": "wwwroot/js" } },
-          "src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions": { "scripts": { "source": "wwwroot/js" } },
-          "src/Modules/Lombiq.UIKit/Lombiq.UIKit": { "scripts": { "source": "wwwroot/js" } },
-          "src/Modules/Lombiq.Walkthroughs/Lombiq.Walkthroughs": { "scripts": { "source": "wwwroot/js" } },
-        }'
-      styles-css: >-
+      scripts: >
+          src/Libraries/Lombiq.EInvoiceValidator/Lombiq.EInvoiceValidator : .,
+          src/Modules/Lombiq.ContentEditors/Lombiq.ContentEditors,
+          src/Modules/Lombiq.ContentEditors/Lombiq.ContentEditors.Samples,
+          src/Modules/Lombiq.DataTables/Lombiq.DataTables,
+          src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions,
+          src/Modules/Lombiq.UIKit/Lombiq.UIKit,
+          src/Modules/Lombiq.Walkthroughs/Lombiq.Walkthroughs,
+          src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.Maintenance,
+      styles: >-
         src/Modules/Lombiq.ChartJs/Lombiq.ChartJs.Samples,
         src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions,
         src/Modules/Lombiq.JsonEditor/Lombiq.JsonEditor,
