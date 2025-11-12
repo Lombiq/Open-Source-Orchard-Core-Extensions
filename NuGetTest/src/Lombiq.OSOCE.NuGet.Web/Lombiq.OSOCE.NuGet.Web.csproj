@@ -69,7 +69,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\Utilities\Lombiq.NodeJs.Extensions\Lombiq.NodeJs.Extensions.Samples.NuGet\Lombiq.NodeJs.Extensions.Samples.NuGet.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.OSOCE.NuGet.TestModule\Lombiq.OSOCE.NuGet.TestModule.csproj" />
     <ProjectReference Include="..\Themes\Lombiq.OSOCE.NuGet.TestTheme\Lombiq.OSOCE.NuGet.TestTheme.csproj" />
   </ItemGroup>
