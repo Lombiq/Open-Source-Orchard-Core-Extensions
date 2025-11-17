@@ -31,6 +31,7 @@ jobs:
       parent-job-name: root-solution-larger-runners
       machine-types: '["warp-windows-2025-x64-8x"]'
       timeout-minutes: 50
+      free-up-space: 'true'
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
       build-create-binary-log: 'true'
@@ -55,6 +56,7 @@ jobs:
       # Since dev builds are not awaited by anyone, they can run on the slower free runners.
       machine-types: '["windows-2025"]'
       timeout-minutes: 70
+      free-up-space: 'true'
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
       build-create-binary-log: 'true'
@@ -77,6 +79,7 @@ jobs:
       machine-types: '["windows-2025"]'
       build-directory: NuGetTest
       timeout-minutes: 30
+      free-up-space: 'true'
       # This way, we can see Node.js build issues in the build log.
       build-verbosity: minimal
       dotnet-test-process-timeout: 540000

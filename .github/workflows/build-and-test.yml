@@ -15,6 +15,7 @@ jobs:
       parent-job-name: root-solution-larger-runners
       machine-types: '["warp-ubuntu-2404-x64-4x"]'
       timeout-minutes: 30
+      free-up-space: 'true'
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
       set-up-elasticsearch: 'true'
@@ -33,6 +34,7 @@ jobs:
       # Since dev builds are not awaited by anyone, they can run on the slower free runners.
       parent-job-name: root-solution-standard-runners
       timeout-minutes: 50
+      free-up-space: 'true'
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
       set-up-elasticsearch: 'true'
@@ -49,6 +51,7 @@ jobs:
       parent-job-name: nuget-solution
       build-directory: NuGetTest
       timeout-minutes: 20
+      free-up-space: 'true'
       blame-hang-timeout: 480000
       # This way, we can see Node.js build issues in the build log.
       build-verbosity: minimal
