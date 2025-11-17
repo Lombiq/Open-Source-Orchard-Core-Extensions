@@ -6,6 +6,12 @@ name: Build and Test Windows
 on:
   workflow_dispatch:
   pull_request:
+    types: [labeled]
+  push:
+    branches:
+      - dev
+  pull_request_review:
+    types: [submitted]
 
 jobs:
   remove-run-windows-build-label:
@@ -25,13 +31,16 @@ jobs:
           type: remove
 
   build-and-test-larger-runners:
+    if: github.ref_name != github.event.repository.default_branch &&
+        (github.event_name == 'workflow_dispatch' ||
+            github.event.label.name == 'run-windows-build' ||
+            (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build')))
     name: Build and Test Windows - root solution (larger runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1194
     with:
       parent-job-name: root-solution-larger-runners
       machine-types: '["warp-windows-2025-x64-8x"]'
       timeout-minutes: 50
-      free-up-space: 'true'
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
       build-create-binary-log: 'true'
@@ -49,6 +58,7 @@ jobs:
       verify-dotnet-consolidation: false
 
   build-and-test-standard-runners:
+    if: github.ref_name == github.event.repository.default_branch
     name: Build and Test Windows - root solution (standard runners)
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1194
     with:
@@ -56,7 +66,6 @@ jobs:
       # Since dev builds are not awaited by anyone, they can run on the slower free runners.
       machine-types: '["windows-2025"]'
       timeout-minutes: 70
-      free-up-space: 'true'
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
       build-create-binary-log: 'true'
@@ -72,6 +81,10 @@ jobs:
       verify-dotnet-consolidation: false
 
   build-and-test-nuget-test:
+    if: github.ref_name == github.event.repository.default_branch ||
+        github.event_name == 'workflow_dispatch' ||
+        github.event.label.name == 'run-windows-build' ||
+        (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build'))
     name: Build and Test Windows - NuGetTest solution
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1194
     with:
@@ -79,7 +92,6 @@ jobs:
       machine-types: '["windows-2025"]'
       build-directory: NuGetTest
       timeout-minutes: 30
-      free-up-space: 'true'
       # This way, we can see Node.js build issues in the build log.
       build-verbosity: minimal
       dotnet-test-process-timeout: 540000
