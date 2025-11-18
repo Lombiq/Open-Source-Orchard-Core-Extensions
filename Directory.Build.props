@@ -1,18 +1,4 @@
 <Project>
-  <!-- Node.js Extensions configuration -->
-  <PropertyGroup>
-    <!-- Use a single installation of Node.js Extensions for all projects in the solution. Currently, only works on
-         Windows. -->
-    <UseGlobalNodeJsExtensionsNpmPackage>true</UseGlobalNodeJsExtensionsNpmPackage>
-    <NodeJsExtensionsNpmPackageSourcePath>$(MSBuildThisFileDirectory)node_modules/.nx</NodeJsExtensionsNpmPackageSourcePath>
-
-    <!-- Instruct Node.js Extensions to create .eslintrc, .stylelintrc and .prettierrc files in the current directory, which is the
-         solution root directory. -->
-    <NodeJsExtensionsGlobalESLintConfigurationDirectory>$(MSBuildThisFileDirectory)</NodeJsExtensionsGlobalESLintConfigurationDirectory>
-    <NodeJsExtensionsGlobalStylelintConfigurationDirectory>$(MSBuildThisFileDirectory)</NodeJsExtensionsGlobalStylelintConfigurationDirectory>
-    <NodeJsExtensionsGlobalPrettierStyleConfigurationDirectory>$(MSBuildThisFileDirectory)</NodeJsExtensionsGlobalPrettierStyleConfigurationDirectory>
-  </PropertyGroup>
-
   <!-- Copying the Lombiq logo as an icon to all NuGet-published projects. -->
   <Target Name="Copy NuGet icon"
           AfterTargets="AfterResolveReferences"
