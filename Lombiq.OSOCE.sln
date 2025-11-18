@@ -246,6 +246,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.BaseTheme.Native.Sam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.VueJs.Resources", "src\Modules\Lombiq.VueJs\Lombiq.VueJs.Resources\Lombiq.VueJs.Resources.csproj", "{B0C44956-2E7A-4D96-8D71-930B3F1D783F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Asset Linting Action Configuration", "Asset Linting Action Configuration", "{C09B86B8-2A07-4C94-98C9-F0A6ECBADD56}"
+	ProjectSection(SolutionItems) = preProject
+		tools\Lombiq.GitHub.Actions\.github\actions\asset-lint\css\stylelint.config.mjs = tools\Lombiq.GitHub.Actions\.github\actions\asset-lint\css\stylelint.config.mjs
+		tools\Lombiq.GitHub.Actions\.github\actions\asset-lint\js\eslint.config.mjs = tools\Lombiq.GitHub.Actions\.github\actions\asset-lint\js\eslint.config.mjs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1556,6 +1562,7 @@ Global
 		{C56A4DED-9C33-4543-857C-C351F9AE586E} = {574156BC-2074-47C9-8EA8-70DED6658DD5}
 		{BBDBF5A0-51B6-41C5-925F-66FD9CF46E9D} = {41CE6E12-92B4-4CF5-9D9C-C214C41CA8FE}
 		{B0C44956-2E7A-4D96-8D71-930B3F1D783F} = {11E06A11-1733-408D-BB2F-BFA07075F812}
+		{C09B86B8-2A07-4C94-98C9-F0A6ECBADD56} = {8B131E3B-202B-486D-A3A4-CB84AC4C3370}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
