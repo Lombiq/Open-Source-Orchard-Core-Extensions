@@ -35,6 +35,7 @@ jobs:
       # Since dev builds are not awaited by anyone, they can run on the slower free runners.
       parent-job-name: root-solution-standard-runners
       timeout-minutes: 50
+      free-up-space: 'true'
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
       set-up-elasticsearch: 'true'
