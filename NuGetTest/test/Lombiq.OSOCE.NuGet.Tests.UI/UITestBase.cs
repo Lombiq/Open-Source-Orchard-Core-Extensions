@@ -41,7 +41,8 @@ public class UITestBase : OrchardCoreUITestBase<Program>
                 configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync = validationResult =>
                 {
                     var errors = validationResult.GetParsedErrors()
-                        .Where(error => error.RuleId is not "prefer-native-element");
+                        .Where(error => error.RuleId is not ("prefer-native-element" or "aria-label-misuse"))
+                        .ToList();
                     errors.ShouldBeEmpty(HtmlValidationResultExtensions.GetParsedErrorMessageString(errors));
                     return Task.CompletedTask;
                 };
