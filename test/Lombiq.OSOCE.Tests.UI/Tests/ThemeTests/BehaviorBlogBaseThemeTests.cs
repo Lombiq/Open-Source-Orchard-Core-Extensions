@@ -56,7 +56,7 @@ public class BehaviorBlogBaseThemeTests : UITestBase
                 await context.GoToAdminRelativeUrlAsync("/Themes");
 
                 await context.ClickReliablyOnAsync(By.CssSelector(
-                    "form[action*='SetCurrentTheme/Lombiq.BaseTheme.Samples'] button"));
+                    "form[action*='SetCurrentTheme/Lombiq.BaseTheme.Native.Samples'] button"));
                 context.ShouldBeSuccess();
 
                 return homePageUri;
