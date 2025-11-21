@@ -68,26 +68,6 @@ jobs:
   asset-lint:
     name: Lint Assets
     uses: Lombiq/GitHub-Actions/.github/workflows/asset-lint.yml@issue/OSOE-1185
-    # Be sure to keep the configs in sync with the build-and-test-windows workflow.
-    with:
-      scripts: >
-        src/Libraries/Lombiq.EInvoiceValidator/Lombiq.EInvoiceValidator : .,
-        src/Modules/Lombiq.ContentEditors/Lombiq.ContentEditors,
-        src/Modules/Lombiq.ContentEditors/Lombiq.ContentEditors.Samples,
-        src/Modules/Lombiq.DataTables/Lombiq.DataTables,
-        src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions,
-        src/Modules/Lombiq.UIKit/Lombiq.UIKit,
-        src/Modules/Lombiq.Walkthroughs/Lombiq.Walkthroughs,
-        src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.Maintenance,
-      styles: >-
-        src/Modules/Lombiq.ChartJs/Lombiq.ChartJs.Samples,
-        src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions,
-        src/Modules/Lombiq.JsonEditor/Lombiq.JsonEditor,
-        src/Modules/Lombiq.Privacy/Lombiq.Privacy,
-        src/Modules/Lombiq.UIKit/Lombiq.UIKit,
-        src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Core,
-        src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Native,
-        src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Native.Samples,
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
