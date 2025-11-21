@@ -26,6 +26,7 @@ jobs:
       # This way, we can see Node.js build issues in the build log.
       build-verbosity: minimal
       ui-test-retry-interval-seconds: '60'
+      node-version: none
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -58,6 +59,7 @@ jobs:
       # This way, we can see Node.js build issues in the build log.
       build-verbosity: minimal
       ui-test-retry-interval-seconds: '60'
+      node-version: none
 
   codespell:
     name: Codespell

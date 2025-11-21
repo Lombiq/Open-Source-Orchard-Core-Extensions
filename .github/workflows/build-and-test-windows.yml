@@ -56,6 +56,7 @@ jobs:
       test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~ElasticsearchTests
       # It's enough to check consolidation only in the Linux workflow.
       verify-dotnet-consolidation: false
+      node-version: none
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -79,6 +80,7 @@ jobs:
       test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~ElasticsearchTests
       # It's enough to check consolidation only in the Linux workflow.
       verify-dotnet-consolidation: false
+      node-version: none
 
   build-and-test-nuget-test:
     if: github.ref_name == github.event.repository.default_branch ||
