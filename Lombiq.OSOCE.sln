@@ -20,6 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		renovate-osoce.json5 = renovate-osoce.json5
 		renovate.json5 = renovate.json5
 		Reset-Local.ps1 = Reset-Local.ps1
+		eslint.custom.mjs = eslint.custom.mjs
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{11E06A11-1733-408D-BB2F-BFA07075F812}"
