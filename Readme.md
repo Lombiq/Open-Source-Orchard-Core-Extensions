@@ -8,7 +8,7 @@ Looking for some useful Orchard Core extensions? Here's a bundle solution of all
 
 This is an [Orchard Core](https://orchardcore.net/) Visual Studio solution that contains most of [Lombiq](https://lombiq.com)'s open-source Orchard modules and themes, as well as related utilities and libraries. Please keep in mind that only those extensions are included which use the latest released version of Orchard (i.e. the very cutting-edge ones depending on a nightly build are not yet here).
 
-This also serves as an example of an ASP.NET Core web app using Orchard from NuGet.
+This also serves as an example of an ASP.NET Core web app using Orchard from  NuGet.
 
 Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source Orchard Extensions](https://github.com/Lombiq/Open-Source-Orchard-Extensions).
 
