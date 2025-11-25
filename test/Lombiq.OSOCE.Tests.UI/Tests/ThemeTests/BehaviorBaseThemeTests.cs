@@ -17,7 +17,7 @@ public class BehaviorBaseThemeTests : UITestBase
         ExecuteTestAfterSetupAsync(
             async context =>
             {
-                await context.SignInDirectlyAndGoToHomepageAsync();
+                await context.SignInDirectlyAsync();
                 await context.TestBaseThemeFeaturesAsync();
 
                 await context.SignInDirectlyAsync();

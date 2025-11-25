@@ -56,6 +56,7 @@ jobs:
       test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~ElasticsearchTests
       # It's enough to check consolidation only in the Linux workflow.
       verify-dotnet-consolidation: false
+      node-version: none
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -79,6 +80,7 @@ jobs:
       test-filter: FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~ElasticsearchTests
       # It's enough to check consolidation only in the Linux workflow.
       verify-dotnet-consolidation: false
+      node-version: none
 
   build-and-test-nuget-test:
     if: github.ref_name == github.event.repository.default_branch ||
@@ -105,6 +107,7 @@ jobs:
       test-filter: 'FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~ElasticsearchTests'
       # It's enough to check consolidation only in the Linux workflow.
       verify-dotnet-consolidation: false
+      node-version: none
 
   asset-lint:
     if: github.ref_name == github.event.repository.default_branch ||
@@ -112,28 +115,7 @@ jobs:
         github.event.label.name == 'run-windows-build' ||
         (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build'))
     name: Lint Assets
-    uses: Lombiq/NodeJs-Extensions/.github/workflows/lint.yml@dev
-    # Be sure to keep the configs in sync with the build-and-test workflow.
-    with:
-      scripts: '
-        {
-          "src/Libraries/Lombiq.EInvoiceValidator/Lombiq.EInvoiceValidator": { "scripts": { "source": "." } },
-          "src/Modules/Lombiq.ContentEditors/Lombiq.ContentEditors": { "scripts": { "source": "wwwroot/js" } },
-          "src/Modules/Lombiq.ContentEditors/Lombiq.ContentEditors.Samples": { "scripts": { "source": "wwwroot/js" } },
-          "src/Modules/Lombiq.DataTables/Lombiq.DataTables": { "scripts": { "source": "wwwroot/js" } },
-          "src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions": { "scripts": { "source": "wwwroot/js" } },
-          "src/Modules/Lombiq.UIKit/Lombiq.UIKit": { "scripts": { "source": "wwwroot/js" } },
-          "src/Modules/Lombiq.Walkthroughs/Lombiq.Walkthroughs": { "scripts": { "source": "wwwroot/js" } },
-        }'
-      styles-css: >-
-        src/Modules/Lombiq.ChartJs/Lombiq.ChartJs.Samples,
-        src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions,
-        src/Modules/Lombiq.JsonEditor/Lombiq.JsonEditor,
-        src/Modules/Lombiq.Privacy/Lombiq.Privacy,
-        src/Modules/Lombiq.UIKit/Lombiq.UIKit,
-        src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Core,
-        src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Native,
-        src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Native.Samples,
+    uses: Lombiq/GitHub-Actions/.github/workflows/asset-lint.yml@dev
 
   powershell-static-code-analysis:
     if: github.ref_name == github.event.repository.default_branch ||
