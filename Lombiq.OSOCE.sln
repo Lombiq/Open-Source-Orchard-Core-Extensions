@@ -255,6 +255,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Asset Linting Action Config
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.LibMan.Targets", "tools\Lombiq.MSBuild.Targets\Lombiq.MSBuild.LibMan.Targets\Lombiq.MSBuild.LibMan.Targets.csproj", "{A1FD0B4D-6C8F-4BA9-9184-BBB3331566A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.Module.Targets", "tools\Lombiq.MSBuild.Targets\Lombiq.MSBuild.Module.Targets\Lombiq.MSBuild.Module.Targets.csproj", "{7620FE33-8858-4F95-86EA-562F018C11CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1465,6 +1467,18 @@ Global
 		{A1FD0B4D-6C8F-4BA9-9184-BBB3331566A2}.Release|x64.Build.0 = Release|Any CPU
 		{A1FD0B4D-6C8F-4BA9-9184-BBB3331566A2}.Release|x86.ActiveCfg = Release|Any CPU
 		{A1FD0B4D-6C8F-4BA9-9184-BBB3331566A2}.Release|x86.Build.0 = Release|Any CPU
+		{7620FE33-8858-4F95-86EA-562F018C11CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7620FE33-8858-4F95-86EA-562F018C11CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7620FE33-8858-4F95-86EA-562F018C11CE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7620FE33-8858-4F95-86EA-562F018C11CE}.Debug|x64.Build.0 = Debug|Any CPU
+		{7620FE33-8858-4F95-86EA-562F018C11CE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7620FE33-8858-4F95-86EA-562F018C11CE}.Debug|x86.Build.0 = Debug|Any CPU
+		{7620FE33-8858-4F95-86EA-562F018C11CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7620FE33-8858-4F95-86EA-562F018C11CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7620FE33-8858-4F95-86EA-562F018C11CE}.Release|x64.ActiveCfg = Release|Any CPU
+		{7620FE33-8858-4F95-86EA-562F018C11CE}.Release|x64.Build.0 = Release|Any CPU
+		{7620FE33-8858-4F95-86EA-562F018C11CE}.Release|x86.ActiveCfg = Release|Any CPU
+		{7620FE33-8858-4F95-86EA-562F018C11CE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1579,6 +1593,7 @@ Global
 		{B0C44956-2E7A-4D96-8D71-930B3F1D783F} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{C09B86B8-2A07-4C94-98C9-F0A6ECBADD56} = {8B131E3B-202B-486D-A3A4-CB84AC4C3370}
 		{A1FD0B4D-6C8F-4BA9-9184-BBB3331566A2} = {BF1EDFA5-0129-416C-B9ED-8CE68A3FD526}
+		{7620FE33-8858-4F95-86EA-562F018C11CE} = {BF1EDFA5-0129-416C-B9ED-8CE68A3FD526}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
