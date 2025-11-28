@@ -109,5 +109,5 @@
 	path = src/Libraries/Lombiq.EInvoiceValidator
 	url = https://github.com/Lombiq/eInvoice-Validator.git
 [submodule "tools/Lombiq.MSBuild.Targets"]
-	path = tools/Lombiq.MSBuild.Targets
+	path = src/Utilities/Lombiq.MSBuild.Targets
 	url = https://github.com/Lombiq/MSBuild-Targets.git

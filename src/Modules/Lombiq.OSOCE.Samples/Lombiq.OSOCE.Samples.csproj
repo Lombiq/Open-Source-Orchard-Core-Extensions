@@ -1,25 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-    <DefaultItemExcludes>$(DefaultItemExcludes);.git*</DefaultItemExcludes>
-  </PropertyGroup>
+  <Import Project="../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Module.Targets/Lombiq.MSBuild.Module.Targets.props"
+          Condition="'$(NuGetBuild)' != 'true' "/>
 
   <ItemGroup>
-    <FrameworkReference Include="Microsoft.AspNetCore.App" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="OrchardCore.Module.Targets" Version="2.1.0" />
-    <PackageReference Include="OrchardCore.ContentManagement" Version="2.1.0" />
-    <PackageReference Include="OrchardCore.ContentTypes.Abstractions" Version="2.1.0" />
-    <PackageReference Include="OrchardCore.DisplayManagement" Version="2.1.0" />
+    <PackageReference Include="OrchardCore.ContentManagement" Version="$(OrchardCoreVersion)" />
+    <PackageReference Include="OrchardCore.ContentTypes.Abstractions" Version="$(OrchardCoreVersion)" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.csproj" />
     <ProjectReference Include="..\Lombiq.UIKit\Lombiq.UIKit\Lombiq.UIKit.csproj" />
   </ItemGroup>
+
+  <Import Project="../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Module.Targets/Lombiq.MSBuild.Module.Targets.targets"
+          Condition="'$(NuGetBuild)' != 'true' "/>
 
 </Project>
