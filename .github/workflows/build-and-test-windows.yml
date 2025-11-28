@@ -115,7 +115,7 @@ jobs:
         github.event.label.name == 'run-windows-build' ||
         (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build'))
     name: Lint Assets
-    uses: Lombiq/GitHub-Actions/.github/workflows/asset-lint.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/asset-lint.yml@issue/NEST-643
 
   powershell-static-code-analysis:
     if: github.ref_name == github.event.repository.default_branch ||
