@@ -257,6 +257,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.LibMan.Targe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.Module.Targets", "src\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.Module.Targets\Lombiq.MSBuild.Module.Targets.csproj", "{6BB69E29-E314-457D-8020-6601973D5938}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.Test.UI.Targets", "src\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.Test.UI.Targets\Lombiq.MSBuild.Test.UI.Targets.csproj", "{DC28BBD0-F32C-4CB0-9B6B-D9F091EF98A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1479,6 +1481,18 @@ Global
 		{6BB69E29-E314-457D-8020-6601973D5938}.Release|x64.Build.0 = Release|Any CPU
 		{6BB69E29-E314-457D-8020-6601973D5938}.Release|x86.ActiveCfg = Release|Any CPU
 		{6BB69E29-E314-457D-8020-6601973D5938}.Release|x86.Build.0 = Release|Any CPU
+		{DC28BBD0-F32C-4CB0-9B6B-D9F091EF98A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC28BBD0-F32C-4CB0-9B6B-D9F091EF98A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC28BBD0-F32C-4CB0-9B6B-D9F091EF98A9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DC28BBD0-F32C-4CB0-9B6B-D9F091EF98A9}.Debug|x64.Build.0 = Debug|Any CPU
+		{DC28BBD0-F32C-4CB0-9B6B-D9F091EF98A9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DC28BBD0-F32C-4CB0-9B6B-D9F091EF98A9}.Debug|x86.Build.0 = Debug|Any CPU
+		{DC28BBD0-F32C-4CB0-9B6B-D9F091EF98A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC28BBD0-F32C-4CB0-9B6B-D9F091EF98A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC28BBD0-F32C-4CB0-9B6B-D9F091EF98A9}.Release|x64.ActiveCfg = Release|Any CPU
+		{DC28BBD0-F32C-4CB0-9B6B-D9F091EF98A9}.Release|x64.Build.0 = Release|Any CPU
+		{DC28BBD0-F32C-4CB0-9B6B-D9F091EF98A9}.Release|x86.ActiveCfg = Release|Any CPU
+		{DC28BBD0-F32C-4CB0-9B6B-D9F091EF98A9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1594,6 +1608,7 @@ Global
 		{C09B86B8-2A07-4C94-98C9-F0A6ECBADD56} = {8B131E3B-202B-486D-A3A4-CB84AC4C3370}
 		{F131341D-A9E2-482F-891E-937C0380DD5C} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
 		{6BB69E29-E314-457D-8020-6601973D5938} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
+		{DC28BBD0-F32C-4CB0-9B6B-D9F091EF98A9} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
