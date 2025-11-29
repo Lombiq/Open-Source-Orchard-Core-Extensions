@@ -4,7 +4,7 @@
     <SolutionTestDir>..\..\test</SolutionTestDir>
   </PropertyGroup>
 
-  <Import Project="../../src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Test.UI.Targets/Lombiq.MSBuild.Test.UI.Targets.props" />
+  <Import Project="../../src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Tests.UI.Targets/Lombiq.MSBuild.Tests.UI.Targets.props" />
 
   <PropertyGroup>
     <IsPackable>false</IsPackable>

@@ -257,7 +257,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.LibMan.Targe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.Module.Targets", "src\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.Module.Targets\Lombiq.MSBuild.Module.Targets.csproj", "{6BB69E29-E314-457D-8020-6601973D5938}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.Test.UI.Targets", "src\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.Test.UI.Targets\Lombiq.MSBuild.Test.UI.Targets.csproj", "{DC28BBD0-F32C-4CB0-9B6B-D9F091EF98A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.Tests.UI.Targets", "src\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.Tests.UI.Targets\Lombiq.MSBuild.Tests.UI.Targets.csproj", "{DC28BBD0-F32C-4CB0-9B6B-D9F091EF98A9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.Core.Targets", "src\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.Core.Targets\Lombiq.MSBuild.Core.Targets.csproj", "{F71D306B-4F04-41BA-BBA0-E7472327C688}"
 EndProject
