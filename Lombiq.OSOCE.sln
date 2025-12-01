@@ -253,6 +253,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Asset Linting Action Config
 		tools\Lombiq.GitHub.Actions\.github\actions\asset-lint\js\eslint.config.mjs = tools\Lombiq.GitHub.Actions\.github\actions\asset-lint\js\eslint.config.mjs
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.LibMan.Targets", "src\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.LibMan.Targets\Lombiq.MSBuild.LibMan.Targets.csproj", "{05AED85E-CDFC-44D1-BCA6-D312EFE71AB7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1451,6 +1453,18 @@ Global
 		{B0C44956-2E7A-4D96-8D71-930B3F1D783F}.Release|x64.Build.0 = Release|Any CPU
 		{B0C44956-2E7A-4D96-8D71-930B3F1D783F}.Release|x86.ActiveCfg = Release|Any CPU
 		{B0C44956-2E7A-4D96-8D71-930B3F1D783F}.Release|x86.Build.0 = Release|Any CPU
+		{05AED85E-CDFC-44D1-BCA6-D312EFE71AB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05AED85E-CDFC-44D1-BCA6-D312EFE71AB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05AED85E-CDFC-44D1-BCA6-D312EFE71AB7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{05AED85E-CDFC-44D1-BCA6-D312EFE71AB7}.Debug|x64.Build.0 = Debug|Any CPU
+		{05AED85E-CDFC-44D1-BCA6-D312EFE71AB7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{05AED85E-CDFC-44D1-BCA6-D312EFE71AB7}.Debug|x86.Build.0 = Debug|Any CPU
+		{05AED85E-CDFC-44D1-BCA6-D312EFE71AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05AED85E-CDFC-44D1-BCA6-D312EFE71AB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05AED85E-CDFC-44D1-BCA6-D312EFE71AB7}.Release|x64.ActiveCfg = Release|Any CPU
+		{05AED85E-CDFC-44D1-BCA6-D312EFE71AB7}.Release|x64.Build.0 = Release|Any CPU
+		{05AED85E-CDFC-44D1-BCA6-D312EFE71AB7}.Release|x86.ActiveCfg = Release|Any CPU
+		{05AED85E-CDFC-44D1-BCA6-D312EFE71AB7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1564,6 +1578,7 @@ Global
 		{BBDBF5A0-51B6-41C5-925F-66FD9CF46E9D} = {41CE6E12-92B4-4CF5-9D9C-C214C41CA8FE}
 		{B0C44956-2E7A-4D96-8D71-930B3F1D783F} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{C09B86B8-2A07-4C94-98C9-F0A6ECBADD56} = {8B131E3B-202B-486D-A3A4-CB84AC4C3370}
+		{05AED85E-CDFC-44D1-BCA6-D312EFE71AB7} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
