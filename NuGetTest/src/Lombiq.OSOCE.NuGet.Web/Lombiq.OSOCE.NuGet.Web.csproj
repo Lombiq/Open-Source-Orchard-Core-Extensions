@@ -28,8 +28,8 @@
     <PackageReference Include="Lombiq.ChartJs.Samples" Version="9.0.1-alpha.2.nest-643" />
     <PackageReference Include="Lombiq.ContentEditors" Version="6.0.0-alpha.4.osoe-1171" />
     <PackageReference Include="Lombiq.ContentEditors.Samples" Version="6.0.0-alpha.4.osoe-1171" />
-    <PackageReference Include="Lombiq.DataTables" Version="10.0.2-alpha.6.nest-643" />
-    <PackageReference Include="Lombiq.DataTables.Samples" Version="10.0.2-alpha.6.nest-643" />
+    <PackageReference Include="Lombiq.DataTables" Version="10.0.2-alpha.7.nest-643 " />
+    <PackageReference Include="Lombiq.DataTables.Samples" Version="10.0.2-alpha.7.nest-643 " />
     <PackageReference Include="Lombiq.EmailClient" Version="1.0.0-alpha.8.osoe-1064" />
     <PackageReference Include="Lombiq.EmailClient.Samples" Version="1.0.0-alpha.8.osoe-1064" />
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="11.1.1-alpha.0.nest-643" />
