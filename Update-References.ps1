@@ -24,7 +24,7 @@ param(
 )
 
 # Get all .csproj files recursively
-$projectFiles = Get-ChildItem -Recurse -Filter '*.csproj'
+$projectFiles = Get-ChildItem -Path . -Recurse -Filter '*.csproj'
 
 # Loop through each project file to see if it has a reference to the project we are looking for
 foreach ($projectFile in $projectFiles)
