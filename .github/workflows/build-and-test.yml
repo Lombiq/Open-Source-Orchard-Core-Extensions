@@ -68,6 +68,8 @@ jobs:
   asset-lint:
     name: Lint Assets
     uses: Lombiq/GitHub-Actions/.github/workflows/asset-lint.yml@dev
+    with:
+      styles: .:**/*.css,!**/src/Modules/Lombiq.UIKit/Lombiq.UIKit/wwwroot/vendors/slick/**/*.css
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
