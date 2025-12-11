@@ -21,9 +21,9 @@
 
   <ItemGroup>
     <PackageReference Include="Lombiq.AuditTrailExtensions" Version="8.0.0" />
-    <PackageReference Include="Lombiq.BaseTheme.Core" Version="10.0.2-alpha.1.osoe-1185" />
-    <PackageReference Include="Lombiq.BaseTheme.Native" Version="10.0.2-alpha.1.osoe-1185" />
-    <PackageReference Include="Lombiq.BaseTheme.Native.Samples" Version="10.0.2-alpha.1.osoe-1185" />
+    <PackageReference Include="Lombiq.BaseTheme.Core" Version="11.0.0" />
+    <PackageReference Include="Lombiq.BaseTheme.Native" Version="11.0.0" />
+    <PackageReference Include="Lombiq.BaseTheme.Native.Samples" Version="11.0.0" />
     <PackageReference Include="Lombiq.ChartJs" Version="9.0.1-alpha.4.nest-643" />
     <PackageReference Include="Lombiq.ChartJs.Samples" Version="9.0.1-alpha.4.nest-643" />
     <PackageReference Include="Lombiq.ContentEditors" Version="6.0.0-alpha.4.osoe-1171" />
@@ -33,7 +33,7 @@
     <PackageReference Include="Lombiq.EmailClient" Version="1.0.0-alpha.8.osoe-1064" />
     <PackageReference Include="Lombiq.EmailClient.Samples" Version="1.0.0-alpha.8.osoe-1064" />
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="11.1.1-alpha.2.nest-643" />
-    <PackageReference Include="Lombiq.HelpfulLibraries" Version="12.4.1-alpha.2.osoe-1185" />
+    <PackageReference Include="Lombiq.HelpfulLibraries" Version="12.5.0" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="10.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay" Version="7.0.1-alpha.2.nest-561" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="8.0.1-alpha.7.olys-29" />
