@@ -36,7 +36,7 @@ jobs:
             github.event.label.name == 'run-windows-build' ||
             (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build')))
     name: Build and Test Windows - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1214
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: root-solution-larger-runners
       machine-types: '["warp-windows-2025-x64-8x"]'
@@ -88,7 +88,7 @@ jobs:
         github.event.label.name == 'run-windows-build' ||
         (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build'))
     name: Build and Test Windows - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1214
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
     with:
       parent-job-name: nuget-solution
       machine-types: '["windows-2025"]'
@@ -115,7 +115,7 @@ jobs:
         github.event.label.name == 'run-windows-build' ||
         (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build'))
     name: Lint Assets
-    uses: Lombiq/GitHub-Actions/.github/workflows/asset-lint.yml@issue/OSOE-1214
+    uses: Lombiq/GitHub-Actions/.github/workflows/asset-lint.yml@dev
 
   powershell-static-code-analysis:
     if: github.ref_name == github.event.repository.default_branch ||
