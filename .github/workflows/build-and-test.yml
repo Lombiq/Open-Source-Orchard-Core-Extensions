@@ -27,6 +27,10 @@ jobs:
       build-verbosity: minimal
       ui-test-retry-interval-seconds: '60'
       node-version: none
+      build-enable-code-analysis: 'false'
+      verify-dotnet-consolidation: false
+      cancel-in-progress-for-this-pr: 'false'
+      cancel-workflow-on-failure: 'false'
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -60,6 +64,10 @@ jobs:
       build-verbosity: minimal
       ui-test-retry-interval-seconds: '60'
       node-version: none
+      build-enable-code-analysis: 'false'
+      verify-dotnet-consolidation: false
+      cancel-in-progress-for-this-pr: 'false'
+      cancel-workflow-on-failure: 'false'
 
   codespell:
     name: Codespell
