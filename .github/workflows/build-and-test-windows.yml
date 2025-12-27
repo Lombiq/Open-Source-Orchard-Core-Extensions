@@ -58,10 +58,6 @@ jobs:
       verify-dotnet-consolidation: false
       node-version: none
       build-enable-code-analysis: 'false'
-      verify-dotnet-consolidation: false
-      cancel-in-progress-for-this-pr: 'false'
-      cancel-workflow-on-failure: 'false'      build-enable-code-analysis: 'false'
-      verify-dotnet-consolidation: false
       cancel-in-progress-for-this-pr: 'false'
       cancel-workflow-on-failure: 'false'
 
@@ -89,7 +85,6 @@ jobs:
       verify-dotnet-consolidation: false
       node-version: none
       build-enable-code-analysis: 'false'
-      verify-dotnet-consolidation: false
       cancel-in-progress-for-this-pr: 'false'
       cancel-workflow-on-failure: 'false'
 
