@@ -11,7 +11,7 @@ jobs:
   build-and-test-larger-runners:
     if: github.ref_name != github.event.repository.default_branch
     name: Build and Test - root solution (larger runners)
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1220
     with:
       parent-job-name: root-solution-larger-runners
       machine-types: '["warp-ubuntu-2404-x64-4x"]'
@@ -50,12 +50,12 @@ jobs:
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
-    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-1220
     with:
       parent-job-name: nuget-solution
       build-directory: NuGetTest
       timeout-minutes: 20
-      blame-hang-timeout: 480000
+      blame-hang-timeout: 540000
       # This way, we can see Node.js build issues in the build log.
       build-verbosity: minimal
       ui-test-retry-interval-seconds: '60'
@@ -67,7 +67,7 @@ jobs:
 
   asset-lint:
     name: Lint Assets
-    uses: Lombiq/GitHub-Actions/.github/workflows/asset-lint.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/asset-lint.yml@issue/OSOE-1220
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis

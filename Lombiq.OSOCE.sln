@@ -261,6 +261,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.Targets.Tests", "src\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.Targets.Tests\Lombiq.MSBuild.Targets.Tests.csproj", "{71531C35-B397-4658-A678-7B3D262511D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.HelpfulLibraries.Samples.Tests.UI", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Samples.Tests.UI\Lombiq.HelpfulLibraries.Samples.Tests.UI.csproj", "{67780DC2-F505-81B7-C4FD-C4D250022916}"
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.Hosting.Tenants.Maintenance.Tests", "src\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.Maintenance.Tests\Lombiq.Hosting.Tenants.Maintenance.Tests.csproj", "{FA2FF7D8-B1B8-4216-CB73-F586BF7D9CCF}"
 EndProject
 Global
@@ -1497,6 +1498,18 @@ Global
 		{71531C35-B397-4658-A678-7B3D262511D4}.Release|x64.Build.0 = Release|Any CPU
 		{71531C35-B397-4658-A678-7B3D262511D4}.Release|x86.ActiveCfg = Release|Any CPU
 		{71531C35-B397-4658-A678-7B3D262511D4}.Release|x86.Build.0 = Release|Any CPU
+		{67780DC2-F505-81B7-C4FD-C4D250022916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67780DC2-F505-81B7-C4FD-C4D250022916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67780DC2-F505-81B7-C4FD-C4D250022916}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{67780DC2-F505-81B7-C4FD-C4D250022916}.Debug|x64.Build.0 = Debug|Any CPU
+		{67780DC2-F505-81B7-C4FD-C4D250022916}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{67780DC2-F505-81B7-C4FD-C4D250022916}.Debug|x86.Build.0 = Debug|Any CPU
+		{67780DC2-F505-81B7-C4FD-C4D250022916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67780DC2-F505-81B7-C4FD-C4D250022916}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67780DC2-F505-81B7-C4FD-C4D250022916}.Release|x64.ActiveCfg = Release|Any CPU
+		{67780DC2-F505-81B7-C4FD-C4D250022916}.Release|x64.Build.0 = Release|Any CPU
+		{67780DC2-F505-81B7-C4FD-C4D250022916}.Release|x86.ActiveCfg = Release|Any CPU
+		{67780DC2-F505-81B7-C4FD-C4D250022916}.Release|x86.Build.0 = Release|Any CPU
 		{FA2FF7D8-B1B8-4216-CB73-F586BF7D9CCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FA2FF7D8-B1B8-4216-CB73-F586BF7D9CCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA2FF7D8-B1B8-4216-CB73-F586BF7D9CCF}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -1626,6 +1639,7 @@ Global
 		{2A1F29FB-0090-4A00-B4E5-0D0BEB2894C2} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
 		{90DA815E-6121-4300-8CB9-208DB39F70D4} = {FF48793C-2AC5-4FAA-9BA1-44448E3A7F98}
 		{71531C35-B397-4658-A678-7B3D262511D4} = {90DA815E-6121-4300-8CB9-208DB39F70D4}
+		{67780DC2-F505-81B7-C4FD-C4D250022916} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
 		{FA2FF7D8-B1B8-4216-CB73-F586BF7D9CCF} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
