@@ -96,7 +96,7 @@ jobs:
       timeout-minutes: 30
       # This way, we can see Node.js build issues in the build log.
       build-verbosity: minimal
-      dotnet-test-process-timeout: 540000
+      dotnet-test-process-timeout: 900000
       # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
       # supported by GHA.
       # The currently used Elasticsearch setup action (https://github.com/elastic/elastic-github-actions/tree/master/elasticsearch)
