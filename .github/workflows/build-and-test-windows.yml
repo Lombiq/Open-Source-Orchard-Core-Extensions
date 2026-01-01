@@ -36,7 +36,7 @@ jobs:
     secrets:
       ENVIRONMENT_VARIABLES_JSON: |
         {
-          "DOTNET_ROLL_FORWARD": "LatestMajor "
+          "DOTNET_ROLL_FORWARD": "LatestMajor"
         }
 
   build-and-test-standard-runners:
@@ -64,7 +64,7 @@ jobs:
     secrets:
       ENVIRONMENT_VARIABLES_JSON: |
         {
-          "DOTNET_ROLL_FORWARD": "LatestMajor "
+          "DOTNET_ROLL_FORWARD": "LatestMajor"
         }
 
   build-and-test-nuget-test:
@@ -92,5 +92,5 @@ jobs:
     secrets:
       ENVIRONMENT_VARIABLES_JSON: |
         {
-          "DOTNET_ROLL_FORWARD": "LatestMajor "
+          "DOTNET_ROLL_FORWARD": "LatestMajor"
         }
