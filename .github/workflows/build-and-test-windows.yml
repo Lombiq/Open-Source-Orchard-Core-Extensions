@@ -36,11 +36,7 @@ jobs:
       build-enable-code-analysis: 'false'
       cancel-in-progress-for-this-pr: 'false'
       cancel-workflow-on-failure: 'false'
-    secrets:
-      ENVIRONMENT_VARIABLES_JSON: |
-        {
-          "DOTNET_ROLL_FORWARD": "LatestMajor"
-        }
+      dotnet-version: 8.0.319
 
   build-and-test-standard-runners:
     name: Build and Test Windows - root solution (standard runners)
@@ -67,11 +63,7 @@ jobs:
       build-enable-code-analysis: 'false'
       cancel-in-progress-for-this-pr: 'false'
       cancel-workflow-on-failure: 'false'
-    secrets:
-      ENVIRONMENT_VARIABLES_JSON: |
-        {
-          "DOTNET_ROLL_FORWARD": "LatestMajor"
-        }
+      dotnet-version: 8.0.319
 
   build-and-test-nuget-test:
     name: Build and Test Windows - NuGetTest solution
@@ -98,8 +90,4 @@ jobs:
       build-enable-code-analysis: 'false'
       cancel-in-progress-for-this-pr: 'false'
       cancel-workflow-on-failure: 'false'
-    secrets:
-      ENVIRONMENT_VARIABLES_JSON: |
-        {
-          "DOTNET_ROLL_FORWARD": "LatestMajor"
-        }
+      dotnet-version: 8.0.319
