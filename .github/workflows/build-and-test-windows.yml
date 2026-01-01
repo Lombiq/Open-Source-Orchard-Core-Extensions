@@ -33,6 +33,9 @@ jobs:
       # It's enough to check consolidation only in the Linux workflow.
       verify-dotnet-consolidation: false
       node-version: none
+      build-enable-code-analysis: 'false'
+      cancel-in-progress-for-this-pr: 'false'
+      cancel-workflow-on-failure: 'false'
     secrets:
       ENVIRONMENT_VARIABLES_JSON: |
         {
@@ -61,6 +64,9 @@ jobs:
       # It's enough to check consolidation only in the Linux workflow.
       verify-dotnet-consolidation: false
       node-version: none
+      build-enable-code-analysis: 'false'
+      cancel-in-progress-for-this-pr: 'false'
+      cancel-workflow-on-failure: 'false'
     secrets:
       ENVIRONMENT_VARIABLES_JSON: |
         {
@@ -89,6 +95,9 @@ jobs:
       # It's enough to check consolidation only in the Linux workflow.
       verify-dotnet-consolidation: false
       node-version: none
+      build-enable-code-analysis: 'false'
+      cancel-in-progress-for-this-pr: 'false'
+      cancel-workflow-on-failure: 'false'
     secrets:
       ENVIRONMENT_VARIABLES_JSON: |
         {
