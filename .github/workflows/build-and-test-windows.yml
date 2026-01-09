@@ -57,6 +57,7 @@ jobs:
       # It's enough to check consolidation only in the Linux workflow.
       verify-dotnet-consolidation: false
       node-version: none
+      dotnet-version: 10.0.101
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
@@ -81,6 +82,7 @@ jobs:
       # It's enough to check consolidation only in the Linux workflow.
       verify-dotnet-consolidation: false
       node-version: none
+      dotnet-version: 10.0.101
 
   build-and-test-nuget-test:
     if: github.ref_name == github.event.repository.default_branch ||
@@ -108,6 +110,7 @@ jobs:
       # It's enough to check consolidation only in the Linux workflow.
       verify-dotnet-consolidation: false
       node-version: none
+      dotnet-version: 10.0.101
 
   asset-lint:
     if: github.ref_name == github.event.repository.default_branch ||
