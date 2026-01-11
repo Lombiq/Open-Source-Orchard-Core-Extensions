@@ -175,31 +175,6 @@
       "site": "SafeMode"
     },
     {
-      "name": "FeatureProfiles",
-      "FeatureProfiles": {
-        "Features Guard": {
-          "FeatureRules": [
-            {
-              "Rule": "Exclude",
-              "Expression": "OrchardCore.Workflows.Session"
-            },
-            {
-              "Rule": "Exclude",
-              "Expression": "OrchardCore.Search.Lucene"
-            },
-            {
-              "Rule": "Exclude",
-              "Expression": "OrchardCore.MiniProfiler"
-            },
-            {
-              "Rule": "Exclude",
-              "Expression": "Lombiq.Tests.UI.Shortcuts"
-            }
-          ]
-        }
-      }
-    },
-    {
       "name": "recipes",
       "Values": [
         {
