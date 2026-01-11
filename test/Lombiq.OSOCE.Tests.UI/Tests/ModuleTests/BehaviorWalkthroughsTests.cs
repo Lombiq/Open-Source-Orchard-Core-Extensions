@@ -13,7 +13,7 @@ public class BehaviorWalkthroughsTests : UITestBase
     {
     }
 
-    [Fact(Skip = true)]
+    [Fact(Skip = "Temporarily disabled.")]
     public Task WalkthroughsShouldWorkCorrectly() =>
         ExecuteTestAsync(
             context => context.RunSetupAndTestWalkthroughsBehaviorAsync(),
