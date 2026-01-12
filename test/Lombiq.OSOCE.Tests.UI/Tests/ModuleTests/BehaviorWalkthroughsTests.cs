@@ -1,11 +1,11 @@
 using Lombiq.Walkthroughs.Tests.UI.Extensions;
-using System.Diagnostics.CodeAnalysis;
+using OpenQA.Selenium.BiDi.Log;
+using Shouldly;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
-[SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "Temporarily disabled.")]
 public class BehaviorWalkthroughsTests : UITestBase
 {
     public BehaviorWalkthroughsTests(ITestOutputHelper testOutputHelper)
@@ -13,11 +13,20 @@ public class BehaviorWalkthroughsTests : UITestBase
     {
     }
 
-    [Fact(Skip = "Temporarily disabled.")]
+    [Fact]
     public Task WalkthroughsShouldWorkCorrectly() =>
         ExecuteTestAsync(
             context => context.RunSetupAndTestWalkthroughsBehaviorAsync(),
-            changeConfiguration: configuration => configuration
-                .HtmlValidationConfiguration
-                .WithRelativeConfigPath("NoUniqueLandmark.htmlvalidate.json"));
+            changeConfiguration: configuration =>
+            {
+                configuration
+                    .HtmlValidationConfiguration
+                    .WithRelativeConfigPath("NoUniqueLandmark.htmlvalidate.json");
+
+                // There are some false positives of this error, because of page navigation.
+                configuration.AssertBrowserLog = logEntries =>
+                    logEntries.ShouldNotContain(entry => 
+                        entry.Level > Level.Info &&
+                        !entry.Text.Contains("The element for this Shepherd step was not found"));
+            });
 }
