@@ -1,6 +1,7 @@
 using Lombiq.Walkthroughs.Tests.UI.Extensions;
 using OpenQA.Selenium.BiDi.Log;
 using Shouldly;
+using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -24,9 +25,10 @@ public class BehaviorWalkthroughsTests : UITestBase
                     .WithRelativeConfigPath("NoUniqueLandmark.htmlvalidate.json");
 
                 // There are some false positives of this error, because of page navigation.
-                configuration.AssertBrowserLog = logEntries =>
-                    logEntries.ShouldNotContain(entry =>
+                configuration.AssertBrowserLog = logEntries => logEntries
+                    .Where(entry =>
                         entry.Level > Level.Info &&
-                        !entry.Text.Contains("The element for this Shepherd step was not found"));
+                        entry.Text?.Contains("The element for this Shepherd step was not found") != true)
+                    .ShouldBeEmpty();
             });
 }
