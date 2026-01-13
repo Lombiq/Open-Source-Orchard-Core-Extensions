@@ -25,7 +25,7 @@ public class BehaviorWalkthroughsTests : UITestBase
 
                 // There are some false positives of this error, because of page navigation.
                 configuration.AssertBrowserLog = logEntries =>
-                    logEntries.ShouldNotContain(entry => 
+                    logEntries.ShouldNotContain(entry =>
                         entry.Level > Level.Info &&
                         !entry.Text.Contains("The element for this Shepherd step was not found"));
             });
