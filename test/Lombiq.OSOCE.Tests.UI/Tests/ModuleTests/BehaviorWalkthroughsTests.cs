@@ -1,14 +1,12 @@
 using Lombiq.Walkthroughs.Tests.UI.Extensions;
 using OpenQA.Selenium.BiDi.Log;
 using Shouldly;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 
-[SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "Awaiting new OC preview version.")]
 public class BehaviorWalkthroughsTests : UITestBase
 {
     public BehaviorWalkthroughsTests(ITestOutputHelper testOutputHelper)
@@ -16,7 +14,7 @@ public class BehaviorWalkthroughsTests : UITestBase
     {
     }
 
-    [Fact(Skip = "Blocked by https://github.com/OrchardCMS/OrchardCore/pull/18699.")]
+    [Fact]
     public Task WalkthroughsShouldWorkCorrectly() =>
         ExecuteTestAsync(
             context => context.RunSetupAndTestWalkthroughsBehaviorAsync(),
