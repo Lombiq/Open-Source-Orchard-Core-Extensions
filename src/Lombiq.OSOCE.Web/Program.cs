@@ -1,4 +1,4 @@
-using Lombiq.ChartJs.Constants;
+using Lombiq.OSOCE.Web;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using OrchardCore.Logging;
@@ -25,7 +25,7 @@ builder.Services
                 ["OrchardCore.Twitter"] =
                 [
                     UIKitFeatureIds.Base,
-                    FeatureIds.Default,
+                    BugDemo.Create().ToString(),
                 ],
             })
         .EnableAutoSetupIfNotUITesting(configuration));
