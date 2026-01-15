@@ -1,6 +1,6 @@
 namespace Lombiq.OSOCE.Web;
 
-internal class BugDemo
+internal sealed class BugDemo
 {
     private BugDemo()
     {
