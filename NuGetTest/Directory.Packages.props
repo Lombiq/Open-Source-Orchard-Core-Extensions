@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-    <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
     <OrchardCoreVersion>3.0.0-preview-18882</OrchardCoreVersion>
   </PropertyGroup>
   <ItemGroup>
@@ -33,12 +33,12 @@
     <PackageVersion Include="Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI" Version="10.0.1-alpha.1.osoe-925" />
     <PackageVersion Include="Lombiq.Hosting.BuildVersionDisplay" Version="7.0.1-alpha.3.osoe-925" />
     <PackageVersion Include="Lombiq.Hosting.BuildVersionDisplay.Tests.UI" Version="7.0.1-alpha.3.osoe-925" />
-    <PackageVersion Include="Lombiq.Hosting.MediaTheme" Version="v8.0.1-alpha.8.osoe-925" />
-    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Bridge" Version="v8.0.1-alpha.8.osoe-925" />
-    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Bridge.Tests.UI" Version="v8.0.1-alpha.8.osoe-925" />
-    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Targets" Version="v8.0.1-alpha.8.osoe-925" />
-    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Tests.Theme" Version="v8.0.1-alpha.8.osoe-925" />
-    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Tests.UI" Version="v8.0.1-alpha.8.osoe-925" />
+    <PackageVersion Include="Lombiq.Hosting.MediaTheme" Version="8.0.1-alpha.8.osoe-925" />
+    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Bridge" Version="8.0.1-alpha.8.osoe-925" />
+    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Bridge.Tests.UI" Version="8.0.1-alpha.8.osoe-925" />
+    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Targets" Version="8.0.1-alpha.8.osoe-925" />
+    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Tests.Theme" Version="8.0.1-alpha.8.osoe-925" />
+    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Tests.UI" Version="8.0.1-alpha.8.osoe-925" />
     <PackageVersion Include="Lombiq.Hosting.Tenants.Admin.Login" Version="9.0.1-alpha.16.osoe-925" />
     <PackageVersion Include="Lombiq.Hosting.Tenants.EmailQuotaManagement" Version="9.0.1-alpha.16.osoe-925" />
     <PackageVersion Include="Lombiq.Hosting.Tenants.EmailQuotaManagement.Tests.UI" Version="9.0.1-alpha.16.osoe-925" />
@@ -74,6 +74,7 @@
     <PackageVersion Include="Lombiq.VueJs.Resources" Version="9.0.2-alpha.4.osoe-925" />
     <PackageVersion Include="Lombiq.Walkthroughs" Version="3.0.1-alpha.20.osoe-925" />
     <PackageVersion Include="Lombiq.Walkthroughs.Tests.UI" Version="3.0.1-alpha.20.osoe-925" />
+    <PackageVersion Include="Meziantou.Analyzer" Version="2.0.284" />
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="10.0.2" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
     <PackageVersion Include="OrchardCore.Application.Cms.Targets" Version="$(OrchardCoreVersion)" />
