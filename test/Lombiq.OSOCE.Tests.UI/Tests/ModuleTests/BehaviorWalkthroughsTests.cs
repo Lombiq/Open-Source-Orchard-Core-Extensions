@@ -1,7 +1,4 @@
 using Lombiq.Walkthroughs.Tests.UI.Extensions;
-using OpenQA.Selenium.BiDi.Log;
-using Shouldly;
-using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
