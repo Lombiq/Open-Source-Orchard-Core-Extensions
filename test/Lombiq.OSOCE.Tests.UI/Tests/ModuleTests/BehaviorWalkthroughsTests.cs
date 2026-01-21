@@ -18,17 +18,7 @@ public class BehaviorWalkthroughsTests : UITestBase
     public Task WalkthroughsShouldWorkCorrectly() =>
         ExecuteTestAsync(
             context => context.RunSetupAndTestWalkthroughsBehaviorAsync(),
-            changeConfiguration: configuration =>
-            {
-                configuration
-                    .HtmlValidationConfiguration
-                    .WithRelativeConfigPath("NoUniqueLandmark.htmlvalidate.json");
-
-                // There are some false positives of this error, because of page navigation.
-                configuration.AssertBrowserLog = logEntries => logEntries
-                    .Where(entry =>
-                        entry.Level > Level.Info &&
-                        entry.Text?.Contains("The element for this Shepherd step was not found") != true)
-                    .ShouldBeEmpty();
-            });
+            changeConfiguration: configuration => configuration
+                .HtmlValidationConfiguration
+                .WithRelativeConfigPath("NoUniqueLandmark.htmlvalidate.json"));
 }
