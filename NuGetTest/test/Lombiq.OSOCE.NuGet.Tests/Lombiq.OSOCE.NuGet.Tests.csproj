@@ -6,13 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.HelpfulLibraries" Version="12.5.1-alpha.2.osoe-925" />
-    <PackageReference Include="Lombiq.Tests" Version="5.0.1-alpha.0.osoe-925" />
-    <PackageReference Include="Lombiq.EInvoiceValidator" Version="1.0.1-alpha.2.osoe-925" />
-    <PackageReference Include="Lombiq.EInvoiceValidator.Sample" Version="1.0.1-alpha.2.osoe-925" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
-    <PackageReference Include="xunit.v3" Version="3.2.2" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
+    <PackageReference Include="Lombiq.HelpfulLibraries" />
+    <PackageReference Include="Lombiq.Tests" />
+    <PackageReference Include="Lombiq.EInvoiceValidator" />
+    <PackageReference Include="Lombiq.EInvoiceValidator.Sample" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit.v3" />
+    <PackageReference Include="xunit.runner.visualstudio">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>

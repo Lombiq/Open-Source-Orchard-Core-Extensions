@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -21,34 +21,34 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="12.5.1-alpha.2.osoe-925" />
-    <PackageReference Include="Lombiq.BaseTheme.Tests.UI" Version="11.0.1-alpha.0.osoe-925" />
-    <PackageReference Include="Lombiq.ChartJs.Tests.UI" Version="9.0.1-alpha.5.osoe-925" />
-    <PackageReference Include="Lombiq.ContentEditors.Tests.UI" Version="6.0.0-alpha.5.osoe-925" />
-    <PackageReference Include="Lombiq.DataTables.Tests.UI" Version="10.0.2-alpha.10.osoe-925" />
-    <PackageReference Include="Lombiq.EmailClient.Tests.UI" Version="1.0.0-alpha.9.osoe-925" />
-    <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI" Version="10.0.1-alpha.1.osoe-925" />
-    <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay.Tests.UI" Version="7.0.1-alpha.3.osoe-925" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge.Tests.UI" Version="8.0.1-alpha.7.olys-29" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Tests.UI" Version="8.0.1-alpha.7.olys-29" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots.Tests.UI" Version="9.0.1-alpha.16.osoe-925" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard.Tests.UI" Version="9.0.1-alpha.16.osoe-925" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI" Version="9.0.1-alpha.16.osoe-925" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement.Tests.UI" Version="9.0.1-alpha.16.osoe-925" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.EmailQuotaManagement.Tests.UI" Version="9.0.1-alpha.16.osoe-925" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Maintenance.Tests.UI" Version="9.0.1-alpha.16.osoe-925" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Management.Tests.UI" Version="9.0.1-alpha.16.osoe-925" />
-    <PackageReference Include="Lombiq.JsonEditor.Tests.UI" Version="9.0.2-alpha.4.osoe-925" />
-    <PackageReference Include="Lombiq.LoginAsAnybody.Tests.UI" Version="5.0.1-alpha.1.osoe-925" />
-    <PackageReference Include="Lombiq.OrchardCoreApiClient.Tests.UI" Version="7.0.1-alpha.1.osoe-925" />
-    <PackageReference Include="Lombiq.Privacy.Tests.UI" Version="10.0.1-alpha.5.osoe-925" />
-    <PackageReference Include="Lombiq.HelpfulExtensions.Tests.UI" Version="11.1.1-alpha.3.osoe-925" />
-    <PackageReference Include="Lombiq.Tests.UI" Version="14.2.2-alpha.0.osoe-925" />
-    <PackageReference Include="Lombiq.UIKit.Widgets.Tests.UI" Version="10.0.1-alpha.6.osoe-925" />
-    <PackageReference Include="Lombiq.Walkthroughs.Tests.UI" Version="3.0.1-alpha.20.osoe-925" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
-    <PackageReference Include="xunit.v3" Version="3.2.2" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
+    <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" />
+    <PackageReference Include="Lombiq.BaseTheme.Tests.UI" />
+    <PackageReference Include="Lombiq.ChartJs.Tests.UI" />
+    <PackageReference Include="Lombiq.ContentEditors.Tests.UI" />
+    <PackageReference Include="Lombiq.DataTables.Tests.UI" />
+    <PackageReference Include="Lombiq.EmailClient.Tests.UI" />
+    <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI" />
+    <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay.Tests.UI" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge.Tests.UI" />
+    <PackageReference Include="Lombiq.Hosting.MediaTheme.Tests.UI" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots.Tests.UI" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard.Tests.UI" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement.Tests.UI" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.EmailQuotaManagement.Tests.UI" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Maintenance.Tests.UI" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.Management.Tests.UI" />
+    <PackageReference Include="Lombiq.JsonEditor.Tests.UI" />
+    <PackageReference Include="Lombiq.LoginAsAnybody.Tests.UI" />
+    <PackageReference Include="Lombiq.OrchardCoreApiClient.Tests.UI" />
+    <PackageReference Include="Lombiq.Privacy.Tests.UI" />
+    <PackageReference Include="Lombiq.HelpfulExtensions.Tests.UI" />
+    <PackageReference Include="Lombiq.Tests.UI" />
+    <PackageReference Include="Lombiq.UIKit.Widgets.Tests.UI" />
+    <PackageReference Include="Lombiq.Walkthroughs.Tests.UI" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit.v3" />
+    <PackageReference Include="xunit.runner.visualstudio">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
