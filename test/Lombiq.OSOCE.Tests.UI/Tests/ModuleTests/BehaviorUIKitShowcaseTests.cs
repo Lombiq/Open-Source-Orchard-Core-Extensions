@@ -23,11 +23,15 @@ public class BehaviorUIKitShowcaseTests : UITestBase
                 {
                     configuration.HtmlValidationConfiguration.WithRelativeConfigPath("NoUniqueLandmark.htmlvalidate.json");
 
-                    // Rule exclusions due to https://github.com/OrchardCMS/OrchardCore/issues/15222, can be removed
-                    // once it is resolved.
+                    // The first three rule exclusions due to https://github.com/OrchardCMS/OrchardCore/issues/15222,
+                    // can be removed once it is resolved.
+                    // "aria-label-misuse" due to https://github.com/OrchardCMS/OrchardCore/issues/18510.
                     var errors = validationResult.GetParsedErrors()
                         .Where(error =>
-                            error.RuleId is not ("prefer-native-element" or "text-content" or "no-redundant-role"))
+                            error.RuleId is not "prefer-native-element" and
+                                not "text-content" and
+                                not "no-redundant-role" and
+                                not "aria-label-misuse")
                         .ToList();
                     errors.ShouldBeEmpty(HtmlValidationResultExtensions.GetParsedErrorMessageString(errors));
                     return Task.CompletedTask;
