@@ -20,5 +20,7 @@ public class BehaviorUIKitShowcaseTests : UITestBase
             context => context.TestUIKitShowcaseBehaviorAsync(),
             configuration => configuration.HtmlValidationConfiguration
                 .WithRelativeConfigPath("NoUniqueLandmark.htmlvalidate.json")
-                .WithOC15222Filter());
+                .WithOC15222Filter()
+                // This is necessary until https://github.com/OrchardCMS/OrchardCore/pull/18730 is merged.
+                .WithFilters("OC-18730", error => error.RuleUrl is not "aria-label-misuse"));
 }
