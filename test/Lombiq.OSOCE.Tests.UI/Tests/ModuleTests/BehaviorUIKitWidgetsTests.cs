@@ -1,7 +1,4 @@
-using Lombiq.Tests.UI.Extensions;
 using Lombiq.UIKit.Widgets.Tests.UI.Extensions;
-using Shouldly;
-using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
