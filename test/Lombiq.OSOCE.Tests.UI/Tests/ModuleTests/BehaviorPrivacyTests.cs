@@ -41,10 +41,10 @@ public class BehaviorPrivacyTests : UITestBase
             configuration => configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
                 validationResult =>
                 {
-                    // Error filtering due to https://github.com/OrchardCMS/OrchardCore/issues/15222 and
-                    // https://github.com/OrchardCMS/OrchardCore/issues/18510. Can be removed once they are resolved.
+                    // Error filtering due to https://github.com/OrchardCMS/OrchardCore/issues/15222. Can be removed
+                    // once it is resolved.
                     var errors = validationResult.GetParsedErrors()
-                        .Where(error => error.RuleId is not "prefer-native-element" and not "aria-label-misuse");
+                        .Where(error => error.RuleId is not "prefer-native-element");
                     errors.ShouldBeEmpty(HtmlValidationResultExtensions.GetParsedErrorMessageString(errors));
                     return Task.CompletedTask;
                 });
