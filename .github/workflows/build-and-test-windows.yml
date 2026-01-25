@@ -78,32 +78,32 @@ jobs:
       verify-dotnet-consolidation: false
       node-version: none
 
-  # build-and-test-nuget-test:
-  #   if: github.ref_name == github.event.repository.default_branch ||
-  #       github.event_name == 'workflow_dispatch' ||
-  #       github.event.label.name == 'run-windows-build' ||
-  #       (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build'))
-  #   name: Build and Test Windows - NuGetTest solution
-  #   uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-925
-  #   with:
-  #     parent-job-name: nuget-solution
-  #     machine-types: '["windows-2025"]'
-  #     build-directory: NuGetTest
-  #     timeout-minutes: 30
-  #     # This way, we can see Node.js build issues in the build log.
-  #     build-verbosity: minimal
-  #     dotnet-test-process-timeout: 900000
-  #     # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
-  #     # supported by GHA.
-  #     # The currently used Elasticsearch setup action (https://github.com/elastic/elastic-github-actions/tree/master/elasticsearch)
-  #     # can only be used on Linux.
-  #     # Without quotes, somehow the value won't be passed properly and the test execution will hang, despite seemingly
-  #     # every value being the same as with quotes.
-  #     # yamllint disable-line rule:quoted-strings
-  #     test-filter: 'FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~ElasticsearchTests'
-  #     # It's enough to check consolidation only in the Linux workflow.
-  #     verify-dotnet-consolidation: false
-  #     node-version: none
+  build-and-test-nuget-test:
+    if: github.ref_name == github.event.repository.default_branch ||
+        github.event_name == 'workflow_dispatch' ||
+        github.event.label.name == 'run-windows-build' ||
+        (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build'))
+    name: Build and Test Windows - NuGetTest solution
+    uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-925
+    with:
+      parent-job-name: nuget-solution
+      machine-types: '["windows-2025"]'
+      build-directory: NuGetTest
+      timeout-minutes: 30
+      # This way, we can see Node.js build issues in the build log.
+      build-verbosity: minimal
+      dotnet-test-process-timeout: 900000
+      # Running ZAP for security scans in Docker under GHA Windows runners won't work since such virtualization is not
+      # supported by GHA.
+      # The currently used Elasticsearch setup action (https://github.com/elastic/elastic-github-actions/tree/master/elasticsearch)
+      # can only be used on Linux.
+      # Without quotes, somehow the value won't be passed properly and the test execution will hang, despite seemingly
+      # every value being the same as with quotes.
+      # yamllint disable-line rule:quoted-strings
+      test-filter: 'FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~ElasticsearchTests'
+      # It's enough to check consolidation only in the Linux workflow.
+      verify-dotnet-consolidation: false
+      node-version: none
 
   asset-lint:
     if: github.ref_name == github.event.repository.default_branch ||
@@ -126,7 +126,7 @@ jobs:
 
   post-pull-request-checks-automation:
     name: Post Pull Request Checks Automation
-    needs: [build-and-test-larger-runners, powershell-static-code-analysis]
+    needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
     if: github.event.pull_request != ''
     uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
     secrets:
@@ -139,7 +139,7 @@ jobs:
     name: Remove Windows Build Warning Label
     runs-on: ubuntu-24.04
     timeout-minutes: 2
-    needs: [build-and-test-larger-runners, asset-lint, powershell-static-code-analysis]
+    needs: [build-and-test-larger-runners, build-and-test-nuget-test, asset-lint, powershell-static-code-analysis]
     steps:
       - name: Remove Windows Build Warning Label
         uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@dev
