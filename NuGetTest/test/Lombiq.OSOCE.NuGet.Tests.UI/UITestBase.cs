@@ -1,10 +1,7 @@
 using Lombiq.OSOCE.NuGet.Tests.UI.Helpers;
 using Lombiq.Tests.UI;
-using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
-using Shouldly;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
