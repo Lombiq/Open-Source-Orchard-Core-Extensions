@@ -104,7 +104,7 @@ jobs:
       # Without quotes, somehow the value won't be passed properly and the test execution will hang, despite seemingly
       # every value being the same as with quotes.
       # yamllint disable-line rule:quoted-strings
-      test-filter: 'FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~ElasticsearchTests'
+      test-filter: 'FullyQualifiedName!~SecurityScanningTests&FullyQualifiedName!~ElasticsearchTests&FullyQualifiedName!~BehaviorOrchardCoreApiClientTests'
       # It's enough to check consolidation only in the Linux workflow.
       verify-dotnet-consolidation: false
       node-version: none
