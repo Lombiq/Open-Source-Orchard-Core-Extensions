@@ -15,5 +15,9 @@ public class BehaviorOrchardCoreApiClientTests : UITestBase
     public Task OrchardCoreApiClientShouldWork() =>
         ExecuteTestAfterSetupAsync(
             context => context.TestOrchardCoreApiClientBehaviorAsync(),
-            configuration => configuration.UseSqlServer = true);
+            configuration =>
+            {
+                configuration.UseSqlServer = true;
+                configuration.MaxRetryCount = 0;
+            });
 }
