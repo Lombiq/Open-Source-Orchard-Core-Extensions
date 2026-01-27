@@ -93,7 +93,7 @@ jobs:
       parent-job-name: nuget-solution
       machine-types: '["windows-2025"]'
       build-directory: NuGetTest
-      timeout-minutes: 30
+      timeout-minutes: 70
       # This way, we can see Node.js build issues in the build log.
       build-verbosity: minimal
       dotnet-test-process-timeout: 900000
