@@ -13,5 +13,7 @@ public class BehaviorOrchardCoreApiClientTests : UITestBase
 
     [Fact]
     public Task OrchardCoreApiClientShouldWork() =>
-        ExecuteTestAfterSetupAsync(context => context.TestOrchardCoreApiClientBehaviorAsync());
+        ExecuteTestAfterSetupAsync(
+            context => context.TestOrchardCoreApiClientBehaviorAsync(),
+            configuration => configuration.UseSqlServer = true);
 }
