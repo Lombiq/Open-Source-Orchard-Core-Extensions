@@ -27,8 +27,8 @@
     <PackageVersion Include="Lombiq.EmailClient.Tests.UI" Version="1.0.0-alpha.9.osoe-925" />
     <PackageVersion Include="Lombiq.HelpfulExtensions" Version="11.1.1-alpha.3.osoe-925" />
     <PackageVersion Include="Lombiq.HelpfulExtensions.Tests.UI" Version="11.1.1-alpha.3.osoe-925" />
-    <PackageVersion Include="Lombiq.HelpfulLibraries" Version="12.5.1-alpha.7.osoe-925" />
-    <PackageVersion Include="Lombiq.HelpfulLibraries.OrchardCore" Version="12.5.1-alpha.7.osoe-925" />
+    <PackageVersion Include="Lombiq.HelpfulLibraries" Version="12.6.1-alpha.0.osoe-925" />
+    <PackageVersion Include="Lombiq.HelpfulLibraries.OrchardCore" Version="12.6.1-alpha.0.osoe-925" />
     <PackageVersion Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="10.0.1-alpha.1.osoe-925" />
     <PackageVersion Include="Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI" Version="10.0.1-alpha.1.osoe-925" />
     <PackageVersion Include="Lombiq.Hosting.BuildVersionDisplay" Version="7.0.1-alpha.3.osoe-925" />
