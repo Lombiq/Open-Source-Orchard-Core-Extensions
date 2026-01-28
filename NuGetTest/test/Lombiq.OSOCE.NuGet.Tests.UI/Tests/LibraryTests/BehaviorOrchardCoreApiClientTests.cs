@@ -22,12 +22,9 @@ public class BehaviorOrchardCoreApiClientTests : UITestBase
                 // Workaround for long paths in Windows.
                 if (OperatingSystem.IsWindows())
                 {
-                    configuration.MaxRetryCount = 0;
-                    var appDataPath = Path.Join(
+                    configuration.TempDirectoryPath = Path.Combine(
                         Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
-                        "oc-api-test");
-                    Directory.CreateDirectory(appDataPath);
-                    Environment.SetEnvironmentVariable("ORCHARD_APP_DATA", appDataPath);
+                        "oc-api");
                 }
             });
 }
