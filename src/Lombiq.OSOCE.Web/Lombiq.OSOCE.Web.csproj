@@ -64,10 +64,6 @@
   <ItemGroup>
     <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="$(OrchardCoreVersion)" />
     <PackageReference Include="OrchardCore.Logging.NLog" Version="$(OrchardCoreVersion)" />
-    
-    <!-- Fix package version issues -->
-    <PackageReference Include="GraphQL.MicrosoftDI" Version="8.8.3" />
-    <PackageReference Include="GraphQL.SystemTextJson" Version="8.8.3" />
   </ItemGroup>
 
 </Project>
