@@ -63,7 +63,7 @@ jobs:
 
   codespell:
     name: Codespell
-    uses: Lombiq/GitHub-Actions/.github/workflows/codespell.yml@renovate/all-dependencies
+    uses: Lombiq/GitHub-Actions/.github/workflows/codespell.yml@dev
 
   asset-lint:
     name: Lint Assets
