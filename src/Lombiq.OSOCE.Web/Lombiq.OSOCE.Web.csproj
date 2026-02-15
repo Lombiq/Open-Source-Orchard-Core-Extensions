@@ -4,7 +4,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <TieredCompilation>true</TieredCompilation>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <OrchardCoreVersion>3.0.0-preview-18896</OrchardCoreVersion>
+    <OrchardCoreVersion>3.0.0-preview-18914</OrchardCoreVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -64,10 +64,6 @@
   <ItemGroup>
     <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="$(OrchardCoreVersion)" />
     <PackageReference Include="OrchardCore.Logging.NLog" Version="$(OrchardCoreVersion)" />
-    
-    <!-- Fix package version issues -->
-    <PackageReference Include="GraphQL.MicrosoftDI" Version="8.8.3" />
-    <PackageReference Include="GraphQL.SystemTextJson" Version="8.8.3" />
   </ItemGroup>
 
 </Project>
