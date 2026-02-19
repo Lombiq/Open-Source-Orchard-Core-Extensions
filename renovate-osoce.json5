@@ -11,6 +11,14 @@
         // https://docs.renovatebot.com/configuration-options/#schedule.
         '* 0-6 * * 4',
     ],
+    lockFileMaintenance: {
+        // Lock File Maintenance (see
+        // https://docs.mend.io/wsk/common-practices-for-renovate-configuration#CommonPracticesforRenovateConfiguration-LockFileMaintenance)
+        // has its own schedule and can't use the same schedule as other updates.
+        schedule: [
+            '* 0-6 * * 4',
+        ],
+    },
     packageRules: [
         {
             groupName: 'Non-Breaking Dependency Versions',
