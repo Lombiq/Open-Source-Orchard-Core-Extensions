@@ -3,6 +3,13 @@
 This folder contains end-to-end scenarios for SQL query monitoring in UI tests. The goal is to verify what the
 monitoring API captures, how assertions behave, and how to tune or scope checks for real projects.
 
+## Why Middleware Is Needed
+
+SQL monitoring works per HTTP request. Middleware in the app pipeline is used to finalize each request into one
+assertable SQL summary with request metadata (path/method/trace identifier) and the collected SQL executions.
+
+This is what makes page-change assertions, request-specific assertions, and follow-up request aggregation reliable.
+
 ## Scenario Catalog
 
 | Scenario We Verify | Useful For | Test |
