@@ -1,5 +1,6 @@
 using Lombiq.Tests.UI.SqlQueryMonitoring.Exceptions;
 using Lombiq.Tests.UI.SqlQueryMonitoring.Extensions;
+using Lombiq.Tests.UI.SqlQueryMonitoring.Services;
 using Shouldly;
 using System;
 using System.Threading.Tasks;
@@ -33,6 +34,10 @@ public class SqlQueryMonitoringFailureTests : Lombiq.Tests.UI.Samples.UITestBase
                 {
                     // This is expected because the duplicate command text threshold is set to one.
                     exception.InnerException.ShouldNotBeNull();
+                    exception.InnerException.Message.ShouldContain(
+                        $"[{SqlQueryMonitoringConfiguration.DuplicateCommandFailureCategory}]");
+                    exception.InnerException.Message.ShouldContain(
+                        SqlQueryMonitoringConfiguration.DuplicateCommandFailureCategory);
                     exception.InnerException.Message.ShouldContain("Command text executed");
                     exception.InnerException.Message.ShouldContain("threshold: 1");
                     _testOutputHelper.WriteLineTimestampedAndDebug(
@@ -61,6 +66,10 @@ public class SqlQueryMonitoringFailureTests : Lombiq.Tests.UI.Samples.UITestBase
                 {
                     // Expect the duplicate command with parameters category.
                     exception.InnerException.ShouldNotBeNull();
+                    exception.InnerException.Message.ShouldContain(
+                        $"[{SqlQueryMonitoringConfiguration.DuplicateCommandWithParametersFailureCategory}]");
+                    exception.InnerException.Message.ShouldContain(
+                        SqlQueryMonitoringConfiguration.DuplicateCommandWithParametersFailureCategory);
                     exception.InnerException.Message.ShouldContain("Command text with same parameters executed");
                     exception.InnerException.Message.ShouldContain("threshold: 1");
                     _testOutputHelper.WriteLineTimestampedAndDebug(
@@ -88,6 +97,10 @@ public class SqlQueryMonitoringFailureTests : Lombiq.Tests.UI.Samples.UITestBase
                 {
                     // Expect the oversized result set category.
                     exception.InnerException.ShouldNotBeNull();
+                    exception.InnerException.Message.ShouldContain(
+                        $"[{SqlQueryMonitoringConfiguration.ResultSetRowCountFailureCategory}]");
+                    exception.InnerException.Message.ShouldContain(
+                        SqlQueryMonitoringConfiguration.ResultSetRowCountFailureCategory);
                     exception.InnerException.Message.ShouldContain("Command result set had");
                     exception.InnerException.Message.ShouldContain("threshold: 0");
                     _testOutputHelper.WriteLineTimestampedAndDebug(
@@ -113,8 +126,14 @@ public class SqlQueryMonitoringFailureTests : Lombiq.Tests.UI.Samples.UITestBase
                 }
                 catch (SqlQueryMonitoringAssertionException exception)
                 {
-                    // Expect the oversized result set category.
+                    // Expect all failure categories.
                     exception.InnerException.ShouldNotBeNull();
+                    exception.InnerException.Message.ShouldContain(
+                        SqlQueryMonitoringConfiguration.DuplicateCommandFailureCategory);
+                    exception.InnerException.Message.ShouldContain(
+                        SqlQueryMonitoringConfiguration.DuplicateCommandWithParametersFailureCategory);
+                    exception.InnerException.Message.ShouldContain(
+                        SqlQueryMonitoringConfiguration.ResultSetRowCountFailureCategory);
                     exception.InnerException.Message.ShouldContain("Command text executed");
                     exception.InnerException.Message.ShouldContain("Command text with same parameters executed");
                     exception.InnerException.Message.ShouldContain("Command result set had");

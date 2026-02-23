@@ -1,6 +1,7 @@
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.SqlQueryMonitoring.Exceptions;
 using Lombiq.Tests.UI.SqlQueryMonitoring.Extensions;
+using Lombiq.Tests.UI.SqlQueryMonitoring.Services;
 using OpenQA.Selenium;
 using Shouldly;
 using System;
@@ -67,6 +68,8 @@ public class SqlQueryMonitoringAsyncRequestTests : Lombiq.Tests.UI.Samples.UITes
 
                 exception.SqlQueryMonitoringSummary.RequestPath.ShouldContain(pagePath);
                 exception.InnerException.ShouldNotBeNull();
+                exception.InnerException.Message.ShouldContain(
+                    SqlQueryMonitoringConfiguration.DuplicateCommandFailureCategory);
                 exception.InnerException.Message.ShouldContain("Command text executed");
                 exception.InnerException.Message.ShouldContain("2 times");
                 exception.InnerException.Message.ShouldContain("threshold: 2");
