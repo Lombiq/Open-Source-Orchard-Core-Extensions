@@ -1,4 +1,5 @@
 using Lombiq.Tests.UI.Extensions;
+using Lombiq.Tests.UI.Helpers;
 using Lombiq.Tests.UI.SqlQueryMonitoring.Extensions;
 using Shouldly;
 using System;
@@ -23,22 +24,21 @@ public class SqlQueryMonitoringLinqToDbTests : Lombiq.Tests.UI.Samples.UITestBas
 
                 const string requestPath = "/Lombiq.HelpfulLibraries.Samples/LinqToDbSamples/SimpleQuery";
 
-                // Keep browser navigation on normal HTML pages so HTML validation doesn't fail on non-HTML endpoints.
-                await context.GoToHomePageAsync(onlyIfNotAlreadyThere: false);
+                await context.GoToRelativeUrlAsync(requestPath);
 
-                using var client = context.CreateHttpClient();
-                _ = await client.GetStringAsync(requestPath, context.Configuration.TestCancellationToken);
-
-                await context.AssertSqlQueryMonitoringForRequestAsync(
-                    requestPath,
-                    requestMethod: "GET",
-                    assertSummaryAsync: summary =>
+                await context.AssertSqlQueryMonitoringAsync(summary =>
                 {
+                    summary.RequestPath.ShouldStartWith(
+                        requestPath,
+                        Case.Insensitive,
+                        "The monitored summary should belong to the navigated LINQ to DB endpoint request.");
+
                     summary.Executions.ShouldNotBeEmpty("LINQ to DB calls should be captured by SQL query monitoring.");
                     summary.Executions.ShouldContain(entry =>
                         entry.CommandText.Contains("FROM", StringComparison.OrdinalIgnoreCase));
 
                     return Task.CompletedTask;
                 });
-            });
+            },
+            ConfigurationHelper.DisableHtmlValidation);
 }
