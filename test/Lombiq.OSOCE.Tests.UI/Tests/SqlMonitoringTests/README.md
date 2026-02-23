@@ -3,13 +3,6 @@
 This folder contains end-to-end scenarios for SQL query monitoring in UI tests. The goal is to verify what the
 monitoring API captures, how assertions behave, and how to tune or scope checks for real projects.
 
-## Why Middleware Is Needed
-
-SQL monitoring works per HTTP request. Middleware in the app pipeline is used to finalize each request into one
-assertable SQL summary with request metadata (path/method/trace identifier) and the collected SQL executions.
-
-This is what makes page-change assertions, request-specific assertions, and follow-up request aggregation reliable.
-
 ## Scenario Catalog
 
 | Scenario We Verify | Useful For | Test |
@@ -34,17 +27,3 @@ This is what makes page-change assertions, request-specific assertions, and foll
 | `ISession.RawExecuteNonQueryAsync` executions are captured from a navigated page-change request. | Coverage for raw SQL write/non-query paths while still validating page-change assertions. | `SqlQueryMonitoringAdditionalQuerySourcesTests.SqlQueryMonitoringShouldCaptureRawExecuteNonQuery` |
 | Queries from manually created YesSql sessions are captured from a navigated page-change request. | Validating non-default session lifecycle usage while still validating page-change assertions. | `SqlQueryMonitoringAdditionalQuerySourcesTests.SqlQueryMonitoringShouldCaptureCustomSessionQuery` |
 | Direct `IDbConnectionAccessor` command execution is captured from a navigated page-change request. | Validating low-level ADO.NET usage while still validating page-change assertions. | `SqlQueryMonitoringAdditionalQuerySourcesTests.SqlQueryMonitoringShouldCaptureDirectConnectionQuery` |
-
-## Assertion API Choice
-
-- Use `AssertSqlQueryMonitoringAsync()` for default single-request assertions.
-- Use `AssertSqlQueryMonitoringIncludingFollowUpRequestsAsync()` for aggressive follow-up-inclusive assertions.
-- Use `AssertSqlQueryMonitoringForRequestAsync(path, method)` for request-specific assertions.
-- Automatic assertions on page changes are configured to use the aggressive follow-up-inclusive mode.
-
-## Diagnostics and Timing
-
-- Threshold failure details include captured SQL execution call stacks to help with call-site diagnostics.
-- `SummaryLookupTimeout` controls how long summary lookup waits for matching request summaries.
-- `SummaryLookupInterval` controls polling cadence while waiting for summaries.
-- `FollowUpSummaryQuietPeriod` controls how long follow-up-inclusive assertions wait after the last captured summary.
