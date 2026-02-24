@@ -15,4 +15,14 @@ public class SqlQueryMonitoringRequestMatchingTests : Lombiq.Tests.UI.Samples.UI
     public Task SqlQueryMonitoringShouldCaptureRequestPathAndQueryForNavigatedPage() =>
         SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldCaptureRequestPathAndQueryForNavigatedPageAsync(
             ExecuteTestAfterSetupAsync);
+
+    [Fact]
+    public Task SqlQueryMonitoringShouldFailWhenSpecificRequestSummaryIsMissing() =>
+        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldFailWhenSpecificRequestSummaryIsMissingAsync(
+            ExecuteTestAfterSetupAsync);
+
+    [Fact]
+    public Task SqlQueryMonitoringShouldNotMatchDifferentQueryStringForSpecificRequest() =>
+        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldNotMatchDifferentQueryStringForSpecificRequestAsync(
+            ExecuteTestAfterSetupAsync);
 }
