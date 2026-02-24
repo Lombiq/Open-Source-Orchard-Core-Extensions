@@ -12,6 +12,6 @@ public class SqlQueryMonitoringDisableCollectionTests : Lombiq.Tests.UI.Samples.
     }
 
     [Fact]
-    public Task SqlQueryMonitoringShouldAllowDisablingCollection() =>
-        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldAllowDisablingCollectionAsync(ExecuteTestAfterSetupAsync);
+    public Task SqlQueryMonitoringShouldNotCollectWhenCollectionIsDisabled() =>
+        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldNotCollectWhenCollectionIsDisabledAsync(ExecuteTestAfterSetupAsync);
 }
