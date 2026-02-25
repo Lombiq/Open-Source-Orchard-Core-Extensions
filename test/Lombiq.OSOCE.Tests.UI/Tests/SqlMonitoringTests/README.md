@@ -33,6 +33,7 @@ Scenario implementations are in [SqlQueryMonitoringTestCases.cs](../../../Lombiq
 | Verify request-specific assertion requires query-string match. | Same path with different query does not match. | `SqlQueryMonitoringShouldNotMatchDifferentQueryStringForSpecificRequest` |
 | Verify follow-up polling captures late async requests. | Follow-up API is captured without explicit page-state wait. | `SqlQueryMonitoringShouldCapturePageLoadAndAsyncApiQueryWithoutPageStateWait` |
 | Verify stale queue entries are ignored during follow-up assertions. | Old summaries are excluded during follow-up aggregation. | `SqlQueryMonitoringShouldIgnoreStaleSummariesWhenAggregatingFollowUpRequests` |
+| Verify noisy non-SQL requests do not evict actionable SQL summaries. | Store retention favors removing empty summaries first. | `SqlQueryMonitoringShouldRetainRecentSqlSummariesAmidNoisyRequests` |
 | Verify LINQ to DB SQL is captured by monitoring. | LINQ to DB endpoint SQL is captured. | `LinqToDbSamplesShouldBeCapturedBySqlMonitoring` |
 | Verify `ISession.RawQueryAsync` SQL is captured. | `ISession.RawQueryAsync` is captured. | `SqlQueryMonitoringShouldCaptureRawQuery` |
 | Verify `ISession.RawExecuteNonQueryAsync` SQL is captured. | `ISession.RawExecuteNonQueryAsync` is captured. | `SqlQueryMonitoringShouldCaptureRawExecuteNonQuery` |

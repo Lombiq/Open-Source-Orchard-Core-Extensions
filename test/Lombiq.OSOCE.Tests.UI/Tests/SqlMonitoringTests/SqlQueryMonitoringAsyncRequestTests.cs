@@ -29,4 +29,9 @@ public class SqlQueryMonitoringAsyncRequestTests : Lombiq.Tests.UI.Samples.UITes
     public Task SqlQueryMonitoringShouldIgnoreStaleSummariesWhenAggregatingFollowUpRequests() =>
         SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldIgnoreStaleSummariesWhenAggregatingFollowUpRequestsAsync(
             ExecuteTestAfterSetupAsync);
+
+    [Fact]
+    public Task SqlQueryMonitoringShouldRetainRecentSqlSummariesAmidNoisyRequests() =>
+        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldRetainRecentSqlSummariesAmidNoisyRequestsAsync(
+            ExecuteTestAfterSetupAsync);
 }
