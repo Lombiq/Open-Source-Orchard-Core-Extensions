@@ -27,11 +27,12 @@ Scenario implementations are in [SqlQueryMonitoringTestCases.cs](../../../Lombiq
 | Verify duplicate query+parameters failures are reported. | Duplicate command+parameters failure is raised and categorized. | `SqlQueryMonitoringShouldSurfaceDuplicateParameterIssues` |
 | Verify large result-set failures are reported. | Oversized result-set failure is raised and categorized. | `SqlQueryMonitoringShouldSurfaceOversizedResultSetIssues` |
 | Verify multiple failure categories are reported together. | All failure categories are surfaced together. | `SqlQueryMonitoringShouldSurfaceAllIssues` |
-| Verify monitoring works after tenant switch. | Monitoring works on switched and default tenant. | `SqlQueryMonitoringShouldWorkOnAnotherTenant` |
+| Verify tenant isolation in captured summaries. | Monitoring works on switched and default tenant, and summaries stay tenant-bound. | `SqlQueryMonitoringShouldWorkOnAnotherTenant` |
 | Verify request path and query are captured correctly. | Path + query are captured on navigation. | `SqlQueryMonitoringShouldCaptureRequestPathAndQueryForNavigatedPage` |
 | Verify request-specific assertion fails when request is missing. | Missing path/method summary fails instead of falling back. | `SqlQueryMonitoringShouldFailWhenSpecificRequestSummaryIsMissing` |
 | Verify request-specific assertion requires query-string match. | Same path with different query does not match. | `SqlQueryMonitoringShouldNotMatchDifferentQueryStringForSpecificRequest` |
 | Verify follow-up polling captures late async requests. | Follow-up API is captured without explicit page-state wait. | `SqlQueryMonitoringShouldCapturePageLoadAndAsyncApiQueryWithoutPageStateWait` |
+| Verify stale queue entries are ignored during follow-up assertions. | Old summaries are excluded during follow-up aggregation. | `SqlQueryMonitoringShouldIgnoreStaleSummariesWhenAggregatingFollowUpRequests` |
 | Verify LINQ to DB SQL is captured by monitoring. | LINQ to DB endpoint SQL is captured. | `LinqToDbSamplesShouldBeCapturedBySqlMonitoring` |
 | Verify `ISession.RawQueryAsync` SQL is captured. | `ISession.RawQueryAsync` is captured. | `SqlQueryMonitoringShouldCaptureRawQuery` |
 | Verify `ISession.RawExecuteNonQueryAsync` SQL is captured. | `ISession.RawExecuteNonQueryAsync` is captured. | `SqlQueryMonitoringShouldCaptureRawExecuteNonQuery` |

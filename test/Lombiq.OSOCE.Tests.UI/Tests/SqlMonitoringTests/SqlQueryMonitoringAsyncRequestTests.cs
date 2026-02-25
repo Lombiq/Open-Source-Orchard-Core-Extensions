@@ -24,4 +24,9 @@ public class SqlQueryMonitoringAsyncRequestTests : Lombiq.Tests.UI.Samples.UITes
     public Task SqlQueryMonitoringShouldCapturePageLoadAndAsyncApiQueryWithoutPageStateWait() =>
         SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldCapturePageLoadAndAsyncApiQueryWithoutPageStateWaitAsync(
             ExecuteTestAfterSetupAsync);
+
+    [Fact]
+    public Task SqlQueryMonitoringShouldIgnoreStaleSummariesWhenAggregatingFollowUpRequests() =>
+        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldIgnoreStaleSummariesWhenAggregatingFollowUpRequestsAsync(
+            ExecuteTestAfterSetupAsync);
 }
