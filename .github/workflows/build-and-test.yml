@@ -63,11 +63,11 @@ jobs:
 
   codespell:
     name: Codespell
-    uses: Lombiq/GitHub-Actions/.github/workflows/codespell.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/codespell.yml@issue/OSOE-1241
 
   asset-lint:
     name: Lint Assets
-    uses: Lombiq/GitHub-Actions/.github/workflows/asset-lint.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/asset-lint.yml@issue/OSOE-1241
 
   powershell-static-code-analysis:
     name: PowerShell Static Code Analysis
@@ -77,7 +77,7 @@ jobs:
 
   yaml-linting:
     name: YAML Linting
-    uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/yaml-lint.yml@issue/OSOE-1241
     with:
       config-file-path: tools/Lombiq.GitHub.Actions/.trunk/configs/.yamllint.yaml
       search-path: .
@@ -86,7 +86,7 @@ jobs:
     name: Post Pull Request Checks Automation
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, codespell, asset-lint, powershell-static-code-analysis]
     if: github.event.pull_request != ''
-    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@dev
+    uses: Lombiq/GitHub-Actions/.github/workflows/post-pull-request-checks-automation.yml@issue/OSOE-1241
     secrets:
       JIRA_BASE_URL: ${{ secrets.DEFAULT_JIRA_BASE_URL }}
       JIRA_USER_EMAIL: ${{ secrets.DEFAULT_JIRA_USER_EMAIL }}
@@ -100,7 +100,7 @@ jobs:
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
     steps:
       - name: Add Windows Build Warning Label
-        uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@dev
+        uses: Lombiq/GitHub-Actions/.github/actions/add-remove-label@issue/OSOE-1241
         with:
           # The token is necessary to be able to add the label even if the workflow is triggered by a pull request
           # coming from a fork.
