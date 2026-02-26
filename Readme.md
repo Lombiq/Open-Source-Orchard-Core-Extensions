@@ -14,7 +14,6 @@ Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source
 
 ## Prerequisites and getting started
 
-- You need Node.js for building client-side assets in multiple projects. Check out [Lombiq Node.js Extensions Readme](https://github.com/Lombiq/NodeJs-Extensions/#prerequisites) for details.
 - To develop and test scripts written in PowerShell, install and use [PowerShell 7](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell) instead of Windows PowerShell (i.e., up to version 5.x). Static code analysis is only executed through PowerShell 7.
 - Since the extensions are included as git submodules when cloning this repo be sure to initialize submodules: When using a GUI this will most possibly happen by default, and when using the command line use the `--recurse-submodules` switch. If you cloned without initializing submodules, then you can run `git submodule update --init --recursive` to initialize them later.
 
@@ -56,20 +55,20 @@ Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source
 - [`Lombiq.Privacy`](https://github.com/Lombiq/Orchard-Privacy): Orchard module containing features related to data protection/privacy and the EU law on it, the [General Data Protection Regulation](https://eur-lex.europa.eu/legal-content/EN/TXT/?qid=1462439808430&uri=CELEX:32016R0679) (GDPR). Check out a demo video of this module [here](https://www.youtube.com/watch?v=GnyYL9Zdo8Q). **Important!** Using this module will not make your site GDPR-compliant alone. Do not forget to create a privacy policy page that you need to link to from the various consent-asking features.
 - [`Lombiq.TrainingDemo`](https://github.com/Lombiq/Orchard-Training-Demo-Module): Demo Orchard Core module for training purposes guiding you to become an Orchard developer. Note that this module also has an Orchard 1.x version in the [`dev-orchard-1` branch of the repository](https://github.com/Lombiq/Orchard-Training-Demo-Module/tree/dev-orchard-1). If you prefer tutorial videos more then check out the [Dojo Course 3, the complete Orchard Core tutorial series](https://orcharddojo.net/orchard-training/dojo-course-3-the-full-orchard-core-tutorial).
 - [`Lombiq.UIKit`](https://github.com/Lombiq/Orchard-UIKit): This module contains reusable shapes like text editors, custom-style checkboxes, dropdown editors, and in the future potentially more complex editors. [Here](https://www.youtube.com/watch?v=PONfn2K8AHg) you can also see a demo of it. The module's Widgets feature provides widgets based on the Lombiq UI Kit reusable shapes.
-- [`Lombiq.VueJs`](https://github.com/Lombiq/Orchard-Vue.js): [Orchard Core](https://orchardproject.net/) module that contains [Vue.js](https://vuejs.org/) and commonly used Vue.js components to be used in other Vue.js apps as dependencies. Provides extensibility to create Vue.js component templates as Orchard Core shapes making them able to override in themes or modules.
+- [`Lombiq.VueJs`](https://github.com/Lombiq/Orchard-Vue.js): [Orchard Core](https://orchardproject.net/) module that contains [Vue.js](https://vuejs.org/) resources.
 - [`Lombiq.Walkthroughs`](https://github.com/Lombiq/Orchard-Walkthroughs): Do you want to learn about the most important Orchard Core features with a hands-on tutorial that guides you with interactive tooltips, right there in Orchard Core? This module is for you! Check out a demo video of it [here](https://www.youtube.com/watch?v=mWfngBADvX0).
 
 ### Themes
 
-- [`Lombiq.BaseTheme`](https://github.com/Lombiq/Orchard-Base-Theme): This theme contains infrastructure for custom Bootstrap 5 themes with standardized zones and built-in front end menu display.
-- [`Lombiq.BaseTheme.Samples`](https://github.com/Lombiq/Orchard-Base-Theme/tree/dev/Lombiq.BaseTheme.Samples): A sample theme that demonstrates the features of the [`Lombiq.BaseTheme`](https://github.com/Lombiq/Orchard-Base-Theme).
+- [`Lombiq.BaseTheme.Native`](https://github.com/Lombiq/Orchard-Base-Theme): This theme contains infrastructure for custom native CSS Bootstrap 5 themes (using Orchard Core's built-in resource for BS5) with standardized zones and built-in front end menu display.
+- [`Lombiq.BaseTheme.Native.Samples`](https://github.com/Lombiq/Orchard-Base-Theme/tree/dev/Lombiq.BaseTheme.Native.Samples): A sample theme that demonstrates the features of the [`Lombiq.BaseTheme.Native`](https://github.com/Lombiq/Orchard-Base-Theme).
 - [`Lombiq.Hosting.MediaTheme`](https://github.com/Lombiq/Hosting-Media-Theme): With the help of this theme and its dependency, the [`Lombiq.Hosting.MediaTheme.Bridge`](https://github.com/Lombiq/Hosting-Media-Theme), you'll be able to host your theme assets and templates from Media Library.
 - [`Lombiq.Hosting.MediaTheme.Tests.Theme`](https://github.com/Lombiq/Hosting-Media-Theme): A theme only used for testing that demonstrates the local development version of a Media Theme.
 
 ### Utilities
 
 - [`Lombiq.Hosting.MediaTheme.Targets`](https://github.com/Lombiq/Hosting-Media-Theme): Provides automatic Media Theme package creation during build.
-- [`Lombiq.NodeJs.Extensions`](https://github.com/Lombiq/NodeJs-Extensions): Configurable and MSBuild-integrated frontend asset pipelines for SCSS, JS, MD, and external libraries implemented using npm scripts. Uses NPM Targets under the hood.
+- [`Lombiq.MSBuild.LibMan.Targets`](https://github.com/Lombiq/MSBuild-Targets/): Contains MSBuild Targets and Props files to streamline repetitive project configuration.
 - [`Lombiq.Npm.Targets`](https://github.com/Lombiq/NPM-Targets): Provides automatic NPM package installation and a custom NPM command execution before building a .NET project. This way it is possible for example to manage assets (e.g. .scss files or images) in a folder that will be automatically compiled into the _wwwroot_ folder on build, which then can be excluded from the version control system.
 - [`Lombiq.SetupExtensions`](https://github.com/Lombiq/Setup-Extensions): Extensions for setting up an Orchard Core application.
 
@@ -99,7 +98,7 @@ You can activate various sample content in the site:
 - [`Lombiq.DataTables`](https://github.com/Lombiq/Orchard-Data-Tables):
   - Go to Features in the admin dashboard and select "Lombiq Data Tables - Samples".
   - Go to Recipes in the admin dashboard and select "Lombiq Data Tables - Sample Content - Employee".
-- [`Lombiq.BaseTheme`](https://github.com/Lombiq/Orchard-Base-Theme):
+- [`Lombiq.BaseTheme.Native`](https://github.com/Lombiq/Orchard-Base-Theme):
   - The "TEST: Basic Orchard Features" setup recipe automatically sets it up. If not using it, run the "Lombiq Orchard Core Base Theme - Layers and Zones" recipe, and then enable the theme in Admin → Design → Themes.
   - In case of theme development you can use the "Lombiq Orchard Core Base Theme - Styling Demo" theme to test against some common HTML elements.
 - [`Lombiq.ChartJs`](https://github.com/Lombiq/Orchard-Chart.js): Go to Recipes in the admin dashboard and select "Lombiq Chart.js - Sample Content - Income/Expense".
@@ -129,11 +128,7 @@ When adding a new extension, or significant new features to existing extensions,
 - Open a pull request in this repository for every submodule pull request. That way, static code analysis and complex tests can run. If you forget to do so, a check in the submodule will fail. Once you've created the PR here, just click "Re-run jobs" in your submodule.
 - If you see build errors under your pull request then check out its details: It will send you to the failed step in the Actions tab. You can also click on the "Summary" on the sidebar to download the artifacts (logs, screenshots, etc) and in case of failed UI tests you find the annotations linking to which test failed.
 - Open a pull request for all but trivial changes (like typos) so we can nicely track them, including when generating release notes for the next release.
-- If you introduce .NET breaking changes, the Validate NuGet Publish workflow will fail due to [baseline package validation](https://learn.microsoft.com/en-us/dotnet/fundamentals/apicompat/package-validation/baseline-version-validator). Preferably, adjust the change to not be breaking if possible; if it has to be a breaking change, then you’ll need to create a _CompatibilitySuppressions.xml_ file to mark it as deliberate, what you can do with the following command:
-
-```powershell
-dotnet pack /p:EnablePackageValidation=true /p:PackageValidationBaselineVersion=<current version, like 1.2.3> /p:Version=<the next patch version, like 1.2.4> /p:NuGetBuild=true /p:GenerateCompatibilitySuppressionFile=true
-```
+- If you introduce .NET breaking changes, the Validate NuGet Publish workflow will fail due to [baseline package validation](https://learn.microsoft.com/en-us/dotnet/fundamentals/apicompat/package-validation/baseline-version-validator). Preferably, adjust the change to not be breaking if possible; if it has to be a breaking change, then add a _CompatibilitySuppressions.xml_ file to mark it as deliberate. This will be generated by the workflow and made downloadable as an artifact for your convenience.
 
 ### .NET and Orchard Core version support policy
 

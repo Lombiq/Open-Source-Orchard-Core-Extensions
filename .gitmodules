@@ -62,10 +62,6 @@
 	path = src/Modules/Lombiq.Privacy
 	url = https://github.com/Lombiq/Orchard-Privacy.git
 	branch = dev
-[submodule "src/Utilities/Lombiq.NodeJs.Extensions"]
-	path = src/Utilities/Lombiq.NodeJs.Extensions
-	url = https://github.com/Lombiq/NodeJs-Extensions.git
-	branch = dev
 [submodule "src/Modules/Lombiq.DataTables"]
 	path = src/Modules/Lombiq.DataTables
 	url = https://github.com/Lombiq/Orchard-Data-Tables.git
@@ -112,3 +108,8 @@
 [submodule "src/Libraries/Lombiq.EInvoiceValidator"]
 	path = src/Libraries/Lombiq.EInvoiceValidator
 	url = https://github.com/Lombiq/eInvoice-Validator.git
+	branch = dev
+[submodule "src/Utilities/Lombiq.MSBuild.Targets"]
+	path = src/Utilities/Lombiq.MSBuild.Targets
+	url = https://github.com/Lombiq/MSBuild-Targets.git
+	branch = dev

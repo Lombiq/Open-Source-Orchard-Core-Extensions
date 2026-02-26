@@ -51,8 +51,7 @@
         "Lombiq.UIKit.Widgets",
         "Lombiq.OSOCE.NuGet.TestTheme",
         "Lombiq.HelpfulExtensions.Widgets",
-        "Lombiq.VueJs",
-        "Lombiq.VueJs.Samples",
+        "Lombiq.VueJs.Resources",
         "OrchardCore.Tenants.FeatureProfiles",
         "Lombiq.Hosting.Tenants.FeaturesGuard",
         "TheTheme"

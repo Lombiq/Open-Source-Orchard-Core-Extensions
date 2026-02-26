@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
-    <PackageReference Include="xunit.v3" Version="3.2.0" />
+    <PackageReference Include="xunit.v3" Version="3.2.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Samples.Tests.UI\Lombiq.HelpfulLibraries.Samples.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Libraries\Lombiq.OrchardCoreApiClient\Lombiq.OrchardCoreApiClient.Tests.UI\Lombiq.OrchardCoreApiClient.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Lombiq.OSOCE.Web\Lombiq.OSOCE.Web.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.ChartJs\Lombiq.ChartJs.Tests.UI\Lombiq.ChartJs.Tests.UI.csproj" />
@@ -43,7 +44,6 @@
     <ProjectReference Include="..\..\src\Modules\Lombiq.Privacy\Lombiq.Privacy.Tests.UI\Lombiq.Privacy.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.UIKit\Lombiq.UIKit.Tests.UI\Lombiq.UIKit.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.UIKit\Lombiq.UIKit.Widgets.Tests.UI\Lombiq.UIKit.Widgets.Tests.UI.csproj" />
-    <ProjectReference Include="..\..\src\Modules\Lombiq.VueJs\Lombiq.VueJs.Tests.UI\Lombiq.VueJs.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.Walkthroughs\Lombiq.Walkthroughs.Test.UI\Lombiq.Walkthroughs.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Themes\Lombiq.BaseTheme\Lombiq.BaseTheme.Tests.UI\Lombiq.BaseTheme.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.Bridge.Tests.UI\Lombiq.Hosting.MediaTheme.Bridge.Tests.UI.csproj" />

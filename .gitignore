@@ -198,7 +198,3 @@ src/*.Web/Localization
 .ps1-analyzer-stamp
 /NDependOut/
 /build.binlog
-
-# Node.js Extensions automatically created files
-/pnpm-lock.yaml
-/package.json
