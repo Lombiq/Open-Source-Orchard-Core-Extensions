@@ -1,0 +1,11 @@
+{
+  "extends": [
+    "./NoUniqueLandmark.htmlvalidate.json"
+  ],
+
+  "rules": {
+    "attribute-allowed-values": "off"
+  },
+
+  "root": true
+}

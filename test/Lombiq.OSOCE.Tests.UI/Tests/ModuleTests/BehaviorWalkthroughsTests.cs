@@ -17,5 +17,5 @@ public class BehaviorWalkthroughsTests : UITestBase
             context => context.RunSetupAndTestWalkthroughsBehaviorAsync(),
             changeConfiguration: configuration => configuration
                 .HtmlValidationConfiguration
-                .WithRelativeConfigPath("NoUniqueLandmark.htmlvalidate.json"));
+                .WithRelativeConfigPath("WalkthroughsShouldWorkCorrectly.htmlvalidate.json"));
 }

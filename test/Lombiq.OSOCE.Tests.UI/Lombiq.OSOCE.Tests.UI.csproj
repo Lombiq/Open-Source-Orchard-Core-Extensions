@@ -1,14 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <IsPackable>false</IsPackable>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="NoUniqueLandmark.htmlvalidate.json" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
@@ -19,6 +15,7 @@
     </PackageReference>
     <Content Include="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="NoUniqueLandmark.htmlvalidate.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="WalkthroughsShouldWorkCorrectly.htmlvalidate.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>
