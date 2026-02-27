@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "./default.htmlvalidate.json"
+  ],
+
+  "rules": {
+    "attribute-allowed-values": "off",
+    "unique-landmark": "off"
+  },
+
+  "root": true
+}
