@@ -113,3 +113,6 @@
 	path = src/Utilities/Lombiq.MSBuild.Targets
 	url = https://github.com/Lombiq/MSBuild-Targets.git
 	branch = dev
+[submodule "src/Modules/Lombiq.Marketing"]
+	path = src/Modules/Lombiq.Marketing
+	url = https://github.com/Lombiq/Orchard-Marketing.git
