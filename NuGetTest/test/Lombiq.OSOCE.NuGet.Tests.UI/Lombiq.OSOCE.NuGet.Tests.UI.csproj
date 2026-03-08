@@ -11,10 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include=".htmlvalidate.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="*.htmlvalidate.json">
+    <Content Include="../../../test/Lombiq.OSOCE.Tests.UI/*.htmlvalidate.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <PackageCopyToOutput>true</PackageCopyToOutput>
     </Content>
