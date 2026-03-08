@@ -7,17 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="*.htmlvalidate.json" />
     <Content Include=".htmlvalidate.json" CopyToOutputDirectory="PreserveNewest" />
-    <Content Update="BehaviorDataTableTests.htmlvalidate.json" CopyToOutputDirectory="PreserveNewest" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="../../../test/Lombiq.OSOCE.Tests.UI/NoUniqueLandmark.htmlvalidate.json"
-             Link="NoUniqueLandmark.htmlvalidate.json"
-             CopyToOutputDirectory="PreserveNewest" />
-    <Content Include="../../../test/Lombiq.OSOCE.Tests.UI/WalkthroughsShouldWorkCorrectly.htmlvalidate.json"
-             Link="WalkthroughsShouldWorkCorrectly.htmlvalidate.json"
-             CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="*.htmlvalidate.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="../../../test/Lombiq.OSOCE.Tests.UI/*.htmlvalidate.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>
