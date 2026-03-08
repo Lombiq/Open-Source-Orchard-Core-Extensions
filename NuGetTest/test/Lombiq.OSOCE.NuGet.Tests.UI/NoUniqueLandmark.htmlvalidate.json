@@ -4,7 +4,8 @@
   ],
 
   "rules": {
-    "unique-landmark": "off"
+    "unique-landmark": "off",
+    "attribute-allowed-values": "off"
   },
 
   "root": true
