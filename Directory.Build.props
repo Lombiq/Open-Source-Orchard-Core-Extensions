@@ -15,9 +15,9 @@
   </PropertyGroup>-->
 
   <!-- Uncomment this to run .NET static code analyzers during rebuilds. -->
-  <!--<PropertyGroup>
+  <PropertyGroup>
     <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
-  </PropertyGroup>-->
+  </PropertyGroup>
 
   <Import Project="tools/Lombiq.Analyzers/Lombiq.Analyzers.OrchardCore/Build.props" />
 
@@ -30,6 +30,6 @@
 
   <!-- While the OrchardCorePreview NuGet source is actively used, this warning has to be suppressed. -->
   <PropertyGroup>
-    <NoWarn>NU1905</NoWarn>
+    <NoWarn>NU1905%3BCS1591%3BCS1573</NoWarn>
   </PropertyGroup>
 </Project>
