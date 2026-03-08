@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove=".htmlvalidate.json" />
-    <None Update="BehaviorDataTableTests.htmlvalidate.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include=".htmlvalidate.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Update="BehaviorDataTableTests.htmlvalidate.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>
