@@ -71,6 +71,7 @@ Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source
 - [`Lombiq.MSBuild.LibMan.Targets`](https://github.com/Lombiq/MSBuild-Targets/): Contains MSBuild Targets and Props files to streamline repetitive project configuration.
 - [`Lombiq.Npm.Targets`](https://github.com/Lombiq/NPM-Targets): Provides automatic NPM package installation and a custom NPM command execution before building a .NET project. This way it is possible for example to manage assets (e.g. .scss files or images) in a folder that will be automatically compiled into the _wwwroot_ folder on build, which then can be excluded from the version control system.
 - [`Lombiq.SetupExtensions`](https://github.com/Lombiq/Setup-Extensions): Extensions for setting up an Orchard Core application.
+- [`Lombiq.Tailwind.Targets`](https://github.com/Lombiq/Tailwind-Targets): Provides automatic Tailwind CSS compilation before building a .NET project, without requiring Node.js in the consuming app.
 
 ### Testing
 

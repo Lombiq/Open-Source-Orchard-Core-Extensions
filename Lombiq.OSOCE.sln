@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.1.11312.151 d18.0
+VisualStudioVersion = 18.1.11312.151
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{648D3BB6-201F-401B-9EF9-D7BBBC6D3ECA}"
 EndProject
@@ -262,7 +262,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.Targets.Tests", "src\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.Targets.Tests\Lombiq.MSBuild.Targets.Tests.csproj", "{71531C35-B397-4658-A678-7B3D262511D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.HelpfulLibraries.Samples.Tests.UI", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Samples.Tests.UI\Lombiq.HelpfulLibraries.Samples.Tests.UI.csproj", "{67780DC2-F505-81B7-C4FD-C4D250022916}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.Hosting.Tenants.Maintenance.Tests", "src\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.Maintenance.Tests\Lombiq.Hosting.Tenants.Maintenance.Tests.csproj", "{FA2FF7D8-B1B8-4216-CB73-F586BF7D9CCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.Tailwind.Targets", "src\Utilities\Lombiq.Tailwind.Targets\Lombiq.Tailwind.Targets.csproj", "{473AB218-B16F-4BB6-A2E7-9F3DA2428134}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1522,6 +1525,18 @@ Global
 		{FA2FF7D8-B1B8-4216-CB73-F586BF7D9CCF}.Release|x64.Build.0 = Release|Any CPU
 		{FA2FF7D8-B1B8-4216-CB73-F586BF7D9CCF}.Release|x86.ActiveCfg = Release|Any CPU
 		{FA2FF7D8-B1B8-4216-CB73-F586BF7D9CCF}.Release|x86.Build.0 = Release|Any CPU
+		{473AB218-B16F-4BB6-A2E7-9F3DA2428134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{473AB218-B16F-4BB6-A2E7-9F3DA2428134}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{473AB218-B16F-4BB6-A2E7-9F3DA2428134}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{473AB218-B16F-4BB6-A2E7-9F3DA2428134}.Debug|x64.Build.0 = Debug|Any CPU
+		{473AB218-B16F-4BB6-A2E7-9F3DA2428134}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{473AB218-B16F-4BB6-A2E7-9F3DA2428134}.Debug|x86.Build.0 = Debug|Any CPU
+		{473AB218-B16F-4BB6-A2E7-9F3DA2428134}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{473AB218-B16F-4BB6-A2E7-9F3DA2428134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{473AB218-B16F-4BB6-A2E7-9F3DA2428134}.Release|x64.ActiveCfg = Release|Any CPU
+		{473AB218-B16F-4BB6-A2E7-9F3DA2428134}.Release|x64.Build.0 = Release|Any CPU
+		{473AB218-B16F-4BB6-A2E7-9F3DA2428134}.Release|x86.ActiveCfg = Release|Any CPU
+		{473AB218-B16F-4BB6-A2E7-9F3DA2428134}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1641,6 +1656,7 @@ Global
 		{71531C35-B397-4658-A678-7B3D262511D4} = {90DA815E-6121-4300-8CB9-208DB39F70D4}
 		{67780DC2-F505-81B7-C4FD-C4D250022916} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
 		{FA2FF7D8-B1B8-4216-CB73-F586BF7D9CCF} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
+		{473AB218-B16F-4BB6-A2E7-9F3DA2428134} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
