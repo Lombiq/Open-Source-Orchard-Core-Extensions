@@ -12,18 +12,6 @@ public class SqlQueryMonitoringFailureTests : Lombiq.Tests.UI.Samples.UITestBase
     }
 
     [Fact]
-    public Task SqlQueryMonitoringShouldSurfaceDuplicateCommandIssues() =>
-        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldSurfaceDuplicateCommandIssuesAsync(ExecuteTestAfterSetupAsync);
-
-    [Fact]
-    public Task SqlQueryMonitoringShouldSurfaceDuplicateParameterIssues() =>
-        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldSurfaceDuplicateParameterIssuesAsync(ExecuteTestAfterSetupAsync);
-
-    [Fact]
-    public Task SqlQueryMonitoringShouldSurfaceOversizedResultSetIssues() =>
-        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldSurfaceOversizedResultSetIssuesAsync(ExecuteTestAfterSetupAsync);
-
-    [Fact]
-    public Task SqlQueryMonitoringShouldSurfaceAllIssues() =>
-        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldSurfaceAllIssuesAsync(ExecuteTestAfterSetupAsync);
+    public Task SqlQueryMonitoringFailureScenariosShouldWork() =>
+        SqlQueryMonitoringTestCases.SqlQueryMonitoringFailureScenariosShouldWorkAsync(ExecuteTestAfterSetupAsync);
 }

@@ -11,31 +11,19 @@ Scenario implementations are in [SqlQueryMonitoringTestCases.cs](../../../Lombiq
 | Useful For | Scenario We Verify | Test |
 | --- | --- | --- |
 | Get started with SQL monitoring in a normal page test. | Default assertions + custom summary. | `SqlQueryMonitoringShouldCatchDuplicatesAndLargeResults` |
-| Use different thresholds on specific pages. | Thresholds set in `BeforeNavigation`. | `SqlQueryMonitoringShouldAllowPerPageThresholds` |
-| Apply thresholds by URL pattern without custom branching code. | Threshold profiles by URL pattern. | `SqlQueryMonitoringShouldAllowRegexBasedPerPageThresholds` |
+| Tune thresholds per page, both explicitly and by URL pattern. | Thresholds set in `BeforeNavigation`; threshold profiles by URL pattern. | `SqlQueryMonitoringThresholdScenariosShouldWork` |
 | Run automatic checks only on selected pages. | Custom page-change rule is respected. | `SqlQueryMonitoringShouldRespectPageChangeRule` |
 | Ignore known noisy queries you accept. | Regex execution filter is applied. | `SqlQueryMonitoringShouldAllowIgnoringKnownQueries` |
-| Assert page request and async API request separately. | Page-load and async API asserted by path. | `SqlQueryMonitoringShouldCapturePageLoadAndAsyncApiQuery` |
-| Catch duplicates across page load and follow-up requests together. | Follow-up-inclusive duplicate detection. | `SqlQueryMonitoringShouldDetectDuplicatesWithoutSpecifyingRequestPath` |
+| Assert page request and async request behavior, including combined follow-up assertions. | Page-load and async API asserted by path; follow-up-inclusive duplicate detection; follow-up API captured without explicit page-state wait. | `SqlQueryMonitoringAsyncRequestScenariosShouldWork` |
 
 ### Feature Verification Scenarios (Guardrails for Toolbox Behavior)
 
 | Useful For | Scenario We Verify | Test |
 | --- | --- | --- |
 | Confirm monitoring is off unless enabled. | Collection stays disabled when configured off (and is off by default). | `SqlQueryMonitoringShouldNotCollectWhenCollectionIsDisabled` |
-| Verify duplicate query-text failures are reported. | Duplicate command-text failure is raised and categorized. | `SqlQueryMonitoringShouldSurfaceDuplicateCommandIssues` |
-| Verify duplicate query+parameters failures are reported. | Duplicate command+parameters failure is raised and categorized. | `SqlQueryMonitoringShouldSurfaceDuplicateParameterIssues` |
-| Verify large result-set failures are reported. | Oversized result-set failure is raised and categorized. | `SqlQueryMonitoringShouldSurfaceOversizedResultSetIssues` |
-| Verify multiple failure categories are reported together. | All failure categories are surfaced together. | `SqlQueryMonitoringShouldSurfaceAllIssues` |
+| Verify failure reporting for all built-in SQL monitoring categories. | Duplicate command-text failure is raised and categorized; duplicate command+parameters failure is raised and categorized; oversized result-set failure is raised and categorized; all failure categories are surfaced together. | `SqlQueryMonitoringFailureScenariosShouldWork` |
 | Verify tenant isolation in captured summaries. | Monitoring works on switched and default tenant, and summaries stay tenant-bound. | `SqlQueryMonitoringShouldWorkOnAnotherTenant` |
-| Verify request path and query are captured correctly. | Path + query are captured on navigation. | `SqlQueryMonitoringShouldCaptureRequestPathAndQueryForNavigatedPage` |
-| Verify request-specific assertion fails when request is missing. | Missing path/method summary fails instead of falling back. | `SqlQueryMonitoringShouldFailWhenSpecificRequestSummaryIsMissing` |
-| Verify request-specific assertion requires query-string match. | Same path with different query does not match. | `SqlQueryMonitoringShouldNotMatchDifferentQueryStringForSpecificRequest` |
-| Verify follow-up polling captures late async requests. | Follow-up API is captured without explicit page-state wait. | `SqlQueryMonitoringShouldCapturePageLoadAndAsyncApiQueryWithoutPageStateWait` |
-| Verify stale queue entries are ignored during follow-up assertions. | Old summaries are excluded during follow-up aggregation. | `SqlQueryMonitoringShouldIgnoreStaleSummariesWhenAggregatingFollowUpRequests` |
-| Verify noisy non-SQL requests do not evict actionable SQL summaries. | Store retention favors removing empty summaries first. | `SqlQueryMonitoringShouldRetainRecentSqlSummariesAmidNoisyRequests` |
+| Verify request-path/query matching and missing-summary behavior. | Path + query are captured on navigation; missing path/method summary fails instead of falling back; same path with different query does not match. | `SqlQueryMonitoringRequestMatchingScenariosShouldWork` |
+| Verify follow-up polling and summary retention edge cases. | Old summaries are excluded during follow-up aggregation; store retention favors removing empty summaries first. | `SqlQueryMonitoringAsyncRequestScenariosShouldWork` |
 | Verify LINQ to DB SQL is captured by monitoring. | LINQ to DB endpoint SQL is captured. | `LinqToDbSamplesShouldBeCapturedBySqlMonitoring` |
-| Verify `ISession.RawQueryAsync` SQL is captured. | `ISession.RawQueryAsync` is captured. | `SqlQueryMonitoringShouldCaptureRawQuery` |
-| Verify `ISession.RawExecuteNonQueryAsync` SQL is captured. | `ISession.RawExecuteNonQueryAsync` is captured. | `SqlQueryMonitoringShouldCaptureRawExecuteNonQuery` |
-| Verify custom YesSql session SQL is captured. | Manually created session query is captured. | `SqlQueryMonitoringShouldCaptureCustomSessionQuery` |
-| Verify direct ADO.NET SQL is captured. | `IDbConnectionAccessor` query is captured. | `SqlQueryMonitoringShouldCaptureDirectConnectionQuery` |
+| Verify non-default SQL execution sources are covered. | `ISession.RawQueryAsync` is captured; `ISession.RawExecuteNonQueryAsync` is captured; manually created YesSql session query is captured; `IDbConnectionAccessor` query is captured. | `SqlQueryMonitoringAdditionalQuerySourcesShouldWork` |

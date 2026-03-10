@@ -12,26 +12,6 @@ public class SqlQueryMonitoringAsyncRequestTests : Lombiq.Tests.UI.Samples.UITes
     }
 
     [Fact]
-    public Task SqlQueryMonitoringShouldCapturePageLoadAndAsyncApiQuery() =>
-        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldCapturePageLoadAndAsyncApiQueryAsync(ExecuteTestAfterSetupAsync);
-
-    [Fact]
-    public Task SqlQueryMonitoringShouldDetectDuplicatesWithoutSpecifyingRequestPath() =>
-        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldDetectDuplicatesWithoutSpecifyingRequestPathAsync(
-            ExecuteTestAfterSetupAsync);
-
-    [Fact]
-    public Task SqlQueryMonitoringShouldCapturePageLoadAndAsyncApiQueryWithoutPageStateWait() =>
-        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldCapturePageLoadAndAsyncApiQueryWithoutPageStateWaitAsync(
-            ExecuteTestAfterSetupAsync);
-
-    [Fact]
-    public Task SqlQueryMonitoringShouldIgnoreStaleSummariesWhenAggregatingFollowUpRequests() =>
-        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldIgnoreStaleSummariesWhenAggregatingFollowUpRequestsAsync(
-            ExecuteTestAfterSetupAsync);
-
-    [Fact]
-    public Task SqlQueryMonitoringShouldRetainRecentSqlSummariesAmidNoisyRequests() =>
-        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldRetainRecentSqlSummariesAmidNoisyRequestsAsync(
-            ExecuteTestAfterSetupAsync);
+    public Task SqlQueryMonitoringAsyncRequestScenariosShouldWork() =>
+        SqlQueryMonitoringTestCases.SqlQueryMonitoringAsyncRequestScenariosShouldWorkAsync(ExecuteTestAfterSetupAsync);
 }

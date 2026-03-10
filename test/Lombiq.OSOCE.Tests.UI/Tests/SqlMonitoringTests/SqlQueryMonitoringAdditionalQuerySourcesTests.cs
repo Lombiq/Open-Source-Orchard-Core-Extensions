@@ -12,18 +12,6 @@ public class SqlQueryMonitoringAdditionalQuerySourcesTests : Lombiq.Tests.UI.Sam
     }
 
     [Fact]
-    public Task SqlQueryMonitoringShouldCaptureRawQuery() =>
-        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldCaptureRawQueryAsync(ExecuteTestAfterSetupAsync);
-
-    [Fact]
-    public Task SqlQueryMonitoringShouldCaptureRawExecuteNonQuery() =>
-        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldCaptureRawExecuteNonQueryAsync(ExecuteTestAfterSetupAsync);
-
-    [Fact]
-    public Task SqlQueryMonitoringShouldCaptureCustomSessionQuery() =>
-        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldCaptureCustomSessionQueryAsync(ExecuteTestAfterSetupAsync);
-
-    [Fact]
-    public Task SqlQueryMonitoringShouldCaptureDirectConnectionQuery() =>
-        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldCaptureDirectConnectionQueryAsync(ExecuteTestAfterSetupAsync);
+    public Task SqlQueryMonitoringAdditionalQuerySourcesShouldWork() =>
+        SqlQueryMonitoringTestCases.SqlQueryMonitoringAdditionalQuerySourcesShouldWorkAsync(ExecuteTestAfterSetupAsync);
 }

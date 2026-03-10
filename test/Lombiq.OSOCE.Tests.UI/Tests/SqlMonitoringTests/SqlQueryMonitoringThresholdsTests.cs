@@ -12,10 +12,6 @@ public class SqlQueryMonitoringThresholdsTests : Lombiq.Tests.UI.Samples.UITestB
     }
 
     [Fact]
-    public Task SqlQueryMonitoringShouldAllowPerPageThresholds() =>
-        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldAllowPerPageThresholdsAsync(ExecuteTestAfterSetupAsync);
-
-    [Fact]
-    public Task SqlQueryMonitoringShouldAllowRegexBasedPerPageThresholds() =>
-        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldAllowRegexBasedPerPageThresholdsAsync(ExecuteTestAfterSetupAsync);
+    public Task SqlQueryMonitoringThresholdScenariosShouldWork() =>
+        SqlQueryMonitoringTestCases.SqlQueryMonitoringThresholdScenariosShouldWorkAsync(ExecuteTestAfterSetupAsync);
 }
