@@ -9,8 +9,7 @@ Feature-verification implementations are in [SqlQueryMonitoringTestCases.cs](../
 
 ### Reusable Sample
 
-- [`Lombiq.Tests.UI.Samples.Tests.SqlQueryMonitoringTests.SqlQueryMonitoringShouldWork`](../../../Lombiq.UITestingToolbox/Lombiq.Tests.UI.Samples/Tests/SqlQueryMonitoringTests.cs)
-  Covers:
+- [`Lombiq.Tests.UI.Samples.Tests.SqlQueryMonitoringTests.SqlQueryMonitoringShouldWork`](../../../Lombiq.UITestingToolbox/Lombiq.Tests.UI.Samples/Tests/SqlQueryMonitoringTests.cs) Covers:
   - Enabling collection
   - Asserting the latest request
   - Asserting a specific request path with query string
