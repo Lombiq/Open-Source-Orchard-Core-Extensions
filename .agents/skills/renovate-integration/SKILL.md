@@ -124,12 +124,15 @@ Actions:
 - **Wait 60 seconds** after the superproject PR is created.
 - Then open PRs for the submodules that have `issue/<WORK_ITEM_KEY>` branches, targeting `dev`, referencing `<WORK_ITEM_KEY>`.
 - Submodule PR titles should reference the specific updates included, e.g. `Update dependencies: Microsoft.NET.Test.Sdk 18.0.1 → 18.3.0, Swashbuckle.AspNetCore 10.1.4 → 10.1.5`.
+- After PRs are created, **wait for all CI workflow runs to complete**. Poll the run status periodically (e.g. every 60 seconds) using `gh run list`.
+- If all checks pass, proceed to ask for approval.
+- If any checks fail, investigate the failures, fix the errors, push the fixes, and wait for the new runs to pass before asking for approval.
 
 Completion output:
 
 ```text
 STATE: AWAITING_APPROVAL
-STATUS: Awaiting approval for Phase 4 (PR Creation)
+STATUS: Awaiting approval for Phase 4 (PR Creation) — all CI checks passed.
 ```
 
 ### Phase 5: Finalization
