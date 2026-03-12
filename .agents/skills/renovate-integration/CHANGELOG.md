@@ -6,6 +6,18 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ## 2026-03-12
 
+**Enforce use of existing script, disallow ad-hoc replacements**
+
+- Phase 1 now explicitly requires running `scripts/git/checkout-latest-renovate.sh` instead of writing custom git commands.
+- Phase 2 changed from "use where applicable" to mandatory script usage.
+- Scripts section strengthened: scripts are the single source of truth; generating equivalent inline commands is prohibited.
+
+Reason: Prevent the agent from ignoring the script and generating its own branch-discovery logic.
+
+---
+
+## 2026-03-12
+
 **Add age and merge filters to renovate branch selection**
 
 - Updated `scripts/git/checkout-latest-renovate.sh` to skip renovate branches older than 5 days (`MAX_AGE_DAYS`) and branches already merged into `origin/dev`.

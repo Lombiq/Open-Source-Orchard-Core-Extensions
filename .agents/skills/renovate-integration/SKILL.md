@@ -56,13 +56,14 @@ At the top of every response, declare exactly one state:
 Required state: `ANALYSIS`
 
 Actions:
-- Identify `renovate/*` branches in superproject and submodules that are **at most 5 days old** and **not already merged into `origin/dev`**.
+- Run `scripts/git/checkout-latest-renovate.sh` (dry-run or read its output) to identify eligible `renovate/*` branches. **Do not write your own git commands to discover renovate branches — always use the script.**
 - Review relevant release notes and diffs.
 - Classify each change as Breaking, Risky, Non-trivial, or Feature.
 - Note newer patch versions beyond Renovate proposals.
 
 Constraints:
 - Do not modify code or branches.
+- Do not generate ad-hoc scripts or inline git commands that duplicate the logic in `scripts/git/checkout-latest-renovate.sh`.
 
 Completion output:
 
@@ -76,7 +77,7 @@ Required state: `IMPLEMENTATION`
 Gate: proceed only after `APPROVED: Phase 1`
 
 Actions:
-- Use `scripts/git/checkout-latest-renovate.sh` where applicable.
+- Run `scripts/git/checkout-latest-renovate.sh` to check out the selected renovate branches. **Always use this script — never generate replacement commands.**
 - Merge Renovate changes into `issue/<WORK_ITEM_KEY>`.
 - Resolve analyzer warnings, build/test failures, and lockfile updates.
 - Commit only on `issue/<WORK_ITEM_KEY>`.
@@ -135,7 +136,7 @@ STATUS: Complete
 ```
 
 ## Scripts
-Use scripted operations when available.
+**Always use the scripts below instead of generating equivalent inline commands or new scripts.** The scripts encode the canonical filtering logic (age cutoff, merge check) and must be the single source of truth.
 
 ### scripts/git/checkout-latest-renovate.sh
 - Checks out the newest applicable `renovate/*` branch per repository.
