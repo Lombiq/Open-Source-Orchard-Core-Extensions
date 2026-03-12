@@ -34,6 +34,7 @@ WORK ITEM KEY: <WORK_ITEM_KEY>
 - Never commit to `renovate/*` branches.
 - Never commit to `dev`.
 - Only commit to `issue/<WORK_ITEM_KEY>`.
+- **Do not prefix commit messages with `<WORK_ITEM_KEY>:`** — the key is already encoded in the branch name.
 - Never skip approval checkpoints.
 - Never perform later phase actions early.
 - If a required tool is missing, stop and report it.
@@ -57,6 +58,7 @@ Required state: `ANALYSIS`
 
 Actions:
 - Run `scripts/git/checkout-latest-renovate.sh` (dry-run or read its output) to identify eligible `renovate/*` branches. **Do not write your own git commands to discover renovate branches — always use the script.**
+- The script selects only **one** renovate branch per submodule (the newest eligible). After running it, **manually list all remaining `renovate/*` branches** in each affected submodule (`git for-each-ref ... refs/remotes/origin/renovate/`) and check whether additional eligible branches exist. If so, include them in the analysis.
 - Review relevant release notes and diffs.
 - Classify each change as Breaking, Risky, Non-trivial, or Feature.
 - Note newer patch versions beyond Renovate proposals.
@@ -78,7 +80,10 @@ Gate: proceed only after `APPROVED: Phase 1`
 
 Actions:
 - Run `scripts/git/checkout-latest-renovate.sh` to check out the selected renovate branches. **Always use this script — never generate replacement commands.**
-- Merge Renovate changes into `issue/<WORK_ITEM_KEY>`.
+- For submodules with only a **single** eligible renovate branch and no further changes needed, **do not create an `issue/<WORK_ITEM_KEY>` branch** — leave the renovate branch checked out. The existing Renovate PR will suffice.
+- For submodules that need **multiple renovate branches merged** or **additional manual changes** (e.g. GHA ref updates), create `issue/<WORK_ITEM_KEY>` from `origin/dev` and merge all applicable renovate branches into it.
+- Since the script selects only one branch per submodule, **also merge any additional eligible `renovate/*` branches** identified during Phase 1 analysis into `issue/<WORK_ITEM_KEY>` in each affected submodule.
+- Check for a `renovate/*` branch in the **superproject** itself (e.g. `origin/renovate/non-breaking-dependency-versions`). If one exists and is eligible, merge it into `issue/<WORK_ITEM_KEY>` in the superproject instead of manually editing the same files.
 - Resolve analyzer warnings, build/test failures, and lockfile updates.
 - Commit only on `issue/<WORK_ITEM_KEY>`.
 
@@ -94,7 +99,11 @@ Required state: `PR_CREATION`
 Gate: proceed only after `APPROVED: Phase 2`
 
 Actions:
-- Update references in `.github/workflows/` as requested.
+- When `tools/Lombiq.GitHub.Actions` has changes (e.g. lock file maintenance in asset-lint), its internal workflow/action `@dev` references must be temporarily updated to `@issue/<WORK_ITEM_KEY>` so CI can resolve them from the issue branch.
+- Update **all** `Lombiq/GitHub-Actions/...@dev` references to `@issue/<WORK_ITEM_KEY>` in every `.yml` file under `tools/Lombiq.GitHub.Actions/.github/` (both `actions/` and `workflows/`).
+- Then update the **superproject's** `.github/workflows/*.yml` files the same way — replace `Lombiq/GitHub-Actions/...@dev` with `@issue/<WORK_ITEM_KEY>`.
+- Commit the submodule changes first, then stage the updated submodule pointer together with the superproject workflow changes and commit.
+- These are **temporary** references; they will be reverted back to `@dev` in Phase 5 (Finalization).
 - Validate workflow YAML syntax.
 
 Completion output:
@@ -109,14 +118,22 @@ Required state: `PR_CREATION`
 Gate: proceed only after `APPROVED: Phase 3`
 
 Actions:
-- Open PRs in dependency order (submodules first, superproject last).
-- Reference `<WORK_ITEM_KEY>` in PR descriptions.
+- Push `issue/<WORK_ITEM_KEY>` branches to all repos that have one (submodules with multiple renovate branches or additional changes, and the superproject).
+- **Do not push or create PRs** for submodules where only a single renovate branch was checked out without further changes — their existing Renovate PRs are sufficient.
+- Open the **superproject PR first**, targeting `dev`, referencing `<WORK_ITEM_KEY>` in the PR title and description.
+- **Wait 60 seconds** after the superproject PR is created.
+- Then open PRs for the submodules that have `issue/<WORK_ITEM_KEY>` branches, targeting `dev`, referencing `<WORK_ITEM_KEY>`.
+- Submodule PR titles should reference the specific updates included, e.g. `Update dependencies: Microsoft.NET.Test.Sdk 18.0.1 → 18.3.0, Swashbuckle.AspNetCore 10.1.4 → 10.1.5`.
+- After PRs are created, **wait for all CI workflow runs to complete**. Poll the run status periodically (e.g. every 60 seconds) using `gh run list`.
+- Once the Ubuntu build (Build and Test) succeeds on the superproject PR, add the `run-windows-build` label to the PR (using `gh pr edit --add-label run-windows-build`) to trigger the Windows build, then wait for it to succeed too.
+- If all checks pass, proceed to ask for approval.
+- If any checks fail, investigate the failures, fix the errors, push the fixes, and wait for the new runs to pass before asking for approval.
 
 Completion output:
 
 ```text
 STATE: AWAITING_APPROVAL
-STATUS: Awaiting approval for Phase 4 (PR Creation)
+STATUS: Awaiting approval for Phase 4 (PR Creation) — all CI checks passed.
 ```
 
 ### Phase 5: Finalization
@@ -124,8 +141,13 @@ Required state: `FINALIZATION`
 Gate: proceed only after `APPROVED: Phase 4`
 
 Actions:
-- Revert temporary references when instructed.
-- Merge to `dev` only when explicitly approved.
+- Merge **all** submodule branches to `dev`:
+  - Merge PRs for submodules that have `issue/<WORK_ITEM_KEY>` branches (these were created in Phase 4).
+  - **Also merge the existing Renovate PRs** for submodules where only a single renovate branch was checked out directly (no issue branch was created). These PRs still exist on GitHub and must be merged too.
+- After all submodule PRs are merged, update **every** submodule pointer in the superproject to the merged `dev` head (`git fetch origin dev && git checkout origin/dev` in each submodule).
+- Revert temporary GHA references (e.g. `@issue/<WORK_ITEM_KEY>` → `@dev`) in the superproject's `.github/workflows/` files.
+- Include `[skip ci]` in commit messages for submodule pointer updates and reference reverts. Do not wait for CI on these commits.
+- Merge the superproject PR to `dev` only when explicitly approved.
 - Clean up local branches only when instructed.
 
 Completion output:
@@ -142,7 +164,7 @@ STATUS: Complete
 - Checks out the newest applicable `renovate/*` branch per repository.
 - Skips branches older than 5 days (configurable via `MAX_AGE_DAYS`).
 - Skips branches already merged into `origin/dev`.
-- Intentionally selects only one applicable renovate branch per repository.
+- **Intentionally selects only one** applicable renovate branch per repository. Additional eligible branches must be discovered manually during Phase 1 and merged during Phase 2.
 - Always fetch before evaluating branch freshness.
 
 ## Self-update policy
