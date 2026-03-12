@@ -18,6 +18,18 @@ Reason: Prevent the agent from ignoring the script and generating its own branch
 
 ## 2026-03-12
 
+**Clarify Phase 2 superproject renovate branch handling and Phase 3 branch reference updates**
+
+- Phase 2: Added instruction to check for and merge the superproject's own `renovate/*` branch instead of manually editing files that Renovate already updated.
+- Phase 3: Expanded with detailed steps for temporarily updating `@dev` branch references to `@issue/<WORK_ITEM_KEY>` in both `tools/Lombiq.GitHub.Actions/.github/` and the superproject's `.github/workflows/` when GitHub Actions has changes (e.g. lock file maintenance in asset-lint).
+- Phase 3: Clarified that these are temporary references reverted in Phase 5.
+
+Reason: Ensure consistency — superproject dependency updates should come from Renovate branches, and CI must resolve GitHub Actions references from the issue branch during testing.
+
+---
+
+## 2026-03-12
+
 **Add age and merge filters to renovate branch selection**
 
 - Updated `scripts/git/checkout-latest-renovate.sh` to skip renovate branches older than 5 days (`MAX_AGE_DAYS`) and branches already merged into `origin/dev`.

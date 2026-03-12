@@ -78,7 +78,8 @@ Gate: proceed only after `APPROVED: Phase 1`
 
 Actions:
 - Run `scripts/git/checkout-latest-renovate.sh` to check out the selected renovate branches. **Always use this script — never generate replacement commands.**
-- Merge Renovate changes into `issue/<WORK_ITEM_KEY>`.
+- Merge Renovate changes into `issue/<WORK_ITEM_KEY>` in each submodule.
+- Check for a `renovate/*` branch in the **superproject** itself (e.g. `origin/renovate/non-breaking-dependency-versions`). If one exists and is eligible, merge it into `issue/<WORK_ITEM_KEY>` in the superproject instead of manually editing the same files.
 - Resolve analyzer warnings, build/test failures, and lockfile updates.
 - Commit only on `issue/<WORK_ITEM_KEY>`.
 
@@ -94,7 +95,11 @@ Required state: `PR_CREATION`
 Gate: proceed only after `APPROVED: Phase 2`
 
 Actions:
-- Update references in `.github/workflows/` as requested.
+- When `tools/Lombiq.GitHub.Actions` has changes (e.g. lock file maintenance in asset-lint), its internal workflow/action `@dev` references must be temporarily updated to `@issue/<WORK_ITEM_KEY>` so CI can resolve them from the issue branch.
+- Update **all** `Lombiq/GitHub-Actions/...@dev` references to `@issue/<WORK_ITEM_KEY>` in every `.yml` file under `tools/Lombiq.GitHub.Actions/.github/` (both `actions/` and `workflows/`).
+- Then update the **superproject's** `.github/workflows/*.yml` files the same way — replace `Lombiq/GitHub-Actions/...@dev` with `@issue/<WORK_ITEM_KEY>`.
+- Commit the submodule changes first, then stage the updated submodule pointer together with the superproject workflow changes and commit.
+- These are **temporary** references; they will be reverted back to `@dev` in Phase 5 (Finalization).
 - Validate workflow YAML syntax.
 
 Completion output:
