@@ -123,6 +123,7 @@ Actions:
 - Open the **superproject PR first**, targeting `dev`, referencing `<WORK_ITEM_KEY>` in the PR title and description.
 - **Wait 60 seconds** after the superproject PR is created.
 - Then open PRs for the submodules that have `issue/<WORK_ITEM_KEY>` branches, targeting `dev`, referencing `<WORK_ITEM_KEY>`.
+- Submodule PR titles should reference the specific updates included, e.g. `Update dependencies: Microsoft.NET.Test.Sdk 18.0.1 → 18.3.0, Swashbuckle.AspNetCore 10.1.4 → 10.1.5`.
 
 Completion output:
 
