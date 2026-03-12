@@ -6,6 +6,16 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ## 2026-03-12
 
+**Do not prefix commit messages with the issue key**
+
+- Added global safety rule: commit messages must not be prefixed with `<WORK_ITEM_KEY>:` since the key is already encoded in the branch name.
+
+Reason: Avoid redundant issue key prefixes in commit messages.
+
+---
+
+## 2026-03-12
+
 **PR creation order and issue branch rules**
 
 - Phase 2: Do not create `issue/<WORK_ITEM_KEY>` branches in submodules with only a single renovate branch and no further changes — leave the renovate branch and let the existing Renovate PR handle it.

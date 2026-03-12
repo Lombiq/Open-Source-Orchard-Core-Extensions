@@ -34,6 +34,7 @@ WORK ITEM KEY: <WORK_ITEM_KEY>
 - Never commit to `renovate/*` branches.
 - Never commit to `dev`.
 - Only commit to `issue/<WORK_ITEM_KEY>`.
+- **Do not prefix commit messages with `<WORK_ITEM_KEY>:`** — the key is already encoded in the branch name.
 - Never skip approval checkpoints.
 - Never perform later phase actions early.
 - If a required tool is missing, stop and report it.
