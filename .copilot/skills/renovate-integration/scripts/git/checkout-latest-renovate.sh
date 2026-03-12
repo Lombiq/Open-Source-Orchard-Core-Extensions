@@ -14,7 +14,7 @@
 # integrate a different branch, do so manually.
 #
 # Usage:
-#   bash .agents/skills/renovate-integration/scripts/git/checkout-latest-renovate.sh
+#   bash .copilot/skills/renovate-integration/scripts/git/checkout-latest-renovate.sh
 #
 # Safety:
 #   - This script does NOT push anything.

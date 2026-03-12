@@ -32,7 +32,7 @@ Every phase transition requires **explicit user approval**. The skill will never
 ## File Structure
 
 ```
-.agents/skills/renovate-integration/
+.copilot/skills/renovate-integration/
 ├── README.md           ← This file (human-facing documentation)
 ├── skill.md            ← Canonical Copilot instructions (authoritative)
 ├── CHANGELOG.md        ← Skill evolution log (append-only)
@@ -53,7 +53,7 @@ Checks out the latest applicable `renovate/*` branch in each submodule. Only sel
 
 **Usage:**
 ```bash
-bash .agents/skills/renovate-integration/scripts/git/checkout-latest-renovate.sh
+bash .copilot/skills/renovate-integration/scripts/git/checkout-latest-renovate.sh
 ```
 
 ## Self-Updating

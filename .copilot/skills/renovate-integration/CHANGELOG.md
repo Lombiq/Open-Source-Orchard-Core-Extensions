@@ -16,3 +16,14 @@ All notable changes to this skill are documented here. This log is **append-only
 - Defined self-update mechanism with `CONFIRM SKILL UPDATE` gate.
 
 Reason: Initial skill creation per user specification.
+
+---
+
+## 2026-03-12 (2)
+
+**Moved skill to `.copilot/skills/` directory**
+
+- Relocated from `.agents/skills/renovate-integration/` to `.copilot/skills/renovate-integration/`.
+- Updated all internal path references accordingly.
+
+Reason: User requested relocation to `.copilot/skills/` folder.
