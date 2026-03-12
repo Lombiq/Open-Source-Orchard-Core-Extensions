@@ -6,6 +6,18 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ## 2026-03-12
 
+**Handle multiple renovate branches per submodule**
+
+- Phase 1: Added instruction to manually list all remaining `renovate/*` branches in each affected submodule after the script runs, since the script only selects one per submodule.
+- Phase 2: Added instruction to merge any additional eligible renovate branches identified during Phase 1 into `issue/<WORK_ITEM_KEY>`.
+- Scripts section: Clarified that the script intentionally selects only one branch per repository, and additional branches must be discovered and merged manually.
+
+Reason: The script's one-branch-per-submodule design caused additional eligible renovate branches (e.g. `renovate/all-dependencies`, `renovate/browsers`) to be silently skipped.
+
+---
+
+## 2026-03-12
+
 **Enforce use of existing script, disallow ad-hoc replacements**
 
 - Phase 1 now explicitly requires running `scripts/git/checkout-latest-renovate.sh` instead of writing custom git commands.

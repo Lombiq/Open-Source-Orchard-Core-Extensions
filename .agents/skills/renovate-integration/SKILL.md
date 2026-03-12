@@ -57,6 +57,7 @@ Required state: `ANALYSIS`
 
 Actions:
 - Run `scripts/git/checkout-latest-renovate.sh` (dry-run or read its output) to identify eligible `renovate/*` branches. **Do not write your own git commands to discover renovate branches — always use the script.**
+- The script selects only **one** renovate branch per submodule (the newest eligible). After running it, **manually list all remaining `renovate/*` branches** in each affected submodule (`git for-each-ref ... refs/remotes/origin/renovate/`) and check whether additional eligible branches exist. If so, include them in the analysis.
 - Review relevant release notes and diffs.
 - Classify each change as Breaking, Risky, Non-trivial, or Feature.
 - Note newer patch versions beyond Renovate proposals.
@@ -79,6 +80,7 @@ Gate: proceed only after `APPROVED: Phase 1`
 Actions:
 - Run `scripts/git/checkout-latest-renovate.sh` to check out the selected renovate branches. **Always use this script — never generate replacement commands.**
 - Merge Renovate changes into `issue/<WORK_ITEM_KEY>` in each submodule.
+- Since the script selects only one branch per submodule, **also merge any additional eligible `renovate/*` branches** identified during Phase 1 analysis into `issue/<WORK_ITEM_KEY>` in each affected submodule.
 - Check for a `renovate/*` branch in the **superproject** itself (e.g. `origin/renovate/non-breaking-dependency-versions`). If one exists and is eligible, merge it into `issue/<WORK_ITEM_KEY>` in the superproject instead of manually editing the same files.
 - Resolve analyzer warnings, build/test failures, and lockfile updates.
 - Commit only on `issue/<WORK_ITEM_KEY>`.
@@ -147,7 +149,7 @@ STATUS: Complete
 - Checks out the newest applicable `renovate/*` branch per repository.
 - Skips branches older than 5 days (configurable via `MAX_AGE_DAYS`).
 - Skips branches already merged into `origin/dev`.
-- Intentionally selects only one applicable renovate branch per repository.
+- **Intentionally selects only one** applicable renovate branch per repository. Additional eligible branches must be discovered manually during Phase 1 and merged during Phase 2.
 - Always fetch before evaluating branch freshness.
 
 ## Self-update policy
