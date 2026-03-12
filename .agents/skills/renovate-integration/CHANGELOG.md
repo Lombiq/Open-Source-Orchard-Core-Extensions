@@ -6,6 +6,18 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ## 2026-03-12
 
+**Add age and merge filters to renovate branch selection**
+
+- Updated `scripts/git/checkout-latest-renovate.sh` to skip renovate branches older than 5 days (`MAX_AGE_DAYS`) and branches already merged into `origin/dev`.
+- Replaced the old "newer than origin/dev timestamp" heuristic with explicit `git merge-base --is-ancestor` check and date-based cutoff.
+- Updated `SKILL.md` Phase 1 analysis and script documentation to reflect the new filters.
+
+Reason: Prevent the skill from picking up stale renovate branches from weeks or months ago.
+
+---
+
+## 2026-03-12
+
 **Format standardization**
 
 - Updated `SKILL.md` to standard AI skill format with YAML frontmatter (`name`, `description`, `license`, `metadata`).

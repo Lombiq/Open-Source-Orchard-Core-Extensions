@@ -56,7 +56,7 @@ At the top of every response, declare exactly one state:
 Required state: `ANALYSIS`
 
 Actions:
-- Identify `renovate/*` branches newer than `origin/dev` in superproject and submodules.
+- Identify `renovate/*` branches in superproject and submodules that are **at most 5 days old** and **not already merged into `origin/dev`**.
 - Review relevant release notes and diffs.
 - Classify each change as Breaking, Risky, Non-trivial, or Feature.
 - Note newer patch versions beyond Renovate proposals.
@@ -139,7 +139,8 @@ Use scripted operations when available.
 
 ### scripts/git/checkout-latest-renovate.sh
 - Checks out the newest applicable `renovate/*` branch per repository.
-- Ignores renovate branches older than `origin/dev`.
+- Skips branches older than 5 days (configurable via `MAX_AGE_DAYS`).
+- Skips branches already merged into `origin/dev`.
 - Intentionally selects only one applicable renovate branch per repository.
 - Always fetch before evaluating branch freshness.
 
