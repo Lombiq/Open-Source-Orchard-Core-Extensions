@@ -6,6 +6,17 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ## 2026-03-12
 
+**PR creation order and issue branch rules**
+
+- Phase 2: Do not create `issue/<WORK_ITEM_KEY>` branches in submodules with only a single renovate branch and no further changes — leave the renovate branch and let the existing Renovate PR handle it.
+- Phase 4: Open the superproject PR first, wait 60 seconds, then create submodule PRs. Only create PRs for submodules that have `issue/<WORK_ITEM_KEY>` branches.
+
+Reason: Avoid redundant PRs for single-branch submodules and ensure the superproject PR is created before submodule PRs for correct cross-repository reference resolution.
+
+---
+
+## 2026-03-12
+
 **Handle multiple renovate branches per submodule**
 
 - Phase 1: Added instruction to manually list all remaining `renovate/*` branches in each affected submodule after the script runs, since the script only selects one per submodule.

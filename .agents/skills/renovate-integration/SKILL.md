@@ -79,7 +79,8 @@ Gate: proceed only after `APPROVED: Phase 1`
 
 Actions:
 - Run `scripts/git/checkout-latest-renovate.sh` to check out the selected renovate branches. **Always use this script — never generate replacement commands.**
-- Merge Renovate changes into `issue/<WORK_ITEM_KEY>` in each submodule.
+- For submodules with only a **single** eligible renovate branch and no further changes needed, **do not create an `issue/<WORK_ITEM_KEY>` branch** — leave the renovate branch checked out. The existing Renovate PR will suffice.
+- For submodules that need **multiple renovate branches merged** or **additional manual changes** (e.g. GHA ref updates), create `issue/<WORK_ITEM_KEY>` from `origin/dev` and merge all applicable renovate branches into it.
 - Since the script selects only one branch per submodule, **also merge any additional eligible `renovate/*` branches** identified during Phase 1 analysis into `issue/<WORK_ITEM_KEY>` in each affected submodule.
 - Check for a `renovate/*` branch in the **superproject** itself (e.g. `origin/renovate/non-breaking-dependency-versions`). If one exists and is eligible, merge it into `issue/<WORK_ITEM_KEY>` in the superproject instead of manually editing the same files.
 - Resolve analyzer warnings, build/test failures, and lockfile updates.
@@ -116,8 +117,11 @@ Required state: `PR_CREATION`
 Gate: proceed only after `APPROVED: Phase 3`
 
 Actions:
-- Open PRs in dependency order (submodules first, superproject last).
-- Reference `<WORK_ITEM_KEY>` in PR descriptions.
+- Push `issue/<WORK_ITEM_KEY>` branches to all repos that have one (submodules with multiple renovate branches or additional changes, and the superproject).
+- **Do not push or create PRs** for submodules where only a single renovate branch was checked out without further changes — their existing Renovate PRs are sufficient.
+- Open the **superproject PR first**, targeting `dev`, referencing `<WORK_ITEM_KEY>` in the PR title and description.
+- **Wait 60 seconds** after the superproject PR is created.
+- Then open PRs for the submodules that have `issue/<WORK_ITEM_KEY>` branches, targeting `dev`, referencing `<WORK_ITEM_KEY>`.
 
 Completion output:
 
