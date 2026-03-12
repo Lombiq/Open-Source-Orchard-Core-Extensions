@@ -141,9 +141,13 @@ Required state: `FINALIZATION`
 Gate: proceed only after `APPROVED: Phase 4`
 
 Actions:
-- Revert temporary references when instructed.
-- When updating submodule pointers to their merged `dev` heads and reverting temporary GHA references, include `[skip ci]` in the commit message to avoid unnecessary CI runs. Do not wait for CI on these commits.
-- Merge to `dev` only when explicitly approved.
+- Merge **all** submodule branches to `dev`:
+  - Merge PRs for submodules that have `issue/<WORK_ITEM_KEY>` branches (these were created in Phase 4).
+  - **Also merge the existing Renovate PRs** for submodules where only a single renovate branch was checked out directly (no issue branch was created). These PRs still exist on GitHub and must be merged too.
+- After all submodule PRs are merged, update **every** submodule pointer in the superproject to the merged `dev` head (`git fetch origin dev && git checkout origin/dev` in each submodule).
+- Revert temporary GHA references (e.g. `@issue/<WORK_ITEM_KEY>` → `@dev`) in the superproject's `.github/workflows/` files.
+- Include `[skip ci]` in commit messages for submodule pointer updates and reference reverts. Do not wait for CI on these commits.
+- Merge the superproject PR to `dev` only when explicitly approved.
 - Clean up local branches only when instructed.
 
 Completion output:
