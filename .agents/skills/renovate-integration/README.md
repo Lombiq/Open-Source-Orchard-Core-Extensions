@@ -34,7 +34,7 @@ Every phase transition requires **explicit user approval**. The skill will never
 ```
 .agents/skills/renovate-integration/
 ├── README.md           ← This file (human-facing documentation)
-├── skill.md            ← Canonical Copilot instructions (authoritative)
+├── SKILL.md            ← Canonical Copilot instructions (authoritative)
 ├── CHANGELOG.md        ← Skill evolution log (append-only)
 └── scripts/
     ├── git/
@@ -68,4 +68,4 @@ One-off or situational feedback is applied in-session only, without modifying sk
 
 ## Authoritative Reference
 
-All behavioral rules, safety constraints, FSM states, and phased execution logic are defined in [skill.md](skill.md). That file is the single source of truth.
+All behavioral rules, safety constraints, FSM states, and phased execution logic are defined in [SKILL.md](SKILL.md). That file is the single source of truth.

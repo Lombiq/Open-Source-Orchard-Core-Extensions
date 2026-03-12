@@ -6,6 +6,19 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ## 2026-03-12
 
+**Format standardization**
+
+- Updated `SKILL.md` to standard AI skill format with YAML frontmatter (`name`, `description`, `license`, `metadata`).
+- Reorganized instructions into consistent sections (`How to use`, `Global safety rules`, `Execution states`, `Workflow phases`, `Scripts`, `Self-update policy`, `Repository context`).
+- Preserved the existing FSM logic and approval-gated workflow behavior.
+- Updated README references from `skill.md` to `SKILL.md`.
+
+Reason: Align skill format with common AI tooling expectations.
+
+---
+
+## 2026-03-12
+
 **Initial creation**
 
 - Created skill structure: `skill.md`, `README.md`, `CHANGELOG.md`, `scripts/`.

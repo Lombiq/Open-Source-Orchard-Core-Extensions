@@ -1,249 +1,187 @@
-# Renovate Integration Skill — Authoritative Instructions
-
-> **This file is the single source of truth for the renovate-integration skill.**
-> All behavior, rules, safety constraints, and phased execution logic are defined here.
-
+---
+name: renovate-integration
+description: Approval-gated workflow for integrating Renovate updates across the OSOCE superproject and submodules with strict branch and safety controls.
+license: MIT
+metadata:
+  author: Lombiq Technologies
+  version: "1.1"
 ---
 
-## Overview
+# Renovate Integration
 
-This skill automates safe, approval-gated integration of Renovate dependency updates across the OSOCE superproject and its Git submodules. It operates as a strict finite-state machine (FSM) with mandatory approval checkpoints between phases.
+Use this skill to safely integrate Renovate dependency updates in OSOCE and its submodules.
 
----
+## How to use
+- Start by collecting a Jira work item key and store it as `<WORK_ITEM_KEY>`.
+- Operate as a strict FSM with approval checkpoints between every phase.
+- Keep actions minimal and deterministic; stop when required tools are unavailable.
 
-## Initialization
+Initialization prompt:
 
-On first execution (or when explicitly invoked):
-
-1. Ask the user:
-   > "Please provide the Jira work item / issue key to use (e.g. OSOE-123)."
-2. **Do not proceed** until a key is provided.
-3. Store the value as `<WORK_ITEM_KEY>`.
-4. Declare:
-
+```text
+Please provide the Jira work item / issue key to use (e.g. OSOE-123).
 ```
+
+After key capture, declare:
+
+```text
 STATE: INITIALIZED
 WORK ITEM KEY: <WORK_ITEM_KEY>
 ```
 
----
+## Global safety rules
+- Never run `git push` unless explicitly instructed by the user.
+- Never commit to `renovate/*` branches.
+- Never commit to `dev`.
+- Only commit to `issue/<WORK_ITEM_KEY>`.
+- Never skip approval checkpoints.
+- Never perform later phase actions early.
+- If a required tool is missing, stop and report it.
 
-## Global Safety Rules (Non-Negotiable)
+## Execution states
+At the top of every response, declare exactly one state:
 
-1. **NEVER** run `git push` unless explicitly instructed by the user.
-2. **NEVER** commit to:
-   - `renovate/*` branches
-   - `dev`
-3. **ALLOWED** commit branches **ONLY**: `issue/<WORK_ITEM_KEY>`
-4. **NEVER** skip approval checkpoints.
-5. **NEVER** perform later-phase actions early.
-6. Use minimal verbosity unless a tool fails.
-7. If a required tool is missing, **STOP** and report it.
+| State | Description |
+| --- | --- |
+| `INITIALIZED` | Work item key captured, ready to begin |
+| `ANALYSIS` | Phase 1: reviewing Renovate branches |
+| `AWAITING_APPROVAL` | Waiting for user approval |
+| `IMPLEMENTATION` | Phase 2: applying changes |
+| `PR_CREATION` | Phase 3-4: GitHub Actions and PR work |
+| `FINALIZATION` | Phase 5: merge and cleanup |
 
----
+## Workflow phases
 
-## Execution States (Strict FSM)
-
-At the **top of every response**, declare **exactly one** state:
-
-| State                | Description                                |
-|----------------------|--------------------------------------------|
-| `INITIALIZED`        | Work item key captured, ready to begin     |
-| `ANALYSIS`           | Phase 1 — reviewing renovate branches      |
-| `AWAITING_APPROVAL`  | Waiting for user to approve a phase        |
-| `IMPLEMENTATION`     | Phase 2 — applying changes                 |
-| `PR_CREATION`        | Phase 3–4 — GitHub Actions & PRs           |
-| `FINALIZATION`       | Phase 5 — final merge & cleanup            |
-
----
-
-## Phased Execution
-
-### Phase 1 — Analysis
-
-**STATE: `ANALYSIS`**
+### Phase 1: Analysis
+Required state: `ANALYSIS`
 
 Actions:
-- Identify all `renovate/*` branches newer than `origin/dev` in the superproject and every submodule.
-- Review release notes and diffs for each identified update.
-- Classify changes into: **Breaking** / **Risky** / **Non-trivial** / **Feature**.
-- Note if newer patch versions are available beyond what Renovate proposes.
+- Identify `renovate/*` branches newer than `origin/dev` in superproject and submodules.
+- Review relevant release notes and diffs.
+- Classify each change as Breaking, Risky, Non-trivial, or Feature.
+- Note newer patch versions beyond Renovate proposals.
 
 Constraints:
-- **Do NOT modify** any code or branches during this phase.
+- Do not modify code or branches.
 
-On completion, transition to:
+Completion output:
 
-```
+```text
 STATE: AWAITING_APPROVAL
 STATUS: Awaiting approval for Phase 1 (Analysis)
 ```
 
----
-
-### Phase 2 — Implementation
-
-**STATE: `IMPLEMENTATION`**
-
-Proceed **only** after user confirms:
-> `APPROVED: Phase 1`
+### Phase 2: Implementation
+Required state: `IMPLEMENTATION`
+Gate: proceed only after `APPROVED: Phase 1`
 
 Actions:
-- Use the scripted helper `scripts/git/checkout-latest-renovate.sh` where applicable.
-- Merge renovate changes into branch `issue/<WORK_ITEM_KEY>`.
-- Handle analyzer warnings, build issues, test failures, and lockfile updates.
-- Commit **only** to `issue/<WORK_ITEM_KEY>`.
+- Use `scripts/git/checkout-latest-renovate.sh` where applicable.
+- Merge Renovate changes into `issue/<WORK_ITEM_KEY>`.
+- Resolve analyzer warnings, build/test failures, and lockfile updates.
+- Commit only on `issue/<WORK_ITEM_KEY>`.
 
-On completion, transition to:
+Completion output:
 
-```
+```text
 STATE: AWAITING_APPROVAL
 STATUS: Awaiting approval for Phase 2 (Implementation)
 ```
 
----
-
-### Phase 3 — GitHub Actions Updates
-
-**STATE: `PR_CREATION`**
-
-Proceed **only** after user confirms:
-> `APPROVED: Phase 2`
+### Phase 3: GitHub Actions updates
+Required state: `PR_CREATION`
+Gate: proceed only after `APPROVED: Phase 2`
 
 Actions:
-- Update GitHub Actions references in `.github/workflows/` as specified by the user.
+- Update references in `.github/workflows/` as requested.
 - Validate workflow YAML syntax.
 
-On completion, transition to:
+Completion output:
 
-```
+```text
 STATE: AWAITING_APPROVAL
 STATUS: Awaiting approval for Phase 3 (GitHub Actions)
 ```
 
----
-
-### Phase 4 — PR Creation
-
-**STATE: `PR_CREATION`**
-
-Proceed **only** after user confirms:
-> `APPROVED: Phase 3`
+### Phase 4: PR creation
+Required state: `PR_CREATION`
+Gate: proceed only after `APPROVED: Phase 3`
 
 Actions:
-- Open PRs in the correct dependency order (submodules first, superproject last).
-- Ensure PR descriptions reference `<WORK_ITEM_KEY>`.
+- Open PRs in dependency order (submodules first, superproject last).
+- Reference `<WORK_ITEM_KEY>` in PR descriptions.
 
-On completion, transition to:
+Completion output:
 
-```
+```text
 STATE: AWAITING_APPROVAL
 STATUS: Awaiting approval for Phase 4 (PR Creation)
 ```
 
----
-
-### Phase 5 — Finalization
-
-**STATE: `FINALIZATION`**
-
-Proceed **only** after user confirms:
-> `APPROVED: Phase 4`
+### Phase 5: Finalization
+Required state: `FINALIZATION`
+Gate: proceed only after `APPROVED: Phase 4`
 
 Actions:
 - Revert temporary references when instructed.
-- Merge to `dev` **only** when explicitly approved by the user.
-- Clean up local branches if instructed.
+- Merge to `dev` only when explicitly approved.
+- Clean up local branches only when instructed.
 
-On completion:
+Completion output:
 
-```
+```text
 STATE: FINALIZATION
 STATUS: Complete
 ```
 
----
+## Scripts
+Use scripted operations when available.
 
-## Scripted Git Operations
+### scripts/git/checkout-latest-renovate.sh
+- Checks out the newest applicable `renovate/*` branch per repository.
+- Ignores renovate branches older than `origin/dev`.
+- Intentionally selects only one applicable renovate branch per repository.
+- Always fetch before evaluating branch freshness.
 
-### `scripts/git/checkout-latest-renovate.sh`
+## Self-update policy
 
-Purpose:
-- Check out the latest applicable `renovate/*` branch per submodule.
-- Ignore renovate branches older than `origin/dev`.
-- Check out **only one** renovate branch per repository (the newest applicable one).
+### Requires self-update
+Trigger self-update when user feedback is general, reusable, and project-wide, including:
+- Logic or workflow corrections.
+- New persistent instructions.
+- Helper script changes.
+- Safety, branching, approval, or tooling rule refinements.
 
-Important notes:
-- Other renovate branches may exist in each submodule — this script **intentionally selects only the newest applicable one**.
-- Always `git fetch` before evaluating branches.
+### Must not self-update
+Do not self-update for one-off, situational, or hypothetical feedback.
 
----
+### Confirmation protocol
+When self-update is required:
+1. Stop normal execution.
+2. Briefly explain planned updates and affected files.
+3. Ask: `Should I persist this change into the renovate-integration skill?`
+4. Continue only after: `CONFIRM SKILL UPDATE`
 
-## Self-Updating Rules
+### Allowed files and changelog
+- Update only `SKILL.md`, `README.md`, and `scripts/*` as needed.
+- Append to `CHANGELOG.md` with date, summary, and reason.
+- Never rewrite changelog history.
+- Never remove safeguards unless explicitly instructed.
+- Preserve backward compatibility unless impossible.
 
-### When a Self-Update is Required
+## Repository context
+OSOCE is a superproject with extensive Git submodule usage. Submodules track `dev` via `.gitmodules`.
 
-A self-update is **required** when the user:
+Relevant Renovate config files:
+- `renovate.json5`
+- `renovate-osoce.json5`
+- `renovate-osoce-submodule.json5`
+- `renovate-osoce-orchard-core-submodule.json5`
 
-1. Points out a mistake in the skill's logic, rules, or workflow.
-2. Provides a correction that is **general**, **reusable**, and **project-wide**.
-3. Gives new instructions that should apply to future executions.
-4. Requests changes to existing helper scripts.
-5. Adds new scripted steps that should persist.
-6. Refines safety, branching, approval, or tooling rules.
-
-### When a Self-Update is NOT Allowed
-
-A self-update is **not allowed** when the feedback is:
-
-- Situational or one-off.
-- Specific to a single execution.
-- Experimental or hypothetical.
-
-### Self-Update Mechanism
-
-When feedback qualifies as a self-update:
-
-1. **STOP** normal execution.
-2. Explain briefly:
-   - What will be updated.
-   - Which files will change.
-3. Ask explicitly:
-   > "Should I persist this change into the renovate-integration skill?"
-4. **Do NOT proceed** without confirmation.
-5. Proceed **only** if the user replies with:
-   > `CONFIRM SKILL UPDATE`
-
-### Self-Update Implementation
-
-When performing a confirmed self-update:
-
-1. Update **only** these files as appropriate:
-   - `skill.md` (authoritative logic)
-   - `README.md` (usage or explanation)
-   - `scripts/*` (automation logic)
-2. Append an entry to `CHANGELOG.md` including:
-   - Date
-   - Summary of change
-   - Reason (user feedback / correction)
-3. **Do NOT** retroactively rewrite history in `CHANGELOG.md`.
-4. **Do NOT** remove safeguards unless explicitly instructed.
-5. Preserve backward compatibility unless impossible.
-
-After updating:
-- Acknowledge the update.
-- Continue execution **only** after user approval if applicable.
-
----
-
-## Repository Context
-
-This is the **Lombiq Open-Source Orchard Core Extensions (OSOCE)** superproject. It uses Git submodules extensively. Submodule tracking branches are defined in `.gitmodules` (all track `dev`). Renovate configuration files are `renovate.json5`, `renovate-osoce.json5`, `renovate-osoce-submodule.json5`, and `renovate-osoce-orchard-core-submodule.json5`.
-
-Key submodule paths (non-exhaustive):
-- `src/Modules/*` — Orchard Core modules
-- `src/Libraries/*` — shared libraries
-- `src/Themes/*` — themes
-- `src/Utilities/*` — build/setup utilities
-- `test/*` — testing toolboxes
-- `tools/*` — analyzers, GitHub Actions, etc.
+Key repository areas (non-exhaustive):
+- `src/Modules/*`
+- `src/Libraries/*`
+- `src/Themes/*`
+- `src/Utilities/*`
+- `test/*`
+- `tools/*`
