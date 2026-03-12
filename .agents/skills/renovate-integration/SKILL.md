@@ -142,6 +142,7 @@ Gate: proceed only after `APPROVED: Phase 4`
 
 Actions:
 - Revert temporary references when instructed.
+- When updating submodule pointers to their merged `dev` heads and reverting temporary GHA references, include `[skip ci]` in the commit message to avoid unnecessary CI runs. Do not wait for CI on these commits.
 - Merge to `dev` only when explicitly approved.
 - Clean up local branches only when instructed.
 
