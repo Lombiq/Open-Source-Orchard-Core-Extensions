@@ -3,7 +3,6 @@ using Shouldly;
 using System.Net;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.v3;
 
 namespace Lombiq.OSOCE.NuGet.Tests;
 
