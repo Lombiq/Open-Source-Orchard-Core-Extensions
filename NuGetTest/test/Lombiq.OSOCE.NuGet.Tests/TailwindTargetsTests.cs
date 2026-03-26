@@ -3,6 +3,7 @@ using Shouldly;
 using System.Net;
 using System.Threading.Tasks;
 using Xunit;
+using Xunit.v3;
 
 namespace Lombiq.OSOCE.NuGet.Tests;
 
@@ -14,7 +15,9 @@ public class TailwindTargetsTests
         await using var factory = new WebApplicationFactory<Program>();
         using var client = factory.CreateClient();
 
-        using var response = await client.GetAsync("/Lombiq.OSOCE.NuGet.TestTheme/css/tailwind-site.css");
+        using var response = await client.GetAsync(
+            "/Lombiq.OSOCE.NuGet.TestTheme/css/tailwind-site.css",
+            TestContext.Current.CancellationToken);
 
         response.StatusCode.ShouldBe(HttpStatusCode.OK);
     }
