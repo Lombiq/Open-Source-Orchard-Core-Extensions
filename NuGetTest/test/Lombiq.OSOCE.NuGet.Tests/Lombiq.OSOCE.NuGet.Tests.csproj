@@ -17,4 +17,8 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Lombiq.OSOCE.NuGet.Web\Lombiq.OSOCE.NuGet.Web.csproj" />
+  </ItemGroup>
 </Project>
