@@ -60,7 +60,7 @@ Actions:
 - Run `scripts/git/checkout-latest-renovate.sh` (dry-run or read its output) to identify eligible `renovate/*` branches. **Do not write your own git commands to discover renovate branches — always use the script.**
 - The script selects only **one** renovate branch per submodule (the newest eligible). After running it, **manually list all remaining `renovate/*` branches** in each affected submodule (`git for-each-ref ... refs/remotes/origin/renovate/`) and check whether additional eligible branches exist. If so, include them in the analysis.
 - Review relevant release notes and diffs.
-- Classify each change as Breaking, Risky, Non-trivial, or Feature.
+- Classify each change as Breaking, Risky, Non-trivial, or Feature. Highlight each version's release notes.
 - Note newer patch versions beyond Renovate proposals.
 
 Constraints:
@@ -85,7 +85,7 @@ Actions:
 - For submodules that need **multiple renovate branches merged** or **additional manual changes** (e.g. GHA ref updates, patch version bumps), create `issue/<WORK_ITEM_KEY>` from `origin/dev` and merge all applicable renovate branches into it.
 - Since the script selects only one branch per submodule, **also merge any additional eligible `renovate/*` branches** identified during Phase 1 analysis into `issue/<WORK_ITEM_KEY>` in each affected submodule.
 - Check for a `renovate/*` branch in the **superproject** itself (e.g. `origin/renovate/non-breaking-dependency-versions`). If one exists and is eligible, merge it into `issue/<WORK_ITEM_KEY>` in the superproject instead of manually editing the same files.
-- Resolve analyzer warnings, build/test failures, and lockfile updates.
+- Resolve analyzer warnings, build/test failures, and lockfile updates. Build with `/property:RunAnalyzersDuringBuild=true` to surface analyzer violations (especially important when analyzer packages like Meziantou.Analyzer are updated).
 - Commit only on `issue/<WORK_ITEM_KEY>`.
 
 Completion output:

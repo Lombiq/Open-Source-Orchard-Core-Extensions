@@ -4,6 +4,16 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ---
 
+## 2026-03-19
+
+**Build with RunAnalyzersDuringBuild in Phase 2**
+
+- Updated Phase 2 "Resolve analyzer warnings" step to specify building with `/property:RunAnalyzersDuringBuild=true` to surface analyzer violations, especially when analyzer packages (e.g. Meziantou.Analyzer) are updated.
+
+Reason: Default builds don't run analyzers during build; enabling this flag catches new violations introduced by analyzer package updates.
+
+---
+
 ## 2026-03-12
 
 **Do not prefix commit messages with the issue key**
