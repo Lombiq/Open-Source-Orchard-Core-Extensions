@@ -4,6 +4,40 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ---
 
+## 2026-03-27
+
+**Fix Phase 5: revert GHA refs in submodule before merging**
+
+- Updated Phase 5 to revert `@issue/<WORK_ITEM_KEY>` → `@dev` in `tools/Lombiq.GitHub.Actions` (commit + push on the issue branch) **before** merging the submodule PR, not just in the superproject after merging.
+- Without this, the `@issue/...` self-references would land on `dev` in the GitHub-Actions repo.
+
+Reason: In OSOE-1252, the GitHub-Actions submodule was merged to `dev` with `@issue/OSOE-1252` refs still in place because Phase 5 only instructed reverting in the superproject.
+
+---
+
+## 2026-03-27
+
+**Add analyze-renovate-branches.sh script for Phase 1**
+
+- Created `scripts/git/analyze-renovate-branches.sh` — a read-only script that lists **all** eligible `renovate/*` branches (with diffs and commit logs) across both the superproject and submodules.
+- Updated Phase 1 to reference the new script instead of requiring manual `git for-each-ref` commands after running the checkout script.
+- Updated Phase 1 constraints to also forbid duplicating the new script's logic.
+- Added script documentation to the Scripts section of SKILL.md.
+
+Reason: During session OSOE-1252, ad-hoc temp scripts (`_list_renovate.sh`, `_check_renovate.sh`) were created to fill a gap — the existing `checkout-latest-renovate.sh` only selects one branch per submodule and doesn't cover the superproject. The new script makes Phase 1 analysis deterministic and eliminates the need for ad-hoc scripts.
+
+---
+
+## 2026-03-19
+
+**Build with RunAnalyzersDuringBuild in Phase 2**
+
+- Updated Phase 2 "Resolve analyzer warnings" step to specify building with `/property:RunAnalyzersDuringBuild=true` to surface analyzer violations, especially when analyzer packages (e.g. Meziantou.Analyzer) are updated.
+
+Reason: Default builds don't run analyzers during build; enabling this flag catches new violations introduced by analyzer package updates.
+
+---
+
 ## 2026-03-12
 
 **Do not prefix commit messages with the issue key**
