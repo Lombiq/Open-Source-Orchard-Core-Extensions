@@ -4,8 +4,6 @@
     <TargetFramework>net8.0</TargetFramework>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <DefaultItemExcludes>$(DefaultItemExcludes);.git*;node_modules\**;Tests\**</DefaultItemExcludes>
-    <TailwindInput>Assets/Styles/tailwind-site.css</TailwindInput>
-    <TailwindOutput>wwwroot/css/tailwind-site.css</TailwindOutput>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,7 +21,6 @@
 
   <ItemGroup>
     <PackageReference Include="Lombiq.Npm.Targets" Version="1.5.1" />
-    <PackageReference Include="Lombiq.Tailwind.Targets" Version="1.0.0-alpha.6.nest-644" />
     <PackageReference Include="OrchardCore.Theme.Targets" Version="2.1.0" />
     <PackageReference Include="OrchardCore.ContentManagement" Version="2.1.0" />
     <PackageReference Include="OrchardCore.DisplayManagement" Version="2.1.0" />
