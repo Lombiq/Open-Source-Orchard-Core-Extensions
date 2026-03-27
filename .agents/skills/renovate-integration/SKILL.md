@@ -57,15 +57,15 @@ At the top of every response, declare exactly one state:
 Required state: `ANALYSIS`
 
 Actions:
-- Run `scripts/git/checkout-latest-renovate.sh` (dry-run or read its output) to identify eligible `renovate/*` branches. **Do not write your own git commands to discover renovate branches — always use the script.**
-- The script selects only **one** renovate branch per submodule (the newest eligible). After running it, **manually list all remaining `renovate/*` branches** in each affected submodule (`git for-each-ref ... refs/remotes/origin/renovate/`) and check whether additional eligible branches exist. If so, include them in the analysis.
+- Run `scripts/git/analyze-renovate-branches.sh` to discover **all** eligible `renovate/*` branches across the superproject and every submodule. The script applies the same age/merge filters as `checkout-latest-renovate.sh` but lists **every** eligible branch (not just one per repo) with diffs and commit logs. **Do not write your own git commands to discover renovate branches — always use this script.**
+- Also run `scripts/git/checkout-latest-renovate.sh` (dry-run or read its output) to confirm which single branch per submodule the checkout script would select.
 - Review relevant release notes and diffs.
 - Classify each change as Breaking, Risky, Non-trivial, or Feature. Highlight each version's release notes.
 - Note newer patch versions beyond Renovate proposals.
 
 Constraints:
 - Do not modify code or branches.
-- Do not generate ad-hoc scripts or inline git commands that duplicate the logic in `scripts/git/checkout-latest-renovate.sh`.
+- Do not generate ad-hoc scripts or inline git commands that duplicate the logic in `scripts/git/checkout-latest-renovate.sh` or `scripts/git/analyze-renovate-branches.sh`.
 
 Completion output:
 
@@ -142,11 +142,14 @@ Required state: `FINALIZATION`
 Gate: proceed only after `APPROVED: Phase 4`
 
 Actions:
+- **Before merging any PRs**, revert temporary GHA references that were changed in Phase 3:
+  - In `tools/Lombiq.GitHub.Actions`: revert all `@issue/<WORK_ITEM_KEY>` references back to `@dev` in every `.yml` file under `.github/` (both `actions/` and `workflows/`). Commit on the `issue/<WORK_ITEM_KEY>` branch and push. This ensures `@dev` self-references land on `dev` when the PR is merged.
+  - In the **superproject's** `.github/workflows/*.yml` files: revert the same `@issue/<WORK_ITEM_KEY>` → `@dev` replacements.
 - Merge **all** submodule branches to `dev`:
   - Merge PRs for submodules that have `issue/<WORK_ITEM_KEY>` branches (these were created in Phase 4).
   - **Also merge the existing Renovate PRs** for submodules where only a single renovate branch was checked out directly (no issue branch was created). These PRs still exist on GitHub and must be merged too.
 - After all submodule PRs are merged, update **every** submodule pointer in the superproject to the merged `dev` head (`git fetch origin dev && git checkout origin/dev` in each submodule).
-- Revert temporary GHA references (e.g. `@issue/<WORK_ITEM_KEY>` → `@dev`) in the superproject's `.github/workflows/` files.
+- Commit the updated submodule pointers together with the superproject workflow ref reverts.
 - Include `[skip ci]` in commit messages for submodule pointer updates and reference reverts. Do not wait for CI on these commits.
 - Merge the superproject PR to `dev` only when explicitly approved.
 - Clean up local branches only when instructed.
@@ -161,11 +164,19 @@ STATUS: Complete
 ## Scripts
 **Always use the scripts below instead of generating equivalent inline commands or new scripts.** The scripts encode the canonical filtering logic (age cutoff, merge check) and must be the single source of truth.
 
+### scripts/git/analyze-renovate-branches.sh
+- **Read-only** analysis of all `renovate/*` branches in the superproject and every submodule.
+- Reports each branch as ELIGIBLE or SKIP (too old / already merged) using the same age and merge-base logic as `checkout-latest-renovate.sh`.
+- Shows `diff --stat` and commit log against `origin/dev` for every eligible branch.
+- Covers the **superproject** as well (unlike `checkout-latest-renovate.sh` which only processes submodules).
+- Configurable via `MAX_AGE_DAYS` (default: 5).
+- Does **not** modify any branches, commit, or push.
+
 ### scripts/git/checkout-latest-renovate.sh
 - Checks out the newest applicable `renovate/*` branch per repository.
 - Skips branches older than 5 days (configurable via `MAX_AGE_DAYS`).
 - Skips branches already merged into `origin/dev`.
-- **Intentionally selects only one** applicable renovate branch per repository. Additional eligible branches must be discovered manually during Phase 1 and merged during Phase 2.
+- **Intentionally selects only one** applicable renovate branch per repository. Additional eligible branches must be discovered via `analyze-renovate-branches.sh` and merged during Phase 2.
 - Always fetch before evaluating branch freshness.
 
 ## Self-update policy
