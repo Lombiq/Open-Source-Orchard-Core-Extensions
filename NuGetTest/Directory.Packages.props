@@ -27,8 +27,8 @@
     <PackageVersion Include="Lombiq.EmailClient.Tests.UI" Version="1.0.0-alpha.10.osoe-925" />
     <PackageVersion Include="Lombiq.HelpfulExtensions" Version="11.1.1-alpha.6.osoe-925" />
     <PackageVersion Include="Lombiq.HelpfulExtensions.Tests.UI" Version="11.1.1-alpha.6.osoe-925" />
-    <PackageVersion Include="Lombiq.HelpfulLibraries" Version="12.6.1-alpha.5.osoe-925" />
-    <PackageVersion Include="Lombiq.HelpfulLibraries.OrchardCore" Version="12.6.1-alpha.5.osoe-925" />
+    <PackageVersion Include="Lombiq.HelpfulLibraries" Version="12.6.1-alpha.6.osoe-925" />
+    <PackageVersion Include="Lombiq.HelpfulLibraries.OrchardCore" Version="12.6.1-alpha.6.osoe-925" />
     <PackageVersion Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="10.0.1-alpha.2.osoe-925" />
     <PackageVersion Include="Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI" Version="10.0.1-alpha.2.osoe-925" />
     <PackageVersion Include="Lombiq.Hosting.BuildVersionDisplay" Version="7.0.1-alpha.4.osoe-925" />
@@ -74,8 +74,8 @@
     <PackageVersion Include="Lombiq.VueJs.Resources" Version="9.0.2-alpha.5.osoe-925" />
     <PackageVersion Include="Lombiq.Walkthroughs" Version="3.0.1-alpha.22.osoe-925" />
     <PackageVersion Include="Lombiq.Walkthroughs.Tests.UI" Version="3.0.1-alpha.22.osoe-925" />
-    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="10.0.3" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="10.0.5" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.3.0" />
     <PackageVersion Include="OrchardCore.Application.Cms.Targets" Version="$(OrchardCoreVersion)" />
     <PackageVersion Include="OrchardCore.ContentManagement" Version="$(OrchardCoreVersion)" />
     <PackageVersion Include="OrchardCore.ContentTypes.Abstractions" Version="$(OrchardCoreVersion)" />
