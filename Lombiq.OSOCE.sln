@@ -279,6 +279,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.OrchardCore.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.OrchardCore.Base.Sdk", "src\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.OrchardCore.Base.Sdk\Lombiq.MSBuild.OrchardCore.Base.Sdk.csproj", "{E4CB221C-AD81-476E-B45F-7DCA9C1F08EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.Sdk.Samples", "src\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.Sdk.Samples\Lombiq.MSBuild.Sdk.Samples.csproj", "{DE89E1F8-22A7-4A67-B579-808FE571E268}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.Targets.Tests.UI", "src\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.Targets.Tests.UI\Lombiq.MSBuild.Targets.Tests.UI.csproj", "{FD3BAE9D-35DC-4AF3-91FB-22D0837F1638}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1621,6 +1625,18 @@ Global
 		{E4CB221C-AD81-476E-B45F-7DCA9C1F08EA}.Release|x64.Build.0 = Release|Any CPU
 		{E4CB221C-AD81-476E-B45F-7DCA9C1F08EA}.Release|x86.ActiveCfg = Release|Any CPU
 		{E4CB221C-AD81-476E-B45F-7DCA9C1F08EA}.Release|x86.Build.0 = Release|Any CPU
+		{DE89E1F8-22A7-4A67-B579-808FE571E268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE89E1F8-22A7-4A67-B579-808FE571E268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE89E1F8-22A7-4A67-B579-808FE571E268}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DE89E1F8-22A7-4A67-B579-808FE571E268}.Debug|x64.Build.0 = Debug|Any CPU
+		{DE89E1F8-22A7-4A67-B579-808FE571E268}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DE89E1F8-22A7-4A67-B579-808FE571E268}.Debug|x86.Build.0 = Debug|Any CPU
+		{DE89E1F8-22A7-4A67-B579-808FE571E268}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE89E1F8-22A7-4A67-B579-808FE571E268}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{DE89E1F8-22A7-4A67-B579-808FE571E268}.Release|x64.ActiveCfg = Debug|Any CPU
+		{DE89E1F8-22A7-4A67-B579-808FE571E268}.Release|x64.Build.0 = Debug|Any CPU
+		{DE89E1F8-22A7-4A67-B579-808FE571E268}.Release|x86.ActiveCfg = Debug|Any CPU
+		{DE89E1F8-22A7-4A67-B579-808FE571E268}.Release|x86.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1747,6 +1763,8 @@ Global
 		{86D29EB7-308F-4301-A90E-6E27EBCF87CE} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
 		{E1E691D9-5120-4920-902A-145DCADADDCB} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
 		{E4CB221C-AD81-476E-B45F-7DCA9C1F08EA} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
+		{DE89E1F8-22A7-4A67-B579-808FE571E268} = {574156BC-2074-47C9-8EA8-70DED6658DD5}
+		{FD3BAE9D-35DC-4AF3-91FB-22D0837F1638} = {90DA815E-6121-4300-8CB9-208DB39F70D4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6926E60-1F5A-4B05-B835-B1021FBE07C5}
