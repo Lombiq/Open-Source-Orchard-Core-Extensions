@@ -14,9 +14,9 @@
     <PackageVersion Include="Lombiq.ChartJs" Version="9.0.1-alpha.6.osoe-925" />
     <PackageVersion Include="Lombiq.ChartJs.Samples" Version="9.0.1-alpha.6.osoe-925" />
     <PackageVersion Include="Lombiq.ChartJs.Tests.UI" Version="9.0.1-alpha.6.osoe-925" />
-    <PackageVersion Include="Lombiq.ContentEditors" Version="6.0.0-alpha.6.osoe-925" />
-    <PackageVersion Include="Lombiq.ContentEditors.Samples" Version="6.0.0-alpha.6.osoe-925" />
-    <PackageVersion Include="Lombiq.ContentEditors.Tests.UI" Version="6.0.0-alpha.6.osoe-925" />
+    <PackageVersion Include="Lombiq.ContentEditors" Version="6.0.0-alpha.7.osoe-1208" />
+    <PackageVersion Include="Lombiq.ContentEditors.Samples" Version="6.0.0-alpha.7.osoe-1208" />
+    <PackageVersion Include="Lombiq.ContentEditors.Tests.UI" Version="6.0.0-alpha.7.osoe-1208" />
     <PackageVersion Include="Lombiq.DataTables" Version="10.0.2-alpha.14.osoe-925" />
     <PackageVersion Include="Lombiq.DataTables.Samples" Version="10.0.2-alpha.14.osoe-925" />
     <PackageVersion Include="Lombiq.DataTables.Tests.UI" Version="10.0.2-alpha.14.osoe-925" />
