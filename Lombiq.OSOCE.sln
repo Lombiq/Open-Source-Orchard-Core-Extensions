@@ -277,7 +277,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.OrchardCore.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk", "src\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk\Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk.csproj", "{E1E691D9-5120-4920-902A-145DCADADDCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.OrchardCore.Base.Sdk", "src\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.OrchardCore.Base.Sdk\Lombiq.MSBuild.OrchardCore.Base.Sdk.csproj", "{E4CB221C-AD81-476E-B45F-7DCA9C1F08EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.Base.Sdk", "src\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.Base.Sdk\Lombiq.MSBuild.Base.Sdk.csproj", "{E4CB221C-AD81-476E-B45F-7DCA9C1F08EA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.Sdk.Samples", "src\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.Sdk.Samples\Lombiq.MSBuild.Sdk.Samples.csproj", "{DE89E1F8-22A7-4A67-B579-808FE571E268}"
 EndProject
