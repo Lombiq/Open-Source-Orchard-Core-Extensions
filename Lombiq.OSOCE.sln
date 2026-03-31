@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.1.11312.151 d18.0
+VisualStudioVersion = 18.1.11312.151
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{648D3BB6-201F-401B-9EF9-D7BBBC6D3ECA}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.Web", "src\Lombiq.OSOCE.Web\Lombiq.OSOCE.Web.csproj", "{1AC7EC46-8FC5-49F8-B995-DA35263AB53F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8B131E3B-202B-486D-A3A4-CB84AC4C3370}"
 	ProjectSection(SolutionItems) = preProject
@@ -25,13 +23,45 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{11E06A11-1733-408D-BB2F-BFA07075F812}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.TrainingDemo", "src\Modules\Lombiq.TrainingDemo\Lombiq.TrainingDemo\Lombiq.TrainingDemo.csproj", "{3E5295F8-A196-466B-A857-177AB6EF6E04}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{11F2CB14-D92A-484F-9C1E-2836B1B04DB8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Npm.Targets", "src\Utilities\Lombiq.Npm.Targets\Lombiq.Npm.Targets.csproj", "{7EEC51ED-5483-4A27-93B5-FCD920493604}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{53D45048-C7C6-4D04-A9DA-8B8271510F99}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FF48793C-2AC5-4FAA-9BA1-44448E3A7F98}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{6ED7E28F-0556-471C-8AD1-5BB0941411DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{41CE6E12-92B4-4CF5-9D9C-C214C41CA8FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{BF1EDFA5-0129-416C-B9ED-8CE68A3FD526}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Themes", "Themes", "{574156BC-2074-47C9-8EA8-70DED6658DD5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Themes", "Themes", "{93A678A8-93E4-4F53-BF83-22801014F27B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{719F19E1-0B20-490C-B325-74E5FD6C838C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{40E6EA88-BE15-4542-BD9A-3AA8DC69629E}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build-and-test-windows.yml = .github\workflows\build-and-test-windows.yml
+		.github\workflows\build-and-test.yml = .github\workflows\build-and-test.yml
+		.github\workflows\create-jira-issues-for-community-activities.yml = .github\workflows\create-jira-issues-for-community-activities.yml
+		.github\workflows\validate-pull-request.yml = .github\workflows\validate-pull-request.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Asset Linting Action Configuration", "Asset Linting Action Configuration", "{C09B86B8-2A07-4C94-98C9-F0A6ECBADD56}"
+	ProjectSection(SolutionItems) = preProject
+		tools\Lombiq.GitHub.Actions\.github\actions\asset-lint\js\eslint.config.mjs = tools\Lombiq.GitHub.Actions\.github\actions\asset-lint\js\eslint.config.mjs
+		tools\Lombiq.GitHub.Actions\.github\actions\asset-lint\css\stylelint.config.mjs = tools\Lombiq.GitHub.Actions\.github\actions\asset-lint\css\stylelint.config.mjs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{90DA815E-6121-4300-8CB9-208DB39F70D4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.Web", "src\Lombiq.OSOCE.Web\Lombiq.OSOCE.Web.csproj", "{1AC7EC46-8FC5-49F8-B995-DA35263AB53F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.TrainingDemo", "src\Modules\Lombiq.TrainingDemo\Lombiq.TrainingDemo\Lombiq.TrainingDemo.csproj", "{3E5295F8-A196-466B-A857-177AB6EF6E04}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Npm.Targets", "src\Utilities\Lombiq.Npm.Targets\Lombiq.Npm.Targets.csproj", "{7EEC51ED-5483-4A27-93B5-FCD920493604}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.csproj", "{01A2A5A4-E453-4658-92F1-D57C00B16DA0}"
 EndProject
@@ -39,11 +69,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulExtensions", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.SetupExtensions", "src\Utilities\Lombiq.SetupExtensions\Lombiq.SetupExtensions.csproj", "{A31B73D3-C075-4510-A504-A1DC0832D006}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FF48793C-2AC5-4FAA-9BA1-44448E3A7F98}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.TrainingDemo.Tests", "src\Modules\Lombiq.TrainingDemo\Lombiq.TrainingDemo.Tests\Lombiq.TrainingDemo.Tests.csproj", "{26FCE328-9B37-4A51-9C87-87D6628907E0}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{6ED7E28F-0556-471C-8AD1-5BB0941411DD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Hosting.Azure.ApplicationInsights", "src\Modules\Lombiq.Hosting.Azure.ApplicationInsights\Lombiq.Hosting.Azure.ApplicationInsights\Lombiq.Hosting.Azure.ApplicationInsights.csproj", "{EC3A4303-A792-41AF-A354-4D8482411457}"
 EndProject
@@ -71,15 +97,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Hosting.Tenants.Mana
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Privacy", "src\Modules\Lombiq.Privacy\Lombiq.Privacy\Lombiq.Privacy.csproj", "{D245F49A-507D-4590-8F95-ADDA50642DB2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{41CE6E12-92B4-4CF5-9D9C-C214C41CA8FE}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries.Tests", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Tests\Lombiq.HelpfulLibraries.Tests.csproj", "{3AA1563E-4D6A-4FE4-BAB7-97E95F622AD0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.OSOCE.Samples", "src\Modules\Lombiq.OSOCE.Samples\Lombiq.OSOCE.Samples.csproj", "{64AC7FC6-3E9E-4756-8504-D0D8DAC3B300}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries.Samples", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Samples\Lombiq.HelpfulLibraries.Samples.csproj", "{31D4DDCE-472A-4ECF-B6A2-0F1B34B14DFA}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{BF1EDFA5-0129-416C-B9ED-8CE68A3FD526}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Analyzers", "tools\Lombiq.Analyzers\Lombiq.Analyzers\Lombiq.Analyzers.csproj", "{C7A251AA-1BD5-47D8-A61B-50D8C493223A}"
 EndProject
@@ -101,10 +123,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries.Orc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries.OrchardCore.Testing", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.OrchardCore.Testing\Lombiq.HelpfulLibraries.OrchardCore.Testing.csproj", "{95D73C6A-B81E-44A3-9376-9CFEFDE3B314}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Themes", "Themes", "{574156BC-2074-47C9-8EA8-70DED6658DD5}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Themes", "Themes", "{93A678A8-93E4-4F53-BF83-22801014F27B}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.BaseTheme.Tests.UI", "src\Themes\Lombiq.BaseTheme\Lombiq.BaseTheme.Tests.UI\Lombiq.BaseTheme.Tests.UI.csproj", "{2BF13E3A-B54D-4352-812E-9A867A801FFE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.HelpfulLibraries.Cli", "src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Cli\Lombiq.HelpfulLibraries.Cli.csproj", "{F4B0F77A-4EF0-40A9-B1C0-9294B397BA36}"
@@ -113,17 +131,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.ChartJs.Samples", "s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.ChartJs.Tests.UI", "src\Modules\Lombiq.ChartJs\Lombiq.ChartJs.Tests.UI\Lombiq.ChartJs.Tests.UI.csproj", "{41724831-C0CC-4AF4-A869-7AB5AFB9F33C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{719F19E1-0B20-490C-B325-74E5FD6C838C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Privacy.Samples", "src\Modules\Lombiq.Privacy\Lombiq.Privacy.Samples\Lombiq.Privacy.Samples.csproj", "{B5BF5684-561B-4E48-B1D6-A543CBE1EB1D}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{40E6EA88-BE15-4542-BD9A-3AA8DC69629E}"
-	ProjectSection(SolutionItems) = preProject
-		.github\workflows\build-and-test-windows.yml = .github\workflows\build-and-test-windows.yml
-		.github\workflows\build-and-test.yml = .github\workflows\build-and-test.yml
-		.github\workflows\create-jira-issues-for-community-activities.yml = .github\workflows\create-jira-issues-for-community-activities.yml
-		.github\workflows\validate-pull-request.yml = .github\workflows\validate-pull-request.yml
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lombiq.Privacy.Tests.UI", "src\Modules\Lombiq.Privacy\Lombiq.Privacy.Tests.UI\Lombiq.Privacy.Tests.UI.csproj", "{F6C11C25-7080-4CB5-B278-2A54FB952108}"
 EndProject
@@ -247,17 +255,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.BaseTheme.Native.Sam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.VueJs.Resources", "src\Modules\Lombiq.VueJs\Lombiq.VueJs.Resources\Lombiq.VueJs.Resources.csproj", "{B0C44956-2E7A-4D96-8D71-930B3F1D783F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Asset Linting Action Configuration", "Asset Linting Action Configuration", "{C09B86B8-2A07-4C94-98C9-F0A6ECBADD56}"
-	ProjectSection(SolutionItems) = preProject
-		tools\Lombiq.GitHub.Actions\.github\actions\asset-lint\js\eslint.config.mjs = tools\Lombiq.GitHub.Actions\.github\actions\asset-lint\js\eslint.config.mjs
-		tools\Lombiq.GitHub.Actions\.github\actions\asset-lint\css\stylelint.config.mjs = tools\Lombiq.GitHub.Actions\.github\actions\asset-lint\css\stylelint.config.mjs
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.LibMan.Targets", "src\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.LibMan.Targets\Lombiq.MSBuild.LibMan.Targets.csproj", "{05AED85E-CDFC-44D1-BCA6-D312EFE71AB7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.Targets.Samples", "src\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.Targets.Samples\Lombiq.MSBuild.Targets.Samples.csproj", "{2A1F29FB-0090-4A00-B4E5-0D0BEB2894C2}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{90DA815E-6121-4300-8CB9-208DB39F70D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.Targets.Tests", "src\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.Targets.Tests\Lombiq.MSBuild.Targets.Tests.csproj", "{71531C35-B397-4658-A678-7B3D262511D4}"
 EndProject
@@ -1637,22 +1637,40 @@ Global
 		{DE89E1F8-22A7-4A67-B579-808FE571E268}.Release|x64.Build.0 = Debug|Any CPU
 		{DE89E1F8-22A7-4A67-B579-808FE571E268}.Release|x86.ActiveCfg = Debug|Any CPU
 		{DE89E1F8-22A7-4A67-B579-808FE571E268}.Release|x86.Build.0 = Debug|Any CPU
+		{FD3BAE9D-35DC-4AF3-91FB-22D0837F1638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD3BAE9D-35DC-4AF3-91FB-22D0837F1638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD3BAE9D-35DC-4AF3-91FB-22D0837F1638}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FD3BAE9D-35DC-4AF3-91FB-22D0837F1638}.Debug|x64.Build.0 = Debug|Any CPU
+		{FD3BAE9D-35DC-4AF3-91FB-22D0837F1638}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FD3BAE9D-35DC-4AF3-91FB-22D0837F1638}.Debug|x86.Build.0 = Debug|Any CPU
+		{FD3BAE9D-35DC-4AF3-91FB-22D0837F1638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD3BAE9D-35DC-4AF3-91FB-22D0837F1638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD3BAE9D-35DC-4AF3-91FB-22D0837F1638}.Release|x64.ActiveCfg = Release|Any CPU
+		{FD3BAE9D-35DC-4AF3-91FB-22D0837F1638}.Release|x64.Build.0 = Release|Any CPU
+		{FD3BAE9D-35DC-4AF3-91FB-22D0837F1638}.Release|x86.ActiveCfg = Release|Any CPU
+		{FD3BAE9D-35DC-4AF3-91FB-22D0837F1638}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{1AC7EC46-8FC5-49F8-B995-DA35263AB53F} = {648D3BB6-201F-401B-9EF9-D7BBBC6D3ECA}
 		{11E06A11-1733-408D-BB2F-BFA07075F812} = {648D3BB6-201F-401B-9EF9-D7BBBC6D3ECA}
-		{3E5295F8-A196-466B-A857-177AB6EF6E04} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{11F2CB14-D92A-484F-9C1E-2836B1B04DB8} = {648D3BB6-201F-401B-9EF9-D7BBBC6D3ECA}
-		{7EEC51ED-5483-4A27-93B5-FCD920493604} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
 		{53D45048-C7C6-4D04-A9DA-8B8271510F99} = {648D3BB6-201F-401B-9EF9-D7BBBC6D3ECA}
+		{6ED7E28F-0556-471C-8AD1-5BB0941411DD} = {FF48793C-2AC5-4FAA-9BA1-44448E3A7F98}
+		{41CE6E12-92B4-4CF5-9D9C-C214C41CA8FE} = {FF48793C-2AC5-4FAA-9BA1-44448E3A7F98}
+		{574156BC-2074-47C9-8EA8-70DED6658DD5} = {648D3BB6-201F-401B-9EF9-D7BBBC6D3ECA}
+		{93A678A8-93E4-4F53-BF83-22801014F27B} = {FF48793C-2AC5-4FAA-9BA1-44448E3A7F98}
+		{40E6EA88-BE15-4542-BD9A-3AA8DC69629E} = {719F19E1-0B20-490C-B325-74E5FD6C838C}
+		{C09B86B8-2A07-4C94-98C9-F0A6ECBADD56} = {8B131E3B-202B-486D-A3A4-CB84AC4C3370}
+		{90DA815E-6121-4300-8CB9-208DB39F70D4} = {FF48793C-2AC5-4FAA-9BA1-44448E3A7F98}
+		{1AC7EC46-8FC5-49F8-B995-DA35263AB53F} = {648D3BB6-201F-401B-9EF9-D7BBBC6D3ECA}
+		{3E5295F8-A196-466B-A857-177AB6EF6E04} = {11E06A11-1733-408D-BB2F-BFA07075F812}
+		{7EEC51ED-5483-4A27-93B5-FCD920493604} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
 		{01A2A5A4-E453-4658-92F1-D57C00B16DA0} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
 		{7DEB3535-5A2A-468A-A626-11B668C53AE0} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{A31B73D3-C075-4510-A504-A1DC0832D006} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
 		{26FCE328-9B37-4A51-9C87-87D6628907E0} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
-		{6ED7E28F-0556-471C-8AD1-5BB0941411DD} = {FF48793C-2AC5-4FAA-9BA1-44448E3A7F98}
 		{EC3A4303-A792-41AF-A354-4D8482411457} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{644CBF86-C2D7-4B00-94BB-BDBC02830611} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{A2CBA4B0-6B30-4183-B167-69A99F34FC72} = {11E06A11-1733-408D-BB2F-BFA07075F812}
@@ -1666,7 +1684,6 @@ Global
 		{45B54216-B0A4-4D07-ACF9-D9046F9F2705} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{814CFDA5-35B5-46DE-984D-10507A2D91FD} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{D245F49A-507D-4590-8F95-ADDA50642DB2} = {11E06A11-1733-408D-BB2F-BFA07075F812}
-		{41CE6E12-92B4-4CF5-9D9C-C214C41CA8FE} = {FF48793C-2AC5-4FAA-9BA1-44448E3A7F98}
 		{3AA1563E-4D6A-4FE4-BAB7-97E95F622AD0} = {41CE6E12-92B4-4CF5-9D9C-C214C41CA8FE}
 		{64AC7FC6-3E9E-4756-8504-D0D8DAC3B300} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{31D4DDCE-472A-4ECF-B6A2-0F1B34B14DFA} = {11E06A11-1733-408D-BB2F-BFA07075F812}
@@ -1680,14 +1697,11 @@ Global
 		{ACF4C334-D48B-46D2-B5A1-681115067748} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
 		{CA011075-6748-4EB4-9C72-C8FD7319FEFD} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
 		{95D73C6A-B81E-44A3-9376-9CFEFDE3B314} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
-		{574156BC-2074-47C9-8EA8-70DED6658DD5} = {648D3BB6-201F-401B-9EF9-D7BBBC6D3ECA}
-		{93A678A8-93E4-4F53-BF83-22801014F27B} = {FF48793C-2AC5-4FAA-9BA1-44448E3A7F98}
 		{2BF13E3A-B54D-4352-812E-9A867A801FFE} = {93A678A8-93E4-4F53-BF83-22801014F27B}
 		{F4B0F77A-4EF0-40A9-B1C0-9294B397BA36} = {53D45048-C7C6-4D04-A9DA-8B8271510F99}
 		{B22E25BC-36A8-450B-A67A-9BC0CFDD4F52} = {11E06A11-1733-408D-BB2F-BFA07075F812}
 		{41724831-C0CC-4AF4-A869-7AB5AFB9F33C} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
 		{B5BF5684-561B-4E48-B1D6-A543CBE1EB1D} = {11E06A11-1733-408D-BB2F-BFA07075F812}
-		{40E6EA88-BE15-4542-BD9A-3AA8DC69629E} = {719F19E1-0B20-490C-B325-74E5FD6C838C}
 		{F6C11C25-7080-4CB5-B278-2A54FB952108} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
 		{A10F9F17-CB35-4641-B707-C6620A2C4FDC} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
 		{9DFD40DB-217C-4012-83FB-18F3AEBC3DD6} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
@@ -1749,10 +1763,8 @@ Global
 		{5E185E2A-A87C-412B-9F9F-8209C251DBAD} = {574156BC-2074-47C9-8EA8-70DED6658DD5}
 		{C56A4DED-9C33-4543-857C-C351F9AE586E} = {574156BC-2074-47C9-8EA8-70DED6658DD5}
 		{B0C44956-2E7A-4D96-8D71-930B3F1D783F} = {11E06A11-1733-408D-BB2F-BFA07075F812}
-		{C09B86B8-2A07-4C94-98C9-F0A6ECBADD56} = {8B131E3B-202B-486D-A3A4-CB84AC4C3370}
 		{05AED85E-CDFC-44D1-BCA6-D312EFE71AB7} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
 		{2A1F29FB-0090-4A00-B4E5-0D0BEB2894C2} = {11F2CB14-D92A-484F-9C1E-2836B1B04DB8}
-		{90DA815E-6121-4300-8CB9-208DB39F70D4} = {FF48793C-2AC5-4FAA-9BA1-44448E3A7F98}
 		{71531C35-B397-4658-A678-7B3D262511D4} = {90DA815E-6121-4300-8CB9-208DB39F70D4}
 		{67780DC2-F505-81B7-C4FD-C4D250022916} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
 		{FA2FF7D8-B1B8-4216-CB73-F586BF7D9CCF} = {6ED7E28F-0556-471C-8AD1-5BB0941411DD}
