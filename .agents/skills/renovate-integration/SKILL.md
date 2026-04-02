@@ -86,6 +86,8 @@ Actions:
 - Since the script selects only one branch per submodule, **also merge any additional eligible `renovate/*` branches** identified during Phase 1 analysis into `issue/<WORK_ITEM_KEY>` in each affected submodule.
 - Check for a `renovate/*` branch in the **superproject** itself (e.g. `origin/renovate/non-breaking-dependency-versions`). If one exists and is eligible, merge it into `issue/<WORK_ITEM_KEY>` in the superproject instead of manually editing the same files.
 - Resolve analyzer warnings, build/test failures, and lockfile updates. Build with `/property:RunAnalyzersDuringBuild=true` to surface analyzer violations (especially important when analyzer packages like Meziantou.Analyzer are updated).
+- When analyzer package updates (e.g. Meziantou.Analyzer, SonarAnalyzer.CSharp) introduce **new warnings in existing code**, fix the warnings in the affected submodules rather than downgrading the analyzer version. Create `issue/<WORK_ITEM_KEY>` branches in those submodules if they don't already have one, merge any applicable renovate branches into them, and commit the warning fixes.
+- When fixing string equality warnings (e.g. MA0127), prefer the `EqualsOrdinalIgnoreCase` and similar extension methods from `Lombiq.HelpfulLibraries` (declared in `namespace System;` so no extra using is needed) over raw `string.Equals(…, StringComparison.…)` calls.
 - Commit only on `issue/<WORK_ITEM_KEY>`.
 
 Completion output:
