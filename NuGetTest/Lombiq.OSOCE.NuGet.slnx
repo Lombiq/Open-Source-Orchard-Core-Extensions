@@ -1,0 +1,25 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="../Directory.Build.props" />
+    <File Path=".gitignore" />
+    <File Path="commands.json" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="Readme.md" />
+    <File Path="Reset-Local.ps1" />
+    <File Path="Update-LombiqNuGetPackages.ps1" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Lombiq.OSOCE.NuGet.Web/Lombiq.OSOCE.NuGet.Web.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/">
+    <Project Path="src/Modules/Lombiq.OSOCE.NuGet.TestModule/Lombiq.OSOCE.NuGet.TestModule.csproj" />
+  </Folder>
+  <Folder Name="/src/Themes/">
+    <Project Path="src/Themes/Lombiq.OSOCE.NuGet.TestTheme/Lombiq.OSOCE.NuGet.TestTheme.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/Lombiq.OSOCE.NuGet.Tests.UI/Lombiq.OSOCE.NuGet.Tests.UI.csproj" />
+    <Project Path="test/Lombiq.OSOCE.NuGet.Tests/Lombiq.OSOCE.NuGet.Tests.csproj" />
+  </Folder>
+</Solution>
