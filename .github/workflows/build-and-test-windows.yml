@@ -123,7 +123,7 @@ jobs:
         github.event.label.name == 'run-windows-build' ||
         (github.event.review.state == 'APPROVED' && contains(github.event.pull_request.labels.*.name, 'requires-windows-build'))
     name: PowerShell Static Code Analysis Windows
-    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@dev
+    uses: Lombiq/PowerShell-Analyzers/.github/workflows/static-code-analysis.yml@171e516dbec757238155913e9513f9bc4e1f03b8 # dev
     with:
       machine-types: '["windows-2025"]'
       run-windows-powershell: 'false'
