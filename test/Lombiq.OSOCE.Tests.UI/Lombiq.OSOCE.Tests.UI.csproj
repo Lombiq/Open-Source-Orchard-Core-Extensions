@@ -6,14 +6,7 @@
     <OutputType>Exe</OutputType>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.3.0" />
-    <PackageReference Include="xunit.v3" Version="3.2.2" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
+  <Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk/Sdk/Import.props" />
 
   <!-- Necessary to fix these warnings and the false positive NU1510 resulting from the fix itself:
        - Warning NU1903 : Package 'System.Net.Http' 4.1.0 has a known high severity vulnerability,
@@ -65,4 +58,5 @@
     <ProjectReference Include="..\Lombiq.UITestingToolbox\Lombiq.Tests.UI.Tests.UI\Lombiq.Tests.UI.Tests.UI.csproj" />
   </ItemGroup>
 
+  <Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk/Sdk/Import.targets" />
 </Project>
