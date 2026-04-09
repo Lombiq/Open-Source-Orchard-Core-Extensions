@@ -61,7 +61,6 @@ Actions:
 - Also run `scripts/git/checkout-latest-renovate.sh` (dry-run or read its output) to confirm which single branch per submodule the checkout script would select.
 - Review relevant release notes and diffs.
 - Classify each change as Breaking, Risky, Non-trivial, or Feature. Highlight each version's release notes.
-- Note newer patch versions beyond Renovate proposals.
 
 Constraints:
 - Do not modify code or branches.
@@ -80,7 +79,6 @@ Gate: proceed only after `APPROVED: Phase 1`
 
 Actions:
 - Run `scripts/git/checkout-latest-renovate.sh` to check out the selected renovate branches. **Always use this script — never generate replacement commands.**
-- After checking out renovate branches, check whether the updated dependencies have **newer patch versions** available (i.e. bug-fix releases published after Renovate created its branches). If so, update to the latest patch version directly on the renovate branch or in the subsequent issue branch. Use `dotnet list package --outdated` or NuGet search to identify these.
 - For submodules with only a **single** eligible renovate branch and no further changes needed, **do not create an `issue/<WORK_ITEM_KEY>` branch** — leave the renovate branch checked out. The existing Renovate PR will suffice.
 - For submodules that need **multiple renovate branches merged** or **additional manual changes** (e.g. GHA ref updates, patch version bumps), create `issue/<WORK_ITEM_KEY>` from `origin/dev` and merge all applicable renovate branches into it.
 - Since the script selects only one branch per submodule, **also merge any additional eligible `renovate/*` branches** identified during Phase 1 analysis into `issue/<WORK_ITEM_KEY>` in each affected submodule.
