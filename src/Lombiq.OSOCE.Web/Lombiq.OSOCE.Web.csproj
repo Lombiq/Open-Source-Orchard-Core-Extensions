@@ -59,6 +59,7 @@
     <ProjectReference Include="..\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.Tests.Theme\Lombiq.Hosting.MediaTheme.Tests.Theme.csproj" />
     <ProjectReference Include="..\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.csproj" />
     <ProjectReference Include="..\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.Bridge\Lombiq.Hosting.MediaTheme.Bridge.csproj" />
+    <ProjectReference Include="..\Utilities\Lombiq.Tailwind.Targets\Lombiq.Tailwind.Targets.Samples\Lombiq.Tailwind.Targets.Samples.csproj" />
     <ProjectReference Include="..\Utilities\Lombiq.SetupExtensions\Lombiq.SetupExtensions.csproj" />
   </ItemGroup>
 

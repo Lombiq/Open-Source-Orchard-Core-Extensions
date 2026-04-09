@@ -24,6 +24,9 @@ public class BehaviorHelpfulExtensionsTests : UITestBase
     public Task LiquidFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestLiquidFeatureAsync());
 
     [Fact]
+    public Task LucideFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestLucideFeatureAsync());
+
+    [Fact]
     public Task TrumbowygBlogPostsFeatureShouldWork() => ExecuteTestAfterSetupAsync(context => context.TestTrumbowygBlogPostsFeatureAsync());
 
     [Fact]
