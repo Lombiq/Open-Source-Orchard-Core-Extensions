@@ -152,6 +152,7 @@ Actions:
 - Commit the updated submodule pointers together with the superproject workflow ref reverts.
 - Include `[skip ci]` in commit messages for submodule pointer updates and reference reverts. Do not wait for CI on these commits.
 - Merge the superproject PR to `dev` only when explicitly approved.
+- After the superproject PR is merged, check out the merged `dev` in the superproject itself (`git fetch origin dev && git checkout origin/dev`).
 - Clean up local branches only when instructed.
 
 Completion output:
