@@ -22,7 +22,6 @@ public static class SetupHelpers
                 SiteTimeZoneValue = "Europe/Budapest",
             });
 
-        await context.GoToAbsoluteUrlAsync(homepageUri, onlyIfNotAlreadyThere: false);
         context.Exists(By.Id("navbar"));
 
         return homepageUri;
