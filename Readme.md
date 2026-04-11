@@ -64,6 +64,7 @@ Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source
 - [`Lombiq.BaseTheme.Native.Samples`](https://github.com/Lombiq/Orchard-Base-Theme/tree/dev/Lombiq.BaseTheme.Native.Samples): A sample theme that demonstrates the features of the [`Lombiq.BaseTheme.Native`](https://github.com/Lombiq/Orchard-Base-Theme).
 - [`Lombiq.Hosting.MediaTheme`](https://github.com/Lombiq/Hosting-Media-Theme): With the help of this theme and its dependency, the [`Lombiq.Hosting.MediaTheme.Bridge`](https://github.com/Lombiq/Hosting-Media-Theme), you'll be able to host your theme assets and templates from Media Library.
 - [`Lombiq.Hosting.MediaTheme.Tests.Theme`](https://github.com/Lombiq/Hosting-Media-Theme): A theme only used for testing that demonstrates the local development version of a Media Theme.
+- [`Lombiq.Tailwind.Targets.Samples`](https://github.com/Lombiq/Tailwind-Targets/tree/dev/Lombiq.Tailwind.Targets.Samples): A minimal Orchard Core theme that demonstrates using [`Lombiq.Tailwind.Targets`](https://github.com/Lombiq/Tailwind-Targets) in a real theme project.
 
 ### Utilities
 
@@ -71,6 +72,7 @@ Note that this solution also has an Orchard 1 counterpart, [Lombiq's Open-Source
 - [`Lombiq.MSBuild.LibMan.Targets`](https://github.com/Lombiq/MSBuild-Targets/): Contains MSBuild Targets and Props files to streamline repetitive project configuration.
 - [`Lombiq.Npm.Targets`](https://github.com/Lombiq/NPM-Targets): Provides automatic NPM package installation and a custom NPM command execution before building a .NET project. This way it is possible for example to manage assets (e.g. .scss files or images) in a folder that will be automatically compiled into the _wwwroot_ folder on build, which then can be excluded from the version control system.
 - [`Lombiq.SetupExtensions`](https://github.com/Lombiq/Setup-Extensions): Extensions for setting up an Orchard Core application.
+- [`Lombiq.Tailwind.Targets`](https://github.com/Lombiq/Tailwind-Targets): Provides automatic Tailwind CSS compilation before building a .NET project, without requiring Node.js in the consuming app.
 
 ### Testing
 

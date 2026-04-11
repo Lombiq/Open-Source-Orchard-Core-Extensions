@@ -26,6 +26,7 @@
         "Lombiq.HelpfulExtensions.ContentTypes",
         "Lombiq.HelpfulExtensions.Flows",
         "Lombiq.HelpfulExtensions.Liquid",
+        "Lombiq.HelpfulExtensions.Lucide",
         "Lombiq.HelpfulExtensions.ShapeTracing",
         "Lombiq.HelpfulExtensions.TrumbowygBlogPosts",
         "Lombiq.HelpfulExtensions.Widgets",
