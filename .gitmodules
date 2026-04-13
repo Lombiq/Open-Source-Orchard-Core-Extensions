@@ -116,3 +116,8 @@
 [submodule "src/Modules/Lombiq.Marketing"]
 	path = src/Modules/Lombiq.Marketing
 	url = https://github.com/Lombiq/Orchard-Marketing.git
+	branch = dev
+[submodule "src/Utilities/Lombiq.Tailwind.Targets"]
+	path = src/Utilities/Lombiq.Tailwind.Targets
+	url = https://github.com/Lombiq/Tailwind-Targets
+	branch = dev
