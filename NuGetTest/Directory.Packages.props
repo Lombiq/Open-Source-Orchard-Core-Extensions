@@ -60,9 +60,9 @@
     <PackageVersion Include="Lombiq.LoginAsAnybody.Tests.UI" Version="5.0.1-alpha.2.osoe-925" />
     <PackageVersion Include="Lombiq.Npm.Targets" Version="1.5.2-alpha.0.osoe-925" />
     <PackageVersion Include="Lombiq.OrchardCoreApiClient.Tests.UI" Version="7.0.1-alpha.7.osoe-925" />
-    <PackageVersion Include="Lombiq.Privacy" Version="10.0.1-alpha.7.osoe-925" />
-    <PackageVersion Include="Lombiq.Privacy.Samples" Version="10.0.1-alpha.7.osoe-925" />
-    <PackageVersion Include="Lombiq.Privacy.Tests.UI" Version="10.0.1-alpha.7.osoe-925" />
+    <PackageVersion Include="Lombiq.Privacy" Version="10.0.1-alpha.8.osoe-925" />
+    <PackageVersion Include="Lombiq.Privacy.Samples" Version="10.0.1-alpha.8.osoe-925" />
+    <PackageVersion Include="Lombiq.Privacy.Tests.UI" Version="10.0.1-alpha.8.osoe-925" />
     <PackageVersion Include="Lombiq.SetupExtensions" Version="7.0.1-alpha.0.osoe-925" />
     <PackageVersion Include="Lombiq.Tests" Version="5.0.1-alpha.1.osoe-925" />
     <PackageVersion Include="Lombiq.Tests.UI" Version="14.2.2-alpha.10.osoe-925" />
