@@ -73,4 +73,9 @@
     <ProjectReference Include="..\Themes\Lombiq.OSOCE.NuGet.TestTheme\Lombiq.OSOCE.NuGet.TestTheme.csproj" />
   </ItemGroup>
 
+  <!-- Fixes "NU1901: Package has a known low severity vulnerability" errors. -->
+  <ItemGroup>
+    <PackageReference Include="System.Security.Cryptography.Xml" NoWarn="NU1510" />
+  </ItemGroup>
+
 </Project>
