@@ -45,6 +45,7 @@
         "Lombiq.JsonEditor",
         "Lombiq.JsonEditor.ContentEditor",
         "Lombiq.LoginAsAnybody",
+        "Lombiq.Marketing.Pirsch",
         "Lombiq.OSOCE.Samples",
         // We only enable these on a specific test, because it overlaps with too many things.
         // "Lombiq.Privacy.ConsentBanner",

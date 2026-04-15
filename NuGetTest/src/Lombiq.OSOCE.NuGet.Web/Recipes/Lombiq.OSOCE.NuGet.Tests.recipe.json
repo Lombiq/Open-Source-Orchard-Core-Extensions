@@ -47,6 +47,7 @@
         "Lombiq.JsonEditor",
         "Lombiq.JsonEditor.ContentEditor",
         "Lombiq.LoginAsAnybody",
+        "Lombiq.Marketing.Pirsch",
         "Lombiq.OSOCE.NuGet.TestModule",
         "Lombiq.OSOCE.NuGet.TestTheme",
         "Lombiq.OSOCE.Samples",
