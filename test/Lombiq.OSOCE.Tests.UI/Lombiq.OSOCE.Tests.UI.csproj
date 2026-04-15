@@ -38,6 +38,7 @@
     <ProjectReference Include="..\..\src\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.MediaStorageManagement.Tests.UI\Lombiq.Hosting.Tenants.MediaStorageManagement.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.JsonEditor\Lombiq.JsonEditor.Test.UI\Lombiq.JsonEditor.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.LoginAsAnybody\Lombiq.LoginAsAnybody.Tests.UI\Lombiq.LoginAsAnybody.Tests.UI.csproj" />
+    <ProjectReference Include="..\..\src\Modules\Lombiq.Marketing\Lombiq.Marketing.Tests.UI\Lombiq.Marketing.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.Privacy\Lombiq.Privacy.Tests.UI\Lombiq.Privacy.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.UIKit\Lombiq.UIKit.Tests.UI\Lombiq.UIKit.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.UIKit\Lombiq.UIKit.Widgets.Tests.UI\Lombiq.UIKit.Widgets.Tests.UI.csproj" />
