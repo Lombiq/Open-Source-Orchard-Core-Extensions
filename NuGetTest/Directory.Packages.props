@@ -58,6 +58,7 @@
     <PackageVersion Include="Lombiq.JsonEditor.Tests.UI" Version="9.0.2-alpha.6.osoe-925" />
     <PackageVersion Include="Lombiq.LoginAsAnybody" Version="5.0.1-alpha.3.osoe-925" />
     <PackageVersion Include="Lombiq.LoginAsAnybody.Tests.UI" Version="5.0.1-alpha.3.osoe-925" />
+    <PackageVersion Include="Lombiq.Marketing.Tests.UI" Version="0.0.1-alpha.0.osoe-925" />
     <PackageVersion Include="Lombiq.Npm.Targets" Version="1.5.2-alpha.0.osoe-925" />
     <PackageVersion Include="Lombiq.OrchardCoreApiClient.Tests.UI" Version="7.0.1-alpha.7.osoe-925" />
     <PackageVersion Include="Lombiq.Privacy" Version="10.0.1-alpha.8.osoe-925" />
