@@ -11,7 +11,7 @@
     <MarkdownAnalysis>solution</MarkdownAnalysis>
     <ExecDotnetPostcleanCommand>false</ExecDotnetPostcleanCommand>
     <ExecDotnetPrebuildCommand>false</ExecDotnetPrebuildCommand>
-    <OrchardCoreVersion>3.0.0-preview-18975</OrchardCoreVersion>
+    <OrchardCoreVersion>3.0.0-preview-18978</OrchardCoreVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -71,11 +71,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Modules\Lombiq.OSOCE.NuGet.TestModule\Lombiq.OSOCE.NuGet.TestModule.csproj" />
     <ProjectReference Include="..\Themes\Lombiq.OSOCE.NuGet.TestTheme\Lombiq.OSOCE.NuGet.TestTheme.csproj" />
-  </ItemGroup>
-
-  <!-- Fixes "NU1901: Package has a known low severity vulnerability" errors. -->
-  <ItemGroup>
-    <PackageReference Include="System.Security.Cryptography.Xml" />
   </ItemGroup>
 
 </Project>
