@@ -48,6 +48,9 @@
     <PackageReference Include="Lombiq.Hosting.Tenants.Management" />
     <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement" />
     <PackageReference Include="Lombiq.Hosting.Tenants.EmailQuotaManagement" />
+    <PackageReference Include="Lombiq.Marketing" />
+    <PackageReference Include="Lombiq.Marketing.Pirsch" />
+    <PackageReference Include="Lombiq.Marketing.UrlShortener" />
     <PackageReference Include="Lombiq.JsonEditor" />
     <PackageReference Include="Lombiq.LoginAsAnybody" />
     <PackageReference Include="Lombiq.Privacy" />
