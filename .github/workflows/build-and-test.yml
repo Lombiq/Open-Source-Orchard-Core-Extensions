@@ -19,6 +19,7 @@ jobs:
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
       set-up-elasticsearch: 'true'
+      build-fail-on-pending-changes: 'true'
       build-create-binary-log: 'true'
       blame-hang-timeout: 600000
       build-enable-nuget-caching: 'true'
