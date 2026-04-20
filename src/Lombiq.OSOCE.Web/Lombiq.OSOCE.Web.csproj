@@ -4,7 +4,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <TieredCompilation>true</TieredCompilation>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <OrchardCoreVersion>3.0.0-preview-18980</OrchardCoreVersion>
+    <OrchardCoreVersion>3.0.0-preview-18983</OrchardCoreVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -68,11 +68,6 @@
   <ItemGroup>
     <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="$(OrchardCoreVersion)" />
     <PackageReference Include="OrchardCore.Logging.NLog" Version="$(OrchardCoreVersion)" />
-  </ItemGroup>
-
-  <!-- Fixes "NU1901: Package has a known low severity vulnerability" errors. --> 
-  <ItemGroup>
-    <PackageReference Include="System.Security.Cryptography.Xml" Version="10.0.6" NoWarn="NU1510" />
   </ItemGroup>
 
 </Project>
