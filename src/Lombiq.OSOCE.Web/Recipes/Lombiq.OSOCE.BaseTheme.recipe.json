@@ -26,7 +26,6 @@
     },
     {
       "name": "themes",
-      "admin": "TheAdmin",
       "site": "Lombiq.BaseTheme.Native.Samples"
     }
   ]
