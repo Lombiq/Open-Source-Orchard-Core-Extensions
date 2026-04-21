@@ -69,9 +69,9 @@
     <PackageVersion Include="Lombiq.Privacy.Tests.UI" Version="10.0.1-alpha.8.osoe-925" />
     <PackageVersion Include="Lombiq.SetupExtensions" Version="7.0.1-alpha.0.osoe-925" />
     <PackageVersion Include="Lombiq.Tests" Version="5.0.1-alpha.1.osoe-925" />
-    <PackageVersion Include="Lombiq.Tests.UI" Version="14.2.2-alpha.12.osoe-925" />
-    <PackageVersion Include="Lombiq.Tests.UI.AppExtensions" Version="14.2.2-alpha.12.osoe-925" />
-    <PackageVersion Include="Lombiq.Tests.UI.Shortcuts" Version="14.2.2-alpha.12.osoe-925" />
+    <PackageVersion Include="Lombiq.Tests.UI" Version="14.2.2-alpha.13.osoe-925" />
+    <PackageVersion Include="Lombiq.Tests.UI.AppExtensions" Version="14.2.2-alpha.13.osoe-925" />
+    <PackageVersion Include="Lombiq.Tests.UI.Shortcuts" Version="14.2.2-alpha.13.osoe-925" />
     <PackageVersion Include="Lombiq.UIKit" Version="10.0.1-alpha.9.osoe-925" />
     <PackageVersion Include="Lombiq.UIKit.Widgets" Version="10.0.1-alpha.9.osoe-925" />
     <PackageVersion Include="Lombiq.UIKit.Widgets.Tests.UI" Version="10.0.1-alpha.9.osoe-925" />
@@ -88,7 +88,7 @@
     <PackageVersion Include="OrchardCore.Module.Targets" Version="$(OrchardCoreVersion)" />
     <PackageVersion Include="OrchardCore.ResourceManagement" Version="$(OrchardCoreVersion)" />
     <PackageVersion Include="OrchardCore.Theme.Targets" Version="$(OrchardCoreVersion)" />
-    <PackageVersion Include="System.Security.Cryptography.Xml" Version="10.0.6" />
+    <PackageVersion Include="System.Security.Cryptography.Xml" Version="11.0.0-preview.3.26207.106" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
     <PackageVersion Include="xunit.v3" Version="3.2.2" />
   </ItemGroup>
