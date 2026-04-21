@@ -60,7 +60,8 @@
         "OrchardCore.Features",
         "OrchardCore.Localization",
         "OrchardCore.Media",
-        "TheTheme"
+        "TheTheme",
+        "Lombiq.Tests.UI.AdminTheme"
         // Not enabling Lombiq.TrainingDemo.Middlewares because that would write to the error log on every request.
       ]
     },
@@ -172,7 +173,7 @@
     },
     {
       "name": "themes",
-      "admin": "Lombiq.Tests.UI.AdminTheme",
+      "admin": "TheAdmin",
       "site": "SafeMode"
     },
     {
@@ -191,6 +192,10 @@
           "name": "Lombiq.UIKit.Widgets.Content"
         }
       ]
+    },
+    {
+      "name": "themes",
+      "admin": "Lombiq.Tests.UI.AdminTheme"
     }
   ]
 }
