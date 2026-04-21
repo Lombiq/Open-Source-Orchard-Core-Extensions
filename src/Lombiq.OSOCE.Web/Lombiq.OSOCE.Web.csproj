@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI.AdminTheme\Lombiq.Tests.UI.AdminTheme.csproj" />
     <ProjectReference Include="..\..\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI.AppExtensions\Lombiq.Tests.UI.AppExtensions.csproj" />
     <ProjectReference Include="..\..\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI.Shortcuts\Lombiq.Tests.UI.Shortcuts.csproj" />
     <ProjectReference Include="..\..\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI.TestingModule\Lombiq.Tests.UI.TestingModule.csproj" />

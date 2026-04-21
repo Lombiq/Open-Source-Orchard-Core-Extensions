@@ -172,7 +172,7 @@
     },
     {
       "name": "themes",
-      "admin": "TheAdmin",
+      "admin": "Lombiq.Tests.UI.AdminTheme",
       "site": "SafeMode"
     },
     {
