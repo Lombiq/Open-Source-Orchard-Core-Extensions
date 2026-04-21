@@ -227,7 +227,7 @@
     },
     {
       "name": "themes",
-      "admin": "TheAdmin",
+      "admin": "Lombiq.Tests.UI.AdminTheme",
       "site": "Lombiq.OSOCE.NuGet.TestTheme"
     },
     {

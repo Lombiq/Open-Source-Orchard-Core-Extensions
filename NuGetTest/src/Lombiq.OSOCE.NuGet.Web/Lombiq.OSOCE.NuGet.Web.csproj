@@ -56,6 +56,7 @@
     <PackageReference Include="Lombiq.Privacy" />
     <PackageReference Include="Lombiq.Privacy.Samples" />
     <PackageReference Include="Lombiq.SetupExtensions" />
+    <PackageReference Include="Lombiq.Tests.UI.AdminTheme" />
     <PackageReference Include="Lombiq.Tests.UI.AppExtensions" />
     <PackageReference Include="Lombiq.Tests.UI.Shortcuts" />
     <PackageReference Include="Lombiq.UIKit" />
