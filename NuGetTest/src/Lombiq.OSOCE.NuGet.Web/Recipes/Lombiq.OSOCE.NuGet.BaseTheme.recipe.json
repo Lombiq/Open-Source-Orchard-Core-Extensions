@@ -19,6 +19,7 @@
         "Lombiq.HelpfulExtensions.ShapeTracing"
       ],
       "enable": [
+        "Lombiq.Tests.UI.AdminTheme",
         "Lombiq.BaseTheme.Native.Samples"
       ]
     },
