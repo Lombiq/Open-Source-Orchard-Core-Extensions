@@ -7,10 +7,6 @@
   <Import Condition="'$(NuGetBuild)' == 'true'" Project="Sdk.props" Sdk="Lombiq.MSBuild.OrchardCore.Module.Sdk" Version="1.0.1-alpha.7.osoe-1208" />
 
   <ItemGroup>
-    <PackageReference Include="OrchardCore.ContentTypes.Abstractions" Version="3.0.0-preview-18960" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.csproj" />
     <ProjectReference Include="..\Lombiq.UIKit\Lombiq.UIKit\Lombiq.UIKit.csproj" />
   </ItemGroup>
