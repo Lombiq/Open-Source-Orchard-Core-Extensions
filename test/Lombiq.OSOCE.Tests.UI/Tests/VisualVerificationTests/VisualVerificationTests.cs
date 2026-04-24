@@ -25,7 +25,7 @@ public class VisualVerificationTests : UITestBase
         // The threshold is necessary so the year changing in the footer doesn't cause the test to crash (or other tiny
         // changes in font rendering).
         ExecuteTestAfterSetupAsync(
-            context => context.AssertVisualVerificationApprovedOnAllResolutionsWithPlatformSuffix(
+            context => context.AssertVisualVerificationApprovedOnAllResolutionsWithPlatformSuffixAsync(
                 _visualVerificationSizes,
                 _ => By.TagName("body"),
                 // Chrome can have rendering differences among GitHub Actions runner types, so to not break CI builds,

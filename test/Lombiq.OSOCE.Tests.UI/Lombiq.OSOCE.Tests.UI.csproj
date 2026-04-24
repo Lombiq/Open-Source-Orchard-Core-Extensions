@@ -6,18 +6,6 @@
 
   <Import Project="../../src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.OrchardCore.Tests.Sdk/Sdk/Import.props" />
 
-  <!-- Necessary to fix these warnings and the false positive NU1510 resulting from the fix itself:
-       - Warning NU1903 : Package 'System.Net.Http' 4.1.0 has a known high severity vulnerability,
-         https://github.com/advisories/GHSA-7jgj-8wvc-jh57
-       - Warning NU1903 : Package 'System.Security.Cryptography.X509Certificates' 4.1.0 has a known high severity
-         vulnerability, https://github.com/advisories/GHSA-7mfr-774f-w5r9
-       - Warning NU1510 : PackageReference System.Net.Http will not be pruned. Consider removing this package from your
-         dependencies, as it is likely unnecessary. -->
-  <ItemGroup>
-    <PackageReference Include="System.Net.Http" Version="4.3.4" NoWarn="NU1510" />
-    <PackageReference Include="System.Security.Cryptography.X509Certificates" Version="4.3.2" NoWarn="NU1510" />
-  </ItemGroup>
-
   <ItemGroup>
     <Content Include="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="*.htmlvalidate.json" CopyToOutputDirectory="PreserveNewest" />
@@ -44,6 +32,7 @@
     <ProjectReference Include="..\..\src\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.MediaStorageManagement.Tests.UI\Lombiq.Hosting.Tenants.MediaStorageManagement.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.JsonEditor\Lombiq.JsonEditor.Test.UI\Lombiq.JsonEditor.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.LoginAsAnybody\Lombiq.LoginAsAnybody.Tests.UI\Lombiq.LoginAsAnybody.Tests.UI.csproj" />
+    <ProjectReference Include="..\..\src\Modules\Lombiq.Marketing\Lombiq.Marketing.Tests.UI\Lombiq.Marketing.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.Privacy\Lombiq.Privacy.Tests.UI\Lombiq.Privacy.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.UIKit\Lombiq.UIKit.Tests.UI\Lombiq.UIKit.Tests.UI.csproj" />
     <ProjectReference Include="..\..\src\Modules\Lombiq.UIKit\Lombiq.UIKit.Widgets.Tests.UI\Lombiq.UIKit.Widgets.Tests.UI.csproj" />
