@@ -45,6 +45,7 @@
         "Lombiq.JsonEditor",
         "Lombiq.JsonEditor.ContentEditor",
         "Lombiq.LoginAsAnybody",
+        "Lombiq.Marketing.Pirsch",
         "Lombiq.OSOCE.Samples",
         // We only enable these on a specific test, because it overlaps with too many things.
         // "Lombiq.Privacy.ConsentBanner",
@@ -59,7 +60,8 @@
         "OrchardCore.Features",
         "OrchardCore.Localization",
         "OrchardCore.Media",
-        "TheTheme"
+        "TheTheme",
+        "Lombiq.Tests.UI.AdminTheme"
         // Not enabling Lombiq.TrainingDemo.Middlewares because that would write to the error log on every request.
       ]
     },
@@ -190,6 +192,10 @@
           "name": "Lombiq.UIKit.Widgets.Content"
         }
       ]
+    },
+    {
+      "name": "themes",
+      "admin": "Lombiq.Tests.UI.AdminTheme"
     }
   ]
 }

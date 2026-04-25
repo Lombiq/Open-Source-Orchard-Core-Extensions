@@ -26,6 +26,7 @@
         "Lombiq.HelpfulExtensions.ContentTypes",
         "Lombiq.HelpfulExtensions.Flows",
         "Lombiq.HelpfulExtensions.Liquid",
+        "Lombiq.HelpfulExtensions.Lucide",
         "Lombiq.HelpfulExtensions.ShapeTracing",
         "Lombiq.HelpfulExtensions.TrumbowygBlogPosts",
         "Lombiq.HelpfulExtensions.Widgets",
@@ -46,6 +47,8 @@
         "Lombiq.JsonEditor",
         "Lombiq.JsonEditor.ContentEditor",
         "Lombiq.LoginAsAnybody",
+        "Lombiq.Marketing.Pirsch",
+        "Lombiq.Tests.UI.AdminTheme",
         "Lombiq.OSOCE.NuGet.TestModule",
         "Lombiq.OSOCE.NuGet.TestTheme",
         "Lombiq.OSOCE.Samples",
@@ -225,7 +228,7 @@
     },
     {
       "name": "themes",
-      "admin": "TheAdmin",
+      "admin": "Lombiq.Tests.UI.AdminTheme",
       "site": "Lombiq.OSOCE.NuGet.TestTheme"
     },
     {

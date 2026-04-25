@@ -1,30 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
-
+<Project Sdk="Lombiq.MSBuild.OrchardCore.Theme.Sdk/1.0.1-alpha.14.osoe-1208">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-    <DefaultItemExcludes>$(DefaultItemExcludes);.git*;node_modules\**;Tests\**</DefaultItemExcludes>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="node_modules\**" />
-    <None Remove="Tests\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Remove="package.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <FrameworkReference Include="Microsoft.AspNetCore.App" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Lombiq.Npm.Targets" />
-    <PackageReference Include="OrchardCore.Theme.Targets" />
-    <PackageReference Include="OrchardCore.ContentManagement" />
-    <PackageReference Include="OrchardCore.DisplayManagement" />
-    <PackageReference Include="OrchardCore.ResourceManagement" />
   </ItemGroup>
-
 </Project>

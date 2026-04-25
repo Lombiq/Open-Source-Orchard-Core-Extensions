@@ -4,7 +4,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <TieredCompilation>true</TieredCompilation>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <OrchardCoreVersion>3.0.0-preview-18960</OrchardCoreVersion>
+    <OrchardCoreVersion>3.0.0-preview-18984</OrchardCoreVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI.AdminTheme\Lombiq.Tests.UI.AdminTheme.csproj" />
     <ProjectReference Include="..\..\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI.AppExtensions\Lombiq.Tests.UI.AppExtensions.csproj" />
     <ProjectReference Include="..\..\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI.Shortcuts\Lombiq.Tests.UI.Shortcuts.csproj" />
     <ProjectReference Include="..\..\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI.TestingModule\Lombiq.Tests.UI.TestingModule.csproj" />
@@ -47,6 +48,8 @@
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.MediaStorageManagement\Lombiq.Hosting.Tenants.MediaStorageManagement.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.JsonEditor\Lombiq.JsonEditor\Lombiq.JsonEditor.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.LoginAsAnybody\Lombiq.LoginAsAnybody\Lombiq.LoginAsAnybody.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.Marketing\Lombiq.Marketing.Pirsch\Lombiq.Marketing.Pirsch.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.Marketing\Lombiq.Marketing.UrlShortener\Lombiq.Marketing.UrlShortener.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.OSOCE.Samples\Lombiq.OSOCE.Samples.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Privacy\Lombiq.Privacy\Lombiq.Privacy.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Privacy\Lombiq.Privacy.Samples\Lombiq.Privacy.Samples.csproj" />
@@ -60,6 +63,7 @@
     <ProjectReference Include="..\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.csproj" />
     <ProjectReference Include="..\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.Bridge\Lombiq.Hosting.MediaTheme.Bridge.csproj" />
     <ProjectReference Include="..\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.Sdk.Samples\Lombiq.MSBuild.Sdk.Samples.csproj" />
+    <ProjectReference Include="..\Utilities\Lombiq.Tailwind.Targets\Lombiq.Tailwind.Targets.Samples\Lombiq.Tailwind.Targets.Samples.csproj" />
     <ProjectReference Include="..\Utilities\Lombiq.SetupExtensions\Lombiq.SetupExtensions.csproj" />
   </ItemGroup>
 

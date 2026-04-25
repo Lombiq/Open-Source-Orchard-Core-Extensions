@@ -11,7 +11,7 @@
     <MarkdownAnalysis>solution</MarkdownAnalysis>
     <ExecDotnetPostcleanCommand>false</ExecDotnetPostcleanCommand>
     <ExecDotnetPrebuildCommand>false</ExecDotnetPrebuildCommand>
-    <OrchardCoreVersion>3.0.0-preview-18960</OrchardCoreVersion>
+    <OrchardCoreVersion>3.0.0-preview-18984</OrchardCoreVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -48,11 +48,15 @@
     <PackageReference Include="Lombiq.Hosting.Tenants.Management" />
     <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement" />
     <PackageReference Include="Lombiq.Hosting.Tenants.EmailQuotaManagement" />
+    <PackageReference Include="Lombiq.Marketing" />
+    <PackageReference Include="Lombiq.Marketing.Pirsch" />
+    <PackageReference Include="Lombiq.Marketing.UrlShortener" />
     <PackageReference Include="Lombiq.JsonEditor" />
     <PackageReference Include="Lombiq.LoginAsAnybody" />
     <PackageReference Include="Lombiq.Privacy" />
     <PackageReference Include="Lombiq.Privacy.Samples" />
     <PackageReference Include="Lombiq.SetupExtensions" />
+    <PackageReference Include="Lombiq.Tests.UI.AdminTheme" />
     <PackageReference Include="Lombiq.Tests.UI.AppExtensions" />
     <PackageReference Include="Lombiq.Tests.UI.Shortcuts" />
     <PackageReference Include="Lombiq.UIKit" />

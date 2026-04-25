@@ -12,8 +12,8 @@ public class BehaviorUIKitShowcaseTests : UITestBase
     }
 
     [Fact]
-    public Task UIKitShowcasePageShouldBeCorrect()
-        => ExecuteTestAfterSetupAsync(
+    public Task UIKitShowcasePageShouldBeCorrect() =>
+        ExecuteTestAfterSetupAsync(
             context => context.TestUIKitShowcaseBehaviorAsync(),
             configuration => configuration.HtmlValidationConfiguration
                 .WithRelativeConfigPath("NoUniqueLandmark.htmlvalidate.json")
