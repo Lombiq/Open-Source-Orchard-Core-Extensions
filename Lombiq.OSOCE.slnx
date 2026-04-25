@@ -74,6 +74,9 @@
     <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.MediaStorageManagement/Lombiq.Hosting.Tenants.MediaStorageManagement.csproj" />
     <Project Path="src/Modules/Lombiq.JsonEditor/Lombiq.JsonEditor/Lombiq.JsonEditor.csproj" />
     <Project Path="src/Modules/Lombiq.LoginAsAnybody/Lombiq.LoginAsAnybody/Lombiq.LoginAsAnybody.csproj" />
+    <Project Path="src/Modules/Lombiq.Marketing/Lombiq.Marketing.Pirsch/Lombiq.Marketing.Pirsch.csproj" />
+    <Project Path="src/Modules/Lombiq.Marketing/Lombiq.Marketing.UrlShortener/Lombiq.Marketing.UrlShortener.csproj" />
+    <Project Path="src/Modules/Lombiq.Marketing/Lombiq.Marketing/Lombiq.Marketing.csproj" />
     <Project Path="src/Modules/Lombiq.OSOCE.Samples/Lombiq.OSOCE.Samples.csproj" />
     <Project Path="src/Modules/Lombiq.Privacy/Lombiq.Privacy.Samples/Lombiq.Privacy.Samples.csproj" />
     <Project Path="src/Modules/Lombiq.Privacy/Lombiq.Privacy/Lombiq.Privacy.csproj" />
@@ -93,11 +96,13 @@
     <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Sdk.Samples/Lombiq.MSBuild.Sdk.Samples.csproj">
       <BuildType Project="Debug" />
     </Project>
+    <Project Path="test/Lombiq.UITestingToolbox/Lombiq.Tests.UI.AdminTheme/Lombiq.Tests.UI.AdminTheme.csproj" />
   </Folder>
   <Folder Name="/src/Utilities/">
     <Project Path="src/Themes/Lombiq.Hosting.MediaTheme/Lombiq.Hosting.MediaTheme.Targets/Lombiq.Hosting.MediaTheme.Targets.csproj" />
     <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Base.Sdk/Lombiq.MSBuild.Base.Sdk.csproj" />
     <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.LibMan.Targets/Lombiq.MSBuild.LibMan.Targets.csproj" />
+    <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Library.Sdk/Lombiq.MSBuild.Library.Sdk.csproj" />
     <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.OrchardCore.Module.Sdk/Lombiq.MSBuild.OrchardCore.Module.Sdk.csproj" />
     <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.OrchardCore.Tests.Sdk/Lombiq.MSBuild.OrchardCore.Tests.Sdk.csproj" />
     <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk/Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk.csproj" />
@@ -105,6 +110,8 @@
     <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Targets.Samples/Lombiq.MSBuild.Targets.Samples.csproj" />
     <Project Path="src/Utilities/Lombiq.Npm.Targets/Lombiq.Npm.Targets.csproj" />
     <Project Path="src/Utilities/Lombiq.SetupExtensions/Lombiq.SetupExtensions.csproj" />
+    <Project Path="src/Utilities/Lombiq.Tailwind.Targets/Lombiq.Tailwind.Targets.Samples/Lombiq.Tailwind.Targets.Samples.csproj" />
+    <Project Path="src/Utilities/Lombiq.Tailwind.Targets/Lombiq.Tailwind.Targets/Lombiq.Tailwind.Targets.csproj" />
   </Folder>
   <Folder Name="/test/">
     <Project Path="test/Lombiq.OSOCE.Tests.UI/Lombiq.OSOCE.Tests.UI.csproj" />
@@ -142,6 +149,7 @@
     <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.MediaStorageManagement.Tests.UI/Lombiq.Hosting.Tenants.MediaStorageManagement.Tests.UI.csproj" />
     <Project Path="src/Modules/Lombiq.JsonEditor/Lombiq.JsonEditor.Test.UI/Lombiq.JsonEditor.Tests.UI.csproj" />
     <Project Path="src/Modules/Lombiq.LoginAsAnybody/Lombiq.LoginAsAnybody.Tests.UI/Lombiq.LoginAsAnybody.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.Marketing/Lombiq.Marketing.Tests.UI/Lombiq.Marketing.Tests.UI.csproj" />
     <Project Path="src/Modules/Lombiq.Privacy/Lombiq.Privacy.Tests.UI/Lombiq.Privacy.Tests.UI.csproj" />
     <Project Path="src/Modules/Lombiq.TrainingDemo/Lombiq.TrainingDemo.Tests/Lombiq.TrainingDemo.Tests.csproj" />
     <Project Path="src/Modules/Lombiq.UIKit/Lombiq.UIKit.Tests.UI/Lombiq.UIKit.Tests.UI.csproj" />
@@ -156,6 +164,7 @@
   <Folder Name="/test/Utilities/">
     <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Targets.Tests.UI/Lombiq.MSBuild.Targets.Tests.UI.csproj" />
     <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Targets.Tests/Lombiq.MSBuild.Targets.Tests.csproj" />
+    <Project Path="src/Utilities/Lombiq.Tailwind.Targets/Lombiq.Tailwind.Targets.Tests/Lombiq.Tailwind.Targets.Tests.csproj" />
   </Folder>
   <Folder Name="/tools/">
     <Project Path="src/Themes/Lombiq.Hosting.MediaTheme/Lombiq.Hosting.MediaTheme.Deployer/Lombiq.Hosting.MediaTheme.Deployer.csproj" />
