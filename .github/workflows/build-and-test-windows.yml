@@ -40,7 +40,7 @@ jobs:
     with:
       parent-job-name: root-solution-larger-runners
       machine-types: '["warp-windows-2025-x64-8x"]'
-      timeout-minutes: 500
+      timeout-minutes: 50
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
       build-create-binary-log: 'true'
