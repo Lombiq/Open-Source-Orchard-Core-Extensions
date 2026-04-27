@@ -54,7 +54,7 @@ jobs:
     with:
       parent-job-name: nuget-solution
       build-directory: NuGetTest
-      timeout-minutes: 200
+      timeout-minutes: 20
       blame-hang-timeout: 540000
       # This way, we can see Node.js build issues in the build log.
       build-verbosity: minimal
