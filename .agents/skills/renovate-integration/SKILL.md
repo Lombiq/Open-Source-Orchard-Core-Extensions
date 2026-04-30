@@ -32,7 +32,7 @@ WORK ITEM KEY: <WORK_ITEM_KEY>
 ## Global safety rules
 - Never run `git push` unless explicitly instructed by the user.
 - Never commit to `renovate/*` branches.
-- Never commit to `dev`.
+- Never commit to `dev`. Never push directly to `dev` on any repo — all changes must go through PRs on `issue/<WORK_ITEM_KEY>` branches.
 - Only commit to `issue/<WORK_ITEM_KEY>`.
 - **Do not prefix commit messages with `<WORK_ITEM_KEY>:`** — the key is already encoded in the branch name.
 - Never skip approval checkpoints.
@@ -81,6 +81,7 @@ Actions:
 - Run `scripts/git/checkout-latest-renovate.sh` to check out the selected renovate branches. **Always use this script — never generate replacement commands.**
 - For submodules with only a **single** eligible renovate branch and no further changes needed, **do not create an `issue/<WORK_ITEM_KEY>` branch** — leave the renovate branch checked out. The existing Renovate PR will suffice.
 - For submodules that need **multiple renovate branches merged** or **additional manual changes** (e.g. GHA ref updates, patch version bumps), create `issue/<WORK_ITEM_KEY>` from `origin/dev` and merge all applicable renovate branches into it.
+- When merging renovate branches into `issue/<WORK_ITEM_KEY>`, always use **merge commits** (not fast-forward): pass `--no-ff` to `git merge` so a merge commit is always created.
 - Since the script selects only one branch per submodule, **also merge any additional eligible `renovate/*` branches** identified during Phase 1 analysis into `issue/<WORK_ITEM_KEY>` in each affected submodule.
 - Check for a `renovate/*` branch in the **superproject** itself (e.g. `origin/renovate/non-breaking-dependency-versions`). If one exists and is eligible, merge it into `issue/<WORK_ITEM_KEY>` in the superproject instead of manually editing the same files.
 - Resolve analyzer warnings, build/test failures, and lockfile updates. Build with `/property:RunAnalyzersDuringBuild=true` to surface analyzer violations (especially important when analyzer packages like Meziantou.Analyzer are updated).
@@ -146,7 +147,7 @@ Actions:
   - In `tools/Lombiq.GitHub.Actions`: revert all `@issue/<WORK_ITEM_KEY>` references back to `@dev` in every `.yml` file under `.github/` (both `actions/` and `workflows/`). Commit on the `issue/<WORK_ITEM_KEY>` branch and push. This ensures `@dev` self-references land on `dev` when the PR is merged.
   - In the **superproject's** `.github/workflows/*.yml` files: revert the same `@issue/<WORK_ITEM_KEY>` → `@dev` replacements.
 - Merge **all** submodule branches to `dev`:
-  - Merge PRs for submodules that have `issue/<WORK_ITEM_KEY>` branches (these were created in Phase 4).
+  - Merge PRs for submodules that have `issue/<WORK_ITEM_KEY>` branches (these were created in Phase 4). Use `gh pr merge --merge` — **never** use `git push origin dev` or `git merge` directly onto `dev`, even if a repo has a merge queue or branch protection that blocks `gh pr merge`. If `gh pr merge` fails due to branch protection, report the failure and ask the user how to proceed rather than bypassing via direct push.
   - **Also merge the existing Renovate PRs** for submodules where only a single renovate branch was checked out directly (no issue branch was created). These PRs still exist on GitHub and must be merged too.
 - After all submodule PRs are merged, update **every** submodule pointer in the superproject to the merged `dev` head (`git fetch origin dev && git checkout origin/dev` in each submodule).
 - Commit the updated submodule pointers together with the superproject workflow ref reverts.
