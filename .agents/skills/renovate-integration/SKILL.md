@@ -168,6 +168,7 @@ STATUS: Complete
 
 ### scripts/git/analyze-renovate-branches.sh
 - **Read-only** analysis of all `renovate/*` branches in the superproject and every submodule.
+- **Fetches all remotes** before evaluating branches (same as `checkout-latest-renovate.sh`) so newly-pushed Renovate branches are always visible.
 - Reports each branch as ELIGIBLE or SKIP (too old / already merged) using the same age and merge-base logic as `checkout-latest-renovate.sh`.
 - Shows `diff --stat` and commit log against `origin/dev` for every eligible branch.
 - Covers the **superproject** as well (unlike `checkout-latest-renovate.sh` which only processes submodules).
