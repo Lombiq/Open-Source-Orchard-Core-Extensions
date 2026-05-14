@@ -107,17 +107,11 @@ Actions:
 - Commit the submodule changes first, then stage the updated submodule pointer together with the superproject workflow changes and commit.
 - These are **temporary** references; they will be reverted back to `@dev` in Phase 5 (Finalization).
 - Validate workflow YAML syntax.
-
-Completion output:
-
-```text
-STATE: AWAITING_APPROVAL
-STATUS: Awaiting approval for Phase 3 (GitHub Actions)
-```
+- Proceed directly to Phase 4 without waiting for approval.
 
 ### Phase 4: PR creation
 Required state: `PR_CREATION`
-Gate: proceed only after `APPROVED: Phase 3`
+Gate: proceed only after `APPROVED: Phase 2`
 
 Actions:
 - Push `issue/<WORK_ITEM_KEY>` branches to all repos that have one (submodules with multiple renovate branches or additional changes, and the superproject).
