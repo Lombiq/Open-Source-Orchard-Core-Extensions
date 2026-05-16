@@ -17,7 +17,7 @@
 # Safety:
 #   - This script does NOT modify any branches.
 #   - This script does NOT commit or push anything.
-#   - It only reads remote refs that are already fetched locally.
+#   - Fetches all remotes before evaluating branch freshness (same as checkout-latest-renovate.sh).
 
 set -euo pipefail
 
@@ -72,11 +72,14 @@ analyze_repo() {
 }
 
 # Superproject
+git fetch 2>/dev/null || echo "WARN: fetch failed for superproject"
 analyze_repo "SUPERPROJECT"
 echo ""
 
 # Submodules
 git submodule foreach --recursive '
+  git fetch 2>/dev/null || { echo "WARN: fetch failed for $name, skipping"; exit 0; }
+
   refs=$(git for-each-ref --sort=-committerdate --format="%(refname:short)" \
     refs/remotes/origin/renovate/ 2>/dev/null || true)
 
