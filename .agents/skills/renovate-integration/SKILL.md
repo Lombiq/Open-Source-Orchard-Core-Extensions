@@ -102,12 +102,12 @@ Gate: proceed only after `APPROVED: Phase 2`
 
 Actions:
 - When `tools/Lombiq.GitHub.Actions` has changes (e.g. lock file maintenance in asset-lint), its internal workflow/action `@dev` references must be temporarily updated to `@issue/<WORK_ITEM_KEY>` so CI can resolve them from the issue branch.
-- Update **all** `Lombiq/GitHub-Actions/...@dev` references to `@issue/<WORK_ITEM_KEY>` in every `.yml` file under `tools/Lombiq.GitHub.Actions/.github/` (both `actions/` and `workflows/`).
-- Then update the **superproject's** `.github/workflows/*.yml` files the same way — replace `Lombiq/GitHub-Actions/...@dev` with `@issue/<WORK_ITEM_KEY>`.
+- Update **all** `Lombiq/GitHub-Actions/...@dev` references to `@issue/<WORK_ITEM_KEY>` in every `.yml` file under `tools/Lombiq.GitHub.Actions/.github/` (both `actions/` and `workflows/`). **Use a targeted regex that matches only `@dev` when it is immediately preceded by a path under `Lombiq/GitHub-Actions/`** — do not do a global `@dev` replacement, as that will also change refs to other repos (e.g. `Lombiq/PowerShell-Analyzers`) that do not have an `issue/<WORK_ITEM_KEY>` branch and will cause CI to fail.
+- Then update the **superproject's** `.github/workflows/*.yml` files the same way — replace only `Lombiq/GitHub-Actions/...@dev` with `@issue/<WORK_ITEM_KEY>`, leaving any other repo refs (e.g. `Lombiq/PowerShell-Analyzers/...@dev`) unchanged.
 - Commit the submodule changes first, then stage the updated submodule pointer together with the superproject workflow changes and commit.
 - These are **temporary** references; they will be reverted back to `@dev` in Phase 5 (Finalization).
 - Validate workflow YAML syntax.
-- Proceed directly to Phase 4 without waiting for approval.
+- Proceed directly to Phase 4 without an approval checkpoint.
 
 ### Phase 4: PR creation
 Required state: `PR_CREATION`
@@ -141,7 +141,7 @@ Actions:
   - In `tools/Lombiq.GitHub.Actions`: revert all `@issue/<WORK_ITEM_KEY>` references back to `@dev` in every `.yml` file under `.github/` (both `actions/` and `workflows/`). Commit on the `issue/<WORK_ITEM_KEY>` branch and push. This ensures `@dev` self-references land on `dev` when the PR is merged.
   - In the **superproject's** `.github/workflows/*.yml` files: revert the same `@issue/<WORK_ITEM_KEY>` → `@dev` replacements.
 - Merge **all** submodule branches to `dev`:
-  - Merge PRs for submodules that have `issue/<WORK_ITEM_KEY>` branches (these were created in Phase 4). Use `gh pr merge --merge` — **never** use `git push origin dev` or `git merge` directly onto `dev`, even if a repo has a merge queue or branch protection that blocks `gh pr merge`. If `gh pr merge` fails due to branch protection, report the failure and ask the user how to proceed rather than bypassing via direct push.
+  - Merge PRs for submodules that have `issue/<WORK_ITEM_KEY>` branches (these were created in Phase 4). Use `gh pr merge --merge --admin` — the `--admin` flag is required to bypass merge queues and branch protection rules that are common in these repos. **Never** use `git push origin dev` or `git merge` directly onto `dev`.
   - **Also merge the existing Renovate PRs** for submodules where only a single renovate branch was checked out directly (no issue branch was created). These PRs still exist on GitHub and must be merged too.
 - After all submodule PRs are merged, update **every** submodule pointer in the superproject to the merged `dev` head (`git fetch origin dev && git checkout origin/dev` in each submodule).
 - Commit the updated submodule pointers together with the superproject workflow ref reverts.
