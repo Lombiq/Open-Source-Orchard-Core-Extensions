@@ -116,10 +116,10 @@ Gate: proceed only after `APPROVED: Phase 2`
 Actions:
 - Push `issue/<WORK_ITEM_KEY>` branches to all repos that have one (submodules with multiple renovate branches or additional changes, and the superproject).
 - **Do not push or create PRs** for submodules where only a single renovate branch was checked out without further changes — their existing Renovate PRs are sufficient.
-- Open the **superproject PR first**, targeting `dev`, referencing `<WORK_ITEM_KEY>` in the PR title and description.
+- Open the **superproject PR first**, targeting `dev`, referencing `<WORK_ITEM_KEY>` in the PR description.
 - **Wait 60 seconds** after the superproject PR is created.
-- Then open PRs for the submodules that have `issue/<WORK_ITEM_KEY>` branches, targeting `dev`, referencing `<WORK_ITEM_KEY>`.
-- Submodule PR titles should reference the specific updates included, e.g. `Update dependencies: Microsoft.NET.Test.Sdk 18.0.1 → 18.3.0, Swashbuckle.AspNetCore 10.1.4 → 10.1.5`.
+- Then open PRs for the submodules that have `issue/<WORK_ITEM_KEY>` branches, targeting `dev`, referencing `<WORK_ITEM_KEY>` in the description.
+- PR titles should **not** include the issue key (it is added automatically from the branch name). Submodule PR titles should reference the specific updates included, e.g. `Update dependencies: Microsoft.NET.Test.Sdk 18.0.1 → 18.3.0, Swashbuckle.AspNetCore 10.1.4 → 10.1.5`.
 - After PRs are created, **wait for all CI workflow runs to complete**. Poll the run status periodically (e.g. every 60 seconds) using `gh run list`.
 - Once the Ubuntu build (Build and Test) succeeds on the superproject PR, add the `run-windows-build` label to the PR (using `gh pr edit --add-label run-windows-build`) to trigger the Windows build, then wait for it to succeed too.
 - If all checks pass, proceed to ask for approval.
