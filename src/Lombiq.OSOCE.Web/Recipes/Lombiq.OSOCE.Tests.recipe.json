@@ -98,6 +98,23 @@
         "SupportedCultures": [
           "en-US"
         ]
+      },
+      "EmailSettings": {
+        "DefaultProviderName": "SMTP"
+      },
+      "SmtpSettings": {
+        "AutoSelectEncryption": false,
+        "DefaultSender": "a@b.cc",
+        "DeliveryMethod": "Network",
+        "EncryptionMethod": "None",
+        "Host": "localhost",
+        "IgnoreInvalidSslCertificate": true,
+        "IsEnabled": true,
+        "PickupDirectoryLocation": "/",
+        "Port": 25,
+        "ProxyPort": 0,
+        "RequireCredentials": false,
+        "UseDefaultCredentials": false
       }
     },
     // These roles are not created the same way as default during testing, so we need to add them here.
