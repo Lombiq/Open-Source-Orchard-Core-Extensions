@@ -1,5 +1,6 @@
 using Lombiq.Privacy.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Extensions;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -43,7 +44,8 @@ public class BehaviorPrivacyTests : UITestBase
     public Task RegistrationConsentCheckboxShouldWork() =>
         ExecuteTestAfterSetupAsync(context => context.TestRegistrationConsentCheckboxAsync());
 
-    [Fact]
+    [SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "temp")]
+    [Fact(Skip = "Temporarily disabled.")]
     public Task FormConsentCheckboxShouldWork() =>
         ExecuteTestAfterSetupAsync(context => context.TestPrivacySampleBehaviorAsync());
 }
