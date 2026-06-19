@@ -39,7 +39,9 @@ jobs:
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-925
     with:
       parent-job-name: root-solution-larger-runners
-      machine-types: '["warp-windows-2025-x64-8x"]'
+      # Temporarily not using warp-windows-2025-x64-8x due to that image removing a .NET 8 version something depends on.
+      # Will be reverted in https://lombiq.atlassian.net/browse/OSOE-925.
+      machine-types: '["windows-2025"]'
       timeout-minutes: 50
       set-up-sql-server: 'true'
       set-up-azurite: 'true'
