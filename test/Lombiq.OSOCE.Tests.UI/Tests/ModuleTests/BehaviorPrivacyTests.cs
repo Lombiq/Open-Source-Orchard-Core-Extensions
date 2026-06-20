@@ -44,8 +44,7 @@ public class BehaviorPrivacyTests : UITestBase
     public Task RegistrationConsentCheckboxShouldWork() =>
         ExecuteTestAfterSetupAsync(context => context.TestRegistrationConsentCheckboxAsync());
 
-    [SuppressMessage("Usage", "xUnit1004:Test methods should not be skipped", Justification = "temp")]
-    [Fact(Skip = "Temporarily disabled until https://github.com/OrchardCMS/OrchardCore/issues/19394.")]
+    [Fact]
     public Task FormConsentCheckboxShouldWork() =>
         ExecuteTestAfterSetupAsync(context => context.TestPrivacySampleBehaviorAsync());
 }
