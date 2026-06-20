@@ -1,6 +1,5 @@
 using Lombiq.Privacy.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Extensions;
-using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Xunit;
 
