@@ -4,7 +4,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <TieredCompilation>true</TieredCompilation>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <OrchardCoreVersion>3.0.0-preview-19050</OrchardCoreVersion>
+    <OrchardCoreVersion>3.0.0</OrchardCoreVersion>
   </PropertyGroup>
 
   <!-- Temporarily disabled "NU1903: Package 'SQLitePCLRaw.lib.e_sqlite3' 2.1.11 has a known high severity
