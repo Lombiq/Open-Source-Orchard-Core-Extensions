@@ -1,5 +1,6 @@
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Walkthroughs.Tests.UI.Extensions;
+using System.Net;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -22,8 +23,7 @@ public class BehaviorWalkthroughsTests : UITestBase
                     .HtmlValidationConfiguration
                     .WithRelativeConfigPath("WalkthroughsShouldWorkCorrectly.htmlvalidate.json");
 
-                // The preview page sends these requests prematurely, which fails validation. See
-                // https://github.com/OrchardCMS/OrchardCore/pull/19376#issuecomment-4760348280.
                 configuration.WithIgnoreExpectedStatusResponseFilter("/Preview/Draft", 500);
+                configuration.WithIgnoreExpectedStatusResponseFilter("/Preview/Draft", HttpStatusCode.InternalServerError);
             });
 }
