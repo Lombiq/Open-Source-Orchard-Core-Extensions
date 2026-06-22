@@ -23,7 +23,8 @@ public class BehaviorWalkthroughsTests : UITestBase
                     .HtmlValidationConfiguration
                     .WithRelativeConfigPath("WalkthroughsShouldWorkCorrectly.htmlvalidate.json");
 
-                configuration.WithIgnoreExpectedStatusResponseFilter("/Preview/Draft", 500);
+                // The preview page sends these requests prematurely, which fails validation and perhaps incorrectly
+                // returns an error response. See https://github.com/OrchardCMS/OrchardCore/issues/19440 for details.
                 configuration.WithIgnoreExpectedStatusResponseFilter("/Preview/Draft", HttpStatusCode.InternalServerError);
             });
 }
