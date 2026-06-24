@@ -9,15 +9,7 @@
 
   <ItemGroup>
     <None Remove="Recipes\Media\meadow-orchard.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Recipes\Media\meadow-orchard.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
+    <Content Include="Recipes\Media\meadow-orchard.jpg" CopyToOutputDirectory="PreserveNewest" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
@@ -71,6 +63,12 @@
     <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="$(OrchardCoreVersion)" />
     <PackageReference Include="OrchardCore.Logging.NLog" Version="$(OrchardCoreVersion)" />
     <PackageReference Include="YesSql" Version="297.0.0" />
+  </ItemGroup>
+
+  <!-- Necessary to prevent "NU1903: Package 'SQLitePCLRaw.lib.e_sqlite3' 2.1.11 has a known high severity
+       vulnerability, https://github.com/advisories/GHSA-2m69-gcr7-jv3q" warning caused by referencing YesSql. -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="11.0.0-preview.5.26302.115" />
   </ItemGroup>
 
 </Project>
