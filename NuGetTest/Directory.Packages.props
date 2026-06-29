@@ -77,8 +77,8 @@
     <PackageVersion Include="Lombiq.UIKit.Widgets" Version="10.0.1-alpha.10.osoe-925" />
     <PackageVersion Include="Lombiq.UIKit.Widgets.Tests.UI" Version="10.0.1-alpha.10.osoe-925" />
     <PackageVersion Include="Lombiq.VueJs.Resources" Version="9.0.2-alpha.7.osoe-925" />
-    <PackageVersion Include="Lombiq.Walkthroughs" Version="3.0.1-alpha.25.osoe-925" />
-    <PackageVersion Include="Lombiq.Walkthroughs.Tests.UI" Version="3.0.1-alpha.25.osoe-925" />
+    <PackageVersion Include="Lombiq.Walkthroughs" Version="3.0.1-alpha.26.osoe-925" />
+    <PackageVersion Include="Lombiq.Walkthroughs.Tests.UI" Version="3.0.1-alpha.26.osoe-925" />
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="10.0.9" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.7.0" />
     <PackageVersion Include="OrchardCore.Application.Cms.Targets" Version="$(OrchardCoreVersion)" />
