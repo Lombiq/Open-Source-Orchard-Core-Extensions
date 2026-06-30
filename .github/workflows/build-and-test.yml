@@ -27,6 +27,8 @@ jobs:
       build-verbosity: minimal
       ui-test-retry-interval-seconds: '60'
       node-version: none
+      # Can be removed once OSOE-1291 (https://github.com/Lombiq/eInvoice-Validator/issues/54) is fixed.
+      test-filter: FullyQualifiedName!~TestInvoiceValidation
 
   build-and-test-standard-runners:
     if: github.ref_name == github.event.repository.default_branch
