@@ -26,5 +26,6 @@
   See https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/issues/423. -->
   <PropertyGroup>
     <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
+    <OrchardCoreVersion>4.0.0-preview-19065</OrchardCoreVersion>
   </PropertyGroup>
 </Project>
