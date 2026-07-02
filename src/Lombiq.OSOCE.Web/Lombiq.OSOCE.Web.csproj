@@ -64,10 +64,4 @@
     <PackageReference Include="OrchardCore.Logging.NLog" Version="$(OrchardCoreVersion)" />
   </ItemGroup>
 
-  <!-- Necessary to prevent "NU1903: Package 'SQLitePCLRaw.lib.e_sqlite3' 2.1.11 has a known high severity
-       vulnerability, https://github.com/advisories/GHSA-2m69-gcr7-jv3q" warning caused by referencing YesSql. -->
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Data.Sqlite" Version="11.0.0-preview.5.26302.115" />
-  </ItemGroup>
-
 </Project>
