@@ -4,7 +4,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <TieredCompilation>true</TieredCompilation>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <OrchardCoreVersion>4.0.0-preview-19065</OrchardCoreVersion>
+    <OrchardCoreVersion>3.0.1</OrchardCoreVersion>
   </PropertyGroup>
 
   <ItemGroup>
