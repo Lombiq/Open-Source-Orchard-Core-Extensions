@@ -50,7 +50,6 @@ jobs:
 
   build-and-test-nuget-test:
     name: Build and Test - NuGetTest solution
-    if: false
     uses: Lombiq/GitHub-Actions/.github/workflows/build-and-test-orchard-core.yml@issue/OSOE-925
     with:
       parent-job-name: nuget-solution
