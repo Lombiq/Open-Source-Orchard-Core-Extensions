@@ -33,12 +33,12 @@
     <PackageVersion Include="Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI" Version="10.0.1-alpha.4.osoe-925" />
     <PackageVersion Include="Lombiq.Hosting.BuildVersionDisplay" Version="7.0.1-alpha.6.osoe-925" />
     <PackageVersion Include="Lombiq.Hosting.BuildVersionDisplay.Tests.UI" Version="7.0.1-alpha.6.osoe-925" />
-    <PackageVersion Include="Lombiq.Hosting.MediaTheme" Version="8.0.1-alpha.12.osoe-925" />
-    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Bridge" Version="8.0.1-alpha.12.osoe-925" />
-    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Bridge.Tests.UI" Version="8.0.1-alpha.12.osoe-925" />
-    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Targets" Version="8.0.1-alpha.12.osoe-925" />
-    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Tests.Theme" Version="8.0.1-alpha.12.osoe-925" />
-    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Tests.UI" Version="8.0.1-alpha.12.osoe-925" />
+    <PackageVersion Include="Lombiq.Hosting.MediaTheme" Version="8.0.1-alpha.13.osoe-925" />
+    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Bridge" Version="8.0.1-alpha.13.osoe-925" />
+    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Bridge.Tests.UI" Version="8.0.1-alpha.13.osoe-925" />
+    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Targets" Version="8.0.1-alpha.13.osoe-925" />
+    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Tests.Theme" Version="8.0.1-alpha.13.osoe-925" />
+    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Tests.UI" Version="8.0.1-alpha.13.osoe-925" />
     <PackageVersion Include="Lombiq.Hosting.Tenants.Admin.Login" Version="9.0.1-alpha.24.osoe-925" />
     <PackageVersion Include="Lombiq.Hosting.Tenants.EmailQuotaManagement" Version="9.0.1-alpha.24.osoe-925" />
     <PackageVersion Include="Lombiq.Hosting.Tenants.EmailQuotaManagement.Tests.UI" Version="9.0.1-alpha.24.osoe-925" />
