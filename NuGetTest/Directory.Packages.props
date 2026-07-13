@@ -17,9 +17,9 @@
     <PackageVersion Include="Lombiq.ContentEditors" Version="6.0.0-alpha.9.osoe-925" />
     <PackageVersion Include="Lombiq.ContentEditors.Samples" Version="6.0.0-alpha.9.osoe-925" />
     <PackageVersion Include="Lombiq.ContentEditors.Tests.UI" Version="6.0.0-alpha.9.osoe-925" />
-    <PackageVersion Include="Lombiq.DataTables" Version="10.0.2-alpha.16.osoe-925" />
-    <PackageVersion Include="Lombiq.DataTables.Samples" Version="10.0.2-alpha.16.osoe-925" />
-    <PackageVersion Include="Lombiq.DataTables.Tests.UI" Version="10.0.2-alpha.16.osoe-925" />
+    <PackageVersion Include="Lombiq.DataTables" Version="10.0.2-alpha.17.osoe-925" />
+    <PackageVersion Include="Lombiq.DataTables.Samples" Version="10.0.2-alpha.17.osoe-925" />
+    <PackageVersion Include="Lombiq.DataTables.Tests.UI" Version="10.0.2-alpha.17.osoe-925" />
     <PackageVersion Include="Lombiq.EInvoiceValidator" Version="1.0.1-alpha.6.osoe-925" />
     <PackageVersion Include="Lombiq.EInvoiceValidator.Sample" Version="1.0.1-alpha.6.osoe-925" />
     <PackageVersion Include="Lombiq.EmailClient" Version="1.0.0-alpha.12.osoe-925" />
@@ -58,10 +58,10 @@
     <PackageVersion Include="Lombiq.JsonEditor.Tests.UI" Version="9.0.2-alpha.7.osoe-925" />
     <PackageVersion Include="Lombiq.LoginAsAnybody" Version="5.0.1-alpha.4.osoe-925" />
     <PackageVersion Include="Lombiq.LoginAsAnybody.Tests.UI" Version="5.0.1-alpha.4.osoe-925" />
-    <PackageVersion Include="Lombiq.Marketing" Version="0.0.1-alpha.3.osoe-925" />
-    <PackageVersion Include="Lombiq.Marketing.Pirsch" Version="0.0.1-alpha.3.osoe-925" />
-    <PackageVersion Include="Lombiq.Marketing.UrlShortener" Version="0.0.1-alpha.3.osoe-925" />
-    <PackageVersion Include="Lombiq.Marketing.Tests.UI" Version="0.0.1-alpha.3.osoe-925" />
+    <PackageVersion Include="Lombiq.Marketing" Version="0.0.1-alpha.4.osoe-925" />
+    <PackageVersion Include="Lombiq.Marketing.Pirsch" Version="0.0.1-alpha.4.osoe-925" />
+    <PackageVersion Include="Lombiq.Marketing.UrlShortener" Version="0.0.1-alpha.4.osoe-925" />
+    <PackageVersion Include="Lombiq.Marketing.Tests.UI" Version="0.0.1-alpha.4.osoe-925" />
     <PackageVersion Include="Lombiq.Npm.Targets" Version="1.5.3-alpha.1.osoe-925" />
     <PackageVersion Include="Lombiq.OrchardCoreApiClient.Tests.UI" Version="7.0.1-alpha.8.osoe-925" />
     <PackageVersion Include="Lombiq.Privacy" Version="10.0.1-alpha.10.osoe-925" />
