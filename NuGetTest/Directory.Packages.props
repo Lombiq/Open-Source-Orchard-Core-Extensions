@@ -20,7 +20,7 @@
     <PackageVersion Include="Lombiq.DataTables" Version="11.0.0" />
     <PackageVersion Include="Lombiq.DataTables.Samples" Version="11.0.0" />
     <PackageVersion Include="Lombiq.DataTables.Tests.UI" Version="11.0.0" />
-    <PackageVersion Include="Lombiq.EInvoiceValidator" Version="2.0.1-alpha.3.osoe-925" />
+    <PackageVersion Include="Lombiq.EInvoiceValidator" Version="2.0.1-alpha.5.osoe-925" />
     <PackageVersion Include="Lombiq.EInvoiceValidator.Sample" Version="2.0.1-alpha.5.osoe-925" />
     <PackageVersion Include="Lombiq.EmailClient" Version="2.0.0" />
     <PackageVersion Include="Lombiq.EmailClient.Samples" Version="2.0.0" />
