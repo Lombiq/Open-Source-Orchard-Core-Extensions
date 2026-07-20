@@ -1,0 +1,178 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/.github/" />
+  <Folder Name="/.github/workflows/">
+    <File Path=".github/workflows/build-and-test-windows.yml" />
+    <File Path=".github/workflows/build-and-test.yml" />
+    <File Path=".github/workflows/create-jira-issues-for-community-activities.yml" />
+    <File Path=".github/workflows/validate-pull-request.yml" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".codespellrc" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="eslint.custom.mjs" />
+    <File Path="License.md" />
+    <File Path="NuGet.config" />
+    <File Path="Readme.md" />
+    <File Path="renovate-osoce-orchard-core-submodule.json5" />
+    <File Path="renovate-osoce-submodule.json5" />
+    <File Path="renovate-osoce.json5" />
+    <File Path="renovate.json5" />
+    <File Path="Reset-Local.ps1" />
+  </Folder>
+  <Folder Name="/Solution Items/Asset Linting Action Configuration/">
+    <File Path="tools/Lombiq.GitHub.Actions/.github/actions/asset-lint/css/stylelint.config.mjs" />
+    <File Path="tools/Lombiq.GitHub.Actions/.github/actions/asset-lint/js/eslint.config.mjs" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Lombiq.OSOCE.Web/Lombiq.OSOCE.Web.csproj" />
+  </Folder>
+  <Folder Name="/src/Libraries/">
+    <Project Path="src/Libraries/Lombiq.EInvoiceValidator/Lombiq.EInvoiceValidator.Benchmark/Lombiq.EInvoiceValidator.Benchmark.csproj" />
+    <Project Path="src/Libraries/Lombiq.EInvoiceValidator/Lombiq.EInvoiceValidator.Sample/Lombiq.EInvoiceValidator.Sample.csproj" />
+    <Project Path="src/Libraries/Lombiq.EInvoiceValidator/Lombiq.EInvoiceValidator/Lombiq.EInvoiceValidator.csproj" />
+    <Project Path="src/Libraries/Lombiq.HelpfulLibraries/Lombiq.HelpfulLibraries.AspNetCore/Lombiq.HelpfulLibraries.AspNetCore.csproj" />
+    <Project Path="src/Libraries/Lombiq.HelpfulLibraries/Lombiq.HelpfulLibraries.Attributes/Lombiq.HelpfulLibraries.Attributes.csproj" />
+    <Project Path="src/Libraries/Lombiq.HelpfulLibraries/Lombiq.HelpfulLibraries.Cli/Lombiq.HelpfulLibraries.Cli.csproj" />
+    <Project Path="src/Libraries/Lombiq.HelpfulLibraries/Lombiq.HelpfulLibraries.Common/Lombiq.HelpfulLibraries.Common.csproj" />
+    <Project Path="src/Libraries/Lombiq.HelpfulLibraries/Lombiq.HelpfulLibraries.LinqToDb/Lombiq.HelpfulLibraries.LinqToDb.csproj" />
+    <Project Path="src/Libraries/Lombiq.HelpfulLibraries/Lombiq.HelpfulLibraries.OrchardCore.Testing/Lombiq.HelpfulLibraries.OrchardCore.Testing.csproj" />
+    <Project Path="src/Libraries/Lombiq.HelpfulLibraries/Lombiq.HelpfulLibraries.OrchardCore/Lombiq.HelpfulLibraries.OrchardCore.csproj" />
+    <Project Path="src/Libraries/Lombiq.HelpfulLibraries/Lombiq.HelpfulLibraries.Refit/Lombiq.HelpfulLibraries.Refit.csproj" />
+    <Project Path="src/Libraries/Lombiq.HelpfulLibraries/Lombiq.HelpfulLibraries.RestEase/Lombiq.HelpfulLibraries.RestEase.csproj" />
+    <Project Path="src/Libraries/Lombiq.HelpfulLibraries/Lombiq.HelpfulLibraries.SourceGenerators/Lombiq.HelpfulLibraries.SourceGenerators.csproj" />
+    <Project Path="src/Libraries/Lombiq.HelpfulLibraries/Lombiq.HelpfulLibraries/Lombiq.HelpfulLibraries.csproj" />
+    <Project Path="src/Libraries/Lombiq.OrchardCoreApiClient/Lombiq.OrchardCoreApiClient.Tester/Lombiq.OrchardCoreApiClient.Tester.csproj" />
+    <Project Path="src/Libraries/Lombiq.OrchardCoreApiClient/Lombiq.OrchardCoreApiClient/Lombiq.OrchardCoreApiClient.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/">
+    <Project Path="src/Libraries/Lombiq.HelpfulLibraries/Lombiq.HelpfulLibraries.Samples/Lombiq.HelpfulLibraries.Samples.csproj" />
+    <Project Path="src/Modules/Lombiq.AuditTrailExtensions/Lombiq.AuditTrailExtensions.csproj" />
+    <Project Path="src/Modules/Lombiq.ChartJs/Lombiq.ChartJs.Samples/Lombiq.ChartJs.Samples.csproj" />
+    <Project Path="src/Modules/Lombiq.ChartJs/Lombiq.ChartJs/Lombiq.ChartJs.csproj" />
+    <Project Path="src/Modules/Lombiq.ContentEditors/Lombiq.ContentEditors.Samples/Lombiq.ContentEditors.Samples.csproj" />
+    <Project Path="src/Modules/Lombiq.ContentEditors/Lombiq.ContentEditors/Lombiq.ContentEditors.csproj" />
+    <Project Path="src/Modules/Lombiq.DataTables/Lombiq.DataTables.Samples/Lombiq.DataTables.Samples.csproj" />
+    <Project Path="src/Modules/Lombiq.DataTables/Lombiq.DataTables/Lombiq.DataTables.csproj" />
+    <Project Path="src/Modules/Lombiq.EmailClient/Lombiq.EmailClient.Samples/Lombiq.EmailClient.Samples.csproj" />
+    <Project Path="src/Modules/Lombiq.EmailClient/Lombiq.EmailClient/Lombiq.EmailClient.csproj" />
+    <Project Path="src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.Azure.ApplicationInsights/Lombiq.Hosting.Azure.ApplicationInsights/Lombiq.Hosting.Azure.ApplicationInsights.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.BuildVersionDisplay/Lombiq.Hosting.BuildVersionDisplay/Lombiq.Hosting.BuildVersionDisplay.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.Admin.Login/Lombiq.Hosting.Tenants.Admin.Login.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.EmailQuotaManagement/Lombiq.Hosting.Tenants.EmailQuotaManagement.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.EnvironmentRobots/Lombiq.Hosting.Tenants.EnvironmentRobots.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.FeaturesGuard/Lombiq.Hosting.Tenants.FeaturesGuard.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.IdleTenantManagement/Lombiq.Hosting.Tenants.IdleTenantManagement.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.Maintenance/Lombiq.Hosting.Tenants.Maintenance.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.Management/Lombiq.Hosting.Tenants.Management.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.MediaStorageManagement/Lombiq.Hosting.Tenants.MediaStorageManagement.csproj" />
+    <Project Path="src/Modules/Lombiq.JsonEditor/Lombiq.JsonEditor/Lombiq.JsonEditor.csproj" />
+    <Project Path="src/Modules/Lombiq.LoginAsAnybody/Lombiq.LoginAsAnybody/Lombiq.LoginAsAnybody.csproj" />
+    <Project Path="src/Modules/Lombiq.Marketing/Lombiq.Marketing.Pirsch/Lombiq.Marketing.Pirsch.csproj" />
+    <Project Path="src/Modules/Lombiq.Marketing/Lombiq.Marketing.UrlShortener/Lombiq.Marketing.UrlShortener.csproj" />
+    <Project Path="src/Modules/Lombiq.Marketing/Lombiq.Marketing/Lombiq.Marketing.csproj" />
+    <Project Path="src/Modules/Lombiq.OSOCE.Samples/Lombiq.OSOCE.Samples.csproj" />
+    <Project Path="src/Modules/Lombiq.Privacy/Lombiq.Privacy.Samples/Lombiq.Privacy.Samples.csproj" />
+    <Project Path="src/Modules/Lombiq.Privacy/Lombiq.Privacy/Lombiq.Privacy.csproj" />
+    <Project Path="src/Modules/Lombiq.TrainingDemo/Lombiq.TrainingDemo/Lombiq.TrainingDemo.csproj" />
+    <Project Path="src/Modules/Lombiq.UIKit/Lombiq.UIKit.Widgets/Lombiq.UIKit.Widgets.csproj" />
+    <Project Path="src/Modules/Lombiq.UIKit/Lombiq.UIKit/Lombiq.UIKit.csproj" />
+    <Project Path="src/Modules/Lombiq.VueJs/Lombiq.VueJs.Resources/Lombiq.VueJs.Resources.csproj" />
+    <Project Path="src/Modules/Lombiq.Walkthroughs/Lombiq.Walkthroughs/Lombiq.Walkthroughs.csproj" />
+    <Project Path="src/Themes/Lombiq.Hosting.MediaTheme/Lombiq.Hosting.MediaTheme.Bridge/Lombiq.Hosting.MediaTheme.Bridge.csproj" />
+  </Folder>
+  <Folder Name="/src/Themes/">
+    <Project Path="src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Core/Lombiq.BaseTheme.Core.csproj" />
+    <Project Path="src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Native.Samples/Lombiq.BaseTheme.Native.Samples.csproj" />
+    <Project Path="src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Native/Lombiq.BaseTheme.Native.csproj" />
+    <Project Path="src/Themes/Lombiq.Hosting.MediaTheme/Lombiq.Hosting.MediaTheme.Tests.Theme/Lombiq.Hosting.MediaTheme.Tests.Theme.csproj" />
+    <Project Path="src/Themes/Lombiq.Hosting.MediaTheme/Lombiq.Hosting.MediaTheme/Lombiq.Hosting.MediaTheme.csproj" />
+    <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Sdk.Samples/Lombiq.MSBuild.Sdk.Samples.csproj">
+      <BuildType Project="Debug" />
+    </Project>
+    <Project Path="test/Lombiq.UITestingToolbox/Lombiq.Tests.UI.AdminTheme/Lombiq.Tests.UI.AdminTheme.csproj" />
+  </Folder>
+  <Folder Name="/src/Utilities/">
+    <Project Path="src/Themes/Lombiq.Hosting.MediaTheme/Lombiq.Hosting.MediaTheme.Targets/Lombiq.Hosting.MediaTheme.Targets.csproj" />
+    <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Base.Sdk/Lombiq.MSBuild.Base.Sdk.csproj" />
+    <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.LibMan.Targets/Lombiq.MSBuild.LibMan.Targets.csproj" />
+    <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Library.Sdk/Lombiq.MSBuild.Library.Sdk.csproj" />
+    <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.OrchardCore.Module.Sdk/Lombiq.MSBuild.OrchardCore.Module.Sdk.csproj" />
+    <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.OrchardCore.Tests.Sdk/Lombiq.MSBuild.OrchardCore.Tests.Sdk.csproj" />
+    <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk/Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk.csproj" />
+    <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.OrchardCore.Theme.Sdk/Lombiq.MSBuild.OrchardCore.Theme.Sdk.csproj" />
+    <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Targets.Samples/Lombiq.MSBuild.Targets.Samples.csproj" />
+    <Project Path="src/Utilities/Lombiq.Npm.Targets/Lombiq.Npm.Targets.csproj" />
+    <Project Path="src/Utilities/Lombiq.SetupExtensions/Lombiq.SetupExtensions.csproj" />
+    <Project Path="src/Utilities/Lombiq.Tailwind.Targets/Lombiq.Tailwind.Targets.Samples/Lombiq.Tailwind.Targets.Samples.csproj" />
+    <Project Path="src/Utilities/Lombiq.Tailwind.Targets/Lombiq.Tailwind.Targets/Lombiq.Tailwind.Targets.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/Lombiq.OSOCE.Tests.UI/Lombiq.OSOCE.Tests.UI.csproj" />
+    <Project Path="test/Lombiq.Tests/Lombiq.Tests.csproj" />
+    <Project Path="test/Lombiq.UITestingToolbox/Lombiq.Tests.UI.AppExtensions/Lombiq.Tests.UI.AppExtensions.csproj" />
+    <Project Path="test/Lombiq.UITestingToolbox/Lombiq.Tests.UI.Samples/Lombiq.Tests.UI.Samples.csproj" />
+    <Project Path="test/Lombiq.UITestingToolbox/Lombiq.Tests.UI.Shortcuts/Lombiq.Tests.UI.Shortcuts.csproj" />
+    <Project Path="test/Lombiq.UITestingToolbox/Lombiq.Tests.UI.TestingModule/Lombiq.Tests.UI.TestingModule.csproj" />
+    <Project Path="test/Lombiq.UITestingToolbox/Lombiq.Tests.UI.Tests.UI/Lombiq.Tests.UI.Tests.UI.csproj" />
+    <Project Path="test/Lombiq.UITestingToolbox/Lombiq.Tests.UI/Lombiq.Tests.UI.csproj" />
+  </Folder>
+  <Folder Name="/test/Libraries/">
+    <Project Path="src/Libraries/Lombiq.EInvoiceValidator/Lombiq.EInvoiceValidator.Tests/Lombiq.EInvoiceValidator.Tests.csproj" />
+    <Project Path="src/Libraries/Lombiq.HelpfulLibraries/Lombiq.HelpfulLibraries.Tests/Lombiq.HelpfulLibraries.Tests.csproj" />
+    <Project Path="src/Libraries/Lombiq.OrchardCoreApiClient/Lombiq.OrchardCoreApiClient.Tests.UI/Lombiq.OrchardCoreApiClient.Tests.UI.csproj" />
+  </Folder>
+  <Folder Name="/test/Modules/">
+    <Project Path="src/Libraries/Lombiq.HelpfulLibraries/Lombiq.HelpfulLibraries.Samples.Tests.UI/Lombiq.HelpfulLibraries.Samples.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.ChartJs/Lombiq.ChartJs.Tests.UI/Lombiq.ChartJs.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.ContentEditors/Lombiq.ContentEditors.Tests.UI/Lombiq.ContentEditors.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.DataTables/Lombiq.DataTables.Tests.UI/Lombiq.DataTables.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.DataTables/Lombiq.DataTables.Tests/Lombiq.DataTables.Tests.csproj" />
+    <Project Path="src/Modules/Lombiq.EmailClient/Lombiq.EmailClient.Tests.UI/Lombiq.EmailClient.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.HelpfulExtensions/Lombiq.HelpfulExtensions.Tests.UI/Lombiq.HelpfulExtensions.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.Azure.ApplicationInsights/Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI/Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.BuildVersionDisplay/Lombiq.Hosting.BuildVersionDisplay.Tests.UI/Lombiq.Hosting.BuildVersionDisplay.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.Admin.Login.Tests.UI/Lombiq.Hosting.Tenants.Admin.Login.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.EmailQuotaManagement.Tests.UI/Lombiq.Hosting.Tenants.EmailQuotaManagement.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.EnvironmentRobots.Tests.UI/Lombiq.Hosting.Tenants.EnvironmentRobots.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.FeaturesGuard.Tests.UI/Lombiq.Hosting.Tenants.FeaturesGuard.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI/Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.Maintenance.Tests.UI/Lombiq.Hosting.Tenants.Maintenance.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.Maintenance.Tests/Lombiq.Hosting.Tenants.Maintenance.Tests.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.Management.Tests.UI/Lombiq.Hosting.Tenants.Management.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.MediaStorageManagement.Tests.UI/Lombiq.Hosting.Tenants.MediaStorageManagement.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.JsonEditor/Lombiq.JsonEditor.Test.UI/Lombiq.JsonEditor.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.LoginAsAnybody/Lombiq.LoginAsAnybody.Tests.UI/Lombiq.LoginAsAnybody.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.Marketing/Lombiq.Marketing.Tests.UI/Lombiq.Marketing.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.Privacy/Lombiq.Privacy.Tests.UI/Lombiq.Privacy.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.TrainingDemo/Lombiq.TrainingDemo.Tests/Lombiq.TrainingDemo.Tests.csproj" />
+    <Project Path="src/Modules/Lombiq.UIKit/Lombiq.UIKit.Tests.UI/Lombiq.UIKit.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.UIKit/Lombiq.UIKit.Widgets.Tests.UI/Lombiq.UIKit.Widgets.Tests.UI.csproj" />
+    <Project Path="src/Modules/Lombiq.Walkthroughs/Lombiq.Walkthroughs.Test.UI/Lombiq.Walkthroughs.Tests.UI.csproj" />
+    <Project Path="src/Themes/Lombiq.Hosting.MediaTheme/Lombiq.Hosting.MediaTheme.Bridge.Tests.UI/Lombiq.Hosting.MediaTheme.Bridge.Tests.UI.csproj" />
+  </Folder>
+  <Folder Name="/test/Themes/">
+    <Project Path="src/Themes/Lombiq.BaseTheme/Lombiq.BaseTheme.Tests.UI/Lombiq.BaseTheme.Tests.UI.csproj" />
+    <Project Path="src/Themes/Lombiq.Hosting.MediaTheme/Lombiq.Hosting.MediaTheme.Tests.UI/Lombiq.Hosting.MediaTheme.Tests.UI.csproj" />
+  </Folder>
+  <Folder Name="/test/Utilities/">
+    <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Targets.Tests.UI/Lombiq.MSBuild.Targets.Tests.UI.csproj" />
+    <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Targets.Tests/Lombiq.MSBuild.Targets.Tests.csproj" />
+    <Project Path="src/Utilities/Lombiq.Tailwind.Targets/Lombiq.Tailwind.Targets.Tests/Lombiq.Tailwind.Targets.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tools/">
+    <Project Path="src/Themes/Lombiq.Hosting.MediaTheme/Lombiq.Hosting.MediaTheme.Deployer/Lombiq.Hosting.MediaTheme.Deployer.csproj" />
+    <Project Path="tools/Lombiq.Analyzers.PowerShell/Lombiq.Analyzers.PowerShell/Lombiq.Analyzers.PowerShell.csproj" />
+    <Project Path="tools/Lombiq.Analyzers/Lombiq.Analyzers.NetFx/Lombiq.Analyzers.NetFx.csproj" />
+    <Project Path="tools/Lombiq.Analyzers/Lombiq.Analyzers.Orchard1/Lombiq.Analyzers.Orchard1.csproj" />
+    <Project Path="tools/Lombiq.Analyzers/Lombiq.Analyzers.OrchardCore/Lombiq.Analyzers.OrchardCore.csproj" />
+    <Project Path="tools/Lombiq.Analyzers/Lombiq.Analyzers.VisualStudioExtension/Lombiq.Analyzers.VisualStudioExtension.csproj" />
+    <Project Path="tools/Lombiq.Analyzers/Lombiq.Analyzers/Lombiq.Analyzers.csproj" />
+  </Folder>
+</Solution>

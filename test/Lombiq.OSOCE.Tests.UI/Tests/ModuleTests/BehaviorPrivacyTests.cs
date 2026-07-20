@@ -1,7 +1,5 @@
 using Lombiq.Privacy.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Extensions;
-using Shouldly;
-using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -38,16 +36,7 @@ public class BehaviorPrivacyTests : UITestBase
         // Then should work with a Razor-based theme.
         await ExecuteTestAfterSetupAsync(
             context => context.TestConsentBannerWithThemeAsync("TheTheme"),
-            configuration => configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync =
-                validationResult =>
-                {
-                    // Error filtering due to https://github.com/OrchardCMS/OrchardCore/issues/15222 and
-                    // https://github.com/OrchardCMS/OrchardCore/issues/18510. Can be removed once they are resolved.
-                    var errors = validationResult.GetParsedErrors()
-                        .Where(error => error.RuleId is not "prefer-native-element" and not "aria-label-misuse");
-                    errors.ShouldBeEmpty(HtmlValidationResultExtensions.GetParsedErrorMessageString(errors));
-                    return Task.CompletedTask;
-                });
+            configuration => configuration.HtmlValidationConfiguration.WithOC15222Filter());
     }
 
     [Fact]
