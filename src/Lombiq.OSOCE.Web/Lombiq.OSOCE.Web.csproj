@@ -1,27 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <TieredCompilation>true</TieredCompilation>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <OrchardCoreVersion>2.2.1</OrchardCoreVersion>
+    <OrchardCoreVersion>3.0.1</OrchardCoreVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Recipes\Media\meadow-orchard.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Recipes\Media\meadow-orchard.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
+    <Content Include="Recipes\Media\meadow-orchard.jpg" CopyToOutputDirectory="PreserveNewest" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI.AdminTheme\Lombiq.Tests.UI.AdminTheme.csproj" />
     <ProjectReference Include="..\..\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI.AppExtensions\Lombiq.Tests.UI.AppExtensions.csproj" />
     <ProjectReference Include="..\..\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI.Shortcuts\Lombiq.Tests.UI.Shortcuts.csproj" />
     <ProjectReference Include="..\..\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI.TestingModule\Lombiq.Tests.UI.TestingModule.csproj" />
@@ -61,6 +54,7 @@
     <ProjectReference Include="..\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.Tests.Theme\Lombiq.Hosting.MediaTheme.Tests.Theme.csproj" />
     <ProjectReference Include="..\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.csproj" />
     <ProjectReference Include="..\Themes\Lombiq.Hosting.MediaTheme\Lombiq.Hosting.MediaTheme.Bridge\Lombiq.Hosting.MediaTheme.Bridge.csproj" />
+    <ProjectReference Include="..\Utilities\Lombiq.MSBuild.Targets\Lombiq.MSBuild.Sdk.Samples\Lombiq.MSBuild.Sdk.Samples.csproj" />
     <ProjectReference Include="..\Utilities\Lombiq.Tailwind.Targets\Lombiq.Tailwind.Targets.Samples\Lombiq.Tailwind.Targets.Samples.csproj" />
     <ProjectReference Include="..\Utilities\Lombiq.SetupExtensions\Lombiq.SetupExtensions.csproj" />
   </ItemGroup>

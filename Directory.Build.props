@@ -14,10 +14,10 @@
     <NuGetBuild>true</NuGetBuild>
   </PropertyGroup>-->
 
-  <!-- Uncomment this to run .NET static code analyzers during rebuilds. -->
-  <!--<PropertyGroup>
+  <!-- Uncomment this to run .NET static code analyzers during rebuilds.
+  <PropertyGroup>
     <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
-  </PropertyGroup>-->
+  </PropertyGroup> -->
 
   <Import Project="tools/Lombiq.Analyzers/Lombiq.Analyzers.OrchardCore/Build.props" />
 
@@ -26,5 +26,6 @@
   See https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/issues/423. -->
   <PropertyGroup>
     <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
+    <OrchardCoreVersion>3.0.1</OrchardCoreVersion>
   </PropertyGroup>
 </Project>

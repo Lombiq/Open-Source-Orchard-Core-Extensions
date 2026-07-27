@@ -1,0 +1,51 @@
+{
+  "name": "Lombiq.OSOCE.Tests.FeaturesGuard",
+  "displayName": "Lombiq's Open-Source Orchard Core Extensions",
+  "description": "Lombiq's Open-Source Orchard Core Extensions setup recipe for automated UI test execution.",
+  "author": "Lombiq Technologies",
+  "website": "https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions",
+  "version": "1.0",
+  "issetuprecipe": false,
+  "categories": [
+    "test"
+  ],
+  "tags": [
+    "test"
+  ],
+  "steps": [
+    {
+      "name": "feature",
+      "disable": [],
+      "enable": [
+        "OrchardCore.Tenants",
+        "OrchardCore.Tenants.FeatureProfiles",
+        "Lombiq.Hosting.Tenants.FeaturesGuard"
+      ]
+    },
+    {
+      "name": "FeatureProfiles",
+      "FeatureProfiles": {
+        "Features Guard": {
+          "FeatureRules": [
+            {
+              "Rule": "Exclude",
+              "Expression": "OrchardCore.Workflows.Session"
+            },
+            {
+              "Rule": "Exclude",
+              "Expression": "OrchardCore.Search.Lucene"
+            },
+            {
+              "Rule": "Exclude",
+              "Expression": "OrchardCore.MiniProfiler"
+            },
+            {
+              "Rule": "Exclude",
+              "Expression": "Lombiq.Tests.UI.Shortcuts"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

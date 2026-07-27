@@ -1,10 +1,7 @@
 using Lombiq.OSOCE.NuGet.Tests.UI.Helpers;
 using Lombiq.Tests.UI;
-using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
-using Shouldly;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -34,18 +31,8 @@ public class UITestBase : OrchardCoreUITestBase<Program>
             setupOperation,
             async configuration =>
             {
-                configuration.AssertAppLogsAsync =
-                    OrchardCoreUITestExecutorConfiguration.AssertAppLogsCanContainCacheFolderErrorsAsync;
-
                 // This can be removed once https://github.com/OrchardCMS/OrchardCore/issues/15222 is done.
-                configuration.HtmlValidationConfiguration.AssertHtmlValidationResultAsync = validationResult =>
-                {
-                    var errors = validationResult.GetParsedErrors()
-                        .Where(error => error.RuleId is not ("prefer-native-element" or "aria-label-misuse"))
-                        .ToList();
-                    errors.ShouldBeEmpty(HtmlValidationResultExtensions.GetParsedErrorMessageString(errors));
-                    return Task.CompletedTask;
-                };
+                configuration.HtmlValidationConfiguration.WithOC15222Filter();
 
                 if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
             });

@@ -1,6 +1,8 @@
 using Lombiq.Hosting.Tenants.FeaturesGuard.Tests.UI.Extensions;
+using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Helpers;
 using Lombiq.Tests.UI.Samples.Helpers;
+using Lombiq.Tests.UI.Services;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -18,7 +20,11 @@ public class BehaviorFeaturesGuardTests : UITestBase
     [Fact]
     public Task ForbiddenFeaturesShouldNotBeActivatableOnTenants() =>
         ExecuteTestAfterSetupAsync(
-            context => context.TestForbiddenFeaturesAsync(SetupHelpers.RecipeId),
+            async context =>
+            {
+                await BeforeTestAsync(context);
+                await context.TestForbiddenFeaturesAsync(SetupHelpers.RecipeId);
+            },
             ConfigurationHelper.DisableHtmlValidation);
 
     // HTML validation is disabled as OC's login and dashboard pages contain several errors. See:
@@ -26,6 +32,13 @@ public class BehaviorFeaturesGuardTests : UITestBase
     [Fact]
     public Task ConditionallyEnabledFeaturesShouldWorkCorrectlyOnTenants() =>
         ExecuteTestAfterSetupAsync(
-            context => context.TestConditionallyEnabledFeaturesAsync(SetupHelpers.RecipeId),
+            async context =>
+            {
+                await BeforeTestAsync(context);
+                await context.TestConditionallyEnabledFeaturesAsync(SetupHelpers.RecipeId);
+            },
             ConfigurationHelper.DisableHtmlValidation);
+
+    private static Task BeforeTestAsync(UITestContext context) =>
+        context.ExecuteRecipeDirectlyAsync("Lombiq.OSOCE.Tests.FeaturesGuard");
 }

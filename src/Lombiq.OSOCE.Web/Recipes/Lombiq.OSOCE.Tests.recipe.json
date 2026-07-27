@@ -31,17 +31,17 @@
         "Lombiq.HelpfulExtensions.Widgets",
         "Lombiq.HelpfulLibraries.Samples",
         "Lombiq.Hosting.BuildVersionDisplay",
-        "Lombiq.Hosting.Tenants.Admin.Login",
         "Lombiq.Hosting.Tenants.Admin.Login.SubTenant",
+        "Lombiq.Hosting.Tenants.EmailQuotaManagement",
         "Lombiq.Hosting.Tenants.EnvironmentRobots",
-        "Lombiq.Hosting.Tenants.Management",
-        "Lombiq.Hosting.Tenants.Management.ShellSettingsEditor",
+        "Lombiq.Hosting.Tenants.FeaturesGuard",
+        "Lombiq.Hosting.Tenants.IdleTenantManagement.ShutDownIdleTenants",
         "Lombiq.Hosting.Tenants.Maintenance",
-        "Lombiq.Hosting.Tenants.Maintenance.UpdateSiteUrl",
         "Lombiq.Hosting.Tenants.Maintenance.AddAdministratorRoleToUsersWithRole",
         "Lombiq.Hosting.Tenants.Maintenance.ChangeUserSensitiveContent",
-        "Lombiq.Hosting.Tenants.IdleTenantManagement.ShutDownIdleTenants",
-        "Lombiq.Hosting.Tenants.EmailQuotaManagement",
+        "Lombiq.Hosting.Tenants.Maintenance.UpdateSiteUrl",
+        "Lombiq.Hosting.Tenants.Management",
+        "Lombiq.Hosting.Tenants.MediaStorageManagement",
         "Lombiq.JsonEditor",
         "Lombiq.JsonEditor.ContentEditor",
         "Lombiq.LoginAsAnybody",
@@ -56,14 +56,12 @@
         "Lombiq.UIKit.Showcase",
         "Lombiq.UIKit.Widgets",
         "Lombiq.VueJs.Resources",
-        "OrchardCore.Tenants.FeatureProfiles",
-        "Lombiq.Hosting.Tenants.FeaturesGuard",
-        "Lombiq.Hosting.Tenants.MediaStorageManagement",
-        "OrchardCore.Localization",
-        "OrchardCore.Features",
-        "OrchardCore.Media",
         "OrchardCore.Email.Smtp",
-        "TheTheme"
+        "OrchardCore.Features",
+        "OrchardCore.Localization",
+        "OrchardCore.Media",
+        "TheTheme",
+        "Lombiq.Tests.UI.AdminTheme"
         // Not enabling Lombiq.TrainingDemo.Middlewares because that would write to the error log on every request.
       ]
     },
@@ -179,31 +177,6 @@
       "site": "SafeMode"
     },
     {
-      "name": "FeatureProfiles",
-      "FeatureProfiles": {
-        "Features Guard": {
-          "FeatureRules": [
-            {
-              "Rule": "Exclude",
-              "Expression": "OrchardCore.Workflows.Session"
-            },
-            {
-              "Rule": "Exclude",
-              "Expression": "OrchardCore.Search.Lucene"
-            },
-            {
-              "Rule": "Exclude",
-              "Expression": "OrchardCore.MiniProfiler"
-            },
-            {
-              "Rule": "Exclude",
-              "Expression": "Lombiq.Tests.UI.Shortcuts"
-            }
-          ]
-        }
-      }
-    },
-    {
       "name": "recipes",
       "Values": [
         {
@@ -219,6 +192,10 @@
           "name": "Lombiq.UIKit.Widgets.Content"
         }
       ]
+    },
+    {
+      "name": "themes",
+      "admin": "Lombiq.Tests.UI.AdminTheme"
     }
   ]
 }

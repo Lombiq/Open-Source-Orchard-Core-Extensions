@@ -22,5 +22,6 @@ public class BehaviorBaseThemeTests : UITestBase
 
                 await context.SignInDirectlyAsync();
                 await context.TestBaseThemeSiteSettingsAsync();
-            });
+            },
+            configuration => configuration.SetupConfiguration.SetupWithHttpClient = false);
 }
