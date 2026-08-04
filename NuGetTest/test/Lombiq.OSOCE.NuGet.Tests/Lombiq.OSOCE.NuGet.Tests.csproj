@@ -1,4 +1,4 @@
-<Project Sdk="Lombiq.MSBuild.OrchardCore.Tests.Sdk/2.0.3-alpha.0.osoe-1286">
+<Project Sdk="Lombiq.MSBuild.OrchardCore.Tests.Sdk/2.1.0">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
