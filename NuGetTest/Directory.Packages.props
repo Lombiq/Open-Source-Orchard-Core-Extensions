@@ -58,10 +58,10 @@
     <PackageVersion Include="Lombiq.JsonEditor.Tests.UI" Version="10.0.0" />
     <PackageVersion Include="Lombiq.LoginAsAnybody" Version="6.0.0" />
     <PackageVersion Include="Lombiq.LoginAsAnybody.Tests.UI" Version="6.0.0" />
-    <PackageVersion Include="Lombiq.Marketing" Version="1.0.0" />
-    <PackageVersion Include="Lombiq.Marketing.Pirsch" Version="1.0.0" />
-    <PackageVersion Include="Lombiq.Marketing.UrlShortener" Version="1.0.0" />
-    <PackageVersion Include="Lombiq.Marketing.Tests.UI" Version="1.0.0" />
+    <PackageVersion Include="Lombiq.Marketing" Version="1.0.1" />
+    <PackageVersion Include="Lombiq.Marketing.Pirsch" Version="1.0.1" />
+    <PackageVersion Include="Lombiq.Marketing.UrlShortener" Version="1.0.1" />
+    <PackageVersion Include="Lombiq.Marketing.Tests.UI" Version="1.0.1" />
     <PackageVersion Include="Lombiq.Npm.Targets" Version="1.5.3" />
     <PackageVersion Include="Lombiq.OrchardCoreApiClient.Tests.UI" Version="8.0.0" />
     <PackageVersion Include="Lombiq.Privacy" Version="11.0.0" />
