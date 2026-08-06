@@ -107,3 +107,4 @@ jobs:
           token: ${{ secrets.LOMBIQBOT_GITHUB_PERSONAL_ACCESS_TOKEN }}
           labels: requires-windows-build
           type: add
+
