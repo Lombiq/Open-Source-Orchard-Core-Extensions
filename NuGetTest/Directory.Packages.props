@@ -58,10 +58,10 @@
     <PackageVersion Include="Lombiq.JsonEditor.Tests.UI" Version="10.0.0" />
     <PackageVersion Include="Lombiq.LoginAsAnybody" Version="6.0.0" />
     <PackageVersion Include="Lombiq.LoginAsAnybody.Tests.UI" Version="6.0.0" />
-    <PackageVersion Include="Lombiq.Marketing" Version="1.0.0" />
-    <PackageVersion Include="Lombiq.Marketing.Pirsch" Version="1.0.0" />
-    <PackageVersion Include="Lombiq.Marketing.UrlShortener" Version="1.0.0" />
-    <PackageVersion Include="Lombiq.Marketing.Tests.UI" Version="1.0.0" />
+    <PackageVersion Include="Lombiq.Marketing" Version="1.0.1" />
+    <PackageVersion Include="Lombiq.Marketing.Pirsch" Version="1.0.1" />
+    <PackageVersion Include="Lombiq.Marketing.UrlShortener" Version="1.0.1" />
+    <PackageVersion Include="Lombiq.Marketing.Tests.UI" Version="1.0.1" />
     <PackageVersion Include="Lombiq.Npm.Targets" Version="1.5.3" />
     <PackageVersion Include="Lombiq.OrchardCoreApiClient.Tests.UI" Version="8.0.0" />
     <PackageVersion Include="Lombiq.Privacy" Version="11.0.0" />
@@ -79,8 +79,8 @@
     <PackageVersion Include="Lombiq.VueJs.Resources" Version="10.0.0" />
     <PackageVersion Include="Lombiq.Walkthroughs" Version="4.0.0" />
     <PackageVersion Include="Lombiq.Walkthroughs.Tests.UI" Version="4.0.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="10.0.9" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.7.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="10.0.10" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.8.1" />
     <PackageVersion Include="OrchardCore.Application.Cms.Targets" Version="$(OrchardCoreVersion)" />
     <PackageVersion Include="OrchardCore.ContentManagement" Version="$(OrchardCoreVersion)" />
     <PackageVersion Include="OrchardCore.ContentTypes.Abstractions" Version="$(OrchardCoreVersion)" />
@@ -89,7 +89,7 @@
     <PackageVersion Include="OrchardCore.Module.Targets" Version="$(OrchardCoreVersion)" />
     <PackageVersion Include="OrchardCore.ResourceManagement" Version="$(OrchardCoreVersion)" />
     <PackageVersion Include="OrchardCore.Theme.Targets" Version="$(OrchardCoreVersion)" />
-    <PackageVersion Include="System.Security.Cryptography.Xml" Version="11.0.0-preview.5.26302.115" />
+    <PackageVersion Include="System.Security.Cryptography.Xml" Version="11.0.0-preview.6.26359.118" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
     <PackageVersion Include="xunit.v3" Version="3.2.2" />
   </ItemGroup>
