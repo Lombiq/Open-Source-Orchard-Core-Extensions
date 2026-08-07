@@ -142,7 +142,7 @@ Actions:
   - In the **superproject's** `.github/workflows/*.yml` files: revert the same `@issue/<WORK_ITEM_KEY>` → `@dev` replacements.
 - Merge **all** submodule branches to `dev`:
   - Merge PRs for submodules that have `issue/<WORK_ITEM_KEY>` branches (these were created in Phase 4). Use `gh pr merge --merge --admin` — the `--admin` flag is required to bypass merge queues and branch protection rules that are common in these repos. **Never** use `git push origin dev` or `git merge` directly onto `dev`.
-  - **Also merge the existing Renovate PRs** for submodules where only a single renovate branch was checked out directly (no issue branch was created). These PRs still exist on GitHub and must be merged too.
+  - **Also merge the existing Renovate PRs** for submodules where only a single renovate branch was checked out directly (no issue branch was created). These PRs still exist on GitHub and must be merged too. Use `gh pr merge --merge --admin` here too — never squash or rebase, so that `dev`'s HEAD advances to a new merge commit rather than being moved to the Renovate branch's commits.
 - After all submodule PRs are merged, update **every** submodule pointer in the superproject to the merged `dev` head (`git fetch origin dev && git checkout origin/dev` in each submodule).
 - Commit the updated submodule pointers together with the superproject workflow ref reverts.
 - Include `[skip ci]` in commit messages for submodule pointer updates and reference reverts. Do not wait for CI on these commits.
