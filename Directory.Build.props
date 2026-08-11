@@ -14,10 +14,10 @@
     <NuGetBuild>true</NuGetBuild>
   </PropertyGroup>-->
 
-  <!-- Uncomment this to run .NET static code analyzers during rebuilds.
-  <PropertyGroup>
+  <!--Uncomment this to run .NET static code analyzers during rebuilds.-->
+  <!--<PropertyGroup>
     <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
-  </PropertyGroup> -->
+  </PropertyGroup>-->
 
   <Import Project="tools/Lombiq.Analyzers/Lombiq.Analyzers.OrchardCore/Build.props" />
 
