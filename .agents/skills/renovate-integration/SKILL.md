@@ -35,6 +35,7 @@ WORK ITEM KEY: <WORK_ITEM_KEY>
 - Never commit to `dev`. Never push directly to `dev` on any repo — all changes must go through PRs on `issue/<WORK_ITEM_KEY>` branches.
 - **Never run `git push origin dev` or any variant that targets the `dev` ref directly** (e.g. `git push origin HEAD:dev`, `git push origin issue/<WORK_ITEM_KEY>:dev`). Pushing a local `dev` that has been reset to the issue branch tip is the primary source of accidental merges.
 - Before pushing anything, confirm with `git status` and `git log --oneline -3` that HEAD is on `issue/<WORK_ITEM_KEY>` and not on `dev`.
+- **Before merging any PR (Phase 5), run `git branch -v` in the superproject and every affected submodule** to verify that the local `dev` branch tip matches `origin/dev`. A local `dev` pointer that has drifted from `origin/dev` indicates an unexpected state; stop and investigate before proceeding with any merge.
 - Only commit to `issue/<WORK_ITEM_KEY>`.
 - **Do not prefix commit messages with `<WORK_ITEM_KEY>:`** — the key is already encoded in the branch name.
 - Never skip approval checkpoints.
