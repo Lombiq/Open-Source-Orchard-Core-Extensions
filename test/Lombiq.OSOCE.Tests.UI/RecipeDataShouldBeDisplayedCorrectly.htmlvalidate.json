@@ -1,0 +1,11 @@
+{
+  "extends": [
+    "./default.htmlvalidate.json"
+  ],
+
+  "rules": {
+    "no-redundant-role": "off"
+  },
+
+  "root": true
+}
