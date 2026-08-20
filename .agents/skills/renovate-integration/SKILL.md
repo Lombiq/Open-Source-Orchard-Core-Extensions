@@ -125,6 +125,7 @@ Actions:
 - PR titles should **not** include the issue key (it is added automatically from the branch name). Submodule PR titles should reference the specific updates included, e.g. `Update dependencies: Microsoft.NET.Test.Sdk 18.0.1 → 18.3.0, Swashbuckle.AspNetCore 10.1.4 → 10.1.5`.
 - After PRs are created, **wait for all CI workflow runs to complete**. Poll the run status periodically (e.g. every 60 seconds) using `gh run list`.
 - Once the Ubuntu build (Build and Test) succeeds on the superproject PR, add the `run-windows-build` label to the PR (using `gh pr edit --add-label run-windows-build`) to trigger the Windows build, then wait for it to succeed too.
+- Submodule PR checks must also pass, chiefly the **Validate NuGet Publish** workflow — do not treat the superproject PR's green checks as sufficient on their own.
 - If all checks pass, proceed to ask for approval.
 - If any checks fail, investigate the failures and fix them. For **test failures** specifically, always reproduce and fix the failure locally first (run the relevant test(s) with `dotnet test --filter`) before committing and pushing — do not rely on CI as the iteration loop for test fixes. Only push once the test passes locally. Then wait for the new CI runs to pass before asking for approval.
 

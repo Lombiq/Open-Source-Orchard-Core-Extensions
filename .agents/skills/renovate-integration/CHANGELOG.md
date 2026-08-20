@@ -4,6 +4,16 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ---
 
+## 2026-08-20
+
+**Require submodule PR checks to pass in Phase 4, not just the superproject's**
+
+- Added a bullet to Phase 4 stating that submodule PR checks must also pass, chiefly the **Validate NuGet Publish** workflow, before proceeding to ask for approval.
+
+Reason: User feedback during OSOE-1311 — the skill previously only called out waiting for the superproject PR's Ubuntu/Windows builds, which could let submodule PRs with failing checks (e.g. Validate NuGet Publish) slip through to Phase 5 merging.
+
+---
+
 ## 2026-03-27
 
 **Fix Phase 5: revert GHA refs in submodule before merging**
