@@ -6,6 +6,16 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ## 2026-08-20
 
+**Avoid breaking changes in Phase 2; follow the automated breaking-changes PR comment**
+
+- Added a bullet to Phase 2 instructing to avoid breaking changes whenever feasible, and to follow the repo's automated "this pull request appears to contain breaking changes" PR comment (prefer a non-breaking fix; otherwise apply the `ignore-breaking-changes` label if the flagged change isn't actually breaking for consumers, and only accept a genuine breaking change with a documented migration when unfeasible to avoid).
+
+Reason: During OSOE-1311, fixing a stale `CompatibilitySuppressions.xml` entry (removing an unnecessary suppression) was itself flagged as a breaking change by the packaging pipeline, requiring the `ignore-breaking-changes` label per the repo's own automated PR comment.
+
+---
+
+## 2026-08-20
+
 **Require submodule PR checks to pass in Phase 4, not just the superproject's**
 
 - Added a bullet to Phase 4 stating that submodule PR checks must also pass, chiefly the **Validate NuGet Publish** workflow, before proceeding to ask for approval.
