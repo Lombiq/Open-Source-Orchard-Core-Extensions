@@ -6,6 +6,16 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ## 2026-08-21
 
+**Never use `gh run watch` or `gh pr checks --watch` for polling**
+
+- Added a rule to Phase 4 forbidding `gh run watch` and `gh pr checks --watch`: both open a full-screen alternate-buffer TUI that does not return control when run through the terminal tool. Poll instead with plain, repeated `gh pr checks <number> --repo <repo> --json name,state --jq '...'` calls (no watch flag).
+
+Reason: During OSOE-1311 Phase 5, both `gh run watch` and `gh pr checks --watch` got the terminal stuck in an alternate-buffer/TUI state that didn't respond to further input, wasting turns recovering it.
+
+---
+
+## 2026-08-21
+
 **Fix PR body corruption from PowerShell backtick escaping; document the superproject PR title prefix requirement**
 
 - Added a rule to Phase 4 to never pass PR body text with backticks as an inline `--body "..."` PowerShell string, since PowerShell's backtick escape character silently eats letters like `r`/`n`/`t` and replaces them with control characters (e.g. `` `renovate `` becomes a line break plus "enovate"). Always use `--body-file` with a temp file instead, and verify the rendered body afterwards.
