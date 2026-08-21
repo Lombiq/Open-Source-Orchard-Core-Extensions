@@ -4,6 +4,17 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ---
 
+## 2026-08-21
+
+**Fix PR body corruption from PowerShell backtick escaping; document the superproject PR title prefix requirement**
+
+- Added a rule to Phase 4 to never pass PR body text with backticks as an inline `--body "..."` PowerShell string, since PowerShell's backtick escape character silently eats letters like `r`/`n`/`t` and replaces them with control characters (e.g. `` `renovate `` becomes a line break plus "enovate"). Always use `--body-file` with a temp file instead, and verify the rendered body afterwards.
+- Corrected the PR title guidance: the superproject PR title must literally start with `<WORK_ITEM_KEY>: ` (submodule `validate-pull-request` checks search for this exact prefix in the superproject's open PR titles), whereas submodule PR titles should not include the key.
+
+Reason: During OSOE-1311, all 9 PR bodies were corrupted (missing letters, stray line breaks) because backtick-wrapped branch/file names in `--body "..."` arguments were parsed as PowerShell escape sequences. Separately, the superproject PR was initially created without the `<WORK_ITEM_KEY>: ` prefix, which is required by submodule PR validation but wasn't previously documented as a strict requirement.
+
+---
+
 ## 2026-08-20
 
 **Avoid breaking changes in Phase 2; follow the automated breaking-changes PR comment**
