@@ -4,6 +4,47 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ---
 
+## 2026-08-21
+
+**Never use `gh run watch` or `gh pr checks --watch` for polling**
+
+- Added a rule to Phase 4 forbidding `gh run watch` and `gh pr checks --watch`: both open a full-screen alternate-buffer TUI that does not return control when run through the terminal tool. Poll instead with plain, repeated `gh pr checks <number> --repo <repo> --json name,state --jq '...'` calls (no watch flag).
+
+Reason: During OSOE-1311 Phase 5, both `gh run watch` and `gh pr checks --watch` got the terminal stuck in an alternate-buffer/TUI state that didn't respond to further input, wasting turns recovering it.
+
+---
+
+## 2026-08-21
+
+**Fix PR body corruption from PowerShell backtick escaping; document the superproject PR title prefix requirement**
+
+- Added a rule to Phase 4 to never pass PR body text with backticks as an inline `--body "..."` PowerShell string, since PowerShell's backtick escape character silently eats letters like `r`/`n`/`t` and replaces them with control characters (e.g. `` `renovate `` becomes a line break plus "enovate"). Always use `--body-file` with a temp file instead, and verify the rendered body afterwards.
+- Corrected the PR title guidance: the superproject PR title must literally start with `<WORK_ITEM_KEY>: ` (submodule `validate-pull-request` checks search for this exact prefix in the superproject's open PR titles), whereas submodule PR titles should not include the key.
+
+Reason: During OSOE-1311, all 9 PR bodies were corrupted (missing letters, stray line breaks) because backtick-wrapped branch/file names in `--body "..."` arguments were parsed as PowerShell escape sequences. Separately, the superproject PR was initially created without the `<WORK_ITEM_KEY>: ` prefix, which is required by submodule PR validation but wasn't previously documented as a strict requirement.
+
+---
+
+## 2026-08-20
+
+**Avoid breaking changes in Phase 2; follow the automated breaking-changes PR comment**
+
+- Added a bullet to Phase 2 instructing to avoid breaking changes whenever feasible, and to follow the repo's automated "this pull request appears to contain breaking changes" PR comment (prefer a non-breaking fix; otherwise apply the `ignore-breaking-changes` label if the flagged change isn't actually breaking for consumers, and only accept a genuine breaking change with a documented migration when unfeasible to avoid).
+
+Reason: During OSOE-1311, fixing a stale `CompatibilitySuppressions.xml` entry (removing an unnecessary suppression) was itself flagged as a breaking change by the packaging pipeline, requiring the `ignore-breaking-changes` label per the repo's own automated PR comment.
+
+---
+
+## 2026-08-20
+
+**Require submodule PR checks to pass in Phase 4, not just the superproject's**
+
+- Added a bullet to Phase 4 stating that submodule PR checks must also pass, chiefly the **Validate NuGet Publish** workflow, before proceeding to ask for approval.
+
+Reason: User feedback during OSOE-1311 — the skill previously only called out waiting for the superproject PR's Ubuntu/Windows builds, which could let submodule PRs with failing checks (e.g. Validate NuGet Publish) slip through to Phase 5 merging.
+
+---
+
 ## 2026-03-27
 
 **Fix Phase 5: revert GHA refs in submodule before merging**
