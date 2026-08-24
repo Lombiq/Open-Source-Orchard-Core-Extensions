@@ -64,4 +64,10 @@
     <PackageReference Include="OrchardCore.Logging.NLog" Version="$(OrchardCoreVersion)" />
   </ItemGroup>
 
+  <!-- Security Updates - make sure to check if these are still necessary -->
+  <ItemGroup>
+    <!-- From OrchardCore.Application.Cms.Targets. -->
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="10.0.10" NoWarn="NU1510" />
+  </ItemGroup>
+
 </Project>
