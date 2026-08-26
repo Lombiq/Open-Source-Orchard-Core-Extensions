@@ -31,8 +31,8 @@
     <PackageVersion Include="Lombiq.HelpfulLibraries.OrchardCore" Version="13.0.0" />
     <PackageVersion Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="11.0.0" />
     <PackageVersion Include="Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI" Version="11.0.0" />
-    <PackageVersion Include="Lombiq.Hosting.BuildVersionDisplay" Version="8.0.0" />
-    <PackageVersion Include="Lombiq.Hosting.BuildVersionDisplay.Tests.UI" Version="8.0.0" />
+    <PackageVersion Include="Lombiq.Hosting.BuildVersionDisplay" Version="8.0.1-alpha.0.nest-608" />
+    <PackageVersion Include="Lombiq.Hosting.BuildVersionDisplay.Tests.UI" Version="8.0.1-alpha.0.nest-608" />
     <PackageVersion Include="Lombiq.Hosting.MediaTheme" Version="9.0.0" />
     <PackageVersion Include="Lombiq.Hosting.MediaTheme.Bridge" Version="9.0.0" />
     <PackageVersion Include="Lombiq.Hosting.MediaTheme.Bridge.Tests.UI" Version="9.0.0" />
