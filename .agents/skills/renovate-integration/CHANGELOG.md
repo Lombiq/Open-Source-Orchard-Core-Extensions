@@ -4,6 +4,29 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ---
 
+## 2026-08-27
+
+**Reduce token usage during execution, not just file size**
+
+- Added a "Token efficiency" section with rules that apply while running the workflow: never dump full raw tool output (build logs, `git diff`, `gh ... --json`) into the conversation — summarize instead; filter command output at the source (grep/`Select-String` for errors/warnings, minimal `--json`/`jq` fields); reuse Phase 1's `analyze-renovate-branches.sh` output instead of re-running it; back off CI polling to 3-5 minutes for longer-running workflows; read only the files/sections needed instead of whole changelogs/diffs.
+- Phase 2 and Phase 4 now point to this section instead of repeating ad-hoc guidance.
+- Bumped `metadata.version` to `1.3`.
+
+Reason: Explicit user follow-up request — the previous pass only shrank `SKILL.md` itself; this pass targets tokens consumed while the skill is actually being executed (tool outputs, polling loops, log dumps).
+
+---
+
+## 2026-08-27
+
+**Condense SKILL.md for token efficiency**
+
+- Rewrote `SKILL.md` to tighten prose throughout (Global safety rules, Phases 1-5, Scripts, Self-update policy, Repository context), merging redundant bullets and cutting rationale/explanatory text that duplicates what's already in `CHANGELOG.md` or user memory (e.g. the PowerShell backtick-escaping mechanism). No behavioral rules, safety gates, or actionable steps were removed — only wording was shortened.
+- Bumped `metadata.version` to `1.2`.
+
+Reason: Explicit user request to optimize the skill for token usage, since the full `SKILL.md` is loaded on every invocation.
+
+---
+
 ## 2026-08-21
 
 **Never use `gh run watch` or `gh pr checks --watch` for polling**
