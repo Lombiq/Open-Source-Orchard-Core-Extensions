@@ -3,7 +3,7 @@
   "isRoot": true,
   "tools": {
     "lombiq.hosting.mediatheme.deployer": {
-      "version": "9.0.0",
+      "version": "9.0.1",
       "commands": [
         "media-theme-deploy"
       ]
