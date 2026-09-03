@@ -4,7 +4,11 @@ A project-level Copilot agent skill that automates safe, approval-gated integrat
 
 ## Purpose
 
-Renovate creates `renovate/*` branches with dependency updates in this superproject and its submodules. Integrating these updates manually is tedious and error-prone. This skill provides a structured, phased workflow with safety gates at every step.
+Renovate opens pull requests with dependency updates in this superproject and its submodules. Integrating these updates manually is tedious and error-prone. This skill provides a structured, phased workflow with safety gates at every step. It discovers work by listing **open Renovate PRs** in every repository and then checking out their head branches — stale `renovate/*` branches without an open PR are ignored.
+
+## Requirements
+
+- [GitHub CLI](https://cli.github.com/) (`gh`), authenticated — used to enumerate and merge Renovate PRs.
 
 ## Quick Start
 
@@ -14,8 +18,8 @@ Invoke the skill and it will prompt you for a Jira work item key (e.g. `OSOE-123
 
 | Phase | Name              | Description                                              |
 |-------|-------------------|----------------------------------------------------------|
-| 1     | Analysis          | Identify renovate branches, review diffs, classify risk  |
-| 2     | Implementation    | Merge changes into `issue/` branch, fix build issues     |
+| 1     | Analysis          | List open Renovate PRs, review diffs, classify risk      |
+| 2     | Implementation    | Check out/merge PR branches into `issue/` branch, fix build issues |
 | 3     | GitHub Actions    | Update workflow references as needed                     |
 | 4     | PR Creation       | Open PRs in correct dependency order                     |
 | 5     | Finalization      | Revert temp references, merge to `dev` when approved     |
@@ -38,22 +42,33 @@ Every phase transition requires **explicit user approval**. The skill will never
 ├── CHANGELOG.md        ← Skill evolution log (append-only)
 └── scripts/
     ├── git/
-    │   └── checkout-latest-renovate.sh
+    │   ├── analyze-renovate-prs.sh
+    │   └── checkout-latest-renovate-pr.sh
     ├── dotnet/
     │   └── .gitkeep
     └── tests/
-        └── .gitkeep
+        ├── .gitkeep
+        └── parse-check.sh
 ```
 
 ## Scripts
 
-### `scripts/git/checkout-latest-renovate.sh`
+### `scripts/git/analyze-renovate-prs.sh`
 
-Checks out the latest applicable `renovate/*` branch in each submodule. Only selects branches newer than `origin/dev`. Intentionally picks only the newest applicable branch per repo — other renovate branches may exist but are ignored.
+Read-only. Lists every open PR with a `renovate/*` head branch in the superproject and each submodule, marking each as ELIGIBLE or SKIP (draft / too old / already merged), with a diff stat and commit log against `origin/dev`.
 
 **Usage:**
 ```bash
-bash .agents/skills/renovate-integration/scripts/git/checkout-latest-renovate.sh
+bash .agents/skills/renovate-integration/scripts/git/analyze-renovate-prs.sh
+```
+
+### `scripts/git/checkout-latest-renovate-pr.sh`
+
+Checks out the head branch of the newest applicable open Renovate PR in each submodule. Intentionally picks only one PR per repo, and prints the remaining eligible PR numbers so they can be merged manually.
+
+**Usage:**
+```bash
+bash .agents/skills/renovate-integration/scripts/git/checkout-latest-renovate-pr.sh
 ```
 
 ## Self-Updating

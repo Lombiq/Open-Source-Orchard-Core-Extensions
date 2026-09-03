@@ -4,6 +4,19 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ---
 
+## 2026-09-03
+
+**Drive the workflow from open Renovate PRs instead of `renovate/*` branches**
+
+- Phase 1 now enumerates **open Renovate pull requests** (PRs whose head branch starts with `renovate/`) in the superproject and every submodule, and records their numbers and head branches; branches without an open PR are out of scope.
+- Phase 2 checks out those PRs' head branches (and merges the additional ones into `issue/<WORK_ITEM_KEY>`); Phases 4-5 reference the PR numbers gathered in Phase 1.
+- Replaced `scripts/git/analyze-renovate-branches.sh` with `scripts/git/analyze-renovate-prs.sh` and `scripts/git/checkout-latest-renovate.sh` with `scripts/git/checkout-latest-renovate-pr.sh`. Both use `gh pr list` (authenticated `gh` is now a requirement), skip draft PRs in addition to the existing age/already-merged filters, and the checkout script now prints the other eligible PRs it didn't check out.
+- Bumped `metadata.version` to `1.4`.
+
+Reason: Explicit user request — open PRs are the accurate signal of pending Renovate work, whereas raw `renovate/*` branch scanning also surfaces abandoned/closed-PR branches.
+
+---
+
 ## 2026-08-27
 
 **Reduce token usage during execution, not just file size**
