@@ -4,7 +4,7 @@ description: Approval-gated workflow for integrating Renovate updates across the
 license: MIT
 metadata:
   author: Lombiq Technologies
-  version: "1.4"
+  version: "1.5"
 ---
 
 # Renovate Integration
@@ -29,16 +29,16 @@ WORK ITEM KEY: <WORK_ITEM_KEY>
 - Work is driven by **open Renovate PRs**, not by scanning branches: enumerate PRs first, then check out their head branches. Never operate on a `renovate/*` branch that has no open PR.
 - Never `git push` unless explicitly instructed. Never target `dev` directly — no `git push origin dev`/`HEAD:dev`/`issue/<WORK_ITEM_KEY>:dev`, no direct `git merge` into `dev`. All changes go through PRs.
 - Commit only on `issue/<WORK_ITEM_KEY>`; never on `dev` or `renovate/*`. Don't prefix commit messages with `<WORK_ITEM_KEY>:` (already in the branch name).
-- Before pushing, verify with `git status`/`git log --oneline -3` that HEAD is on `issue/<WORK_ITEM_KEY>`.
-- Before merging PRs (Phase 5), run `git branch -v` in the superproject and every affected submodule to confirm local `dev` matches `origin/dev`; stop and investigate if it has drifted.
+- Push only via `scripts/git/push-issue-branches.sh <WORK_ITEM_KEY>`, which enforces the HEAD check.
+- Before merging PRs (Phase 5), run `scripts/git/verify-dev-sync.sh`; stop and investigate if it reports DRIFT.
 - Never skip approval checkpoints or perform later-phase actions early.
 - If a required tool is missing, stop and report it.
 
 ## Token efficiency
+- Prefer the bundled scripts over ad-hoc command sequences: they already filter their output and replace many tool round-trips with one.
 - Never dump full raw tool output (build logs, `git diff`, `gh ... --json`) into the conversation — summarize findings in a few bullets instead.
-- Filter command output at the source rather than after the fact: pipe builds/tests through a filter for errors/warnings/failures only (e.g. `dotnet build ... | Select-String -Pattern 'error|warning'`); request only the `gh`/`jq` fields you need (e.g. `--json name,state,conclusion`) instead of full JSON.
+- Filter command output at the source rather than after the fact: request only the `gh`/`jq` fields you need (e.g. `--json name,state,conclusion`) instead of full JSON.
 - Reuse Phase 1's `analyze-renovate-prs.sh` output for later phases instead of re-running it; don't re-run scripts to re-derive information already gathered.
-- When polling CI (Phase 4), start at 60s but back off to 3-5 minutes for longer-running workflows instead of polling at a fixed short interval — fewer polls means fewer tool round-trips.
 - Read only the files/sections needed to make a decision (e.g. a package's changelog entry for the updated version range) rather than whole changelogs or unrelated diff hunks.
 
 ## Execution states
@@ -84,7 +84,7 @@ Actions:
 - Single eligible PR, no further changes needed → leave its head branch checked out; do **not** create an `issue/<WORK_ITEM_KEY>` branch (the existing Renovate PR suffices).
 - Multiple eligible PRs to combine, or additional manual changes needed (e.g. GHA ref updates, patch bumps) → create `issue/<WORK_ITEM_KEY>` from `origin/dev` and merge every applicable PR's head branch into it with `git merge --no-ff` (always a merge commit, never fast-forward), including the ones the checkout script didn't select.
 - If the **superproject** itself has an eligible open Renovate PR (e.g. head branch `renovate/non-breaking-dependency-versions`), merge its head branch into `issue/<WORK_ITEM_KEY>` instead of manually editing the same files.
-- Resolve analyzer warnings, build/test failures, and lockfile updates. Build with `/property:RunAnalyzersDuringBuild=true` to surface analyzer violations (important when analyzer packages like Meziantou.Analyzer are updated), filtering output per the Token efficiency rules. When such updates introduce new warnings in existing code, fix the warnings rather than downgrading the analyzer — create `issue/<WORK_ITEM_KEY>` branches (merging applicable renovate branches) in the affected submodules if they don't already have one.
+- Resolve analyzer warnings, build/test failures, and lockfile updates. Build with `scripts/dotnet/build-with-analyzers.sh [solution]` (analyzers on, deduplicated diagnostics only). When analyzer package updates introduce new warnings in existing code, fix the warnings rather than downgrading the analyzer — create `issue/<WORK_ITEM_KEY>` branches (merging the applicable PR head branches) in the affected submodules if they don't already have one.
 - For string equality warnings (e.g. MA0127), prefer `EqualsOrdinalIgnoreCase` and similar extensions from `Lombiq.HelpfulLibraries` (in `namespace System;`, no extra using needed) over raw `string.Equals(…, StringComparison.…)`.
 - Avoid breaking changes even when an unrelated fix incidentally triggers one (e.g. removing a stale `CompatibilitySuppressions.xml` entry can be flagged as breaking by the packaging pipeline). If a PR gets an automated "this pull request appears to contain breaking changes" comment: prefer a non-breaking fix; otherwise, if the flagged change isn't actually breaking for consumers, add the `ignore-breaking-changes` label and push again; only accept a genuinely breaking change when unavoidable, and document the migration in the PR description.
 - Commit only on `issue/<WORK_ITEM_KEY>`.
@@ -101,11 +101,10 @@ Required state: `PR_CREATION`
 Gate: proceed only after `APPROVED: Phase 2`
 
 Actions:
-- When `tools/Lombiq.GitHub.Actions` has changes (e.g. lock file maintenance in asset-lint), temporarily update its internal `@dev` refs to `@issue/<WORK_ITEM_KEY>` so CI resolves them from the issue branch.
-- Update **all** `Lombiq/GitHub-Actions/...@dev` refs to `@issue/<WORK_ITEM_KEY>` in every `.yml` under `tools/Lombiq.GitHub.Actions/.github/` (`actions/` and `workflows/`). **Use a targeted regex matching `@dev` only when preceded by `Lombiq/GitHub-Actions/`** — never a global `@dev` replacement, since that would also break refs to other repos (e.g. `Lombiq/PowerShell-Analyzers`) that have no `issue/<WORK_ITEM_KEY>` branch.
-- Apply the same targeted replacement to the **superproject's** `.github/workflows/*.yml` files, leaving other repo refs untouched.
+- When `tools/Lombiq.GitHub.Actions` has changes (e.g. lock file maintenance in asset-lint), its internal `Lombiq/GitHub-Actions/...@dev` refs must temporarily point at the issue branch so CI resolves them from there.
+- Run `scripts/git/update-gha-refs.sh apply <WORK_ITEM_KEY>` from the superproject root. It rewrites only refs preceded by `Lombiq/GitHub-Actions/` in `tools/Lombiq.GitHub.Actions/.github/**` and the superproject's `.github/workflows/**`, leaving other repos' refs (e.g. `Lombiq/PowerShell-Analyzers`) untouched. **Never hand-roll this replacement.**
 - Commit the submodule change first, then stage the updated submodule pointer with the superproject workflow changes and commit.
-- These refs are **temporary** — reverted to `@dev` in Phase 5.
+- These refs are **temporary** — reverted in Phase 5 with `update-gha-refs.sh revert <WORK_ITEM_KEY>`.
 - Validate workflow YAML syntax, then proceed directly to Phase 4 (no approval checkpoint).
 
 ### Phase 4: PR creation
@@ -113,11 +112,11 @@ Required state: `PR_CREATION`
 Gate: proceed only after `APPROVED: Phase 2`
 
 Actions:
-- Push `issue/<WORK_ITEM_KEY>` branches for every repo that has one. **Skip** submodules where only a single Renovate PR branch was checked out with no further changes — that existing Renovate PR is sufficient.
+- Run `scripts/git/push-issue-branches.sh <WORK_ITEM_KEY>` to push every repo that has an `issue/<WORK_ITEM_KEY>` branch checked out. It skips repos on any other branch (including those left on a Renovate PR head branch, whose existing PR is sufficient).
 - Open the **superproject PR first**, targeting `dev`, referencing `<WORK_ITEM_KEY>`. **The title must literally start with `<WORK_ITEM_KEY>: `** (e.g. `OSOE-1311: Update dependencies`) — submodule `validate-pull-request`/`Check-Parent.ps1` checks search for this exact prefix in the superproject's open PR titles and fail otherwise. GitHub does not add this automatically.
 - **Wait 60 seconds**, then open submodule PRs targeting `dev`, referencing `<WORK_ITEM_KEY>` in the description. Submodule PR titles must **not** include the issue key (added automatically from the branch name) — instead reference the specific updates, e.g. `Update dependencies: Microsoft.NET.Test.Sdk 18.0.1 → 18.3.0, Swashbuckle.AspNetCore 10.1.4 → 10.1.5`.
 - PR bodies containing backticks: write to a temp file and use `gh pr create/edit --body-file <path>` instead of inline `--body "..."` (PowerShell backtick-escaping corrupts inline text — see PowerShell gotchas memory). Verify with `gh pr view <number> --json body --jq '.body'` after creation.
-- After PRs are created, poll CI until all runs complete (see Token efficiency for interval/output guidance) via `gh run list` or `gh pr checks <number> --repo <repo> --json name,state --jq '.[] | "\(.name): \(.state)"'`. **Never use `gh run watch` or `gh pr checks --watch`** — both open a full-screen TUI that never returns control in a non-interactive terminal.
+- After PRs are created, wait for CI with `scripts/gh/wait-for-checks.sh <owner/repo> <pr-number>` (polls with backoff, prints a one-line summary plus failing checks, exits non-zero on failure). **Never use `gh run watch` or `gh pr checks --watch`** — both open a full-screen TUI that never returns control in a non-interactive terminal.
 - Once the superproject PR's Ubuntu build (Build and Test) succeeds, add the `run-windows-build` label (`gh pr edit --add-label run-windows-build`) and wait for the Windows build too.
 - Submodule PR checks must also pass, chiefly **Validate NuGet Publish** — the superproject PR's green checks alone aren't sufficient.
 - If checks fail: investigate and fix. For test failures, reproduce and fix locally first (`dotnet test --filter`) — never use CI as the iteration loop. Push only once tests pass locally, then wait for CI before asking for approval.
@@ -134,11 +133,11 @@ Required state: `FINALIZATION`
 Gate: proceed only after `APPROVED: Phase 4`
 
 Actions:
-- **Before merging any PRs**, revert the Phase 3 temporary GHA refs: in `tools/Lombiq.GitHub.Actions`, revert all `@issue/<WORK_ITEM_KEY>` refs back to `@dev` in every `.yml` under `.github/` (commit + push on `issue/<WORK_ITEM_KEY>`); do the same for the **superproject's** `.github/workflows/*.yml`. This ensures `@dev` self-references land on `dev` once merged.
+- **Before merging any PRs**, run `scripts/git/verify-dev-sync.sh` (stop on DRIFT), then revert the Phase 3 temporary refs with `scripts/git/update-gha-refs.sh revert <WORK_ITEM_KEY>` and commit + push the result in both `tools/Lombiq.GitHub.Actions` and the superproject. This ensures `@dev` self-references land on `dev` once merged.
 - Merge **all** submodule branches to `dev` with `gh pr merge --merge --admin` (never squash/rebase, never `git push`/`git merge` directly onto `dev`; `--admin` bypasses merge queues/branch protection):
   - PRs for submodules with `issue/<WORK_ITEM_KEY>` branches (from Phase 4).
   - The existing Renovate PRs (by number, from Phase 1) for submodules where only a single PR branch was checked out directly (no issue branch).
-- After all submodule PRs are merged, update every submodule pointer in the superproject to the merged `dev` head (`git fetch origin dev && git checkout origin/dev` in each submodule) and commit alongside the workflow ref reverts. Include `[skip ci]` in these commit messages; don't wait for CI on them.
+- After all submodule PRs are merged, run `scripts/git/update-submodule-pointers.sh` to move every submodule to the merged `origin/dev` head and stage the pointers, then commit them alongside the workflow ref reverts. Include `[skip ci]` in these commit messages; don't wait for CI on them.
 - Merge the superproject PR to `dev` only when explicitly approved, then check out the merged `dev` in the superproject (`git fetch origin dev && git checkout origin/dev`).
 - Clean up local branches only when instructed.
 
@@ -150,15 +149,19 @@ STATUS: Complete
 ```
 
 ## Scripts
-**Always use these instead of generating equivalent inline commands or new scripts.** They encode the canonical filtering logic (age cutoff, merge check) and are the single source of truth.
+**Always use these instead of generating equivalent inline commands or new scripts.** They encode the canonical logic (filters, targeted regexes, safety checks) and are the single source of truth. All are run from the superproject root with `bash .agents/skills/renovate-integration/scripts/<path>`. The `gh/` and PR-listing scripts need an authenticated `gh` CLI.
 
-Both require an authenticated `gh` CLI, since they enumerate open PRs rather than branches.
-
-### scripts/git/analyze-renovate-prs.sh
-Read-only. Fetches all remotes, then lists every **open PR with a `renovate/*` head branch** in the superproject and each submodule as ELIGIBLE or SKIP (draft / too old / already merged), with PR number, title, `diff --stat` and commit log vs. `origin/dev` for eligible ones. Configurable via `MAX_AGE_DAYS` (default 5). Covers the superproject too (unlike the checkout script). Never modifies branches, commits, or pushes.
-
-### scripts/git/checkout-latest-renovate-pr.sh
-Fetches, then checks out the head branch of the newest applicable open Renovate PR per repository (submodules only), skipping draft PRs, PRs whose head commit is older than `MAX_AGE_DAYS` (default 5), and ones already merged into `origin/dev`. **Intentionally checks out only one PR per repo**, but prints the other eligible PR numbers/branches so they can be merged manually during Phase 2.
+| Script | Phase | Purpose |
+| --- | --- | --- |
+| `git/analyze-renovate-prs.sh` | 1 | Read-only. Lists every **open PR with a `renovate/*` head branch** in the superproject and each submodule as ELIGIBLE or SKIP (draft / too old / already merged), with PR number, title, `diff --stat` and commit log vs. `origin/dev`. `MAX_AGE_DAYS` (default 5). |
+| `git/checkout-latest-renovate-pr.sh` | 2 | Checks out the head branch of the newest applicable open Renovate PR per submodule (same filters). **One PR per repo**, but prints the other eligible PR numbers/branches to merge manually. |
+| `dotnet/build-with-analyzers.sh [target]` | 2 | Builds with `RunAnalyzersDuringBuild=true`, printing only deduplicated error/warning lines. Defaults to `Lombiq.OSOCE.slnx`. |
+| `git/update-gha-refs.sh apply\|revert <KEY>` | 3, 5 | Rewrites `Lombiq/GitHub-Actions/...@dev` ↔ `@issue/<KEY>` in `tools/Lombiq.GitHub.Actions/.github/**` and `.github/workflows/**`; never touches other repos' refs. Doesn't commit. |
+| `git/push-issue-branches.sh <KEY>` | 4 | Pushes `issue/<KEY>` in the superproject and every submodule where it's the checked-out branch; skips all others. Never force-pushes or targets `dev`. |
+| `gh/wait-for-checks.sh <owner/repo> <pr>` | 4 | Polls PR checks with 60s→300s backoff, prints a compact summary and failing checks; exit 0 pass / 1 fail / 3 timeout. No TUI. |
+| `git/verify-dev-sync.sh` | 5 | Verifies local `dev` matches `origin/dev` everywhere; exits non-zero on drift. |
+| `git/update-submodule-pointers.sh` | 5 | Moves every submodule to merged `origin/dev` and stages changed pointers in the superproject (requires an `issue/*` branch; doesn't commit). |
+| `tests/parse-check.sh` | — | Validates the embedded shell bodies of the PR scripts after editing them. |
 
 ## Self-update policy
 Trigger a self-update for general, reusable, project-wide feedback (logic/workflow corrections, new persistent instructions, helper script changes, safety/branching/approval/tooling refinements). Do not self-update for one-off, situational, or hypothetical feedback.

@@ -43,33 +43,35 @@ Every phase transition requires **explicit user approval**. The skill will never
 └── scripts/
     ├── git/
     │   ├── analyze-renovate-prs.sh
-    │   └── checkout-latest-renovate-pr.sh
+    │   ├── checkout-latest-renovate-pr.sh
+    │   ├── update-gha-refs.sh
+    │   ├── push-issue-branches.sh
+    │   ├── verify-dev-sync.sh
+    │   └── update-submodule-pointers.sh
+    ├── gh/
+    │   └── wait-for-checks.sh
     ├── dotnet/
-    │   └── .gitkeep
+    │   └── build-with-analyzers.sh
     └── tests/
-        ├── .gitkeep
-        └── parse-check.sh
+        ├── parse-check.sh
+        └── gha-refs-test.sh
 ```
 
 ## Scripts
 
-### `scripts/git/analyze-renovate-prs.sh`
+All are run from the superproject root, e.g. `bash .agents/skills/renovate-integration/scripts/git/analyze-renovate-prs.sh`.
 
-Read-only. Lists every open PR with a `renovate/*` head branch in the superproject and each submodule, marking each as ELIGIBLE or SKIP (draft / too old / already merged), with a diff stat and commit log against `origin/dev`.
-
-**Usage:**
-```bash
-bash .agents/skills/renovate-integration/scripts/git/analyze-renovate-prs.sh
-```
-
-### `scripts/git/checkout-latest-renovate-pr.sh`
-
-Checks out the head branch of the newest applicable open Renovate PR in each submodule. Intentionally picks only one PR per repo, and prints the remaining eligible PR numbers so they can be merged manually.
-
-**Usage:**
-```bash
-bash .agents/skills/renovate-integration/scripts/git/checkout-latest-renovate-pr.sh
-```
+| Script | Phase | Purpose |
+|--------|-------|---------|
+| `git/analyze-renovate-prs.sh` | 1 | Read-only listing of open Renovate PRs (ELIGIBLE/SKIP) with diff stats and commit logs. |
+| `git/checkout-latest-renovate-pr.sh` | 2 | Checks out the newest applicable Renovate PR head branch per submodule; lists the rest. |
+| `dotnet/build-with-analyzers.sh` | 2 | Builds with analyzers on, printing only deduplicated diagnostics. |
+| `git/update-gha-refs.sh apply\|revert <KEY>` | 3, 5 | Rewrites only `Lombiq/GitHub-Actions/...` refs between `@dev` and `@issue/<KEY>`. |
+| `git/push-issue-branches.sh <KEY>` | 4 | Pushes `issue/<KEY>` where it's checked out; skips everything else. |
+| `gh/wait-for-checks.sh <owner/repo> <pr>` | 4 | Polls PR checks with backoff, compact output, no TUI. |
+| `git/verify-dev-sync.sh` | 5 | Fails if any local `dev` has drifted from `origin/dev`. |
+| `git/update-submodule-pointers.sh` | 5 | Moves submodules to merged `origin/dev` and stages the pointers. |
+| `tests/parse-check.sh`, `tests/gha-refs-test.sh` | — | Self-tests for the scripts. |
 
 ## Self-Updating
 

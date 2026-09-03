@@ -4,6 +4,23 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ---
 
+## 2026-09-04
+
+**Script the remaining deterministic steps instead of describing them in prose**
+
+- Added `scripts/git/update-gha-refs.sh apply|revert <KEY>` (targeted `Lombiq/GitHub-Actions/...@dev` ↔ `@issue/<KEY>` rewrite across the submodule's and superproject's workflow YAMLs), replacing the Phase 3/5 regex instructions.
+- Added `scripts/git/push-issue-branches.sh <KEY>`, which enforces the "HEAD must be `issue/<KEY>`" push rule across the superproject and all submodules.
+- Added `scripts/gh/wait-for-checks.sh <owner/repo> <pr>`, replacing the manual CI polling loop (60s→300s backoff, compact summary, no `--watch` TUI).
+- Added `scripts/git/verify-dev-sync.sh` (pre-merge `dev` drift check) and `scripts/git/update-submodule-pointers.sh` (move submodules to merged `origin/dev` and stage pointers).
+- Added `scripts/dotnet/build-with-analyzers.sh` for analyzer-enabled builds with deduplicated diagnostics only.
+- Added `scripts/tests/gha-refs-test.sh` (sandbox apply/revert round-trip test proving non-Lombiq/GitHub-Actions refs are untouched).
+- Condensed the Scripts section into a table and removed the prose the scripts now encode.
+- Bumped `metadata.version` to `1.5`.
+
+Reason: User request to move verbal instructions into scripts for fewer tokens and more deterministic execution.
+
+---
+
 ## 2026-09-03
 
 **Drive the workflow from open Renovate PRs instead of `renovate/*` branches**
