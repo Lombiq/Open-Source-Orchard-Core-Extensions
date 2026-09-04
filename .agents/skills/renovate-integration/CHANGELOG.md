@@ -4,6 +4,16 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ---
 
+## 2026-09-04 (3)
+
+**Detect Renovate rewriting rolling branches mid-integration**
+
+- Added `scripts/gh/verify-open-renovate-prs.sh`, run at the end of Phase 5: reports every still-open `renovate/*` PR as `MERGED-BUT-STALE`, `UPDATED-MID-INTEGRATION`, or `NOT-YET-INTEGRATED`.
+- Added a global safety rule and a Phase 5 action documenting that Renovate reuses rolling branch names (e.g. `renovate/non-breaking-dependency-versions`, `renovate/major-browsers`) and can force-push new commits to them at any time, including mid-integration.
+- Reason: during OSOE-1312, three PRs (Lombiq/Orchard-Vue.js#286, Lombiq/UI-Testing-Toolbox#818, #817) stayed open after their earlier content had already been merged, because Renovate pushed new commits to the same branch names while the integration's CI waits and approval checkpoints were still in progress. This was correct behavior, not a bug, but went unnoticed until the user pointed it out — the new script makes it a routine, self-checked step instead.
+
+---
+
 ## 2026-09-04 (2)
 
 **Remove the age-based eligibility cutoff**

@@ -31,6 +31,7 @@ WORK ITEM KEY: <WORK_ITEM_KEY>
 - Commit only on `issue/<WORK_ITEM_KEY>`; never on `dev` or `renovate/*`. Don't prefix commit messages with `<WORK_ITEM_KEY>:` (already in the branch name).
 - Push only via `scripts/git/push-issue-branches.sh <WORK_ITEM_KEY>`, which enforces the HEAD check.
 - Before merging PRs (Phase 5), run `scripts/git/verify-dev-sync.sh`; stop and investigate if it reports DRIFT.
+- Renovate can force-push new commits onto rolling branch names (e.g. `renovate/non-breaking-dependency-versions`, `renovate/major-browsers`) at any point, including while a long-running integration is still in progress. A PR staying open after its branch was merged doesn't necessarily mean the merge failed — verify with `scripts/gh/verify-open-renovate-prs.sh` (Phase 5) before assuming something is wrong.
 - Never skip approval checkpoints or perform later-phase actions early.
 - If a required tool is missing, stop and report it.
 
@@ -139,6 +140,7 @@ Actions:
   - The existing Renovate PRs (by number, from Phase 1) for submodules where only a single PR branch was checked out directly (no issue branch).
 - After all submodule PRs are merged, run `scripts/git/update-submodule-pointers.sh` to move every submodule to the merged `origin/dev` head and stage the pointers, then commit them alongside the workflow ref reverts. Include `[skip ci]` in these commit messages; don't wait for CI on them.
 - Merge the superproject PR to `dev` only when explicitly approved, then check out the merged `dev` in the superproject (`git fetch origin dev && git checkout origin/dev`).
+- After the superproject PR is merged, run `scripts/gh/verify-open-renovate-prs.sh` and report the result. Renovate reuses rolling branch names (e.g. `renovate/non-breaking-dependency-versions`, `renovate/major-browsers`) and can force-push new commits to them at any time, including mid-integration — a PR whose earlier content was merged can still show as open with new content by the time Phase 5 finishes. `UPDATED-MID-INTEGRATION` results are expected in that case: leave them for the next integration pass, don't try to fold them into this one. Only `MERGED-BUT-STALE` or `NOT-YET-INTEGRATED` (for PRs that were supposed to be part of this batch) need investigation.
 - Clean up local branches only when instructed.
 
 Completion output:
@@ -161,6 +163,7 @@ STATUS: Complete
 | `gh/wait-for-checks.sh <owner/repo> <pr>` | 4 | Polls PR checks with 60s→300s backoff, prints a compact summary and failing checks; exit 0 pass / 1 fail / 3 timeout. No TUI. |
 | `git/verify-dev-sync.sh` | 5 | Verifies local `dev` matches `origin/dev` everywhere; exits non-zero on drift. |
 | `git/update-submodule-pointers.sh` | 5 | Moves every submodule to merged `origin/dev` and stages changed pointers in the superproject (requires an `issue/*` branch; doesn't commit). |
+| `gh/verify-open-renovate-prs.sh` | 5 | Read-only. Lists every still-**open** `renovate/*` PR post-merge as `MERGED-BUT-STALE` (unexpectedly not auto-closed), `UPDATED-MID-INTEGRATION` (Renovate force-pushed new commits after we merged an earlier snapshot — expected), or `NOT-YET-INTEGRATED` (no merge commit found — verify it wasn't missed). |
 | `tests/parse-check.sh` | — | Validates the embedded shell bodies of the PR scripts after editing them. |
 
 ## Self-update policy
