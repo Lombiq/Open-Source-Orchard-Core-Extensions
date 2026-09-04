@@ -1,0 +1,38 @@
+{
+  "name": "Lombiq.OSOCE.NuGet.Web",
+  "displayName": "Media Theme",
+  "description": "A recipe created with the media-theme-deployment tool.",
+  "author": "",
+  "website": "",
+  "version": "",
+  "issetuprecipe": false,
+  "categories": [],
+  "tags": [],
+  "steps": [
+    {
+      "name": "Feature",
+      "enable": [
+        "Lombiq.Hosting.MediaTheme.Bridge",
+        "Lombiq.Hosting.MediaTheme"
+      ]
+    },
+    {
+      "name": "Themes",
+      "Site": "Lombiq.Hosting.MediaTheme"
+    },
+    {
+      "name": "mediatheme",
+      "ClearMediaThemeFolder": true,
+      "BaseThemeId": "TheTheme"
+    },
+    {
+      "name": "media",
+      "Files": [
+        {
+          "SourcePath": "_MediaTheme/Assets/.placeholder",
+          "TargetPath": "_MediaTheme/Assets/.placeholder"
+        }
+      ]
+    }
+  ]
+}
