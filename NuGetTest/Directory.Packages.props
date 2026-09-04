@@ -33,12 +33,12 @@
     <PackageVersion Include="Lombiq.Hosting.Azure.ApplicationInsights.Tests.UI" Version="11.0.0" />
     <PackageVersion Include="Lombiq.Hosting.BuildVersionDisplay" Version="8.0.1-alpha.0.nest-608" />
     <PackageVersion Include="Lombiq.Hosting.BuildVersionDisplay.Tests.UI" Version="8.0.1-alpha.0.nest-608" />
-    <PackageVersion Include="Lombiq.Hosting.MediaTheme" Version="9.0.0" />
-    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Bridge" Version="9.0.0" />
-    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Bridge.Tests.UI" Version="9.0.0" />
-    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Targets" Version="9.0.0" />
-    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Tests.Theme" Version="9.0.0" />
-    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Tests.UI" Version="9.0.0" />
+    <PackageVersion Include="Lombiq.Hosting.MediaTheme" Version="9.0.1" />
+    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Bridge" Version="9.0.1" />
+    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Bridge.Tests.UI" Version="9.0.1" />
+    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Targets" Version="9.0.1" />
+    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Tests.Theme" Version="9.0.1" />
+    <PackageVersion Include="Lombiq.Hosting.MediaTheme.Tests.UI" Version="9.0.1" />
     <PackageVersion Include="Lombiq.Hosting.Tenants.Admin.Login" Version="10.0.0" />
     <PackageVersion Include="Lombiq.Hosting.Tenants.EmailQuotaManagement" Version="10.0.0" />
     <PackageVersion Include="Lombiq.Hosting.Tenants.EmailQuotaManagement.Tests.UI" Version="10.0.0" />
@@ -80,7 +80,7 @@
     <PackageVersion Include="Lombiq.Walkthroughs" Version="4.0.0" />
     <PackageVersion Include="Lombiq.Walkthroughs.Tests.UI" Version="4.0.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="10.0.11" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.8.1" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.9.0" />
     <PackageVersion Include="OrchardCore.Application.Cms.Targets" Version="$(OrchardCoreVersion)" />
     <PackageVersion Include="OrchardCore.ContentManagement" Version="$(OrchardCoreVersion)" />
     <PackageVersion Include="OrchardCore.ContentTypes.Abstractions" Version="$(OrchardCoreVersion)" />
