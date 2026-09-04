@@ -4,6 +4,15 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ---
 
+## 2026-09-04 (2)
+
+**Remove the age-based eligibility cutoff**
+
+- Removed `MAX_AGE_DAYS` (previously defaulted to 5 days) from `scripts/git/analyze-renovate-prs.sh` and `scripts/git/checkout-latest-renovate-pr.sh`. Every open Renovate PR is now checked and included regardless of how old it is — an open PR is the only eligibility signal (besides draft state and already-merged-into-`dev`).
+- Reason: PRs were being silently excluded from analysis purely for being old, even though they were still open, unmerged and otherwise applicable.
+
+---
+
 ## 2026-09-04
 
 **Script the remaining deterministic steps instead of describing them in prose**

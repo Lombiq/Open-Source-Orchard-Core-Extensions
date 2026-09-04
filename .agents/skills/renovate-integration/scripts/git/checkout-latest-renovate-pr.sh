@@ -8,8 +8,8 @@
 #   - Fetches all remotes in each submodule.
 #   - Lists open PRs whose head branch starts with renovate/ (newest head commit first).
 #   - Skips draft PRs (Renovate rate-limited).
-#   - Skips PRs whose head commit is older than 5 days.
 #   - Skips PRs already merged into origin/dev.
+#   - There is no age cutoff: every open Renovate PR is considered regardless of age.
 #   - Checks out ONLY ONE Renovate PR branch per submodule (the newest applicable),
 #     and lists the remaining eligible PRs so they can be merged manually.
 #
@@ -26,14 +26,10 @@
 
 set -euo pipefail
 
-MAX_AGE_DAYS="${MAX_AGE_DAYS:-5}"
-
 if ! command -v gh >/dev/null 2>&1; then
   echo "ERROR: gh (GitHub CLI) is required but not installed." >&2
   exit 1
 fi
-
-export MAX_AGE_DAYS
 
 git submodule foreach --recursive '
   echo "--- Processing: $name ---"
@@ -51,8 +47,6 @@ git submodule foreach --recursive '
     exit 0
   fi
 
-  cutoff=$(date -d "$MAX_AGE_DAYS days ago" +%s 2>/dev/null || date -v-"$MAX_AGE_DAYS"d +%s)
-
   # Collect eligible PRs as "<head commit timestamp> <number> <branch>", newest first.
   eligible=$(printf "%s\n" "$prs" | while IFS="$(printf "\t")" read -r number head is_draft; do
     ref="origin/$head"
@@ -68,11 +62,6 @@ git submodule foreach --recursive '
       continue
     fi
 
-    if [ "$ref_ts" -lt "$cutoff" ]; then
-      echo "Skipping #$number $head: older than $MAX_AGE_DAYS days." >&2
-      continue
-    fi
-
     if git merge-base --is-ancestor "$ref" origin/dev 2>/dev/null; then
       echo "Skipping #$number $head: already merged into origin/dev." >&2
       continue
@@ -82,7 +71,7 @@ git submodule foreach --recursive '
   done | sort -rn)
 
   if [ -z "$eligible" ]; then
-    echo "No eligible open Renovate PRs in $name (all draft, too old or already merged), skipping."
+    echo "No eligible open Renovate PRs in $name (all draft or already merged), skipping."
     exit 0
   fi
 

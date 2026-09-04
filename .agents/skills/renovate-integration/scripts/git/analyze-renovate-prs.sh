@@ -4,12 +4,13 @@
 # Read-only analysis of all OPEN Renovate pull requests across the superproject
 # and every submodule. For each PR it reports:
 #   - Number, title, head branch, draft state and last update.
-#   - Whether it is ELIGIBLE or SKIPPED (draft / too old / already merged into origin/dev).
+#   - Whether it is ELIGIBLE or SKIPPED (draft / already merged into origin/dev).
 #   - A diff --stat against origin/dev.
 #   - A commit log against origin/dev.
 #
 # PRs are the source of truth: only branches that have an open Renovate PR are
 # considered. Stale renovate/* branches without a PR are ignored on purpose.
+# There is no age cutoff: every open Renovate PR is checked regardless of how old it is.
 #
 # Usage:
 #   bash .agents/skills/renovate-integration/scripts/git/analyze-renovate-prs.sh
@@ -23,8 +24,6 @@
 #   - Fetches all remotes before evaluating PR head branches.
 
 set -euo pipefail
-
-MAX_AGE_DAYS="${MAX_AGE_DAYS:-5}"
 
 if ! command -v gh >/dev/null 2>&1; then
   echo "ERROR: gh (GitHub CLI) is required but not installed." >&2
@@ -49,8 +48,6 @@ analyze_repo_body='
   echo "$label"
   echo "=========================================="
 
-  cutoff=$(date -d "$MAX_AGE_DAYS days ago" +%s 2>/dev/null || date -v-"$MAX_AGE_DAYS"d +%s)
-
   printf "%s\n" "$prs" | while IFS="$(printf "\t")" read -r number head is_draft updated title; do
     ref="origin/$head"
 
@@ -66,11 +63,6 @@ analyze_repo_body='
     fi
 
     ref_date=$(git show -s --format=%ci "$ref" 2>/dev/null)
-
-    if [ "$ref_ts" -lt "$cutoff" ]; then
-      echo "  SKIP #$number $head ($ref_date): older than $MAX_AGE_DAYS days"
-      continue
-    fi
 
     if git merge-base --is-ancestor "$ref" origin/dev 2>/dev/null; then
       echo "  SKIP #$number $head ($ref_date): already merged into origin/dev"
@@ -88,7 +80,6 @@ analyze_repo_body='
 '
 
 # Superproject.
-export MAX_AGE_DAYS
 bash -c "label='SUPERPROJECT'; $analyze_repo_body"
 echo ""
 

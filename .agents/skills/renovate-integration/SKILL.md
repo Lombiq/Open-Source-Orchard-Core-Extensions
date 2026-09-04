@@ -153,7 +153,7 @@ STATUS: Complete
 
 | Script | Phase | Purpose |
 | --- | --- | --- |
-| `git/analyze-renovate-prs.sh` | 1 | Read-only. Lists every **open PR with a `renovate/*` head branch** in the superproject and each submodule as ELIGIBLE or SKIP (draft / too old / already merged), with PR number, title, `diff --stat` and commit log vs. `origin/dev`. `MAX_AGE_DAYS` (default 5). |
+| `git/analyze-renovate-prs.sh` | 1 | Read-only. Lists every **open PR with a `renovate/*` head branch** in the superproject and each submodule as ELIGIBLE or SKIP (draft / already merged), with PR number, title, `diff --stat` and commit log vs. `origin/dev`. No age cutoff — every open Renovate PR is checked regardless of age. |
 | `git/checkout-latest-renovate-pr.sh` | 2 | Checks out the head branch of the newest applicable open Renovate PR per submodule (same filters). **One PR per repo**, but prints the other eligible PR numbers/branches to merge manually. |
 | `dotnet/build-with-analyzers.sh [target]` | 2 | Builds with `RunAnalyzersDuringBuild=true`, printing only deduplicated error/warning lines. Defaults to `Lombiq.OSOCE.slnx`. |
 | `git/update-gha-refs.sh apply\|revert <KEY>` | 3, 5 | Rewrites `Lombiq/GitHub-Actions/...@dev` ↔ `@issue/<KEY>` in `tools/Lombiq.GitHub.Actions/.github/**` and `.github/workflows/**`; never touches other repos' refs. Doesn't commit. |
