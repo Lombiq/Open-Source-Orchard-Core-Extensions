@@ -4,6 +4,15 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ---
 
+## 2026-09-05
+
+**Check out `dev` in every submodule at the end of Phase 5**
+
+- Added an explicit action after the superproject PR is merged: `git submodule foreach 'git fetch origin dev && git checkout -B dev origin/dev'`. `update-submodule-pointers.sh` leaves every submodule on a detached `HEAD`, which isn't a usable state to leave the workspace in once the integration is done.
+- Reason: after finishing OSOE-1312, submodules were left in detached `HEAD` (or still on `issue/OSOE-1312`); the user had to ask for the workspace to be put back on `dev`.
+
+---
+
 ## 2026-09-04 (5)
 
 **Make local analyzer-build validation match CI's `-warnaserror` by default**
