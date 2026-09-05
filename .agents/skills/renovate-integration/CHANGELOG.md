@@ -4,6 +4,25 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ---
 
+## 2026-09-04 (5)
+
+**Make local analyzer-build validation match CI's `-warnaserror` by default**
+
+- `scripts/dotnet/build-with-analyzers.sh` now passes `--warnaserror`/`TreatWarningsAsErrors=true` by default (opt out with `WARN_AS_ERROR=false`), matching `tools/Lombiq.GitHub.Actions`'s `build-dotnet` action, which defaults `warnings-as-errors` to `true`.
+- Reason: during OSOE-1312, the script reported MA0219/MA0185 as non-blocking warnings, which was used to justify not fixing them. The actual CI build treats warnings as errors and failed on both, well after the analysis had already been (wrongly) closed as "no fix needed" — only caught once real CI runs surfaced the failures. Local validation that doesn't mirror CI's flags gives false confidence.
+
+---
+
+## 2026-09-04 (4)
+
+**Never skip CI on submodule-pointer commits that introduce new content**
+
+- Clarified Phase 5 and added a global safety rule: `[skip ci]` on a submodule-pointer commit is only valid when every pointer it changes was already covered by a passing CI run on the superproject PR (the routine, single-pass case). A pointer-update commit that moves any submodule to content the superproject's own CI hasn't built/tested yet must go through the full `wait-for-checks.sh` cycle, same as Phase 4.
+- Documented the "fold an `UPDATED-MID-INTEGRATION` PR into the current batch" path explicitly: repeat Phase 2–4 for it (including re-verifying its head commit right before merging, since rolling branches can move again), then redo the pointer update and superproject CI wait without `[skip ci]`.
+- Reason: during OSOE-1312, follow-up submodule updates (Lombiq/Orchard-Vue.js#288, Lombiq/UI-Testing-Toolbox#821) were folded in after the initial CI wait, but the resulting submodule-pointer commit on the superproject kept the `[skip ci]` habit from the routine case, so the superproject's own build/test never actually validated the new content before the (still pending) superproject merge — caught by the user, not by the process.
+
+---
+
 ## 2026-09-04 (3)
 
 **Detect Renovate rewriting rolling branches mid-integration**

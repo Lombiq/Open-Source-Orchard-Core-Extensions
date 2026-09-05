@@ -32,6 +32,7 @@ WORK ITEM KEY: <WORK_ITEM_KEY>
 - Push only via `scripts/git/push-issue-branches.sh <WORK_ITEM_KEY>`, which enforces the HEAD check.
 - Before merging PRs (Phase 5), run `scripts/git/verify-dev-sync.sh`; stop and investigate if it reports DRIFT.
 - Renovate can force-push new commits onto rolling branch names (e.g. `renovate/non-breaking-dependency-versions`, `renovate/major-browsers`) at any point, including while a long-running integration is still in progress. A PR staying open after its branch was merged doesn't necessarily mean the merge failed — verify with `scripts/gh/verify-open-renovate-prs.sh` (Phase 5) before assuming something is wrong.
+- `[skip ci]` on a submodule-pointer commit is only safe when every pointer it changes was already covered by a passing CI run on the superproject PR. Never use it on a pointer-update commit that introduces submodule content the superproject's own CI hasn't actually built and tested yet — that defeats the purpose of the check.
 - Never skip approval checkpoints or perform later-phase actions early.
 - If a required tool is missing, stop and report it.
 
@@ -138,9 +139,14 @@ Actions:
 - Merge **all** submodule branches to `dev` with `gh pr merge --merge --admin` (never squash/rebase, never `git push`/`git merge` directly onto `dev`; `--admin` bypasses merge queues/branch protection):
   - PRs for submodules with `issue/<WORK_ITEM_KEY>` branches (from Phase 4).
   - The existing Renovate PRs (by number, from Phase 1) for submodules where only a single PR branch was checked out directly (no issue branch).
-- After all submodule PRs are merged, run `scripts/git/update-submodule-pointers.sh` to move every submodule to the merged `origin/dev` head and stage the pointers, then commit them alongside the workflow ref reverts. Include `[skip ci]` in these commit messages; don't wait for CI on them.
+- After all submodule PRs are merged, run `scripts/git/update-submodule-pointers.sh` to move every submodule to the merged `origin/dev` head and stage the pointers, then commit them alongside the workflow ref reverts.
+  - Include `[skip ci]` in this commit message **only** when it moves every pointer to exactly the commits Phase 4's CI wait already validated (the routine, single-pass case where nothing changed since) — the superproject's own build was never actually re-run against these exact submodule commits otherwise.
+  - If any submodule content changed since Phase 4's CI wait (a later fold-in round, see below), the pointer-update commit must **not** use `[skip ci]`: push it normally and run `scripts/gh/wait-for-checks.sh` again on the superproject PR, the same as Phase 4, before merging.
 - Merge the superproject PR to `dev` only when explicitly approved, then check out the merged `dev` in the superproject (`git fetch origin dev && git checkout origin/dev`).
-- After the superproject PR is merged, run `scripts/gh/verify-open-renovate-prs.sh` and report the result. Renovate reuses rolling branch names (e.g. `renovate/non-breaking-dependency-versions`, `renovate/major-browsers`) and can force-push new commits to them at any time, including mid-integration — a PR whose earlier content was merged can still show as open with new content by the time Phase 5 finishes. `UPDATED-MID-INTEGRATION` results are expected in that case: leave them for the next integration pass, don't try to fold them into this one. Only `MERGED-BUT-STALE` or `NOT-YET-INTEGRATED` (for PRs that were supposed to be part of this batch) need investigation.
+- Before the superproject PR is merged, run `scripts/gh/verify-open-renovate-prs.sh` and report the result. Renovate reuses rolling branch names (e.g. `renovate/non-breaking-dependency-versions`, `renovate/major-browsers`) and can force-push new commits to them at any time, including mid-integration — a PR whose earlier content was merged can still show as open with new content by the time Phase 5 finishes.
+  - Default handling: `UPDATED-MID-INTEGRATION` results are expected and safe to leave for the next integration pass.
+  - If explicitly instructed to fold an `UPDATED-MID-INTEGRATION` PR into the current batch instead: re-fetch its current head (branches like these can move again between the check and the merge — re-verify the head commit right before merging, don't assume an earlier snapshot is still current), repeat Phase 2–4 for it alone (fresh `issue/<WORK_ITEM_KEY>` branch off current `origin/dev`, merge, build-validate, push, open a PR, wait for its own CI, merge with `--admin`), then redo `update-submodule-pointers.sh` and the superproject CI wait as described above — never bypass CI for a pointer bump that includes new content.
+  - `MERGED-BUT-STALE` or `NOT-YET-INTEGRATED` (for PRs that were supposed to be part of this batch) need investigation.
 - Clean up local branches only when instructed.
 
 Completion output:
