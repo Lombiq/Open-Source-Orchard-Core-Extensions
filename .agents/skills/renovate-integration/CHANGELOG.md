@@ -4,6 +4,74 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ---
 
+## 2026-09-04 (5)
+
+**Make local analyzer-build validation match CI's `-warnaserror` by default**
+
+- `scripts/dotnet/build-with-analyzers.sh` now passes `--warnaserror`/`TreatWarningsAsErrors=true` by default (opt out with `WARN_AS_ERROR=false`), matching `tools/Lombiq.GitHub.Actions`'s `build-dotnet` action, which defaults `warnings-as-errors` to `true`.
+- Reason: during OSOE-1312, the script reported MA0219/MA0185 as non-blocking warnings, which was used to justify not fixing them. The actual CI build treats warnings as errors and failed on both, well after the analysis had already been (wrongly) closed as "no fix needed" — only caught once real CI runs surfaced the failures. Local validation that doesn't mirror CI's flags gives false confidence.
+
+---
+
+## 2026-09-04 (4)
+
+**Never skip CI on submodule-pointer commits that introduce new content**
+
+- Clarified Phase 5 and added a global safety rule: `[skip ci]` on a submodule-pointer commit is only valid when every pointer it changes was already covered by a passing CI run on the superproject PR (the routine, single-pass case). A pointer-update commit that moves any submodule to content the superproject's own CI hasn't built/tested yet must go through the full `wait-for-checks.sh` cycle, same as Phase 4.
+- Documented the "fold an `UPDATED-MID-INTEGRATION` PR into the current batch" path explicitly: repeat Phase 2–4 for it (including re-verifying its head commit right before merging, since rolling branches can move again), then redo the pointer update and superproject CI wait without `[skip ci]`.
+- Reason: during OSOE-1312, follow-up submodule updates (Lombiq/Orchard-Vue.js#288, Lombiq/UI-Testing-Toolbox#821) were folded in after the initial CI wait, but the resulting submodule-pointer commit on the superproject kept the `[skip ci]` habit from the routine case, so the superproject's own build/test never actually validated the new content before the (still pending) superproject merge — caught by the user, not by the process.
+
+---
+
+## 2026-09-04 (3)
+
+**Detect Renovate rewriting rolling branches mid-integration**
+
+- Added `scripts/gh/verify-open-renovate-prs.sh`, run at the end of Phase 5: reports every still-open `renovate/*` PR as `MERGED-BUT-STALE`, `UPDATED-MID-INTEGRATION`, or `NOT-YET-INTEGRATED`.
+- Added a global safety rule and a Phase 5 action documenting that Renovate reuses rolling branch names (e.g. `renovate/non-breaking-dependency-versions`, `renovate/major-browsers`) and can force-push new commits to them at any time, including mid-integration.
+- Reason: during OSOE-1312, three PRs (Lombiq/Orchard-Vue.js#286, Lombiq/UI-Testing-Toolbox#818, #817) stayed open after their earlier content had already been merged, because Renovate pushed new commits to the same branch names while the integration's CI waits and approval checkpoints were still in progress. This was correct behavior, not a bug, but went unnoticed until the user pointed it out — the new script makes it a routine, self-checked step instead.
+
+---
+
+## 2026-09-04 (2)
+
+**Remove the age-based eligibility cutoff**
+
+- Removed `MAX_AGE_DAYS` (previously defaulted to 5 days) from `scripts/git/analyze-renovate-prs.sh` and `scripts/git/checkout-latest-renovate-pr.sh`. Every open Renovate PR is now checked and included regardless of how old it is — an open PR is the only eligibility signal (besides draft state and already-merged-into-`dev`).
+- Reason: PRs were being silently excluded from analysis purely for being old, even though they were still open, unmerged and otherwise applicable.
+
+---
+
+## 2026-09-04
+
+**Script the remaining deterministic steps instead of describing them in prose**
+
+- Added `scripts/git/update-gha-refs.sh apply|revert <KEY>` (targeted `Lombiq/GitHub-Actions/...@dev` ↔ `@issue/<KEY>` rewrite across the submodule's and superproject's workflow YAMLs), replacing the Phase 3/5 regex instructions.
+- Added `scripts/git/push-issue-branches.sh <KEY>`, which enforces the "HEAD must be `issue/<KEY>`" push rule across the superproject and all submodules.
+- Added `scripts/gh/wait-for-checks.sh <owner/repo> <pr>`, replacing the manual CI polling loop (60s→300s backoff, compact summary, no `--watch` TUI).
+- Added `scripts/git/verify-dev-sync.sh` (pre-merge `dev` drift check) and `scripts/git/update-submodule-pointers.sh` (move submodules to merged `origin/dev` and stage pointers).
+- Added `scripts/dotnet/build-with-analyzers.sh` for analyzer-enabled builds with deduplicated diagnostics only.
+- Added `scripts/tests/gha-refs-test.sh` (sandbox apply/revert round-trip test proving non-Lombiq/GitHub-Actions refs are untouched).
+- Condensed the Scripts section into a table and removed the prose the scripts now encode.
+- Bumped `metadata.version` to `1.5`.
+
+Reason: User request to move verbal instructions into scripts for fewer tokens and more deterministic execution.
+
+---
+
+## 2026-09-03
+
+**Drive the workflow from open Renovate PRs instead of `renovate/*` branches**
+
+- Phase 1 now enumerates **open Renovate pull requests** (PRs whose head branch starts with `renovate/`) in the superproject and every submodule, and records their numbers and head branches; branches without an open PR are out of scope.
+- Phase 2 checks out those PRs' head branches (and merges the additional ones into `issue/<WORK_ITEM_KEY>`); Phases 4-5 reference the PR numbers gathered in Phase 1.
+- Replaced `scripts/git/analyze-renovate-branches.sh` with `scripts/git/analyze-renovate-prs.sh` and `scripts/git/checkout-latest-renovate.sh` with `scripts/git/checkout-latest-renovate-pr.sh`. Both use `gh pr list` (authenticated `gh` is now a requirement), skip draft PRs in addition to the existing age/already-merged filters, and the checkout script now prints the other eligible PRs it didn't check out.
+- Bumped `metadata.version` to `1.4`.
+
+Reason: Explicit user request — open PRs are the accurate signal of pending Renovate work, whereas raw `renovate/*` branch scanning also surfaces abandoned/closed-PR branches.
+
+---
+
 ## 2026-08-27
 
 **Reduce token usage during execution, not just file size**

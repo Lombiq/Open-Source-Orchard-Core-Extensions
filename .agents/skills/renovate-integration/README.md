@@ -4,7 +4,11 @@ A project-level Copilot agent skill that automates safe, approval-gated integrat
 
 ## Purpose
 
-Renovate creates `renovate/*` branches with dependency updates in this superproject and its submodules. Integrating these updates manually is tedious and error-prone. This skill provides a structured, phased workflow with safety gates at every step.
+Renovate opens pull requests with dependency updates in this superproject and its submodules. Integrating these updates manually is tedious and error-prone. This skill provides a structured, phased workflow with safety gates at every step. It discovers work by listing **open Renovate PRs** in every repository and then checking out their head branches — stale `renovate/*` branches without an open PR are ignored.
+
+## Requirements
+
+- [GitHub CLI](https://cli.github.com/) (`gh`), authenticated — used to enumerate and merge Renovate PRs.
 
 ## Quick Start
 
@@ -14,8 +18,8 @@ Invoke the skill and it will prompt you for a Jira work item key (e.g. `OSOE-123
 
 | Phase | Name              | Description                                              |
 |-------|-------------------|----------------------------------------------------------|
-| 1     | Analysis          | Identify renovate branches, review diffs, classify risk  |
-| 2     | Implementation    | Merge changes into `issue/` branch, fix build issues     |
+| 1     | Analysis          | List open Renovate PRs, review diffs, classify risk      |
+| 2     | Implementation    | Check out/merge PR branches into `issue/` branch, fix build issues |
 | 3     | GitHub Actions    | Update workflow references as needed                     |
 | 4     | PR Creation       | Open PRs in correct dependency order                     |
 | 5     | Finalization      | Revert temp references, merge to `dev` when approved     |
@@ -38,23 +42,36 @@ Every phase transition requires **explicit user approval**. The skill will never
 ├── CHANGELOG.md        ← Skill evolution log (append-only)
 └── scripts/
     ├── git/
-    │   └── checkout-latest-renovate.sh
+    │   ├── analyze-renovate-prs.sh
+    │   ├── checkout-latest-renovate-pr.sh
+    │   ├── update-gha-refs.sh
+    │   ├── push-issue-branches.sh
+    │   ├── verify-dev-sync.sh
+    │   └── update-submodule-pointers.sh
+    ├── gh/
+    │   └── wait-for-checks.sh
     ├── dotnet/
-    │   └── .gitkeep
+    │   └── build-with-analyzers.sh
     └── tests/
-        └── .gitkeep
+        ├── parse-check.sh
+        └── gha-refs-test.sh
 ```
 
 ## Scripts
 
-### `scripts/git/checkout-latest-renovate.sh`
+All are run from the superproject root, e.g. `bash .agents/skills/renovate-integration/scripts/git/analyze-renovate-prs.sh`.
 
-Checks out the latest applicable `renovate/*` branch in each submodule. Only selects branches newer than `origin/dev`. Intentionally picks only the newest applicable branch per repo — other renovate branches may exist but are ignored.
-
-**Usage:**
-```bash
-bash .agents/skills/renovate-integration/scripts/git/checkout-latest-renovate.sh
-```
+| Script | Phase | Purpose |
+|--------|-------|---------|
+| `git/analyze-renovate-prs.sh` | 1 | Read-only listing of open Renovate PRs (ELIGIBLE/SKIP) with diff stats and commit logs. |
+| `git/checkout-latest-renovate-pr.sh` | 2 | Checks out the newest applicable Renovate PR head branch per submodule; lists the rest. |
+| `dotnet/build-with-analyzers.sh` | 2 | Builds with analyzers on, printing only deduplicated diagnostics. |
+| `git/update-gha-refs.sh apply\|revert <KEY>` | 3, 5 | Rewrites only `Lombiq/GitHub-Actions/...` refs between `@dev` and `@issue/<KEY>`. |
+| `git/push-issue-branches.sh <KEY>` | 4 | Pushes `issue/<KEY>` where it's checked out; skips everything else. |
+| `gh/wait-for-checks.sh <owner/repo> <pr>` | 4 | Polls PR checks with backoff, compact output, no TUI. |
+| `git/verify-dev-sync.sh` | 5 | Fails if any local `dev` has drifted from `origin/dev`. |
+| `git/update-submodule-pointers.sh` | 5 | Moves submodules to merged `origin/dev` and stages the pointers. |
+| `tests/parse-check.sh`, `tests/gha-refs-test.sh` | — | Self-tests for the scripts. |
 
 ## Self-Updating
 
