@@ -1,6 +1,7 @@
 <Project Sdk="Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk/2.1.0">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
+    <OutputType>Exe</OutputType>
     <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
   </PropertyGroup>
 
@@ -12,8 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!-- The published 2.1.0 SDK still includes VSTest dependencies. -->
+    <!-- Configure the executable runner while using the published 2.1.0 SDK. -->
     <PackageReference Remove="Microsoft.NET.Test.Sdk;xunit.runner.visualstudio" />
+    <PackageReference Include="xunit.v3" />
     <PackageReference Include="Microsoft.Testing.Extensions.GitHubActionsReport" />
     <PackageReference Include="Microsoft.Testing.Extensions.HangDump" />
     <PackageReference Include="Microsoft.Testing.Extensions.TrxReport" />
