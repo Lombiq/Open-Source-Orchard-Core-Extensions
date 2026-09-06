@@ -27,6 +27,10 @@ UI test projects should need only `Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk` for 
 
 Reuse the common test SDK configuration through the existing SDK inheritance pattern. Ensure the published UI SDK package contains the inherited imports, and verify both local submodule imports and a consumer of the published package.
 
+## Documentation
+
+Avoid fixed package-version wording (such as `xunit.v3` 4.0.0 or xUnit 4) in ongoing documentation. Describe the package or capability instead. Keep specific versions in migration guides when they identify the required upgrade.
+
 ## Test harnesses and validation
 
 - Keep regression harnesses simple while preserving their scenarios, failure diagnostics, environment restoration, and exit-code behavior.
