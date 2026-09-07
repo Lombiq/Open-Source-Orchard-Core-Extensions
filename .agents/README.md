@@ -6,6 +6,7 @@ These rules apply to work in the OSOCE superproject and its submodules. Use the 
 
 - Follow the user's latest branch choice in the superproject and affected submodules. If the user corrects the branch name, stop adding work to the previous branch and preserve its unrelated work.
 - Do not prefix commit messages with the issue key. Use a concise description of the change; the branch already identifies the issue.
+- End every PR description with a line break followed by the work item key on its own final line.
 - Inspect staged and unstaged changes before committing. Include only the requested work, preserving unrelated user edits and staged changes.
 - When integrating a submodule change, push its commit before pushing the superproject commit that references it.
 
