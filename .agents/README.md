@@ -24,7 +24,7 @@ Keep all SDK alpha references in sync with the coordinated prerelease, including
 
 ## SDK consumer contracts
 
-The UI test SDK also serves reusable test-helper libraries. Preserve that library behavior; do not make every UI SDK consumer executable by inheriting the unit test SDK. Projects that actually run UI tests, such as the NuGet UI test project, should use Lombiq.MSBuild.OrchardCore.Tests.Sdk for the executable runner and reference Lombiq.Tests.UI explicitly. Reusable UI test libraries use Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk, which supplies the helper dependency without configuring an executable runner.
+Use `Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk` for executable UI test projects. It supplies the runner and the `Lombiq.Tests.UI` dependency. Use `Lombiq.MSBuild.OrchardCore.Tests.UI.Library.Sdk` for reusable libraries containing UI test methods; it supplies the helper dependency without configuring an executable runner. Update both local imports and NuGet SDK references when migrating consumers.
 
 Validate both executable test consumers and reusable libraries when changing test SDKs. Verify that published packages behave like local submodule imports.
 

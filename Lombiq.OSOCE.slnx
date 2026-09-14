@@ -105,6 +105,7 @@
     <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Library.Sdk/Lombiq.MSBuild.Library.Sdk.csproj" />
     <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.OrchardCore.Module.Sdk/Lombiq.MSBuild.OrchardCore.Module.Sdk.csproj" />
     <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.OrchardCore.Tests.Sdk/Lombiq.MSBuild.OrchardCore.Tests.Sdk.csproj" />
+    <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.OrchardCore.Tests.UI.Library.Sdk/Lombiq.MSBuild.OrchardCore.Tests.UI.Library.Sdk.csproj" />
     <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk/Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk.csproj" />
     <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.OrchardCore.Theme.Sdk/Lombiq.MSBuild.OrchardCore.Theme.Sdk.csproj" />
     <Project Path="src/Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Targets.Samples/Lombiq.MSBuild.Targets.Samples.csproj" />
