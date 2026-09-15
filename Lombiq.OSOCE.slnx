@@ -16,6 +16,7 @@
     <File Path=".gitignore" />
     <File Path="Directory.Build.props" />
     <File Path="eslint.custom.mjs" />
+    <File Path="global.json" />
     <File Path="License.md" />
     <File Path="NuGet.config" />
     <File Path="Readme.md" />
