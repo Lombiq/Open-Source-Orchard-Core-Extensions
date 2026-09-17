@@ -3,7 +3,6 @@
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <RazorRuntimeCompilation>false</RazorRuntimeCompilation>
     <!-- Test value for Lombiq.Hosting.BuildVersionDisplay. Intentionally different than the value in its props file. -->
     <BuildVersionDisplay_BuildUrl>
       https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/runs/456
@@ -64,7 +63,6 @@
     <PackageReference Include="Lombiq.UIKit.Widgets.Tests.UI" />
     <PackageReference Include="Lombiq.VueJs.Resources" />
     <PackageReference Include="Lombiq.Walkthroughs" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Condition="'$(RazorRuntimeCompilation)' == 'true'" />
   </ItemGroup>
 
   <ItemGroup>
