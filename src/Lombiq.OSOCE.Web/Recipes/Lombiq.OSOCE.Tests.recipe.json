@@ -57,6 +57,7 @@
         "Lombiq.UIKit.Widgets",
         "Lombiq.VueJs.Resources",
         "OrchardCore.Email.Smtp",
+        "OrchardCore.HealthChecks",
         "OrchardCore.Localization",
         "OrchardCore.Media",
         "TheTheme",
