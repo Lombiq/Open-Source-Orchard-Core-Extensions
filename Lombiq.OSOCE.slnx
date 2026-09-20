@@ -69,6 +69,7 @@
     <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.EmailQuotaManagement/Lombiq.Hosting.Tenants.EmailQuotaManagement.csproj" />
     <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.EnvironmentRobots/Lombiq.Hosting.Tenants.EnvironmentRobots.csproj" />
     <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.FeaturesGuard/Lombiq.Hosting.Tenants.FeaturesGuard.csproj" />
+    <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.HealthChecks/Lombiq.Hosting.Tenants.HealthChecks.csproj" />
     <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.IdleTenantManagement/Lombiq.Hosting.Tenants.IdleTenantManagement.csproj" />
     <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.Maintenance/Lombiq.Hosting.Tenants.Maintenance.csproj" />
     <Project Path="src/Modules/Lombiq.Hosting.Tenants/Lombiq.Hosting.Tenants.Management/Lombiq.Hosting.Tenants.Management.csproj" />
