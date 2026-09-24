@@ -95,7 +95,7 @@ jobs:
 
   add-windows-build-warning-label:
     name: Add Windows Build Warning Label
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 2
     needs: [build-and-test-larger-runners, build-and-test-nuget-test, powershell-static-code-analysis]
     steps:
