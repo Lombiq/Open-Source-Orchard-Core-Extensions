@@ -35,7 +35,6 @@
         "Lombiq.Hosting.Tenants.EmailQuotaManagement",
         "Lombiq.Hosting.Tenants.EnvironmentRobots",
         "Lombiq.Hosting.Tenants.FeaturesGuard",
-        "Lombiq.Hosting.Tenants.HealthChecks",
         "Lombiq.Hosting.Tenants.IdleTenantManagement.ShutDownIdleTenants",
         "Lombiq.Hosting.Tenants.Maintenance",
         "Lombiq.Hosting.Tenants.Maintenance.AddAdministratorRoleToUsersWithRole",
