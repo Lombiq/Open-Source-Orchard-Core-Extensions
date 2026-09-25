@@ -23,6 +23,7 @@
     <PackageReference Include="Lombiq.Hosting.MediaTheme.Tests.UI" />
     <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots.Tests.UI" />
     <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard.Tests.UI" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.HealthChecks.Tests.UI" />
     <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI" />
     <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement.Tests.UI" />
     <PackageReference Include="Lombiq.Hosting.Tenants.EmailQuotaManagement.Tests.UI" />

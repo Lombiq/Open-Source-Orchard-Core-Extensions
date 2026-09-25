@@ -42,6 +42,7 @@
     <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" />
     <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots" />
     <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.HealthChecks" />
     <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Maintenance" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Management" />
