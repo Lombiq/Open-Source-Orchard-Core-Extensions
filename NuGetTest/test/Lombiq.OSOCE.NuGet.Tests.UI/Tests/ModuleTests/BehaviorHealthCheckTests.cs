@@ -18,11 +18,11 @@ public class BehaviorHealthCheckTests : UITestBase
         ExecuteTestAfterSetupAsync(
             context => context.TestHealthChecksAsync("Lombiq.OSOCE.NuGet.BasicOrchardFeaturesTests"),
             configuration =>
+            {
+                configuration.ConfigureTenantHealthCheckTests();
                 configuration.AssertAppLogsAsync = app =>
                     app.LogsShouldNotContainAsync(
-                        logEntry =>
-                            logEntry.Level >= LogLevel.Error &&
-                            !logEntry.Message.Contains("Health check TestHealthCheck with status Unhealthy") &&
-                            !logEntry.Message.Contains("Tenant is Unhealthy:"),
-                        configuration.TestCancellationToken));
+                        logEntry => logEntry.Level >= LogLevel.Error && logEntry.IsNotHealthCheckError(),
+                        configuration.TestCancellationToken);
+            });
 }
