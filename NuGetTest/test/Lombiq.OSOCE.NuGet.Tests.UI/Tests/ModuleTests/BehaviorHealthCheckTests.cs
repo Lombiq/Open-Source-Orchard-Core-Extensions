@@ -1,5 +1,4 @@
 using Lombiq.Hosting.Tenants.HealthChecks.Tests.UI.Extensions;
-using Lombiq.OSOCE.NuGet.Tests.UI;
 using Lombiq.Tests.UI.Extensions;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
