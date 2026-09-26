@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
+namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests.ModuleTests;
 
 public class BehaviorHealthCheckTests : UITestBase
 {
