@@ -1,4 +1,4 @@
-﻿<Project Sdk="Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk/2.1.1-alpha.3.osoe-1308">
+﻿<Project Sdk="Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk/2.1.1-alpha.5.osoe-1317">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
   </PropertyGroup>
@@ -23,6 +23,7 @@
     <PackageReference Include="Lombiq.Hosting.MediaTheme.Tests.UI" />
     <PackageReference Include="Lombiq.Hosting.Tenants.EnvironmentRobots.Tests.UI" />
     <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard.Tests.UI" />
+    <PackageReference Include="Lombiq.Hosting.Tenants.HealthChecks.Tests.UI" />
     <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement.Tests.UI" />
     <PackageReference Include="Lombiq.Hosting.Tenants.MediaStorageManagement.Tests.UI" />
     <PackageReference Include="Lombiq.Hosting.Tenants.EmailQuotaManagement.Tests.UI" />
