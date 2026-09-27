@@ -34,6 +34,7 @@
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.EmailQuotaManagement\Lombiq.Hosting.Tenants.EmailQuotaManagement.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.EnvironmentRobots\Lombiq.Hosting.Tenants.EnvironmentRobots.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.FeaturesGuard\Lombiq.Hosting.Tenants.FeaturesGuard.csproj" />
+    <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.HealthChecks\Lombiq.Hosting.Tenants.HealthChecks.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.IdleTenantManagement\Lombiq.Hosting.Tenants.IdleTenantManagement.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.Maintenance\Lombiq.Hosting.Tenants.Maintenance.csproj" />
     <ProjectReference Include="..\Modules\Lombiq.Hosting.Tenants\Lombiq.Hosting.Tenants.Management\Lombiq.Hosting.Tenants.Management.csproj" />

@@ -28,6 +28,7 @@ builder.Services
                     FeatureIds.Default,
                 ],
             })
+        .EnableTenantHealthChecks(configuration)
         .EnableAutoSetupIfNotUITesting(configuration));
 
 var app = builder.Build();

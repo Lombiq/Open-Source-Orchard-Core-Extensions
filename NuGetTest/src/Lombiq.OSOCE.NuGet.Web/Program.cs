@@ -20,6 +20,7 @@ builder.Services
             {
                 ["OrchardCore.Twitter"] = ["Lombiq.UIKit", "Lombiq.ChartJs"],
             })
+        .EnableTenantHealthChecks(configuration)
         .EnableAutoSetupIfNotUITesting(configuration));
 
 var app = builder.Build();
