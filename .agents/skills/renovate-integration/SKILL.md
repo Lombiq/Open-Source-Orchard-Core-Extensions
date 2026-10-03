@@ -4,7 +4,7 @@ description: Approval-gated workflow for integrating Renovate updates across the
 license: MIT
 metadata:
   author: Lombiq Technologies
-  version: "1.5"
+  version: "1.6"
 ---
 
 # Renovate Integration
@@ -33,6 +33,7 @@ WORK ITEM KEY: <WORK_ITEM_KEY>
 - Before merging PRs (Phase 5), run `scripts/git/verify-dev-sync.sh`; stop and investigate if it reports DRIFT.
 - Renovate can force-push new commits onto rolling branch names (e.g. `renovate/non-breaking-dependency-versions`, `renovate/major-browsers`) at any point, including while a long-running integration is still in progress. A PR staying open after its branch was merged doesn't necessarily mean the merge failed — verify with `scripts/gh/verify-open-renovate-prs.sh` (Phase 5) before assuming something is wrong.
 - `[skip ci]` on a submodule-pointer commit is only safe when every pointer it changes was already covered by a passing CI run on the superproject PR. Never use it on a pointer-update commit that introduces submodule content the superproject's own CI hasn't actually built and tested yet — that defeats the purpose of the check.
+- Phase 4's superproject commit stages the pointers of **every** submodule whose HEAD differs from the recorded pointer — issue-branch submodules and submodules left on a Renovate PR head branch alike — so superproject CI validates each submodule's latest commit. In the routine case the Phase 5 pointer commit therefore introduces nothing new and uses `[skip ci]`.
 - Never skip approval checkpoints or perform later-phase actions early.
 - If a required tool is missing, stop and report it.
 
@@ -83,7 +84,7 @@ Gate: proceed only after `APPROVED: Phase 1`
 
 Actions:
 - Run `scripts/git/checkout-latest-renovate-pr.sh` to check out the head branch of the selected Renovate PR in each submodule. **Always use this script — never generate replacement commands.** In the superproject, check out an eligible PR's head branch with `gh pr checkout <number>` when it's the only one.
-- Single eligible PR, no further changes needed → leave its head branch checked out; do **not** create an `issue/<WORK_ITEM_KEY>` branch (the existing Renovate PR suffices).
+- Single eligible PR, no further changes needed → leave its head branch checked out; do **not** create an `issue/<WORK_ITEM_KEY>` branch (the existing Renovate PR suffices). Its pointer is still committed in the superproject in Phase 3/4.
 - Multiple eligible PRs to combine, or additional manual changes needed (e.g. GHA ref updates, patch bumps) → create `issue/<WORK_ITEM_KEY>` from `origin/dev` and merge every applicable PR's head branch into it with `git merge --no-ff` (always a merge commit, never fast-forward), including the ones the checkout script didn't select.
 - If the **superproject** itself has an eligible open Renovate PR (e.g. head branch `renovate/non-breaking-dependency-versions`), merge its head branch into `issue/<WORK_ITEM_KEY>` instead of manually editing the same files.
 - Resolve analyzer warnings, build/test failures, and lockfile updates. Build with `scripts/dotnet/build-with-analyzers.sh [solution]` (analyzers on, deduplicated diagnostics only). When analyzer package updates introduce new warnings in existing code, fix the warnings rather than downgrading the analyzer — create `issue/<WORK_ITEM_KEY>` branches (merging the applicable PR head branches) in the affected submodules if they don't already have one.
@@ -105,7 +106,7 @@ Gate: proceed only after `APPROVED: Phase 2`
 Actions:
 - When `tools/Lombiq.GitHub.Actions` has changes (e.g. lock file maintenance in asset-lint), its internal `Lombiq/GitHub-Actions/...@dev` refs must temporarily point at the issue branch so CI resolves them from there.
 - Run `scripts/git/update-gha-refs.sh apply <WORK_ITEM_KEY>` from the superproject root. It rewrites only refs preceded by `Lombiq/GitHub-Actions/` in `tools/Lombiq.GitHub.Actions/.github/**` and the superproject's `.github/workflows/**`, leaving other repos' refs (e.g. `Lombiq/PowerShell-Analyzers`) untouched. **Never hand-roll this replacement.**
-- Commit the submodule change first, then stage the updated submodule pointer with the superproject workflow changes and commit.
+- Commit the submodule change first, then stage the updated submodule pointer with the superproject workflow changes and commit (see the pointer rule in Phase 4).
 - These refs are **temporary** — reverted in Phase 5 with `update-gha-refs.sh revert <WORK_ITEM_KEY>`.
 - Validate workflow YAML syntax, then proceed directly to Phase 4 (no approval checkpoint).
 
@@ -114,7 +115,8 @@ Required state: `PR_CREATION`
 Gate: proceed only after `APPROVED: Phase 2`
 
 Actions:
-- Run `scripts/git/push-issue-branches.sh <WORK_ITEM_KEY>` to push every repo that has an `issue/<WORK_ITEM_KEY>` branch checked out. It skips repos on any other branch (including those left on a Renovate PR head branch, whose existing PR is sufficient).
+- Before pushing, make sure the superproject is on `issue/<WORK_ITEM_KEY>` (create it from `origin/dev` if needed — also when Phase 3 had no GitHub Actions changes) with a commit staging the pointer of **every** submodule whose HEAD differs from the recorded pointer, including submodules left on a Renovate PR head branch. Use explicit `git add <path>` for each (never `git add -A`/`git commit -a`) and check `git show --stat HEAD` lists exactly the intended workflow files and pointers before pushing.
+- Run `scripts/git/push-issue-branches.sh <WORK_ITEM_KEY>` to push every repo that has an `issue/<WORK_ITEM_KEY>` branch checked out. It skips repos on any other branch (including those left on a Renovate PR head branch, whose existing PR is sufficient and whose pointer is already part of the superproject commit).
 - Open the **superproject PR first**, targeting `dev`, referencing `<WORK_ITEM_KEY>`. **The title must literally start with `<WORK_ITEM_KEY>: `** (e.g. `OSOE-1311: Update dependencies`) — submodule `validate-pull-request`/`Check-Parent.ps1` checks search for this exact prefix in the superproject's open PR titles and fail otherwise. GitHub does not add this automatically.
 - **Wait 60 seconds**, then open submodule PRs targeting `dev`, referencing `<WORK_ITEM_KEY>` in the description. Submodule PR titles must **not** include the issue key (added automatically from the branch name) — instead reference the specific updates, e.g. `Update dependencies: Microsoft.NET.Test.Sdk 18.0.1 → 18.3.0, Swashbuckle.AspNetCore 10.1.4 → 10.1.5`.
 - PR bodies containing backticks: write to a temp file and use `gh pr create/edit --body-file <path>` instead of inline `--body "..."` (PowerShell backtick-escaping corrupts inline text — see PowerShell gotchas memory). Verify with `gh pr view <number> --json body --jq '.body'` after creation.
@@ -136,12 +138,12 @@ Gate: proceed only after `APPROVED: Phase 4`
 
 Actions:
 - **Before merging any PRs**, run `scripts/git/verify-dev-sync.sh` (stop on DRIFT), then revert the Phase 3 temporary refs with `scripts/git/update-gha-refs.sh revert <WORK_ITEM_KEY>` and commit + push the result in both `tools/Lombiq.GitHub.Actions` and the superproject. This ensures `@dev` self-references land on `dev` once merged.
-- Merge **all** submodule branches to `dev` with `gh pr merge --merge --admin` (never squash/rebase, never `git push`/`git merge` directly onto `dev`; `--admin` bypasses merge queues/branch protection):
+- Merge **all** submodule branches to `dev` with `gh pr merge --merge --admin` (never squash/rebase, never `git push`/`git merge` directly onto `dev`; `--admin` bypasses merge queues/branch protection). Pin each merge with `--match-head-commit <sha>` of the head the superproject's CI covered: Renovate may have force-pushed since, and a moved head counts as changed content (see the pointer-commit rule below):
   - PRs for submodules with `issue/<WORK_ITEM_KEY>` branches (from Phase 4).
   - The existing Renovate PRs (by number, from Phase 1) for submodules where only a single PR branch was checked out directly (no issue branch).
 - After all submodule PRs are merged, run `scripts/git/update-submodule-pointers.sh` to move every submodule to the merged `origin/dev` head and stage the pointers, then commit them alongside the workflow ref reverts.
-  - Include `[skip ci]` in this commit message **only** when it moves every pointer to exactly the commits Phase 4's CI wait already validated (the routine, single-pass case where nothing changed since) — the superproject's own build was never actually re-run against these exact submodule commits otherwise.
-  - If any submodule content changed since Phase 4's CI wait (a later fold-in round, see below), the pointer-update commit must **not** use `[skip ci]`: push it normally and run `scripts/gh/wait-for-checks.sh` again on the superproject PR, the same as Phase 4, before merging.
+  - Because Phase 4's commit already staged every submodule's latest pointer, no further CI wait is needed when nothing changed since: include `[skip ci]` in this commit message when every pointer moves to a commit whose content the superproject's CI already validated. Submodule merge commits created by `--admin` merges of the same branch tip are not new content.
+  - If any submodule content changed since Phase 4's CI wait (a Renovate head that moved before merging, or a later fold-in round, see below), the pointer-update commit must **not** use `[skip ci]`: push it normally and run `scripts/gh/wait-for-checks.sh` again on the superproject PR, the same as Phase 4, before merging. Never write the bracketed phrase anywhere in that commit's message (even negated), since GitHub matches it as a plain substring.
 - Merge the superproject PR to `dev` only when explicitly approved, then check out the merged `dev` in the superproject (`git fetch origin dev && git checkout origin/dev`).
 - After the superproject PR is merged, check out `dev` in every submodule too (`git submodule foreach 'git fetch origin dev && git checkout -B dev origin/dev'`) — `update-submodule-pointers.sh` leaves them on a detached `HEAD` at a specific commit, which isn't a usable state to leave the workspace in.
 - Before the superproject PR is merged, run `scripts/gh/verify-open-renovate-prs.sh` and report the result. Renovate reuses rolling branch names (e.g. `renovate/non-breaking-dependency-versions`, `renovate/major-browsers`) and can force-push new commits to them at any time, including mid-integration — a PR whose earlier content was merged can still show as open with new content by the time Phase 5 finishes.

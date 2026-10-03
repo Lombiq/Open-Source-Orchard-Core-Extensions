@@ -4,6 +4,17 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ---
 
+## 2026-10-03
+
+**Commit all submodule pointers in the Phase 4 superproject commit; allow `[skip ci]` on the Phase 5 pointer commit when nothing changed**
+
+- Phase 4 now requires the superproject `issue/<WORK_ITEM_KEY>` commit to stage the pointer of every submodule whose HEAD differs from the recorded one, including submodules left on a Renovate PR head branch (explicit paths only, `git show --stat HEAD` check before pushing). Phase 2/3 wording updated accordingly.
+- Phase 5: the final pointer-update commit takes `[skip ci]` with no further CI wait when no submodule content changed since that CI run (merge commits from `--admin` merges of the same branch tip don't count). Merges are pinned with `--match-head-commit`; a moved Renovate head counts as changed content and requires normal CI. Documented that the bracketed phrase must not appear anywhere in a non-skipped commit message.
+- `update-submodule-pointers.sh` header and closing hint now describe the conditional `[skip ci]` rule.
+- Reason: during OSOE-1327, only issue-branch submodules were committed in the superproject PR; the Renovate-only submodules (Helpful-Libraries, Helpful-Extensions, NPM-Targets) were first pointed at in Phase 5, so their latest commits were never validated by superproject CI beforehand and the final pointer commit needed a full CI run.
+
+---
+
 ## 2026-09-05
 
 **Check out `dev` in every submodule at the end of Phase 5**
