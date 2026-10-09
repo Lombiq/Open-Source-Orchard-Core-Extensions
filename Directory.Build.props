@@ -29,7 +29,8 @@
     <OrchardCoreVersion>3.0.1</OrchardCoreVersion>
   </PropertyGroup>
 
-  <!-- Suppresses vulnerabilities in 'SixLabors.ImageSharp' version 3.1.12, until OrchardCore 4 is released. -->
+  <!-- Suppresses vulnerabilities in 'SixLabors.ImageSharp' version 3.1.12, until the Orchard Core upgrade to v4 is
+  released that drops ImageSharp. -->
   <ItemGroup Condition="'$(LombiqSdkName)' == ''">
     <NuGetAuditSuppress Include="https://github.com/advisories/GHSA-gwg2-r3hj-4w44" />
     <NuGetAuditSuppress Include="https://github.com/advisories/GHSA-j3p4-wp97-rph4" />
