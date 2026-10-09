@@ -32,7 +32,7 @@ WORK ITEM KEY: <WORK_ITEM_KEY>
 - Push only via `scripts/git/push-issue-branches.sh <WORK_ITEM_KEY>`, which enforces the HEAD check.
 - Before merging PRs (Phase 5), run `scripts/git/verify-dev-sync.sh`; stop and investigate if it reports DRIFT.
 - Renovate can force-push new commits onto rolling branch names (e.g. `renovate/non-breaking-dependency-versions`, `renovate/major-browsers`) at any point, including while a long-running integration is still in progress. A PR staying open after its branch was merged doesn't necessarily mean the merge failed — verify with `scripts/gh/verify-open-renovate-prs.sh` (Phase 5) before assuming something is wrong.
-- `[skip ci]` on a submodule-pointer commit is only safe when every pointer it changes was already covered by a passing CI run on the superproject PR. Never use it on a pointer-update commit that introduces submodule content the superproject's own CI hasn't actually built and tested yet — that defeats the purpose of the check.
+- `[skip ci]` on a submodule-pointer commit is only safe when every pointer it changes was already covered by a passing CI run on the superproject PR. Never use it on a pointer-update commit that introduces submodule content the superproject's own CI hasn't actually built and tested yet — that defeats the purpose of the check. Reverting the temporary `Lombiq/GitHub-Actions` refs back to `@dev` (Phase 5) adds no new content, so that superproject commit always uses `[skip ci]`.
 - Phase 4's superproject commit stages the pointers of **every** submodule whose HEAD differs from the recorded pointer — issue-branch submodules and submodules left on a Renovate PR head branch alike — so superproject CI validates each submodule's latest commit. In the routine case the Phase 5 pointer commit therefore introduces nothing new and uses `[skip ci]`.
 - Never skip approval checkpoints or perform later-phase actions early.
 - If a required tool is missing, stop and report it.
@@ -137,7 +137,7 @@ Required state: `FINALIZATION`
 Gate: proceed only after `APPROVED: Phase 4`
 
 Actions:
-- **Before merging any PRs**, run `scripts/git/verify-dev-sync.sh` (stop on DRIFT), then revert the Phase 3 temporary refs with `scripts/git/update-gha-refs.sh revert <WORK_ITEM_KEY>` and commit + push the result in both `tools/Lombiq.GitHub.Actions` and the superproject. This ensures `@dev` self-references land on `dev` once merged.
+- **Before merging any PRs**, run `scripts/git/verify-dev-sync.sh` (stop on DRIFT), then revert the Phase 3 temporary refs with `scripts/git/update-gha-refs.sh revert <WORK_ITEM_KEY>` and commit + push the result in both `tools/Lombiq.GitHub.Actions` and the superproject. The superproject commit (the reverted workflow files plus the `tools/Lombiq.GitHub.Actions` pointer, explicit paths only) must include `[skip ci]` in its message: a ref revert needs no CI run. This ensures `@dev` self-references land on `dev` once merged.
 - Merge **all** submodule branches to `dev` with `gh pr merge --merge --admin` (never squash/rebase, never `git push`/`git merge` directly onto `dev`; `--admin` bypasses merge queues/branch protection). Pin each merge with `--match-head-commit <sha>` of the head the superproject's CI covered: Renovate may have force-pushed since, and a moved head counts as changed content (see the pointer-commit rule below):
   - PRs for submodules with `issue/<WORK_ITEM_KEY>` branches (from Phase 4).
   - The existing Renovate PRs (by number, from Phase 1) for submodules where only a single PR branch was checked out directly (no issue branch).
