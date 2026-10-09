@@ -4,6 +4,15 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ---
 
+## 2026-10-09
+
+**Use `[skip ci]` on the superproject commit that reverts the temporary GitHub Actions refs**
+
+- Phase 5: the superproject commit created after `update-gha-refs.sh revert <WORK_ITEM_KEY>` (reverted workflow files plus the `tools/Lombiq.GitHub.Actions` pointer) must include `[skip ci]`. The global safety rules note this as an always-safe `[skip ci]` case.
+- Reason: during OSOE-1330 that commit was pushed without it and started a full "Build and Test" run, although reverting refs to `@dev` adds no new content and needs no CI.
+
+---
+
 ## 2026-10-03
 
 **Commit all submodule pointers in the Phase 4 superproject commit; allow `[skip ci]` on the Phase 5 pointer commit when nothing changed**
