@@ -8,7 +8,8 @@
 #   - In each submodule: fetch, then check out origin/dev (detached).
 #   - In the superproject: stage every submodule path whose pointer changed.
 #   - Prints the list of updated submodules and leaves committing to the caller
-#     (commit message must contain [skip ci]).
+#     (the message may contain [skip ci] only if no submodule content changed
+#     since the superproject CI run that covered Phase 4's pointers).
 #
 # Usage:
 #   bash .agents/skills/renovate-integration/scripts/git/update-submodule-pointers.sh
@@ -51,4 +52,4 @@ if [ "$staged" -eq 0 ]; then
   exit 0
 fi
 
-echo "Done ($staged pointers). Commit them with a message containing [skip ci]."
+echo "Done ($staged pointers). Commit them with [skip ci] only if no submodule content changed since the superproject CI run; otherwise commit normally (without the bracketed phrase anywhere in the message) and wait for CI."
