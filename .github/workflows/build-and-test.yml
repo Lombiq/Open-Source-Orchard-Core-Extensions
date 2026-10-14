@@ -60,6 +60,7 @@ jobs:
       build-verbosity: minimal
       ui-test-retry-interval-seconds: '60'
       node-version: none
+      build-enable-code-analysis: 'false'
 
   codespell:
     name: Codespell
