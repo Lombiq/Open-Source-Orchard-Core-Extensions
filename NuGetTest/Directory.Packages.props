@@ -5,7 +5,7 @@
     <OrchardCoreVersion>3.0.1</OrchardCoreVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Lombiq.Analyzers.OrchardCore" Version="6.0.1-alpha.0.osoe-344" />
+    <PackageVersion Include="Lombiq.Analyzers.OrchardCore" Version="7.0.0" />
     <PackageVersion Include="Lombiq.AuditTrailExtensions" Version="9.0.0" />
     <PackageVersion Include="Lombiq.BaseTheme.Core" Version="12.0.1-alpha.0.osoe-1317" />
     <PackageVersion Include="Lombiq.BaseTheme.Native" Version="12.0.1-alpha.0.osoe-1317" />
