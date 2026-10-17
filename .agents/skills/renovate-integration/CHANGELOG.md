@@ -4,6 +4,15 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ---
 
+## 2026-10-18
+
+**Add a mandatory staleness check for Renovate branches left checked out**
+
+- `SKILL.md` (v1.8): Phase 2 now requires `git -C <submodule> rev-list --count HEAD..origin/dev` for every submodule left on a Renovate head branch; a non-zero count means creating `issue/<WORK_ITEM_KEY>` from `origin/dev` and merging the Renovate branch with `--no-ff`. Phase 4 repeats the check before staging pointers, and Phase 1 notes that the analysis diff doesn't reveal stale branches.
+- Reason: during OSOE-1332 five Renovate branches were 3-4 commits behind `dev`; pointing the superproject at them reverted recent `dev` content and failed the superproject build with unrelated IDE0055 errors.
+
+---
+
 ## 2026-10-17
 
 **Require clickable PR links in phase summaries**
