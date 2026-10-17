@@ -1,5 +1,6 @@
 using Lombiq.Tests.UI.SecurityScanning;
 using Shouldly;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -14,6 +15,7 @@ public class SecurityScanningTests : UITestBase
 
     // Only scanning the homepage, since this is just to make sure that ZAP still works from NuGet.
     [Fact]
+    [SuppressMessage("Style", "IDE0055:Fix formatting", Justification = "Needed for inline comments.")]
     public Task BasicSecurityScanShouldPass() =>
         ExecuteTestAfterSetupAsync(
             context => context.RunAndAssertBaselineSecurityScanAsync(

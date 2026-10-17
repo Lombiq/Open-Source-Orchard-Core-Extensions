@@ -1,4 +1,5 @@
 using Lombiq.Hosting.Tenants.MediaStorageManagement.Tests.UI.Extensions;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -15,6 +16,7 @@ public class BehaviorMediaStorageManagementTests : UITestBase
     }
 
     [Fact]
+    [SuppressMessage("Style", "IDE0055:Fix formatting", Justification = "Needed for inline comments.")]
     public Task MediaQuotaShouldWork() =>
         ExecuteTestAfterSetupAsync(
             context => context.TestMediaStorageManagementBehaviorAsync(LargeFileSizeInMegabytes),
