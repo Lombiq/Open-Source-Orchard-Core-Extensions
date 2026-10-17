@@ -4,7 +4,7 @@ description: Approval-gated workflow for integrating Renovate updates across the
 license: MIT
 metadata:
   author: Lombiq Technologies
-  version: "1.6"
+  version: "1.7"
 ---
 
 # Renovate Integration
@@ -15,6 +15,7 @@ Use this skill to safely integrate Renovate dependency updates in OSOCE and its 
 - Collect a Jira work item key, store as `<WORK_ITEM_KEY>`.
 - Operate as a strict FSM with an approval checkpoint between every phase.
 - Keep actions minimal and deterministic; stop when a required tool is unavailable.
+- Whenever a response mentions a PR, render it as a clickable Markdown link, `[owner/repo#123](https://github.com/<owner>/<repo>/pull/<n>)` (owner/repo from the submodule's URL in `.gitmodules`, or the superproject's remote) — never a bare `#123`. This applies to every phase summary and approval request.
 
 Initialization prompt: `Please provide the Jira work item / issue key to use (e.g. OSOE-123).`
 
@@ -66,6 +67,7 @@ Actions:
 - Also run (or read the output of) `scripts/git/checkout-latest-renovate-pr.sh` to confirm which single PR per submodule it would check out.
 - Review release notes, PR descriptions and diffs; classify each change as Breaking, Risky, Non-trivial, or Feature.
 - Record each eligible PR's repo, number and head branch — they're needed in Phases 2, 4 and 5.
+- In the Phase 1 summary, list every eligible PR as a link (see "How to use") with its classification.
 
 Constraints:
 - Do not modify code or branches.
@@ -91,6 +93,7 @@ Actions:
 - For string equality warnings (e.g. MA0127), prefer `EqualsOrdinalIgnoreCase` and similar extensions from `Lombiq.HelpfulLibraries` (in `namespace System;`, no extra using needed) over raw `string.Equals(…, StringComparison.…)`.
 - Avoid breaking changes even when an unrelated fix incidentally triggers one (e.g. removing a stale `CompatibilitySuppressions.xml` entry can be flagged as breaking by the packaging pipeline). If a PR gets an automated "this pull request appears to contain breaking changes" comment: prefer a non-breaking fix; otherwise, if the flagged change isn't actually breaking for consumers, add the `ignore-breaking-changes` label and push again; only accept a genuinely breaking change when unavoidable, and document the migration in the PR description.
 - Commit only on `issue/<WORK_ITEM_KEY>`.
+- In the Phase 2 summary, list every PR as a link and state whether it was left on its own head branch or merged into `issue/<WORK_ITEM_KEY>`.
 
 Completion output:
 

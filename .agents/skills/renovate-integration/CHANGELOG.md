@@ -4,6 +4,15 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ---
 
+## 2026-10-17
+
+**Require clickable PR links in phase summaries**
+
+- `SKILL.md` (v1.7): every PR mentioned in a response must be a Markdown link built from the repo's GitHub URL; Phase 1 and Phase 2 summaries must list all PRs as links, and Phase 2 must also state whether each PR was left on its own branch or merged into the issue branch.
+- Reason: during OSOE-1332 the approval requests listed bare PR numbers, forcing the user to look up each repository URL manually.
+
+---
+
 ## 2026-10-09
 
 **Use `[skip ci]` on the superproject commit that reverts the temporary GitHub Actions refs**
