@@ -4,7 +4,7 @@ description: Approval-gated workflow for integrating Renovate updates across the
 license: MIT
 metadata:
   author: Lombiq Technologies
-  version: "1.6"
+  version: "1.8"
 ---
 
 # Renovate Integration
@@ -15,6 +15,7 @@ Use this skill to safely integrate Renovate dependency updates in OSOCE and its 
 - Collect a Jira work item key, store as `<WORK_ITEM_KEY>`.
 - Operate as a strict FSM with an approval checkpoint between every phase.
 - Keep actions minimal and deterministic; stop when a required tool is unavailable.
+- Whenever a response mentions a PR, render it as a clickable Markdown link, `[owner/repo#123](https://github.com/<owner>/<repo>/pull/<n>)` (owner/repo from the submodule's URL in `.gitmodules`, or the superproject's remote) — never a bare `#123`. This applies to every phase summary and approval request.
 
 Initialization prompt: `Please provide the Jira work item / issue key to use (e.g. OSOE-123).`
 
@@ -66,6 +67,8 @@ Actions:
 - Also run (or read the output of) `scripts/git/checkout-latest-renovate-pr.sh` to confirm which single PR per submodule it would check out.
 - Review release notes, PR descriptions and diffs; classify each change as Breaking, Risky, Non-trivial, or Feature.
 - Record each eligible PR's repo, number and head branch — they're needed in Phases 2, 4 and 5.
+- In the Phase 1 summary, list every eligible PR as a link (see "How to use") with its classification.
+- Note that the script's `diff --stat` is merge-base based and doesn't show whether a Renovate branch is behind `dev`; that is checked in Phase 2.
 
 Constraints:
 - Do not modify code or branches.
@@ -85,12 +88,14 @@ Gate: proceed only after `APPROVED: Phase 1`
 Actions:
 - Run `scripts/git/checkout-latest-renovate-pr.sh` to check out the head branch of the selected Renovate PR in each submodule. **Always use this script — never generate replacement commands.** In the superproject, check out an eligible PR's head branch with `gh pr checkout <number>` when it's the only one.
 - Single eligible PR, no further changes needed → leave its head branch checked out; do **not** create an `issue/<WORK_ITEM_KEY>` branch (the existing Renovate PR suffices). Its pointer is still committed in the superproject in Phase 3/4.
+- **Staleness check (mandatory):** for every submodule left on a Renovate head branch, run `git -C <submodule> fetch origin dev` and `git -C <submodule> rev-list --count HEAD..origin/dev`. The analysis diffs are merge-base based and hide a branch that is behind `dev`; pointing the superproject at such a branch reverts recent `dev` content and breaks superproject CI (e.g. unrelated IDE0055 errors). If the count is greater than 0, don't use the branch as-is: create `issue/<WORK_ITEM_KEY>` from `origin/dev` in that submodule, merge the Renovate head branch with `--no-ff`, and treat it as an issue-branch submodule (push + PR in Phase 4).
 - Multiple eligible PRs to combine, or additional manual changes needed (e.g. GHA ref updates, patch bumps) → create `issue/<WORK_ITEM_KEY>` from `origin/dev` and merge every applicable PR's head branch into it with `git merge --no-ff` (always a merge commit, never fast-forward), including the ones the checkout script didn't select.
 - If the **superproject** itself has an eligible open Renovate PR (e.g. head branch `renovate/non-breaking-dependency-versions`), merge its head branch into `issue/<WORK_ITEM_KEY>` instead of manually editing the same files.
 - Resolve analyzer warnings, build/test failures, and lockfile updates. Build with `scripts/dotnet/build-with-analyzers.sh [solution]` (analyzers on, deduplicated diagnostics only). When analyzer package updates introduce new warnings in existing code, fix the warnings rather than downgrading the analyzer — create `issue/<WORK_ITEM_KEY>` branches (merging the applicable PR head branches) in the affected submodules if they don't already have one.
 - For string equality warnings (e.g. MA0127), prefer `EqualsOrdinalIgnoreCase` and similar extensions from `Lombiq.HelpfulLibraries` (in `namespace System;`, no extra using needed) over raw `string.Equals(…, StringComparison.…)`.
 - Avoid breaking changes even when an unrelated fix incidentally triggers one (e.g. removing a stale `CompatibilitySuppressions.xml` entry can be flagged as breaking by the packaging pipeline). If a PR gets an automated "this pull request appears to contain breaking changes" comment: prefer a non-breaking fix; otherwise, if the flagged change isn't actually breaking for consumers, add the `ignore-breaking-changes` label and push again; only accept a genuinely breaking change when unavoidable, and document the migration in the PR description.
 - Commit only on `issue/<WORK_ITEM_KEY>`.
+- In the Phase 2 summary, list every PR as a link and state whether it was left on its own head branch or merged into `issue/<WORK_ITEM_KEY>`.
 
 Completion output:
 
@@ -115,7 +120,7 @@ Required state: `PR_CREATION`
 Gate: proceed only after `APPROVED: Phase 2`
 
 Actions:
-- Before pushing, make sure the superproject is on `issue/<WORK_ITEM_KEY>` (create it from `origin/dev` if needed — also when Phase 3 had no GitHub Actions changes) with a commit staging the pointer of **every** submodule whose HEAD differs from the recorded pointer, including submodules left on a Renovate PR head branch. Use explicit `git add <path>` for each (never `git add -A`/`git commit -a`) and check `git show --stat HEAD` lists exactly the intended workflow files and pointers before pushing.
+- Before pushing, make sure the superproject is on `issue/<WORK_ITEM_KEY>` (create it from `origin/dev` if needed — also when Phase 3 had no GitHub Actions changes) with a commit staging the pointer of **every** submodule whose HEAD differs from the recorded pointer, including submodules left on a Renovate PR head branch. Use explicit `git add <path>` for each (never `git add -A`/`git commit -a`) and check `git show --stat HEAD` lists exactly the intended workflow files and pointers before pushing. Re-run the Phase 2 staleness check (`rev-list --count HEAD..origin/dev` must be 0) for every submodule being pointed at.
 - Run `scripts/git/push-issue-branches.sh <WORK_ITEM_KEY>` to push every repo that has an `issue/<WORK_ITEM_KEY>` branch checked out. It skips repos on any other branch (including those left on a Renovate PR head branch, whose existing PR is sufficient and whose pointer is already part of the superproject commit).
 - Open the **superproject PR first**, targeting `dev`, referencing `<WORK_ITEM_KEY>`. **The title must literally start with `<WORK_ITEM_KEY>: `** (e.g. `OSOE-1311: Update dependencies`) — submodule `validate-pull-request`/`Check-Parent.ps1` checks search for this exact prefix in the superproject's open PR titles and fail otherwise. GitHub does not add this automatically.
 - **Wait 60 seconds**, then open submodule PRs targeting `dev`, referencing `<WORK_ITEM_KEY>` in the description. Submodule PR titles must **not** include the issue key (added automatically from the branch name) — instead reference the specific updates, e.g. `Update dependencies: Microsoft.NET.Test.Sdk 18.0.1 → 18.3.0, Swashbuckle.AspNetCore 10.1.4 → 10.1.5`.
