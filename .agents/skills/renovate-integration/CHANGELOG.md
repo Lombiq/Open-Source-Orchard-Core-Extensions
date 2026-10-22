@@ -4,6 +4,15 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ---
 
+## 2026-10-22
+
+**Always link every created submodule PR in Phase 4**
+
+- `SKILL.md` (v1.9): the PR-link rule now also applies to each PR at creation time, and Phase 4 must list the superproject PR, every newly created submodule PR (with the Renovate PRs it combines) and the existing Renovate PRs of submodules left on their own branch, as links, both right after creation and in the Phase 4 summary/approval request.
+- Reason: during OSOE-1335 only the superproject PR was reported after opening the PRs; the user had to ask where the submodule PRs were.
+
+---
+
 ## 2026-10-18
 
 **Add a mandatory staleness check for Renovate branches left checked out**
