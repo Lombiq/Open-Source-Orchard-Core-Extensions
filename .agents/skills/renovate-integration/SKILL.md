@@ -4,7 +4,7 @@ description: Approval-gated workflow for integrating Renovate updates across the
 license: MIT
 metadata:
   author: Lombiq Technologies
-  version: "1.8"
+  version: "1.9"
 ---
 
 # Renovate Integration
@@ -15,7 +15,7 @@ Use this skill to safely integrate Renovate dependency updates in OSOCE and its 
 - Collect a Jira work item key, store as `<WORK_ITEM_KEY>`.
 - Operate as a strict FSM with an approval checkpoint between every phase.
 - Keep actions minimal and deterministic; stop when a required tool is unavailable.
-- Whenever a response mentions a PR, render it as a clickable Markdown link, `[owner/repo#123](https://github.com/<owner>/<repo>/pull/<n>)` (owner/repo from the submodule's URL in `.gitmodules`, or the superproject's remote) — never a bare `#123`. This applies to every phase summary and approval request.
+- Whenever a response mentions a PR, render it as a clickable Markdown link, `[owner/repo#123](https://github.com/<owner>/<repo>/pull/<n>)` (owner/repo from the submodule's URL in `.gitmodules`, or the superproject's remote) — never a bare `#123`. This applies to every phase summary and approval request, and to every PR the moment it is created — always give the link of each newly opened submodule PR, not only the superproject's.
 
 Initialization prompt: `Please provide the Jira work item / issue key to use (e.g. OSOE-123).`
 
@@ -128,6 +128,7 @@ Actions:
 - After PRs are created, wait for CI with `scripts/gh/wait-for-checks.sh <owner/repo> <pr-number>` (polls with backoff, prints a one-line summary plus failing checks, exits non-zero on failure). **Never use `gh run watch` or `gh pr checks --watch`** — both open a full-screen TUI that never returns control in a non-interactive terminal.
 - Once the superproject PR's Ubuntu build (Build and Test) succeeds, add the `run-windows-build` label (`gh pr edit --add-label run-windows-build`) and wait for the Windows build too.
 - Submodule PR checks must also pass, chiefly **Validate NuGet Publish** — the superproject PR's green checks alone aren't sufficient.
+- Right after creating PRs, and again in the Phase 4 summary and approval request, list **every** PR as a link: the superproject PR, each newly created submodule PR (issue-branch ones) with the Renovate PRs it combines, and the existing Renovate PRs of submodules left on their own head branch.
 - If checks fail: investigate and fix. For test failures, reproduce and fix locally first (`dotnet test --filter`) — never use CI as the iteration loop. Push only once tests pass locally, then wait for CI before asking for approval.
 
 Completion output:
