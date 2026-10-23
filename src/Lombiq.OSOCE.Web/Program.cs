@@ -1,4 +1,5 @@
 using Lombiq.ChartJs.Constants;
+using Lombiq.HelpfulLibraries.OrchardCore.Shapes;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using OrchardCore.Logging;
@@ -17,19 +18,24 @@ var configuration = builder.Configuration;
 // create UI tests check out the project.
 builder.Services
     .AddSingleton(configuration)
-    .AddOrchardCms(orchardCoreBuilder => orchardCoreBuilder
-        .ConfigureAzureHostingDefaultsWithApplicationInsightsTelemetry(builder)
-        .ConfigureFeaturesGuard(
-            new Dictionary<string, IEnumerable<string>>
-            {
-                ["OrchardCore.Twitter"] =
-                [
-                    UIKitFeatureIds.Base,
-                    FeatureIds.Default,
-                ],
-            })
-        .EnableTenantHealthChecks(configuration)
-        .EnableAutoSetupIfNotUITesting(configuration));
+    .AddOrchardCms(orchardCoreBuilder =>
+    {
+        orchardCoreBuilder
+            .ConfigureAzureHostingDefaultsWithApplicationInsightsTelemetry(builder)
+            .ConfigureFeaturesGuard(
+                new Dictionary<string, IEnumerable<string>>
+                {
+                    ["OrchardCore.Twitter"] =
+                    [
+                        UIKitFeatureIds.Base,
+                        FeatureIds.Default,
+                    ],
+                })
+            .EnableTenantHealthChecks(configuration)
+            .EnableAutoSetupIfNotUITesting(configuration);
+
+        ShapeTemplateBindingStrategyHotfix.ReplaceStrategy(orchardCoreBuilder);
+    });
 
 var app = builder.Build();
 app.UseOrchardCore();
