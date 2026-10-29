@@ -1,6 +1,4 @@
 namespace Lombiq.OSOCE.NuGet.Tests;
 
 // Just a dummy sample.
-internal sealed class MockedClass
-{
-}
+internal sealed class MockedClass;
