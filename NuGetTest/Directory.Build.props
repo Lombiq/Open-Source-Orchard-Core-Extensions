@@ -26,5 +26,6 @@
   <ItemGroup>
     <PackageReference Include="System.Security.Cryptography.Pkcs" NoWarn="NU1510" />
     <PackageReference Include="System.Security.Cryptography.Xml" NoWarn="NU1510" />
+    <PackageReference Include="MySqlConnector" NoWarn="NU1510" />
   </ItemGroup>
 </Project>
