@@ -2,3 +2,6 @@
 
 # Keep LF line endings in pnpm-lock.yaml files to prevent Git from reporting this file as changed after pnpm touches it.
 pnpm-lock.yaml text eol=lf
+
+# Bash can't run scripts with CRLF line endings, which core.autocrlf=true would otherwise produce on Windows.
+*.sh text eol=lf
