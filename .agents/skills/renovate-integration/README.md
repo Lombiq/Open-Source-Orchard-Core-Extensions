@@ -9,6 +9,7 @@ Renovate opens pull requests with dependency updates in this superproject and it
 ## Requirements
 
 - [GitHub CLI](https://cli.github.com/) (`gh`), authenticated — used to enumerate and merge Renovate PRs.
+- On Windows: Git Bash (`C:\Program Files\Git\bin\bash.exe`). A `bash` resolving to WSL can't see the Windows `gh`.
 
 ## Quick Start
 

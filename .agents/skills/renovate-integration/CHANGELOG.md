@@ -4,6 +4,16 @@ All notable changes to this skill are documented here. This log is **append-only
 
 ---
 
+## 2026-11-05
+
+**Make the scripts runnable on Windows**
+
+- Root `.gitattributes`: `*.sh text eol=lf`, so `core.autocrlf=true` checkouts no longer give the scripts CRLF line endings (bash failed with `$'\r': command not found`).
+- `SKILL.md` (v1.10) and `README.md`: on Windows, run the scripts with Git Bash explicitly; a `bash` on `PATH` resolving to WSL doesn't see the Windows `gh`.
+- Reason: during OSOE-1337 the analysis script failed on both counts and had to be run through Git Bash with CRs stripped on the fly.
+
+---
+
 ## 2026-10-22
 
 **Always link every created submodule PR in Phase 4**
