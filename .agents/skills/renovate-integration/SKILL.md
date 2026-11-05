@@ -4,7 +4,7 @@ description: Approval-gated workflow for integrating Renovate updates across the
 license: MIT
 metadata:
   author: Lombiq Technologies
-  version: "1.9"
+  version: "1.10"
 ---
 
 # Renovate Integration
@@ -167,6 +167,8 @@ STATUS: Complete
 
 ## Scripts
 **Always use these instead of generating equivalent inline commands or new scripts.** They encode the canonical logic (filters, targeted regexes, safety checks) and are the single source of truth. All are run from the superproject root with `bash .agents/skills/renovate-integration/scripts/<path>`. The `gh/` and PR-listing scripts need an authenticated `gh` CLI.
+
+On Windows, `bash` on `PATH` may be WSL, which doesn't see the Windows `gh` and fails with `gh (GitHub CLI) is required but not installed`. Use Git Bash explicitly from PowerShell: `& "C:\Program Files\Git\bin\bash.exe" .agents/skills/renovate-integration/scripts/<path> [args]`. The root `.gitattributes` forces LF for `*.sh`; if a script still fails with `$'\r': command not found`, re-checkout it (`git rm --cached <path>; git checkout -- <path>`).
 
 | Script | Phase | Purpose |
 | --- | --- | --- |
