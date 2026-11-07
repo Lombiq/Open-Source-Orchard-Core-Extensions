@@ -1,8 +1,7 @@
 using Lombiq.Tests.UI;
 using Lombiq.Tests.UI.Constants;
+using Lombiq.Tests.UI.Samples.Helpers;
 using Lombiq.Tests.UI.Services;
-using System;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Lombiq.OSOCE.Tests.UI;
@@ -11,13 +10,7 @@ public abstract class UITestBase : OrchardCoreUITestBase<Program>
 {
     protected UITestBase(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper) =>
-        AddSetup(Lombiq.Tests.UI.Samples.Helpers.SetupHelpers.RunSetupAsync);
-
-    protected override Task ExecuteTestAfterSetupAsync(
-        Func<UITestContext, Task> testAsync,
-        Browser browser,
-        Func<OrchardCoreUITestExecutorConfiguration, Task> changeConfigurationAsync) =>
-        ExecuteTestAsync(testAsync, browser, Lombiq.Tests.UI.Samples.Helpers.SetupHelpers.RunSetupAsync, changeConfigurationAsync);
+        UseSetup(SetupHelpers.RunSetupAsync);
 
     protected override void Configure(OrchardCoreUITestExecutorConfiguration configuration) =>
         ChangeConfiguration(configuration);
