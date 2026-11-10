@@ -24,18 +24,11 @@ public class BehaviorMaintenanceTests : UITestBase
             context => context.TestAdministratorRoleToUsersWithRoleMaintenanceExecutionAsync(),
             configuration => configuration.SetAddAdministratorRoleToUsersWithRoleConfiguration());
 
-    // This test uses ExecuteTestAsync with a different setup delegate instead of ExecuteTestAfterSetupAsync because the
-    // maintenance does changes to the DB on startup only necessary for this test (like depersonalizing user accounts).
-    // This would occasionally lead to failures in subsequent tests if this was the first test to run and thus create
-    // the DB snapshot after running the setup.
+    // This test uses a different setup because the maintenance does changes to the DB on startup only necessary for
+    // this test (like depersonalizing user accounts). This would occasionally cause failures in subsequent tests.
     [Fact]
     public Task ChangeUserSensitiveContentMaintenanceTaskShouldBeExecutedSuccessfully() =>
-        ExecuteTestAsync(
-            context => context.ChangeUserSensitiveContentMaintenanceExecutionAsync(),
-            async context =>
-            {
-                var homepageUri = await SetupHelpers.RunSetupAsync(context);
-                return homepageUri;
-            },
-            configuration => configuration.ChangeUserSensitiveContentMaintenanceConfiguration());
+        UseSetup(SetupHelpers.RunSetupAsync)
+            .AddSyncConfiguration(configuration => configuration.ChangeUserSensitiveContentMaintenanceConfiguration())
+            .RunAsync(context => context.ChangeUserSensitiveContentMaintenanceExecutionAsync());
 }
