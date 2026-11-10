@@ -14,11 +14,10 @@ public class BehaviorIdleTenantsTests : UITestBase
 
     [Fact]
     public Task ShuttingDownIdleTenantsShouldWork() =>
-        ExecuteTestAfterSetupAsync(
-            async context =>
+        AddSyncConfiguration(configuration => configuration.ConfigureIdleTenantManagementTestSettings())
+            .RunAsync(async context =>
             {
                 await context.SignInDirectlyAsync();
                 await context.TestIdleTenantManagerBehaviorAsync();
-            },
-            configuration => configuration.ConfigureIdleTenantManagementTestSettings());
+            });
 }

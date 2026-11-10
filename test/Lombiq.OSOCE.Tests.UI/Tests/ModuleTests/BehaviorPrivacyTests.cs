@@ -14,11 +14,11 @@ public class BehaviorPrivacyTests : UITestBase
 
     [Fact]
     public Task ConsentBannerShouldWorkAnonymous() =>
-        ExecuteTestAfterSetupAsync(context => context.TestConsentBannerAsync());
+        RunAsync(context => context.TestConsentBannerAsync());
 
     [Fact]
     public Task ConsentBannerShouldWorkAdmin() =>
-        ExecuteTestAfterSetupAsync(
+        RunAsync(
             async context =>
             {
                 await context.SignInDirectlyAsync();
@@ -39,9 +39,9 @@ public class BehaviorPrivacyTests : UITestBase
 
     [Fact]
     public Task RegistrationConsentCheckboxShouldWork() =>
-        ExecuteTestAfterSetupAsync(context => context.TestRegistrationConsentCheckboxAsync());
+        RunAsync(context => context.TestRegistrationConsentCheckboxAsync());
 
     [Fact]
     public Task FormConsentCheckboxShouldWork() =>
-        ExecuteTestAfterSetupAsync(context => context.TestPrivacySampleBehaviorAsync());
+        RunAsync(context => context.TestPrivacySampleBehaviorAsync());
 }
