@@ -13,7 +13,7 @@ public class SecurityShortcutsTests : UITestBase
 
     [Fact]
     public Task AddUserToRoleShouldWork() =>
-        SecurityShortcutsTestCases.AddUserToRoleShouldWorkAsync(ExecuteTestAfterSetupAsync);
+        SecurityShortcutsTestCases.AddUserToRoleShouldWorkAsync(this);
 
     [Fact]
     public Task AddUserToFakeRoleShouldThrow() =>

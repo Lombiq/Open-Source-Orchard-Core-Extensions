@@ -13,5 +13,5 @@ public class SqlQueryMonitoringTenantTests : Lombiq.Tests.UI.Samples.UITestBase
 
     [Fact]
     public Task SqlQueryMonitoringShouldWorkOnAnotherTenant() =>
-        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldWorkOnAnotherTenantAsync(ExecuteTestAfterSetupAsync);
+        SqlQueryMonitoringTestCases.SqlQueryMonitoringShouldWorkOnAnotherTenantAsync(this);
 }

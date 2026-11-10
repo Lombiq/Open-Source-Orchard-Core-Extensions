@@ -13,5 +13,5 @@ public class WorkflowShortcutsTests : UITestBase
 
     [Fact]
     public Task GenerateHttpEventUrlShouldWork() =>
-        WorkflowShortcutsTestCases.GenerateHttpEventUrlShouldWorkAsync(ExecuteTestAfterSetupAsync);
+        WorkflowShortcutsTestCases.GenerateHttpEventUrlShouldWorkAsync(this);
 }

@@ -13,5 +13,5 @@ public class CustomAdminPrefixTests : UITestBase
 
     [Fact]
     public Task NavigationWithCustomAdminPrefixShouldWork() =>
-        CustomAdminPrefixTestCases.NavigationWithCustomAdminPrefixShouldWorkAsync(ExecuteTestAfterSetupAsync);
+        CustomAdminPrefixTestCases.NavigationWithCustomAdminPrefixShouldWorkAsync(this);
 }
