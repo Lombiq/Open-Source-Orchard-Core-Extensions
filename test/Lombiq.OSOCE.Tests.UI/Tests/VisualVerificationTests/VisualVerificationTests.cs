@@ -26,7 +26,7 @@ public class VisualVerificationTests : UITestBase
         // Check the whole page so we can verify the margins and to see if header/footer is affected.
         // The threshold is necessary so the year changing in the footer doesn't cause the test to crash (or other tiny
         // changes in font rendering).
-        ExecuteTestAfterSetupAsync(
+        RunAsync(
             context => context.AssertVisualVerificationApprovedOnAllResolutionsWithPlatformSuffixAsync(
                 _visualVerificationSizes,
                 _ => By.TagName("body"),

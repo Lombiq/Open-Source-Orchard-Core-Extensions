@@ -7,23 +7,16 @@ namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 public class BehaviorUIKitWidgetsTests : UITestBase
 {
     public BehaviorUIKitWidgetsTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
+        : base(testOutputHelper) =>
+        AddSyncConfiguration(configuration => configuration.HtmlValidationConfiguration
+            .WithRelativeConfigPath("NoUniqueLandmark.htmlvalidate.json")
+            .WithOC15222Filter());
 
     [Fact]
     public Task UIKitCarouselWidgetShouldHaveSlickContainer() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestCarouselWidgetBehaviorAsync(),
-            configuration => configuration.HtmlValidationConfiguration
-                .WithRelativeConfigPath("NoUniqueLandmark.htmlvalidate.json")
-                .WithOC15222Filter());
+        RunAsync(context => context.TestCarouselWidgetBehaviorAsync());
 
     [Fact]
     public Task CarouselWidgetPartSettingsHasJsonEditorForOptionsAndOptionsAreUsed() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestCarouselWidgetOptionsAsync(),
-            configuration => configuration.HtmlValidationConfiguration
-                .WithRelativeConfigPath("NoUniqueLandmark.htmlvalidate.json")
-                .WithOC15222Filter());
+        RunAsync(context => context.TestCarouselWidgetOptionsAsync());
 }

@@ -14,14 +14,13 @@ public class BehaviorBaseThemeTests : UITestBase
 
     [Fact]
     public Task ThemeFeaturesShouldWork() =>
-        ExecuteTestAfterSetupAsync(
-            async context =>
+        AddSyncConfiguration(configuration => configuration.SetupConfiguration.SetupWithHttpClient = false)
+            .RunAsync(async context =>
             {
                 await context.SignInDirectlyAsync();
                 await context.TestBaseThemeFeaturesAsync();
 
                 await context.SignInDirectlyAsync();
                 await context.TestBaseThemeSiteSettingsAsync();
-            },
-            configuration => configuration.SetupConfiguration.SetupWithHttpClient = false);
+            });
 }
