@@ -11,9 +11,7 @@ public class BehaviorWalkthroughsTests : UITestBase
     {
     }
 
-#pragma warning disable xUnit1004
-    [Fact(Skip = "Temp")]
-#pragma warning restore xUnit1004
+    [Fact]
     public Task WalkthroughsShouldWorkCorrectly() =>
         AddSyncConfiguration(configuration => configuration
             .HtmlValidationConfiguration
