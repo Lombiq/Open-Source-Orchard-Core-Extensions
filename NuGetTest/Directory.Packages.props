@@ -71,10 +71,10 @@
     <PackageVersion Include="Lombiq.Privacy.Tests.UI" Version="11.0.1-alpha.0.osoe-1317" />
     <PackageVersion Include="Lombiq.SetupExtensions" Version="8.0.0" />
     <PackageVersion Include="Lombiq.Tests" Version="6.0.1" />
-    <PackageVersion Include="Lombiq.Tests.UI" Version="15.0.1-alpha.3.osoe-344" />
-    <PackageVersion Include="Lombiq.Tests.UI.AdminTheme" Version="15.0.1-alpha.3.osoe-344" />
-    <PackageVersion Include="Lombiq.Tests.UI.AppExtensions" Version="15.0.1-alpha.3.osoe-344" />
-    <PackageVersion Include="Lombiq.Tests.UI.Shortcuts" Version="15.0.1-alpha.3.osoe-344" />
+    <PackageVersion Include="Lombiq.Tests.UI" Version="16.0.0" />
+    <PackageVersion Include="Lombiq.Tests.UI.AdminTheme" Version="16.0.0" />
+    <PackageVersion Include="Lombiq.Tests.UI.AppExtensions" Version="16.0.0" />
+    <PackageVersion Include="Lombiq.Tests.UI.Shortcuts" Version="16.0.0" />
     <PackageVersion Include="Lombiq.UIKit" Version="11.0.1-alpha.0.osoe-1317" />
     <PackageVersion Include="Lombiq.UIKit.Widgets" Version="11.0.1-alpha.0.osoe-1317" />
     <PackageVersion Include="Lombiq.UIKit.Widgets.Tests.UI" Version="11.0.1-alpha.0.osoe-1317" />
