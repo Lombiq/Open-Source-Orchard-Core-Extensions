@@ -81,6 +81,7 @@
     <PackageVersion Include="Lombiq.VueJs.Resources" Version="10.0.0" />
     <PackageVersion Include="Lombiq.Walkthroughs" Version="4.0.1-alpha.0.osoe-1317" />
     <PackageVersion Include="Lombiq.Walkthroughs.Tests.UI" Version="4.0.1-alpha.0.osoe-1317" />
+    <PackageVersion Include="Microsoft.AspNetCore.WebUtilities" Version="2.3.14" />
     <PackageVersion Include="Microsoft.Testing.Extensions.GitHubActionsReport" Version="2.5.2" />
     <PackageVersion Include="Microsoft.Testing.Extensions.HangDump" Version="2.5.2" />
     <PackageVersion Include="Microsoft.Testing.Extensions.TrxReport" Version="2.5.2" />
