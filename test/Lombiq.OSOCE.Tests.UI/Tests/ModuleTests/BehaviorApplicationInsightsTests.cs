@@ -13,5 +13,5 @@ public class BehaviorApplicationInsightsTests : UITestBase
 
     [Fact]
     public Task ApplicationInsightsTrackingInOfflineOperationShouldWork() =>
-        ApplicationInsightsTestCases.ApplicationInsightsTrackingInOfflineOperationShouldWorkAsync(ExecuteTestAfterSetupAsync);
+        ApplicationInsightsTestCases.ApplicationInsightsTrackingInOfflineOperationShouldWorkAsync(this);
 }

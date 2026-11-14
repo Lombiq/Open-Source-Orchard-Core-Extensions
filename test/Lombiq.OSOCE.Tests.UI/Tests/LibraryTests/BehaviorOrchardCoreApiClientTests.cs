@@ -15,9 +15,8 @@ public class BehaviorOrchardCoreApiClientTests : UITestBase
 
     [Fact]
     public Task OrchardCoreApiClientShouldWork() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestOrchardCoreApiClientBehaviorAsync(),
-            configuration =>
+        AddTest(context => context.TestOrchardCoreApiClientBehaviorAsync())
+            .AddSyncConfiguration(configuration =>
             {
                 // Workaround for long paths in Windows.
                 if (OperatingSystem.IsWindows())
@@ -26,5 +25,6 @@ public class BehaviorOrchardCoreApiClientTests : UITestBase
                         Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
                         "oc-api");
                 }
-            });
+            })
+            .RunAsync();
 }

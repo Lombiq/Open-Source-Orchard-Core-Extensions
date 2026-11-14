@@ -13,5 +13,5 @@ public class TimeoutTests : UITestBase
 
     [Fact]
     public Task TestRunTimeoutShouldThrowAsync() =>
-        TimeoutTestCases.TestRunTimeoutShouldThrowAsync(ExecuteTestAfterSetupWithoutBrowserAsync);
+        TimeoutTestCases.TestRunTimeoutShouldThrowAsync(this);
 }

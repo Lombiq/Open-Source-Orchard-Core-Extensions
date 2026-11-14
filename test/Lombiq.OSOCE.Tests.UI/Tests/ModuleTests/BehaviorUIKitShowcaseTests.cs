@@ -7,15 +7,12 @@ namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 public class BehaviorUIKitShowcaseTests : UITestBase
 {
     public BehaviorUIKitShowcaseTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
+        : base(testOutputHelper) =>
+        AddSyncConfiguration(configuration => configuration.HtmlValidationConfiguration
+            .WithRelativeConfigPath("NoUniqueLandmark.htmlvalidate.json")
+            .WithOC15222Filter());
 
     [Fact]
     public Task UIKitShowcasePageShouldBeCorrect() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestUIKitShowcaseBehaviorAsync(),
-            configuration => configuration.HtmlValidationConfiguration
-                .WithRelativeConfigPath("NoUniqueLandmark.htmlvalidate.json")
-                .WithOC15222Filter());
+        RunAsync(context => context.TestUIKitShowcaseBehaviorAsync());
 }

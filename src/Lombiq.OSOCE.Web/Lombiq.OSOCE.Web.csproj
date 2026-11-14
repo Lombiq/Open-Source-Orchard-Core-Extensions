@@ -76,4 +76,9 @@
     <NuGetAuditSuppress Include="https://github.com/advisories/GHSA-v76p-62qx-wwq2" />
   </ItemGroup>
 
+  <!-- Security Updates for Orchard Core - make sure to check if these are still necessary -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.3.14" NoWarn="NU1510" />
+  </ItemGroup>
+
 </Project>

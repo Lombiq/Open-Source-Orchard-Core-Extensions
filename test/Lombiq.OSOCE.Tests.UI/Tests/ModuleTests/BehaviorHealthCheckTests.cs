@@ -15,14 +15,13 @@ public class BehaviorHealthCheckTests : UITestBase
 
     [Fact]
     public Task UnhealthyTenantsShouldBeListed() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestHealthChecksAsync("Lombiq.OSOCE.BasicOrchardFeaturesTests"),
-            configuration =>
+        AddSyncConfiguration(configuration =>
             {
                 configuration.ConfigureTenantHealthCheckTests();
                 configuration.AssertAppLogsAsync = app =>
                     app.LogsShouldNotContainAsync(
                         logEntry => logEntry.Level >= LogLevel.Error && logEntry.IsNotHealthCheckError(),
                         configuration.TestCancellationToken);
-            });
+            })
+            .RunAsync(context => context.TestHealthChecksAsync("Lombiq.OSOCE.BasicOrchardFeaturesTests"));
 }

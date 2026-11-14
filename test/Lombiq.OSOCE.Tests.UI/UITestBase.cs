@@ -1,8 +1,7 @@
 using Lombiq.Tests.UI;
 using Lombiq.Tests.UI.Constants;
+using Lombiq.Tests.UI.Samples.Helpers;
 using Lombiq.Tests.UI.Services;
-using System;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Lombiq.OSOCE.Tests.UI;
@@ -10,30 +9,11 @@ namespace Lombiq.OSOCE.Tests.UI;
 public abstract class UITestBase : OrchardCoreUITestBase<Program>
 {
     protected UITestBase(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
+        : base(testOutputHelper) =>
+        UseSetup(SetupHelpers.RunSetupAsync);
 
-    protected override Task ExecuteTestAfterSetupAsync(
-        Func<UITestContext, Task> testAsync,
-        Browser browser,
-        Func<OrchardCoreUITestExecutorConfiguration, Task> changeConfigurationAsync) =>
-        ExecuteTestAsync(testAsync, browser, Lombiq.Tests.UI.Samples.Helpers.SetupHelpers.RunSetupAsync, changeConfigurationAsync);
-
-    protected override Task ExecuteTestAsync(
-        Func<UITestContext, Task> testAsync,
-        Browser browser,
-        Func<UITestContext, Task<Uri>> setupOperation,
-        Func<OrchardCoreUITestExecutorConfiguration, Task> changeConfigurationAsync) =>
-        base.ExecuteTestAsync(
-            testAsync,
-            browser,
-            setupOperation,
-            async configuration =>
-            {
-                ChangeConfiguration(configuration);
-                if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
-            });
+    protected override void Configure(OrchardCoreUITestExecutorConfiguration configuration) =>
+        ChangeConfiguration(configuration);
 
     protected static void ChangeConfiguration(OrchardCoreUITestExecutorConfiguration configuration)
     {
