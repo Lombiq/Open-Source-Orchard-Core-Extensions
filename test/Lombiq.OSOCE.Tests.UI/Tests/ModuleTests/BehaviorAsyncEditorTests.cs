@@ -15,19 +15,18 @@ public class BehaviorAsyncEditorTests : UITestBase
 
     [Fact]
     public Task DemoContentItemAsyncEditorShouldWork() =>
-        RunAsync(
-            async context =>
-            {
-                await context.SignInDirectlyAsync();
-                await context.TestDemoContentItemAsyncEditorAsync();
-            });
+        RunAsync(async context =>
+        {
+            await context.SignInDirectlyAsync();
+            await context.TestDemoContentItemAsyncEditorAsync();
+        });
 
     [Fact]
-    public Task DemoFrontEndAsyncEditorShouldWork() =>
-        AddAsyncConfiguration(ConfigurationHelper.DisableHtmlValidation)
-            .RunAsync(async context =>
-            {
-                await context.SignInDirectlyAsync();
-                await context.TestDemoFrontEndAsyncEditorAsync();
-            });
+    public Task DemoFrontEndAsyncEditorShouldWork() => TestBuilder
+        .AddAsyncConfiguration(ConfigurationHelper.DisableHtmlValidation)
+        .RunAsync(async context =>
+        {
+            await context.SignInDirectlyAsync();
+            await context.TestDemoFrontEndAsyncEditorAsync();
+        });
 }

@@ -18,9 +18,9 @@ public class BehaviorDataTablesTests : UITestBase
     [InlineData(TestDataTableRecipeDataSections.ProviderWithShape)]
     [InlineData(TestDataTableRecipeDataSections.JsonBasedProvider)]
     [InlineData(TestDataTableRecipeDataSections.IndexBasedProvider)]
-    public Task RecipeDataShouldBeDisplayedCorrectly(TestDataTableRecipeDataSections sections) =>
-        AddConfiguration(configuration => configuration
+    public Task RecipeDataShouldBeDisplayedCorrectly(TestDataTableRecipeDataSections sections) => TestBuilder
+        .AddConfiguration(configuration => configuration
             .HtmlValidationConfiguration
             .WithRelativeConfigPath($"{nameof(RecipeDataShouldBeDisplayedCorrectly)}.htmlvalidate.json"))
-            .RunAsync(context => context.TestDataTableRecipeDataAsync(sections));
+        .RunAsync(context => context.TestDataTableRecipeDataAsync(sections));
 }

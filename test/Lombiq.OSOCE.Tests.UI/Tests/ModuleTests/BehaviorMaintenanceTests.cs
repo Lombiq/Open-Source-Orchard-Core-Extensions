@@ -13,20 +13,20 @@ public class BehaviorMaintenanceTests : UITestBase
     }
 
     [Fact]
-    public Task UpdateSiteUrlMaintenanceTaskShouldBeExecutedSuccessfully() =>
-        AddConfiguration(configuration => configuration.SetUpdateSiteUrlMaintenanceConfiguration())
-            .RunAsync(context => context.TestSiteUrlMaintenanceExecutionAsync());
+    public Task UpdateSiteUrlMaintenanceTaskShouldBeExecutedSuccessfully() => TestBuilder
+        .AddConfiguration(configuration => configuration.SetUpdateSiteUrlMaintenanceConfiguration())
+        .RunAsync(context => context.TestSiteUrlMaintenanceExecutionAsync());
 
     [Fact]
-    public Task AddAdministratorRoleToUsersWithRoleMaintenanceTaskShouldBeExecutedSuccessfully() =>
-        AddConfiguration(configuration => configuration.SetAddAdministratorRoleToUsersWithRoleConfiguration())
-            .RunAsync(context => context.TestAdministratorRoleToUsersWithRoleMaintenanceExecutionAsync());
+    public Task AddAdministratorRoleToUsersWithRoleMaintenanceTaskShouldBeExecutedSuccessfully() => TestBuilder
+        .AddConfiguration(configuration => configuration.SetAddAdministratorRoleToUsersWithRoleConfiguration())
+        .RunAsync(context => context.TestAdministratorRoleToUsersWithRoleMaintenanceExecutionAsync());
 
     // This test uses a different setup because the maintenance does changes to the DB on startup only necessary for
     // this test (like depersonalizing user accounts). This would occasionally cause failures in subsequent tests.
     [Fact]
-    public Task ChangeUserSensitiveContentMaintenanceTaskShouldBeExecutedSuccessfully() =>
-        UseSetup(SetupHelpers.RunSetupAsync)
-            .AddConfiguration(configuration => configuration.ChangeUserSensitiveContentMaintenanceConfiguration())
-            .RunAsync(context => context.ChangeUserSensitiveContentMaintenanceExecutionAsync());
+    public Task ChangeUserSensitiveContentMaintenanceTaskShouldBeExecutedSuccessfully() => TestBuilder
+        .UseSetup(SetupHelpers.RunSetupAsync)
+        .AddConfiguration(configuration => configuration.ChangeUserSensitiveContentMaintenanceConfiguration())
+        .RunAsync(context => context.ChangeUserSensitiveContentMaintenanceExecutionAsync());
 }

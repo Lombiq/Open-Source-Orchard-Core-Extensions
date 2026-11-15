@@ -18,19 +18,17 @@ public class BehaviorPrivacyTests : UITestBase
 
     [Fact]
     public Task ConsentBannerShouldWorkAdmin() =>
-        RunAsync(
-            async context =>
-            {
-                await context.SignInDirectlyAsync();
-                await context.TestConsentBannerAsync();
-            });
+        RunAsync(async context =>
+        {
+            await context.SignInDirectlyAsync();
+            await context.TestConsentBannerAsync();
+        });
 
     // This test is for https://github.com/Lombiq/Orchard-Privacy/issues/15.
     [Fact]
-    public Task ConsentBannerShouldWorkWithRazorBasedThemes() =>
-        AddTest(context => context.TestConsentBannerWithThemeAsync("TheTheme"))
-            .AddConfiguration(configuration => configuration.HtmlValidationConfiguration.WithOC15222Filter())
-            .RunAsync();
+    public Task ConsentBannerShouldWorkWithRazorBasedThemes() => TestBuilder
+        .AddConfiguration(configuration => configuration.HtmlValidationConfiguration.WithOC15222Filter())
+        .RunAsync(context => context.TestConsentBannerWithThemeAsync("TheTheme"));
 
     // This test is for https://github.com/Lombiq/Orchard-Privacy/issues/15.
     [Fact]
