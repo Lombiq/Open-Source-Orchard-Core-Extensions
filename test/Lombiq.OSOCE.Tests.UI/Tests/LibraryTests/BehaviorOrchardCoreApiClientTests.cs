@@ -16,7 +16,7 @@ public class BehaviorOrchardCoreApiClientTests : UITestBase
     [Fact]
     public Task OrchardCoreApiClientShouldWork() =>
         AddTest(context => context.TestOrchardCoreApiClientBehaviorAsync())
-            .AddSyncConfiguration(configuration =>
+            .AddConfiguration(configuration =>
             {
                 // Workaround for long paths in Windows.
                 if (OperatingSystem.IsWindows())

@@ -14,7 +14,7 @@ public class BehaviorWalkthroughsTests : UITestBase
     [Fact]
     public Task WalkthroughsShouldWorkCorrectly() =>
         WithoutSetup()
-            .AddSyncConfiguration(configuration => configuration
+            .AddConfiguration(configuration => configuration
                 .HtmlValidationConfiguration
                 .WithRelativeConfigPath("WalkthroughsShouldWorkCorrectly.htmlvalidate.json"))
             .RunAsync(context => context.RunSetupAndTestWalkthroughsBehaviorAsync());

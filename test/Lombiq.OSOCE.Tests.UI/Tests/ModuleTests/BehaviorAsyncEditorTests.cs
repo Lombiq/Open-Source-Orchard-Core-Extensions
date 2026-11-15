@@ -24,7 +24,7 @@ public class BehaviorAsyncEditorTests : UITestBase
 
     [Fact]
     public Task DemoFrontEndAsyncEditorShouldWork() =>
-        AddConfiguration(ConfigurationHelper.DisableHtmlValidation)
+        AddAsyncConfiguration(ConfigurationHelper.DisableHtmlValidation)
             .RunAsync(async context =>
             {
                 await context.SignInDirectlyAsync();

@@ -14,12 +14,12 @@ public class BehaviorMaintenanceTests : UITestBase
 
     [Fact]
     public Task UpdateSiteUrlMaintenanceTaskShouldBeExecutedSuccessfully() =>
-        AddSyncConfiguration(configuration => configuration.SetUpdateSiteUrlMaintenanceConfiguration())
+        AddConfiguration(configuration => configuration.SetUpdateSiteUrlMaintenanceConfiguration())
             .RunAsync(context => context.TestSiteUrlMaintenanceExecutionAsync());
 
     [Fact]
     public Task AddAdministratorRoleToUsersWithRoleMaintenanceTaskShouldBeExecutedSuccessfully() =>
-        AddSyncConfiguration(configuration => configuration.SetAddAdministratorRoleToUsersWithRoleConfiguration())
+        AddConfiguration(configuration => configuration.SetAddAdministratorRoleToUsersWithRoleConfiguration())
             .RunAsync(context => context.TestAdministratorRoleToUsersWithRoleMaintenanceExecutionAsync());
 
     // This test uses a different setup because the maintenance does changes to the DB on startup only necessary for
@@ -27,6 +27,6 @@ public class BehaviorMaintenanceTests : UITestBase
     [Fact]
     public Task ChangeUserSensitiveContentMaintenanceTaskShouldBeExecutedSuccessfully() =>
         UseSetup(SetupHelpers.RunSetupAsync)
-            .AddSyncConfiguration(configuration => configuration.ChangeUserSensitiveContentMaintenanceConfiguration())
+            .AddConfiguration(configuration => configuration.ChangeUserSensitiveContentMaintenanceConfiguration())
             .RunAsync(context => context.ChangeUserSensitiveContentMaintenanceExecutionAsync());
 }

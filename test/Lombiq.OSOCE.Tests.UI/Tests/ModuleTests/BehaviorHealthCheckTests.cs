@@ -15,7 +15,7 @@ public class BehaviorHealthCheckTests : UITestBase
 
     [Fact]
     public Task UnhealthyTenantsShouldBeListed() =>
-        AddSyncConfiguration(configuration =>
+        AddConfiguration(configuration =>
             {
                 configuration.ConfigureTenantHealthCheckTests();
                 configuration.AssertAppLogsAsync = app =>

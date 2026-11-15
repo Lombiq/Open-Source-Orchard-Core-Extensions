@@ -14,7 +14,7 @@ public class BehaviorIdleTenantsTests : UITestBase
 
     [Fact]
     public Task ShuttingDownIdleTenantsShouldWork() =>
-        AddSyncConfiguration(configuration => configuration.ConfigureIdleTenantManagementTestSettings())
+        AddConfiguration(configuration => configuration.ConfigureIdleTenantManagementTestSettings())
             .RunAsync(async context =>
             {
                 await context.SignInDirectlyAsync();

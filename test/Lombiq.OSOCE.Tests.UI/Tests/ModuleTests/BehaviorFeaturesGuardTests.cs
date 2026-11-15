@@ -12,7 +12,7 @@ public class BehaviorFeaturesGuardTests : UITestBase
 {
     public BehaviorFeaturesGuardTests(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper) =>
-        AddConfiguration(ConfigurationHelper.DisableHtmlValidation);
+        AddAsyncConfiguration(ConfigurationHelper.DisableHtmlValidation);
 
     // HTML validation is disabled as OC's login and dashboard pages contain several errors. See:
     // https://github.com/OrchardCMS/OrchardCore/issues/12271.

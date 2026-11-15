@@ -13,6 +13,6 @@ public class BehaviorEmailClientTests : UITestBase
 
     [Fact]
     public Task ImapEmailFetchingShouldWork() =>
-        AddSyncConfiguration(config => config.UseSmtpService = true)
+        AddConfiguration(config => config.UseSmtpService = true)
             .RunAsync(context => context.TestImapEmailFetchingAsync());
 }

@@ -19,7 +19,7 @@ public class BehaviorDataTablesTests : UITestBase
     [InlineData(TestDataTableRecipeDataSections.JsonBasedProvider)]
     [InlineData(TestDataTableRecipeDataSections.IndexBasedProvider)]
     public Task RecipeDataShouldBeDisplayedCorrectly(TestDataTableRecipeDataSections sections) =>
-        AddSyncConfiguration(configuration => configuration
+        AddConfiguration(configuration => configuration
             .HtmlValidationConfiguration
             .WithRelativeConfigPath($"{nameof(RecipeDataShouldBeDisplayedCorrectly)}.htmlvalidate.json"))
             .RunAsync(context => context.TestDataTableRecipeDataAsync(sections));

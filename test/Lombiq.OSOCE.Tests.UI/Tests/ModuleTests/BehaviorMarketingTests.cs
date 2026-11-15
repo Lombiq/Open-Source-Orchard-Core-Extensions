@@ -13,11 +13,11 @@ public class BehaviorMarketingTests : UITestBase
 
     [Fact]
     public Task ShortUrlManagementShouldWork() =>
-        AddSyncConfiguration(configuration => configuration.SetShortUrlConfiguration())
+        AddConfiguration(configuration => configuration.SetShortUrlConfiguration())
             .RunAsync(context => context.TestShortUrlManagementAsync());
 
     [Fact]
     public Task PirschClientSideTrackingShouldBeInjected() =>
-        AddSyncConfiguration(configuration => configuration.SetPirschClientTrackerConfiguration())
+        AddConfiguration(configuration => configuration.SetPirschClientTrackerConfiguration())
             .RunAsync(context => context.TestPirschClientSideTrackingAutomaticInjectionAsync());
 }

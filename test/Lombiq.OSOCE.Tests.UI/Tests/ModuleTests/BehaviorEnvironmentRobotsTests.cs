@@ -13,7 +13,7 @@ public class BehaviorEnvironmentRobotsTests : UITestBase
 
     [Fact]
     public Task RobotsMetaTagShouldBeMissing() =>
-        AddSyncConfiguration(configuration => configuration.SetEnvironmentRobotsOptionsConfiguration(isProduction: true))
+        AddConfiguration(configuration => configuration.SetEnvironmentRobotsOptionsConfiguration(isProduction: true))
             .RunAsync(context => context.TestRobotMetaTagIsMissingAsync(shouldBeMissing: true));
 
     [Fact]
@@ -22,6 +22,6 @@ public class BehaviorEnvironmentRobotsTests : UITestBase
 
     [Fact]
     public Task RobotsMetaTagShouldBePresent() =>
-        AddSyncConfiguration(configuration => configuration.SetEnvironmentRobotsOptionsConfiguration(isProduction: false))
+        AddConfiguration(configuration => configuration.SetEnvironmentRobotsOptionsConfiguration(isProduction: false))
             .RunAsync(context => context.TestRobotMetaTagIsMissingAsync(shouldBeMissing: false));
 }

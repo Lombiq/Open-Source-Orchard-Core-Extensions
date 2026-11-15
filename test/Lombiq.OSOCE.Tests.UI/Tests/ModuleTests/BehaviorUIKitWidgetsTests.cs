@@ -8,7 +8,7 @@ public class BehaviorUIKitWidgetsTests : UITestBase
 {
     public BehaviorUIKitWidgetsTests(ITestOutputHelper testOutputHelper)
         : base(testOutputHelper) =>
-        AddSyncConfiguration(configuration => configuration.HtmlValidationConfiguration
+        AddConfiguration(configuration => configuration.HtmlValidationConfiguration
             .WithRelativeConfigPath("NoUniqueLandmark.htmlvalidate.json")
             .WithOC15222Filter());
 

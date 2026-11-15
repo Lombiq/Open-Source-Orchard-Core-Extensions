@@ -14,7 +14,7 @@ public class BehaviorBaseThemeTests : UITestBase
 
     [Fact]
     public Task ThemeFeaturesShouldWork() =>
-        AddSyncConfiguration(configuration => configuration.SetupConfiguration.SetupWithHttpClient = false)
+        AddConfiguration(configuration => configuration.SetupConfiguration.SetupWithHttpClient = false)
             .RunAsync(async context =>
             {
                 await context.SignInDirectlyAsync();

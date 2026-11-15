@@ -19,6 +19,6 @@ public class BehaviorMediaStorageManagementTests : UITestBase
     [SuppressMessage("Style", "IDE0055:Fix formatting", Justification = "Needed for inline comments.")]
     public Task MediaQuotaShouldWork() =>
         // Setting maximum storage quota to see if it fails without the need of very large files.
-        AddSyncConfiguration(configuration => configuration.SetMediaStorageManagementOptionsForUITest(LargeFileSizeInBytes))
+        AddConfiguration(configuration => configuration.SetMediaStorageManagementOptionsForUITest(LargeFileSizeInBytes))
             .RunAsync(context => context.TestMediaStorageManagementBehaviorAsync(LargeFileSizeInMegabytes));
 }

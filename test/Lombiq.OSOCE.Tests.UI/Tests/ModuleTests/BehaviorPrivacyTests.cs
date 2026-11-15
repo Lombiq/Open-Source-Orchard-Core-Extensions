@@ -29,7 +29,7 @@ public class BehaviorPrivacyTests : UITestBase
     [Fact]
     public Task ConsentBannerShouldWorkWithRazorBasedThemes() =>
         AddTest(context => context.TestConsentBannerWithThemeAsync("TheTheme"))
-            .AddSyncConfiguration(configuration => configuration.HtmlValidationConfiguration.WithOC15222Filter())
+            .AddConfiguration(configuration => configuration.HtmlValidationConfiguration.WithOC15222Filter())
             .RunAsync();
 
     // This test is for https://github.com/Lombiq/Orchard-Privacy/issues/15.
