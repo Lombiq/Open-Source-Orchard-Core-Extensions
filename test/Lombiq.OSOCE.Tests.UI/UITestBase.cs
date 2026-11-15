@@ -12,8 +12,11 @@ public abstract class UITestBase : OrchardCoreUITestBase<Program>
         : base(testOutputHelper) =>
         UseSetup(SetupHelpers.RunSetupAsync);
 
-    protected override void Configure(OrchardCoreUITestExecutorConfiguration configuration) =>
+    protected override void Configure(OrchardCoreUITestExecutorConfiguration configuration)
+    {
+        base.Configure(configuration);
         ChangeConfiguration(configuration);
+    }
 
     protected static void ChangeConfiguration(OrchardCoreUITestExecutorConfiguration configuration)
     {
