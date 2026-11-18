@@ -14,7 +14,7 @@ public class BehaviorThemeTests : UITestBase
 
     [Fact]
     public Task BaseThemeShouldWork() =>
-        ExecuteTestAfterSetupAsync(
+        RunAsync(
             async context =>
             {
                 await context.SignInDirectlyAsync();

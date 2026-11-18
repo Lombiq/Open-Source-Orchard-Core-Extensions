@@ -13,14 +13,14 @@ public class BehaviorMarketingTests : UITestBase
     }
 
     [Fact]
-    public Task ShortUrlManagementShouldWork() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestShortUrlManagementAsync(),
-            changeConfiguration: configuration => configuration.SetShortUrlConfiguration());
+    public Task ShortUrlManagementShouldWork() => TestBuilder
+        .AddConfiguration(configuration => configuration.SetShortUrlConfiguration())
+        .RunAsync(context => context.TestShortUrlManagementAsync());
 
     [Fact]
-    public Task PirschClientSideTrackingShouldBeInjected() =>
-        ExecuteTestAfterSetupAsync(
+    public Task PirschClientSideTrackingShouldBeInjected() => TestBuilder
+        .AddConfiguration(configuration => configuration.SetPirschClientTrackerConfiguration())
+        .RunAsync(
             async context =>
             {
                 // In the NuGet test we need to switch to the Base Theme to test the automatic zone rendering.
@@ -29,6 +29,5 @@ public class BehaviorMarketingTests : UITestBase
                 await context.GoToHomePageAsync();
 
                 await context.TestPirschClientSideTrackingAutomaticInjectionAsync();
-            },
-            changeConfiguration: configuration => configuration.SetPirschClientTrackerConfiguration());
+            });
 }

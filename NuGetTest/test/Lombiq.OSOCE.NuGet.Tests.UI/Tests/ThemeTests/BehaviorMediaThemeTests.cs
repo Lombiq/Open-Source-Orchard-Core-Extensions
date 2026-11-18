@@ -14,9 +14,9 @@ public class BehaviorMediaThemeTests : UITestBase
 
     [Fact]
     public Task MediaThemeShouldRenderTemplatesFromMediaLibrary() =>
-        ExecuteTestAfterSetupAsync(context => context.TestMediaThemeDeployedBehaviorAsync());
+        RunAsync(context => context.TestMediaThemeDeployedBehaviorAsync());
 
     [Fact]
     public Task MediaThemeTemplateAccessShouldBeBlocked() =>
-        ExecuteTestAfterSetupAsync(async context => await context.TestMediaThemeTemplatePageAsync());
+        RunAsync(async context => await context.TestMediaThemeTemplatePageAsync());
 }

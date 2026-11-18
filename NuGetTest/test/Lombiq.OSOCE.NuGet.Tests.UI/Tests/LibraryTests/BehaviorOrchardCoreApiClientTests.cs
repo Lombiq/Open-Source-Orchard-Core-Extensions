@@ -14,17 +14,16 @@ public class BehaviorOrchardCoreApiClientTests : UITestBase
     }
 
     [Fact]
-    public Task OrchardCoreApiClientShouldWork() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestOrchardCoreApiClientBehaviorAsync(),
-            configuration =>
+    public Task OrchardCoreApiClientShouldWork() => TestBuilder
+        .AddConfiguration(configuration =>
+        {
+            // Workaround for long paths in Windows.
+            if (OperatingSystem.IsWindows())
             {
-                // Workaround for long paths in Windows.
-                if (OperatingSystem.IsWindows())
-                {
-                    configuration.TempDirectoryPath = Path.Combine(
-                        Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
-                        "oc-api");
-                }
-            });
+                configuration.TempDirectoryPath = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+                    "oc-api");
+            }
+        })
+        .RunAsync(context => context.TestOrchardCoreApiClientBehaviorAsync());
 }
