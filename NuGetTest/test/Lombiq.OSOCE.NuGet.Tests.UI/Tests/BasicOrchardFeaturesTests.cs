@@ -8,16 +8,14 @@ namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests;
 public class BasicOrchardFeaturesTests : UITestBase
 {
     public BasicOrchardFeaturesTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
+        : base(testOutputHelper) =>
+        WithoutSetup();
 
     [Fact]
     public Task BasicOrchardFeaturesShouldWork() =>
-        ExecuteTestAsync(
-            context => context.TestBasicOrchardFeaturesAsync(
-                new OrchardCoreSetupParameters(context, "Lombiq.OSOCE.NuGet.BasicOrchardFeaturesTests")
-                {
-                    SkipRegistration = true,
-                }));
+        RunAsync(context => context.TestBasicOrchardFeaturesAsync(
+            new OrchardCoreSetupParameters(context, "Lombiq.OSOCE.NuGet.BasicOrchardFeaturesTests")
+            {
+                SkipRegistration = true,
+            }));
 }
