@@ -32,7 +32,7 @@ public class BehaviorPrivacyTests : UITestBase
 
     // This test is for https://github.com/Lombiq/Orchard-Privacy/issues/15
     [Fact]
-    public Task ConsentBannerShouldWorkWithLiquidBasedThemes() => 
+    public Task ConsentBannerShouldWorkWithLiquidBasedThemes() =>
         RunAsync(context => context.TestConsentBannerWithThemeAsync("TheBlogTheme"));
 
     [Fact]
