@@ -9,13 +9,8 @@ namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests.LibraryTests;
 public class BehaviorOrchardCoreApiClientTests : UITestBase
 {
     public BehaviorOrchardCoreApiClientTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
-
-    [Fact]
-    public Task OrchardCoreApiClientShouldWork() => TestBuilder
-        .AddConfiguration(configuration =>
+        : base(testOutputHelper) =>
+        AddConfiguration(configuration =>
         {
             // Workaround for long paths in Windows.
             if (OperatingSystem.IsWindows())
@@ -24,6 +19,9 @@ public class BehaviorOrchardCoreApiClientTests : UITestBase
                     Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
                     "oc-api");
             }
-        })
-        .RunAsync(context => context.TestOrchardCoreApiClientBehaviorAsync());
+        });
+
+    [Fact]
+    public Task OrchardCoreApiClientShouldWork() =>
+        RunAsync(context => context.TestOrchardCoreApiClientBehaviorAsync());
 }
