@@ -15,7 +15,6 @@
     <File Path=".codespellrc" />
     <File Path=".gitignore" />
     <File Path="Directory.Build.props" />
-    <File Path="Directory.Build.targets" />
     <File Path="eslint.custom.mjs" />
     <File Path="global.json" />
     <File Path="License.md" />
