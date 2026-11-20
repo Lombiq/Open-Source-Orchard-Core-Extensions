@@ -28,4 +28,15 @@
     <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
     <OrchardCoreVersion>3.0.1</OrchardCoreVersion>
   </PropertyGroup>
+
+  <!-- Security Updates for Orchard Core - make sure to check if these are still necessary. -->
+  <PropertyGroup>
+    <!-- Disable duplicate package warning, so we can include these in the individual submodules as needed. -->
+    <NoWarn>NU1504</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="HtmlSanitizer" NoWarn="NU1510">
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">9.2.1039</Version>
+    </PackageReference>
+  </ItemGroup>
 </Project>

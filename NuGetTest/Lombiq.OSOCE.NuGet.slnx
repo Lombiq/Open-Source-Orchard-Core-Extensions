@@ -1,7 +1,6 @@
 <Solution>
   <Folder Name="/Solution Items/">
     <File Path="../Directory.Build.props" />
-    <File Path="..\Directory.Build.targets" />
     <File Path=".gitignore" />
     <File Path="commands.json" />
     <File Path="Directory.Build.props" />
