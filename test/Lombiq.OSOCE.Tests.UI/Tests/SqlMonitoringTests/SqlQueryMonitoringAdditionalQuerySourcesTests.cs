@@ -13,5 +13,5 @@ public class SqlQueryMonitoringAdditionalQuerySourcesTests : Lombiq.Tests.UI.Sam
 
     [Fact]
     public Task SqlQueryMonitoringAdditionalQuerySourcesShouldWork() =>
-        SqlQueryMonitoringTestCases.SqlQueryMonitoringAdditionalQuerySourcesShouldWorkAsync(this);
+        SqlQueryMonitoringTestCases.SqlQueryMonitoringAdditionalQuerySourcesShouldWorkAsync(TestBuilder);
 }

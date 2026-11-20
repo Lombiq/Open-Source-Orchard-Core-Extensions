@@ -13,5 +13,5 @@ public class SqlQueryMonitoringLinqToDbTests : Lombiq.Tests.UI.Samples.UITestBas
 
     [Fact]
     public Task LinqToDbSamplesShouldBeCapturedBySqlMonitoring() =>
-        SqlQueryMonitoringTestCases.LinqToDbSamplesShouldBeCapturedBySqlMonitoringAsync(this);
+        SqlQueryMonitoringTestCases.LinqToDbSamplesShouldBeCapturedBySqlMonitoringAsync(TestBuilder);
 }

@@ -13,13 +13,13 @@ public class SecurityShortcutsTests : UITestBase
 
     [Fact]
     public Task AddUserToRoleShouldWork() =>
-        SecurityShortcutsTestCases.AddUserToRoleShouldWorkAsync(this);
+        SecurityShortcutsTestCases.AddUserToRoleShouldWorkAsync(TestBuilder);
 
     [Fact]
     public Task AddUserToFakeRoleShouldThrow() =>
-        SecurityShortcutsTestCases.AddUserToFakeRoleShouldThrowAsync(this);
+        SecurityShortcutsTestCases.AddUserToFakeRoleShouldThrowAsync(TestBuilder);
 
     [Fact]
     public Task AllowFakePermissionToRoleShouldThrow() =>
-        SecurityShortcutsTestCases.AllowFakePermissionToRoleShouldThrowAsync(this);
+        SecurityShortcutsTestCases.AllowFakePermissionToRoleShouldThrowAsync(TestBuilder);
 }

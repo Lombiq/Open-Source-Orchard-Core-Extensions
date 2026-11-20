@@ -13,5 +13,5 @@ public class SqlQueryMonitoringRequestMatchingTests : Lombiq.Tests.UI.Samples.UI
 
     [Fact]
     public Task SqlQueryMonitoringRequestMatchingScenariosShouldWork() =>
-        SqlQueryMonitoringTestCases.SqlQueryMonitoringRequestMatchingScenariosShouldWorkAsync(this);
+        SqlQueryMonitoringTestCases.SqlQueryMonitoringRequestMatchingScenariosShouldWorkAsync(TestBuilder);
 }

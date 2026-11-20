@@ -13,5 +13,5 @@ public class SqlQueryMonitoringFailureTests : Lombiq.Tests.UI.Samples.UITestBase
 
     [Fact]
     public Task SqlQueryMonitoringFailureScenariosShouldWork() =>
-        SqlQueryMonitoringTestCases.SqlQueryMonitoringFailureScenariosShouldWorkAsync(this);
+        SqlQueryMonitoringTestCases.SqlQueryMonitoringFailureScenariosShouldWorkAsync(TestBuilder);
 }
