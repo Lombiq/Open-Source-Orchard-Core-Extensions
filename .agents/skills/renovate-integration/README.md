@@ -30,6 +30,7 @@ Every phase transition requires **explicit user approval**. The skill will never
 ## Safety Guarantees
 
 - **No push without permission** — `git push` is never executed unless explicitly instructed.
+- **Dependency-first pushes** — submodule commits are pushed before the containing repositories that reference them.
 - **No commits to protected branches** — `renovate/*` and `dev` are never committed to directly.
 - **Approval-gated execution** — each phase waits for explicit user approval before proceeding.
 - **Minimal blast radius** — all work happens on `issue/<WORK_ITEM_KEY>` branches.
@@ -55,7 +56,8 @@ Every phase transition requires **explicit user approval**. The skill will never
     │   └── build-with-analyzers.sh
     └── tests/
         ├── parse-check.sh
-        └── gha-refs-test.sh
+        ├── gha-refs-test.sh
+        └── push-issue-branches-test.sh
 ```
 
 ## Scripts
@@ -68,11 +70,11 @@ All are run from the superproject root, e.g. `bash .agents/skills/renovate-integ
 | `git/checkout-latest-renovate-pr.sh` | 2 | Checks out the newest applicable Renovate PR head branch per submodule; lists the rest. |
 | `dotnet/build-with-analyzers.sh` | 2 | Builds with analyzers on, printing only deduplicated diagnostics. |
 | `git/update-gha-refs.sh apply\|revert <KEY>` | 3, 5 | Rewrites only `Lombiq/GitHub-Actions/...` refs between `@dev` and `@issue/<KEY>`. |
-| `git/push-issue-branches.sh <KEY>` | 4 | Pushes `issue/<KEY>` where it's checked out; skips everything else. |
+| `git/push-issue-branches.sh <KEY>` | 4 | Pushes `issue/<KEY>` in submodules before their containing repositories; skips everything else. |
 | `gh/wait-for-checks.sh <owner/repo> <pr>` | 4 | Polls PR checks with backoff, compact output, no TUI. |
 | `git/verify-dev-sync.sh` | 5 | Fails if any local `dev` has drifted from `origin/dev`. |
 | `git/update-submodule-pointers.sh` | 5 | Moves submodules to merged `origin/dev` and stages the pointers. |
-| `tests/parse-check.sh`, `tests/gha-refs-test.sh` | — | Self-tests for the scripts. |
+| `tests/parse-check.sh`, `tests/gha-refs-test.sh`, `tests/push-issue-branches-test.sh` | — | Self-tests for the scripts. |
 
 ## Self-Updating
 
