@@ -31,6 +31,7 @@ Every phase transition requires **explicit user approval**. The skill will never
 
 - **No push without permission** — `git push` is never executed unless explicitly instructed.
 - **Dependency-first pushes** — submodule commits are pushed before the containing repositories that reference them.
+- **Verified ref-revert exception** — after GitHub Actions refs return to `@dev`, an expected branch-ref validation failure doesn't require a GitHub review or another user approval if the ref-only revert and all other checks are verified.
 - **No commits to protected branches** — `renovate/*` and `dev` are never committed to directly.
 - **Approval-gated execution** — each phase waits for explicit user approval before proceeding.
 - **Minimal blast radius** — all work happens on `issue/<WORK_ITEM_KEY>` branches.

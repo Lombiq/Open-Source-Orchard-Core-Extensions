@@ -342,3 +342,13 @@ Reason: Initial skill creation per user specification.
 - Documented the dependency-first push order.
 
 Reason: A containing repository must not reference submodule commits that have not yet been pushed.
+
+---
+
+## 2026-11-21
+
+**Handle the expected GitHub Actions ref-revert check failure**
+
+- Documented verification and the Phase 4 approval coverage for the expected `validate-gha-refs` failure after a ref-only revert to `@dev`.
+
+Reason: An unapproved PR expects issue-branch refs even though finalization must restore `@dev` before merging.
