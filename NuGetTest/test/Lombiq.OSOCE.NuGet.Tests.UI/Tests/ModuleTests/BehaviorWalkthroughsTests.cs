@@ -14,17 +14,17 @@ public class BehaviorWalkthroughsTests : UITestBase
     }
 
     [Fact]
-    public Task WalkthroughsShouldWorkCorrectly() =>
-        ExecuteTestAsync(
-            context => context.RunSetupAndTestWalkthroughsBehaviorAsync(),
-            changeConfiguration: configuration =>
-            {
-                configuration
-                    .HtmlValidationConfiguration
-                    .WithRelativeConfigPath("WalkthroughsShouldWorkCorrectly.htmlvalidate.json");
+    public Task WalkthroughsShouldWorkCorrectly() => TestBuilder
+        .WithoutSetup()
+        .AddConfiguration(configuration =>
+        {
+            configuration
+                .HtmlValidationConfiguration
+                .WithRelativeConfigPath("WalkthroughsShouldWorkCorrectly.htmlvalidate.json");
 
-                // The preview page sends these requests prematurely, which fails validation and perhaps incorrectly
-                // returns an error response. See https://github.com/OrchardCMS/OrchardCore/issues/19440 for details.
-                configuration.WithIgnoreExpectedStatusResponseFilter("/Preview/Draft", HttpStatusCode.InternalServerError);
-            });
+            // The preview page sends these requests prematurely, which fails validation and perhaps incorrectly
+            // returns an error response. See https://github.com/OrchardCMS/OrchardCore/issues/19440 for details.
+            configuration.WithIgnoreExpectedStatusResponseFilter("/Preview/Draft", HttpStatusCode.InternalServerError);
+        })
+        .RunAsync(context => context.RunSetupAndTestWalkthroughsBehaviorAsync());
 }

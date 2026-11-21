@@ -3,7 +3,6 @@ using Lombiq.OSOCE.Tests.UI.Helpers;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
 using OpenQA.Selenium;
-using System;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -16,13 +15,25 @@ namespace Lombiq.OSOCE.Tests.UI.Tests.ThemeTests;
 public class BehaviorBlogBaseThemeTests : UITestBase
 {
     public BehaviorBlogBaseThemeTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
+        : base(testOutputHelper) =>
+        UseSetup(async context =>
+        {
+            var homePageUri = await SetupHelpers.RunBlogSetupAsync(context);
+
+            await context.SignInDirectlyAsync();
+
+            await context.GoToAdminRelativeUrlAsync("/Themes");
+
+            await context.ClickReliablyOnAsync(By.CssSelector(
+                "form[action*='SetCurrentTheme/Lombiq.BaseTheme.Native.Samples'] button"));
+            context.ShouldBeSuccess();
+
+            return homePageUri;
+        });
 
     [Fact]
     public Task ThemeWithoutSetupShouldWork() =>
-        ExecuteTestAfterSetupAndThemeSwitchAsync(
+        RunAsync(
             async context =>
             {
                 await context.SignInDirectlyAsync();
@@ -37,36 +48,19 @@ public class BehaviorBlogBaseThemeTests : UITestBase
 
     [Fact]
     public Task ContentMenuItemShouldWorkCorrectly() =>
-        ExecuteTestAfterSetupAndThemeSwitchAsync(
+        RunAsync(
             async context =>
             {
                 await context.SignInDirectlyAsync();
                 await context.TestAddingMenuItemToBlogMainMenuAsync();
             });
 
-    private Task ExecuteTestAfterSetupAndThemeSwitchAsync(Func<UITestContext, Task> testAsync) =>
-        ExecuteTestAsync(
-            testAsync,
-            async context =>
-            {
-                var homePageUri = await SetupHelpers.RunBlogSetupAsync(context);
+    protected override void Configure(OrchardCoreUITestExecutorConfiguration configuration)
+    {
+        base.Configure(configuration);
 
-                await context.SignInDirectlyAsync();
-
-                await context.GoToAdminRelativeUrlAsync("/Themes");
-
-                await context.ClickReliablyOnAsync(By.CssSelector(
-                    "form[action*='SetCurrentTheme/Lombiq.BaseTheme.Native.Samples'] button"));
-                context.ShouldBeSuccess();
-
-                return homePageUri;
-            },
-            configuration =>
-            {
-                ChangeConfiguration(configuration);
-
-                // Disable HTML validation, because we have no control over the HTML in the Blog and the content added
-                // by the Blog recipe.
-                configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false;
-            });
+        // Disable HTML validation, because we have no control over the HTML in the Blog and the content added
+        // by the Blog recipe.
+        configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false;
+    }
 }

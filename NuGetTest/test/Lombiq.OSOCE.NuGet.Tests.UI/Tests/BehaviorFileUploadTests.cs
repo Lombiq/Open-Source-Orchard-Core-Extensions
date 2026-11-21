@@ -16,7 +16,7 @@ public class BehaviorFileUploadTests : UITestBase
 
     [Fact]
     public Task SampleFilesShouldBeAccessible() =>
-        ExecuteTestAfterSetupAsync(
+        RunAsync(
             async context =>
             {
                 // Testing if sample files work.

@@ -13,14 +13,14 @@ public class BehaviorEmailQuotaTests : UITestBase
     }
 
     [Fact]
-    public Task EmailQuotaShouldBlockEmailsOverLimitAndWarn() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestEmailQuotaManagementBehaviorAsync(10),
-            configuration => configuration.SetEmailQuotaManagementOptionsForUITest(10));
+    public Task EmailQuotaShouldBlockEmailsOverLimitAndWarn() => TestBuilder
+        .AddConfiguration(configuration => configuration.SetEmailQuotaManagementOptionsForUITest(10))
+        .RunAsync(context => context.TestEmailQuotaManagementBehaviorAsync(10));
 
     [Fact]
-    public Task EmailQuotaShouldNotBeEnforcedWhenUsingCustomSmtpConfiguration() =>
-        ExecuteTestAfterSetupAsync(
+    public Task EmailQuotaShouldNotBeEnforcedWhenUsingCustomSmtpConfiguration() => TestBuilder
+        .AddConfiguration(configuration => configuration.SetEmailQuotaManagementOptionsForUITest(1))
+        .RunAsync(
             async context =>
             {
                 // The default SMTP host is localhost during UI tests. We set it to 127.0.0.1 to still be able to send
@@ -29,6 +29,5 @@ public class BehaviorEmailQuotaTests : UITestBase
                 await context.SignInDirectlyAndGoToDashboardAsync();
                 await context.ConfigureSmtpSettingsAsync("sender@example.com", "127.0.0.1");
                 await context.TestEmailQuotaManagementBehaviorAsync(1, quotaShouldBeEnforced: false);
-            },
-            configuration => configuration.SetEmailQuotaManagementOptionsForUITest(1));
+            });
 }

@@ -11,16 +11,12 @@ public class BehaviorMediaStorageManagementTests : UITestBase
     private const int LargeFileSizeInBytes = LargeFileSizeInMegabytes * 1024 * 1024;
 
     public BehaviorMediaStorageManagementTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
+        : base(testOutputHelper) =>
+        // Setting maximum storage quota to see if it fails without the need of very large files.
+        AddConfiguration(configuration => configuration.SetMediaStorageManagementOptionsForUITest(LargeFileSizeInBytes));
 
     [Fact]
     [SuppressMessage("Style", "IDE0055:Fix formatting", Justification = "Needed for inline comments.")]
     public Task MediaQuotaShouldWork() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestMediaStorageManagementBehaviorAsync(LargeFileSizeInMegabytes),
-            // Setting maximum storage quota to see if it fails without the need of very large files.
-            configuration => configuration
-                .SetMediaStorageManagementOptionsForUITest(LargeFileSizeInBytes));
+        RunAsync(context => context.TestMediaStorageManagementBehaviorAsync(LargeFileSizeInMegabytes));
 }

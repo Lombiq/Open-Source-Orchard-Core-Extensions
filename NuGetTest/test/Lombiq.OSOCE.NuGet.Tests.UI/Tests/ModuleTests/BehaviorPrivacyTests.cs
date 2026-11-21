@@ -14,11 +14,11 @@ public class BehaviorPrivacyTests : UITestBase
 
     [Fact]
     public Task ConsentBannerShouldWorkAnonymous() =>
-        ExecuteTestAfterSetupAsync(context => context.TestConsentBannerAsync());
+        RunAsync(context => context.TestConsentBannerAsync());
 
     [Fact]
     public Task ConsentBannerShouldWorkAdmin() =>
-        ExecuteTestAfterSetupAsync(
+        RunAsync(
             async context =>
             {
                 await context.SignInDirectlyAsync();
@@ -27,20 +27,19 @@ public class BehaviorPrivacyTests : UITestBase
 
     // This test is for https://github.com/Lombiq/Orchard-Privacy/issues/15
     [Fact]
-    public async Task ConsentBannerShouldWorkWithRazorAndLiquidBasedThemes()
-    {
-        // First should work with Liquid-based theme.
-        await ExecuteTestAfterSetupAsync(context => context.TestConsentBannerWithThemeAsync("TheBlogTheme"));
+    public Task ConsentBannerShouldWorkWithRazorBasedThemes() =>
+        RunAsync(context => context.TestConsentBannerWithThemeAsync("TheTheme"));
 
-        // Then should work with Razor-based theme.
-        await ExecuteTestAfterSetupAsync(context => context.TestConsentBannerWithThemeAsync("TheTheme"));
-    }
+    // This test is for https://github.com/Lombiq/Orchard-Privacy/issues/15
+    [Fact]
+    public Task ConsentBannerShouldWorkWithLiquidBasedThemes() =>
+        RunAsync(context => context.TestConsentBannerWithThemeAsync("TheBlogTheme"));
 
     [Fact]
     public Task RegistrationConsentCheckboxShouldWork() =>
-        ExecuteTestAfterSetupAsync(context => context.TestRegistrationConsentCheckboxAsync());
+        RunAsync(context => context.TestRegistrationConsentCheckboxAsync());
 
     [Fact]
     public Task FormConsentCheckboxShouldWork() =>
-        ExecuteTestAfterSetupAsync(context => context.TestPrivacySampleBehaviorAsync());
+        RunAsync(context => context.TestPrivacySampleBehaviorAsync());
 }

@@ -12,19 +12,16 @@ public class BehaviorEnvironmentRobotsTests : UITestBase
     }
 
     [Fact]
-    public Task RobotsMetaTagShouldBeMissing() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestRobotMetaTagIsMissingAsync(shouldBeMissing: true),
-            configuration => configuration.SetEnvironmentRobotsOptionsConfiguration(isProduction: true));
+    public Task RobotsMetaTagShouldBeMissing() => TestBuilder
+        .AddConfiguration(configuration => configuration.SetEnvironmentRobotsOptionsConfiguration(isProduction: true))
+        .RunAsync(context => context.TestRobotMetaTagIsMissingAsync(shouldBeMissing: true));
 
     [Fact]
     public Task RobotsMetaTagShouldBeMissingWithoutConfiguration() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestRobotMetaTagIsMissingAsync(shouldBeMissing: false));
+        RunAsync(context => context.TestRobotMetaTagIsMissingAsync(shouldBeMissing: false));
 
     [Fact]
-    public Task RobotsMetaTagShouldBePresent() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestRobotMetaTagIsMissingAsync(shouldBeMissing: false),
-            configuration => configuration.SetEnvironmentRobotsOptionsConfiguration(isProduction: false));
+    public Task RobotsMetaTagShouldBePresent() => TestBuilder
+        .AddConfiguration(configuration => configuration.SetEnvironmentRobotsOptionsConfiguration(isProduction: false))
+        .RunAsync(context => context.TestRobotMetaTagIsMissingAsync(shouldBeMissing: false));
 }

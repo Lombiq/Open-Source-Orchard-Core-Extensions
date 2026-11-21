@@ -7,13 +7,10 @@ namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 public class BehaviorEmailClientTests : UITestBase
 {
     public BehaviorEmailClientTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
+        : base(testOutputHelper) =>
+        AddConfiguration(config => config.UseSmtpService = true);
 
     [Fact]
     public Task ImapEmailFetchingShouldWork() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestImapEmailFetchingAsync(),
-            config => config.UseSmtpService = true);
+        RunAsync(context => context.TestImapEmailFetchingAsync());
 }

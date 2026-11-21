@@ -12,8 +12,8 @@ public class BehaviorMSBuildTests : UITestBase
     }
 
     [Fact]
-    public Task SdkUsingThemeShouldBeRecognizedByOrchardCore() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestSdkUsingThemeAsync(),
-            configuration => configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false);
+    public Task SdkUsingThemeShouldBeRecognizedByOrchardCore() => TestBuilder
+        .AddConfiguration(configuration =>
+            configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false)
+        .RunAsync(context => context.TestSdkUsingThemeAsync());
 }

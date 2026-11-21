@@ -12,10 +12,10 @@ public class BehaviorWalkthroughsTests : UITestBase
     }
 
     [Fact]
-    public Task WalkthroughsShouldWorkCorrectly() =>
-        ExecuteTestAsync(
-            context => context.RunSetupAndTestWalkthroughsBehaviorAsync(),
-            changeConfiguration: configuration => configuration
-                .HtmlValidationConfiguration
-                .WithRelativeConfigPath("WalkthroughsShouldWorkCorrectly.htmlvalidate.json"));
+    public Task WalkthroughsShouldWorkCorrectly() => TestBuilder
+        .WithoutSetup()
+        .AddConfiguration(configuration => configuration
+            .HtmlValidationConfiguration
+            .WithRelativeConfigPath("WalkthroughsShouldWorkCorrectly.htmlvalidate.json"))
+        .RunAsync(context => context.RunSetupAndTestWalkthroughsBehaviorAsync());
 }

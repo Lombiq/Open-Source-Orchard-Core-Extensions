@@ -12,9 +12,7 @@ public class BehaviorTenantAdminLoginTests : UITestBase
     }
 
     [Fact]
-    public Task TenantEditorShouldHaveLoginAsAdminUserButton() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestTenantAdminLoginBehaviorAsync(),
-            changeConfiguration: configuration => configuration.HtmlValidationConfiguration
-                .WithOC15222Filter());
+    public Task TenantEditorShouldHaveLoginAsAdminUserButton() => TestBuilder
+        .AddConfiguration(configuration => configuration.HtmlValidationConfiguration.WithOC15222Filter())
+        .RunAsync(context => context.TestTenantAdminLoginBehaviorAsync());
 }

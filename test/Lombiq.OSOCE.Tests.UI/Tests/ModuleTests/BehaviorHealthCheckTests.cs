@@ -9,20 +9,16 @@ namespace Lombiq.OSOCE.Tests.UI.Tests.ModuleTests;
 public class BehaviorHealthCheckTests : UITestBase
 {
     public BehaviorHealthCheckTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
+        : base(testOutputHelper) =>
+        AddConfiguration(configuration =>
+        {
+            configuration.ConfigureTenantHealthCheckTests();
+            configuration.AssertAppLogsAsync = app => app.LogsShouldNotContainAsync(
+                logEntry => logEntry.Level >= LogLevel.Error && logEntry.IsNotHealthCheckError(),
+                configuration.TestCancellationToken);
+        });
 
     [Fact]
     public Task UnhealthyTenantsShouldBeListed() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestHealthChecksAsync("Lombiq.OSOCE.BasicOrchardFeaturesTests"),
-            configuration =>
-            {
-                configuration.ConfigureTenantHealthCheckTests();
-                configuration.AssertAppLogsAsync = app =>
-                    app.LogsShouldNotContainAsync(
-                        logEntry => logEntry.Level >= LogLevel.Error && logEntry.IsNotHealthCheckError(),
-                        configuration.TestCancellationToken);
-            });
+        RunAsync(context => context.TestHealthChecksAsync("Lombiq.OSOCE.BasicOrchardFeaturesTests"));
 }

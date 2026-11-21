@@ -13,5 +13,5 @@ public class BehaviorHelpfulLibrariesSamplesTests : UITestBase
 
     [Fact]
     public Task LinqToDbSamplesShouldWorkCorrectly() =>
-        ExecuteTestAfterSetupAsync(context => context.TestLinqToDbSamplesAsync());
+        RunAsync(context => context.TestLinqToDbSamplesAsync());
 }

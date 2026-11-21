@@ -7,15 +7,12 @@ namespace Lombiq.OSOCE.NuGet.Tests.UI.Tests.ModuleTests;
 public class BehaviorDataTableTests : UITestBase
 {
     public BehaviorDataTableTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
+        : base(testOutputHelper) =>
+        AddConfiguration(configuration => configuration
+            .HtmlValidationConfiguration
+            .WithRelativeConfigPath($"{nameof(BehaviorDataTableTests)}.htmlvalidate.json"));
 
     [Fact]
     public Task DataTableShouldWork() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.TestDataTableRecipeDataAsync(checkMainMenu: false),
-            changeConfiguration: configuration => configuration
-                .HtmlValidationConfiguration
-                .WithRelativeConfigPath("BehaviorDataTableTests.htmlvalidate.json"));
+        RunAsync(context => context.TestDataTableRecipeDataAsync(checkMainMenu: false));
 }
