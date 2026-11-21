@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # push-issue-branches.sh
 #
-# Pushes issue/<WORK_ITEM_KEY> branches in the superproject and every submodule
-# that has one checked out, enforcing the skill's push safety rules:
+# Pushes issue/<WORK_ITEM_KEY> branches in submodules before their containing
+# repositories, enforcing the skill's push safety rules:
 #   - Only pushes when HEAD is exactly issue/<WORK_ITEM_KEY>.
 #   - Never pushes dev, renovate/* or a detached HEAD.
 #   - Never pushes to any ref other than the same-named branch on origin.
@@ -42,16 +42,12 @@ push_current() {
   git push -u origin "$ISSUE_BRANCH"
 }
 
-# Superproject.
-push_current "SUPERPROJECT"
+submodule_paths=$(git submodule foreach --quiet --recursive 'printf "%s\n" "$displaypath"')
+if [ -n "$submodule_paths" ]; then
+  mapfile -t paths <<< "$submodule_paths"
+  for ((i=${#paths[@]} - 1; i >= 0; i--)); do
+    (cd "${paths[i]}" && push_current "${paths[i]}")
+  done
+fi
 
-# Submodules ($name is provided by git submodule foreach).
-git submodule foreach --recursive '
-  branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "")
-  if [ "$branch" != "$ISSUE_BRANCH" ]; then
-    echo "SKIP $name: on \"$branch\", not \"$ISSUE_BRANCH\"."
-    exit 0
-  fi
-  echo "PUSH $name: $ISSUE_BRANCH"
-  git push -u origin "$ISSUE_BRANCH"
-'
+push_current "SUPERPROJECT"
