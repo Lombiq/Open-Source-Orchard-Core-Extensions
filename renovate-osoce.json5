@@ -30,5 +30,11 @@
             ],
             matchUpdateTypes: ['minor', 'patch', 'pin', 'pinDigest'],
         },
+        {
+            // This overrides Orchard Core's dependency for security; check whether it is still necessary instead of
+            // updating it automatically.
+            matchPackageNames: ['HtmlSanitizer'],
+            enabled: false,
+        },
     ]
 }
