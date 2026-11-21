@@ -4,4 +4,12 @@
         'github>Lombiq/renovate-config:default-orchard-core-superproject.json5',
         'github>Lombiq/Open-Source-Orchard-Core-Extensions:renovate-osoce.json5',
     ],
+    'packageRules': [
+        {
+            // This overrides Orchard Core's dependency for security; check whether it is still necessary instead of
+            // updating it automatically.
+            'matchPackageNames': ['HtmlSanitizer'],
+            'enabled': false,
+        },
+    ],
 }
