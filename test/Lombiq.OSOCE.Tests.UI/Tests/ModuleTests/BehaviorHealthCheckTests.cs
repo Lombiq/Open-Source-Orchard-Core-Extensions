@@ -1,6 +1,4 @@
 using Lombiq.Hosting.Tenants.HealthChecks.Tests.UI.Extensions;
-using Lombiq.Tests.UI.Extensions;
-using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -13,9 +11,8 @@ public class BehaviorHealthCheckTests : UITestBase
         AddConfiguration(configuration =>
         {
             configuration.ConfigureTenantHealthCheckTests();
-            configuration.AssertAppLogsAsync = app => app.LogsShouldNotContainAsync(
-                logEntry => logEntry.Level >= LogLevel.Error && logEntry.IsNotHealthCheckError(),
-                configuration.TestCancellationToken);
+            configuration.AppLogFilters[nameof(ApplicationLogEntryExtensions.IsNotHealthCheckError)] =
+                ApplicationLogEntryExtensions.IsNotHealthCheckError;
         });
 
     [Fact]
